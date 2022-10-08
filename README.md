@@ -3,9 +3,10 @@
 ### Prerequisites
 - TeXLive をインストールする
 - 依存パッケージをインストールする
+    - 最新に必要なパッケージは  [Dockerfile:49 あたり](https://github.com/OmeSatoFoundation/ome-doc/blob/master/Dockerfile#L49) を参照。
 
 ```
-$ tlmgr install bbding # libreoffice ソースから latex ソースへの自動変換を利用した際に必要。
+$ tlmgr install bbding # libreoffice ソースから latex ソースへの自動変換を利用した際に必要。その他必要なパッケージは [Dockerfile:49 あたり](https://github.com/OmeSatoFoundation/ome-doc/blob/master/Dockerfile#L49) を参照。
 ```
 
 - `llmk` をインストールする
