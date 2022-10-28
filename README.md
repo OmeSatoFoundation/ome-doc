@@ -1,7 +1,10 @@
 # IT未来塾教科書
 ## ビルド手順 (Windows, Linux, Mac)
 ### Prerequisites
-- TeXLive をインストールする
+- TeXLive をインストールする (full scheme を選択する)
+    - windows https://www.tug.org/texlive/windows.html
+    - linux https://www.tug.org/texlive/quickinstall.html
+    - mac https://www.tug.org/mactex/
 - 依存パッケージをインストールする
     - 最新に必要なパッケージは  [Dockerfile:49 あたり](https://github.com/OmeSatoFoundation/ome-doc/blob/master/Dockerfile#L49) を参照。
 
