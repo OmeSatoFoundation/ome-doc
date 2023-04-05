@@ -1,0 +1,45 @@
+\subsection{声音を変えてみる}
+ところで、人間の声は人によって高い声だったり低い声だったり違いますよね。Openjtalkでは文章を読ませるときの声音を指定することができます。声音はhtsvoiceというファイルフォーマットによって定められおり、setvoice 命令で指定することができます。\\
+\code{setvoice <声音ファイル>}
+
+<声音ファイル>は、/home/pi/ome/bin/openjtalk/voices/ 以下のパスを書きます。\\
+みなさんのRaspberry Piにはいくつかの声音ファイルがすでにダウンロードされています。 /home/pi/ome/bin/openjtalk/voicesを見てみてください。女声として
+\begin{itemize}
+\item tonaeyoe/tonaeyoe.htsvoice
+\item htsvoice-tohoku-f01/tohoku-f01-neutral.htsvoice
+\item htsvoice-tohoku-f01/tohoku-f01-angry.htsvoice
+\item htsvoice-tohoku-f01/tohoku-f01-happy.htsvoice
+\item htsvoice-tohoku-f01/tohoku-f01-sad.htsvoice
+\end{itemize}
+を、男声として
+\begin{itemize}
+\item gigarakan/gigarakan.htsvoice
+\end{itemize}
+を利用できます。例を示します。/home/pi/ome/06/voice.hsp をHSPスクリプトエディタで開いてみましょう。\\
+
+\begin{lstlisting}[caption=voice.hsp,label=voice.hsp]
+#include "hsp3dish.as"
+#include "jtalk.as"
+
+redraw 0
+mes "発話開始"
+mes "「子どもIT未来塾」"
+redraw 1
+
+setvoice "htsvoice-tohoku-f01/tohoku-f01-sad.htsvoice"	<#blue#;音声ファイル指定#>
+jtload "子どもIT未来塾", 0				<#blue#;音声ファイル生成と読み込み#>
+mmplay 0						<#blue#;音声ファイルの再生#>
+stop
+\end{lstlisting}
+
+8行目までは前と同じです。9行目でsertvoiceが使用されています\\
+\code{setvoice "htsvoice-tohoku-f01/tohoku-f01-sad.htsvoice"}\\
+この行以降のjtloadでhtsvoice-tohoku-f01/tohoku-f01-sad.htsvoiceという声音が使用されます。ダブルクォーテーションで囲われている部分を変更することで、別の声音にすることができます。\\
+
+\begin{tcolorbox}[title=\useOmetoi]
+\begin{enumerate}
+\item voice.hsp をHSPスクリプトエディタで実行してみましょう。\\□←できたらチェックしましょう。
+\item 声音を男声にして、実行してみましょう。\\ヒント: setvoice "htsvoice-tohoku-f01/tohoku-f01-sad.htsvoice"を書きかえて、声音をgigarakan/gigarakan.htsvoiceに変更する。\\□←できたらチェックしましょう。
+\item 時間があったらやりましょう。\\好きな音声を使って読み上げさせましょう。\\□←できたらチェックしましょう。
+\end{enumerate}
+\end{tcolorbox}

@@ -1,0 +1,31 @@
+\subsubsection{おまけ：こんなメッセージが出たときは}
+\begin{lstlisting}[caption=コマンドがちがうときの例, label=cmdMiss]
+<#green#pi@raspberrypi#>:<#blue#~ $#> pwb
+bash: pwb: コマンドが見つかりません
+<#green#pi@raspberrypi#>:<#blue#~ $#> 
+\end{lstlisting}
+コマンドがちがいます。スペル　（アルファベット）があっているか見てみましょう。\\\\
+
+\begin{lstlisting}[caption=ディレクトリやファイルの名前がちがうときの例, label=nameMiss]
+<#green#pi@raspberrypi#>:<#blue#~ $#> cd AAA
+bash: cd: AAA: そのようなファイルやディレクトリはありません
+<#green#pi@raspberrypi#>:<#blue#~ $#> 
+\end{lstlisting}
+ディレクトリやディレクトリの名前が違います。スペルがあっているか見てみましょう。\\
+
+\subsubsection{豆知識}
+コマンドは英文や英単語の省略になっています。\\
+pwd: print working directory → ワーキングディレクトリを表示する\\
+cd: change directory → ディレクトリを変える\\
+cat: concatenate → 結合する\\
+mv: move → 移動する\\
+mkdir: make directory → ディレクトリを作る\\
+rm: remove → 消す\\
+
+\subsubsection{rensyu ディレクトリを最初の状態に戻すには}
+/home/pi/ome/03/rensyu ディレクトリはファイルそうさの練習用のディレクトリです。練習することで、内容が変わってしまいます。授業が始まる前の状態に戻すには次のコマンドを使います。rensyu ディレククトリの下の自分で作ったファイルやディレクトリは消えるので注意してください。\\
+\begin{enumerate}
+\item  cd■/home/pi/ome/03/
+\item  tar■--recursive-unlink■-zxvf rensyu.tar.gz
+% --表示できない
+\end{enumerate}

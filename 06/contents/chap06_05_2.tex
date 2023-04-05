@@ -1,0 +1,61 @@
+\subsection{単語辞書}
+\subsubsection{単語辞書を使った音声認識を体験する}
+さきほど書いたように、日本語の全ての言葉を認識させるのはとても難しいことです。しかし、多くの場合、認識させたい単語はいくつかに限られる多いです（たとえば、声で操作する照明の場合、「つけて」と「けして」の単語を登録しておけば十分です）。認識させる単語を減らせば、似た発音の単語も減りますし、探索する量も減り、認識の正確さと速度が向上します。ここではJuliusに単語辞書を登録し、その辞書に登録されている単語だけを認識させる方法を紹介します。
+
+少ない単語を登録した単語辞書をJuliusに読み込ませたときの動作を確認しましょう。juliusで辞書ファイルを使うには、辞書ファイルを引数にして、\code{julius.sh}命令を使います。\\
+\code{julius.sh <辞書ファイル名.dic>}
+
+例えば/home/pi/ome/06/に果物の単語を登録した辞書ファイル、kudamono.dicを用意しています。kudamono.dicに下の単語が登録されています。
+\begin{center}
+	りんご　みかん　ぶどう　もも　あけび　あんず　いちご　いちじく　かき　スイカ\\すもも　	なし　メロン
+\end{center}
+
+単語辞書を使うと、単語辞書なしでやったときよりも正確で高速に動作していると思います。これが単語の種類を制限する効果です。みなさんがjuliusを使って何か作りたいと思ったときは単語辞書を作る方法を使うのがおすすめです。\\
+
+\begin{tcolorbox}[title=\useOmetoi]
+\begin{enumerate}
+\item ターミナルにjulius.sh kudamono.dicと入力して、果物の名前を5個話しかけてみましょう。何個認識されましたか？\\ \underline{答え.\hspace{0.8\linewidth}}
+\end{enumerate}
+\end{tcolorbox}
+
+\subsubsection{自分の単語辞書を作成する手順}
+それでは、実際に自分で単語辞書を作成・登録しましょう。大まかな流れは、まず人間が読める形式で辞書（識別子（コンピュータが使うラベル）と読み方のペア）を作成し、それをJuliusが読める形式に変換し、変換したものをjuliusに読み込ませます。辞書ファイルの例として/home/pi/ome/06/kudamono.yomiがあります。\\
+
+\begin{lstlisting}[caption=kudamino.yomi,label=kudamino.yomi]
+りんご りんご
+みかん みかん
+ぶどう ぶどう
+桃 もも
+あけび あけび
+あんず  あんず
+苺      いちご
+いちじく        いちじく
+柿      かき
+スイカ  すいか
+すもも  すもも
+なし    なし
+メロン  めろん
+\end{lstlisting}
+
+このファイルのように、辞書ファイルは\\
+\textbf{「<コンピュータが使うラベル> (半角スペース) <読み方（ひらがな)> (改行)」}\\
+という形式である必要があります。leafpadなどで新しいファイルを開き、この形式で辞書ファイルを作成・保存してください。次に、この.yomiファイルをJuliusが読めるように.dicファイルに変換します。このために、\code{convert\_yomi.sh}コマンドが用意してあります。使いかたは\\
+\code{convert\_yomi.sh (辞書ファイルの名前 .yomiファイル) > (辞書ファイルの名前.dicファイル)}
+です。これをターミナルに打ち込みます。例えば、\\
+\code{convert\_yomi.sh kudamono.yomi > kudamono.dic}\\
+のように使います。
+
+.dicファイルができたら、これをJuliusから使ってみましょう。Juliusを起動するためのコマンド \code{julius.sh} が用意してあります。\\
+\code{julius.sh <.dicファイル>}\\
+のように使います。たとえば、\\
+\code{julius.sh kudamono.dic}\\
+のように使います。これを実行したら、またマイクに向かって話しかけてみて、言葉が認識されるかを確認してください。終了するときは\pageref{Julius}ページで説明したように、Ctrl+c(コントロールキーを押しながらcを押す)を使います。
+
+\begin{tcolorbox}[title=\useOmetoi]
+\begin{enumerate}
+\item kudamono.yomiに好きな果物を3つ追加してみましょう。\\□←できたらチェックしましょう。
+\item 辞書ファイルを変換しましょう。\\ターミナルに\code{convert\_yomi.sh kudamono.yomi > kudamono.dic}と入力します。\\□←できたらチェックしましょう。
+\item 果物を追加したkudamono.dicで音声認識をしてみましょう。\\ターミナルに\code{julius.sh kudamono.dic}と入力します。\\□←できたらチェックしましょう。
+\item 時間があったらやりましょう。\\3単語以上からなるオリジナル辞書を作成し、juliusに認識させてみましょう。\\□←できたらチェックしましょう。
+\end{enumerate}
+\end{tcolorbox}

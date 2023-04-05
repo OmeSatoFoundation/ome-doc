@@ -1,0 +1,22 @@
+\section{まとめ}
+OpenJTalkとJuliusの使いかたをまとめました。
+
+OpenJtalkの使いかたは、HSPスクリプトエディタで\\
+\code{jtload “<読み上げたい文字列>”, <バッファ番号>}\\
+で音声をロードした後、\\
+\code{mmplay <バッファ番号>}\\
+によって音声を再生します。\\
+
+Juliusはターミナルで使うときは\\
+\code{julius.sh <.dicファイル>}\\
+のように使います。dic形式の辞書は、.yomiファイル (識別子（コンピュータが使うラベル）と読み方のペア) を作って、ターミナルに\\
+\code{convert\_yomi.sh (今作った.yomiファイル) > (出力するファイルの名前(.dicファイル))}
+とします。
+
+HSPから使うときは\code{init\_julius}, \code{is\_received}, \code{get\_word\_list} を使って認識結果を取得します。\\
+\code{init\_julius <dicファイル>}\\
+で辞書ファイルを指定しつつJuliusを初期化します。\\
+\code{is\_received (<ソケットID>)}\\
+でJuliusが単語を受信したかチェックします。\\
+\code{get\_word\_list <単語をあらわす文字列配列> <単語信頼度をあらわす小数配列>}\\
+で<単語をあらわす文字列配列>に認識した単語、<単語信頼度をあらわす小数配列>に単語信頼度が代入されます。
