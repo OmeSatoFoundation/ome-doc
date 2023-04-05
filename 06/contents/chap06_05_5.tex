@@ -1,0 +1,68 @@
+\subsection{音声でLEDのON OFFをする}
+HSPプログラムから、音声を使ってLEDをつけたり消したりしてみましょう。/home/pi/ome/06にonoff.yomiファイルがあります。これは音声でLEDのON/OFFをするための辞書ファイルです。\\
+
+\begin{lstlisting}[caption=onoff.yomi,label=onoff.yomi]
+ON おん
+OFF おふ
+\end{lstlisting}
+
+リスト\ref{onoff.yomi}のように書いてあります。ONとOFFが表示する文字、おんとおふが読み方です。これを\code{convert\_yomi.sh}を使って変換したものがonoff.dicです。onoff.dicを使って、音声からLEDを制御してみましょう。/home/pi/ome/06/ledbyvoice.hsp を開いてください。\\
+
+\begin{lstlisting}[caption=ledvoice.hsp,label=ledvoice.hsp]
+#include "hsp3dish.as"
+#include "julius.as"
+
+redraw 0
+pos 0, 0
+mes "Loading Julius..."
+redraw 1
+
+init_julius "/home/pi/ome/06/onoff.dic"
+
+sockidx = 0
+domain = "127.0.0.1"
+PORT = 10500
+
+sockopen sockidx, domain, PORT
+
+if stat != 0 {
+  redraw 0
+  mes "Error in opening socket"
+  redraw 1
+  wait 30
+  stop
+}
+
+sdim wrods, 4096, 0
+ddim cm, 0
+repeat -1
+  if is_recieved(sockidx) = 0 {
+    get_word_list words, cm
+    repeat length(words)
+      if cm(cnt) > 0.7 {
+        if words(cnt) = "ON" {			<#blue#;認識された文字がONのとき#>
+          gpio 17, 1				<#blue#;GPIO17のLEDを光らせる#>
+        }else : if words(cnt) = "OFF" {		<#blue#;認識された文字がOFFのとき#>
+          gpio 17, 0				<#blue#;GPIO17を消す#>
+        }
+      }
+    loop
+  }
+  redraw 0
+  pos 0,0
+  mes "話しかけてLEDのONとOFFをしよう"
+  redraw 1
+  await 30
+loop
+\end{lstlisting}
+
+words(cnt)に認識された文字が代入されています。認識された文字がONなのかOFFかif文（条件分岐）を使って、LEDを制御しています。\\
+
+\begin{tcolorbox}[title=\useOmetoi]
+\begin{enumerate}
+\item ledbyvoice.hspをHSPスクリプトエディタで実行しましょう。\\□←オン、オフと話しかけてLEDをつけたり消したりできたらチェックしましょう。
+\item 点灯させるLEDを変更しましょう。\\□←できたらチェックしましょう。
+\item 時間があったらやりましょう。\\点灯させるための言葉を「つける」と「けす」に変更しましょう。\\□←できたらチェックしましょう。
+\item 時間があったらやりましょう。\\センサーボードには4色のLEDが点いています。色ONでその色のLEDがつき、色OFFでその色のLEDが消えるようなプログラムを書きましょう。（オレンジONでオレンジ色のLEDがつき、オレンジOFFでオレンジ色のLEDが消えるなど）\\□←できたらチェックしましょう。
+\end{enumerate}
+\end{tcolorbox}

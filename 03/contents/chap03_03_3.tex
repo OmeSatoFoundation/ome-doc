@@ -1,0 +1,83 @@
+\subsubsection{温度、湿度（しつど）、気圧、明るさを調べてみよう}\label{sec:sensors}
+次はセンサーボードに繋がっている BME280（温湿度気圧センサー）と、TSL2572（照度センサー）を使ってみましょう。HSP スクリプトエディタで/home/pi/ome/03/sensors.hsp を読み込み実行してください。\\
+
+\begin{lstlisting}[caption=sensors.hsp,label=sensors.hsp]
+#include "hsp3dish.as"		<#blue#;スクリプトの設定を読み込む#>
+#include "rpz-gpio.as"		<#blue#;スクリプトの設定を読み込む#>
+
+init_bme			<#blue#; 温湿度気圧センサ bme280 を初期化する#>
+if stat { 			<#blue#; 初期化成功チェック#>
+ redraw 0
+ mes "failed to init bme: " + stat
+ redraw 1
+ stop
+}
+
+geti2c_lux_init 		<#blue#; 照度センサ tsl2572 を初期化する#>
+
+*main
+	redraw 0 		<#blue#; 仮想画面に描画#>
+	pos 60, 60 		<#blue#; 表示位置を設定#>
+	get_temp		<#blue#; rpz_temp に温度取得#>
+	temp = rpz_temp
+	get_humidity		<#blue#; rpz_hum に湿度取得#>
+	hum = rpz_hum
+	get_pressure		<#blue#; rpz_press に気圧取得#>
+	press = rpz_press
+	geti2c_lux_als		<#blue#; rpz_lux に照度取得#>
+	lux = rpz_lux
+
+	mes "温度: " + temp + " [ ]" ℃		<#blue#; ↓取得したデータの表示#>
+	mes "湿度: " + hum + " [%]"
+	mes "気圧: " + press+ " [hPa]"
+	mes "照度: " + lux + " [lx]"
+	redraw 1		<#blue#; 実際の画面に描画#>
+	wait 100
+	goto *main
+\end{lstlisting}
+
+まずは BME280 に関する行について説明します。\\
+\code{init\_bme}\\
+という命令で BME280 を初期化しています。実際にはキャリブレーション（補正）のパラメータ取得をしたり、動作モードを決定したりしています。気になる方はデータシート（英語）を読んでみましょう。\\
+この命令の値が変数 stat に代入されています。初期化に失敗すると success に 0 以外の値が入るの
+で、次の if 文で確認しています。\\
+\code{init\_bme} によって、\code{get\_temp}, \code{get\_humidity}, \code{get\_pressure} が使えるようになりました。\\
+\code{get\_temp}	; rpz\_temp に温度取得\\
+\code{get\_humidity}	; rpz\_hum に湿度取得\\
+\code{get\_pressure}	; rpz\_press に気圧取得\\
+のようにすることによって、\code{rpz\_temp} に気温 (temperature)、 \code{rpz\_hum} に湿度(humidity)、\code{rpz\_press} に気圧(pressure)が入ります。
+
+次は TSL2572 に関係する行を説明します。\\
+\code{init\_lux}
+によって TSL2572 が初期化されます。BME280 のときと違って返り値を取らず、エラーチェック
+をする必要が無いことに気をつけましょう。実際には感度の設定等が行われます。詳しく知りたい方
+はデータシート（英語）を読んでみましょう。
+
+初期化によって、\code{geti2c\_lux\_als} が使えるようになりました。 \\
+\code{geti2c\_lux\_als} ; rpz\_lux に照度取得
+とすることで、rpz\_lux に照度が入ります。
+
+これらで得られた値を変数 \code{temp}, \code{hum}, \code{press}, \code{lux} にいれていきます。\\
+\code{temp = rpz\_temp\\
+hum = rpz\_hum\\
+press = rpz\_press\\
+lux = rpz\_lux\\}
+
+そしてこれらの変数 \code{temp}, \code{hum}, \code{press}, \code{lux} を \code{mes} 命令を使って画面に表示しています。\\
+
+\begin{tcolorbox}[title=\useOmetoi]
+\begin{enumerate}
+\item 温度を調べる命令を書きましょう\\
+\underline{答え.\hspace{0.8\linewidth}}
+\item 湿度（しつど）を調べる命令を書きましょう\\
+\underline{答え.\hspace{0.8\linewidth}}
+\item 気圧を調べる命令を書きましょう\\
+\underline{答え.\hspace{0.8\linewidth}}
+\item sensors.hsp を起動します。センサーに触れて温度をあげてみましょう。\\
+□←できたらチェックしましょう。
+\item sensors.hsp を起動します。センサーに息をふきかけて湿度をあげてみましょう。\\
+□←できたらチェックしましょう。
+\item  sensors.hsp を起動します。センサーを手でかくして暗くしてみましょう。\\
+□←できたらチェックしましょう。
+\end{enumerate}
+\end{tcolorbox}

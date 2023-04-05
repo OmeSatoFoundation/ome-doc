@@ -1,0 +1,35 @@
+\subsubsection{コピーしてみよう}
+\begin{description}
+\item[cp■ファイル1■ファイル2]\mbox{}\\
+ファイルをコピーすることができます。
+\end{description}
+\begin{itemize}
+\item[<例>]/home/pi/ome/03/rensyu/rika/rika.png をrika2.png という名前でホームディレクトリにコピー
+します。ls■-F すると rika2.png がコピーされていることがわかります。
+\end{itemize}
+\begin{lstlisting}[caption=cpの例, label=cp]
+<#green#pi@raspberrypi#>:<#blue#~ $#> cp /home/pi/ome/03/rensyu/rika/rika.png /home/pi/rika2.png
+<#green#pi@raspberrypi#>:<#blue#~ $#> ls -F
+<#blue#MagPi/	#>	<#magenta#rika2.png#>	<#blue#...#>
+\end{lstlisting}
+\begin{description}
+\item[cp■-r■ディレクトリ1■ディレクトリ2]\mbox{}\\
+ディレクトリをコピーすることができます。
+\end{description}
+\begin{itemize}
+\item[<例>]/home/pi/ome/03/rensyu/rika/rika をrikaという名前でホームディレクトリにコピー
+します。ls■-F すると rikaディレクトリ がコピーされていることがわかります。
+\end{itemize}
+\begin{lstlisting}[caption=cp -rの例, label=cp-R]
+<#green#pi@raspberrypi#>:<#blue#~ $#> cp -r /home/pi/ome/03/rensyu/rika /home/pi/rika
+<#green#pi@raspberrypi#>:<#blue#~ $#> ls -F
+<#blue#MagPi/	#>	<#blue#rika#>	<#magenta#rika2.png#>	<#blue#...#>
+\end{lstlisting}
+\begin{tcolorbox}[title=\useOmetoi]
+%\begin{minipage}{0.94\hsize}
+\begin{enumerate}
+\item cp■/home/pi/ome/03/rensyu/rika/rika.png■/home/pi/rika2.png と入力してみましょう。\\ls■-Fと入力してrika2.pngがコピーされているか見てみましょう。\\□ ← コピーできたらチェックしましょう。
+\item cp■-r■/home/pi/ome/03/rensyu/rika■/home/pi/rikaと入力してみましょう。\\ls■-Fと入力してrikaディレクトリがコピーされているか見てみましょう。\\□ ← コピーできたらチェックしましょう。
+\end{enumerate}
+%\end{minipage}
+\end{tcolorbox}

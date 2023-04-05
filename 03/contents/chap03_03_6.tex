@@ -1,0 +1,75 @@
+\subsubsection{ボタンを押して光るLEDを変えてみよう}
+赤いボタンを押すと点くLEDが次々に変わるHSPプログラムを考えてみましょう。HSPスクリプトエディタで/home/pi/ome/03/button\_led3.hspを読み込み実行してください。
+
+\begin{lstlisting}[caption=button\_led3.hsp,label=button_led3.hsp]
+#include "hsp3dish.as"		<#blue#;スクリプトの設定を読み込む#>
+#include "rpz-gpio.as"		<#blue#;スクリプトの設定を読み込む#>
+
+ gpio 17, 0
+ gpio 18, 0
+ gpio 22, 0
+ gpio 27, 0
+	
+  redraw 0			<#blue#;画面更新（仮想画面に描画）#>
+  font "",30			<#blue#;フォントサイズを決める#>
+  pos 20,20			<#blue#;文字の位置を決める#>
+  mes "赤いボタンで光るLEDを変えることができるよ"	<#blue#;表示する文字を決める#>
+  redraw 1			<#blue#;画面更新（実際の画面に描画）#>
+
+  ima_btn = 1
+  ledidx = 0
+
+*hata
+  ima_btn = gpioin(5)
+  if ima_btn = 0{
+    ledidx = (ledidx+1) ＼ 4		<#blue#;ledidxで何番目（0～3）のLEDを光らせるか決めています。#>
+		if ledidx=1 {		<#blue#;l番目のときは、GPIO17のLEDを光らせます。#>
+			gpio 17, 1
+			gpio 18, 0
+			gpio 22, 0
+			gpio 27, 0
+		}
+		else : if ledidx=2 {	<#blue#;2番目のときは、GPIO18のLEDを光らせます。#>
+			gpio 17, 0
+			gpio 18, 1
+			gpio 22, 0
+			gpio 27, 0
+		}
+		else : if ledidx=3 {	<#blue#;3番目のときは、GPIO22のLEDを光らせます。#>
+			gpio 17, 0
+			gpio 18, 0
+			gpio 22, 1
+			gpio 27, 0
+		}
+		else : if ledidx=0 {	<#blue#;0番目のときは、GPIO27のLEDを光らせます。#>
+			gpio 17, 0
+			gpio 18, 0
+			gpio 22, 0
+			gpio 27, 1
+		}
+  }
+
+  await 10
+  goto *hata		<#blue#;*hataまで戻る#>
+\end{lstlisting}
+
+\textbf{剰余算 ／}\\
+今回、新たに／ (バックスラッシュ)という記号が登場しています。これは剰余算といって割り算をしたときの余りを計算できます。例えば、5 \ 4 は5を4で割った余りである1になります。
+
+\code{ledidx = (ledidx+1) ／ 4}では、何回\code{*hata}まで戻っているか数えています。LEDは4つあるので、4回動けば一周できます。一周したらまた0に戻りたいので、剰余算を使っています。今回は\code{ledidx}は0～3のどれかの数字になります。\\
+
+if 条件文1 \{実行文1\} else : if 条件文2\{実行文2\}\\
+これは条件文1が成り立つときは実行文1を実行します。成り立たないときは、条件文2が成り立つかどうか調べます。条件文2が成り立つときは実行文2を実行します。 \\
+
+けれど、このままだとボタンを押すたびにLEDが右どなりに動いているようには見えないですね？それはコンピュータが計算するのが早すぎるせいです。ボタンを一回押したら、ひとつ右どなりに動くようにするにはどうしたらよいでしょうか。\pageref{button_led2_toi}ページの問題の「変化を検出する」を参考に問題をといてみましょう。\\
+
+\begin{tcolorbox}[title=\useOmetoi]
+\begin{enumerate}
+\item ターミナルを使ってbutton\_led3.hspのコピーを、333.hspという名前で作りましょう。\\
+□←できたらチェックしましょう。
+\item 赤いボタン(GPIO5)を一回押すとLEDが一個右となりに動くように、333.hspのプログラムを変えてみましょう。\\
+□←できたらチェックしましょう。
+\item 赤いボタン(GPIO5)を押すとLEDが左に移動するように、333.hspのプログラムを変えてみましょう。\\
+□←できたらチェックしましょう。
+\end{enumerate}
+\end{tcolorbox}

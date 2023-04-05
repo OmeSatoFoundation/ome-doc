@@ -1,0 +1,47 @@
+\subsubsection{リミットスイッチ}\label{lmswitch}
+\begin{table}[H]
+	\begin{tabular}{|p{\colF}|p{\colG}|}	\hline
+	名称 & リミットスイッチ（りみっとすいっち）\\ \hline
+	接続箇所 & デジタルコネクタ (3pin)\\ \hline
+	機能概要 & ONとOFFを検知する\\ \hline
+  \end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabular}{|p{\colF}|p{\colG}|}	\hline
+	サンプルコードの場所 & ome/05/digin.hsp\\ \hline
+	raspiへの入力 & スイッチが押されていると1、押されていないと0の値になる\\ \hline
+	raspiへの入力方法 & val = gpioin(GPIO番号)\\ \hline
+	raspiからの出力 & なし\\ \hline
+	raspiからの出力方法 & なし\\ \hline
+  \end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabular}{|p{\colF}|p{\colG}|} \hline
+	使い道 & ロボットが壁に触れたかどうかわかる。蓋がしまっているかどうかわかる。\\ \hline
+	注意事項 & なし\\ \hline
+	補足 & なし\\ \hline
+  \end{tabular}
+\end{table}
+
+\begin{figure}[H]
+	\begin{tabular}{|p{\colH}|p{\colI}|p{\colH}|p{\colI}|} \hline
+	外観 & 
+	\begin{minipage}[t]{\linewidth}
+    \smallskip
+      \centering
+      \includegraphics[width=\linewidth]{images/chap05/text05-img020.jpg}
+      \caption{リミットスイッチ}
+      \smallskip
+    \end{minipage} &
+    回路記号 & 
+    \begin{minipage}[t]{\linewidth}
+    \smallskip
+      \centering
+      \includegraphics[width=\linewidth]{images/chap05/text05-img048.png}
+      \caption{リミットスイッチの回路図}
+      \smallskip
+    \end{minipage}\\ \hline
+  \end{tabular}
+\end{figure}

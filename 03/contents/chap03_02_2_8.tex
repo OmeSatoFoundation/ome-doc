@@ -1,0 +1,22 @@
+\subsubsection{名前を変えてみよう}
+\begin{description}
+\item[mv■名前■変えたい名前]\mbox{}\\
+ファイルやディレクトリの名前を変えることができます。
+\end{description}
+\begin{itemize}
+\item[<例>]rikaディレクトリにあるrika2.pngをbika.pngに名前を変えます。ls■-F■rikaで、名前が変わっているとわかります。
+\end{itemize}
+\begin{lstlisting}[caption=mvNameの例, label=mvName]
+<#green#pi@raspberrypi#>:<#blue#~ $#> cd /home/pi/rika
+<#green#pi@raspberrypi#>:<#blue#~ $#> mv rika2.png bika.png
+<#green#pi@raspberrypi#>:<#blue#~ $#> ls -F
+<#magenta#bika.png	mokei.png		rika.png.#>
+\end{lstlisting}
+
+\begin{tcolorbox}[title=\useOmetoi]
+%\begin{minipage}{0.94\hsize}
+\begin{enumerate}
+\item cd■/home/pi/rikaと入力してrikaディレクトリに移動しましょう。\\ mv■rika2.png■bika.png と入力してみましょう。\\ls■-Fと入力してrika2.pngがbika.pngに変わっているか見てみましょう。\\□ ← bika.pngがあったらチェックしましょう。
+\end{enumerate}
+%\end{minipage}
+\end{tcolorbox}

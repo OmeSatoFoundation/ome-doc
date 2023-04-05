@@ -1,5 +1,4 @@
-latex = "platex"
-dvipdf = "dvipdfmx"
+latex = "lualatex"
 source = "text06.tex"
 
-sequence = ["latex", "dvipdf"] # Skip bibtex and makeindex
+sequence = ["latex"] # Skip bibtex and makeindex

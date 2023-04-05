@@ -1,0 +1,45 @@
+\subsection{OpenJTalkが読み上げる文字列に変数を使う (2)}
+/home/pi/ome/06/readcalc.hsp をhspスクリプトエディタで開き、みてみてください。
+
+このプログラムは、足し算の結果を読み上げます。15行目の\code{wait}命令に注目してください。\code{mmplay}は音声を再生した次の瞬間に次の命令を実行し始めるので、この\code{wait}命令がないと直ちに「こたえはご」を読み上げ始めてしまい、2つの音声が重なって聞き取りづらくなってしまいます。これを避けるため、\code{wait}命令で1つめの読み上げが終わるまで待っています。\\
+
+\begin{lstlisting}[caption=readcalc.hsp,label=readcalc.hsp]
+#include "hsp3dish.as"
+#include "jtalk.as"
+
+a = 3
+b = 2
+
+<#blue#<#blue#; 問題描画#>
+redraw 0
+mes "" + a + " + " + b
+redraw 1
+
+<#blue#; 問題読み上げ#>
+jtload "" + a + "たす" + b, 0
+mmplay 0
+wait 100
+
+<#blue#; 答え計算#>
+kotae = a + b
+
+<#blue#; 答え読み上げ#>
+jtload "こたえは" + kotae, 1
+mmplay 1
+
+<#blue#; 答え描画#>
+redraw 0
+mes "" + a + " + " + b
+mes "= " + kotae
+redraw 1
+
+wait 30
+stop
+\end{lstlisting}
+
+\begin{tcolorbox}[title=\useOmetoi]
+\begin{enumerate}
+\item readcalc.hspをHSPスクリプトエディタで実行してみましょう。\\□←できたらチェックしましょう。
+\item 時間があったらやりましょう。\\引き算を計算し、答えを読み上げるようにプログラムを変えましょう。\\□←できたらチェックしましょう。
+\end{enumerate}
+\end{tcolorbox}

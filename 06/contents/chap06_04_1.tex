@@ -1,0 +1,40 @@
+\section{OpenJTalk}
+ここでは音声合成ソフトウェアOpenJTalkの紹介をします。まずは使ってみましょう。
+\subsection{文を読み上げてもらう}
+文を読み上げるHSPプログラムを紹介します。openjtalk.hsp をHSPスクリプトエディタで開いてください。openjtalk.hsp は /home/pi/ome/06/ の中にあります。\\
+
+\begin{lstlisting}[caption=openjtalk.hsp,label=openjtalk.hsp]
+#include "hsp3dish.as"
+#include "jtalk.as"
+
+redraw 0
+mes "発話開始"
+mes "「子どもIT未来塾」"
+redraw 1
+
+jtload "子どもIT未来塾", 0	<#blue#;音声ファイルを出力し、読み込む#>
+mmplay 0			<#blue#;音声ファイルを再生する#>
+stop
+\end{lstlisting}
+
+2行目\\
+\code{\#include “jtalk.as”}\\
+で、openjtalkをHSPで使うのに必要な設定が行われます。この行によって、後に説明する jtload 命令と setvoice 命令が使えるようになります。\\
+4行目から7行目までは復習です。mes命令で文字を表示させています。\\
+9行目からが新しい命令です。\\
+\code{jtload "子どもIT未来塾", 0}\\
+で、0番のバッファに “子どもIT未来塾” と読ませた音声ファイルがロードされます。 画像を配置するときや、I2Cを使うときと同じような仕組みです。より一般的に書くと、jtload命令は\\
+jtload <読み上げ文字列>, <バッファ番号>\\
+となります。\\
+10行目\\
+\code{mmplay 0}\\
+で、0番のバッファ（今ロードしたバッファ）を再生します。より一般的に書くと、\\
+\code{mmplay <再生するバッファ番号>}\\
+となります。この命令は再生開始後すぐに次の命令を実行するので、複数の音声を順番に再生したいときはwait命令を入れるなどの工夫が必要になります。\\
+
+\begin{tcolorbox}[title=\useOmetoi]
+\begin{enumerate}
+\item 「本日は青天なり」と読み上げるようにプログラムを書き変えて、sunny.hspという名前で/home/pi/ome/06/に保存し、実行しましょう。\\ヒント：jtload "子どもIT未来塾", 0をかきかえます。\\□←できたらチェックしましょう。
+\item 時間があったらやりましょう。\\好きな言葉を読み上げさせましょう。\\□←できたらチェックしましょう。
+\end{enumerate}
+\end{tcolorbox}

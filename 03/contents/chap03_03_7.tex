@@ -1,0 +1,56 @@
+\subsubsection{チャレンジ問題}
+これはチャレンジ問題です。レベルアップしたい人は挑戦してみてください。
+
+暗い時に全てのLEDが光るプログラムを書きましょう。\ref{sec:sensors}で明るさを調べる照度センサーを使いました。明るさを調べる命令（教科書\pageref{sec:sensors}ページから）を思い出し、これまでのプログラムを参考にして、新しいプログラムを書いてみましょう。\\
+\begin{enumerate}
+\renewcommand{\theenumii}{\arabic{enumii}}
+\renewcommand{\labelenumii}{\theenumi.\theenumii}
+\item HSPスクリプトエディタで/home/pi/ome/03/に、light.hspという新しいファイルを作りましょう。
+\textcolor{blue}{\item プログラムの設定をきめます。}
+\begin{enumerate}
+\item \#includeを使って”rpz-gpio.as”と”hsp3dish.as”を読み込みましょう。\\
+\pageref{sensors.hsp}ページの1行目と2行目と同じように書きましょう。
+\item ts12572に使うI2Cチャンネルを1に設定しましょう。\\
+\pageref{sensors.hsp}ページの13行目と同じように書きましょう。
+\end{enumerate}
+\textcolor{blue}{\item ディスプレイに表示するものをきめます。}
+\begin{enumerate}
+\item 仮想画面に描画するためにredrawを書きましょう。\\
+redraw 0と書きましょう。
+\item 文字をディスプレイに表示する命令を書きましょう。好きな文字を表示しましょう。\\
+mes命令を使いましょう。
+\item 実際の画面に描画するためのredraw命令を書きましょう\\
+redraw 1と書きましょう。
+\item 一度、スクリプトを実行してみましょう。ディスプレイに「暗いとLEDが光るよ」と表示されればOKです。表示されなかったり、エラーが発生したときは、スクリプトを見直したり、先生に質問してみてください。
+スクリプトを書くときは、少しずつ実行してエラーが出ないことを確認することがとても大事です。
+\end{enumerate}
+\textcolor{blue}{\item 明るさを調べ、暗い時にLEDをすべて光らせます}
+\begin{enumerate}
+\item *mainという”はた”（目印）を使いましょう。\\
+\pageref{sensors.hsp}ページの15行目と同じように書きましょう。
+\item 明るさを調べる命令を書きましょう。\\
+\pageref{sensors.hsp}ページの24行目と25行目と同じように書きましょう。
+\item 暗い時を考えてみましょう。暗いときは、明るさが100より小さくなります。
+明るさが100より小さい時、LED1,LED2,LED3,LED4が光るという命令を書きましょう。条件によって実行する命令を変える場合はifを使います。\\
+明るさが100より小さい時という条件は　明るさが入っている変数 < 100と書きます。\\
+if lux<100\{\\
+gpio 17,1\\
+gpio 18,1\\
+gpio 22,1\\
+gpio 27,1\\
+\}
+\item 4.4  次に、部屋が暗くないときを考えてみましょう。条件に当てはまらない時に、実行する命令はelse :{}の{}の中に命令を書きます。\\
+else : \{\\
+gpio 17,0\\
+gpio 18,0\\
+gpio 22,0\\
+gpio 27,0\\
+\}
+\item プログラムの一時停止のためのwait命令を書きましょう。\\
+\pageref{sensors.hsp}ページの35行目と同じように書きましょう。
+\item *mainまで戻る繰り返しのgoto命令を書きましょう。\\
+\pageref{sensors.hsp}ページの36行目と同じように書きましょう。
+\end{enumerate}
+\item 5. \{\}や”などの記号のつけ忘れがないか確認しましょう。
+スクリプトを実行してみましょう。ディスプレイに「暗いとLEDが光るよ」と表示されればOKです。表示されなかったり、エラーが発生したときは、スクリプトを見直したり、先生に質問してみてください。
+\end{enumerate}
