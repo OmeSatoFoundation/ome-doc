@@ -26,11 +26,12 @@ FROM alpine:3.15.0
 ENV PATH /usr/local/bin/texlive:$PATH
 WORKDIR /install-tl-unx
 RUN apk add --no-cache \
+  fontconfig \
+  ghostscript \
   perl \
   tar \
   wget \
-  xz \
-  fontconfig
+  xz
 COPY ./prod/texlive.profile ./
 RUN wget -nv https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
 RUN tar -xzf ./install-tl-unx.tar.gz --strip-components=1
