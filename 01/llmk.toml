@@ -1,5 +1,5 @@
 latex = "platex"
-dvipdf = "dvipdfm"
+dvipdf = "dvipdfmx"
 source = "text01.tex"
 
 sequence = ["latex", "dvipdf"] # Skip bibtex and makeindex
