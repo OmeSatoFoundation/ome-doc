@@ -1,0 +1,1010 @@
+\documentclass[a4paper,12pt]{jarticle}
+\input ./chap01_preamble.tex
+\graphicspath{%
+  {../text01-img/}%
+}
+% !TEX root = ./chap01_02.tex
+\begin{document}
+\section{ラズベリーパイになれよう（１）}
+\subsection{ファイル、フォルダ}
+\ \ コンピュータやラズベリーパイの中にあるデータ（音楽、動画、写真、テキストなど）はすべてファイルとして扱われています。しばしばファイルには.(ドット)から始まる「拡張子」がついており、ファイルがどんな種類なのかを表します。例えば画像の場合は.jpgや動画ファイルの場合はmp4、テキストファイルは.txt、ホームページの場合は.htmlがついています。
+
+ファイルの他にフォルダというものがあります。フォルダはファイルをまとめたものです。ファイルを書類としてフォルダはバインダと考えるとわかりやすいでしょう。フォルダのなかにフォルダをいれることもできます。
+
+
+
+\begin{figure}[hb]
+  \centering
+  \begin{minipage}{13.148cm}
+
+
+    \includegraphics[width=13.148cm]{figure15.png}
+    {\upshape
+      \newline
+      Figure \stepcounter{Figure}{\theFigure}:
+      フォルダ、ファイルの関係}
+  \end{minipage}
+\end{figure}
+
+\begin{minipage}{\textwidth}
+  \begin{minipage}{5.562cm}
+    \centering
+    \textbf{（左）クリック}
+    \flushleft
+
+    カチッ\\
+    \centering
+    \raisebox{20mm}{\includegraphics[width=1.651cm,height=3.53cm]{textbook-img076.eps}}
+
+    \flushleft
+    マウスの左側を一度押すこと、アプリなど開きたいときに使おう
+  \end{minipage}
+  \begin{minipage}{5.562cm}
+    \centering
+    \textbf{ダブルクリック}
+    \flushleft
+
+    カチカチッ\\
+    \centering
+    \raisebox{20mm}{\includegraphics[width=1.651cm,height=3.53cm]{textbook-img076.eps}}
+
+
+    \flushleft
+    マウスの左側を二回続けて押すこと。　デスクトップのフォルダなどを開くときに使うよ
+  \end{minipage}
+  \begin{minipage}{5.562cm}
+    \centering
+    \textbf{~~~~~右クリック}
+    \flushleft
+
+    \hspace{3cm} カチッ\\
+    \centering
+    \raisebox{20mm}{\includegraphics[width=1.651cm,height=3.53cm]{textbook-img076.eps}}
+
+
+    \flushleft
+    マウスの右側を一度押すこと。メニューなどを表示したいときに使うよ
+  \end{minipage}
+\end{minipage}
+
+
+\clearpage
+
+\subsection{例題 1-1フォルダを作成しよう}
+自身のフォルダを開き、Documentsフォルダ直下にtaro、hanako、saburoという名前のフォルダを作成しよう\\
+
+{\bf \large 考え方}
+\vfill
+\begin{figure}[ht]
+  \begin{minipage}{\textwidth}
+    %[Warning: Image ignored] % Unhandled or unsupported graphics:
+    \includegraphics[width=6.472cm,height=4.976cm]{textbook-img032.png}
+    \includegraphics[width=2.094cm,height=1.771cm]{textbook-img035.png}
+    \includegraphics[width=8.301cm,height=4.948cm]{textbook-img033.png}
+  \end{minipage}
+  \begin{minipage}{0.4\textwidth}
+    1
+    ディスプレイの左上の　アイコンをクリック
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.4\textwidth}
+    2
+    上の図にファイルマネージャーが表示されます
+  \end{minipage}\\
+  \vspace{-12mm}
+  \hfill \includegraphics[width=1.771cm,height=2.094cm]{textbook-img037.png}
+  %\vspace{-5mm}
+  \includegraphics[width=0.9\textwidth]{textbook-img034.png}
+  \begin{minipage}{15.758cm}
+    \centering
+    3
+    右側の空白部分で右クリックし　新規作成からフォルダを選んでクリック
+  \end{minipage}
+  \begin{minipage}{\textwidth}
+    \includegraphics[width=0.9\textwidth]{textbook-img036.png}
+  \end{minipage}
+  \begin{minipage}{12.336cm}
+    4
+    フォルダ名の入力を求められるので、付けたい名前を入力しよう
+  \end{minipage}
+\end{figure}
+\clearpage
+{\bf\large 考え方(続き)}
+
+
+
+\begin{figure}[hb]
+  \centering
+  %[Warning: Image ignored] % Unhandled or unsupported graphics:
+  \includegraphics[width=11.398cm,height=5.72cm]{textbook-img038.png}
+  \centering
+  \begin{minipage}{13.001cm}
+    5
+    名前を入力し、OKを押すと上の画像のようにフォルダが作成されます
+  \end{minipage}
+
+\end{figure}
+\begin{figure}[hb]
+  \centering
+  \begin{minipage}{0.8\textwidth}
+    {	\large
+      フォルダは大事です。
+
+      フォルダに、画像やプログラムのコードを保存しておくので、わかりやすく関係性のある名前を付けてあげましょう
+
+      \bigskip
+      ファイルやフォルダの名前は、
+      空白の入らない半角ローマ字にしておくと、
+      後でプログラムから使う時に便利だよ
+    }
+  \end{minipage}
+\end{figure}
+\clearpage
+\begin{figure}[ht]
+  \flushleft{\bf\large 答え}
+  \vspace{8mm}\\
+  \centering
+  \includegraphics[width=13.33cm,height=4.74cm]{textbook-img034.png}
+  \begin{minipage}{\textwidth}
+    1
+    左上のフォルダアイコンをクリックし
+
+    フォルダマネージャー上で右クリックし、上の画像のようにしよう
+  \end{minipage}
+
+  \centering
+  %[Warning: Image ignored] % Unhandled or unsupported graphics:
+  \includegraphics[width=12.483cm,height=4.584cm]{textbook-img036.png}
+  \begin{minipage}{\textwidth}
+    2
+    \ 新規作成のところからフォルダを選び、名前設定に行こう
+  \end{minipage}
+
+  \centering
+  %[Warning: Image ignored] % Unhandled or unsupported graphics:
+  \includegraphics[width=12.776cm,height=3.879cm]{textbook-img039.png}
+  \begin{minipage}{\textwidth}
+    3　taroと名前を入力し、OKを押す
+  \end{minipage}
+
+  \centering
+  %[Warning: Image ignored] % Unhandled or unsupported graphics:
+  \includegraphics[width=12.659cm,height=3.972cm]{textbook-img040.png}
+  \begin{minipage}{\textwidth}
+    4　taroというフォルダを作成できていることを確認しよう
+  \end{minipage}
+
+\end{figure}
+\clearpage
+\begin{figure}
+  \flushleft{\bf\large
+    答え(続き)}\\
+  \vspace{10mm}
+  \centering
+  %[Warning: Image ignored] % Unhandled or unsupported graphics:
+  \includegraphics[width=14.289cm,height=5.431cm]{textbook-img041.png}
+  \begin{minipage}{\textwidth}
+    \ 5
+    \ 先ほどと同じように右クリックから新規作成、フォルダを選び、hanakoという名前でフォルダを作成
+  \end{minipage}
+
+  \centering
+  %[Warning: Image ignored] % Unhandled or unsupported graphics:
+  \includegraphics[width=13.884cm,height=4.189cm]{textbook-img042.png}
+  \begin{minipage}{\textwidth}
+    \ 6
+    \ saburoというフォルダを先ほどと同じ方法で作成
+  \end{minipage}
+
+  \centering
+  %[Warning: Image ignored] % Unhandled or unsupported graphics:
+  \includegraphics[width=8.359cm,height=4.761cm]{textbook-img043.png}
+  \begin{minipage}{\textwidth}
+    \ 7 \ taro , hanako ,
+    saburoのフォルダが作成されていることを確認してみよう
+  \end{minipage}
+  \vspace{10mm}
+  \flushleft
+  {\bfseries
+    問題 1-1}
+
+  例題と同じ方法で、akahoshi、imaoka、hamanakaという名前のフォルダを作ろう
+
+\end{figure}
+\clearpage\subsection{例題 1-2フォルダを移動しよう}
+Desktop直下に「space1」と「space2」を作り、「space1」の中に「move」フォルダを作り、「move」フォルダを「space2」に移動しよう
+
+\flushleft{\bf\large 考え方}
+
+
+\begin{figure}[ht]
+  \centering
+  %[Warning: Image ignored] % Unhandled or unsupported graphics:
+  \includegraphics[width=0.8\textwidth]{fig15-1.eps}
+  \begin{minipage}{15.297cm}
+    フォルダやファイルは後からでも動かすことができるよ。
+  \end{minipage}
+
+  \begin{minipage}{5.963cm}
+    \includegraphics[width=3.604cm,height=2.268cm]{textbook-img051.png}
+    {\flushleft
+      １
+      左側のDesktopをクリック　しspace1とspace2を作成
+    }
+  \end{minipage}
+  \includegraphics[width=2.168cm,height=1.542cm]{textbook-img052.png}
+  \begin{minipage}{7.473cm}
+    \includegraphics[width=5.166cm,height=1.882cm]{textbook-img050.png}
+    {\flushleft
+      2 space1の中にmoveフォルダを作成
+    }
+  \end{minipage}
+
+  \centering
+  \begin{minipage}{6.589cm}
+    \includegraphics[width=3.584cm,height=3.658cm]{textbook-img048.png}
+    {\flushleft
+      3
+      moveフォルダ上で右クリックし、　切り取りをクリック
+    }
+  \end{minipage}
+  \includegraphics[width=2.168cm,height=1.542cm]{textbook-img049.png}
+  \begin{minipage}{6.589cm}
+    %\includegraphics[width=2.168cm,height=1.542cm]{textbook-img047.png}
+    \includegraphics[width=5.225cm,height=4.119cm]{textbook-img046.png}
+    {\flushleft
+      4
+      space2の中で右クリック、貼り付けをクリック
+    }
+  \end{minipage}
+
+  %[Warning: Image ignored] % Unhandled or unsupported graphics:
+  \begin{minipage}{6.589cm}
+    \includegraphics[width=7.218cm,height=3.281cm]{textbook-img045.png}
+    {\flushleft
+      5
+      space1の中にあったmoveフォルダがspace2に移動しました
+    }
+  \end{minipage}
+
+
+\end{figure}
+
+
+{\bfseries 問題 1-2}
+「space1」フォルダ内に「rasp」フォルダを作り、さらにそのフォルダ内に「berry」フォルダを作成して「rasp」フォルダを「space2」フォルダに移動させよう。そして中身を確認しよう
+
+
+
+\clearpage\subsection{例題 1-3ファイル名を変更しよう}
+「before」という名前のフォルダをDocuments直下に１つ作り、その作成した後でフォルダ名を「after」に変えよう
+
+\begin{figure}[ht]
+  \flushleft{\bf\large 考え方}
+
+  \centering
+  %[Warning: Image ignored] % Unhandled or unsupported graphics:
+  \begin{minipage}{1.978cm}
+    \includegraphics[width=1.45cm,height=1.45cm]{textbook-img044.png}
+    frog
+  \end{minipage}
+  \includegraphics[width=2.168cm,height=1.542cm]{textbook-img052.png}
+  \begin{minipage}{1.978cm}
+    \includegraphics[width=1.588cm,height=1.588cm]{textbook-img044.png}
+    dog
+  \end{minipage}
+  \begin{minipage}{6.319cm}
+    まちがったフォルダ名をつけたとき、名前を変えたいときなど
+    に使います。
+  \end{minipage}
+
+  \begin{minipage}{6.656cm}
+    \includegraphics[width=6.96cm,height=4.824cm]{textbook-img058.png}
+    \flushleft
+    １
+    左側のDocumentsをクリックし「before」フォルダを作成
+  \end{minipage}
+  \includegraphics[width=2.168cm,height=1.542cm]{textbook-img052.png}
+  \begin{minipage}{5.751cm}
+    \includegraphics[width=6.555cm,height=5.941cm]{textbook-img057.png}
+    \flushleft
+    2 フォルダ上で右クリックし、
+
+    ファイル名の変更をクリック
+  \end{minipage}
+  %[Warning: Image ignored] % Unhandled or unsupported graphics:
+
+  \begin{minipage}{6.973cm}
+    \includegraphics[width=6.973cm,height=5.327cm]{textbook-img055.png}
+    3 名前を「after」に変更
+
+    OKをクリック
+  \end{minipage}
+  \includegraphics[width=1.919cm,height=1.365cm]{textbook-img053.png}
+  \begin{minipage}{5.751cm}
+    \includegraphics[width=5.92cm,height=4.51cm]{textbook-img056.png}
+    4 変更を確認
+  \end{minipage}
+  \centering
+
+  \begin{minipage}{5.751cm}
+    フォルダ名の変更は、よく使うので覚えておこう
+  \end{minipage}
+\end{figure}
+
+
+{\bfseries
+問題 1-3}
+
+「miss\_name」という名前のフォルダを１つ作り、その作成した後でフォルダ名を「success\_name」に変えよう
+
+\clearpage
+\begin{figure}[ht]
+  \subsection{例題 1-4
+    日本語入力と英字入力について}
+  \ Text
+  Editorを開き、アルファベットをa〜zまで入力しよう。その後「こんにちは」「こんばんは」「ごきげんよう」「さようなら」「ありがとう」をそれぞれ一行に入力しましょう。
+
+  {\bf\large 考え方}
+
+
+  \centering
+  \begin{minipage}{\textwidth}
+    \includegraphics[width=7.459cm,height=2.245cm]{textbook-img065.png}
+    \raisebox{10mm}
+    {
+      \begin{minipage}{0.5\textwidth}
+        赤わくで囲んだ
+        Ctrlとスペースを
+        同時に押すことで
+        英字入力と日本語入力を
+        切り替えることができるよ
+      \end{minipage}
+    }
+  \end{minipage}
+
+  \begin{minipage}{6.984cm}
+    \includegraphics[width=5.408cm,height=5.595cm]{textbook-img064.png}
+    \flushleft
+    １
+    ラズベリーのアイコンをクリックしてアクセサリー＞Text
+    editorを開こう
+  \end{minipage}
+  \includegraphics[width=1.919cm,height=1.365cm]{textbook-img053.png}
+  \begin{minipage}{7.347cm}
+    \includegraphics[width=7.897cm,height=3.655cm]{textbook-img063.png}
+    \flushleft
+    2.
+    赤線が引かれているところをクリックしてテキストエディタにカーソル（縦棒）が入っていることを確認してください。
+  \end{minipage}
+
+  \begin{minipage}{7.238cm}
+    \includegraphics[width=6.643cm,height=2.533cm]{textbook-img059.png}
+    \flushleft
+    3. Ctrlとスペースキーを同時に押して
+
+    英字入力に切り替えよう。アイコンがキーボードであることを確認しよう。
+  \end{minipage}
+  \includegraphics[width=1.919cm,height=1.365cm]{textbook-img053.png}
+  \begin{minipage}{7.351cm}
+    \includegraphics[width=6.514cm,height=2.856cm]{textbook-img061.png}
+    \flushleft
+    4. 英字入力でa〜zまで入力しよう
+  \end{minipage}
+
+  \begin{minipage}{6.73cm}
+    \includegraphics[width=4.029cm,height=2.586cm]{textbook-img062.png}
+    \flushleft
+    5. Ctrlとスペースキーを同時に押して
+    アイコンが“あ”になったか確認しましょう。
+  \end{minipage}
+  \includegraphics[width=1.919cm,height=1.365cm]{textbook-img053.png}
+  \begin{minipage}{6.589cm}
+    \includegraphics[width=4.914cm,height=3.616cm]{textbook-img060.png}
+    \flushleft
+    6. こんにちは〜ありがとうを入力\\
+    7. 完成
+  \end{minipage}
+
+
+
+  \flushleft
+  {\bfseries 問題 1-4}
+  Text editorでA〜Zを入力しよう
+
+  ヒント
+
+  英字入力時にshiftキーを押しながらアルファベットキーを打つと大文字で入力できます
+\end{figure}
+\clearpage
+\begin{figure}[ht]
+  \subsection{例題
+    1-5半角入力と全角入力について}
+  Text
+  Editorを開き、半角入力でアルファベットをa〜zまで入力し、その後、全角入力で
+
+  アルファベットa〜zまで入力しよう。全角と半角文字の違いを理解しよう。
+
+  {\bf\large 考え方}
+
+  \centering
+  %[Warning: Image ignored] % Unhandled or unsupported graphics:
+  \includegraphics[width=5.978cm,height=1.773cm]{textbook-img066.png}
+  \raisebox{8mm}{
+    \begin{minipage}{6.762cm}
+      {文字が小さいのが半角}\\
+      {文字が大きいのが全角}
+    \end{minipage}
+  }
+
+  \begin{minipage}{16.578cm}
+
+    \bigskip
+
+    アルファベットのサイズからも分かる通り、大きいサイズが全角で、小さいサイズが半角だと覚えておくといいよ
+  \end{minipage}
+  %[Warning: Image ignored] % Unhandled or unsupported graphics:
+  \begin{minipage}{5.578cm}
+    \includegraphics[width=5.172cm,height=3.924cm]{textbook-img067.png}
+    \flushleft
+    1 Text editorを開こう
+  \end{minipage}
+  \includegraphics[width=1.919cm,height=1.365cm]{textbook-img053.png}
+  \begin{minipage}{7.931cm}
+    \includegraphics[width=7.868cm,height=2.534cm]{textbook-img059.png}
+    \flushleft
+    2
+    キーボードのアイコンになっていることを確認して半角を入力しよう
+  \end{minipage}
+  \begin{minipage}{6.345cm}
+    \includegraphics[width=4.889cm,height=2.596cm]{textbook-img059.png}
+    \flushleft
+    3
+    半角のアルファベットを入力し終えたら右上のキーボードアイコンをクリック
+  \end{minipage}
+  \includegraphics[width=1.919cm,height=1.365cm]{textbook-img053.png}
+  \begin{minipage}{7.524cm}
+    \includegraphics[width=5.471cm,height=2.469cm]{textbook-img062.png}
+    \flushleft
+    4
+    アイコンが変わったことを確認しよう
+  \end{minipage}
+
+  \begin{minipage}{7.173cm}
+    \includegraphics[width=5.889cm,height=3.596cm]{textbook-img069.png}
+    \flushleft
+    5 アイコンを右クリックして、
+
+    全角英数を選択
+  \end{minipage}
+  \includegraphics[width=1.919cm,height=1.365cm]{textbook-img053.png}
+  \begin{minipage}{7.178cm}
+    \includegraphics[width=7.471cm,height=3.469cm]{textbook-img070.png}
+    \flushleft
+    6 入力
+  \end{minipage}
+
+  \vspace{3mm}
+  \begin{minipage}{16.578cm}
+    {\centering\large
+      プログラミングでアルファベット,記号を入力するときは
+      半角(小さい文字)で入力しましょう
+    }
+  \end{minipage}
+
+  \flushleft
+  {\bfseries 問題 1-5}
+
+  Text editorで半角A〜Zと全角A〜Zを入力しよう
+
+  ヒント
+
+
+  英字入力時にshiftキーを押しながらアルファベットキーを打つと大文字で入力できます
+\end{figure}
+\clearpage
+\begin{figure}[t]
+  \subsection{ブラウザでけんさくをしよう}
+  ブラウザを開いてけんさくをしよう。ブラウザを使用するとウェブサイトを開くことができます。もし、困ったことがあったら自分でけんさくをできるように使い方を覚えておきましょう。
+
+  \subsection{例題 1-6
+    ブラウザ立ち上げとマウスそうさについて}
+  ブラウザを立ち上げ、好きなものを調べよう
+
+  {\bf\large 考え方}
+
+  \begin{minipage}{\textwidth}
+    \begin{minipage}{6.204cm}
+      \includegraphics[width=5.426cm,height=2.849cm]{textbook-img071.png}
+      1,デスクトップの左上のアイコンを左クリック
+    \end{minipage}
+    \includegraphics[width=1.505cm,height=1.707cm]{textbook-img073.png}
+    \begin{minipage}{8.233cm}
+      \includegraphics[width=8.373cm,height=3.193cm]{textbook-img075.png}
+      2,
+      ブラウザが立ち上がり、赤で囲われている部分を左クリック
+    \end{minipage}
+  \end{minipage}
+
+  \hfill\begin{minipage}{7.78cm}
+    {\centering
+      \includegraphics[width=1.707cm,height=1.505cm]{textbook-img074.png}
+    }\\
+    \includegraphics[width=7.742cm,height=3.771cm]{textbook-img072.png}
+    3,
+    キーボードでけんさくしたいワード　を入力しよう。入力し終えたらenterキーを押そう
+  \end{minipage}
+
+  \vspace{70mm}
+
+\end{figure}
+\clearpage
+\begin{figure}
+  Figure~\ref{seq:refFigure15}のように赤い四角で囲われているところにけんさくしたい言葉を入れてエンターキーを押すとけんさくができます。例えば”ねこ”とけんさくしてみましょう。
+  \centering
+  {\upshape
+    \includegraphics[width=12.023cm,height=4.447cm]{textbook-img077.png}
+
+    Figure{\refstepcounter{Figure}\theFigure\label{seq:refFigure15}}: けんさくバー}
+
+
+  \flushleft
+  けんさくするとFigure~\ref{seq:refFigure16}このような感じになります。青線で囲んであるところは今けんさくした言葉です。赤線で囲われている\textbf{画像}をクリックすると画像をけんさくできます。クリックしてみましょう。
+
+
+  \centering
+  {\upshape
+    \includegraphics[width=12.123cm,height=4.299cm]{textbook-img078.png}
+    \newline
+    Figure {\refstepcounter{Figure}\theFigure\label{seq:refFigure16}}:
+    ”ねこ”けんさく結果\\
+    けんりの関けいで画像をぼかしてあります}
+
+  \flushleft
+  Figure~\ref{seq:refFigure17}のように”ねこ”の画像がたくさんでてきました。けんさくしたい言葉のけんさく結果を画像できました。\textbf{Web}をクリックすると先ほどのFigure~\ref{seq:refFigure16}のようなホームページけんさくに戻れます。
+
+
+  \centering
+  \begin{minipage}{13.762cm}
+    \includegraphics[width=13.892cm,height=5.156cm]{textbook-img079.png}
+
+    Figure {\refstepcounter{Figure}\theFigure\label{seq:refFigure17}}:
+    ”ねこ”画像けんさく結果
+  \end{minipage}
+
+  \flushleft
+  {\bfseries
+    問題 1-6}
+
+  \ \ 自分の好きなキーワードをけんさくしてみよう
+
+\end{figure}
+\clearpage
+\begin{figure}[t]
+  \subsection{例題 1-7
+    キーボード入力の練習をしよう}
+  ブラウザで”
+  Etyping”とけんさくし、キーボードタイピングサイトでタイピングに慣れよう
+
+  \textbf{考え方}
+
+  \textbf{タイピング}\ \ ・・・キーボードで文字を入力すること\ \
+  \begin{minipage}{\textwidth}
+    \raisebox{30mm}{		\begin{minipage}{0.65\textwidth}
+        パソコンでの文字入力はローマ字入力が基本です。
+        けんさくなどをしたいとき、キーボードで文字を入力します。
+        今回はタイピング練習サイト”Etyping”でタイピングを
+        練習しましょう。
+
+        \includegraphics[width=8.087cm,height=2.676cm]{textbook-img081.png}
+        \includegraphics[width=2.546cm,height=2.509cm]{textbook-img082.png}
+      \end{minipage} }
+    \includegraphics[width=4.928cm,height=6.003cm]{textbook-img080.png}
+  \end{minipage}
+
+  \centering
+
+
+  {\centering
+    \textbf{まずはタイピングゲームを開こう}
+    \par}
+
+  \centering
+
+  \begin{minipage}{5.695cm}
+    \includegraphics[width=5.523cm,height=4.249cm]{textbook-img071.png}
+    1 左上のアイコンをクリックしよう
+  \end{minipage}
+  \includegraphics[width=2.094cm,height=1.771cm]{textbook-img084.png}
+  \begin{minipage}{6.582cm}
+    \includegraphics[width=6.985cm,height=4.479cm]{textbook-img083.png}
+    2 けんさくらんに”Etyping”と入力しenterを押そう
+  \end{minipage}
+
+
+  \begin{minipage}{6.582cm}
+    \includegraphics[width=6.796cm,height=7.029cm]{textbook-img086.png}
+    3 サイトに入りましょう。赤わくで囲われているところをクリックします。
+  \end{minipage}
+  \begin{minipage}{8.482cm}
+    \includegraphics[width=8.714cm,height=2.163cm]{textbook-img085.png}
+    赤線で線が引かれているところ、黒い四角で囲んであるアイコンをよく確かめてください。
+  \end{minipage}
+
+
+
+
+
+
+  \centering
+
+
+
+\end{figure}
+\clearpage
+
+\begin{figure}
+  \textbf{考え方(続き)}
+
+
+
+  \centering
+
+  \includegraphics[width=12.294cm,height=8.091cm]{textbook-img087.png}
+
+
+  \begin{minipage}{4.252cm}
+    4 ホームページが開けたら
+    黒で囲んである
+
+    \textbf{今すぐチェック!}
+
+    をクリックしよう
+
+  \end{minipage}
+\end{figure}
+
+
+
+
+
+\begin{figure}
+  \centering
+  \includegraphics[width=12.162cm,height=8.005cm]{textbook-img088.png}
+
+  \begin{minipage}{4.252cm}
+    5 黒い四角で囲んである
+
+    \textbf{今すぐチェック!}
+
+    をもう一度クリックします。
+  \end{minipage}
+\end{figure}
+
+\clearpage
+\begin{figure}[t]
+  \subsection{ 考え方（続き）}
+
+  \centering
+  \includegraphics[width=9.719cm,height=6.396cm]{textbook-img091.png}
+  \raisebox{40mm}{\begin{minipage}{4.252cm}
+      6 黒い四角で囲んである
+
+      \textbf{スタート}
+
+      をクリックします。
+    \end{minipage}
+  }
+
+  \bigskip
+  \includegraphics[width=9.786cm,height=6.442cm]{textbook-img090.png}
+  \raisebox{40mm}{\begin{minipage}{4.88cm}
+      7　キーボードのスペースキー
+
+      を押すとゲームがスタートします
+
+
+      \bigskip
+    \end{minipage}
+  }
+
+  \bigskip
+
+
+  \bigskip
+
+  \includegraphics[width=9.895cm,height=6.512cm]{textbook-img089.png}
+  \raisebox{30mm}{\begin{minipage}{4.88cm}
+      ８　ゲームでは黒で囲んである文字をキーボードで入力します。
+
+
+      \bigskip
+
+      キーの位置は画面にオレンジで色がついています。
+
+
+      \bigskip
+
+      慣れてきたら、オレンジになっている指でキーボードを押せるように練習してみましょう。
+
+
+      \bigskip
+    \end{minipage}
+  }
+
+  \bigskip
+  \bigskip
+  \bigskip
+  \bigskip
+\end{figure}
+\clearpage
+\begin{figure}[t]
+  \subsection{例題 1-8
+    画像けんさくし、画像を保存しよう}
+  Documentsフォルダに自分の名前のフォルダを作り、さらにその中にkuma、usagi、inuフォルダを作成、そのフォルダに画像けんさくで得たクマ、うさぎ、犬の画像をそれぞれ対応するフォルダに保存しよう
+
+  \textbf{考え方}
+
+
+  \bigskip
+
+
+
+
+  \centering
+  \begin{minipage}{\textwidth}
+    \begin{minipage}{5.582cm}
+      \includegraphics[width=5.413cm,height=5.461cm]{textbook-img092.png}
+    \end{minipage}
+    \begin{minipage}{3.582cm}
+      \includegraphics[width=1.505cm,height=1.707cm]{textbook-img073.png}
+    \end{minipage}
+    \begin{minipage}{5.582cm}
+      \includegraphics[width=3.387cm,height=3.387cm]{textbook-img044.png}
+    \end{minipage}
+  \end{minipage}
+
+
+  \flushleft
+  {\bfseries
+    フォルダに画像を保存しよう}
+
+  ブラウザの画像けんさくしたいものはラズベリーパイのフォルダ内に保存することができる
+
+  画像と関連のあるフォルダ名にしておくと、どのような画像が保存されているのかわかりやすいよ
+
+
+
+  \begin{minipage}{\textwidth}
+    \begin{minipage}{6.582cm}
+      \includegraphics[width=5.401cm,height=4.152cm]{textbook-img093.png}\\
+      1 例題の方法で自分の名前のフォルダをDocuments内に作成しよう
+    \end{minipage}
+    \begin{minipage}{3.582cm}
+      \raisebox{25mm}{\includegraphics[width=1.505cm,height=1.707cm]{textbook-img073.png}}
+    \end{minipage}
+    \begin{minipage}{6.582cm}
+      \includegraphics[width=5.995cm,height=3.475cm]{textbook-img094.jpg}\\
+      2 自分のフォルダをダブルクリックし、その中に上の画像のように３つのフォルダを作成
+    \end{minipage}
+  \end{minipage}
+
+
+  \begin{minipage}{\textwidth}
+    \begin{minipage}{7.033cm}
+      \includegraphics[width=7.049cm,height=5.554cm]{textbook-img096.png}\\
+      3 ブラウザを立ち上げてくまをけんさくし、上の画像の赤色で囲われた”画像”をクリック
+    \end{minipage}
+    \begin{minipage}{3.582cm}
+      \raisebox{25mm}{\includegraphics[width=1.505cm,height=1.707cm]{textbook-img073.png}}
+    \end{minipage}
+    \begin{minipage}{6.582cm}
+      \includegraphics[width=6.468cm,height=5.406cm]{textbook-img095.png}\\
+      4 画像けんさくで好きな画像上で右クリックをし”名前をつけて保存”をクリック
+    \end{minipage}
+  \end{minipage}
+
+
+\end{figure}
+
+
+
+
+\clearpage
+\begin{figure}[t]
+  \textbf{考え方（続き）}
+
+
+
+  \centering
+  \begin{minipage}{\textwidth}
+    \begin{minipage}{7.289cm}
+      \includegraphics[width=6.8cm,height=3.48cm]{textbook-img097.png}\\
+      5 \ 名前を変更
+    \end{minipage}
+    \begin{minipage}{1.582cm}
+      \raisebox{25mm}{\includegraphics[width=1.505cm,height=1.707cm]{textbook-img073.png}}
+    \end{minipage}
+    \begin{minipage}{6.582cm}
+      \includegraphics[width=8.375cm,height=2.448cm]{textbook-img098.png}\\
+      6 \ 自分の名前フォルダをダブルクリック
+    \end{minipage}
+  \end{minipage}
+
+
+  \bigskip
+
+  \begin{minipage}{\textwidth}
+    \begin{minipage}{6.582cm}
+      \includegraphics[width=6.671cm,height=2.314cm]{textbook-img100.png}\\
+      7 \ “kuma”フォルダをダブルクリック
+    \end{minipage}
+    \begin{minipage}{2.582cm}
+      \raisebox{25mm}{\includegraphics[width=1.505cm,height=1.707cm]{textbook-img073.png}}
+    \end{minipage}
+    \begin{minipage}{6.582cm}
+      \includegraphics[width=7.668cm,height=4.023cm]{textbook-img099.png}\\
+      8 \ 名前と保存場所が決まったら右下の保存をクリック
+    \end{minipage}
+  \end{minipage}
+
+
+  \bigskip
+
+
+  \begin{minipage}{\textwidth}
+    \begin{minipage}{7.882cm}
+      \includegraphics[width=7.872cm,height=3.54cm]{textbook-img102.png}\\
+      9 \ kumaフォルダを開き、画像が保存されているか、確認しよう
+    \end{minipage}
+    \begin{minipage}{2.582cm}
+      \raisebox{25mm}{\includegraphics[width=1.505cm,height=1.707cm]{textbook-img073.png}}
+    \end{minipage}
+    \begin{minipage}{6.582cm}
+      \includegraphics[width=6.71cm,height=4.228cm]{textbook-img101.png}\\
+      10 うさぎで検索し好きな画像を保存しよう
+    \end{minipage}
+  \end{minipage}
+
+  \vspace{60mm}
+
+\end{figure}
+
+
+
+\bigskip
+
+
+
+\clearpage
+
+\begin{figure}[t]
+  \textbf{考え方(続き)}
+
+
+
+  \centering
+  \begin{minipage}{\textwidth}
+    \begin{minipage}{7.882cm}
+      \includegraphics[width=7.811cm,height=4.053cm]{textbook-img103.png}\\
+      11 \ 同じように保存フォルダと名前を決めて保存しよう
+    \end{minipage}
+    \begin{minipage}{2.582cm}
+      \raisebox{25mm}{\includegraphics[width=1.505cm,height=1.707cm]{textbook-img073.png}}
+    \end{minipage}
+    \begin{minipage}{6.257cm}
+      \includegraphics[width=6.041cm,height=6.094cm]{textbook-img092.png}\\
+      12 \ 犬も同様
+    \end{minipage}
+  \end{minipage}
+
+
+  \bigskip
+
+
+  \begin{minipage}{\textwidth}
+    \begin{minipage}{7.22cm}
+      \includegraphics[width=6.911cm,height=3.729cm]{textbook-img105.png}\\
+      13 犬も同様
+    \end{minipage}
+    \begin{minipage}{2.582cm}
+      \raisebox{25mm}{\includegraphics[width=1.505cm,height=1.707cm]{textbook-img073.png}}
+    \end{minipage}
+    \begin{minipage}{7.665cm}
+      \includegraphics[width=7.527cm,height=3.905cm]{textbook-img104.png}\\
+      14 \ 保存成功
+    \end{minipage}
+  \end{minipage}
+
+
+  \centering
+\end{figure}
+
+\bigskip
+
+{\bfseries
+  問題 1-7}
+
+自分の好きなものの画像を保存し、自分で作成したフォルダに入れよう。
+
+\clearpage
+
+\begin{figure}
+  \subsection{かべ紙を自分の好きなものに変えよう}
+  \subsection{例題 1-9 かべ紙を変えよう}
+  保存した画像をデスクトップのかべ紙にしよう
+
+  \textbf{考え方}
+
+
+  \bigskip
+
+
+
+  \centering
+  \begin{minipage}{\textwidth}
+    \begin{minipage}{7.737cm}
+      デスクトップのかべ紙は変える
+      ことができるよ
+      いつも目に入るものだから
+      自分好みにカスタマイズして
+      気分良く勉強できる環境にしよう
+      \begin{minipage}{7.739cm}
+        \includegraphics[width=5.892cm,height=4.864cm]{textbook-img107.png}\\
+        1 デスクトップ上で右クリックし\\
+        デスクトップの設定をクリック
+      \end{minipage}
+    \end{minipage}
+    \begin{minipage}{2.582cm}
+      \raisebox{25mm}{\includegraphics[width=1.505cm,height=1.707cm]{textbook-img073.png}}
+    \end{minipage}
+    \begin{minipage}{7.737cm}
+      \includegraphics[width=2.712cm,height=2.509cm]{textbook-img082.png}
+      \hfill
+      \includegraphics[width=3.193cm,height=2.631cm]{textbook-img106.png}\\
+      \includegraphics[width=7.324cm,height=4.539cm]{textbook-img108.png}\\
+      \begin{minipage}{8.035cm}
+        2 上の画像のようにクリック
+      \end{minipage}
+    \end{minipage}
+
+  \end{minipage}
+
+  \begin{minipage}{\textwidth}
+
+    \begin{minipage}{6.376cm}
+      \includegraphics[width=6.347cm,height=4.084cm]{textbook-img110.png}\\
+      3 デスクトップにしたい画像を選ぼう
+    \end{minipage}
+    \begin{minipage}{2.582cm}
+      \raisebox{25mm}{\includegraphics[width=1.505cm,height=1.707cm]{textbook-img073.png}}
+    \end{minipage}
+    \begin{minipage}{5.737cm}
+      \includegraphics[width=7.145cm,height=4.451cm]{textbook-img109.png}\\
+      4 選び終えたらOKをクリック
+    \end{minipage}
+
+  \end{minipage}
+
+  \bigskip
+
+
+  \flushleft
+  \begin{minipage}{6.134cm}
+    \includegraphics[width=6.347cm,height=2.945cm]{textbook-img111.png}\\
+    5 デスクトップが変わっているよ
+  \end{minipage}
+
+  \bigskip
+
+  {\bfseries
+    問題 1-8}
+
+  デスクトップのかべ紙を好きなものに変えてみよう。画像はブラウザでけんさくしてね
+\end{figure}
+
+
+\bigskip
+
+\clearpage
+\end{document}
