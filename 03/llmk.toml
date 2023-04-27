@@ -3,4 +3,4 @@ source = "text03.tex"
 sequence = ["latex"] # Skip bibtex and makeindex
 
 [programs.latex]
-command = "TEXINPUTS='../texmf//:' lualatex"
+command = "lualatex --cnf-line='TEXINPUTS=../texmf//:'"
