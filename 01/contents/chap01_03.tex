@@ -1,0 +1,362 @@
+\documentclass[a4paper,12pt]{jarticle}
+\input ./chap01_preamble.tex
+\graphicspath{%
+  {../text01-img/}%
+}
+% !TEX root = ./chap01_03.tex
+\begin{document}
+\section[ラズベリーパイになれよう（２）]{ラズベリーパイになれよう（２）}
+\subsection{写真をさつえいしよう}
+\subsection{例題 1-10
+  ウェブカメラで写真をさつえいしよう}
+ウェブカメラを使用して画像をさつえいをします。
+
+まずは、ラズベリーパイにウェブカメラを接続しましょう。キーボードやマウスと同じように、ウェブカメラのUSBのたんしをラズベリーパイのUSBたんしへ差し込みます。
+
+
+
+\begin{figure}[ht]
+  \centering
+  \begin{minipage}{8.528cm}
+    {\upshape
+      \includegraphics[width=7.904cm,height=5.928cm]{textbook-img112.jpg}
+      \newline
+      Figure \stepcounter{Figure}{\theFigure}: Webカメラの接続}
+  \end{minipage}
+\end{figure}
+ウェブカメラを接続したら、ラズベリーパイからウェブカメラの画像を取得してみましょう。左上のラズベリーのアイコンをクリックします。そこから、サウンドとメディアを選択しVLCメディアプレーヤーをクリックします。
+
+\begin{figure}[hb]
+  \centering
+  \begin{minipage}{10.917cm}
+    {\upshape
+      \includegraphics[width=10.232cm,height=8.715cm]{textbook-img113.png}
+      \newline
+      Figure \stepcounter{Figure}{\theFigure}: メニューからVLC起動}
+  \end{minipage}
+\end{figure}
+\clearpage
+\begin{figure}[ht]
+  Figure~\ref{seq:refFigure20}のようにVLCメディアプレーヤーが起動します。
+
+
+
+  \centering
+  \begin{minipage}{9.684cm}
+    \includegraphics[width=9.948cm,height=5.364cm]{textbook-img114.jpg}
+
+
+    Figure {\refstepcounter{Figure}\theFigure\label{seq:refFigure20}}: VLC起動画面
+  \end{minipage}
+  \flushleft
+  VLCが起動したら確認メッセージが出てきます。
+
+  \textbf{\textcolor[rgb]{1.0,0.2,0.2}{赤わくで囲われているチェックボックスにチェックマーク(\CheckedBox)}}がついていないことを確認して続けるをクリックしてください。
+
+
+
+  \centering
+  \begin{minipage}{7.186cm}
+    {\upshape
+      \includegraphics[width=7.2cm,height=7.0cm]{textbook-img115.png}
+      \newline
+      Figure \stepcounter{Figure}{\theFigure}: 確認メッセージ}
+  \end{minipage}
+
+  \flushleft
+  カメラを開きます。Figure~\ref{seq:refFigure22}のように\textbf{メディア}をクリックして\textbf{キャプチャーデバイスを開く}をクリックします。
+
+
+  \centering
+  \begin{minipage}{8.096cm}
+    {\upshape
+      \includegraphics[width=8.0cm,height=7.0cm]{textbook-img116.png}
+      \newline
+      Figure {\refstepcounter{Figure}\theFigure\label{seq:refFigure22}}:
+      キャプチャデバイスをひらく}
+  \end{minipage}
+\end{figure}
+\clearpage
+
+\begin{figure}[ht]
+  Figure~\ref{seq:refFigure23}のような画面がでてきます。
+  赤線で囲われている\textbf{キャプチャーモード}を
+  \textbf{Video camera}にして
+  青線で囲われている\textbf{再生}をクリックします。
+
+
+  \centering
+  \begin{minipage}{9.119cm}
+    \includegraphics[width=8.915cm,height=6.426cm]{textbook-img117.png}
+    Figure {\refstepcounter{Figure}\theFigure\label{seq:refFigure23}}:
+    キャプチャーデバイスを開く画面
+  \end{minipage}
+
+  \flushleft
+  しばらくすると、カメラの画像が見えるようになります。
+
+  \centering
+  \begin{minipage}{9.125cm}
+    {\upshape
+      \includegraphics[width=8.966cm,height=6.274cm]{textbook-img118.png}
+      \newline
+      Figure \stepcounter{Figure}{\theFigure}: スナップショット撮影}
+  \end{minipage}
+  \flushleft
+
+  次に、カメラでさつえいしてみましょう。ビデオをクリックしてスナップショットを撮るをクリックします。
+
+
+  \centering
+  \begin{minipage}{9.156cm}
+    \includegraphics[width=9.042cm,height=6.426cm]{textbook-img119.png}
+    {\upshape
+      Figure \stepcounter{Figure}{\theFigure}: カメラ入力}
+  \end{minipage}
+\end{figure}
+\clearpage
+\begin{figure}
+  黒線の四角に囲われたように保存場所が表示され、そこへ画像が保存されます。
+
+  \centering
+  \begin{minipage}{9.206cm}
+    \includegraphics[width=9.017cm,height=6.248cm]{textbook-img120.png}
+    Figure \stepcounter{Figure}{\theFigure}: スナップショット保存
+  \end{minipage}
+
+
+
+  \bigskip
+  \flushleft
+
+  初期状態ではPicturesの下に保存されます。確認してみましょう。
+
+
+
+  \centering
+  \begin{minipage}{9.345cm}
+    \includegraphics[width=9.22cm,height=5.306cm]{textbook-img121.jpg}
+
+    Figure \stepcounter{Figure}{\theFigure}: 画像撮影場所
+  \end{minipage}
+
+
+  \bigskip
+
+  \flushleft
+  とった画像を確認してみましょう。Figure~\ref{seq:refFigure28}の赤わくで囲ってあるものがとった写真です。ダブルクリックをすると、画像を開いて見ることができます。
+
+
+
+  \centering
+  \begin{minipage}{9.162cm}
+    {\upshape
+      \includegraphics[width=9.125cm,height=5.182cm]{textbook-img122.jpg}
+      \newline
+      Figure {\refstepcounter{Figure}\theFigure\label{seq:refFigure28}}:
+      とった画像を開く}
+  \end{minipage}
+\end{figure}
+
+\bigskip
+
+\clearpage
+
+\begin{figure}[ht]
+  \subsection{例題 1-11画像に絵をかこう}
+
+  \bigskip
+
+  “GIMP”ソフトを立ち上げて、色付きの筆で自分の顔写真に絵をかこう
+
+  画像を開いて、色を選択、お絵かきツールの筆を選んで書くよ
+
+  \textbf{考え方}
+
+
+
+  \begin{minipage}{\textwidth}
+    \centering
+    \includegraphics[width=6.112cm,height=2.284cm]{textbook-img123.png}
+    \begin{minipage}[b]{8.617cm}
+
+      本格的な画像編集、加工ソフトの
+
+      GIMPを使って自分の顔写真などの
+
+      画像を編集してみよう
+    \end{minipage}
+
+
+  \end{minipage}
+  \bigskip
+
+
+
+
+  \begin{minipage}{\textwidth}
+    \centering
+    \begin{minipage}{5.852cm}
+      \includegraphics[width=5.359cm,height=5.258cm]{textbook-img124.png}\\
+      １ 編集したい画像ファイルを
+
+      右クリックしGIMPをクリック
+    \end{minipage}
+    \includegraphics[width=1.489cm,height=1.365cm]{textbook-img128.png}
+    \begin{minipage}{7.975cm}
+      \includegraphics[width=7.65cm,height=4.426cm]{textbook-img125.png}\\
+      2 画像編集モードになるよ
+    \end{minipage}
+
+
+  \end{minipage}
+  \bigskip
+
+
+
+
+  \begin{minipage}{\textwidth}
+    \begin{minipage}{5.984cm}
+      \includegraphics[width=5.971cm,height=5.738cm]{textbook-img129.png}\\
+      ３ 赤い四角で囲まれている
+
+      部分をクリック
+
+
+      \bigskip
+    \end{minipage}
+    \hfill
+    \begin{minipage}{8.984cm}
+      \includegraphics[width=8.654cm,height=4.325cm]{textbook-img126.png}\\
+      ４ 色を変更しよう
+
+      好きな色を選んでOKを押します
+
+
+      \bigskip
+      \begin{minipage}{5.984cm}
+        ５
+        今回は色を赤にしました。赤く囲んであるところの色が赤に変わっていることを確認してください。
+
+
+      \end{minipage}
+    \end{minipage}
+  \end{minipage}
+
+  \includegraphics[width=1.866cm,height=4.15cm]{textbook-img127.png}
+  \begin{minipage}[b]{6.663cm}
+    ６ 次にお絵かきツールを選びます。
+
+    青色で囲われているところをダブルクリックしてください。これで色付きの筆が使えるようになります。
+
+
+    \bigskip
+
+  \end{minipage}
+\end{figure}
+\clearpage
+\begin{figure}[ht]
+  \textbf{考え方(続き)}
+
+  \begin{minipage}{\textwidth}
+    \centering
+    \begin{minipage}{5.76cm}
+      \includegraphics[width=5.05cm,height=4.796cm]{textbook-img130.png}\\
+      ７
+      ダブルクリックしたツールはすこし色が変わります。これで筆が使えるようになりました。
+    \end{minipage}
+    \hfill
+    \begin{minipage}{10.2cm}
+      \includegraphics[width=10.134cm,height=5.697cm]{textbook-img131.png}\\
+      ８　左クリックをおしながら画像の上を移動させると筆でお絵かきができます。いたずら書きをしてみてください
+    \end{minipage}
+  \end{minipage}
+
+
+  \bigskip
+
+  \begin{minipage}{\textwidth}
+    \begin{minipage}{6.984cm}
+      \includegraphics[width=6.228cm,height=6.618cm]{textbook-img132.png}\\
+      ９　間違えてしまって、もとに戻したいとなったらメニューの編集からもとに戻すをクリックします。
+    \end{minipage}
+    \hfill
+    \begin{minipage}{8.966cm}
+      \includegraphics[width=8.881cm,height=4.997cm]{textbook-img133.png}\\
+      １０　他のにもたくさんツールはあります。スプレー、鉛筆を試してみよう。書き方は一緒で左クリックを押しながら移動だよ
+    \end{minipage}
+  \end{minipage}
+\end{figure}
+
+~
+
+\vfill
+\clearpage
+\begin{figure}
+  \textbf{考え方(続き)}
+
+
+  編集しおわったら書き出しをします。
+
+  \centering
+  \begin{minipage}{13.237cm}
+    \includegraphics[width=13.178cm,height=7.408cm]{textbook-img138.png}\\
+    １１ 編集がおわったら
+
+    ファイルから名前を付けてエクスポートをクリック
+  \end{minipage}
+
+  \bigskip
+
+
+  \begin{minipage}{\textwidth}
+    \begin{minipage}{7.7cm}
+      \includegraphics[width=7.615cm,height=5.209cm]{textbook-img137.png}\\
+      １２
+      下のエクスポートをクリック（.jpegファイルから編集したならば12へ）
+    \end{minipage}
+    \includegraphics[width=1.919cm,height=1.365cm]{textbook-img135.png}
+    \begin{minipage}{7.786cm}
+      \includegraphics[width=7.352cm,height=5.756cm]{textbook-img136.png}\\
+      １３ 置き換えるをクリック
+    \end{minipage}
+  \end{minipage}
+
+  \bigskip
+
+
+  \begin{minipage}{\textwidth}
+    \begin{minipage}{8.074cm}
+      \includegraphics[width=7.721cm,height=5.26cm]{textbook-img134.png}\\
+      １４ エクスポートをクリック
+    \end{minipage}
+    \includegraphics[width=1.919cm,height=1.365cm]{textbook-img135.png}
+    \begin{minipage}{7.328cm}
+      \includegraphics[width=7.061cm,height=5.653cm]{textbook-img139.png}\\
+      １５
+      画像ファイルを開いて確認してみよう
+    \end{minipage}
+  \end{minipage}
+
+
+
+\end{figure}
+\clearpage{\bfseries
+  問題 1-9}
+
+”GIMP”を使って、自分の顔写真をさらに編集、加工してみよう
+
+\begin{figure}[ht]
+  \centering
+  \begin{minipage}{9.082cm}
+    {\upshape
+      \includegraphics[width=9.082cm,height=5.105cm]{textbook-img131.png}
+      \newline
+      Figure \stepcounter{Figure}{\theFigure}: GIMP画像編集}
+  \end{minipage}
+\end{figure}
+
+~
+\vfill
+\clearpage
+\end{document}
