@@ -28,6 +28,7 @@ WORKDIR /install-tl-unx
 RUN apk add --no-cache \
   fontconfig \
   ghostscript \
+  inkscape \
   perl \
   tar \
   wget \
