@@ -48,7 +48,7 @@ geti2c_lux_init 		<#blue#; 照度センサ tsl2572 を初期化する#>
 のようにすることによって、\code{rpz\_temp} に気温 (temperature)、 \code{rpz\_hum} に湿度(humidity)、\code{rpz\_press} に気圧(pressure)が入ります。
 
 次は TSL2572 に関係する行を説明します。\\
-\code{init\_lux}
+\code{geti2c\_lux\_init}
 によって TSL2572 が初期化されます。BME280 のときと違って返り値を取らず、エラーチェック
 をする必要が無いことに気をつけましょう。実際には感度の設定等が行われます。詳しく知りたい方
 はデータシート（英語）を読んでみましょう。
