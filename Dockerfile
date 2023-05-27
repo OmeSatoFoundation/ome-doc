@@ -24,7 +24,6 @@
 
 FROM alpine:3.15.0
 ENV PATH /usr/local/bin/texlive:$PATH
-WORKDIR /install-tl-unx
 RUN apk add --no-cache \
   fontconfig \
   ghostscript \
@@ -33,6 +32,27 @@ RUN apk add --no-cache \
   tar \
   wget \
   xz
+
+# Install fonts
+RUN mkdir /usr/share/fonts/TTF \
+    && mkdir ~/fonts
+WORKDIR ~/fonts
+RUN wget https://github.com/liberationfonts/liberation-fonts/files/7261482/liberation-fonts-ttf-2.1.5.tar.gz \
+    && tar -zxvf liberation-fonts-ttf-2.1.5.tar.gz \
+    && mv liberation-fonts-ttf-2.1.5/LiberationMono*.ttf /usr/share/fonts/TTF
+RUN wget https://moji.or.jp/wp-content/ipafont/IPAexfont/IPAexfont00401.zip \
+    && unzip -o IPAexfont00401.zip \
+    && mv IPAexfont00401/*.ttf /usr/share/fonts/TTF
+RUN wget https://noto-website-2.storage.googleapis.com/pkgs/NotoSansCJKjp-hinted.zip \
+    && unzip NotoSansCJKjp-hinted.zip \
+    && wget https://noto-website-2.storage.googleapis.com/pkgs/NotoSerifCJKjp-hinted.zip \
+    && unzip -o NotoSerifCJKjp-hinted.zip \
+    && mv *.otf /usr/share/fonts/TTF
+RUN cd ~/ \
+    && rm -rf fonts \
+    && fc-cache -f
+
+WORKDIR /install-tl-unx
 COPY ./prod/texlive.profile ./
 RUN wget -nv https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
 RUN tar -xzf ./install-tl-unx.tar.gz --strip-components=1
