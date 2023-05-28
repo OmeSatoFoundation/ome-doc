@@ -46,7 +46,7 @@
   \item SDカード(16GB)
   \item でんげんケーブル
   \item HDMIケーブル
-  \item キーボード
+  \item GPIOエクステンダー
   \item ヘッドセット
   \item マウス
   \item センサーボード
@@ -56,15 +56,15 @@
 \clearpage
 
 \begin{tabular}{cc}
-  \includegraphics[width=6.488cm,height=4.697cm]{textbook-img009.png}
+  \includegraphics[width=6.488cm,height=4.697cm]{textbook-img009-2023.png}
    &
   \includegraphics[width=6.488cm,height=4.697cm]{textbook-img010.png} \\
 
   \includegraphics[width=6.488cm,height=4.697cm]{textbook-img007.png}
    &
-  \includegraphics[width=6.488cm,height=4.697cm]{textbook-img008.png} \\
+  \includegraphics[width=6.488cm,height=4.697cm]{textbook-img008-2023.png} \\
 
-  \includegraphics[width=6.488cm,height=4.697cm]{textbook-img005.png}
+  \includegraphics[width=6.488cm,height=4.697cm]{textbook-img005-2023.png}
    &
   \includegraphics[width=6.488cm,height=4.697cm]{textbook-img006.png} \\
 
@@ -79,13 +79,12 @@
 
 %\liststyleLv
 \subsection{ラズベリーパイについて}
-イギリスのラズベリーパイ財団というグループが開発したカードと同じくらいの大きさのコンピュータです。ラズベリーパイは短くラズパイとも呼ばれています。
+イギリスのラズベリーパイ財団というグループが開発したキーボード一体型のコンピュータです。ラズベリーパイは短くラズパイとも呼ばれています。
 
 \subsection{とくちょう}
 %\liststyleLvi
 \begin{itemize}
-  \item 小さい( UNO 、トランプ、 Suica
-        などと同じ大きさ)
+  \item キーボード一体型で、キーボードが必要ない
   \item 普通のパソコンのように使える
   \item (動画再生やゲームもできます)
   \item
@@ -144,9 +143,9 @@
   \centering
   \begin{minipage}{12.204cm}
     {\upshape
-      \includegraphics[width=0.6\textwidth]{connections01.png}
+      \includegraphics[width=0.6\textwidth]{connections01-2023.jpg}
       \newline
-      Figure \stepcounter{Figure}{\theFigure}: 接続のかんたんな図}
+      Figure \stepcounter{Figure}{\theFigure}: 接続の全体図}
 
   \end{minipage}
 \end{figure}
@@ -157,14 +156,14 @@
 
         \begin{itemize}
           \item
-                ラズベリーパイとモニタをHDMIケーブルで接続します。Figure~\ref{seq:refFigure1}、Figure~\ref{seq:refFigure2}を参考にしてください。お家でやる場合は、モニタもしくはTVによってはHDMIの差込口の場所が異なる場合があります。説明書等を別途参照してください\textbf{。}
+                ラズベリーパイとモニタをHDMIケーブルで接続します。右側のHDMIポートを使用してください。Figure~\ref{seq:refFigure1}、Figure~\ref{seq:refFigure2}を参考にしてください。お家でやる場合は、モニタもしくはTVによってはHDMIの差込口の場所が異なる場合があります。説明書等を別途参照してください\textbf{。}
 
 
                 \begin{figure}[h]
                   \begin{minipage}{0.5\textwidth}
                     {\upshape
                       %[Warning: Image ignored] % Unhandled or unsupported graphics:
-                      \includegraphics[width=5.519cm,height=4.471cm]{textbook-img015.png}
+                      \includegraphics[width=5.519cm,height=3.471cm]{figure222023.pdf}
                       \newline
                       Figure {\refstepcounter{Figure}\theFigure\label{seq:refFigure1}}:
                       ラズベリーパイHDMI接続}
@@ -172,7 +171,7 @@
                   \begin{minipage}{0.5\textwidth}
                     {\upshape
                       %[Warning: Image ignored] % Unhandled or unsupported graphics:
-                      \includegraphics[width=5.519cm,height=4.471cm]{textbook-img016.png}
+                      \includegraphics[width=5.519cm,height=3.471cm]{textbook-img016.png}
                       \newline
                       Figure {\refstepcounter{Figure}\theFigure\label{seq:refFigure2}}:
                       ディスプレイHDMI接続}
@@ -191,7 +190,7 @@
 \begin{figure}[h]
   \begin{minipage}{8.135cm}
     {\upshape
-      \includegraphics[width=8.135cm]{textbook-img017.png}
+      \includegraphics[width=8.135cm]{figure1.10-4.png}
       \newline
       Figure \stepcounter{Figure}{\theFigure}:
       マウス、キーボードの接続}
@@ -208,13 +207,13 @@
 
         \begin{itemize}
           \item
-                microSDカードをラズベリーパイ本体(ウラ面)にさします。小さいのでなくさないように気をつけましょう。
+                microSDカードをラズベリーパイ本体にさします。小さいのでなくさないように気をつけましょう。
 
                 \begin{figure}[h]
                   \centering
                   \begin{minipage}{6.334cm}
                     {\upshape
-                      \includegraphics[width=5.292cm,height=3.545cm]{textbook-img018.png}
+                      \includegraphics[width=5.292cm,height=3.545cm]{figure1.10-5.png}
                       \newline
                       Figure \stepcounter{Figure}{\theFigure}: microSDカードのさしこみ}
                   \end{minipage}
@@ -244,20 +243,20 @@
 
         \begin{itemize}
           \item
-                最後にラズベリーパイのでんげんをいれます。Figure~\ref{seq:refFigure6}のようにラズベリーパイにでんげんケーブルをさしてコンセントへ接続します。赤色のランプがついてディスプレイにラズベリーが表示がされますFigure~\ref{seq:refFigure7}。Figure~\ref{seq:refFigure8}のような画面になったら起動は完了です。
+                最後にラズベリーパイのでんげんをいれます。Figure~\ref{seq:refFigure6}のようにラズベリーパイにでんげんケーブルをさしてコンセントへ接続します。緑色のランプがついてディスプレイにラズベリーが表示がされますFigure~\ref{seq:refFigure7}。
         \end{itemize}
         \begin{figure}
           \centering
           \begin{minipage}{5.228cm}
             {\upshape
-              \includegraphics[width=4.613cm,height=3.856cm]{textbook-img020.png}
+              \includegraphics[width=4.613cm,height=3.856cm]{textbook-img020-2023.png}
               \newline
               Figure {\refstepcounter{Figure}\theFigure\label{seq:refFigure6}}:
               ラズベリーパイでんげん接続}
           \end{minipage}
           \begin{minipage}{5.371cm}
             {\upshape
-              \includegraphics[width=4.782cm,height=3.919cm]{textbook-img021.png}
+              \includegraphics[width=4.782cm,height=3.919cm]{textbook-img0212023.png}
               \newline
               Figure {\refstepcounter{Figure}\theFigure\label{seq:refFigure7}}:
               ラズベリーパイ起動中}
