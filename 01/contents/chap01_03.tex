@@ -7,8 +7,9 @@
 \begin{document}
 \section[ラズベリーパイになれよう（２）]{ラズベリーパイになれよう（２）}
 \subsection{写真をさつえいしよう}
-\subsection{例題 1-10
-  ウェブカメラで写真をさつえいしよう}
+\refstepcounter{Exercise}
+\subsection{\theExercise ウェブカメラで写真をさつえいしよう}
+\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:webcam}
 ウェブカメラを使用して画像をさつえいをします。
 
 まずは、ラズベリーパイにウェブカメラを接続しましょう。キーボードやマウスと同じように、ウェブカメラのUSBのたんしをラズベリーパイのUSBたんしへ差し込みます。
@@ -163,7 +164,8 @@
 \clearpage
 
 \begin{figure}[ht]
-  \subsection{例題 1-11画像に絵をかこう}
+  \refstepcounter{Exercise}
+  \subsection{\theExercise 画像に絵をかこう}
 
   \bigskip
 
@@ -361,8 +363,7 @@
 \hfill
 \vspace{20pt}
 
-{\bfseries
-  問題 1-9}
+\refstepcounter{Question}\theQuestion
 
 ”GIMP”を使って、自分の顔写真をさらに編集、加工してみよう
 
