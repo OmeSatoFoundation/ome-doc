@@ -48,6 +48,26 @@ RUN wget https://noto-website-2.storage.googleapis.com/pkgs/NotoSansCJKjp-hinted
     && wget https://noto-website-2.storage.googleapis.com/pkgs/NotoSerifCJKjp-hinted.zip \
     && unzip -o NotoSerifCJKjp-hinted.zip \
     && mv *.otf /usr/share/fonts/TTF
+
+RUN echo -e '\
+<?xml version="1.0"?>\n\
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">\n\
+<fontconfig>\n\
+    <alias>\n\
+        <family>serif</family>\n\
+        <prefer>\n\
+            <family>Noto Serif CJK JP</family>\n\
+        </prefer>\n\
+    </alias>\n\
+    <alias>\n\
+        <family>sans-serif</family>\n\
+        <prefer>\n\
+            <family>Noto Sans CJK JP</family>\n\
+        </prefer>\n\
+    </alias>\n\
+</fontconfig>\
+' >> /etc/fonts/local.conf
+
 RUN cd ~/ \
     && rm -rf fonts \
     && fc-cache -f
