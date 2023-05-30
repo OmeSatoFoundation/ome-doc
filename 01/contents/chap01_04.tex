@@ -82,8 +82,9 @@
 
 \bigskip
 
-\clearpage\subsection{例題
-  1-12ホームページの中身を見てみよう}
+\clearpage
+\refstepcounter{Exercise}
+\subsection{\theExercise ホームページの中身を見てみよう}
 自己紹介ページのテンプレートを見てみよう
 
 先ほどコピーした01フォルダにあるself\_intro.htmlをブラウザで開いてみよう
@@ -134,8 +135,7 @@
   \end{minipage}
 
 \end{figure}
-{\bfseries
-問題 1-10}
+\refstepcounter{Question}\theQuestion\label{Q:hasAnswer04-1}
 
 01フォルダを開いて、links.htmlをブラウザで開いてみよう
 
@@ -146,8 +146,8 @@
 
 \clearpage
 \begin{figure}[ht]
-  \subsection{例題
-    1-13ホームページの中身をのぞいてみよう}
+  \refstepcounter{Exercise}
+  \subsection{\theExercise ホームページの中身をのぞいてみよう}
   self\_intro.htmlをテキストエディタで開いてFigure~\ref{seq:refFigure31}のタイトルバーの文字を変更してみよう。タイトルバーはFigure~\ref{seq:refFigure31}のように赤わくで囲われています。
 
 
@@ -299,7 +299,8 @@ Text Editorで開いたら赤線が引かれた
 \vfill
 \clearpage
 \begin{figure}[ht]
-  \subsection{例題 1-14見出しを作ってみよう}
+  \refstepcounter{Exercise}
+  \subsection{\theExercise 見出しを作ってみよう}
 
 
   \centering
@@ -421,8 +422,7 @@ Text Editorで開いたら赤線が引かれた
 
 \vfill
 
-{\bfseries
-  問題 1-11}
+\refstepcounter{Question}\theQuestion\label{Q:hasAnswer04-2}
 
 \begin{itemize}
   \item[]
@@ -616,8 +616,9 @@ Text Editorで開いたら赤線が引かれた
 \clearpage
 %\begin{figure}[ht]
 \flushleft
-\subsection{例題
-  1-15自分の好きな画像をはってみよう}
+\refstepcounter{Exercise}
+\subsection{\theExercise 自分の好きな画像をはってみよう}
+\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:embImginHTML}
 自分のお気に入りの画像を紹介してみよう。
 
 \centering
@@ -725,8 +726,7 @@ Text Editorで開いたら赤線が引かれた
 
 
 
-{\bfseries
-  問題 1-12}
+\refstepcounter{Question}\theQuestion
 
 スパゲッティの画像をウェブカメラでとった画像（教室の風景など）に変更しよう
 
@@ -739,8 +739,7 @@ Text Editorで開いたら赤線が引かれた
   \item
         imgタグをコピーした画像を表示するように変更しよう
 \end{enumerate}
-{\bfseries
-問題 1-13}
+\refstepcounter{Question}\theQuestion\label{Q:hasAnswer04-3}
 
 width,
 heightを変更して画像の大きさを変えてみましょう
@@ -754,7 +753,9 @@ heightを変更して画像の大きさを変えてみましょう
 \end{itemize}
 
 
-\clearpage\subsection{例題 1-16自分のことを紹介しよう}
+\clearpage
+\refstepcounter{Exercise}
+\subsection{\theExercise 自分のことを紹介しよう}
 \centering
 \begin{minipage}{7.788cm}
   \includegraphics[width=7.788cm,height=4.927cm]{textbook-img173.png}
@@ -835,8 +836,7 @@ heightを変更して画像の大きさを変えてみましょう
 
 
 \clearpage
-{\bfseries
-  問題 1-14}
+\refstepcounter{Question}\theQuestion\label{Q:hasAnswer04-4}
 
 他にも紹介項目を追加してみましょう
 
@@ -844,8 +844,7 @@ heightを変更して画像の大きさを変えてみましょう
 \begin{itemize}
   \item ヒント : しゅみ、すきなもの
 \end{itemize}
-{\bfseries
-問題 1-15}
+\refstepcounter{Question}\theQuestion\label{Q:hasAnswer04-5}
 
 顔写真の変更
 
@@ -866,7 +865,9 @@ heightを変更して画像の大きさを変えてみましょう
 
 \bigskip
 
-\clearpage\subsection{例題 1-17ランキングを作ろう}
+\clearpage
+\refstepcounter{Exercise}
+\subsection{\theExercise ランキングを作ろう}
 自分の好きなことを紹介するためにランキングトップ３を作ってみましょう。見出しの変更とランキングに一つ追加する必要があります。
 
 
@@ -991,8 +992,7 @@ heightを変更して画像の大きさを変えてみましょう
 \bigskip
 
 
-{\bfseries
-  問題 1-16}
+\refstepcounter{Question}\theQuestion\label{Q:hasAnswer04-6}
 
 ランキングを追加してみましょう
 
@@ -1009,8 +1009,7 @@ heightを変更して画像の大きさを変えてみましょう
 
 \bigskip
 
-{\bfseries
-  問題 1-17}
+\refstepcounter{Question}\theQuestion\label{Q:hasAnswer04-7}
 
 ヒント
 
@@ -1024,7 +1023,9 @@ heightを変更して画像の大きさを変えてみましょう
 
 \bigskip
 
-\clearpage\subsection{例題 1-18日記を書いてみよう}
+\clearpage
+\refstepcounter{Exercise}
+\subsection{\theExercise 日記を書いてみよう}
 日記を書いてみよう。教室でやっていることを紹介してみよう。
 
 \centering
@@ -1129,9 +1130,7 @@ heightを変更して画像の大きさを変えてみましょう
 
 \includegraphics[width=16.163cm,height=5.057cm]{textbook-img188.png}
 
-{\bfseries
-  問題 1-18}
-
+\refstepcounter{Question}\theQuestion\label{Q:hasAnswer04-8}
 \textbf{{\textless}hr{\textgreater}}タグを使うと横線を引くことができます。日記の一番下に横線を引いてみよう。
 
 ヒント
@@ -1141,8 +1140,7 @@ heightを変更して画像の大きさを変えてみましょう
   \item
         終了タグはhrタグにありません。{\textless}hr{\textgreater}と書いたところに横線が表示されます。
 \end{itemize}
-{\bfseries
-問題 1-19}
+\refstepcounter{Question}\theQuestion\label{Q:hasAnswer04-9}
 
 日記をもう一つ追加してみよう
 
@@ -1153,8 +1151,9 @@ heightを変更して画像の大きさを変えてみましょう
   \item
         タイトル、日付、本文を順番に書いてみよう。
 \end{itemize}
-\clearpage\subsection{例題
-  1-19グループのメンバー表を作ろう}
+\clearpage
+\refstepcounter{Exercise}
+\subsection{\theExercise グループのメンバー表を作ろう}
 グループの友だちのことを表にまとめてみよう。
 
 \centering
@@ -1286,8 +1285,7 @@ heightを変更して画像の大きさを変えてみましょう
 
 \bigskip
 
-{\bfseries
-  問題 1-20}
+\refstepcounter{Question}\theQuestion
 
 表にクラスを追加してみよう。
 
@@ -1299,8 +1297,7 @@ heightを変更して画像の大きさを変えてみましょう
   \item
         みんなのクラスを聞いて、追加してみよう
 \end{enumerate}
-{\bfseries
-問題 1-21}
+\refstepcounter{Question}\theQuestion
 
 TAのことを追加してみよう
 
@@ -1314,8 +1311,8 @@ TAのことを追加してみよう
 
 \clearpage
 
-\subsection{例題
-  1-20自分の好きなホームページを紹介しよう}
+\refstepcounter{Exercise}
+\subsection{\theExercise 自分の好きなホームページを紹介しよう}
 自分のお気に入りのサイトを自分のホームページで紹介しよう。
 
 
@@ -1455,8 +1452,7 @@ ulタグをolタグに変えれば順序をつけることができます。
 \includegraphics[width=14.617cm,height=3.821cm]{textbook-img202.png}
 
 \flushleft
-{\bfseries
-  問題 1-22}
+\refstepcounter{Question}\theQuestion\label{Q:hasAnswer04-10}
 
 
 ホームページのランキングを作ってみよう。
@@ -1470,8 +1466,8 @@ ulタグをolタグに変えれば順序をつけることができます。
 \end{enumerate}
 
 \clearpage
-\subsection{例題
-  1-21教室の使うものリストを作ろう}
+\refstepcounter{Exercise}
+\subsection{\theExercise 教室の使うものリストを作ろう}
 教室に使うものリストを作ろう
 
 \bigskip
@@ -1543,8 +1539,7 @@ ${\bullet}持ち帰るもの$
 \bigskip
 \flushleft
 
-{\bfseries
-  問題 1-23}
+\refstepcounter{Question}\theQuestion\label{Q:hasAnswer04-11}
 
 持ち物の画像をとって、項目の下に貼ろう
 
