@@ -1,6 +1,6 @@
 % This file was converted to LaTeX by Writer2LaTeX ver. 1.6.1
 % see http://writer2latex.sourceforge.net for more info
-\documentclass[a4paper,dvipdfmx]{jarticle}
+\documentclass[a4paper,12pt]{jarticle}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{amssymb,amsfonts,textcomp}
@@ -10,14 +10,20 @@
 \usepackage{array}
 \usepackage{supertabular}
 \usepackage{hhline}
-\usepackage{hyperref}
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{pxjahyper}
+\usepackage{lastpage}
 \hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, filecolor=blue, urlcolor=blue}
 \usepackage[dvipdfmx]{graphicx}
 \graphicspath{%
 {./text02-img/}%
 }
-% Text styles
-\newcommand\textstyleqwerty[1]{#1}
+%\usepackage{svg}
+\usepackage{bbding,pifont,wasysym,amssymb}
+% Outline numbering
+\setcounter{secnumdepth}{2}
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\arabic{section}.\arabic{subsection}}
 \makeatletter
 \newcommand\arraybslash{\let\\\@arraycr}
 \makeatother
@@ -26,113 +32,124 @@
 \setlength\hoffset{-1in}
 \setlength\topmargin{2cm}
 \setlength\oddsidemargin{2cm}
-\setlength\textheight{25.276667cm}
-\setlength\textwidth{17.001cm}
-\setlength\footskip{12.0pt}
+\setlength\textheight{24.770668cm}
+\setlength\textwidth{17.006cm}
+\setlength\footskip{26.144882pt}
 \setlength\headheight{0cm}
 \setlength\headsep{0cm}
 % Footnote rule
-\setlength{\skip\footins}{0.119cm}
-\renewcommand\footnoterule{\vspace*{-0.018cm}\setlength\leftskip{0pt}\setlength\rightskip{0pt plus 1fil}\noindent\textcolor{black}{\rule{0.25\columnwidth}{0.018cm}}\vspace*{0.101cm}}
+\setlength{\skip\footins}{0.12cm}
+\renewcommand\footnoterule{\vspace*{-0.018cm}\setlength\leftskip{0pt}\setlength\rightskip{0pt plus 1fil}\noindent\textcolor{black}{\rule{0.25\columnwidth}{0.018cm}}\vspace*{0.102cm}}
 % Pages styles
 \makeatletter
-\newcommand\ps@MP{
-  \renewcommand\@oddhead{}
-  \renewcommand\@evenhead{}
-  \renewcommand\@oddfoot{\textstyleqwerty{\thepage{}}}
-  \renewcommand\@evenfoot{\@oddfoot}
-  \renewcommand\thepage{\arabic{page}}
-}
 \newcommand\ps@Standard{
   \renewcommand\@oddhead{}
   \renewcommand\@evenhead{}
+  \renewcommand\@oddfoot{ \hspace{80mm} 子どもIT未来塾~~第２回 \hfill \thepage\ / \pageref{LastPage}}
+  \renewcommand\@evenfoot{\@oddfoot}
+  \renewcommand\thepage{\arabic{page}}
+}
+\newcommand\ps@FirstPage{
+  \renewcommand\@oddhead{}
+  \renewcommand\@evenhead{}
   \renewcommand\@oddfoot{}
-  \renewcommand\@evenfoot{}
+  \renewcommand\@evenfoot{\@oddfoot}
   \renewcommand\thepage{\arabic{page}}
 }
 \makeatother
 \pagestyle{Standard}
 \setlength\tabcolsep{1mm}
 \renewcommand\arraystretch{1.3}
+
 % List styles
-\title{ }
-\author{武田 寧}
-\date{2021-08-07}
+\newcounter{saveenum}
+\newcounter{Figure}
+\renewcommand\theFigure{\arabic{Figure}}
+
+\title{\Huge\bf 子どもIT未来塾 第２回}
+\author{
+\huge\bf ゲームを改造してみよう!
+\vspace{15mm}
+}
+\date{ \Huge おにたま(武田 寧) 先生 }
 \begin{document}
-\clearpage\clearpage\setcounter{page}{1}\pagestyle{MP}
+\clearpage\setcounter{page}{1}\pagestyle{Standard}
+\thispagestyle{FirstPage}
 
+\maketitle
+
+\setcounter{page}{1}\pagestyle{Standard}
+
+  % First Part:
+
+\clearpage
+
+\section{今回の授業}
+\subsection{目標}
+\ \ \ \ プログラムについて知ろう
+
+\ \ \ \ センサーとゲームで遊んでみよう
+
+\subsection{授業内容}
+%\liststyleLii
+\begin{enumerate}
+\item プログラミングの準備をしよう
+\item ゲームで遊んでみよう
+\item センサーボードを使ってみよう
+\item プログラムを改造してみよう
+\end{enumerate}
+\subsection{注意点}
+%\liststyleLiii
+\begin{itemize}
+\item
+授業の合間のきゅうけいでは、遠くのものをながめたりして目を休めましょう
+\item 水分ほきゅうはこまめにしましょう
+\item
+先生が説明中は先生の話を聞きましょう
+\item
+わからないことがあったらTAの先生方にすぐ聞きましょう
+\end{itemize}
+
+\subsection{ラズベリーパイを使うときの注意}
+%\liststyleLvii
+\begin{itemize}
+\item
+水などぬれているものをラズベリーパイ本体につけないようにしましょう
+\end{itemize}
+%\liststyleLviii
+\begin{itemize}
+\item
+ラズベリーパイをはじめコンピュータなどは熱に弱いのですごく暑い部屋では使わないようにしましょう
+\end{itemize}
+%\liststyleLix
+\begin{itemize}
+\item
+ラズベリーパイの本体をあまりさわらないようにしましょう
+\item
+ラズベリーパイなどは静電気によわいので注意しましょう
+\end{itemize}
+%\liststyleLx
+\begin{itemize}
+\item
+ラズベリーパイをらんぼうに扱うのはやめましょう
+\end{itemize}
+%\liststyleLxi
+\begin{itemize}
+\item
+金属のものの上におかないようにしましょう
+\end{itemize}
+
+
+  % Main Part:
+
+
+\clearpage
+\section{プログラミングの準備をしよう}
+\subsection{ファイルって何だろう}
+\bigskip
 \bigskip
 
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-{\bfseries
-子どもＩＴ未来塾}
-
-{\bfseries
-第2回\ \ 「ゲームを改造してみよう!」}
-
-
-\bigskip
-
-\clearpage{\bfseries
-2-1 ファイルって何だろう}
-
-
-\bigskip
-
-最後に、今回の新しい教材の設定を行って準備は完了です。
-
-皆さんが使っているRaspberry
-Piは、パソコンと同じように内部の記憶装置に「ファイル」「フォルダ」という単位で情報が記録されています。
+皆さんが使っているRaspberry Piは、パソコンと同じように内部の記憶装置に「ファイル」「フォルダ」という単位で情報が記録されています。
 
 
 \bigskip
@@ -150,119 +167,125 @@ Piは、パソコンと同じように内部の記憶装置に「ファイル」
 
 上にあるバーのフォルダアイコンからウインドウを開いてみましょう。
 
-
-
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=5.898cm,height=1.242cm]{text02-img/text02-img001.png}
-
-\end{center}
-
+\bigskip
 \bigskip
 
-{\bfseries
-　フォルダウインドウを開くアイコン}
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=5.898cm,height=1.242cm]{text02-img/text02-img001.png}
+\flushleft
 
+Figure \stepcounter{Figure}{\theFigure}: フォルダウインドウを開くアイコン}
+\end{minipage}
 
 \bigskip
-
-
+\bigskip
 \bigskip
 
-これから皆さんが使うファイルは、「/home/pi/ome/02」という場所に置かれています。
+これから作業で使うファイルをコピーしてもらいます。皆さんは、「/home/ユーザー名」のフォルダに、第1回で使うフォルダ「01」をコピーしているはずです。今日は、「02」フォルダをコピーしてから始めます。
+
+まず、「/usr/local/share/ome」という場所を開いてみましょう。
 
 どこにあるか探すことができますか?
 
-
-
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=11.232cm,height=8.424cm]{text02-img/text02-img002.png}
-
-\end{center}
+わからない時は、TAや先生に聞いてみましょう。
 
 \bigskip
-
-
 \bigskip
 
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=11.232cm,height=8.424cm]{text02-img/s_ome02a.png}
+\flushleft
+
+Figure \stepcounter{Figure}{\theFigure}: /usr/local/share/ome フォルダ}
+\end{minipage}
 
 \bigskip
-
-
+\bigskip
 \bigskip
 
+この中に、「02」という名前のフォルダがあります。これから、この「02」というフォルダを自分の作業フォルダにコピーします。
+
+「02」という名前のフォルダ上でマウスの右クリックを押して「コピー」を選んでください。
 
 \bigskip
-
-
 \bigskip
 
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=11.232cm,height=8.424cm]{text02-img/s_ome02b.png}
+\flushleft
+
+Figure \stepcounter{Figure}{\theFigure}: 02フォルダでコピーを選ぶところ}
+\end{minipage}
 
 \bigskip
-
-
+\bigskip
 \bigskip
 
+コピーを選ぶだけでは何も起こりません。この後、コピーしたい場所を選びます。
+
+コピー先の場所は、「/home/ユーザー名」のフォルダになります。
+
+たとえば、ユーザー名が「ome」だった場合は、「home/ome」という場所にコピーします。
+
+コピー先の場所を開いたら、何もない場所でマウスの右クリックを押して「貼り付け」を選んでください。
 
 \bigskip
-
-
 \bigskip
 
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=11.232cm,height=8.424cm]{text02-img/s_ome02c.png}
+\flushleft
+
+Figure \stepcounter{Figure}{\theFigure}: 02フォルダでコピーを選ぶところ}
+\end{minipage}
 
 \bigskip
-
-
+\bigskip
 \bigskip
 
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-{\bfseries
-フォルダを開いたところ}
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
+これで先ほどの「/usr/local/share/ome/02」フォルダが、「/home/ユーザー名/02」にコピーされます。
 
 ファイルのコピー、移動、削除などの方法を、よく覚えておきましょう。
 
 ファイルには、画像や文章、音声や動画など、さまざまなデータが入っています。
 
+これから皆さんが作業で使うファイルは、「/home/ユーザー名/02」という場所に置かれています。
+
 ファイルの中身が何なのか、自分が作ったファイルかどうかを知っておいてください。
 
-
+\bigskip
 \bigskip
 
-これから、Raspberry
-Piを使って色々なゲームを作ったり、改造したりといった作業をします。
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=11.232cm,height=8.424cm]{text02-img/s_ome02d.png}
+\flushleft
 
+Figure \stepcounter{Figure}{\theFigure}: 02フォルダを開いたところ}
+\end{minipage}
+
+\bigskip
+\bigskip
+\bigskip
+
+
+
+\clearpage
+\subsection{ターミナルの使い方}
+\bigskip
+\bigskip
+
+これから、Raspberry Piを使って色々なゲームを作ったり、改造したりといった作業をします。
 以下の2つに注意しながら、作業を進めていきましょう。
-
 
 \bigskip
 
@@ -272,186 +295,105 @@ Piを使って色々なゲームを作ったり、改造したりといった作
 
 
 \bigskip
-
-\clearpage
-\textstyleqwerty{\textbf{2-2 ターミナルの使い方}}
-
-
 \bigskip
+
+ターミナルの使い方を覚えておきましょう。
 
 ターミナル(コマンドライン)は、キーボードの入力だけでコンピューターを操作するためのものです。
 
+\bigskip
+\bigskip
+
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=7.303cm,height=1.15cm]{text02-img/text02-img003.png}
+\flushleft
+
+Figure \stepcounter{Figure}{\theFigure}: ターミナル起動アイコン}
+\end{minipage}
+
+\bigskip
+\bigskip
+\bigskip
+
 ターミナル起動アイコンを選択すると、ターミナル画面のウインドウが開きます。
 
+\bigskip
+\bigskip
 
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=9.472cm,height=6.061cm]{text02-img/text02-img004.png}
+\flushleft
 
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=7.303cm,height=1.15cm]{text02-img/text02-img003.png}
+Figure \stepcounter{Figure}{\theFigure}: ターミナル画面}
+\end{minipage}
 
-\end{center}
+\bigskip
+\bigskip
+\bigskip
+
+黒い画面が出てきました。ちょっと難しそうですね。
 
 \bigskip
 
-\textstyleqwerty{\textbf{ターミナル起動アイコン}}
+ターミナルの使い方を覚えておくと、キーボードだけで手早くコンピューターを扱うことができるようになります。
 
-
-\bigskip
-
+すべての人が必ず使うものではありませんが、とても便利に使うことができるので、少しずつ使って慣れるようにしていきましょう。
 
 \bigskip
-
-
-
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=9.472cm,height=6.061cm]{text02-img/text02-img004.png}
-
-\end{center}
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-\textstyleqwerty{\textbf{ターミナル画面}}
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-ターミナルの使い方を覚えておくと、キーボードだけで手早くコンピューターを扱うことができるようになります。すべての人が必ず使うものではありませんが、とても便利に使うことができるので、少しずつ使って慣れるようにしていきましょう。
-
-
 \bigskip
 
 たとえば、
-
 
 \bigskip
 
 \ \ \ \ ls [Enter]
 
-
 \bigskip
 
 を入力するとファイルの一覧が出てきます。
 
-
+\bigskip
 \bigskip
 
-
-
-\begin{center}
-  % Unhandled or unsupported graphics:
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
 \includegraphics[width=9.71cm,height=6.138cm]{text02-img/text02-img005.png}
+\flushleft
 
-\end{center}
-
-\bigskip
-
-
-\bigskip
-
+Figure \stepcounter{Figure}{\theFigure}: lsコマンドを入力した画面}
+\end{minipage}
 
 \bigskip
-
-
 \bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-\textstyleqwerty{\textbf{lsコマンドを入力した画面}}
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
 \bigskip
 
 今回、プログラミングやターミナルなど、キーボードをたくさん使う機会があります。
 
+\bigskip
+
 最初は難しいかもしれませんが、思ったように文字を打つことができるよう、練習をして覚えていきましょう。
+
+\bigskip
 
 キーボードは乱暴に扱わない方がいいですが、間違ったボタンを押したからと言ってコンピューターが壊れることはありません。ですから、間違えることを心配せずに、どんどん自分からキーボードを操作して、使い方に慣れるよう心掛けてください。
 
-
 \bigskip
 
-
+\subsection{プログラミングって何だろう}
 \bigskip
-
-{\bfseries
-2-3 プログラミングって何だろう}
-
-
 \bigskip
 
 皆さんには、プログラミングを初めてもらいます。
 
 プログラミングというのは、プログラムを作ることです。
 
-\textstyleqwerty{さて、そもそもプログラムって何でしょう?}
+さて、そもそもプログラムって何でしょう?
 
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=8.031cm,height=7.304cm]{text02-img/text02-img006.jpg}
-
-\end{center}
 パソコンの上で動いている、ワープロソフトやペイントソフト、ゲームなどもみんなまとめて「プログラム」と呼んでいます。
 
 
@@ -464,7 +406,6 @@ Piを使って色々なゲームを作ったり、改造したりといった作
 たとえば、学校の授業や運動会にもプログラム(予定表)があり、どんな順番で何をするか決められています。
 
 ビデオレコーダーがテレビ番組を決められた時間に勝手に録画してくれるのもプログラムです。パソコンで動くプログラムは、もっともっと色々な仕事をすばやくこなすことができるものなのです。
-
 
 \bigskip
 
@@ -497,72 +438,31 @@ Piを使って色々なゲームを作ったり、改造したりといった作
 
 まだ、簡単なことしかできないロボットが、将来は人間と同じ能力を持って仕事をしているかもしれません。
 
-今回みなさんに使ってもらうのは「ホットスーププロセッサ」、略して「HSP(エッチ・エス・ピー)」と呼ばれているツールです。ゲームを作るのに向いているだけでなく、小中学生にも使えるくらい簡単で、参考になる本もいっぱい出ています。
 
 
 \bigskip
+\bigskip
 
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[width=8.031cm,height=7.304cm]{text02-img/text02-img006.jpg}}
+\end{minipage}
 
-
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=4.576cm,height=5.928cm]{text02-img/text02-img007.jpg}
-
-\end{center}
-
-
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=3.889cm,height=5.629cm]{text02-img/text02-img008.jpg}
-
-\end{center}
+\bigskip
+\bigskip
+\bigskip
 
 \bigskip
 
-
+\clearpage
+\subsection{HSPに触れてみよう}
 \bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-\textstyleqwerty{\textbf{HSPについての書籍類}}
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
 \bigskip
 
 それでは、さっそくプログラム作りを始めてみましょう。
-
 プログラムを作ったり、打ち込んだりすることをプログラミングといいます。
-
 これから、やることの内容はつぎの通りです。
-
 
 \bigskip
 
@@ -570,9 +470,11 @@ Piを使って色々なゲームを作ったり、改造したりといった作
 \item {\bfseries
 プログラムの呼び出し方と動かし方を覚える}
 \item {\bfseries
+センサーボードを使って仕組みを覚える}
+\item {\bfseries
 プログラムを自分の手で実際に打ち込んでみること}
 \item {\bfseries
-シューティングゲームを改造して自分だけのオリジナルゲームにすること}
+ゲームを改造して自分だけのオリジナルゲームにすること}
 \end{itemize}
 
 \bigskip
@@ -583,233 +485,92 @@ Piを使って色々なゲームを作ったり、改造したりといった作
 
 皆さんもプログラムの世界について学んでいきましょう。
 
-
-\bigskip
-
-
-\bigskip
-
-\textstyleqwerty{\textbf{2-4 HSPに触れてみよう}}
+今回みなさんに使ってもらうのは「ホットスーププロセッサ ( Hot Soup Processor )」、略して「HSP(エッチ・エス・ピー)」と呼ばれているツールです。ゲームを作るのに向いているだけでなく、小中学生にも使えるくらい簡単で、参考になる本もいっぱい出ています。
 
 
 \bigskip
 
-左上のRaspberry
-Piメニューの「プログラミング」項目に、「HSP
-Script
-Editor」(HSPスクリプトエディタ)という項目があるはずです。
+\bigskip
+
+左上のRaspberry Piメニューの「プログラミング」項目に、「HSP Script Editor」(HSPスクリプトエディタ)という項目があるはずです。
 
 メニューを開いて確認してみましょう。
 
-
-
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=7.31cm,height=6.562cm]{text02-img/text02-img009.png}
-
-\end{center}
-
+\bigskip
 \bigskip
 
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=7.31cm,height=6.562cm]{text02-img/s_hspmenu.png}
+\flushleft
+
+Figure \stepcounter{Figure}{\theFigure}: プログラミング項目のメニュー}
+\end{minipage}
 
 \bigskip
-
-
+\bigskip
 \bigskip
 
-\textstyleqwerty{\textbf{プログラミング項目のメニュー}}
-
-
+「HSP Script Editor」のアイコンをクリックして起動させてみましょう。
+Raspberry Piメニューからでも、ターミナルから「hsed」と打ち込んでも起動させることができるので覚えておきましょう。
+\bigskip
 \bigskip
 
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=7.31cm,height=6.562cm]{text02-img/s_hsed.png}
+\flushleft
+
+Figure \stepcounter{Figure}{\theFigure}: HSPスクリプトエディタを起動したところ}
+\end{minipage}
 
 \bigskip
-
-
+\bigskip
 \bigskip
 
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-「HSP Script
-Editor」のアイコンをクリックして起動させてみましょう。
-
-Raspberry
-Piメニューからでも、ターミナルから「hsed」と打ち込んでも起動させることができるので覚えておきましょう。
-
-
-\bigskip
-
-
-
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=6.588cm,height=7.624cm]{text02-img/text02-img010.png}
-
-\end{center}
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-\textstyleqwerty{\textbf{HSPスクリプトエディタを起動したところ}}
-
-
-\bigskip
-
-「HSPスクリプトエディタ」は、LeafPadと同じように好きな文字を打ち込むことができます。文字を直したり、カーソルを好きな場所に移動したりする方法がわからない人は、となりの友だちか、近くの先生に聞いてみてください。
+「HSPスクリプトエディタ」は、LeafPadと同じように好きな文字を打ち込むことができます。文字を直したり、カーソルを好きな場所に移動したりする方法がわからない人は、近くの先生に聞いてみてください。
 
 
 \bigskip
 
 実際にできあがっているプログラムを見てみましょう。
 
-ファイル→「開く」メニューからome/02フォルダの中にある「shoot.hsp」を読み込んでください。
+ファイル→「開く」メニューから /home/ユーザー名/02 フォルダの中にある「shoot.hsp」を読み込んでください。
 
-作業は、すべて「pi」から選択できる「ome/02」フォルダで行ないます。
+作業は、すべて「/home/ユーザー名/02」フォルダで行ないます。
 
 見つからない場合は、まわりの友達か、近くの先生に聞いてみてください。
 
-
+\bigskip
 \bigskip
 
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=7.31cm,height=6.562cm]{text02-img/s_openfolder.png}
+\flushleft
 
-
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=9.181cm,height=6.874cm]{text02-img/text02-img011.png}
-
-\end{center}
-
-\bigskip
-
+Figure \stepcounter{Figure}{\theFigure}: フォルダから読み込む画面}
+\end{minipage}
 
 \bigskip
-
-
 \bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-{\bfseries
-　HSPフォルダから読み込む画面}
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
 \bigskip
 
 だらだらと長い文字が読み込まれましたか?
 
 今は意味がわからなくても大丈夫です。
 
-まずは、[F5]キーを押して動かしてみましょう。
-
+まずは、[F5]キーを押して動かしてみましょう。[F5]キーを押すと読み込まれたスクリプトをもとにプログラムがうごきだします。
 
 \bigskip
 
-\ \ (シューティングゲームの遊び方)
+\clearpage
+\subsection{シューティングゲームの遊び方}
 
-
+\bigskip
 \bigskip
 
 \ \ 1.
@@ -821,118 +582,76 @@ Piメニューからでも、ターミナルから「hsed」と打ち込んで�
 \ \ 3.
 敵や弾に当たるとゲームオーバーになってしまいます
 
-\ \ 4.
-ゲームを遊び終わったら「ESC」を押してウィンドウを閉じましょう
-
 
 \bigskip
-
-
-
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=9.962cm,height=7.902cm]{text02-img/text02-img012.png}
-
-\end{center}
-
 \bigskip
 
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=7.31cm,height=6.562cm]{text02-img/s_shoot.png}
+\flushleft
+
+Figure \stepcounter{Figure}{\theFigure}: シューティングゲームの画面}
+\end{minipage}
 
 \bigskip
-
-
+\bigskip
 \bigskip
 
+ゲームを遊び終わったらウインドウ右上の「×」を押してウィンドウを閉じましょう
 
 \bigskip
-
-
 \bigskip
 
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=7.31cm,height=6.562cm]{text02-img/s_shoot2.png}
+\flushleft
+
+Figure \stepcounter{Figure}{\theFigure}: ウインドウを閉じるボタン}
+\end{minipage}
 
 \bigskip
-
-
 \bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-\textstyleqwerty{\textbf{　シューティングゲームの画面}}
-
-
-\bigskip
-
-
-\bigskip
-
-
 \bigskip
 
 このようにスクリプトがあればゲームを動かすことができます。
 
-ゲームが終わったら、「ESC」キーを押してエディタの画面に戻ってください。
+ゲームが終わったら、かならず「×」ボタンを押してエディタの画面に戻ってください。「×」ボタンを押さないと、スクリプトエディタの操作に戻ることができません。
 
 さて、このスクリプトエディタに表示されている長い文章のことを「スクリプト」と呼びます。「プログラム」は、できあがったもの全体を指してまぎらわしいので、プログラミングで打ち込むための言葉は「スクリプト」と呼ぶようにしますので覚えておいてください。
 
 
 \bigskip
 
-
-\bigskip
-
-
-\bigskip
-
 HSPスクリプトエディタは、打ち込まれたスクリプトを[F5]キーで実行する機能、そのスクリプトを.hspファイルとして保存したり読み込んだりする機能があります。
 
-実行された時には、画面全体に表示され[ESC]キーを押すことで、元の画面に戻ります。
+実行された時には、新しいウインドウに表示され、右上の[×]ボタンを押すことで、元の編集画面に戻ります。
 
+\bigskip
+\bigskip
 
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[width=15.533cm,height=4.86cm]{text02-img/text02-img013.png}}
+\end{minipage}
 
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=15.533cm,height=4.86cm]{text02-img/text02-img013.png}
-
-\end{center}
-
+\bigskip
+\bigskip
 \bigskip
 
 HSPスクリプトエディタの基本的な使い方をよく覚えておきましょう。
 
 スクリプトを書けるようになると、画面の絵や音、そしてハードウェアなど様々なデバイスを組み合わせて、あなたの考えたプログラムを作ることができるようになります。
 
-
 \bigskip
 
+\subsection{例題に挑戦しよう}
 
 \bigskip
-
-{\bfseries
-2-5 例題に挑戦しよう}
-
-
 \bigskip
 
 ここまで終わってしまった人は、以下の例題にも挑戦してみよう。
@@ -946,7 +665,7 @@ HSPスクリプトエディタの基本的な使い方をよく覚えておき�
 
 ・ブロック崩し(block3)を読み込んで動かす
 
-・ゲームでラズパイに親しむ
+・その他のゲームでラズパイに親しむ
 
 
 \bigskip
@@ -955,63 +674,12 @@ HSPスクリプトエディタの基本的な使い方をよく覚えておき�
 
 わからない所は、そのままにせず、必ず答えを見つけてから先に進みましょう。
 
-
 \bigskip
 
 
+\clearpage
+\subsection{例題1　HSPスクリプトエディタをターミナルから起動する}
 \bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-\textstyleqwerty{\textbf{例題1　HSPスクリプトエディタをターミナルから起動する}}
-
-
 \bigskip
 
 {\bfseries
@@ -1020,12 +688,9 @@ HSPスクリプトエディタの基本的な使い方をよく覚えておき�
 
 \bigskip
 
-最後に、今回の新しい教材の設定を行って準備は完了です。
-
-HSPスクリプトエディタを起動するためのコマンドは、「hsed」です。
-
 ターミナルからHSPスクリプトエディタを起動してみましょう。
 
+HSPスクリプトエディタを起動するためのコマンドは、「hsed」です。
 
 \bigskip
 
@@ -1040,86 +705,30 @@ HSPスクリプトエディタを起動するためのコマンドは、「hsed�
 Raspberry Piメニューにある「HSP Script
 Editor」のアイコンをクリックして起動させることができるほか、ターミナルからhsedコマンドで直接起動させることもできます。
 
-
 \bigskip
 
-ターミナル起動アイコンを選択すると、ターミナル画面のウインドウが開きましょう。
-
-
-
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=7.303cm,height=1.15cm]{text02-img/text02-img003.png}
-
-\end{center}
+ターミナル起動アイコンを選択すると、ターミナル画面のウインドウが開きます。
 
 \bigskip
-
-\textstyleqwerty{\textbf{ターミナル起動アイコン}}
-
-
 \bigskip
 
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=8.52cm,height=5.45cm]{text02-img/text02-img004.png}
+\flushleft
+
+Figure \stepcounter{Figure}{\theFigure}: ターミナル画面}
+\end{minipage}
 
 \bigskip
-
-
-
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=8.52cm,height=5.45cm]{text02-img/text02-img004.png}
-
-\end{center}
-
 \bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-\textstyleqwerty{\textbf{ターミナル画面}}
-
-
-\bigskip
-
-
-\bigskip
-
-
 \bigskip
 
 ターミナルの画面で
 
-
-
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=6.786cm,height=7.853cm]{text02-img/text02-img010.png}
-
-\end{center}
 {\bfseries
 hsed [Enter]}
-
 
 \bigskip
 
@@ -1128,55 +737,13 @@ hsed [Enter]}
 HSPスクリプトエディタが起動することを確認してください。
 
 
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-\textstyleqwerty{\textbf{HSPスクリプトエディタを起動したところ}}
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
 \clearpage
-\textstyleqwerty{\textbf{例題2　ドロップパズル(drop)を読み込んで動かす}}
-
-
+\subsection{例題2　ドロップパズル(drop)を読み込んで動かす}
+\bigskip
 \bigskip
 
 {\bfseries
 考え方}
-
 
 \bigskip
 
@@ -1187,182 +754,72 @@ HSPスクリプトエディタからスクリプト(プログラム)を読み込
 
 それでは、HSPスクリプトエディタからドロップパズル(drop.hsp)を読み込んで遊んでみましょう。
 
-ドロップパズル(drop.hsp)は、/home/pi/02のフォルダにあります。
-
+ドロップパズル(drop.hsp)は、/home/ユーザー名/02のフォルダにあります。
 
 \bigskip
-
 
 \bigskip
 
 {\bfseries
 例題2 答え}
 
-
 \bigskip
 
 HSPスクリプトエディタの基本的な使い方をよく覚えておきましょう。
 
+\bigskip
+\bigskip
 
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=15.533cm,height=4.86cm]{text02-img/text02-img013.png}}
+\end{minipage}
 
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=15.533cm,height=4.86cm]{text02-img/text02-img013.png}
-
-\end{center}
-
+\bigskip
+\bigskip
 \bigskip
 
 このように、HSPスクリプトエディタは、打ち込まれたスクリプトを[F5]キーで実行する機能、そのスクリプトを.hspファイルとして保存したり読み込んだりする機能があります。
 
-実行された時には、画面全体に表示され[ESC]キーを押すことで、元の画面に戻ります。
-
-
-\bigskip
-
-ファイル→「開く」メニューから/home/pi/02のフォルダに移動してから、「drop.hsp」を読み込んでみましょう。
-
-
-
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=9.049cm,height=6.346cm]{text02-img/text02-img014.png}
-
-\end{center}
+実行した後には、ウインドウの「×」ボタンを押して元の画面に戻ります。
 
 \bigskip
 
+ファイル→「開く」メニューから/home/ユーザー名/02のフォルダに移動してから、「drop.hsp」を読み込んでみましょう。
 
 \bigskip
-
-
 \bigskip
 
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=9.049cm,height=6.346cm]{text02-img/text02-img014.png}
+\flushleft
+
+Figure \stepcounter{Figure}{\theFigure}: ドロップパズルのスクリプト}
+\end{minipage}
 
 \bigskip
-
-
 \bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-\textstyleqwerty{\textbf{ドロップパズルのスクリプト}}
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
 \bigskip
 
 読み込まれたら、[F5]キーで実行します。
 
-
+\bigskip
 \bigskip
 
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=10.605cm,height=8.306cm]{text02-img/text02-img015.png}
+\flushleft
 
-
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=10.605cm,height=8.306cm]{text02-img/text02-img015.png}
-
-\end{center}
-
-\bigskip
-
+Figure \stepcounter{Figure}{\theFigure}: ドロップパズルゲームの画面}
+\end{minipage}
 
 \bigskip
-
-
 \bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-\textstyleqwerty{\textbf{　ドロップパズルゲームの画面}}
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
 \bigskip
 
 ドロップパズルは、上から落ちてくる5角形のパネルをうまく消していくゲームです。
@@ -1375,48 +832,40 @@ HSPスクリプトエディタの基本的な使い方をよく覚えておき�
 
 時間内にできるだけ高いスコアを出せるように頑張ってください。
 
-
 \bigskip
 
-ゲームを終了する時は、[ESC]キーを押してください。
+ゲームを終了する時は、ウインドウの「×」ボタンを押してください。
 
-
-\bigskip
 
 \clearpage
-\textstyleqwerty{\textbf{例題3　ブロック崩し(block3)を読み込んで動かす}}
-
-
+\subsection{例題3　ブロック崩し(block3)を読み込んで動かす}
+\bigskip
 \bigskip
 
 {\bfseries
 考え方}
 
+\bigskip
+
 
 \bigskip
 
-/home/pi/02のフォルダにある他のスクリプトを実行してみましょう。
+/home/ユーザー名/02のフォルダにある他のスクリプトを実行してみましょう。
 
 「block3.hsp」は、ブロック崩しゲームのスクリプトです。
 
 ドロップパズルと同じように読み込んで動かしてみましょう。
 
-
 \bigskip
-
-
-\bigskip
-
 
 \bigskip
 
 {\bfseries
 例題3 答え}
 
-
 \bigskip
 
-ファイル→「開く」メニューから/home/pi/02のフォルダに移動してから、「block3.hsp」を読み込んでみましょう。
+ファイル→「開く」メニューから/home/ユーザー名/02のフォルダに移動してから、「block3.hsp」を読み込んでみましょう。
 
 読み込まれたら、[F5]キーで実行します。
 
@@ -1427,367 +876,85 @@ HSPスクリプトエディタの基本的な使い方をよく覚えておき�
 
 ボールが下まで落ちてしまうとアウトです。
 
-
+\bigskip
 \bigskip
 
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=8.467cm,height=7.17cm]{text02-img/text02-img016.png}
+\flushleft
 
-
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=8.467cm,height=7.17cm]{text02-img/text02-img016.png}
-
-\end{center}
-
-\bigskip
-
+Figure \stepcounter{Figure}{\theFigure}: ブロック崩しの画面}
+\end{minipage}
 
 \bigskip
-
-
+\bigskip
 \bigskip
 
+ゲームを終了する時は、ウインドウの「×」ボタンを押してください。
 
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-\textstyleqwerty{\textbf{ブロック崩しの画面}}
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-ゲームを終了する時は、[ESC]キーを押してください。
-
-
-\bigskip
 
 \clearpage
-\textstyleqwerty{\textbf{例題4　ゲームでラズパイに親しむ}}
-
-
+\subsection{例題4　重力ゲーム(tof2)を読み込んで動かす}
+\bigskip
 \bigskip
 
 {\bfseries
 考え方}
 
+\bigskip
+
 
 \bigskip
 
-RaspberryPiに最初から用意されているゲームを起動してみましょう。
+/home/ユーザー名/02のフォルダにある他のスクリプトを実行してみましょう。
 
-Python
-Gamesから様々なゲームを選択して遊ぶことができます。
+「tof2.hsp」は、重力ゲームのスクリプトです。
 
-また、タイピング練習ソフトとしてtuxtypeというソフトがインストールされています。
+ドロップパズルと同じように読み込んで動かしてみましょう。
 
-このソフトはターミナルから「tuxtype」で起動することができます。
+\bigskip
+\bigskip
 
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=8.467cm,height=7.17cm]{text02-img/s_tof2.png}
+\flushleft
+
+Figure \stepcounter{Figure}{\theFigure}: tof2の画面}
+\end{minipage}
+
+\bigskip
+\bigskip
+\bigskip
+
+ゲームを終了する時は、ウインドウの「×」ボタンを押してください。
+
+\bigskip
 
 \bigskip
 
 {\bfseries
 例題4 答え}
 
+\bigskip
+
+カーソルキーで大きな円をうまく動かして小さい円をバウンドさせます。
+小さい円で敵を攻撃することができます。できるだけ多くの敵を倒してください。
 
 \bigskip
 
-左上のラズベリーパイアイコンのメニューから、「ゲーム」→「Python
-Games」を選択します。
+ゲームを終了する時は、ウインドウの「×」ボタンを押してください。
 
 
+  % Sensor:
 
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=7.382cm,height=7.414cm]{text02-img/text02-img017.png}
-
-\end{center}
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=6.207cm,height=9.562cm]{text02-img/text02-img018.png}
-
-\end{center}
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-Python
-Gamesでは、複数のゲームをメニューから選ぶことができます。
-
-最初は、fourinarowを遊んでみましょう。
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-\textstyleqwerty{f\textbf{ourinarow}\texttt{のプレイ方法}}
-
-\textstyleqwerty{\texttt{ルール}}
-
-\textstyleqwerty{\texttt{先に}4\texttt{個石を並べたら勝ちです。}}
-
-\textstyleqwerty{\texttt{そうさ方法}}
-
-\textstyleqwerty{\texttt{マウスを使って石を運びます。そのためにはドラッグアンドドロップというワザを使います。}}
-
-\textstyleqwerty{\texttt{まずは赤（自分の）石を左クリックしましょう。左クリックしたままマウスを動かしてみましょう。}}
-
-\textstyleqwerty{\texttt{石も一緒に動いていますね。これをドラッグといいます。}}
-
-\textstyleqwerty{\texttt{ドロップというのはドラッグしていた左クリックをはなすことです。このドラッグとドロップを合わ}}
-
-\textstyleqwerty{\texttt{せてドラッグアンドドロップといいます。}}
-
-\textstyleqwerty{\texttt{自分の石をドラッグして、フィールドの上からドロップしましょう。}}
-
-\textstyleqwerty{\texttt{終了するときは右上のバツじるしを押しましょう。}}
-
-
-\bigskip
-
-
-
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=7.805cm,height=6.218cm]{text02-img/text02-img019.jpg}
-
-\end{center}
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-\textstyleqwerty{F\textbf{ourinarowの画面}}
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-\textstyleqwerty{\texttt{キーボード練習用のゲーム }Tux
-Typing}
-
-
-\bigskip
-
-\textstyleqwerty{\texttt{家でキーボードのタイピングを練習できるよう、練習用のゲームを遊んでみましょう。}}
-
-\textstyleqwerty{\texttt{画面の上にあるターミナルのアイコンをクリックしてきどうしましょう。}}
-
-{\ttfamily
-開いたら}
-
-
-\bigskip
-
-\textstyleqwerty{tuxtype [Enter]}
-
-
-
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=9.79cm,height=7.343cm]{text02-img/text02-img020.jpg}
-
-\end{center}
-でゲーム開始となります。
-
-\textstyleqwerty{\texttt{起動したら一番上の}Fish
-Cascade\texttt{を選びましょう。}}
-
-\textstyleqwerty{\texttt{そしたらレベルをえらぶ画面になるのでまずは}Easy\texttt{（一番簡単})
-\texttt{をえらびましょう。これは上から落ちてくる文字をキーボードで打つゲームです。}}
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-{\bfseries
-2-6 休憩}
-
-
-\bigskip
-
-\begin{flushleft}
-\tablefirsthead{}
-\tablehead{}
-\tabletail{}
-\tablelasttail{}
-\begin{supertabular}{|m{10.733cm}|}
-\hline
-・自由時間です
-
-・次の時間が始まる前に教室の席に戻るようにしましょう
-
-・質問や疑問などがあれば先生のところまで聞きに行きましょう\\\hline
-\end{supertabular}
-\end{flushleft}
 \clearpage
-\textstyleqwerty{\textbf{2-7 センサーボードの使い方}}
-
-
+\section{センサーボードを使ってみよう}
+\subsection{センサーボードって何だろう}
+\bigskip
 \bigskip
 
 プログラムによって、画面の上でゲームが遊べることがわかりました。
@@ -1796,81 +963,88 @@ Cascade\texttt{を選びましょう。}}
 
 今回、皆さんが使うRaspberryPiは、ゲームだけでなく明るさや温度などさまざまな情報を調べることのできるセンサーボードを接続することができます。
 
-
-
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=9.79cm,height=7.955cm]{text02-img/text02-img021.jpg}
-
-\end{center}
-
+\bigskip
 \bigskip
 
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=9.79cm,height=7.955cm]{text02-img/sensor1.jpg}
+\flushleft
+
+Figure \stepcounter{Figure}{\theFigure}: センサーボード}
+\end{minipage}
 
 \bigskip
-
-
+\bigskip
 \bigskip
 
+まず最初にRaspberryPiとセンサーボードを接続しましょう。
+
+普通の電気製品は、ケースや保護がありますが、センサーボードやRaspberryPiは、回路の基板そのままの状態です。
+触っても感電することはありませんが、静電気によって壊れたりケガをすることがあるので、回路部分を触らないように注意しましょう。
 
 \bigskip
-
-
 \bigskip
 
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=9.79cm,height=7.955cm]{text02-img/sensor2.jpg}
+\flushleft
+
+Figure \stepcounter{Figure}{\theFigure}: 接続コネクタと拡張ケーブル}
+\end{minipage}
 
 \bigskip
-
-
+\bigskip
 \bigskip
 
+RaspberryPiの裏がわに、拡張ケーブルを差し込むための接続コネクタがあるのを確認してください。
+
+拡張ケーブルにセンサーボードをつなげます。ピンの位置がずれないように注意してください。
+
+正しく差し込まれたことを先生やTAに必ず見てもらってください。
 
 \bigskip
-
-
 \bigskip
 
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=9.79cm,height=7.955cm]{text02-img/sensor3.jpg}
+\flushleft
+
+Figure \stepcounter{Figure}{\theFigure}: 拡張ケーブルを差し込んだところ}
+\end{minipage}
 
 \bigskip
-
-
+\bigskip
 \bigskip
 
+次にRaspberryPi本体に、拡張ケーブルを差し込みます。
+
+きちんと奥まで差し込まれていることを確認しましょう。
 
 \bigskip
-
-
 \bigskip
 
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=9.79cm,height=7.955cm]{text02-img/sensor4.jpg}
+\flushleft
+
+Figure \stepcounter{Figure}{\theFigure}: Raspberry Piとセンサーボード}
+\end{minipage}
 
 \bigskip
-
-
+\bigskip
 \bigskip
 
-\textstyleqwerty{\textbf{　RaspberryPiとセンサーボード}}
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-普通の電気製品は、ケースや保護がありますが、センサーボードやRaspberryPiは、回路の基板そのままの状態です。触っても感電することはありませんが、静電気によって壊れたりケガをしないように回路部分を触らないように注意しましょう。
-
-
-\bigskip
-
-接続されたセンサーボードを使ったプログラムも作ることができます。
+これで、接続されたセンサーボードを使ったプログラムが動くようになります。
 
 プログラミングは、画面を動かすだけでなく、RaspberryPiが持つすべての機能を自由に組み合わせて使うことができるのです。
-
 
 \bigskip
 
@@ -1903,15 +1077,9 @@ Cascade\texttt{を選びましょう。}}
 ・命令とパラメーターを覚えよう}
 
 
+\clearpage
+\subsection{プログラムとスクリプト}
 \bigskip
-
-
-\bigskip
-
-{\bfseries
-2-8 プログラムとスクリプト}
-
-
 \bigskip
 
 プログラムを打ち込むためには、「HSPスクリプトエディタ」というツールを使うことを覚えました。
@@ -1934,41 +1102,17 @@ Cascade\texttt{を選びましょう。}}
 
 これは英語とも日本語とも違う特別なルールを持った言葉です。この言葉は「プログラム言語」と呼ばれていて、やりたいことに合わせて色々な種類があります。
 
-
-
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=11.509cm,height=3.803cm]{text02-img/text02-img022.png}
-
-\end{center}
-
+\bigskip
 \bigskip
 
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=11.509cm,height=3.803cm]{text02-img/text02-img022.png}}
+\end{minipage}
 
 \bigskip
-
-
 \bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
 \bigskip
 
 今回、皆さんが使うHSPは小文字のアルファベット(英語)でスクリプトを打ち込みます。でも英語を知っている必要はありません。漢字変換がいらないので、慣れれば英語の方が打ち込むのが早くなりますし、世界中の人が同じ方法で打ち込んでいるので、今覚えておけば将来にも役立つはずです。
@@ -1977,12 +1121,9 @@ Cascade\texttt{を選びましょう。}}
 \bigskip
 
 
+\clearpage
+\subsection{LEDが点滅するスクリプト}
 \bigskip
-
-{\bfseries
-2-9 LEDが点滅するスクリプト}
-
-
 \bigskip
 
 かんたんなスクリプトを読み込んでみます。
@@ -1991,61 +1132,23 @@ Cascade\texttt{を選びましょう。}}
 
 センサーボードのLEDが点滅していたら成功です。うまくいかない人は、となりの友だちか、近くの先生に見てもらいましょう。
 
-
-
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=8.387cm,height=6.17cm]{text02-img/text02-img023.png}
-
-\end{center}
-
+\bigskip
 \bigskip
 
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=8.387cm,height=6.17cm]{text02-img/text02-img023.png}
+\flushleft
+
+Figure \stepcounter{Figure}{\theFigure}: led.hspのスクリプト}
+\end{minipage}
 
 \bigskip
-
-
+\bigskip
 \bigskip
 
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-\textstyleqwerty{\textbf{led.hspのスクリプト}}
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-正しく動いたのを確認したら「ESC」を押して画面を閉じましょう。
+正しく動いたのを確認したらウインドウの「×」ボタンを押して画面を閉じましょう。
 
 
 \bigskip
@@ -2059,25 +1162,16 @@ Cascade\texttt{を選びましょう。}}
 
 \ \ 動かす時は[F5]キーを押す
 
-正しく動いたのを確認したら「ESC」を押して画面を閉じましょう
+\ \ 確認したらウインドウの「×」ボタンを押して画面を閉じる
 
 
 \bigskip
-
-それでは、「ESC」を押してスクリプトエディタの画面に戻ってください。
 
 スクリプトを見てみましょう。
 
 英単語の後に数字書かれているものが何行も書かれています。
 
 最初はまったく意味がわからないですね。
-
-
-\bigskip
-
-
-\bigskip
-
 
 \bigskip
 
@@ -2091,7 +1185,7 @@ Cascade\texttt{を選びましょう。}}
 
 \bigskip
 
-は、いずれ説明しますが、最初に書いておくおまじないのようなものと考えておいてください。
+は、最初に書いておくおまじないのようなものと考えておいてください。
 
 RaspberryPiを使う時には、最初にこの１行を入れておくことを覚えておきましょう。
 
@@ -2100,52 +1194,20 @@ RaspberryPiを使う時には、最初にこの１行を入れておくことを
 
 HSPのスクリプトは、英文字による「命令」と数字などによる「パラメーター」によって作られています。
 
-
-
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=8.017cm,height=4.512cm]{text02-img/text02-img024.png}
-
-\end{center}
-
+\bigskip
 \bigskip
 
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=8.017cm,height=4.512cm]{text02-img/text02-img024.png}}
+\end{minipage}
 
 \bigskip
-
-
+\bigskip
 \bigskip
 
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-たとえば、「gpio
-17,1」という行を見てみましょう。
-
+たとえば、「gpio 17,1」という行を見てみましょう。
 
 \bigskip
 
@@ -2169,8 +1231,7 @@ HSPのスクリプトは、英文字による「命令」と数字などによ�
 
 この「命令」は、コンピューターに何をさせるか、どんな機能を使うかを示しています。
 
-ここで使っている「gpio」は、Raspberry
-PiのGPIOという端子を制御します。
+ここで使っている「gpio」は、Raspberry PiのGPIOという端子を制御します。
 
 
 \bigskip
@@ -2181,69 +1242,16 @@ GPIOは、RaspberryPiの基板から制御することのできるスイッチ�
 
 
 \bigskip
-
-
-
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=12.409cm,height=7.62cm]{text02-img/text02-img025.png}
-
-\end{center}
-
 \bigskip
 
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=12.409cm,height=7.62cm]{text02-img/text02-img025.png}}
+\end{minipage}
 
 \bigskip
-
-
 \bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
 \bigskip
 
 gpioという命令によってLEDのON/OFFが制御できるのかな…と何となく想像できますか?
@@ -2259,27 +1267,24 @@ GPIO
 
 \bigskip
 
-\ \ gpio命令は、Raspberry
-PiのGPIOを制御するための命令
+\ \ gpio命令は、Raspberry PiのGPIOを制御するための命令
 
 \ \ gpioの後にスペースに続けて「IO番号」「,(カンマ)」「ON(1)/OFF(0)の値」を書く
 
 
 \bigskip
 
-
 \bigskip
 
-つまり、「gpio
-17,1」という命令は、「GPIO17をONにする」つまりLED1を点灯させることができます。基板には、LED1〜4までのLEDが搭載されているので、GPIO17,18,22,27をそれぞれ自由にON/OFFの状態にできるわけです。(赤外線やスイッチについては、また後で説明します。)
+つまり、「gpio 17,1」という命令は、「GPIO17をONにする」つまりLED1を点灯させることができます。
+基板には、LED1〜4までのLEDが搭載されているので、GPIO17,18,22,27をそれぞれ自由にON/OFFの状態にできるわけです。(赤外線やスイッチについては、また後で説明します。)
 
 
 \bigskip
 
 スクリプトエディタで、スクリプトを直接修正してみます。
 
-スクリプトの中で「gpio
-17,1」と書いてある行を探してから、ためしに下のように他の番号を入れてみましょう。
+スクリプトの中で「gpio 17,1」と書いてある行を探してから、ためしに下のように他の番号を入れてみましょう。
 
 
 \bigskip
@@ -2335,53 +1340,17 @@ wait命令は、一定時間停止するための命令です。
 
 パラメーターの数字を修正すれば、点滅の速度が変わります。
 
-
-
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=10.372cm,height=5.837cm]{text02-img/text02-img026.png}
-
-\end{center}
-
+\bigskip
 \bigskip
 
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=10.372cm,height=5.837cm]{text02-img/text02-img026.png}}
+\end{minipage}
 
 \bigskip
-
-
 \bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
 \bigskip
 
 このようにコンピューターにわかる言葉、スクリプトを正しく書くことで、その通りに動きます。
@@ -2393,64 +1362,31 @@ wait命令は、一定時間停止するための命令です。
 
 \bigskip
 
-{\bfseries
-2-10 文字を表示する命令}
-
-
+\subsection{文字を表示する命令}
+\bigskip
 \bigskip
 
 LEDが点滅している間、画面には「OK!」のメッセージが表示されています。
 
-
+\bigskip
 \bigskip
 
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=5.741cm,height=4.572cm]{text02-img/text02-img027.png}
+\flushleft
 
-
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=5.741cm,height=4.572cm]{text02-img/text02-img027.png}
-
-\end{center}
-
-\bigskip
-
+Figure \stepcounter{Figure}{\theFigure}: OK!のメッセージ}
+\end{minipage}
 
 \bigskip
-
-
 \bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-{\bfseries
-　OK!のメッセージ}
-
-
-\bigskip
-
-
-\bigskip
-
-
 \bigskip
 
 実行されているスクリプトを見てみましょう。
 
-「mes
-“OK!”」と書かれている行が関係ありそうですね。
+「mes “OK!”」と書かれている行が関係ありそうですね。
 
 ためしに{\textquotedbl}OK!{\textquotedbl}のかわりに自分の名前を入れてみましょう。
 
@@ -2497,68 +1433,35 @@ HSPのルールを守らないとエラーが表示されてしまいます。
 
 \bigskip
 
-
+\subsection{スクリプトの保存}
 \bigskip
-
-\textstyleqwerty{\textbf{2-11 スクリプトの保存}}
-
-
 \bigskip
 
 最後に自分で書き換えたスクリプトを保存する方法を忘れずに覚えておきましょう。
 
 スクリプトをファイルとして保存しておけば、いつでも開いて続きから始めることができます。ファイル→「名前を付けて保存…」から、「mygpio.hsp」など自分の好きな名前で保存しておいてください。
 
+\bigskip
+\bigskip
+
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=6.976cm,height=4.944cm]{text02-img/text02-img028.png}
+\flushleft
+
+Figure \stepcounter{Figure}{\theFigure}: スクリプト保存のダイアログ}
+\end{minipage}
+
+\bigskip
+\bigskip
+\bigskip
 
 \bigskip
 
-
-
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=6.976cm,height=4.944cm]{text02-img/text02-img028.png}
-
-\end{center}
+\subsection{例題に挑戦しよう}
 
 \bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-{\bfseries
-　スクリプト保存のダイアログ}
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-{\bfseries
-2-12 例題に挑戦しよう}
-
-
 \bigskip
 
 ここまで終わってしまった人は、以下の例題にも挑戦してみよう。
@@ -2581,20 +1484,16 @@ HSPのルールを守らないとエラーが表示されてしまいます。
 
 わからない所は、そのままにせず、必ず答えを見つけてから先に進みましょう。
 
-
 \bigskip
 
 
+\clearpage
+\subsection{例題5　命令のヘルプと検索のしかたを覚える}
 \bigskip
-
-\textstyleqwerty{\textbf{例題5　命令のヘルプと検索のしかたを覚える}}
-
-
 \bigskip
 
 {\bfseries
 考え方}
-
 
 \bigskip
 
@@ -2602,16 +1501,13 @@ HSPで使うことのできる命令を調べたり、説明を読むための�
 
 HSPで書ける命令は、色々な種類があります。HSPスクリプトエディタで調べたい命令にカーソルを合わせて[F1]キーを押すことでヘルプが表示されます。
 
-
 \bigskip
 
 左上の入力枠に命令を入れて検索をすることができます。
 
 試しに、「mes」「wait」などの命令を調べてみましょう。
 
-
 \bigskip
-
 
 \bigskip
 
@@ -2625,133 +1521,47 @@ mes命令のヘルプが正しく表示されたかどうか確認してみま�
 
 このページでは、HSPの命令やサンプル、関連命令などを検索することができます。
 
+\bigskip
+\bigskip
 
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=9.895cm,height=7.421cm]{text02-img/text02-img029.jpg}
+\flushleft
+
+Figure \stepcounter{Figure}{\theFigure}: ヘルプの画面}
+\end{minipage}
+
+\bigskip
+\bigskip
 \bigskip
 
 
-\bigskip
-
-
-
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=9.895cm,height=7.421cm]{text02-img/text02-img029.jpg}
-
-\end{center}
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-\textstyleqwerty{\textbf{ヘルプの画面}}
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
 
 \clearpage
-\textstyleqwerty{\textbf{例題6　文字に色を付けてみる}}
-
-
+\subsection{例題6　文字に色を付けてみる}
+\bigskip
 \bigskip
 
 {\bfseries
 考え方}
 
-
 \bigskip
 
 mes命令で表示する文字に色を付けるにはcolor命令を使います。
 
-
-
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=12.277cm,height=5.08cm]{text02-img/text02-img030.png}
-
-\end{center}
-
+\bigskip
 \bigskip
 
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=12.277cm,height=5.08cm]{text02-img/text02-img030.png}}
+\end{minipage}
 
 \bigskip
-
-
 \bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
 \bigskip
 
 明るさとは、その成分がどのくらい明るいかということを示している数値です。
@@ -2762,126 +1572,54 @@ mes命令で表示する文字に色を付けるにはcolor命令を使います
 これらを組み合わせて、1670万以上の色を
 出すことができます。この時に指定する色のことをRGBと呼んでいます。
 
-
+\bigskip
 \bigskip
 
 {\bfseries
 ＲＧＢとは}
 
+光の3原色は赤、緑、青紫ですが、赤と緑を混ぜるとイエローに、緑と青紫を混ぜるとシアンに、青紫と赤を混ぜるとマゼンタになります。
+光の3原色を等分に混合すると明るくなって、白色光になります。これを「加法混色」といいます。
+RGBカラーはカラーテレビやモニタなどの「光り」で色を表現する方式です。
 
 \bigskip
+\bigskip
 
-\begin{flushleft}
-\tablefirsthead{}
-\tablehead{}
-\tabletail{}
-\tablelasttail{}
-\begin{supertabular}{m{-0.144cm}m{16.111cm}}
-\multicolumn{2}{m{16.167cm}}{   % Unhandled or unsupported graphics:
-\includegraphics[width=0.041cm,height=0.106cm]{text02-img/text02-img031.png}
- \newline
-　\textstyleqwerty{\textbf{\textcolor{black}{RGB}}}}\\
-~
- &
-   % Unhandled or unsupported graphics:
-\includegraphics[width=0.041cm,height=0.106cm]{text02-img/text02-img031.png}
- 
-{\ttfamily\color{black}
-光の3原色は赤、緑、青紫ですが、赤と緑を混ぜるとイエローに、緑と青紫を混ぜるとシアンに、青紫と赤を混ぜるとマゼンタになります。　}
-
-\textstyleqwerty{\texttt{\textcolor{black}{光の3原色を等分に混合すると明るくなって、白色光になります。これを「加法混色」といいます。\newline
-　RGBカラーはカラーテレビやモニタなどの「光り」で色を表現する方式です。\newline
-   % Unhandled or unsupported graphics:
-\includegraphics[width=0.041cm,height=0.212cm]{text02-img/text02-img031.png}
- }}}\\
-~
- &
-\textstyleqwerty{\texttt{\textcolor{black}{   % Unhandled or unsupported graphics:
-\includegraphics[width=1.667cm,height=0.953cm]{text02-img/text02-img032.png}
- \ }}}
-
-~
-
-{\ttfamily\color{black}
-RGBの意味は　R：レッド（赤）　G：グリーン（緑）　B：ブルー（青）の頭文字です。}
-
-{\ttfamily\color{black}
-赤・緑・青それぞれの光の強さを0から255までの数値で表わします。}
-
-{\ttfamily\color{black}
-黒は、赤・緑・青のどれも光らせない(強さ0)ことで表現します。}
-
-{\ttfamily\color{black}
-白は赤・緑・青すべてを光らせた時(強さ255)の色になります。}\\
-\end{supertabular}
-\end{flushleft}
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=3.854cm,height=3.988cm]{text02-img/text02-img033.jpg}}
+\end{minipage}
 
 \bigskip
+\bigskip
+\bigskip
+
+RGBの意味は　R：レッド（赤）　G：グリーン（緑）　B：ブルー（青）の頭文字です。
+赤・緑・青それぞれの光の強さを0から255までの数値で表わします。
+黒は、赤・緑・青のどれも光らせない(強さ0)ことで表現します。
+白は赤・緑・青すべてを光らせた時(強さ255)の色になります。
+
+モニターで色がついているのも、すべての点で3つの色(RGB)が光っているからです。コンピューターが、それぞれの点(ドット)を制御して光らせているのです。
 
 
 \bigskip
-
-
 \bigskip
 
+\begin{minipage}{11.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=3.854cm,height=3.988cm]{text02-img/text02-img034.jpg}
+\includegraphics[keepaspectratio,width=3.854cm,height=3.988cm]{text02-img/text02-img035.jpg}}
+\end{minipage}
 
 \bigskip
-
-
 \bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-モニターで色がついているのも、すべての点で3つの色(RGB)が光っているからです。
-
-コンピューターが、それぞれの点(ドット)を制御して光らせているのです。
-
-
-
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=3.854cm,height=3.988cm]{text02-img/text02-img033.jpg}
-
-\end{center}
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=6.403cm,height=4.542cm]{text02-img/text02-img034.jpg}
-
-\end{center}
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=4.948cm,height=4.383cm]{text02-img/text02-img035.jpg}
-
-\end{center}
-
-\bigskip
-
-
-\bigskip
-
-
 \bigskip
 
 mes命令の前に書かれているcolor命令の数字を変更することで、「OK!」の文字に使われている色を変えることができます。
 
 自分で色を選んで、好きな色で文字を出してみましょう。
-
 
 \bigskip
 
@@ -2919,24 +1657,17 @@ mes命令の前に書かれているcolor命令の数字を変更することで
 
 
 \bigskip
-
-
 \bigskip
 
 
+
+\clearpage
+\subsection{例題7　文字のサイズを変えてみる}
 \bigskip
-
-
-\bigskip
-
-\textstyleqwerty{\textbf{例題7　文字のサイズを変えてみる}}
-
-
 \bigskip
 
 {\bfseries
 考え方}
-
 
 \bigskip
 
@@ -2956,18 +1687,12 @@ font命令の後にスペースに続けて「””」、さらに「,」と大
 
 たとえば、この「100」をもっと大きな数字にしてみて、文字が大きくなるのを確認しましょう。
 
-
 \bigskip
-
-
-\bigskip
-
 
 \bigskip
 
 {\bfseries
 例題7 答え}
-
 
 \bigskip
 
@@ -2995,28 +1720,13 @@ font命令で指定するパラメーターのは文字のサイズで大きい�
 実際に試してみて、文字のサイズが変わったらTAや周りの友達にも見せてあげましょう。
 
 
+\clearpage
+\subsection{例題8　文字の表示位置を変えてみる}
 \bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-\textstyleqwerty{\textbf{例題8　文字の表示位置を変えてみる}}
-
-
 \bigskip
 
 {\bfseries
 考え方}
-
 
 \bigskip
 
@@ -3034,18 +1744,12 @@ mes命令で表示する文字の表示位置を変えるにはpos命令を使�
 
 パラメーターの数字2つを、増やしたり減らしたりしながら、文字の位置がどのように変わるか試してみましょう。
 
-
 \bigskip
-
-
-\bigskip
-
 
 \bigskip
 
 {\bfseries
 例題8 答え}
-
 
 \bigskip
 
@@ -3091,17 +1795,14 @@ mes命令で表示する文字の表示位置を変えるにはpos命令を使�
 実際に試してみて、文字の表示位置が変わったらTAや周りの友達にも見せてあげましょう。
 
 
-\bigskip
 
 \clearpage
-\textstyleqwerty{\textbf{例題9　四角形を描いてみる}}
-
-
+\subsection{例題9　四角形を描いてみる}
+\bigskip
 \bigskip
 
 {\bfseries
 考え方}
-
 
 \bigskip
 
@@ -3109,37 +1810,34 @@ mes命令で表示する文字の表示位置を変えるにはpos命令を使�
 
 まず簡単に背景の色を変えてみましょう。
 
+\ \ color 255,255,255
 
-\bigskip
-
-\textstyleqwerty{\ \ color 255,255,255}
-
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=6.006cm,height=4.77cm]{text02-img/text02-img036.png}
-
-\end{center}
 \ \ boxf
-
-
-\bigskip
 
 これで白い背景になります。
 
+\bigskip
+\bigskip
 
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=6.006cm,height=4.77cm]{text02-img/text02-img036.png}}
+\end{minipage}
+
+\bigskip
+\bigskip
 \bigskip
 
 \ \ color 255,0,255
 
 \ \ boxf
 
-
 \bigskip
 
 のように修正すると色が変わります。
 
 文字と同じようにcolor命令で四角形の色を変えることができます。
-
 
 \bigskip
 
@@ -3160,7 +1858,6 @@ mes命令で表示する文字の表示位置を変えるにはpos命令を使�
 
 {\bfseries
 例題9 答え}
-
 
 \bigskip
 
@@ -3190,210 +1887,72 @@ boxf命令は4つのパラメーターを指定します。
 実際に試してみて、四角形が描けたらTAや周りの友達にも見せてあげましょう。
 
 
+
+  % Modify:
+
+\clearpage
+\section{ゲームを改造してみよう}
+\subsection{ドロップパズルの改造}
+\bigskip
 \bigskip
 
+ファイル→「開く」メニューから/home/ユーザー名/02のフォルダに移動してから、「drop.hsp」を読み込んでみましょう。
 
 \bigskip
-
-
 \bigskip
 
-{\bfseries
-2-13 休憩}
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=8.356cm,height=6.544cm]{text02-img/text02-img015.png}
+\flushleft
 
-
-\bigskip
-
-\begin{flushleft}
-\tablefirsthead{}
-\tablehead{}
-\tabletail{}
-\tablelasttail{}
-\begin{supertabular}{|m{10.733cm}|}
-\hline
-・自由時間です
-
-・次の時間が始まる前に教室の席に戻るようにしましょう
-
-・質問や疑問などがあれば先生のところまで聞きに行きましょう\\\hline
-\end{supertabular}
-\end{flushleft}
+Figure \stepcounter{Figure}{\theFigure}: ドロップパズルゲームの画面}
+\end{minipage}
 
 \bigskip
-
-\clearpage{\bfseries
-2-14 ドロップパズルの改造}
-
-
 \bigskip
-
-\textstyleqwerty{ファイル→「開く」メニューから/home/pi/02のフォルダに移動してから、「drop.hsp」を読み込んでみましょう。}
-
-
-
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=8.356cm,height=6.544cm]{text02-img/text02-img015.png}
-
-\end{center}
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-\textstyleqwerty{\textbf{　ドロップパズルゲームの画面}}
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
 \bigskip
 
 ドロップパズルゲームを改造して、自分だけのゲームに変えてみます。
 
 スクリプトは、簡単に修正できることを学びました。実は、ゲームの中の絵も自由に修正することができます。
 
-
+\bigskip
 \bigskip
 
-
+\subsection{GIMPを使ってみよう}
+\bigskip
 \bigskip
 
-{\bfseries
-2-15 GIMPを使ってみよう}
-
-
-\bigskip
-
-皆さんのRaspberry
-Piは、パソコンやスマホと同じように自由にプログラムを入れたり、作ったりすることができます。
+皆さんのRaspberry Piは、パソコンやスマホと同じように自由にプログラムを入れたり、作ったりすることができます。
 
 好きなプログラムを入れて便利にすることができるのは、コンピューターの特徴の一つです。
 
-ここでは、Raspberry
-Piで絵を描くことのできるプログラムを使ってみます。
+ここでは、Raspberry Piで絵を描くことのできるプログラムを使ってみます。
 
-Raspberry Piメニューからグラフィックス→「GNU Image
-Manipulation
-Program」をクリックすることでツールを起動させることができます。
+Raspberry Piメニューからグラフィックス→「GIMP ( GNU Image Manipulation Program )」をクリックすることでツールを起動させることができます。
 
+\bigskip
+\bigskip
 
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=10.583cm,height=7.938cm]{text02-img/text02-img037.png}
+\flushleft
+
+Figure \stepcounter{Figure}{\theFigure}: GIMPを起動したところ}
+\end{minipage}
+
+\bigskip
+\bigskip
 \bigskip
 
 
 
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=10.583cm,height=7.938cm]{text02-img/text02-img037.png}
-
-\end{center}
-
+\subsection{ドロップパズルの中身を変えてみよう}
 \bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-\textstyleqwerty{\textbf{Gimpを起動したところ}}
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-{\bfseries
-2-16
-ドロップパズルの中身を変えてみよう}
-
-
 \bigskip
 
 Gimpを使って、ドロップパズルのゲームで使われた絵を改造してみましょう。
@@ -3402,96 +1961,42 @@ Gimpは、絵のデータを読み込んで、自分で好きに変更するこ�
 
 変更した絵は、ふたたび保存することができます。
 
-Gimpのファイル→「開く」メニューから、「ome/02フォルダ」にある「koma.png」を読み込んで下絵とします。
-
-
-\bigskip
-
-
-
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=10.403cm,height=7.811cm]{text02-img/text02-img038.png}
-
-\end{center}
+Gimpのファイル→「開く」メニューから、「/home/ユーザー名/02フォルダ」にある「koma.png」を読み込んで下絵とします。
 
 \bigskip
-
-
 \bigskip
 
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=10.403cm,height=7.811cm]{text02-img/text02-img038.png}
+\flushleft
+
+Figure \stepcounter{Figure}{\theFigure}: koma.pngを修正している画面}
+\end{minipage}
 
 \bigskip
-
-
+\bigskip
 \bigskip
 
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-{\bfseries
-koma.pngを修正している画面}
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-\textstyleqwerty{このキャラクターを別な絵に書き換えればゲームの絵も変わります。}
-
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=4.075cm,height=10.16cm]{text02-img/text02-img039.png}
-
-\end{center}
+このキャラクターを別な絵に書き換えればゲームの絵も変わります。
 パレットで色を選んで、鉛筆のツールで絵を書いていきます。
-
 元の絵があった部分を書き換えて他の絵柄にしてみましょう。
 
+\bigskip
+\bigskip
 
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=4.075cm,height=10.16cm]{text02-img/text02-img039.png}
+\flushleft
+
+Figure \stepcounter{Figure}{\theFigure}: ツールのウインドウ}
+\end{minipage}
+
+\bigskip
+\bigskip
 \bigskip
 
 画像が小さい場合は、画像の下にある「100\%」の右側にあるボタンを押して、「400\%」「800\%」などを選ぶと拡大されます。
@@ -3503,32 +2008,20 @@ koma.pngを修正している画面}
 
 色を変更する場合は、ツールパレットの描画色をクリックして、「描画色の変更」ダイアログを出してから好きな色を選びます。
 
-
+\bigskip
 \bigskip
 
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=10.993cm,height=6.588cm]{text02-img/text02-img040.png}
+\flushleft
 
-
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=10.993cm,height=6.588cm]{text02-img/text02-img040.png}
-
-\end{center}
-
-\bigskip
-
+Figure \stepcounter{Figure}{\theFigure}: 色をえらぶところ}
+\end{minipage}
 
 \bigskip
-
-
 \bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
 \bigskip
 
 元の絵を書き換えたら、ファイル→「koma.pngに上書きエクスポート」を選んで保存します。
@@ -3551,64 +2044,25 @@ HSPスクリプトエディタを起動して、「drop.hsp」を読み込みま
 
 たとえば、ドロップパズルゲームのスクリプトには、「name=”ドロップパズル”」と書かれている部分があります。
 
-
+\bigskip
 \bigskip
 
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=9.049cm,height=6.346cm]{text02-img/text02-img014.png}
+\flushleft
 
-
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=9.049cm,height=6.346cm]{text02-img/text02-img014.png}
-
-\end{center}
-
-\bigskip
-
+Figure \stepcounter{Figure}{\theFigure}: ドロップパズルのスクリプト}
+\end{minipage}
 
 \bigskip
-
-
+\bigskip
 \bigskip
 
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-\textstyleqwerty{\textbf{ドロップパズルのスクリプト}}
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-\textstyleqwerty{これを、「name=”}ドロドロパズル\textstyleqwerty{”」など他の文字に変えてみてください。}
+これを、「name=”ドロドロパズル”」など他の文字に変えてみてください。
 
 [F5]キーで実行して、どこが変わっているか確認してみましょう。
-
 
 \bigskip
 
@@ -3616,14 +2070,17 @@ HSPスクリプトエディタを起動して、「drop.hsp」を読み込みま
 
 この「5」を「3」などもっと少ない数に変えてみるとどうなるか確認してみましょう。
 
-
+\bigskip
 \bigskip
 
-   % Unhandled or unsupported graphics:
-\includegraphics[width=12.753cm,height=7.064cm]{text02-img/text02-img041.png}
- 
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=12.753cm,height=7.064cm]{text02-img/text02-img041.png}}
+\end{minipage}
 
-
+\bigskip
+\bigskip
 \bigskip
 
 変更したスクリプトは、ファイル→「上書き保存」によりdrop.hspに保存することができます。
@@ -3637,10 +2094,13 @@ HSPスクリプトエディタを起動して、「drop.hsp」を読み込みま
 
 これで、あなたが改造したオリジナルのパズルゲームになりました。
 
-\clearpage{\bfseries
-2-17 例題に挑戦しよう}
+\bigskip
 
 
+
+\subsection{例題に挑戦しよう}
+
+\bigskip
 \bigskip
 
 ここまで終わってしまった人は、以下の例題にも挑戦してみよう。
@@ -3658,37 +2118,32 @@ HSPスクリプトエディタを起動して、「drop.hsp」を読み込みま
 
 ・ゲーム全体の速さを変えてみよう
 
-
 \bigskip
 
 例題の考え方がわからない時は、近くのTAか先生に聞いてください。
 
 わからない所は、そのままにせず、必ず答えを見つけてから先に進みましょう。
 
-
 \bigskip
 
+
 \clearpage
-\textstyleqwerty{\textbf{例題10　シューティングゲームの絵を改造する}}
-
-
+\subsection{例題10　シューティングゲームの絵を改造する}
+\bigskip
 \bigskip
 
 {\bfseries
 考え方}
 
-
 \bigskip
 
 シューティングゲーム(shoot.hsp)の絵を改造して自分だけの絵にしてみましょう。
 
-シューティングゲームの絵は、「ome/02/chr.png」というファイルに保存されています。
+シューティングゲームの絵は、「/home/ユーザー名/02/chr.png」というファイルに保存されています。
 
 改造ができたらTAや周りの友達にも見せてあげましょう。
 
-
 \bigskip
-
 
 \bigskip
 
@@ -3703,77 +2158,24 @@ HSPスクリプトエディタを起動して、「drop.hsp」を読み込みま
 
 \bigskip
 
-Raspberry Piメニューからグラフィックス→「GNU Image
-Manipulation
-Program」をクリックすることでツールを起動させることができます。
+Raspberry Piメニューからグラフィックス→「GIMP」をクリックすることでツールを起動させることができます。
 
-次に、ファイル→「開く」から「chr.png」を開いて、ゲームのキャラクターを改造してみましょう。
-
+次に、ファイル→「開く」から「/home/ユーザー名/02/chr.png」を開いて、ゲームのキャラクターを改造してみましょう。
 
 \bigskip
-
-
-
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=8.625cm,height=6.459cm]{text02-img/text02-img042.png}
-
-\end{center}
-
 \bigskip
 
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=8.625cm,height=6.459cm]{text02-img/text02-img042.png}
+\flushleft
+
+Figure \stepcounter{Figure}{\theFigure}: chr.pngを読み込んだ画面}
+\end{minipage}
 
 \bigskip
-
-
 \bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-{\bfseries
-chr.pngを読み込んだ画面}
-
-
-\bigskip
-
-
 \bigskip
 
 左にあるのが自機、その右にあるのがレーザー、その右は敵の弾です。
@@ -3789,83 +2191,49 @@ chr.pngを読み込んだ画面}
 
 もとの絵は、chrorg.pngという名前でも保存されています。
 
-もし、chr.bmpの内容を元に戻したい時には、chrorg.pngのファイルをコピーしてファイル名をchr.pngにコピーすれば元に戻せます。
+\bigskip
 
+※もし、chr.bmpの内容を元に戻したい時には、/usr/local/share/ome/02/chr.png のファイルを /home/ユーザー名/02 フォルダに上書きでコピーすれば元に戻せます。
 
 \bigskip
 
 Gimpを使い終わったら、最後にファイル→「終了」を選んでGimpアプリケーションを閉じてください。
 
 
-\bigskip
-
 \clearpage
-\textstyleqwerty{\textbf{例題11　シューティングゲームの内容を改造する}}
-
-
+\subsection{例題11　シューティングゲームの内容を改造する}
+\bigskip
 \bigskip
 
 {\bfseries
 考え方}
 
-
 \bigskip
 
 シューティングゲーム(shoot.hsp)のスクリプトを改造してゲームの内容を変えてみましょう。
 
-シューティングゲームのスクリプトは、「ome/02/shoot.png」というファイルに保存されています。
+シューティングゲームのスクリプトは、「/home/ユーザー名/02/shoot.png」というファイルに保存されています。
 
+\bigskip
 
 \bigskip
 
 まず、HSPスクリプトエディタを起動して、ファイル→「開く」メニューから「shoot.hsp」を読み込んでください。
 
-
-
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=6.853cm,height=5.135cm]{text02-img/text02-img043.png}
-
-\end{center}
-
+\bigskip
 \bigskip
 
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=6.853cm,height=5.135cm]{text02-img/text02-img043.png}
+\flushleft
+
+Figure \stepcounter{Figure}{\theFigure}: shoot.hspを読み込んだところ}
+\end{minipage}
 
 \bigskip
-
-
 \bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-\textstyleqwerty{\textbf{shoot.hspを読み込んだところ}}
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
 \bigskip
 
 でたらめに書き直してもエラーが出るだけです。
@@ -3897,10 +2265,7 @@ Gimpを使い終わったら、最後にファイル→「終了」を選んでG
 \ \ (「await
 18」という部分の18を少ない数にしてみましょう)
 
-
 \bigskip
-
-
 \bigskip
 
 {\bfseries
@@ -3909,47 +2274,23 @@ Gimpを使い終わったら、最後にファイル→「終了」を選んでG
 
 \bigskip
 
-\textstyleqwerty{ゲームを改造することで、難しくなったり、簡単になったりします。}
+ゲームを改造することで、難しくなったり、簡単になったりします。
 
 改造ができたらTAや周りの友達にも見せてあげましょう。
 
 
 \bigskip
 
-プログラムをあまり改造しすぎると、動かなくなったり、パソコンの動きが遅くなってしまうことがあります。その時は、先生に聞くか、「ome/02/org」フォルダ内の元のファイル(shoot.hsp)をもう一度コピーして使ってみてください。
+※プログラムをあまり改造しすぎると、動かなくなったり、パソコンの動きが遅くなってしまうことがあります。その時は、先生に聞くか、「/usr/local/share/ome/02/」フォルダ内の元のファイル(shoot.hsp)をもう一度コピーして使ってみてください。
 
 
+
+  % Program:
+
+\clearpage
+\section{プログラムの仕組みを知ろう}
+\subsection{プログラムの流れを操ろう}
 \bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-{\bfseries
-2-18 休憩}
-
-
-\bigskip
-
-\begin{flushleft}
-\tablefirsthead{}
-\tablehead{}
-\tabletail{}
-\tablelasttail{}
-\begin{supertabular}{|m{10.542cm}|}
-\hline
-・自由時間です
-
-・次の時間が始まる前に教室の席に戻るようにしましょう
-
-・質問や疑問などがあれば先生のところまで聞きに行きましょう\\\hline
-\end{supertabular}
-\end{flushleft}
-\textstyleqwerty{\textbf{2-19 プログラムの流れを操ろう}}
-
-
 \bigskip
 
 スクリプトに旗を立てる方法を覚えましょう。旗というのは屋上についてヒラヒラしたり山の頂上に立ってるものです。スクリプトの旗は目印になる場所を意味します。自分で好きな名前をつけてスクリプトの中に目印として旗を立てておくことができます。
@@ -4021,11 +2362,9 @@ Gimpを使い終わったら、最後にファイル→「終了」を選んでG
 
 このように繰り返しにより、大量の作業をこなしてしまうのがプログラムの凄いところです。
 
-
 \bigskip
 
 \ \ (HSPのルール)
-
 
 \bigskip
 
@@ -4043,46 +2382,12 @@ Gimpを使い終わったら、最後にファイル→「終了」を選んでG
 
 自分なりに、mesのメッセージや、wait命令の待ち時間を変更して、どのような結果になるか試してみましょう。
 
-
+\bigskip
 \bigskip
 
 
+\subsection{変数と計算}
 \bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-{\bfseries
-2-20 変数と計算}
-
-
 \bigskip
 
 プログラミングを覚える上で、とても重要な変数というものについて覚えていきましょう。
@@ -4111,108 +2416,37 @@ Gimpを使い終わったら、最後にファイル→「終了」を選んでG
 
 mes命令の”こたえは”の後ろに「+x」が付けられています。ここに出て来る「x」が「変数」です。
 
-
+\bigskip
 \bigskip
 
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=7.382cm,height=5.831cm]{text02-img/text02-img044.png}
+\flushleft
 
-
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=7.382cm,height=5.831cm]{text02-img/text02-img044.png}
-
-\end{center}
-
-\bigskip
-
+Figure \stepcounter{Figure}{\theFigure}: keisan.hspの実行画面}
+\end{minipage}
 
 \bigskip
-
-
 \bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-\textstyleqwerty{\textbf{　keisan.hspの実行画面}}
-
-
-\bigskip
-
-
-\bigskip
-
-
 \bigskip
 
 変数はよく、「いれもの」にたとえられます。数値を記憶しておく、「いれもの」です。
 
 「いれもの」には名前をつけることができます。たとえば「x」という名前の「いれもの」に数値を入れておくには、「x=100」のように書きます。
 
-
+\bigskip
 \bigskip
 
-
-
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=10.478cm,height=5.106cm]{text02-img/text02-img045.png}
-
-\end{center}
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=10.478cm,height=5.106cm]{text02-img/text02-img045.png}}
+\end{minipage}
 
 \bigskip
-
-
 \bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
 \bigskip
 
 このスクリプトではxという名前をつけてあります。これを変数xと呼びます。(名前は1文字でなく長い名前でもかまいません。日本語でもいいです。でも打ち込みやすいので１文字でもよく使われます)
@@ -4224,17 +2458,7 @@ mes命令の”こたえは”の後ろに「+x」が付けられています。
 
 「x=100」でxという名前の変数に100という数値が入ります。これを「代入」と呼んでいます。変数に数値を入れておくと命令で指定するパラメーターとして指定することができるようになります。
 
-つまり「pos 100,120」を、「pos
-x,120」と書くこともできるのです。
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
+つまり「pos 100,120」を、「pos x,120」と書くこともできるのです。
 
 
 \bigskip
@@ -4250,11 +2474,9 @@ x,120」と書くこともできるのです。
 
 \ \ mes命令の中で「+変数」を書くことで変数の中身を表示できる
 
-
 \bigskip
 
 変数に値を代入しておくことで同じ数値を指定する部分をまとめて変更したり、命令と別な場所で指定をすることができるようになります。
-
 
 \bigskip
 
@@ -4262,56 +2484,17 @@ x,120」と書くこともできるのです。
 
 計算は電卓などで使われている四則演算が基本になります。
 
-
+\bigskip
 \bigskip
 
-
-
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=11.695cm,height=5.741cm]{text02-img/text02-img046.png}
-
-\end{center}
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=11.695cm,height=5.741cm]{text02-img/text02-img046.png}}
+\end{minipage}
 
 \bigskip
-
-
 \bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
 \bigskip
 
 \ \ (HSPのルール)
@@ -4333,16 +2516,11 @@ x,120」と書くこともできるのです。
 
 変数と計算で何ができるのか、まだよくわからない人も多いと思いますが、あわてずにゆっくり覚えるようにしましょう。
 
-
+\bigskip
 \bigskip
 
-
+\subsection{乱数を使ってみよう}
 \bigskip
-
-{\bfseries
-2-21 乱数を使ってみよう}
-
-
 \bigskip
 
 変数を使った例をもう1つ紹介します。ファイル→「開く」メニューから「stars.hsp」を読み込みましょう。100個の「☆」をmes命令で画面に表示しています。
@@ -4353,65 +2531,23 @@ x,120」と書くこともできるのです。
 
 バラバラな数字は、決められた数字の範囲で作ることができ、何が出るかは誰にも予想ができません。
 
-
+\bigskip
 \bigskip
 
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=7.99cm,height=6.297cm]{text02-img/text02-img047.png}
+\flushleft
 
-
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=7.99cm,height=6.297cm]{text02-img/text02-img047.png}
-
-\end{center}
-
-\bigskip
-
+Figure \stepcounter{Figure}{\theFigure}: stars.hspの実行画面}
+\end{minipage}
 
 \bigskip
-
-
 \bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-\textstyleqwerty{\textbf{　stars.hspの実行画面}}
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
 \bigskip
 
 スクリプトを見てみましょう。
-
 
 \bigskip
 
@@ -4427,57 +2563,23 @@ x,120」と書くこともできるのです。
 
 \ \ \ \ loop
 
-
 \bigskip
 
 変数xと変数yは、pos命令で「☆」を表示する位置を記憶するものとして使われています。
 
 「x=rnd(640)」は、0〜639(640通り)までのバラバラな数字を変数xに代入します。このような書き方を「関数」と呼んでいます。
 
-
-
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=11.906cm,height=5.662cm]{text02-img/text02-img048.png}
-
-\end{center}
-
+\bigskip
 \bigskip
 
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=11.906cm,height=5.662cm]{text02-img/text02-img048.png}}
+\end{minipage}
 
 \bigskip
-
-
 \bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
 \bigskip
 
 \ \ (HSPのルール)
@@ -4489,7 +2591,6 @@ x,120」と書くこともできるのです。
 
 \ \ 関数は、「変数=関数(パラメーター)」という書き方で使うことができる
 
-
 \bigskip
 
 「y=rnd(480)」も同様に0〜479までの数字を代入します。画面のサイズが、横640、縦480ですから、画面上のでたらめな位置をpos命令で指定することができます。
@@ -4498,87 +2599,28 @@ repeat命令で100個の「☆」を描いていますが、この数字を変�
 
 余裕のある人は、でたらめな色で「☆」をたくさん表示する方法を考えてみてください。
 
-
+\bigskip
 \bigskip
 
-
+\subsection{条件判断とは}
 \bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-{\bfseries
-2-22 条件判断とは}
-
-
 \bigskip
 
 変数と数字を使って計算ができることはわかりました。さらにもう1つ、重要な要素として「条件判断」を覚えることができれば、プログラミングの大きな関門を１つ越えることになります。
 
 それほど、「条件判断」はプログラミングの大きな要素であり、「条件判断」なしでは大きなプログラムを作ることはできません。
 
-
-
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=12.33cm,height=6.939cm]{text02-img/text02-img049.png}
-
-\end{center}
-
+\bigskip
 \bigskip
 
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=12.33cm,height=6.939cm]{text02-img/text02-img049.png}}
+\end{minipage}
 
 \bigskip
-
-
 \bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
 \bigskip
 
 \ \ (HSPのルール)
@@ -4616,17 +2658,13 @@ repeat命令で100個の「☆」を描いていますが、この数字を変�
 \ \ \ \ 変数名 {\textgreater}
 数値\ \ 変数の内容より数値の方が数が小さい
 
-
-
 \bigskip
 
 たとえば、
 
-
 \bigskip
 
 \ \ if a=0 : mes “0です”
-
 
 \bigskip
 
@@ -4642,14 +2680,15 @@ repeat命令で100個の「☆」を描いていますが、この数字を変�
 他のプログラミング言語、とりわけBASICと呼ばれているものに近いです。HSPで初めてプログラム
 について知ったという人が、他の言語を覚える時が来ても、HSPで知ったことが役に立つに違いありません。
 
-{\bfseries
-2-23 例題に挑戦しよう}
+\bigskip
+\bigskip
 
+\subsection{例題に挑戦しよう}
 
+\bigskip
 \bigskip
 
 ここまで終わってしまった人は、以下の例題にも挑戦してみよう。
-
 
 \bigskip
 
@@ -4663,28 +2702,22 @@ repeat命令で100個の「☆」を描いていますが、この数字を変�
 
 ・スイッチを使ったゲームで遊んでみよう
 
-
 \bigskip
 
 例題の考え方がわからない時は、近くのTAか先生に聞いてください。
 
 わからない所は、そのままにせず、必ず答えを見つけてから先に進みましょう。
 
-
 \bigskip
 
 
+\clearpage
+\subsection{例題12　動きのある画面を作ってみる}
 \bigskip
-
-\textstyleqwerty{\textbf{例題12　動きのある画面を作ってみる}}
-
-
-
 \bigskip
 
 {\bfseries
 考え方}
-
 
 \bigskip
 
@@ -4696,82 +2729,34 @@ repeat命令で100個の「☆」を描いていますが、この数字を変�
 
 変数と計算がどんな役割をしているか考えながら見てください。
 
+\bigskip
+\bigskip
+
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=8.373cm,height=6.932cm]{text02-img/text02-img050.png}
+\flushleft
+
+Figure \stepcounter{Figure}{\theFigure}: move.hspスクリプトの内容}
+\end{minipage}
+
+\bigskip
+\bigskip
+\bigskip
+
 仕組みがわかったら、次の問題にも挑戦してみましょう。
-
-
-\bigskip
-
-
-
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=8.373cm,height=6.932cm]{text02-img/text02-img050.png}
-
-\end{center}
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-{\bfseries
-move.hspスクリプトの内容}
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
 
 \ \ ・文字が動くスピードを変えるにはどうすればいいですか?
 
 \ \ ・右から左に動かすにはどうすればいいですか?
 
-
 \bigskip
-
 
 \bigskip
 
 {\bfseries
 例題12 答え}
-
 
 \bigskip
 
@@ -4786,55 +2771,21 @@ pos命令のパラメーターに変数が使われています。
 
 \ \ x = x + 1
 
-
 \bigskip
 
 という計算は、変数xに記憶されている数字に1を足します。
 
-
+\bigskip
 \bigskip
 
-
-
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=10.689cm,height=5.265cm]{text02-img/text02-img051.png}
-
-\end{center}
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=10.689cm,height=5.265cm]{text02-img/text02-img051.png}}
+\end{minipage}
 
 \bigskip
-
-
 \bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
 \bigskip
 
 これを繰り返すことにより、変数に記憶されている数字で指定された位置を少しずつ変えているのです。
@@ -4843,11 +2794,9 @@ pos命令のパラメーターに変数が使われています。
 
 文字を右から左に動かすには、変数xの数字を大きい値から、小さい値に減らします。
 
-
 \bigskip
 
 \ \ x = x - 1
-
 
 \bigskip
 
@@ -4858,22 +2807,13 @@ pos命令のパラメーターに変数が使われています。
 実際に試してみて、文字の表示位置が変わったらTAや周りの友達にも見せてあげましょう。
 
 
+\clearpage
+\subsection{例題13　条件判断を自分で使ってみよう}
 \bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-\textstyleqwerty{\textbf{例題13　条件判断を自分で使ってみよう}}
-
-
 \bigskip
 
 {\bfseries
 考え方}
-
 
 \bigskip
 
@@ -4887,16 +2827,13 @@ pos命令のパラメーターに変数が使われています。
 
 どのように条件判断を書けばいいか考えてみましょう。
 
-
 \bigskip
 
 条件判断は、if命令を使います。if命令の使い方を思い出してみてください。
 
-
 \bigskip
 
 \ \ (HSPのルール)
-
 
 \bigskip
 
@@ -4906,11 +2843,9 @@ pos命令のパラメーターに変数が使われています。
 
 \ \ その後で「:」に続けて条件が正しい時に実行される命令を書きます
 
-
 \bigskip
 
 \ \ (条件式はいくつか書き方があります)
-
 
 \bigskip
 
@@ -4930,84 +2865,35 @@ pos命令のパラメーターに変数が使われています。
 \ \ \ \ 変数名 {\textgreater}
 数値\ \ 変数の内容より数値の方が数が小さい
 
-
-
 \bigskip
-
-
 \bigskip
 
 {\bfseries
-例題13 答え}
-
+例題12 答え}
 
 \bigskip
 
 「もし変数xが640を越えたら、変数xに0を代入する」という命令を書きます。
 
-
 \bigskip
 
 \ \ if x{\textgreater}640 : x=0
-
 
 \bigskip
 
 これで、xが1ずつ増えていって、640を越えた時に0に戻す条件判断をしたことになります。
 
-
+\bigskip
 \bigskip
 
-
-
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=11.033cm,height=6.209cm]{text02-img/text02-img052.png}
-
-\end{center}
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=11.033cm,height=6.209cm]{text02-img/text02-img052.png}}
+\end{minipage}
 
 \bigskip
-
-
 \bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
 \bigskip
 
 ファイル→「開く」メニューから「handan.hsp」を読み込んでみてください。
@@ -5015,23 +2901,13 @@ pos命令のパラメーターに変数が使われています。
 実際に試してみて、文字の表示位置が変わったらTAや周りの友達にも見せてあげましょう。
 
 
+\clearpage
+\subsection{例題14　繰り返しの方法を知ろう}
 \bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-\textstyleqwerty{\textbf{例題14　繰り返しの方法を知ろう}}
-
-
-
 \bigskip
 
 {\bfseries
 考え方}
-
 
 \bigskip
 
@@ -5042,7 +2918,6 @@ pos命令のパラメーターに変数が使われています。
 repeat命令の後には、loop命令を必ず書く必要があります。それにより、repeat命令から、loop命令までをすきな回数だけ繰り返すようになります。
 
 ファイル→「開く」メニューから「repeat.hsp」を読み込んでみましょう。
-
 
 \bigskip
 
@@ -5058,7 +2933,6 @@ repeat命令の後には、loop命令を必ず書く必要があります。そ�
 
 \ \ loop
 
-
 \bigskip
 
 [F5]キーを押して実行すると、5回だけLEDが点滅するのがわかります。
@@ -5068,25 +2942,19 @@ repeat命令の後には、loop命令を必ず書く必要があります。そ�
 
 repeat命令とloop命令の関係について、実際に試しながら学習してみましょう。
 
-
 \bigskip
-
-
 \bigskip
 
 {\bfseries
 例題14 答え}
 
-
 \bigskip
 
 繰り返しの回数を変えて色々なパターンを試してみましょう。
 
-
 \bigskip
 
 \ \ (HSPのルール)
-
 
 \bigskip
 
@@ -5106,22 +2974,15 @@ repeat命令とloop命令の関係について、実際に試しながら学習�
 実際に試してみて、結果が変わったらTAや周りの友達にも見せてあげましょう。
 
 
+
+
+\clearpage
+\subsection{例題15　ポーカーゲームで遊んでみよう}
 \bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-\textstyleqwerty{\textbf{例題15　ポーカーゲームで遊んでみよう}}
-
-
 \bigskip
 
 {\bfseries
 考え方}
-
 
 \bigskip
 
@@ -5133,12 +2994,11 @@ repeat命令とloop命令の関係について、実際に試しながら学習�
 
 できあがった５枚のカードが、きれいな手になっているとコインが増えます。(遊び方がわからない人は、友達や両親、近くの先生に聞いてみましょう)
 
-
+\bigskip
 \bigskip
 
 {\bfseries
 例題15 答え}
-
 
 \bigskip
 
@@ -5150,81 +3010,30 @@ repeat命令とloop命令の関係について、実際に試しながら学習�
 
 たとえば、コインの枚数はcreditという変数が記憶しています。
 
+\bigskip
+\bigskip
 
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=10.478cm,height=7.844cm]{text02-img/text02-img053.png}
+\flushleft
+Figure \stepcounter{Figure}{\theFigure}: poker.hspの実行画面}
+\end{minipage}
+
+\bigskip
+\bigskip
 \bigskip
 
 
-
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=10.478cm,height=7.844cm]{text02-img/text02-img053.png}
-
-\end{center}
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-\textstyleqwerty{\textbf{poker.hspの実行画面}}
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
 
 \clearpage
-\textstyleqwerty{\textbf{例題16　スイッチを使ったゲームで遊んでみよう}}
-
-
+\subsection{例題16　スイッチを使ったゲームで遊んでみよう}
+\bigskip
 \bigskip
 
 {\bfseries
 考え方}
-
 
 \bigskip
 
@@ -5236,67 +3045,19 @@ repeat命令とloop命令の関係について、実際に試しながら学習�
 
 いままではキーボードやマウスを使ってゲームをしていましたが、これはセンサーボードのスイッチだけしか使いません。
 
-
+\bigskip
 \bigskip
 
-
-
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=8.881cm,height=7.011cm]{text02-img/text02-img054.png}
-
-\end{center}
-
-\bigskip
-
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=8.881cm,height=7.011cm]{text02-img/text02-img054.png}
+\flushleft
+Figure \stepcounter{Figure}{\theFigure}: swjump.hspの実行画面}
+\end{minipage}
 
 \bigskip
-
-
 \bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-\textstyleqwerty{\textbf{swjump.hspの実行画面}}
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
 \bigskip
 
 ゲームに慣れてきたら、どこか改造できる所はないか探してみましょう。
@@ -5307,20 +3068,14 @@ repeat命令とloop命令の関係について、実際に試しながら学習�
 
 どんなことができるか、あれこれ想像してみてください。自分が作りたいものに向けて、何を覚えればいいのか、何が足りないか考えることもプログラミングでは大切です。
 
-
-\bigskip
-
-
 \bigskip
 
 {\bfseries
 例題16 答え}
 
-
 \bigskip
 
 「swjump.hsp」では色々な変数が使われています。
-
 
 \bigskip
 
@@ -5332,7 +3087,6 @@ repeat命令とloop命令の関係について、実際に試しながら学習�
 
 \ \ levup \ \ \ レベルアップするスコア
 
-
 \bigskip
 
 これらの値を変えてみると、ゲームの難しさも変わってきます。
@@ -5340,66 +3094,31 @@ repeat命令とloop命令の関係について、実際に試しながら学習�
 色々と変えてみながら、ちょうどいい難しさに改造してみましょう。
 
 
-\bigskip
+  % Omake:
 
-
-\bigskip
-
-
-\bigskip
-
-{\bfseries
-2-24 休憩・退出}
-
-
-\bigskip
-
-\begin{flushleft}
-\tablefirsthead{}
-\tablehead{}
-\tabletail{}
-\tablelasttail{}
-\begin{supertabular}{|m{10.542cm}|}
-\hline
-・今日の教室は終わりです
-
-・質問や疑問などがあれば先生のところまで聞きに行きましょう
-
-・時間までに家に帰るようにしましょう\\\hline
-\end{supertabular}
-\end{flushleft}
-
-\bigskip
-
-{\bfseries
-\ [ネットでHSPの情報を調べてみよう]}
-
+\clearpage\section{ネットでHSPの情報を調べてみよう}
 
 \bigskip
 
 家に帰ってから、インターネットでHSPに関する情報や資料を探すことができます。
 
-次のようなページから調べ始めるといいでしょう。
+HSPは、Raspberry Piだけでなく、Windows PCでも同様に扱うことができます。
 
-HSPは、Raspberry Piだけでなく、Windows
-PCでも同様に扱うことができます。
+家にパソコンやタブレットがある人は、そちらでも活用してみてください。
 
-家にWindowsパソコンがある人は、そちらでも活用してみてください。
-
+次のようなページから調べ始めるといいでしょう。(「HSP プログラミング」や「HSP3」などのキーワードでも検索してみましょう)
 
 \bigskip
 
 HSPの情報があるページ
 
-https://hsp.tv/
-
+\url{https://hsp.tv/}
 
 \bigskip
 
 HSP講座のあるページ一覧
 
-https://hsp.tv/play/link.html
-
+\url{https://hsp.tv/play/link.html}
 
 \bigskip
 
@@ -5407,269 +3126,100 @@ HSPプログラムコンテストも開かれています
 
 \url{https://hsp.tv/play/contest.html}
 
+\bigskip
+\bigskip
 
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=9.202cm,height=10.717cm]{text02-img/text02-img055.png}
+\flushleft
+Figure \stepcounter{Figure}{\theFigure}: HSP3のホームページ}
+\end{minipage}
+
+\bigskip
+\bigskip
 \bigskip
 
 
-\bigskip
 
+  % Last Part:
 
+\clearpage\section{質問フォーム}
+わからないこと、質問したいことがあれば質問フォームから質問しよう！
 
-\begin{center}
-  % Unhandled or unsupported graphics:
-\includegraphics[width=9.202cm,height=10.717cm]{text02-img/text02-img055.png}
-
-\end{center}
+質問フォームでは、授業でわからなかったことや確認したいことなどをホームページを通して質問できます。たくさん質問してわからないことを解決しよう。
 
 \bigskip
 
+\bigskip
+
+1.
+ブラウザで\textbf{授業で使うホームページリスト}を開こう。
 
 \bigskip
 
+\textbf{授業で使うホームページリスト}は/home/ユーザー名/01フォルダの中のlinks.htmlです
 
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
+リストの4番目の子ども\textbf{IT未来塾質問フォーム}をクリックして開いてください(Figure~\ref{seq:refFigure46})。
 
 
 \bigskip
 
 {\bfseries
-HSPのホームページ}
+スマートフォン等からの場合は\url{https://bit.ly/2NHiVgi}を開いてください。}
 
+
+
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[width=11.231cm,height=7.613cm]{textbook-img245.png}
+\flushleft
+
+\bigskip
+Figure {\refstepcounter{Figure}\theFigure\label{seq:refFigure46}}:
+ホームページリストより質問フォームを開く}
+\end{minipage}
 
 \bigskip
 
+\bigskip
+
+2.
+質問フォーム(Figure~\ref{seq:refFigure47})が表示されます
+
+\centering
+\begin{minipage}{11.915cm}
+{\upshape
+\includegraphics[width=13.263cm,height=14.233cm]{textbook-img246.png}
+\flushleft
+
+\bigskip
+Figure {\refstepcounter{Figure}\theFigure\label{seq:refFigure47}}: 質問フォーム}
+\end{minipage}
+\flushleft
 
 \bigskip
 
+メールアドレス、お名前、グループの先生の名前、ぎもんに思っていることを入力します。必要に応じて、ぎもんに思っている場所の画像を追加してください。
+
+{\bfseries
+送信\textmd{を押すと質問ができます。Figure~\ref{seq:refFigure48}の画面が出たら質問は完了です。}}
+
+
+
+\centering
+\begin{minipage}{8.871cm}
+{\upshape
+\includegraphics[width=8.871cm,height=4.374cm]{textbook-img247.png}
+\flushleft
 
 \bigskip
+Figure {\refstepcounter{Figure}\theFigure\label{seq:refFigure48}}: 質問送信画面}
+\end{minipage}
+\flushleft
+メールアドレスのらんに入力したアドレスへグループの先生から回答メールがきます。
+メールが来るまで、しばらくお待ちください。数日かかる場合があります。
 
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-\begin{flushleft}
-\tablefirsthead{}
-\tablehead{}
-\tabletail{}
-\tablelasttail{}
-\begin{supertabular}{m{0.537cm}m{11.7560005cm}}
-\multicolumn{2}{m{12.493001cm}}{{\ttfamily\bfseries
-パソコン実習の「き　ま　り」}}\\
-~
- &
-~
-\\
-\centering{\ttfamily ◎} &
-{\ttfamily\bfseries
-教室内で食事はしない。(水分補給は忘れずに)}\\
-~
- &
-~
-\\
-\centering{\ttfamily ◎} &
-{\ttfamily\bfseries
-授業の内容に関係ないゲームで遊ばない。}\\
-~
- &
-~
-\\
-\centering{\ttfamily ◎} &
-{\ttfamily\bfseries
-先生の話がある時はキーボードやマウスから手をはなしよく聞くこと。}\\
-~
- &
-~
-\\
-\centering{\ttfamily ◎} &
-{\ttfamily\bfseries
-わからないことがあった時は先生や、まわりのTAに質問する}\\
-~
- &
-~
-\\
-\centering{\ttfamily ◎} &
-{\ttfamily\bfseries
-パソコンのスピーカーのボリュームは、周りの人に迷惑にならない音量にする。}\\
-~
- &
-~
-\\
-\centering{\ttfamily ◎} &
-{\ttfamily\bfseries
-体調や気分が悪くなった時は先生や、まわりのヘルパーに知らせて休憩すること。}\\
-~
- &
-~
-\\
-~
- &
-~
-\\
-\end{supertabular}
-\end{flushleft}
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-{\raggedleft\bfseries
-教科書作成 : 2021/08/07 (おにたま)
-\par}
-
-
-\bigskip
 \end{document}
