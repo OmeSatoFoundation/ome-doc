@@ -39,15 +39,16 @@ RUN mkdir /usr/share/fonts/TTF \
 WORKDIR ~/fonts
 RUN wget https://github.com/liberationfonts/liberation-fonts/files/7261482/liberation-fonts-ttf-2.1.5.tar.gz \
     && tar -zxvf liberation-fonts-ttf-2.1.5.tar.gz \
-    && mv liberation-fonts-ttf-2.1.5/LiberationMono*.ttf /usr/share/fonts/TTF
-RUN wget https://moji.or.jp/wp-content/ipafont/IPAexfont/IPAexfont00401.zip \
+    && mv liberation-fonts-ttf-2.1.5/LiberationMono*.ttf /usr/share/fonts/TTF \
+    && wget https://moji.or.jp/wp-content/ipafont/IPAexfont/IPAexfont00401.zip \
     && unzip -o IPAexfont00401.zip \
-    && mv IPAexfont00401/*.ttf /usr/share/fonts/TTF
-RUN wget https://noto-website-2.storage.googleapis.com/pkgs/NotoSansCJKjp-hinted.zip \
+    && mv IPAexfont00401/*.ttf /usr/share/fonts/TTF \
+    && wget https://noto-website-2.storage.googleapis.com/pkgs/NotoSansCJKjp-hinted.zip \
     && unzip NotoSansCJKjp-hinted.zip \
     && wget https://noto-website-2.storage.googleapis.com/pkgs/NotoSerifCJKjp-hinted.zip \
     && unzip -o NotoSerifCJKjp-hinted.zip \
-    && mv *.otf /usr/share/fonts/TTF
+    && mv *.otf /usr/share/fonts/TTF \
+    && rm -r ~/fonts
 
 RUN echo -e '\
 <?xml version="1.0"?>\n\
