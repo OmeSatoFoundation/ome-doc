@@ -1,5 +1,5 @@
-\subsubsection{ボタンを使って LED をつけてみよう (2)}
-HSPスクリプトエディタで/home/pi/ome/03/button\_led2.hspを読み込み実行してください。前のプログラムではボタンを押している間LEDがつきましたが、今度はボタンを押すたびにLEDのON/OFFが変わります。\\
+\subsection{ボタンを使って LED をつけてみよう (2)}
+HSPスクリプトエディタで\textasciitilde /03/button\_led2.hspを読み込み実行してください。前のプログラムではボタンを押している間LEDがつきましたが、今度はボタンを押すたびにLEDのON/OFFが変わります。\\
 
 \begin{lstlisting}[caption=button\_led2.hsp,label=button_led2.hsp]
 #include "hsp3dish.as"		<#blue#;スクリプトの設定を読み込む#>
@@ -35,25 +35,26 @@ HSPスクリプトエディタで/home/pi/ome/03/button\_led2.hspを読み込み
 \end{lstlisting}
 
 ここで登場したif命令が今まで登場したif命令とは少し違うことに気が付きましたか？\\
-第二回のp34「2-22 条件判断とは」では次のようになっていました。\\
+第二回の「条件判断とは」では次のようになっていました。\\
 \begin{center}
  					if 条件式 : 命令 \\
 \end{center}
-最初に条件式を書いて、次に条件が正しい時に実行される命令を一つだけ書きました。しかし、今回　のプログラムでは次のようになっています。\\
+最初に条件式を書いて、次に条件が正しい時に実行される命令を一つだけ書きました。しかし、今回のプログラムでは次のようになっています。\\
 \begin{center}
-					if 条件式 \{\\
-					    命令\\
-					\}\\
+  \begin{minipage}{4cm}
+    if 条件式 \{\\ \ \ 命令\\ \}
+  \end{minipage}
 \end{center}
 どちらも条件判断をしたいときに使えるHSPのルールですが、{}を使ったif命令は、条件が正しかったときに複数の命令を書くことができます。\\
 \begin{center}
+  \begin{minipage}{4cm}
 					if 条件式 \{\\
-					    命令1\\
-					    命令2\\
-					    ...\\
+					  \ \ 命令1\\
+					  \ \ 命令2\\
+					  \ \ ...\\
 					\}\\
+  \end{minipage}
 \end{center}
-
 今回のプログラムではif命令の中で別のif命令とled = 1 – led という2つの命令を使うために{}を使っているわけです。\\
 
 \begin{center}
@@ -72,10 +73,10 @@ LEDのON/OFFを切り替えているのは、\code{led = 1 – led}の部分で�
 \label{button_led2_toi}
 \begin{enumerate}
 \item ターミナルを使ってbutton\_led2.hspのコピーを、332.hspという名前で作りましょう。\\
-□←できたらチェックしましょう。
+\fbox{\phantom{白}} $\leftarrow$できたらチェックしましょう。
 \item 黒いボタン(GPIO6)でLEDが点灯するように332.hspのプログラムを変えてみましょう。\\
-□←できたらチェックしましょう。
+\fbox{\phantom{白}} $\leftarrow$できたらチェックしましょう。
 \item 赤いボタン(GPIO5)でLED1(GPIO17)、黒いボタン(GPIO6)でLED3(GPIO22)が点灯するように332.hspのプログラムを変えてみましょう。\\
-□←できたらチェックしましょう。
+\fbox{\phantom{白}} $\leftarrow$できたらチェックしましょう。
 \end{enumerate}
 \end{tcolorbox}
