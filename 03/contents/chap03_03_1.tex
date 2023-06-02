@@ -12,7 +12,7 @@
 
 温湿度気圧センサーはセンサーボード上に取り付けられたセンサーと、外付けのセンサーの2種類があります。センサーボード上のセンサーがラズベリーパイの熱のせいで熱くなってしまうので、基本的には外付けのセンサーを使いましょう。
 
-外付けセンサーを取り付けるときはピンに正しい順番があるので、赤い線が3V3にささるように、下の写真のように取り付けてください。
+外付けセンサーを取り付けるときはピンに正しい向きがあるので、赤い線が3V3にささるように、下の写真のように取り付けてください。
 
 \begin{figure}[H]
     \centering
@@ -20,18 +20,19 @@
     \caption{外付けセンサーの取り付け方法}
 \end{figure}
 
-センサーボードとラズベリーパイは下図のように接続されています。たとえば LED1 を使いたいときは GPIO17 というピンを使う必要があります。
+センサーボードとラズベリーパイは図\ref{sensors}のように接続されています。たとえば LED1 を使いたいときは GPIO17 というピンを使います。
 
 \begin{figure}[H]
     \centering
     \includesvg[width=\linewidth]{images/chap03/rpz-ir-sensor.svg}
     \caption{センサーボードとラズベリーパイのかんけい}
+    \label{sensors}
 \end{figure}
 
-\subsection{きほんの HSP プログラム}
-\subsubsection{LED を光らせよう}
+\section{LEDの点灯・消灯を制御してみよう}
+\subsection{LED を光らせよう}
 
-まずはセンサーボードにある LED を光らせてみましょう。HSP スクリプトエディタから LED を光らせるプログラム(led.hsp)を読み込んで実行してみましょう。led.hsp は、/home/pi/ome/03のディレクトリにあります。\\
+まずはセンサーボードにある LED を光らせてみましょう。HSP スクリプトエディタから LED を光らせるプログラム(led.hsp)を読み込んで実行してみましょう。led.hsp は、\textasciitilde /03のディレクトリにあります。\\
 
 \begin{lstlisting}[caption=led.hsp,label=led.hsp]
 #include "hsp3dish.as"		<#blue#;スクリプトの設定を読み込む#>
@@ -55,7 +56,7 @@
     \includegraphics[width=\linewidth]{images/chap03/text03-img032.jpg}
 \end{figure}
 
-それではプログラムを解析してみましょう。\code{font} 命令や \code{pos} 命令、 \code{mes} 命令がありますね。これらがどんな命令だったかを前回の教科書を読んで復習しましょう。gpio 命令も前回勉強しました。17という数字は上の接続図の GPIO17 に対応していて、1 という数字は ON をあらわすのでしたね。\\
+それではプログラムを解析してみましょう。\code{font} 命令や \code{pos} 命令、 \code{mes} 命令がありますね。これらがどんな命令だったかを前回の教科書を読んで復習しましょう。gpio 命令も前回勉強しました。17という数字は上の図\ref{sensors}の GPIO17 に対応していて、1 という数字は ON をあらわすのでしたね。\\
 
 \begin{tcolorbox}[title=\useOmetoi]
 \begin{enumerate}
@@ -64,9 +65,9 @@
 \item　LED を消す命令を書きましょう(ヒント: 教科書第 2 回 2-9 LED が点滅するスクリプトを参考にしましょう）。\\
 \underline{答え.\hspace{0.8\linewidth}}
 \item ターミナルを使って led.hsp のコピーを、321.hsp という名前で作りましょう。\\
-□←できたらチェックしましょう。
+\fbox{\phantom{白}} $\leftarrow$できたらチェックしましょう。
 \item 他の色の LED が光るように 321.hsp のプログラムを変えてみましょう。\\
-□←できたらチェックしましょう。
+\fbox{\phantom{白}} $\leftarrow$できたらチェックしましょう。
 \end{enumerate}
 \end{tcolorbox}
 

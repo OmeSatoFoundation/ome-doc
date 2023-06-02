@@ -1,5 +1,5 @@
-\subsubsection{温度、湿度（しつど）、気圧、明るさを調べてみよう}\label{sec:sensors}
-次はセンサーボードに繋がっている BME280（温湿度気圧センサー）と、TSL2572（照度センサー）を使ってみましょう。HSP スクリプトエディタで/home/pi/ome/03/sensors.hsp を読み込み実行してください。\\
+\section{温度、湿度（しつど）、気圧、明るさを調べてみよう}\label{sec:sensors}
+次はセンサーボードに繋がっている BME280（温湿度気圧センサー）と、TSL2572（照度センサー）を使ってみましょう。HSP スクリプトエディタで\textasciitilde /03/sensors.hsp を読み込み実行してください。\\
 
 \begin{lstlisting}[caption=sensors.hsp,label=sensors.hsp]
 #include "hsp3dish.as"		<#blue#;スクリプトの設定を読み込む#>
@@ -48,7 +48,7 @@ geti2c_lux_init 		<#blue#; 照度センサ tsl2572 を初期化する#>
 のようにすることによって、\code{rpz\_temp} に気温 (temperature)、 \code{rpz\_hum} に湿度(humidity)、\code{rpz\_press} に気圧(pressure)が入ります。
 
 次は TSL2572 に関係する行を説明します。\\
-\code{init\_lux}
+\code{geti2c\_lux\_init}
 によって TSL2572 が初期化されます。BME280 のときと違って返り値を取らず、エラーチェック
 をする必要が無いことに気をつけましょう。実際には感度の設定等が行われます。詳しく知りたい方
 はデータシート（英語）を読んでみましょう。
@@ -74,10 +74,10 @@ lux = rpz\_lux\\}
 \item 気圧を調べる命令を書きましょう\\
 \underline{答え.\hspace{0.8\linewidth}}
 \item sensors.hsp を起動します。センサーに触れて温度をあげてみましょう。\\
-□←できたらチェックしましょう。
+\fbox{\phantom{白}} $\leftarrow$できたらチェックしましょう。
 \item sensors.hsp を起動します。センサーに息をふきかけて湿度をあげてみましょう。\\
-□←できたらチェックしましょう。
+\fbox{\phantom{白}} $\leftarrow$できたらチェックしましょう。
 \item  sensors.hsp を起動します。センサーを手でかくして暗くしてみましょう。\\
-□←できたらチェックしましょう。
+\fbox{\phantom{白}} $\leftarrow$できたらチェックしましょう。
 \end{enumerate}
 \end{tcolorbox}
