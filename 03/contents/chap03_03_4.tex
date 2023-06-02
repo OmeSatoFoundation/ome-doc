@@ -1,6 +1,6 @@
-\section{ボタンを上手に使ってみよう}
-\subsection{ボタンを使って LED をつけてみよう}
-赤いボタンを押している間 LED が光る HSP プログラムを考えてみましょう。HSP スクリプトエディタで\textasciitilde /03/button\_led.hsp を読み込み実行してください。センサーボードのボタンのどちらかを押すと LED が 1 つ点灯します。\\
+\subsection{センサーを組み合わせた HSP プログラム}
+\subsubsection{ボタンを使って LED をつけてみよう}
+赤いボタンを押している間 LED が光る HSP プログラムを考えてみましょう。HSP スクリプトエディタで/home/pi/ome/03/button\_led.hsp を読み込み実行してください。センサーボードのボタンのどちらかを押すと LED が 1 つ点灯します。\\
 
 \begin{lstlisting}[caption=button\_led.hsp,label=button_led.hsp]
 #include "hsp3dish.as"		<#blue#;スクリプトの設定を読み込む#>
@@ -43,10 +43,10 @@ GPIO5 なので５、黒いボタンは GPIO ６なので６）を書きます�
 \item ボタンが押されているか調べる命令を書きましょう。\\
 \underline{答え.\hspace{0.8\linewidth}}
 \item ターミナルを使って button\_led.hsp のコピーを、331.hsp という名前で作りましょう。\\
-\fbox{\phantom{白}} $\leftarrow$できたらチェックしましょう。
+□←できたらチェックしましょう。
 \item 黒いボタン(GPIO6)を使って LED を光らせるように、331.hsp のプログラムを変えてみましょう。\\
-\fbox{\phantom{白}} $\leftarrow$できたらチェックしましょう。
+□←できたらチェックしましょう。
 \item  赤いボタン(GPIO5)で LED1(GPIO17)、黒いボタン(GPIO6)で LED3(GPIO22)が光るように、331.hsp のプログラムを変えてみましょう。\\
-\fbox{\phantom{白}} $\leftarrow$できたらチェックしましょう。
+□←できたらチェックしましょう。
 \end{enumerate}
 \end{tcolorbox}
