@@ -7,8 +7,9 @@
 \begin{document}
 \section[ラズベリーパイになれよう（２）]{ラズベリーパイになれよう（２）}
 \subsection{写真をさつえいしよう}
-\subsection{例題 1-10
-  ウェブカメラで写真をさつえいしよう}
+\refstepcounter{Exercise}
+\subsection{\theExercise ウェブカメラで写真をさつえいしよう}
+\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:webcam}
 ウェブカメラを使用して画像をさつえいをします。
 
 まずは、ラズベリーパイにウェブカメラを接続しましょう。キーボードやマウスと同じように、ウェブカメラのUSBのたんしをラズベリーパイのUSBたんしへ差し込みます。
@@ -163,7 +164,8 @@
 \clearpage
 
 \begin{figure}[ht]
-  \subsection{例題 1-11画像に絵をかこう}
+  \refstepcounter{Exercise}
+  \subsection{\theExercise 画像に絵をかこう}
 
   \bigskip
 
@@ -218,7 +220,7 @@
   \begin{minipage}{\textwidth}
     \begin{minipage}{5.984cm}
       \includegraphics[width=5.971cm,height=5.738cm]{textbook-img129.png}\\
-      ３ 赤い四角で囲まれている
+      ３ 赤い丸で囲まれている
 
       部分をクリック
 
@@ -247,7 +249,7 @@
   \begin{minipage}[b]{6.663cm}
     ６ 次にお絵かきツールを選びます。
 
-    青色で囲われているところをダブルクリックしてください。これで色付きの筆が使えるようになります。
+    赤色で囲われているところをクリックしてください。これで色付きの筆が使えるようになります。
 
 
     \bigskip
@@ -263,7 +265,7 @@
     \begin{minipage}{5.76cm}
       \includegraphics[width=5.05cm,height=4.796cm]{textbook-img130.png}\\
       ７
-      ダブルクリックしたツールはすこし色が変わります。これで筆が使えるようになりました。
+      ツール一覧の下の文字が「ブラシで描画」に変わったことを確認しましょう。これで筆が使えるようになりました。
     \end{minipage}
     \hfill
     \begin{minipage}{10.2cm}
@@ -283,7 +285,7 @@
     \hfill
     \begin{minipage}{8.966cm}
       \includegraphics[width=8.881cm,height=4.997cm]{textbook-img133.png}\\
-      １０　他のにもたくさんツールはあります。スプレー、鉛筆を試してみよう。書き方は一緒で左クリックを押しながら移動だよ
+      １０　他にもたくさんツールはあります。メニューのツール欄にある描画ツールで選べるよ。鉛筆、インクを試してみよう。書き方はいっしょで左クリックを押しながら移動だよ
     \end{minipage}
   \end{minipage}
 \end{figure}
@@ -332,17 +334,36 @@
     \end{minipage}
     \includegraphics[width=1.919cm,height=1.365cm]{textbook-img135.png}
     \begin{minipage}{7.328cm}
-      \includegraphics[width=7.061cm,height=5.653cm]{textbook-img139.png}\\
+      \includegraphics[width=7.061cm,height=5.653cm]{textbook-img1030.png}\\
       １５
-      画像ファイルを開いて確認してみよう
+      右上の赤い丸で囲まれた×ボタンを押して、画像編集ツールを閉じよう
     \end{minipage}
   \end{minipage}
 
 
 
 \end{figure}
-\clearpage{\bfseries
-  問題 1-9}
+\clearpage
+
+\begin{minipage}{0.45\linewidth}
+  \includegraphics[width=\linewidth,height=5cm]{textbook-img1031.png}\\
+  １６　「保存されていません」というウィンドウがでます。これは、先ほど「エクスポート」したものとは別のことを言っていて、
+  画像自体は保存されています。なので、気にせず「保存しない」をクリックしましょう
+\end{minipage}
+\hfill
+\vspace{20pt}
+\begin{minipage}{0.45\linewidth}
+  \includegraphics[width=\linewidth,height=5cm]{textbook-img1032.png}\\
+  １７　画像が消え、何もないウィンドウになります。右上の×ボタンをクリックして、画像編集ツールを閉じましょう
+\end{minipage}
+\begin{minipage}{0.45\linewidth}
+  \includegraphics[width=\linewidth,height=5cm]{textbook-img139.png}\\
+  １８　画像ファイルを開いて確認してみよう
+\end{minipage}
+\hfill
+\vspace{20pt}
+
+\refstepcounter{Question}\theQuestion
 
 ”GIMP”を使って、自分の顔写真をさらに編集、加工してみよう
 
