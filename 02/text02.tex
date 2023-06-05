@@ -1925,13 +1925,11 @@ Figure \stepcounter{Figure}{\theFigure}: ドロップパズルゲームの画面
 \bigskip
 \bigskip
 
-皆さんのRaspberry Piは、パソコンやスマホと同じように自由にプログラムを入れたり、作ったりすることができます。
+ここでは、第1回で使ったRaspberry Piで絵を描くためのプログラム「GIMP」を使ってみます。
 
-好きなプログラムを入れて便利にすることができるのは、コンピューターの特徴の一つです。
+ファイルマネージャーの画面から、「/home/ユーザー名/02」フォルダにある「koma.png」のアイコンで右クリックを押して、「GIMP ( GNU Image Manipulation Program )」のメニューを選ぶすることでツールを起動させることができます。
 
-ここでは、Raspberry Piで絵を描くことのできるプログラムを使ってみます。
-
-Raspberry Piメニューからグラフィックス→「GIMP ( GNU Image Manipulation Program )」をクリックすることでツールを起動させることができます。
+これで、「koma.png」を読み込んで下絵とすることができます。
 
 \bigskip
 \bigskip
@@ -1939,10 +1937,10 @@ Raspberry Piメニューからグラフィックス→「GIMP ( GNU Image Manipu
 \begin{minipage}{9.781cm}
 \centering
 {\upshape
-\includegraphics[keepaspectratio,width=10.583cm,height=7.938cm]{text02-img/text02-img037.png}
+\includegraphics[keepaspectratio,width=10.583cm,height=7.938cm]{text02-img/s_komapng.png}
 \flushleft
 
-Figure \stepcounter{Figure}{\theFigure}: GIMPを起動したところ}
+Figure \stepcounter{Figure}{\theFigure}: koma.pngからGIMPを起動するところ}
 \end{minipage}
 
 \bigskip
@@ -1960,8 +1958,6 @@ GIMPを使って、ドロップパズルのゲームで使われた絵を改造�
 GIMPは、絵のデータを読み込んで、自分で好きに変更することができます。
 
 変更した絵は、ふたたび保存することができます。
-
-GIMPのファイル→「開く」メニューから、「/home/ユーザー名/02フォルダ」にある「koma.png」を読み込んで下絵とします。
 
 \bigskip
 \bigskip
@@ -2163,9 +2159,9 @@ Figure \stepcounter{Figure}{\theFigure}: ドロップパズルのスクリプト
 
 \bigskip
 
-Raspberry Piメニューからグラフィックス→「GIMP」をクリックすることでツールを起動させることができます。
+ファイルマネージャーの画面から、「/home/ユーザー名/02」フォルダにある「chr.png」のアイコンで右クリックを押して、「GIMP ( GNU Image Manipulation Program )」のメニューを選ぶすることでツールを起動させることができます。
 
-次に、ファイル→「開く」から「/home/ユーザー名/02/chr.png」を開いて、ゲームのキャラクターを改造してみましょう。
+これで、「chr.png」を読み込んで下絵とすることができます。
 
 \bigskip
 \bigskip
@@ -2183,7 +2179,7 @@ Figure \stepcounter{Figure}{\theFigure}: chr.pngを読み込んだ画面}
 \bigskip
 \bigskip
 
-左にあるのが自機、その右にあるのがレーザー、その右は敵の弾です。
+左にあるのが自機、その右にあるのがレーザー、その右は敵の弾です。ゲームのキャラクターを改造してみましょう。
 
 作業が終わったら、ファイル→「chr.pngに上書きエクスポート」を選んで保存します。
 
@@ -2194,11 +2190,9 @@ Figure \stepcounter{Figure}{\theFigure}: chr.pngを読み込んだ画面}
 
 背景は「bg.png」、キャラクターは「chr.png」、タイトルは「title.png」です。
 
-もとの絵は、chrorg.pngという名前でも保存されています。
-
 \bigskip
 
-※もし、chr.bmpの内容を元に戻したい時には、/usr/local/share/ome/02/chr.png のファイルを /home/ユーザー名/02 フォルダに上書きでコピーすれば元に戻せます。
+※もし、chr.png の内容を元に戻したい時には、/usr/local/share/ome/02/chr.png のファイルを /home/ユーザー名/02 フォルダに上書きでコピーすれば元に戻せます。
 
 \bigskip
 
