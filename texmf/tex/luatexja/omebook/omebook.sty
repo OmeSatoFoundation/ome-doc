@@ -141,8 +141,10 @@
 
 % 問題マクロ
 \newcommand{\addquiz}[1]{%
+\parbox{\linewidth}{%
 \item #1 \vspace{16mm} \\%
-\underline{答え.\hspace{0.8\linewidth}}%
+\underline{答え.\hspace{0.8\linewidth}}
+}
 }
 
 % 演習マクロ
