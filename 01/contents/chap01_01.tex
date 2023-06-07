@@ -3,27 +3,28 @@
 \graphicspath{%
   {../text01-img/}%
 }
+\usepackage{okumacro}
 % !TEX root = ./chap01_01.tex
 \begin{document}
-\section{今回の授業}
+\section{今回の\ruby{授業}{じゅぎょう}}
 \subsection{目標}
 \ \ \ \ ラズベリーパイになれよう
 
 \ \ \ \ 自分のホームページを作れるようになろう
 
-\subsection{授業内容}
+\subsection{\ruby{授業内容}{じゅぎょうないよう}}
 %\liststyleLii
 \begin{enumerate}
   \item ラズベリーパイとは
   \item ラズベリーパイになれよう（１）
   \item ラズベリーパイになれよう（２）
-  \item 自分の紹介ページを作ろう
+  \item 自分の\ruby{紹介}{しょうかい}ページを作ろう
 \end{enumerate}
 \subsection{注意点}
 %\liststyleLiii
 \begin{itemize}
   \item
-        授業の合間のきゅうけいでは、遠くのものをながめたりして目を休めましょう
+      \ruby{授業}{じゅぎょう}の合間のきゅうけいでは、遠くのものをながめたりして目を休めましょう
   \item 水分ほきゅうはこまめにしましょう
   \item
         先生が説明中は先生の話を聞きましょう
@@ -34,9 +35,9 @@
 %\liststyleLiv
 \begin{itemize}
   \item
-        教科書には例題、それに似た問題があります。まずは、例題をよく読みながら試してみましょう。そのあと問題を解きましょう。問題の答えは一番最後のページにあります。
+        教科書には例題、それに\ruby{似}{に}た問題があります。まずは、例題をよく読みながら試してみましょう。そのあと問題を\ruby{解}{と}きましょう。問題の答えは一番最後のページにあります。
 \end{itemize}
-\clearpage\subsection{配布物の確認}
+\clearpage\subsection{\ruby{配布物}{はいふぶつ}の\ruby{確認}{かくにん}}
 
 \bigskip
 
@@ -79,14 +80,14 @@
 
 %\liststyleLv
 \subsection{ラズベリーパイについて}
-イギリスのラズベリーパイ財団というグループが開発したキーボード一体型のコンピュータです。ラズベリーパイは短くラズパイとも呼ばれています。
+イギリスのラズベリーパイ\ruby{財団}{ざいだん}というグループが開発したキーボード一体型のコンピュータです。ラズベリーパイは短くラズパイとも\ruby{呼}{よ}ばれています。
 
-\subsection{とくちょう}
+\subsection{\ruby{特徴}{とくちょう}}
 %\liststyleLvi
 \begin{itemize}
   \item キーボード一体型で、キーボードが必要ない
-  \item 普通のパソコンのように使える
-  \item (動画再生やゲームもできます)
+  \item \ruby{普通}{ふつう}のパソコンのように使える
+  \item (動画\ruby{再生}{さいせい}やゲームもできます)
   \item
         プログラミングのべんきょうに向いている
   \item
@@ -126,18 +127,156 @@
 %\liststyleLx
 \begin{itemize}
   \item
-        ラズベリーパイをらんぼうに扱うのはやめましょう
+        ラズベリーパイをらんぼうに\ruby{扱}{あつか}うのはやめましょう
 \end{itemize}
 %\liststyleLxi
 \begin{itemize}
   \item
-        金属のものの上におかないようにしましょう
+        \ruby{金属}{きんぞく}のものの上におかないようにしましょう
 \end{itemize}
 
 \clearpage
+\subsection{パスワードについて学ぼう}
+\begin{enumerate}
+  \item
+  パスワードの\ruby{重要性}{じゅうようせい}について知ろう
+      \begin{itemize}
+      \item
+          IDとパスワードは、タブレットやパソコンなどの\ruby{情報機器}{じょうほうきき}や、インターネット上のサービスを利用する\ruby{際}{さい}に、\ruby{許可}{きょか}された者であるかを\ruby{識別}{しきべつ}し、本人を\ruby{確認}{かくにん}するための重要な\ruby{情報}{じょうほう}です。 いわゆるインターネットやパソコンなどの電子機器に入るための\ruby{鍵}{かぎ}の名前（ユーザーID）とその\ruby{鍵}{かぎ}（パスワード）といったところです。
+          \begin{figure}[h]
+            \centering
+            \begin{minipage}{5.228cm}
+              {\upshape
+                \includegraphics[width=7.000cm]{pswd_image_imp6.pdf}
+                }
+            \end{minipage}
+          \end{figure}
+          \item
+              他人に自分のユーザアカウント（\ruby{身分証明書}{みぶんしょうめいしょ}）を使用されてしまうと、本来は使用\ruby{権限}{けんげん}が\ruby{与}{あた}えられていない利用者がネットワークに\ruby{接続}{せつぞく}できるようになったり、大切な\ruby{情報}{じょうほう}を貯める場所から不正に\ruby{情報}{じょうほう}を\ruby{抜}{ぬ}き出したりすることができるようになります。
+          \begin{figure}[h]
+            \centering
+              \begin{minipage}{5.228cm}
+                {\upshape
+                  \includegraphics[width=7.000cm]{pswd_image_imp5.pdf}
+                  }
+              \end{minipage}
+            \end{figure}
+          \item
+              このようななりすましによるハッキングを\ruby{防止}{ぼうし}するためには、ひとりひとりのユーザーがパスワードを\ruby{厳重}{げんじゅう}に管理しなければなりません。
+          \begin{figure}[h]
+          \centering
+            \begin{minipage}{5.228cm}
+              {\upshape
+                \includegraphics[width=7.000cm]{pswd_image_imp3.pdf}
+                }
+            \end{minipage}
+          \end{figure}
+          
+    
+\end{itemize}
 
-\subsection{ラズベリーパイを準備しよう(手順)}
-\ \ ラズベリーパイとキーボード、マウス等を接続して起動する準備をします。
+
+\clearpage
+          \begin{itemize}
+          \item
+            パスワードをきちんと管理することは、ひとりのユーザーを守るだけでなく、\ruby{企業}{きぎょう}や\ruby{組織}{そしき}全体の\ruby{情報}{じょうほう}セキュリティ\ruby{確保}{かくほ}のために大変重要なことです。パスワードの大切さについて\ruby{再確認}{さいかくにん}しましょう。
+          \begin{figure}[h]
+          \centering
+          \begin{minipage}{5.228cm}
+            {\upshape
+              \includegraphics[width=7.000cm]{pswd_image_imp7.pdf}
+              }
+          \end{minipage}
+          \end{figure}
+          \item
+          ショッピングサイトなどでは、ユーザー名とパスワードを利用して、さまざまな\ruby{個人情報}{こじんじょうほう}を管理しています。そのため、他人にユーザー名とパスワードを知られてしまうと、商品の\ruby{購入履歴}{こうにゅうりれき}や住所、電話番号などの\ruby{個人情報}{こじんじょうほう}が他人に知られてしまうことになります。
+          \begin{figure}[h]
+          \centering
+          \begin{minipage}{5.228cm}
+            {\upshape
+              \includegraphics[width=7.000cm]{pswd_image_imp2.pdf}
+              }
+          \end{minipage}
+          \end{figure}
+          \item
+          ショッピングサイトによっては、会員管理としてクレジットカード番号のデータを\ruby{保存}{ほぞん}していることがあるため、自分の登録したクレジットカードで第三者に買い物をされてしまう\ruby{危険性}{きけんせい}もあります。
+          \begin{figure}[h]
+          \centering
+          \begin{minipage}{5.228cm}
+            {\upshape
+              \includegraphics[width=7.000cm]{pswd_image_imp8.pdf}
+              }
+          \end{minipage}
+          \end{figure}
+          \item
+              出典： \ruby{総務省}{そうむしょう}『国民のための\ruby{情報}{じょうほう}セキュリティサイト』\url{https://www.soumu.go.jp/main_sosiki/joho_tsusin/security_previous/kiso/k02_pass.htm}
+          \end{itemize}
+          \clearpage
+          \item パスワードの\ruby{制限}{せいげん}について知ろう
+          \begin{itemize}
+            \item
+                  Linuxのユーザー名とパスワードの\ruby{入力基準}{にゅうりょくきじゅん}において以下の\ruby{条件}{じょうけん}があります。
+                  \begin{itemize}  
+                  \item
+                          ユーザー名は小文字、数字、-、のみ使用\ruby{可能}{かのう}。
+                    \item
+                        パスワードは8文字以上16文字以下。
+                    \item
+                        パスワードには以下の四つのカテゴリタイプの文字の内、三つのカテゴリタイプの文字を入れる必要がある。
+                  \end{itemize}
+          \end{itemize}
+          \begin{table}[htbp]
+            \centering
+            \caption{文字タイプ表}
+            \begin{tabular}{|c|c|}
+            \hline
+                タイプ & \ruby{実際}{じっさい}に使用\ruby{可能}{かのう}な文字 \\
+                \hline
+                大文字& ABCDEFGHIJKLMNOPQRSTUVWXYZ\\
+                \hline
+                小文字& abcdefghijklmnopqrstuvwxyz\\
+                \hline
+                数字 &0123456789\\
+                \hline
+                英数字以外の文字&~!@\#\$\%\textasciicircum\&*()\_+`\{\}\textbar[]\textbackslash:";'<>?,./\\
+                \hline
+            \end{tabular}
+            \end{table}
+          \begin{itemize}
+              \item
+                  \ruby{注意事項}{ちゅういじこう}
+                  \begin{itemize}
+                  \item
+                      パスワードの先頭の大文字とパスワードの\ruby{末尾}{まつび}の数字は、使用される文字クラスの数にはカウントされません。
+                  \item
+                  パスワードには辞書の単語やユーザーのログイン名を\ruby{含}{ふく}めることはできません。
+                  \item
+                  文字を数字または英数字以外の文字に置き\ruby{換}{か}えると、辞書の単語が受け入れられるようになります。（例）app1e, ta2ya
+                  \item
+                  自分が覚えやすいものになるべくしてください。※\ruby{公}{おおやけ}になっている\ruby{羅列}{られつ}やその他ですでに使用しているものは\ruby{避}{さ}けてください。
+                  \end{itemize}
+          \end{itemize}
+          \begin{itemize}   
+              \item
+                  \refstepcounter{Question}\theQuestion 得た\ruby{知識}{ちしき}を\ruby{踏}{ふ}まえてパスワードとユーザ名が決めて下の\ruby{記入欄}{きにゅうらん}に記入してみましょう。
+                  \begin{table}[htbp]
+                    \centering
+                    
+                    \begin{tabular}{|c|c|}
+                    \hline
+                    \ruby{項目}{こうもく}&この列を\ruby{記入欄}{きにゅうらん}として\ruby{扱}{あつか}ってください  \\
+                        \hline
+                        ユーザー名(ID)& \\
+                        \hline
+                        パスワード& \\
+                        \hline
+                    \end{tabular}
+                    \end{table}
+          \end{itemize}
+
+          \clearpage
+\subsection{ラズベリーパイを\ruby{準備}{じゅんび}しよう(手順)}
+\ \ ラズベリーパイとキーボード、マウス等を\ruby{接続}{せつぞく}して起動する\ruby{準備}{じゅんび}をします。
 
 \begin{figure}[ht]
   \centering
@@ -145,7 +284,7 @@
     {\upshape
       \includegraphics[width=0.6\textwidth]{connections01-2023.jpg}
       \newline
-      Figure \stepcounter{Figure}{\theFigure}: 接続の全体図}
+      Figure \stepcounter{Figure}{\theFigure}: \ruby{接続}{せつぞく}の全体図}
 
   \end{minipage}
 \end{figure}
@@ -156,7 +295,7 @@
 
         \begin{itemize}
           \item
-                ラズベリーパイとモニタをHDMIケーブルで接続します。右側のHDMIポートを使用してください。Figure~\ref{seq:refFigure1}、Figure~\ref{seq:refFigure2}を参考にしてください。お家でやる場合は、モニタもしくはTVによってはHDMIの差込口の場所が異なる場合があります。説明書等を別途参照してください\textbf{。}
+                ラズベリーパイとモニタをHDMIケーブルで\ruby{接続}{せつぞく}します。右側のHDMIポートを使用してください。Figure~\ref{seq:refFigure1}、Figure~\ref{seq:refFigure2}を参考にしてください。お家でやる場合は、モニタもしくはTVによってはHDMIの\ruby{差し込み}{さしこみ}口の場所が\ruby{異}{こと}なる場合があります。説明書等を\ruby{別途}{べっと}参照してください\textbf{。}
 
 
                 \begin{figure}[h]
@@ -166,7 +305,7 @@
                       \includegraphics[height=3.471cm]{figure222023.pdf}
                       \newline
                       Figure {\refstepcounter{Figure}\theFigure\label{seq:refFigure1}}:
-                      ラズベリーパイHDMI接続}
+                      ラズベリーパイHDMI\ruby{接続}{せつぞく}}
                   \end{minipage}
                   \begin{minipage}{0.5\textwidth}
                     {\upshape
@@ -174,7 +313,7 @@
                       \includegraphics[height=3.471cm]{textbook-img016.png}
                       \newline
                       Figure {\refstepcounter{Figure}\theFigure\label{seq:refFigure2}}:
-                      ディスプレイHDMI接続}
+                      ディスプレイHDMI\ruby{接続}{せつぞく}}
                   \end{minipage}
                 \end{figure}
 
@@ -183,7 +322,7 @@
 
         \begin{itemize}
           \item
-                マウス、キーボードの先をラズベリーパイへ差し込みます。
+                マウス、キーボードの先をラズベリーパイへ差し\ruby{込}{こ}みます。
         \end{itemize}
 \end{enumerate}
 
@@ -193,7 +332,7 @@
       \includegraphics[width=8.135cm]{figure1.10-4.png}
       \newline
       Figure \stepcounter{Figure}{\theFigure}:
-      マウス、キーボードの接続}
+      マウス、キーボードの\ruby{接続}{せつぞく}}
   \end{minipage}
 \end{figure}
 %\liststyleLxii
@@ -225,7 +364,7 @@
 
         \begin{itemize}
           \item
-                次にモニタのコンセントをさします。モニタのみぎはじのボタンをおします。でんげんが入ると青色にてんとうします。お家でやるときはでんげんのいれた後、入力きりかえが必要となる場合がありますので、説明書等を別途参照してください。
+                次にモニタのコンセントをさします。モニタのみぎはじのボタンをおします。でんげんが入ると青色にてんとうします。お家でやるときはでんげんのいれた後、入力きりかえが必要となる場合がありますので、説明書等を\ruby{別途}{べっと}参照してください。
 
 
                 \begin{figure}[h]
@@ -239,11 +378,11 @@
                   \end{minipage}
                 \end{figure}
         \end{itemize}
-  \item ラズベリーパイのでんげんをいれる
+        \item ラズベリーパイのでんげんをいれる
 
         \begin{itemize}
           \item
-                最後にラズベリーパイのでんげんをいれます。Figure~\ref{seq:refFigure6}のようにラズベリーパイにでんげんケーブルをさしてコンセントへ接続します。緑色のランプがついてディスプレイにラズベリーが表示がされますFigure~\ref{seq:refFigure7}。
+                最後にラズベリーパイのでんげんをいれます。Figure~\ref{seq:refFigure6}のようにラズベリーパイにでんげんケーブルをさしてコンセントへ\ruby{接続}{せつぞく}します。緑色のランプがついてディスプレイにラズベリーが\ruby{表示}{ひょうじ}がされますFigure~\ref{seq:refFigure7}。
         \end{itemize}
         \begin{figure}
           \centering
@@ -252,7 +391,7 @@
               \includegraphics[width=.9\linewidth]{textbook-img020-2023.png}
               \newline
               Figure {\refstepcounter{Figure}\theFigure\label{seq:refFigure6}}:
-              ラズベリーパイでんげん接続}
+              ラズベリーパイでんげん\ruby{接続}{せつぞく}}
           \end{minipage}
           \begin{minipage}{0.4\textwidth}
             {\upshape
@@ -265,13 +404,13 @@
           
 \clearpage        
 \end{enumerate}
-\begin{enumerate}
+
 
   \subsection{セットアップをしよう}
-  \item 定住国を設定して言語とタイムゾーンを決定しよう
+  \item 定住国を\ruby{設定}{せってい}して言語とタイムゾーンを決定しよう
         \begin{itemize}
           \item
-                raspberry pi 400 が起動すると,このようなFigure~\ref{seq:refFigure8}セットアップの開始画面になります。この画面ではそのままNextのボタンを押して次に進みます。
+                raspberry pi 400 が起動すると,このようなFigure~\ref{seq:refFigure8}セットアップの開始画面になります。この画面ではそのままNextのボタンを\ruby{押}{お}して次に進みます。
         \end{itemize} 
         \begin{figure}[h]
           \centering
@@ -287,7 +426,7 @@
 
         \begin{itemize}
           \item
-              次の画面ではFigure~\ref{seq:refFigure9}のように自分の住んでいる地域（タイムゾーン）を設定することで言語や時間を決定することができます。今回は皆さん日本に住んでいると思うのでcountryの行をクリックするとFigure~\ref{seq:refFigure10}のように様々な国の名前が表示されるのでその中からJapanを選択してください。そうすると他のLanguage, Timezoneの項目がjapanese,Tokyoになります。これらはそれぞれ言語とタイムゾーンを表しています。それぞれJapan,japanese, Tokyoになっていることとピンクの枠の場所にチェックが入っていることを確認できたらNextボタンを押します。※注意: 次の画面に移動したら指示があるまでしばらく待機していてください。
+              次の画面ではFigure~\ref{seq:refFigure9}のように自分の住んでいる\ruby{地域}{ちいき}（タイムゾーン）を\ruby{設定}{せってい}することで言語や時間を決定することができます。今回は\ruby{皆}{みな}さん日本に住んでいると思うのでcountryの行をクリックするとFigure~\ref{seq:refFigure10}のように\ruby{様々}{さまざま}な国の名前が\ruby{表示}{ひょうじ}されるのでその中からJapanを\ruby{選択}{せんたく}してください。そうすると他のLanguage, Timezoneの\ruby{項目}{こうもく}がjapanese,Tokyoになります。これらはそれぞれ言語とタイムゾーンを表しています。それぞれJapan,japanese, Tokyoになっていることとピンクの\ruby{枠}{わく}の場所にチェックが入っていることを\ruby{確認}{かくにん}できたらNextボタンを\ruby{押}{お}します。※注意: 次の画面に\ruby{移動}{いどう}したら\ruby{指示}{しじ}があるまでしばらく待機していてください。
             
               \begin{figure}[h]
                 \centering
@@ -304,166 +443,18 @@
                     \includegraphics[width=7.000cm]{sw_image03-2.png}
                     \newline
                     Figure {\refstepcounter{Figure}\theFigure\label{seq:refFigure10}}:
-                    選択画面}
+                    \ruby{選択}{せんたく}画面}
                 \end{minipage}
               \end{figure}    
         \end{itemize}   
         \clearpage 
-        \item
-        パスワードの重要性について知ろう
-        \begin{itemize}
-          \item
-              IDとパスワードは、パソコンなどの情報機器や、インターネット上のサービスを利用する際に、許可された者であるかを識別し、本人を確認するための重要な情報です。 いわゆるインターネットやパソコンなどの電子機器に入るための鍵の名前（ユーザーID）とその鍵（パスワード）といったところです。
-              \begin{figure}[h]
-                \centering
-                \begin{minipage}{5.228cm}
-                  {\upshape
-                    \includegraphics[width=7.000cm]{pswd_image_imp6.pdf}
-                    \newline
-                    Figure {\refstepcounter{Figure}\theFigure\label{seq:refFigure21}}:
-                    ID,パスワード}
-                \end{minipage}
-              \end{figure}
-              \item
-              他人に自分のユーザアカウント（身分証明書）を使用されてしまうと、本来は使用権限が与えられていない利用者がネットワークに接続できるようになったり、大切な情報を貯める場所から不正に情報を抜き出したりすることができるようになります。
-              \begin{figure}[h]
-                \centering
-                  \begin{minipage}{5.228cm}
-                    {\upshape
-                      \includegraphics[width=7.000cm]{pswd_image_imp5.pdf}
-                      \newline
-                      Figure {\refstepcounter{Figure}\theFigure\label{seq:refFigure22}}:
-                      不正アクセス}
-                  \end{minipage}
-                \end{figure}
-              \item
-              このようななりすましによるハッキングを防止するためには、ひとりひとりのユーザーがパスワードを厳重に管理しなければなりません。
-              \begin{figure}[h]
-              \centering
-                \begin{minipage}{5.228cm}
-                  {\upshape
-                    \includegraphics[width=7.000cm]{pswd_image_imp3.pdf}
-                    \newline
-                    Figure {\refstepcounter{Figure}\theFigure\label{seq:refFigure23}}:
-                    パスワード管理}
-                \end{minipage}
-              \end{figure}
-              
-              
-          \end{itemize}
 
-        
-        \clearpage
-        \begin{itemize}
-        \item
-        パスワードをきちんと管理することは、ひとりのユーザーを守るだけでなく、企業や組織全体の情報セキュリティ確保のために大変重要なことです。パスワードの大切さについて再確認しましょう。
-        \begin{figure}[h]
-          \centering
-          \begin{minipage}{5.228cm}
-            {\upshape
-              \includegraphics[width=7.000cm]{pswd_image_imp7.pdf}
-              \newline
-              Figure {\refstepcounter{Figure}\theFigure\label{seq:refFigure20}}:
-              セキュリティ}
-          \end{minipage}
-        \end{figure}
-        \item
-        ショッピングサイトなどでは、ユーザー名とパスワードを利用して、さまざまな個人情報を管理しています。そのため、他人にユーザー名とパスワードを知られてしまうと、商品の購入履歴や住所、電話番号などの個人情報が他人に知られてしまうことになります。
-        \begin{figure}[h]
-          \centering
-          \begin{minipage}{5.228cm}
-            {\upshape
-              \includegraphics[width=7.000cm]{pswd_image_imp2.pdf}
-              \newline
-              Figure {\refstepcounter{Figure}\theFigure\label{seq:refFigure24}}:
-              パスワード注意}
-          \end{minipage}
-        \end{figure}
-        \item
-        ショッピングサイトによっては、会員管理としてクレジットカード番号のデータを保存していることがあるため、自分の登録したクレジットカードで第三者に買い物をされてしまう危険性もあります。
-        \begin{figure}[h]
-          \centering
-          \begin{minipage}{5.228cm}
-            {\upshape
-              \includegraphics[width=7.000cm]{pswd_image_imp8.pdf}
-              \newline
-              Figure {\refstepcounter{Figure}\theFigure\label{seq:refFigure25}}:
-              不正取引}
-          \end{minipage}
-        \end{figure}
-        \item
-              出典： 総務省『国民のための情報セキュリティサイト』\url{https://www.soumu.go.jp/main_sosiki/joho_tsusin/security_previous/kiso/k02_pass.htm}
-        \end{itemize}
-        \clearpage
-  \item パスワードの制限について知ろう
-        \begin{itemize}
-            \item
-                  Linuxのユーザー名とパスワードの入力基準において以下の条件があります。
-                  \begin{itemize}  
-                  \item
-                          ユーザー名は小文字、数字、-、のみ使用可能。
-                    \item
-                        パスワードは8文字以上16文字以下。
-                    \item
-                        パスワードには以下の四つのカテゴリタイプの文字の内、三つのカテゴリタイプの文字を入れる必要がある。
-                  \end{itemize}
-          \end{itemize}
-          \begin{table}[htbp]
-            \centering
-            \caption{文字タイプ表}
-            \begin{tabular}{|c|c|}
-            \hline
-                タイプ & 実際に使用可能な文字 \\
-                \hline
-                大文字& ABCDEFGHIJKLMNOPQRSTUVWXYZ\\
-                \hline
-                小文字& abcdefghijklmnopqrstuvwxyz\\
-                \hline
-                数字 &0123456789\\
-                \hline
-                英数字以外の文字&~!@\#\$\%\textasciicircum\&*()\_+`\{\}\textbar[]\textbackslash:";'<>?,./\\
-                \hline
-            \end{tabular}
-            \end{table}
-          \begin{itemize}
-              \item
-                  注意事項
-                  \begin{itemize}
-                  \item
-                      パスワードの先頭の大文字とパスワードの末尾の数字は、使用される文字クラスの数にはカウントされません。
-                  \item
-                  パスワードには辞書の単語やユーザーのログイン名を含めることはできません。
-                  \item
-                  文字を数字または英数字以外の文字に置き換えると、辞書の単語が受け入れられるようになります。（例）app1e, ta2ya
-                  \item
-                  自分が覚えやすいものになるべくしてください。※公になっている羅列やその他ですでに使用しているものは避けてください。
-                  \end{itemize}
-          \end{itemize}
-          \begin{itemize}   
-              \item
-                  \refstepcounter{Question}\theQuestion 得た知識を踏まえてパスワードとユーザ名が決めて下の記入欄に記入してみましょう。
-                  \begin{table}[htbp]
-                    \centering
-                    
-                    \begin{tabular}{|c|c|}
-                    \hline
-                        項目&この列を記入欄として扱ってください  \\
-                        \hline
-                        ユーザー名(ID)& \\
-                        \hline
-                        パスワード& \\
-                        \hline
-                    \end{tabular}
-                    \end{table}
-          \end{itemize}
-    
-\clearpage
 
     \item             
-                知識を得たら実際にパスワードとユーザー名（ID）を決めよう
+          パスワードとユーザー名（ID）を決めよう
                 \begin{itemize}
                 \item                                      
-                次にユーザーを作成します。この図のようにFigure~\ref{seq:refFigure11}上から順にユーザー名、パスワード、再度入力用パスワードの入力の順になっています。
+                次にユーザーを作成します。この図のようにFigure~\ref{seq:refFigure11}上から順にユーザー名、パスワード、\ruby{再度}{さいど}入力用パスワードの入力の順になっています。
               
         
                     \begin{figure}[h]
@@ -479,12 +470,12 @@
                   \end{itemize}
                   \begin{itemize}
                   \item
-                      記入が終わったら実際に入力してみます。その際にこのような画面Figure~\ref{seq:refFigure14}が出てきたらユーザー名（ID）かパスワードのどれかに不正な文字などが含まれている可能性があるのでもう一度確認しましょう。
+                      先ほど記入したものを\ruby{実際}{じっさい}に入力してみます。その\ruby{際}{さい}にこのような画面Figure~\ref{seq:refFigure14}が出てきたらユーザー名（ID）かパスワードのどれかに不正な文字などが\ruby{含}{ふく}まれている\ruby{可能性}{かのうせい}があるのでもう一度\ruby{確認}{かくにん}しましょう。
                       \begin{figure}[h]
                         \centering
                         \begin{minipage}{5.228cm}
                           {\upshape
-                            \includegraphics[width=7.000cm]{sw_image04.png}
+                            \includegraphics[width=6.000cm]{sw_image04.png}
                             \newline
                             Figure {\refstepcounter{Figure}\theFigure\label{seq:refFigure14}}:
                             エラー画面}
@@ -493,33 +484,33 @@
                 \end{itemize}
                 \begin{itemize}
                   \item
-                        次にスクリーンサイズをTAの人と画面が歪んだりしていないか、縦横に伸びていないかを一緒に確認してください。問題の無い場合はNextを押して次に進みます。Figure~\ref{seq:refFigure15}
+                        次にスクリーンサイズをTAの人と画面が\ruby{歪}{ゆが}んだりしていないか、\ruby{縦横}{たてよこ}に\ruby{伸}{の}びていないかを\ruby{一緒}{いっしょ}に\ruby{確認}{かくにん}してください。問題の無い場合はNextを\ruby{押}{お}して次に進みます。Figure~\ref{seq:refFigure15}
                         \begin{figure}[h]
                           \centering
                           \begin{minipage}{5.228cm}
                             {\upshape
-                              \includegraphics[width=7.000cm]{sw_image05.png}
+                              \includegraphics[width=6.000cm]{sw_image05.png}
                               \newline
                               Figure {\refstepcounter{Figure}\theFigure\label{seq:refFigure15}}:
-                              スクリーンサイズ確認}
+                              スクリーンサイズ\ruby{確認}{かくにん}}
                           \end{minipage}
                         \end{figure}
                       \end{itemize}  
                       
   \clearpage                   
   \item     
-        Wi-Fiを接続しよう
+        Wi-Fiを\ruby{接続}{せつぞく}しよう
                 \begin{itemize}
                   \item
-                        次にWi-Fiの設定を行います。この赤枠の中に接続可能なWi-Fiの名前が表示されます。Figure~\ref{seq:refFigure16}
+                        次にWi-Fiの\ruby{設定}{せってい}を行います。この\ruby{赤枠}{あかわく}の中に\ruby{接続可能}{せつぞくかのう}なWi-Fiの名前が\ruby{表示}{ひょうじ}されます。Figure~\ref{seq:refFigure16}
                         \item   
-                        \refstepcounter{Question}\theQuestion またこのセクションではWi-FIのアドレスとパスワードが必要となるのでTA(ティーチングアシスタント(Teaching Assistant))の人からアドレスとパスワードを教えてもらい、下の欄に記入しておきましょう。    
+                        \refstepcounter{Question}\theQuestion またこのセクションではWi-FIのアドレスとパスワードが必要となるのでTA(ティーチングアシスタント(Teaching Assistant))の人からアドレスとパスワードを教えてもらい、下の\ruby{欄}{らん}に記入しておきましょう。    
                         \begin{table}[htbp]
                           \centering
                           
                           \begin{tabular}{|c|c|}
                           \hline
-                              項目&この列を記入欄として扱ってください  \\
+                              \ruby{項目}{こうもく}&この列を\ruby{記入欄}{きにゅうらん}として\ruby{扱}{あつか}ってください  \\
                               \hline
                               （例）Wi-Fiアドレス& ALGS630-12345678\\
                               \hline
@@ -532,7 +523,7 @@
                           \end{tabular}
                           \end{table}
                         \item     
-                        上部で記入したアドレスを選択してNextのボタンを押します。
+                        上部で記入したアドレスを\ruby{選択}{せんたく}してNextのボタンを\ruby{押}{お}します。
                         \begin{figure}[h]
                           \centering
                           \begin{minipage}{5.228cm}
@@ -540,13 +531,13 @@
                               \includegraphics[width=7.000cm]{sw_image06kai.png}
                               \newline
                               Figure {\refstepcounter{Figure}\theFigure\label{seq:refFigure16}}:
-                              Wi-Fi設定}
+                              Wi-Fi\ruby{設定}{せってい}}
                           \end{minipage}
                         \end{figure}
                 \end{itemize}
                 \begin{itemize}
                   \item
-                      そうするとパスワードを入力するように求められます。 ここでも上部で記入したパスワードを入力してNextを押します。
+                      そうするとパスワードを入力するように求められます。 ここでも上部で記入したパスワードを入力してNextを\ruby{押}{お}します。
                       \begin{figure}[h]
                         \centering
                         \begin{minipage}{5.228cm}
@@ -561,10 +552,10 @@
                 \end{itemize}  
    \clearpage           
     \item
-        アップデートの確認をしよう
+        アップデートの\ruby{確認}{かくにん}をしよう
                 \begin{itemize}
                   \item
-                      次の画面に進むとソフトウェアアップデートを求めらるので今回はアップデートをせずにSkipボタンを押して次の画面に遷移します。Figure~\ref{seq:refFigure18}
+                      次の画面に進むとソフトウェアアップデートを求めらるので今回はアップデートをせずにSkipボタンを\ruby{押}{お}して次の画面に\ruby{移動}{いどう}します。Figure~\ref{seq:refFigure18}
                       \begin{figure}[h]
                         \centering
                         \begin{minipage}{5.228cm}
@@ -577,10 +568,10 @@
                       \end{figure}
                   \end{itemize}  
     \item
-        再起動をしてraspberry piを始めよう
+        \ruby{再起動}{さいきどう}をしてraspberry piを始めよう
                 \begin{itemize}
                   \item
-                        次に大まかな初期設定が完了したので再起動を行います。画面右下にあるRestartのボタンを押してください。そうすると再起動が開始されます。
+                        次に大まかな初期\ruby{設定}{せってい}が\ruby{完了}{かんりょう}したので\ruby{再起動}{さいきどう}を行います。画面右下にあるRestartのボタンを\ruby{押}{お}してください。そうすると\ruby{再起動}{さいきどう}が開始されます。
                         \begin{figure}[h]
                           \centering
                           \begin{minipage}{5.228cm}
@@ -588,10 +579,10 @@
                               \includegraphics[width=7.000cm]{sw_image08.png}
                               \newline
                               Figure {\refstepcounter{Figure}\theFigure\label{seq:refFigure19}}:
-                              再起動}
+                              \ruby{再起動}{さいきどう} }
                           \end{minipage}
                         \end{figure}
-                      \end{itemize}  
+                  \end{itemize}  
                 
 \end{enumerate}
 \end{document}
