@@ -54,7 +54,7 @@ HSPスクリプトエディタで\textasciitilde /03/button\_led3.hspを読み�
   goto *hata		<#blue#;*hataまで戻る#>
 \end{lstlisting}
 
-\textbf{剰余算 }\\
+\textbf{剰余算}\\
 今回、新たに\textbackslash (バックスラッシュ)という記号が登場しています。これは剰余算といって割り算をしたときの余りを計算できます。例えば、5 \textbackslash \ 4 は5を4で割った余りである1になります。
 
 \code{ledidx = (ledidx+1) \textbackslash \ 4}では、何回\code{*hata}まで戻っているか数えています。LEDは4つあるので、4回動けば一周できます。一周したらまた0に戻りたいので、剰余算を使っています。今回は\code{ledidx}は0～3のどれかの数字になります。\\
