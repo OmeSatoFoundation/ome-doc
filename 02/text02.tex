@@ -1115,7 +1115,7 @@ Figure \stepcounter{Figure}{\theFigure}: Raspberry Piとセンサーボード}
 \bigskip
 \bigskip
 
-今回、皆さんが使うHSPは小文字のアルファベット(英語)でスクリプトを打ち込みます。でも英語を知っている必要はありません。漢字変換がいらないので、慣れれば英語の方が打ち込むのが早くなりますし、世界中の人が同じ方法で打ち込んでいるので、今覚えておけば将来にも役立つはずです。
+今回、皆さんが使うHSPは小文字のアルファベット(英語)でスクリプトを打ち込みます。でも英語を知らなくても構いません。漢字変換がいらないので、慣れれば英語の方が打ち込むのが早くなりますし、世界中の人が同じ方法で打ち込んでいるので、今覚えておけば将来にも役立つはずです。
 
 
 \bigskip
@@ -1141,7 +1141,7 @@ Figure \stepcounter{Figure}{\theFigure}: Raspberry Piとセンサーボード}
 \includegraphics[keepaspectratio,width=8.387cm,height=6.17cm]{text02-img/text02-img023.png}
 \flushleft
 
-Figure \stepcounter{Figure}{\theFigure}: led.hspのスクリプト}
+Figure \stepcounter{Figure}{\theFigure}: gpio.hspのスクリプト}
 \end{minipage}
 
 \bigskip
@@ -1306,10 +1306,9 @@ GPIO
 
 おや…LEDが点きっぱなしになりましたね。
 
-実は、LEDが点滅するためには、ONとOFFの2つを書く必要があるのです。
+実は、LEDが点滅するためには、ONとOFFの2つを書きます。
 
-つまり、「gpio
-17,0」と書かれている部分も修正しなければなりません。
+つまり、「gpio 17,0」と書かれている部分も修正しなければなりません。
 
 
 \bigskip
@@ -1632,10 +1631,9 @@ mes命令の前に書かれているcolor命令の数字を変更することで
 
 \bigskip
 
-必ず、mes命令が実行されるよりも前(上の行)にcolor命令を書く必要があります。
+必ず、mes命令が実行されるよりも前(上の行)にcolor命令を書きます。
 
 代表的な色は次のようになります。参考にして思った通りの色になっているか確認してみましょう。
-
 
 \bigskip
 
@@ -1655,6 +1653,15 @@ mes命令の前に書かれているcolor命令の数字を変更することで
 
 \ \ \ \ color 255 ,255 ,255 ; ← 白 
 
+
+\bigskip
+\bigskip
+
+「; ← 黒」のように行の中で「;」が入っている部分から先は「コメント」として扱われます。
+
+「;」から先は、命令を書いても実行の時にも無視されます。
+
+「コメント」は、その行でやっていること、残しておきたいメモなどを書くことのできる機能です。
 
 \bigskip
 \bigskip
@@ -1696,7 +1703,7 @@ font命令の後にスペースに続けて「””」、さらに「,」と大
 
 \bigskip
 
-必ず、mes命令が実行されるよりも前(上の行)にfont命令を書く必要があります。
+必ず、mes命令が実行されるよりも前(上の行)にfont命令を書きます。
 
 font命令で指定するパラメーターのは文字のサイズで大きい数になるほど文字も大きくなります。
 
@@ -1753,7 +1760,7 @@ mes命令で表示する文字の表示位置を変えるにはpos命令を使�
 
 \bigskip
 
-必ず、mes命令が実行されるよりも前(上の行)にpos命令を書く必要があります。
+必ず、mes命令が実行されるよりも前(上の行)にpos命令を書きます。
 
 
 \bigskip
@@ -1925,13 +1932,11 @@ Figure \stepcounter{Figure}{\theFigure}: ドロップパズルゲームの画面
 \bigskip
 \bigskip
 
-皆さんのRaspberry Piは、パソコンやスマホと同じように自由にプログラムを入れたり、作ったりすることができます。
+ここでは、第1回で使ったRaspberry Piで絵を描くためのプログラム「GIMP」を使ってみます。
 
-好きなプログラムを入れて便利にすることができるのは、コンピューターの特徴の一つです。
+ファイルマネージャーの画面から、「/home/ユーザー名/02」フォルダにある「koma.png」のアイコンで右クリックを押して、「GIMP ( GNU Image Manipulation Program )」のメニューを選ぶすることでツールを起動させることができます。
 
-ここでは、Raspberry Piで絵を描くことのできるプログラムを使ってみます。
-
-Raspberry Piメニューからグラフィックス→「GIMP ( GNU Image Manipulation Program )」をクリックすることでツールを起動させることができます。
+これで、「koma.png」を読み込んで下絵とすることができます。
 
 \bigskip
 \bigskip
@@ -1939,10 +1944,10 @@ Raspberry Piメニューからグラフィックス→「GIMP ( GNU Image Manipu
 \begin{minipage}{9.781cm}
 \centering
 {\upshape
-\includegraphics[keepaspectratio,width=10.583cm,height=7.938cm]{text02-img/text02-img037.png}
+\includegraphics[keepaspectratio,width=10.583cm,height=7.938cm]{text02-img/s_komapng.png}
 \flushleft
 
-Figure \stepcounter{Figure}{\theFigure}: GIMPを起動したところ}
+Figure \stepcounter{Figure}{\theFigure}: koma.pngからGIMPを起動するところ}
 \end{minipage}
 
 \bigskip
@@ -1955,13 +1960,11 @@ Figure \stepcounter{Figure}{\theFigure}: GIMPを起動したところ}
 \bigskip
 \bigskip
 
-Gimpを使って、ドロップパズルのゲームで使われた絵を改造してみましょう。
+GIMPを使って、ドロップパズルのゲームで使われた絵を改造してみましょう。
 
-Gimpは、絵のデータを読み込んで、自分で好きに変更することができます。
+GIMPは、絵のデータを読み込んで、自分で好きに変更することができます。
 
 変更した絵は、ふたたび保存することができます。
-
-Gimpのファイル→「開く」メニューから、「/home/ユーザー名/02フォルダ」にある「koma.png」を読み込んで下絵とします。
 
 \bigskip
 \bigskip
@@ -2026,8 +2029,11 @@ Figure \stepcounter{Figure}{\theFigure}: 色をえらぶところ}
 
 元の絵を書き換えたら、ファイル→「koma.pngに上書きエクスポート」を選んで保存します。
 
-作業が終わったら、最後にファイル→「終了」を選んでGimpアプリケーションを閉じるのを忘れないでください。(koma.pngを保存してあるので、現在のドキュメントを保存する必要はありません)
+作業が終わったら、最後にファイル→「終了」を選んでGIMPアプリケーションを閉じるのを忘れないでください。
 
+通常の「保存」メニューを選択すると元のPNGファイルではなく、GIMP専用のファイル形式でて保存されてしまいます。
+
+今回は、PNGファイルだけを保存したいので、「koma.pngに上書きエクスポート」を選んで保存するようにしてください。
 
 \bigskip
 
@@ -2066,7 +2072,9 @@ Figure \stepcounter{Figure}{\theFigure}: ドロップパズルのスクリプト
 
 \bigskip
 
-106行目にある「k=rnd(5)」という部分を探してみましょう。
+「k=rnd(5)」という部分を探してみましょう。
+
+これは106行目にあります。カーソルがある行の数は左下に「line:〇〇〇」表示されていますので確認してみましょう )
 
 この「5」を「3」などもっと少ない数に変えてみるとどうなるか確認してみましょう。
 
@@ -2153,14 +2161,14 @@ Figure \stepcounter{Figure}{\theFigure}: ドロップパズルのスクリプト
 
 \bigskip
 
-教科書でドロップパズルの絵を修正したのと同じように、Gimpを使ってシューティングゲームの絵を修正します。
+教科書でドロップパズルの絵を修正したのと同じように、GIMPを使ってシューティングゲームの絵を修正します。
 
 
 \bigskip
 
-Raspberry Piメニューからグラフィックス→「GIMP」をクリックすることでツールを起動させることができます。
+ファイルマネージャーの画面から、「/home/ユーザー名/02」フォルダにある「chr.png」のアイコンで右クリックを押して、「GIMP ( GNU Image Manipulation Program )」のメニューを選ぶすることでツールを起動させることができます。
 
-次に、ファイル→「開く」から「/home/ユーザー名/02/chr.png」を開いて、ゲームのキャラクターを改造してみましょう。
+これで、「chr.png」を読み込んで下絵とすることができます。
 
 \bigskip
 \bigskip
@@ -2178,7 +2186,7 @@ Figure \stepcounter{Figure}{\theFigure}: chr.pngを読み込んだ画面}
 \bigskip
 \bigskip
 
-左にあるのが自機、その右にあるのがレーザー、その右は敵の弾です。
+左にあるのが自機、その右にあるのがレーザー、その右は敵の弾です。ゲームのキャラクターを改造してみましょう。
 
 作業が終わったら、ファイル→「chr.pngに上書きエクスポート」を選んで保存します。
 
@@ -2189,15 +2197,13 @@ Figure \stepcounter{Figure}{\theFigure}: chr.pngを読み込んだ画面}
 
 背景は「bg.png」、キャラクターは「chr.png」、タイトルは「title.png」です。
 
-もとの絵は、chrorg.pngという名前でも保存されています。
+\bigskip
+
+※もし、chr.png の内容を元に戻したい時には、/usr/local/share/ome/02/chr.png のファイルを /home/ユーザー名/02 フォルダに上書きでコピーすれば元に戻せます。
 
 \bigskip
 
-※もし、chr.bmpの内容を元に戻したい時には、/usr/local/share/ome/02/chr.png のファイルを /home/ユーザー名/02 フォルダに上書きでコピーすれば元に戻せます。
-
-\bigskip
-
-Gimpを使い終わったら、最後にファイル→「終了」を選んでGimpアプリケーションを閉じてください。
+GIMPを使い終わったら、最後にファイル→「終了」を選んでGIMPアプリケーションを閉じてください。
 
 
 \clearpage
@@ -2823,7 +2829,7 @@ pos命令のパラメーターに変数が使われています。
 
 文字が左から右に移動しますが、右まで行ったら、また左に戻るように改造してみましょう。
 
-変数xの値が640を越えたら、0に戻す必要があります。
+変数xの値が640を越えたら、0に戻します。
 
 どのように条件判断を書けばいいか考えてみましょう。
 
@@ -2915,7 +2921,7 @@ pos命令のパラメーターに変数が使われています。
 
 しかし、時には一定回数だけ繰り返したいことがあります。そんな時に、すべてまとめて便利に書けるようにしたものがrepeat命令です。
 
-repeat命令の後には、loop命令を必ず書く必要があります。それにより、repeat命令から、loop命令までをすきな回数だけ繰り返すようになります。
+repeat命令の後には、loop命令を必ず書きます。それにより、repeat命令から、loop命令までをすきな回数だけ繰り返すようになります。
 
 ファイル→「開く」メニューから「repeat.hsp」を読み込んでみましょう。
 
