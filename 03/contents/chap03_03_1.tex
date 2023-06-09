@@ -44,7 +44,7 @@
 	redraw 1		<#blue#;画面更新（実際の画面に描画）#>
 *led
 	gpio 17, 1		<#blue#;GPIO17 を点灯させる#>
-	await 100		<#blue#;0.1 秒待つ#>
+	wait 100		<#blue#;0.1 秒待つ#>
 	goto *led		<#blue#;*led まで戻る#>
 	gpio 17, 0		<#blue#;GPIO17を消灯させる#>
 \end{lstlisting}

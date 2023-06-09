@@ -19,8 +19,8 @@
 
 *led
 	btn1 = gpioin(5) 	<#blue#;ボタンの状態を調べる#>
-	if btn1==0 : gpio 18, 1 : else : gpio 18, 0 	<#blue#;ボタンによってLEDを消灯/点灯#>
-	await 10 		<#blue#;0.01 秒待つ#>
+	if btn1=0 : gpio 18, 1 : else : gpio 18, 0 	<#blue#;ボタンによってLEDを消灯/点灯#>
+	wait 10 		<#blue#;0.1 秒待つ#>
 	goto *led 		<#blue#;*led に戻る#>
 \end{lstlisting}
 
@@ -34,7 +34,7 @@ GPIO5 なので５、黒いボタンは GPIO ６なので６）を書きます�
 数字が 0 のとき）LED を光らせる、それ以外のときは消すという命令を書きます。もし～は \code{if} 命令
 を書きます。
 
-\code{if btn1==0} で \code{btn1} 変数の数字が 0 のとき（赤いボタンが押されているとき）は\code{ }: の次に書かれている命令を実行します。\\
+\code{if btn1=0} で \code{btn1} 変数の数字が 0 のとき（赤いボタンが押されているとき）は\code{ }: の次に書かれている命令を実行します。\\
 \code{: gpio 18, 1} で GPIO18 の LED を光らせます。\\
 \code{: else : gpio 18, 0} では、else（それ以外）のとき、GPIO18 の LED を消しています。\\
 
