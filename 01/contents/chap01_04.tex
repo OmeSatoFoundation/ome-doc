@@ -148,6 +148,7 @@
 \begin{figure}[ht]
   \refstepcounter{Exercise}
   \subsection{\theExercise ホームページの中身をのぞいてみよう}
+  \addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:HTML_1}
   self\_intro.htmlをテキストエディタで開いて~\ref{seq:refFigure31}のタイトルバーの文字を\ruby{変更}{へんこう}してみよう。タイトルバーは~\ref{seq:refFigure31}のように赤わくで囲われています。
 
 
@@ -301,6 +302,7 @@ Text Editorで開いたら赤線が引かれた
 \begin{figure}[ht]
   \refstepcounter{Exercise}
   \subsection{\theExercise 見出しを作ってみよう}
+  \addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:HTML_2}
 
 
   \centering
@@ -438,7 +440,7 @@ Text Editorで開いたら赤線が引かれた
     \tablehead{}
     \tabletail{}
     \tablelasttail{}
-    \begin{supertabular}{|m{2.171cm}|m{4.1060004cm}|m{7.8930006cm}|m{2.037cm}|}
+    \begin{supertabular}{|m{1.6cm}|m{5.1060004cm}|m{7.8930006cm}|m{2.037cm}|}
       \hline
       タグ名 &
       使用例 &
@@ -448,25 +450,25 @@ Text Editorで開いたら赤線が引かれた
       {\textless}title{\textgreater}タイトル{\textless}/title{\textgreater} &
       ブラウザのタイトルバーをタイトルに\ruby{変更}{へんこう}する
       &
-      1-13\\\hline
+      \ref*{E:HTML_1}\\\hline
       p &
       {\textless}p{\textgreater}文章{\textless}/p{\textgreater} &
       文章と\ruby{表示}{ひょうじ}する。改行なし &
-      1-14\\\hline
+      \ref*{E:HTML_2}\\\hline
       h1 &
       {\textless}h1{\textgreater}見出し１{\textless}/h1{\textgreater} &
       見出し１と\ruby{表示}{ひょうじ}する。\ruby{普通}{ふつう}の文字より大きい
       &
-      1-14\\\hline
+      \ref*{E:HTML_2}\\\hline
       img &
       {\textless}img src=”img.png”{\textgreater} &
       src=””で指定された\ruby{画像}{がぞう}ファイルを\ruby{表示}{ひょうじ}する
       &
-      1-15\\\hline
+      \ref*{E:HTML_3}\\\hline
       br &
       {\textless}br{\textgreater} &
       改行をする &
-      1-16\\\hline
+      \ref*{E:HTML_4}\\\hline
       ol &
       {\textless}ol{\textgreater}
 
@@ -475,7 +477,7 @@ Text Editorで開いたら赤線が引かれた
       {\textless}/ol{\textgreater} &
       liタグと合わせて使用する。\ruby{順序}{じゅんじょ}付きのリストを作る。\ruby{順序}{じゅんじょ}はliタグの順番通りにつく
       &
-      1-17\\\hline
+      \ref*{E:HTML_5}\\\hline
       Ul &
       {\textless}ul{\textgreater}
 
@@ -484,15 +486,15 @@ Text Editorで開いたら赤線が引かれた
       {\textless}/ul{\textgreater} &
       \ruby{順序}{じゅんじょ}なし。${\bullet}で始まるリストを作成。$
       &
-      1-20\\\hline
+      \ref*{E:HTML_7}\\\hline
       i &
       {\textless}i{\textgreater}イタリック{\textless}/i{\textgreater} &
       \ruby{斜}{なな}めの文字を\ruby{表示}{ひょうじ} &
-      1-18\\\hline
+      \ref*{E:HTML_6}\\\hline
       u &
       {\textless}u{\textgreater}アンダーライン{\textless}/u{\textgreater} &
       下線つきの文字を\ruby{表示}{ひょうじ} &
-      1-18\\\hline
+      \ref*{E:HTML_6}\\\hline
       strong &
       {\textless}strong{\textgreater}
 
@@ -500,7 +502,7 @@ Text Editorで開いたら赤線が引かれた
 
       {\textless}/strong{\textgreater} &
       文字を目立たせる &
-      1-18\\\hline
+      \ref*{E:HTML_6}\\\hline
       font  &
       {\textless}font color=”\#019a66”{\textgreater}
 
@@ -508,7 +510,7 @@ Text Editorで開いたら赤線が引かれた
 
       {\textless}/font{\textgreater} &
       color=””で指定した色で文字を\ruby{表示}{ひょうじ}。 &
-      1-18\\\hline
+      \ref*{E:HTML_6}\\\hline
       font &
       {\textless}font size=”1”{\textgreater}
 
@@ -516,7 +518,7 @@ Text Editorで開いたら赤線が引かれた
 
       {\textless}/font{\textgreater} &
       size=””で指定した文字の大きさで\ruby{表示}{ひょうじ} &
-      1-18\\\hline
+      \ref*{E:HTML_6}\\\hline
       table &
       {\textless}table{\textgreater}
 
@@ -525,24 +527,24 @@ Text Editorで開いたら赤線が引かれた
       {\textless}/table{\textgreater} &
       表を作成するときに使用する。caption, tr, th,
       tdタグといっしょに使用する。 &
-      1-19\\\hline
+      \ref*{E:HTML_7}\\\hline
       caption &
       {\textless}caption{\textgreater}表題{\textless}/caption{\textgreater} &
       表のタイトルを\ruby{表示}{ひょうじ} &
-      1-19\\\hline
+      \ref*{E:HTML_7}\\\hline
       tr &
       {\textless}tr{\textgreater}{\textless}/tr{\textgreater} &
       表の行を作る。th,
       tdタグといっしょに使用する。 &
-      1-19\\\hline
+      \ref*{E:HTML_7}\\\hline
       th &
       {\textless}th{\textgreater}列のタイトル{\textless}/th{\textgreater} &
       表の列のタイトルを\ruby{表示}{ひょうじ}する &
-      1-19\\\hline
+      \ref*{E:HTML_7}\\\hline
       td &
       {\textless}td{\textgreater}列のデータ{\textless}/td{\textgreater} &
       表の列のデータを\ruby{表示}{ひょうじ} &
-      1-19\\\hline
+      \ref*{E:HTML_7}\\\hline
       a &
       {\textless}a href=”google.com”{\textgreater}
 
@@ -551,7 +553,7 @@ Text Editorで開いたら赤線が引かれた
         {\textless}/a{\textgreater} &
       クリックすると登録していたホームページに\ruby{移動}{いどう}する文字を\ruby{表示}{ひょうじ}
       &
-      1-20\\\hline
+      \ref*{E:HTML_8}\\\hline
     \end{supertabular}
   \end{center}
 }
@@ -618,7 +620,7 @@ Text Editorで開いたら赤線が引かれた
 \flushleft
 \refstepcounter{Exercise}
 \subsection{\theExercise 自分の好きな\ruby{画像}{がぞう}をはってみよう}
-\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:embImginHTML}
+\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:embImginHTML}\label{E:HTML_3}
 自分のお気に入りの\ruby{画像}{がぞう}を\ruby{紹介}{しょうかい}してみよう。
 
 \centering
@@ -756,6 +758,7 @@ heightを\ruby{変更}{へんこう}して\ruby{画像}{がぞう}の大きさ�
 \clearpage
 \refstepcounter{Exercise}
 \subsection{\theExercise 自分のことを\ruby{紹介}{しょうかい}しよう}
+\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:HTML_4}
 \centering
 \begin{minipage}{\textwidth}
   \includegraphics[width=0.5\textwidth]{textbook-img173.png}
@@ -866,6 +869,7 @@ heightを\ruby{変更}{へんこう}して\ruby{画像}{がぞう}の大きさ�
 \clearpage
 \refstepcounter{Exercise}
 \subsection{\theExercise ランキングを作ろう}
+\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:HTML_5}
 自分の好きなことを\ruby{紹介}{しょうかい}するためにランキングトップ３を作ってみましょう。見出しの\ruby{変更}{へんこう}とランキングに一つ追加する必要があります。
 
 
@@ -1024,6 +1028,7 @@ heightを\ruby{変更}{へんこう}して\ruby{画像}{がぞう}の大きさ�
 \clearpage
 \refstepcounter{Exercise}
 \subsection{\theExercise 日記を書いてみよう}
+\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:HTML_6}
 日記を書いてみよう。教室でやっていることを\ruby{紹介}{しょうかい}してみよう。
 
 \centering
@@ -1152,6 +1157,7 @@ heightを\ruby{変更}{へんこう}して\ruby{画像}{がぞう}の大きさ�
 \clearpage
 \refstepcounter{Exercise}
 \subsection{\theExercise グループのメンバー表を作ろう}
+\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:HTML_7}
 グループの友だちのことを表にまとめてみよう。
 
 \centering
@@ -1311,6 +1317,7 @@ TAのことを追加してみよう
 
 \refstepcounter{Exercise}
 \subsection{\theExercise 自分の好きなホームページを\ruby{紹介}{しょうかい}しよう}
+\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:HTML_8}
 自分のお気に入りのサイトを自分のホームページで\ruby{紹介}{しょうかい}しよう。
 
 
