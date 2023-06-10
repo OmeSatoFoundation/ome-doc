@@ -270,19 +270,8 @@
           \begin{itemize}
               \item
                   \refstepcounter{Question}\theQuestion 得た\ruby{知識}{ちしき}を\ruby{踏}{ふ}まえてパスワードとユーザ名を決めて下の\ruby{記入欄}{きにゅうらん}に記入してみましょう。
-                  \begin{table}[htbp]
-                    \centering
-
-                    \begin{tabular}{|c|c|}
-                    \hline
-                    \ruby{項目}{こうもく}&この列を\ruby{記入欄}{きにゅうらん}として\ruby{扱}{あつか}ってください  \\
-                        \hline
-                        ユーザー名(ID)& \\
-                        \hline
-                        パスワード& \\
-                        \hline
-                    \end{tabular}
-                    \end{table}
+                  \addBlank{ユーザ名（ID）}
+                  \addBlank{パスワード}
           \end{itemize}
           
           \clearpage
@@ -596,23 +585,8 @@
                         次にWi-Fiの\ruby{設定}{せってい}を行います。この\ruby{赤枠}{あかわく}の中に\ruby{接続可能}{せつぞくかのう}なWi-Fiの名前が\ruby{表示}{ひょうじ}されます。~\ref{seq:refFigure16}
                         \item
                         \refstepcounter{Question}\theQuestion またこのセクションではWi-FIのアドレスとパスワードが必要となるのでTA(ティーチングアシスタント(Teaching Assistant))の人からアドレスとパスワードを教えてもらい、下の\ruby{欄}{らん}に記入しておきましょう。
-                        \begin{table}[htbp]
-                          \centering
-
-                          \begin{tabular}{|c|c|}
-                          \hline
-                              \ruby{項目}{こうもく}&この列を\ruby{記入欄}{きにゅうらん}として\ruby{扱}{あつか}ってください  \\
-                              \hline
-                              （例）Wi-Fiアドレス& ALGS630-12345678\\
-                              \hline
-                              （例）パスワード& 12345678910\\
-                              \hline
-                              Wi-Fiアドレス& \\
-                              \hline
-                              パスワード& \\
-                              \hline
-                          \end{tabular}
-                          \end{table}
+                        \addBlank{Wi-Fiアドレス}
+                        \addBlank{パスワード}
                         \item
                         上部で記入したアドレスを\ruby{選択}{せんたく}してNextのボタンを\ruby{押}{お}します。
                         \begin{figure}[h]
@@ -633,7 +607,7 @@
                         \centering
                         \begin{minipage}{5.228cm}
                           {\upshape
-                            \includegraphics[width=10.000cm]{pswd_image_0404.png}
+                            \includegraphics[width=9.000cm]{pswd_image_0404.png}
                             \newline
                             {\refstepcounter{Figure}\theFigure\label{seq:refFigure17}}:
                             パスワード入力}
