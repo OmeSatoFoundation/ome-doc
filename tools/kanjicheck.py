@@ -30,8 +30,6 @@ def leftShiftIndex(arr, n):
 def bsearch(data: list, target: int, compare):
     lo = -1
     hi = len(data)
-    if hi is 0:
-        return False,hi
     while (hi - lo > 1):
         m = lo + (int)((hi - lo) / 2)
         if compare(data[m], target):
