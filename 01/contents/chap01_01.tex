@@ -3,7 +3,6 @@
 \graphicspath{%
   {../text01-img/}%
 }
-\usepackage{okumacro}
 % !TEX root = ./chap01_01.tex
 \begin{document}
 \section{今回の\ruby{授業}{じゅぎょう}}
@@ -285,6 +284,73 @@
                     \end{tabular}
                     \end{table}
           \end{itemize}
+          
+          \clearpage
+
+
+          \begin{itemize}   
+                        \item
+                            \refstepcounter{Question}\theQuestion 次の文章の\ruby{間違}{まちが}っている部分を訂正してください。また{間違}{まちが}っている部分が無い場合は×を記入してください。
+                          
+                          \begin{enumerate}[label=\textbf{(\arabic*)}]
+                          \item  名前などの\ruby{個人情報}{こじんじょうほう}からは\ruby{推測}{すいそく}でしやすい方が良い
+                          \item  英単語などをそのまま使用して良い
+                          \item \ruby{適切}{てきせつ}な長さの文字列である方が良い
+                          \item \ruby{類推}{るいすい}しやすい\ruby{並}{なら}び方やその\ruby{安易}{あんい}な組合せが良い
+                          \end{enumerate}
+                        \begin{table}[htbp]
+                          \centering
+                          
+                          \begin{tabular}{|c|c|c|}
+                          \hline
+                              番号&\ruby{訂正}{ていせい}する\ruby{箇所}{かしょ}&\ruby{訂正後}{ていせいご}  \\
+                              \hline
+                              例(1)& \ruby{推測}{すいそく}しやすい&\ruby{推測}{すいそく}しにくい\\
+                              \hline
+                              (2)& & \\
+                              \hline
+                              (3)& & \\
+                              \hline
+                              (4)& & \\
+                              \hline
+                          \end{tabular}
+                          \end{table}
+                          
+                        \item
+                            \refstepcounter{Question}\theQuestion 次の文章で正しいものには○を、\ruby{誤}{あやま}ってるものには×を記入してください。
+                            \begin{enumerate}[label=\textbf{(\arabic*)}]
+                              \item  パスワードは友人などに教えずに\ruby{秘密}{ひみつ}にすること
+                              \item  パスワードを送る時はメールやSNSなどで送る
+                              \item  パスワードのメモなどを他人の目に付く場所に\ruby{貼}{は}ったり置いておく
+                              \item パスワードをメモした場合は\ruby{鍵}{かぎ}のかかる\ruby{机}{つくえ}や金庫など安全に\ruby{保管}{ほかん}すること
+                              \end{enumerate}
+                              \begin{table}[htbp]
+                                \centering
+                              \begin{tabular}{|c|}
+                                \hline
+                                    (1)【\hspace{3pc}】(2)【\hspace{3pc}】(3)【\hspace{3pc}】(4)【\hspace{3pc}】\\
+                                    \hline
+                                \end{tabular}
+                                \end{table}
+                        \item
+                            \refstepcounter{Question}\theQuestion 次のパスワードは\ruby{安全性}{あんぜんせい}が高いパスワードには○低いパスワードには×を記入しなさい。
+                            \begin{enumerate}[label=\textbf{(\arabic*)}]
+                              \item  Wp9jaFk6agkoa0la
+                              \item  Abcdefg123456789
+                              \item  AppleMan0101
+                              \item  Kaei1
+                              \end{enumerate}
+                              \begin{table}[htbp]
+                                \centering
+                              \begin{tabular}{|c|}
+                                \hline
+                                    (1)【\hspace{3pc}】(2)【\hspace{3pc}】(3)【\hspace{3pc}】(4)【\hspace{3pc}】\\
+                                    \hline
+                                \end{tabular}
+                                \end{table}
+          \end{itemize}
+
+
 
           \clearpage
 \subsection{ラズベリーパイを\ruby{準備}{じゅんび}しよう(手順)}
@@ -427,9 +493,9 @@
 \end{enumerate}
 
 
-
-  \subsection{セットアップをしよう}
-  \item 定住国を\ruby{設定}{せってい}して言語とタイムゾーンを決定しよう
+\refstepcounter{Exercise}
+  \subsection{\theExercise  セットアップをしよう}
+  \item  定住国を\ruby{設定}{せってい}して言語とタイムゾーンを決定しよう
         \begin{itemize}
           \item
                 raspberry pi 400 が起動すると,このような~\ref{seq:refFigure8}セットアップの開始画面になります。この画面ではそのままNextのボタンを\ruby{押}{お}して次に進みます。
@@ -474,9 +540,9 @@
         \end{itemize}   
         \clearpage 
 
-
-    \item
-          パスワードとユーザー名（ID）を決めよう
+  \refstepcounter{Exercise}    
+  \subsection{\theExercise パスワードとユーザー名（ID）を決めよう}         
+          
                 \begin{itemize}
                 \item                                      
                 次にユーザーを作成します。~\ref{seq:refFigure11}のように上から順にユーザー名、パスワード、\ruby{再度}{さいど}入力用パスワードの入力の順になっています。
@@ -520,11 +586,11 @@
                               スクリーンサイズ\ruby{確認}{かくにん}}
                           \end{minipage}
                         \end{figure}
-                      \end{itemize}
-
-  \clearpage
-  \item
-        Wi-Fiを\ruby{接続}{せつぞく}しよう
+                      \end{itemize}  
+                      
+  \clearpage                   
+  \refstepcounter{Exercise}
+    \subsection{\theExercise Wi-Fiを\ruby{接続}{せつぞく}しよう}
                 \begin{itemize}
                   \item
                         次にWi-Fiの\ruby{設定}{せってい}を行います。この\ruby{赤枠}{あかわく}の中に\ruby{接続可能}{せつぞくかのう}なWi-Fiの名前が\ruby{表示}{ひょうじ}されます。~\ref{seq:refFigure16}
@@ -573,9 +639,11 @@
                             パスワード入力}
                         \end{minipage}
                       \end{figure}
-
-                \end{itemize}
+                      
+                \end{itemize}  
    \clearpage
+   \refstepcounter{Exercise}     
+   \subsection{\theExercise  アップデートをスキップしてraspberry piを始めよう}   
     \item
         アップデートをスキップしよう
                 \begin{itemize}
