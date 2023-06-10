@@ -27,20 +27,6 @@ def leftShiftIndex(arr, n):
    arr[:] = arr[n:] + arr[:n]
    del arr[0]
 
-def bsearch(data: list, target: int, compare):
-    lo = -1
-    hi = len(data)
-    while (hi - lo > 1):
-        m = lo + (int)((hi - lo) / 2)
-        if compare(data[m], target):
-            lo = m
-        else:
-            hi = m
-    return (True,hi) if (hi != len(data) and data[hi] == target) else (False,hi)
-
-def compareCharCode(a,b):
-    return True if a-b<0 else False
-
 def check(content):
     maxgrade=0
     linecount=1
@@ -64,10 +50,8 @@ def check(content):
         if ch == '\n':
             linecount = linecount + 1
         if regex.match('^\p{Script=Han}+$', ch):
-            charCode = ord(ch)
-            res,index = bsearch(markedChar,charCode,compareCharCode)
-            if res is False:
-                markedChar.insert(index,charCode)
+            if ch not in markedChar:
+                markedChar.append(ch)
             else:
                 continue
             
