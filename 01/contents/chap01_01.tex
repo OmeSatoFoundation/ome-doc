@@ -3,8 +3,6 @@
 \graphicspath{%
   {../text01-img/}%
 }
-\usepackage{okumacro}
-\usepackage{enumitem}
 % !TEX root = ./chap01_01.tex
 \begin{document}
 \section{今回の\ruby{授業}{じゅぎょう}}
@@ -166,8 +164,8 @@
                 }
             \end{minipage}
           \end{figure}
-          
-    
+
+
 \end{itemize}
 
 
@@ -229,7 +227,7 @@
           \begin{itemize}
             \item
                   Linuxのユーザー名とパスワードの\ruby{入力基準}{にゅうりょくきじゅん}において以下の\ruby{条件}{じょうけん}があります。
-                  \begin{itemize}  
+                  \begin{itemize}
                   \item
                           ユーザー名は小文字、数字、-、のみ使用\ruby{可能}{かのう}。
                     \item
@@ -269,12 +267,12 @@
                   自分が覚えやすいものになるべくしてください。※\ruby{公}{おおやけ}になっている\ruby{羅列}{られつ}やその他ですでに使用しているものは\ruby{避}{さ}けてください。
                   \end{itemize}
           \end{itemize}
-          \begin{itemize}   
+          \begin{itemize}
               \item
                   \refstepcounter{Question}\theQuestion 得た\ruby{知識}{ちしき}を\ruby{踏}{ふ}まえてパスワードとユーザ名を決めて下の\ruby{記入欄}{きにゅうらん}に記入してみましょう。
                   \begin{table}[htbp]
                     \centering
-                    
+
                     \begin{tabular}{|c|c|}
                     \hline
                     \ruby{項目}{こうもく}&この列を\ruby{記入欄}{きにゅうらん}として\ruby{扱}{あつか}ってください  \\
@@ -360,11 +358,11 @@
 
 \begin{figure}[ht]
   \centering
-  \begin{minipage}{12.204cm}
+  \begin{minipage}{0.5\textwidth}
     {\upshape
-      \includegraphics[width=0.6\textwidth]{connections01-2023.jpg}
+      \includegraphics[width=0.8\linewidth]{connections01-2023.jpg}
       \newline
-      Figure \stepcounter{Figure}{\theFigure}: \ruby{接続}{せつぞく}の全体図}
+      \stepcounter{Figure}{\theFigure}: \ruby{接続}{せつぞく}の全体図}
 
   \end{minipage}
 \end{figure}
@@ -379,20 +377,22 @@
 
 
                 \begin{figure}[h]
-                  \begin{minipage}{0.5\textwidth}
+		\centering
+                  \begin{minipage}{0.45\textwidth}
                     {\upshape
                       %[Warning: Image ignored] % Unhandled or unsupported graphics:
                       \includegraphics[height=3.471cm]{figure222023.pdf}
                       \newline
-                      Figure {\refstepcounter{Figure}\theFigure\label{seq:refFigure1}}:
+                      {\refstepcounter{Figure}\theFigure\label{seq:refFigure1}}:
                       ラズベリーパイHDMI\ruby{接続}{せつぞく}}
                   \end{minipage}
-                  \begin{minipage}{0.5\textwidth}
+		\centering
+                  \begin{minipage}{0.45\textwidth}
                     {\upshape
                       %[Warning: Image ignored] % Unhandled or unsupported graphics:
                       \includegraphics[height=3.471cm]{textbook-img016.png}
                       \newline
-                      Figure {\refstepcounter{Figure}\theFigure\label{seq:refFigure2}}:
+                      {\refstepcounter{Figure}\theFigure\label{seq:refFigure2}}:
                       ディスプレイHDMI\ruby{接続}{せつぞく}}
                   \end{minipage}
                 \end{figure}
@@ -407,9 +407,10 @@
 \end{enumerate}
 
 \begin{figure}[h]
-  \begin{minipage}{8.135cm}
+  \centering
+  \begin{minipage}{0.5\textwidth}
     {\upshape
-      \includegraphics[width=8.135cm]{figure1.10-4.png}
+      \includegraphics[width=\linewidth]{figure1.10-4.png}
       \newline
       Figure \stepcounter{Figure}{\theFigure}:
       マウスの\ruby{接続}{せつぞく}}
@@ -430,9 +431,9 @@
 
                 \begin{figure}[h]
                   \centering
-                  \begin{minipage}{6.334cm}
+                  \begin{minipage}{0.45\textwidth}
                     {\upshape
-                      \includegraphics[width=1\textwidth]{figure1.10-5.png}
+                      \includegraphics[width=0.8\linewidth]{figure1.10-5.png}
                       \newline
                       \stepcounter{Figure}{\theFigure}: microSDカードのさしこみ}
                   \end{minipage}
@@ -449,9 +450,9 @@
 
                 \begin{figure}[h]
                   \centering
-                  \begin{minipage}{6.172cm}
+                  \begin{minipage}{0.45\textwidth}
                     {\upshape
-                      \includegraphics[width=6.318cm,height=4.685cm]{textbook-img019.png}
+                      \includegraphics[width=0.8\linewidth]{textbook-img019.png}
                       \newline
                       \stepcounter{Figure}{\theFigure}:
                       モニタでんげんボタンの位置}
@@ -464,23 +465,29 @@
           \item
                 最後にラズベリーパイのでんげんをいれます。~\ref{seq:refFigure6}のようにラズベリーパイにでんげんケーブルをさしてコンセントへ\ruby{接続}{せつぞく}します。緑色のランプがついてディスプレイにラズベリーが\ruby{表示}{ひょうじ}がされます~\ref{seq:refFigure7}。
         \end{itemize}
-        \begin{figure}
-          \centering
-          \begin{minipage}{0.4\textwidth}
+
+        \centering
+        \begin{minipage}{\textwidth}
+          \begin{minipage}{0.45\textwidth}
+            \centering
             {\upshape
-              \includegraphics[width=.9\linewidth]{textbook-img020-2023.png}
+              \centering
+              \includegraphics[width=0.8\linewidth]{textbook-img020-2023.png}
               \newline
               {\refstepcounter{Figure}\theFigure\label{seq:refFigure6}}:
               ラズベリーパイでんげん\ruby{接続}{せつぞく}}
           \end{minipage}
-          \begin{minipage}{0.4\textwidth}
+          \begin{minipage}{0.45\textwidth}
+            \centering
             {\upshape
-              \includegraphics[width=.9\linewidth]{textbook-img0212023.png}
+              \centering
+              \includegraphics[width=0.8\linewidth]{textbook-img0212023.png}
               \newline
               {\refstepcounter{Figure}\theFigure\label{seq:refFigure7}}:
               ラズベリーパイ起動中}
             \end{minipage}
-          \end{figure}
+          \end{minipage}
+
 
 \clearpage
 \end{enumerate}
@@ -492,12 +499,12 @@
         \begin{itemize}
           \item
                 raspberry pi 400 が起動すると,このような~\ref{seq:refFigure8}セットアップの開始画面になります。この画面ではそのままNextのボタンを\ruby{押}{お}して次に進みます。
-        \end{itemize} 
+        \end{itemize}
         \begin{figure}[h]
           \centering
-          \begin{minipage}{5.222cm}
+          \begin{minipage}{0.5\textwidth}
           {\upshape
-            \includegraphics[width=8.613cm]{sw_image01.png}
+            \includegraphics[width=0.9\linewidth]{sw_image01.png}
             \newline
             {\refstepcounter{Figure}\theFigure\label{seq:refFigure8}}:
             起動後画面
@@ -512,17 +519,18 @@
               
                 \begin{figure}[h]
                 \centering
-                \begin{minipage}{5.228cm}
+                \begin{minipage}{0.45\textwidth}
                   {\upshape
-                    \includegraphics[width=7.000cm,]{sw_image02.png}
+                    \includegraphics[width=\linewidth]{sw_image02.png}
                     \newline
                     {\refstepcounter{Figure}\theFigure\label{seq:refFigure9}}:
                     タイムゾーン画面}
-                \end{minipage} 
+                \end{minipage}
+                \hfill
                 \centering
-                \begin{minipage}{4.228cm}
+                \begin{minipage}{0.45\textwidth}
                   {\upshape
-                    \includegraphics[width=7.000cm]{sw_image03-2.png}
+                    \includegraphics[width=\linewidth]{sw_image03-2.png}
                     \newline
                     {\refstepcounter{Figure}\theFigure\label{seq:refFigure10}}:
                     \ruby{選択}{せんたく}画面}
@@ -537,7 +545,7 @@
           
                 \begin{itemize}
                 \item                                      
-                次にユーザーを作成します。この図のようにFigure~\ref{seq:refFigure11}上から順にユーザー名、パスワード、\ruby{再度}{さいど}入力用パスワードの入力の順になっています。
+                次にユーザーを作成します。~\ref{seq:refFigure11}のように上から順にユーザー名、パスワード、\ruby{再度}{さいど}入力用パスワードの入力の順になっています。
               
         
                     \begin{figure}[h]
@@ -586,11 +594,11 @@
                 \begin{itemize}
                   \item
                         次にWi-Fiの\ruby{設定}{せってい}を行います。この\ruby{赤枠}{あかわく}の中に\ruby{接続可能}{せつぞくかのう}なWi-Fiの名前が\ruby{表示}{ひょうじ}されます。~\ref{seq:refFigure16}
-                        \item   
-                        \refstepcounter{Question}\theQuestion またこのセクションではWi-FIのアドレスとパスワードが必要となるのでTA(ティーチングアシスタント(Teaching Assistant))の人からアドレスとパスワードを教えてもらい、下の\ruby{欄}{らん}に記入しておきましょう。    
+                        \item
+                        \refstepcounter{Question}\theQuestion またこのセクションではWi-FIのアドレスとパスワードが必要となるのでTA(ティーチングアシスタント(Teaching Assistant))の人からアドレスとパスワードを教えてもらい、下の\ruby{欄}{らん}に記入しておきましょう。
                         \begin{table}[htbp]
                           \centering
-                          
+
                           \begin{tabular}{|c|c|}
                           \hline
                               \ruby{項目}{こうもく}&この列を\ruby{記入欄}{きにゅうらん}として\ruby{扱}{あつか}ってください  \\
@@ -605,7 +613,7 @@
                               \hline
                           \end{tabular}
                           \end{table}
-                        \item     
+                        \item
                         上部で記入したアドレスを\ruby{選択}{せんたく}してNextのボタンを\ruby{押}{お}します。
                         \begin{figure}[h]
                           \centering
@@ -637,10 +645,10 @@
    \refstepcounter{Exercise}     
    \subsection{\theExercise  アップデートをスキップしてraspberry piを始めよう}   
     \item
-        アップデートの\ruby{確認}{かくにん}をしよう
+        アップデートをスキップしよう
                 \begin{itemize}
                   \item
-                      次の画面に進むとソフトウェアアップデートを求められるので今回はアップデートをせずにSkipボタンを\ruby{押}{お}して次の画面に\ruby{移動}{いどう}します。~\ref{seq:refFigure18}
+                      次の画面に進むとソフトウェアアップデートを求められますが、\textbf{今回はアップデートをしないでください。~\ref{seq:refFigure18}の}\textbf{\color{red}赤い枠のSkipボタン}を\ruby{押}{お}して次の画面に\ruby{移動}{いどう}します。
                       \begin{figure}[h]
                         \centering
                         \begin{minipage}{5.228cm}
@@ -651,6 +659,10 @@
                             ソフトウェアアップデート}
                         \end{minipage}
                       \end{figure}
+                      \\ここでアップデートをしてしまうと、\ruby{授業}{じゅぎょう}で使う教材の一部が正しく動かなくなってしまいます。
+                      もし、\ruby{間違}{まちが}えてアップデートをしてしまった場合には、
+                      SDカードの\ruby{交換}{こうかん}をする必要があるので、すぐにグループの先生に\ruby{相談}{そうだん}してください。
+                      \bigskip
                   \end{itemize}  
     \item
         \ruby{再起動}{さいきどう}をしてraspberry piを始めよう
@@ -667,8 +679,8 @@
                               \ruby{再起動}{さいきどう} }
                           \end{minipage}
                         \end{figure}
-                  \end{itemize}  
-                
-\clearpage     
+                  \end{itemize}
+
+\clearpage
 \end{enumerate}
 \end{document}
