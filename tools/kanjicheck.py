@@ -48,7 +48,6 @@ def check(content):
 
         if ch == '\n':
             linecount = linecount + 1
-            chbuf = []
         if regex.match('^\p{Script=Han}+$', ch):
             if ch in s1_list:
                 if maxgrade < 1:
