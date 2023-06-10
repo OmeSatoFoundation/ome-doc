@@ -33,6 +33,7 @@ def check(content):
     skipflag = False
     chbuf = []
     ruby = ""
+    markedChar = []
     for ch in iter(content):
         chbuf += ch
         if len(chbuf) > 5:
@@ -49,6 +50,11 @@ def check(content):
         if ch == '\n':
             linecount = linecount + 1
         if regex.match('^\p{Script=Han}+$', ch):
+            if ch not in markedChar:
+                markedChar.append(ch)
+            else:
+                continue
+            
             if ch in s1_list:
                 if maxgrade < 1:
                     maxgrade=1
