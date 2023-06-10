@@ -138,3 +138,17 @@
 \newcommand{\code}[1]{
 {\bf\ttfamily\small#1}
 }
+
+% 問題マクロ
+\newcommand{\addquiz}[1]{%
+\parbox{\linewidth}{%
+\item #1 \vspace{16mm} \\%
+\underline{答え.\hspace{\linewidth-2em}}\\
+}
+}
+
+% 演習マクロ
+\newcommand{\addex}[1]{%
+\item #1 \\%
+\fbox{\phantom{白}} $\leftarrow$できたらチェックしましょう。\\
+}
