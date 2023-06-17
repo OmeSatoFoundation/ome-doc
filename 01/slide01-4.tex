@@ -1,0 +1,184 @@
+\documentclass[dvipdfmx]{beamer}
+
+\usepackage{beamerthemesplit}
+\usepackage[]{graphicx}
+\graphicspath{%
+{./slide01-img/}%
+{./text01-img/}%
+}
+% !TEX root = ./slide01-4.tex
+
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{pxjahyper}
+\usepackage{color}
+
+\setbeamertemplate{footline}[frame number]
+\title{子どもIT未来塾　第１回}
+\author{塾長　清水尚彦}
+
+\def\quiz{1}
+
+\begin{document}
+
+\frame{
+   \begin{center}
+    \huge{子どもIT未来塾}\\
+
+    \vspace{48pt}
+	   \Large{第１回}\\
+	   {\huge\bf ラズベリーパイの使い方・\\
+	   \huge\bf 自己紹介ページを作ろう}\\
+    \vspace{24pt}
+    \large{塾長　清水尚彦}\\
+    \vspace{10pt}
+    \large{\the\year 年 6月24日}
+  \end{center}
+}
+
+
+
+\begin{frame}[fragile]
+	\frametitle{4時間目:自分のホームページを作ろう P.44-~~~\raisebox{-3mm}{\includegraphics[width=0.1\textwidth]{raspberry}}}
+    \begin{figure}
+      \centering
+      \includegraphics[width=0.7\textwidth]{slide04_001.png}\\
+    \end{figure}
+    \large\textbf{ホームページはHTMLという形式で書かれています}
+        \begin{itemize}
+          \item HTMLファイルは、テキストエディタでへんしゅうできます。
+        \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{ホームページをブラウザで開いてみようP.45-47~~~\raisebox{-3mm}{\includegraphics[width=0.1\textwidth]{raspberry}}}
+      \large\textbf{教科書をよみながら、じゅんばんに例題をやってみよう}
+				\begin{itemize}
+					\item 例題1-18 教材をじぶんのフォルダに置こう
+					\item 例題1-19 ホームページの中身を見てみよう
+				\end{itemize}
+      \vfill
+      \large\textbf{早く終わった子は、次の問題にチャレンジしよう}
+      \begin{itemize}
+        \item 問題1-17
+      \end{itemize}
+      \vfill
+      \large\textbf{わからないことは、放っておかず、すぐに TA に聞きましょう}
+\end{frame}
+
+% \begin{frame}[fragile]
+% 	\frametitle{例題1-5 自分のフォルダの名前を見てみよう P.17~~~\raisebox{-3mm}{\includegraphics[width=0.1\textwidth]{raspberry}}}
+%     \includegraphics[width=\textwidth]{slide02_004.png}
+%     \vfill
+%     \large\textbf{教科書の17pをよんで、自分のフォルダの名前を見てみよう}
+%     \begin{itemize}
+%       \item かくにんしたら、問題1-6を問いてみよう
+%     \end{itemize}
+% \end{frame}
+
+% \begin{frame}[fragile]
+% 	\frametitle{ファイルとフォルダのそうさになれようP.18-23~~~\raisebox{-3mm}{\includegraphics[width=0.1\textwidth]{raspberry}}}
+%       \large\textbf{教科書をよみながら、じゅんばんに例題をやってみよう}
+% 				\begin{itemize}
+% 					\item 例題1-6 フォルダを作成しよう
+% 					\item 例題1-7 フォルダを移動しよう
+% 					\item 例題1-8 ファイル名を変更しよう
+% 				\end{itemize}
+%       \vfill
+%       \large\textbf{早く終わった子は、次の問題にチャレンジしよう}
+%       \begin{itemize}
+%         \item 問題1-7, 問題1-8, 問題1-9
+%       \end{itemize}
+%       \vfill
+%       \large\textbf{わからないことは、放っておかず、すぐに TA に聞きましょう}
+% \end{frame}
+
+% \begin{frame}[fragile]
+% 	\frametitle{キーボードの使い方をおぼえよう P.24-25~~~\raisebox{-3mm}{\includegraphics[width=0.1\textwidth]{raspberry}}}
+%     \includegraphics[width=\textwidth]{slide02_002.png}
+%     \vfill
+%     \includegraphics[width=\textwidth]{slide02_003.png}\\
+% \end{frame}
+
+% \begin{frame}[fragile]
+% 	\frametitle{キーボードの使い方をおぼえよう P.24-25~~~\raisebox{-3mm}{\includegraphics[width=0.1\textwidth]{raspberry}}}
+%     \large\textbf{教科書をよみながら、じゅんばんに例題をやってみよう}
+%     				\begin{itemize}
+%     					\item 例題1-9 日本語入力と英字入力について
+%     					\item 例題1-10 半角入力と全角入力について
+%     				\end{itemize}
+%           \vfill
+%           \large\textbf{早く終わった子は、次の問題にチャレンジしよう}
+%           \begin{itemize}
+%             \item 問題1-10, 問題1-11
+%           \end{itemize}
+%           \vfill
+%           \large\textbf{わからないことは、放っておかず、すぐに TA に聞きましょう}
+% \end{frame}
+
+% \begin{frame}[fragile]
+% 	\frametitle{ブラウザをつかってみよう P.26-33~~~\raisebox{-3mm}{\includegraphics[width=0.1\textwidth]{raspberry}}}
+%   \includegraphics[width=\textwidth]{slide02_005.png}
+%   \vfill
+%   \large\textbf{赤枠の部分を左クリックして、キーボードで調べたい言葉を入力。終わったらEnterキーを押そう}\\
+%   \vfill
+%   \includegraphics[width=\textwidth]{slide02_006.png}\\
+% \end{frame}
+
+% \begin{frame}[fragile]
+% 	\frametitle{ブラウザをつかってみよう P.26-33~~~\raisebox{-3mm}{\includegraphics[width=0.1\textwidth]{raspberry}}}
+%     \large\textbf{教科書をよみながら、じゅんばんに例題をやってみよう}
+%     				\begin{itemize}
+%     					\item 例題1-11 ブラウザ立ち上げとマウスそうさをしよう
+%     					\item 例題1-12 キーボード入力の練習をしよう
+%     					\item 例題1-13 画像けんさくし、画像を保存しよう
+%     				\end{itemize}
+%           \vfill
+%           \large\textbf{早く終わった子は、次の問題にチャレンジしよう}
+%           \begin{itemize}
+%             \item 問題1-12, 問題1-13
+%           \end{itemize}
+%           \vfill
+%           \large\textbf{わからないことは、放っておかず、すぐに TA に聞きましょう}
+% \end{frame}
+
+% \begin{frame}[fragile]
+% 	\frametitle{好きなように画面をへんしゅうしよう P.34-35~~~\raisebox{-3mm}{\includegraphics[width=0.1\textwidth]{raspberry}}}
+%   \includegraphics[width=0.35\textwidth]{slide02_007.png}
+%   \hfill
+%   \includegraphics[width=0.62\textwidth]{slide02_008.png}
+%   \vfill
+%   \large\textbf{「デスクトップの設定」メニューをクリックすると、画面をへんしゅうすることができるよ}
+%   \begin{itemize}
+%     \item じぶんの好きなように設定しよう
+%   \end{itemize}
+
+% \end{frame}
+
+% \begin{frame}[fragile]
+% 	\frametitle{好きなように画面をへんしゅうしよう P.34-35~~~\raisebox{-3mm}{\includegraphics[width=0.1\textwidth]{raspberry}}}
+%     \large\textbf{教科書をよみながら、じゅんばんに例題をやってみよう}
+%     				\begin{itemize}
+%     					\item 例題1-15 ブラウザ立ち上げとマウスそうさをしよう
+%     					\item 例題1-16 キーボード入力の練習をしよう
+%     				\end{itemize}
+%           \vfill
+%           \large\textbf{同時に問題にチャレンジしよう}
+%           \begin{itemize}
+%             \item 問題1-15, 問題1-16
+%           \end{itemize}
+%           \vfill
+%           \large\textbf{わからないことは、放っておかず、すぐに TA に聞きましょう}
+% \end{frame}
+
+% \begin{frame}[fragile]
+% 	\frametitle{\raisebox{-3mm}{\includegraphics[width=0.1\textwidth]{raspberry}}休憩~~~\raisebox{-3mm}{\includegraphics[width=0.1\textwidth]{raspberry}}}
+% 	\huge
+%       \begin{itemize}
+%            \item 水分補給をしましょう
+%            \item 遠くのものを見て目を休めましょう
+%      \end{itemize}
+% \end{frame}
+
+\end{document}
+
