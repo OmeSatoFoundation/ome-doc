@@ -22,14 +22,39 @@ s6_list=list("異遺域宇映延沿我灰拡革閣割株干巻看簡危机揮貴
 def iter(content):
     for ch in content:
         yield ch
+        
+def leftShiftIndex(arr, n):
+   arr[:] = arr[n:] + arr[:n]
+   del arr[0]
 
 def check(content):
     maxgrade=0
     linecount=1
+    skipflag = False
+    chbuf = []
+    ruby = ""
+    markedChar = []
     for ch in iter(content):
+        chbuf += ch
+        if len(chbuf) > 5:
+            leftShiftIndex(chbuf,0)
+            ruby = ''.join(chbuf)
+            if ruby == '\\ruby':
+                skipflag = True
+            
+        if (skipflag == True):
+            if ch == '}':
+                skipflag = False
+            continue
+
         if ch == '\n':
             linecount = linecount + 1
         if regex.match('^\p{Script=Han}+$', ch):
+            if ch not in markedChar:
+                markedChar.append(ch)
+            else:
+                continue
+            
             if ch in s1_list:
                 if maxgrade < 1:
                     maxgrade=1

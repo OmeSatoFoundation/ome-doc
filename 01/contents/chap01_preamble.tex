@@ -16,6 +16,7 @@
 \usepackage{bbding,pifont,wasysym,amssymb}
 \usepackage{color}
 \usepackage{okumacro}
+\usepackage{enumitem}
 
 \usepackage{docmute}
 % Outline numbering
@@ -66,3 +67,9 @@
 \renewcommand\theExercise{例題 1-\arabic{Exercise}}
 \renewcommand\theQuestion{\textbf{問題 1-\arabic{Question}}}
 \renewcommand\theFigure{図\arabic{Figure}}
+
+% 空欄挿入マクロ　引数は空欄の左端の回答ラベル
+\newcommand{\addBlank}[1]{%
+\vspace{16mm} \\%
+\underline{\begin{minipage}{\linewidth}#1：\end{minipage}}\\
+}

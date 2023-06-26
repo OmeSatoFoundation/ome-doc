@@ -48,6 +48,15 @@ RUN wget https://github.com/liberationfonts/liberation-fonts/files/7261482/liber
     && wget https://noto-website-2.storage.googleapis.com/pkgs/NotoSerifCJKjp-hinted.zip \
     && unzip -o NotoSerifCJKjp-hinted.zip \
     && mv *.otf /usr/share/fonts/TTF \
+    && wget https://github.com/google/fonts/raw/main/ofl/bizudgothic/BIZUDGothic-Bold.ttf \
+        https://github.com/google/fonts/raw/main/ofl/bizudgothic/BIZUDGothic-Regular.ttf \
+        https://github.com/google/fonts/raw/main/ofl/bizudmincho/BIZUDMincho-Bold.ttf \
+        https://github.com/google/fonts/raw/main/ofl/bizudmincho/BIZUDMincho-Regular.ttf \
+        https://github.com/google/fonts/raw/main/ofl/bizudpgothic/BIZUDPGothic-Bold.ttf \
+        https://github.com/google/fonts/raw/main/ofl/bizudpgothic/BIZUDPGothic-Regular.ttf \
+        https://github.com/google/fonts/raw/main/ofl/bizudpmincho/BIZUDPMincho-Bold.ttf \
+        https://github.com/google/fonts/raw/main/ofl/bizudpmincho/BIZUDPMincho-Regular.ttf \
+    && mv *.ttf /usr/share/fonts/TTF \
     && rm -r ~/fonts
 
 RUN echo -e '\

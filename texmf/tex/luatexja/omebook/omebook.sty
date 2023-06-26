@@ -1,5 +1,4 @@
 % style file for ltjsbook
-% by Hogenimushi
 
 % 傍注スペースを削る
 \addtolength{\fullwidth}{-26truemm} %全体の幅(ヘッダ部の幅)を既定値から26mm小さくする
@@ -7,10 +6,37 @@
 \setlength{\evensidemargin}{1truemm}    %偶数ページの左余白を1mm(+1インチ)にする
 \setlength{\oddsidemargin}{19truemm}    %奇数ページの左余白を19mm(+1インチ)にする
 
-% フォントは最終段階で決定する
+% フォントは最終段階で決定する。bizudの設定は
+% https://qiita.com/kakinaguru_zo/items/22c4db21e03d4608e300
+% をGoogle fontsで配布されているフォント用に修正
 %\usepackage[ipaex]{luatexja-preset}
-\usepackage[haranoaji,deluxe]{luatexja-preset}
-\usepackage{luatexja-otf}
+%\usepackage[haranoaji,deluxe]{luatexja-preset}
+%\usepackage{luatexja-otf}
+\usepackage{luatexja-fontspec}
+\newjfontface{\nonproportional}{BIZ UDMincho}[YokoFeatures={JFM=ujis}]
+\setmainjfont[Ligatures={Common,TeX},
+  ItalicFont={BIZ UDPMincho},
+  ItalicFeatures={FakeSlant=0.27},
+  SlantedFont={BIZ UDPMincho},
+  SlantedFeatures={FakeSlant=0.18},
+  BoldFont={BIZ UDPGothic Bold},
+  BoldSlantedFont={BIZ UDPGothic Bold},
+  BoldSlantedFeatures={FakeSlant=0.18},
+  BoldItalicFont={BIZ UDPGothic Bold},
+  BoldItalicFeatures={FakeSlant=0.27},
+  YokoFeatures={JFM=prop}]{BIZ UDPMincho}
+%\newjfontface{\nonproportional}{BIZ UDGothic}[YokoFeatures={JFM=ujis}]
+\setsansjfont[Ligatures={Common,TeX},
+  ItalicFont={BIZ UDPGothic},
+  ItalicFeatures={FakeSlant=0.23},
+  SlantedFont={BIZ UDPGothic},
+  SlantedFeatures={FakeSlant=0.23},
+  BoldFont={BIZ UDPGothic Bold},
+  BoldSlantedFont={BIZ UDPGothic Bold},
+  BoldSlantedFeatures={FakeSlant=0.23},
+  BoldItalicFont={BIZ UDPGothic Bold},
+  BoldItalicFeatures={FakeSlant=0.23},
+  YokoFeatures={JFM=prop}]{BIZ UDPGothic}
 
 \usepackage{graphicx}
 \usepackage{color}
@@ -137,4 +163,18 @@
 
 \newcommand{\code}[1]{
 {\bf\ttfamily\small#1}
+}
+
+% 問題マクロ
+\newcommand{\addquiz}[1]{%
+\parbox{\linewidth}{%
+\item #1 \vspace{16mm} \\%
+\underline{答え.\hspace{\linewidth-2em}}\\
+}
+}
+
+% 演習マクロ
+\newcommand{\addex}[1]{%
+\item #1 \\%
+\fbox{\phantom{白}} $\leftarrow$できたらチェックしましょう。\\
 }
