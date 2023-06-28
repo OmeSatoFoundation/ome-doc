@@ -60,7 +60,7 @@ $ tlmgr install light-latex-mk
 TBD
 
 ### チャプター単体をビルドする
-CMD、Powershell、bash 等からセクションディレクトリ (`01/`, `02/`, and so on) で `llmk` コマンドを発行。
+CMD、Powershell、bash 等からチャプターディレクトリ (`01/`, `02/`, and so on) で `llmk` コマンドを発行。
 
 ```
 cd 01/
