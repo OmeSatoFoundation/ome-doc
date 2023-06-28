@@ -30,7 +30,7 @@ HSPスクリプトエディタで\textasciitilde /03/button\_led2.hspを読み�
     gpio 22, led		<#blue#;GPIO22をつけるか消すかする#>
   mae_btn = ima_btn	<#blue#;今の状態を前回の状態とする#>
 
-  await 10
+  wait 10
   goto *hata
 \end{lstlisting}
 
@@ -39,7 +39,7 @@ HSPスクリプトエディタで\textasciitilde /03/button\_led2.hspを読み�
 \begin{center}
  					if 条件式 : 命令 \\
 \end{center}
-最初に条件式を書いて、次に条件が正しい時に実行される命令を一つだけ書きました。しかし、今回のプログラムでは次のようになっています。\\
+最初に条件式を書いて、次に条件が正しい時に実行される命令をひとつだけ書きました。しかし、今回のプログラムでは次のようになっています。\\
 \begin{center}
   \begin{minipage}{4cm}
     if 条件式 \{\\ \ \ 命令\\ \}
