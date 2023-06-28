@@ -86,7 +86,7 @@ WORKDIR /install-tl-unx
 COPY ./prod/texlive.profile ./
 RUN wget -nv https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
 RUN tar -xzf ./install-tl-unx.tar.gz --strip-components=1
-RUN ./install-tl --profile=texlive.profile
+RUN perl ./install-tl --scheme=full --no-doc-install --no-src-install --no-interaction
 RUN ln -sf /usr/local/texlive/*/bin/* /usr/local/bin/texlive
 RUN tlmgr install \
   collection-fontsrecommended \

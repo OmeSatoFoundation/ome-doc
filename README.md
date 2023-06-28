@@ -21,15 +21,13 @@ TBD
 例: 第三回の教科書をタイプセットする
 
 ```
-cd 03
-docker run --rm -v $(pwd):/workdir ome-doc-latex llmk
+docker run --rm -v $(pwd):/workdir ome-doc-latex sh -c 'cd 03 ; llmk'
 ```
 
 中間ファイルを消去する
 
 ```
-cd 03
-docker run --rm -v $(pwd):/workdir ome-doc-latex llmk -c
+docker run --rm -v $(pwd):/workdir ome-doc-latex sh -c 'cd 03 ; llmk -c'
 ```
 
 その他 llmk の詳しい使い方: https://ftp.yz.yamagata-u.ac.jp/pub/CTAN/support/light-latex-make/llmk.pdf
@@ -62,7 +60,7 @@ $ tlmgr install light-latex-mk
 TBD
 
 ### チャプター単体をビルドする
-CMD、Powershell、bash 等からセクションディレクトリ (`01/`, `02/`, and so on) で `llmk` コマンドを発行。
+CMD、Powershell、bash 等からチャプターディレクトリ (`01/`, `02/`, and so on) で `llmk` コマンドを発行。
 
 ```
 cd 01/
