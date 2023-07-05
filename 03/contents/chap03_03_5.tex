@@ -1,5 +1,5 @@
 \subsection{ボタンを使って LED をつけてみよう (2)}
-HSPスクリプトエディタで\textasciitilde /03/button\_led2.hspを読み込み実行してください。前のプログラムではボタンを押している間LEDがつきましたが、今度はボタンを押すたびにLEDのON/OFFが変わります。\\
+HSPスクリプトエディタで\textasciitilde /03/button\_led2.hspを読み\ruby{込}{こ}み実行してください。前のプログラムではボタンを\ruby{押}{お}している間LEDがつきましたが、今度はボタンを押すたびにLEDのON/OFFが変わります。\\
 
 \begin{lstlisting}[caption=button\_led2.hsp,label=button_led2.hsp]
 #include "hsp3dish.as"		<#blue#;スクリプトの設定を読み込む#>
@@ -34,8 +34,8 @@ HSPスクリプトエディタで\textasciitilde /03/button\_led2.hspを読み�
   goto *hata
 \end{lstlisting}
 
-ここで登場したif命令が今まで登場したif命令とは少し違うことに気が付きましたか？\\
-第二回の「条件判断とは」では次のようになっていました。\\
+ここで登場したif命令が今まで登場したif命令とは少し\ruby{違}{ちが}うことに気が付きましたか？\\
+第二回の「\ruby{条件判断}{じょう|けん|はん|だん}とは」では次のようになっていました。\\
 \begin{center}
  					if 条件式 : 命令 \\
 \end{center}
@@ -45,7 +45,7 @@ HSPスクリプトエディタで\textasciitilde /03/button\_led2.hspを読み�
     if 条件式 \{\\ \ \ 命令\\ \}
   \end{minipage}
 \end{center}
-どちらも条件判断をしたいときに使えるHSPのルールですが、{}を使ったif命令は、条件が正しかったときに複数の命令を書くことができます。\\
+どちらも条件判断をしたいときに使えるHSPのルールですが、{}を使ったif命令は、条件が正しかったときに\ruby{複数}{ふく|すう}の命令を書くことができます。\\
 \begin{center}
   \begin{minipage}{4cm}
 					if 条件式 \{\\
@@ -61,13 +61,13 @@ HSPスクリプトエディタで\textasciitilde /03/button\_led2.hspを読み�
 \includesvg[width=\linewidth]{images/chap03/edge_trigger.svg}
 \end{center}
 
-ボタンを使ってLEDをつけたり消したりするには 工夫が必要です。「前回はボタンが押されていたかったけど今はボタンが押されている」ときのみLEDのON/OFFを切り替える必要があります。これを「変化を検出する」といいます。
+ボタンを使ってLEDをつけたり消したりするには 工夫が必要です。「前回はボタンが押されていたかったけど今はボタンが押されている」ときのみLEDのON/OFFを切り替える必要があります。これを「変化を\ruby{検出}{けん|しゅつ}する」といいます。
 
 LEDのON/OFFを切り替えているのは、\code{led = 1 – led}の部分です。
 例えば、変数ledの中身が1だったとします。そうすると\code{led = 1 – led} は\code{led = 1 – 1} となるので変数ledは0になります。
 反対に変数ledの中身が0だったとすると、\code{led = 1 – 0} となって変数ledは1になります。
 
-このようにして0と1を交互に切り替えることで、ON/OFFの切り替えを実現しています。\\
+このようにして0と1を\ruby{交互}{こう|ご}に切り替えることで、ON/OFFの切り替えを\ruby{実現}{じつ|げん}しています。\\
 
 \begin{tcolorbox}[title=\useOmetoi]
 \label{button_led2_toi}
