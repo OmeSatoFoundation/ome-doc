@@ -247,7 +247,7 @@ Figure \stepcounter{Figure}{\theFigure}: 04フォルダでコピーを選ぶと�
 \includegraphics[keepaspectratio,width=11.232cm,height=8.424cm]{text04-img/s_ome04d.png}
 \flushleft
 
-Figure \stepcounter{Figure}{\theFigure}: 04フォルダを開いたところ}
+Figure \stepcounter{Figure}{\theFigure}: 04フォルダがコピーされた画面}
 \end{minipage}
 
 \bigskip
@@ -263,7 +263,7 @@ Figure \stepcounter{Figure}{\theFigure}: 04フォルダを開いたところ}
 \bigskip
 \bigskip
 
-今回もまず、プログラミングのツールHSP(Hot Soup Processor)を起動して、スクリプトを実行するための準備を始めましょう。左上のRaspberry Piメニューの「プログラミング」項目にある、「HSP Script Editor」(HSPスクリプトエディタ)からエディタを起動してください。
+今回もまず、プログラミングのツールHSP(Hot Soup Processor)を起動して、プログラムを実行するための準備を始めましょう。左上のRaspberry Piメニューの「プログラミング」項目にある、「HSP Script Editor」(HSPスクリプトエディタ)からエディタを起動してください。
 
 \bigskip
 \bigskip
@@ -300,7 +300,7 @@ Figure \stepcounter{Figure}{\theFigure}: HSPスクリプトエディタを起動
 \bigskip
 \bigskip
 
-まずは、教材のスクリプトを動かして試してみましょう。
+まずは、教材のプログラムを動かして試してみましょう。
 
 ファイル→「開く」メニューから /home/ユーザー名/04 フォルダの中にある「swhandan.hsp」を読み込んでください。
 作業は、すべて「/home/ユーザー名/04」フォルダで行ないます。
@@ -324,7 +324,7 @@ Figure \stepcounter{Figure}{\theFigure}: フォルダから読み込む画面}
 \bigskip
 \bigskip
 
-「swhandan.hsp」は、センサーボード上のスイッチを押すとメッセージが変わるかんたんなスクリプトです。早速、[F5]キーを押して実行してみましょう。
+「swhandan.hsp」は、センサーボード上のスイッチを押すとメッセージが変わるかんたんなプログラムです。早速、[F5]キーを押して実行してみましょう。
 
 \bigskip
 \bigskip
@@ -433,7 +433,8 @@ Figure \stepcounter{Figure}{\theFigure}: swhandan.hspの実行画面}
 
 \bigskip
 
-\ \ 変数 = gpioin(GPIO番号)
+{\bfseries
+\ \ 変数 = gpioin(GPIO番号)}
 
 \bigskip
 
@@ -457,7 +458,8 @@ Figure \stepcounter{Figure}{\theFigure}: swhandan.hspの実行画面}
 
 \bigskip
 
-\ \ a = gpioin(5)
+{\bfseries
+\ \ a = gpioin(5)}
 
 \bigskip
 
@@ -471,6 +473,7 @@ Figure \stepcounter{Figure}{\theFigure}: swhandan.hspの実行画面}
 \bigskip
 \bigskip
 
+{\bfseries
 \ \ (HSPのルール)
 
 
@@ -480,7 +483,7 @@ Figure \stepcounter{Figure}{\theFigure}: swhandan.hspの実行画面}
 
 \ \ ifの後にスペースに続けて条件式を指定します
 
-\ \ その後で「:」に続けて条件が正しい時に実行される命令を書きます
+\ \ その後で「:」に続けて条件が正しい時に実行される命令を書きます}
 
 
 \bigskip
@@ -513,9 +516,10 @@ Figure \stepcounter{Figure}{\theFigure}: swhandan.hspの実行画面}
 
 \bigskip
 
+{\bfseries
 \ \ a = gpioin(5)
 
-\ \ if a=0 : goto *hata
+\ \ if a=0 : goto *hata}
 
 \bigskip
 
@@ -593,14 +597,14 @@ Figure \stepcounter{Figure}{\theFigure}: ミニサッカーゲームの画面}
 
 \ \ \ \ [↑]
 
-[←] \ \ \ \ [→] \ \ \ \ [Enter] = ゴール前にもどる
+[←] \ \ \ [→] \ \ \ \ [Enter] = ゴール前にもどる
 
 \ \ \ \ [↓]
 
 
 \bigskip
 
-\ \ \ \ 足でボールを蹴ると遠くに飛ばすことができます。
+それぞれのプレイヤーは足でボールを蹴って遠くに飛ばすことができます。
 
 \ \ \ \ 「1」の人は右のゴールへ、
 
@@ -661,7 +665,7 @@ Figure \stepcounter{Figure}{\theFigure}: ミニサッカーゲームのプログ
 
 \bigskip
 
-ミニサッカーゲーム(kick.hsp)のスクリプトを改造してゲームの内容を変えてみましょう。
+ミニサッカーゲーム(kick.hsp)のプログラムを改造してゲームの内容を変えてみましょう。
 
 \bigskip
 
@@ -692,7 +696,8 @@ mes命令は、
 
 \bigskip
 
-mes \ “文字”
+{\bfseries
+mes \ “文字”}
 
 
 \bigskip
@@ -771,7 +776,7 @@ Figure \stepcounter{Figure}{\theFigure}: エラーの表示}
 
 \bigskip
 
-ミニサッカーゲーム(kick.hsp)のスクリプトを改造してゲームの内容を変えてみましょう。
+ミニサッカーゲーム(kick.hsp)のプログラムを改造してゲームの内容を変えてみましょう。
 
 \bigskip
 
@@ -862,7 +867,7 @@ boxf命令は、好きな大きさの四角形を画面に出すことのでき�
 
 \bigskip
 
-ミニサッカーゲーム(kick.hsp)のスクリプトを改造してゲームの内容を変えてみましょう。
+ミニサッカーゲーム(kick.hsp)のプログラムを改造してゲームの内容を変えてみましょう。
 
 このプログラムでは、変数を使って人の動きや、ボールの動きを計算しています。
 
@@ -898,7 +903,8 @@ Figure \stepcounter{Figure}{\theFigure}: ミニサッカーゲームのプログ
 
 \bigskip
 
-\ \ 変数 = 数字 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ; コメント
+{\bfseries
+\ \ 変数 = 数字 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ; コメント}
 
 
 \bigskip
@@ -956,11 +962,11 @@ Xは横方向の動きを表しています。Yは縦方向です。
 
 \bigskip
 
-まずは、簡単なスクリプトから見てみましょう。
+まずは、簡単なプログラムから見てみましょう。
 
 スクリプトエディタの、ファイル→「開く」メニューから「celput.hsp」を読み込んでください。
 
-終わったら、さっそく[F5]キーを押してスクリプトを実行してみましょう。
+終わったら、さっそく[F5]キーを押してプログラムを実行してみましょう。
 
 \bigskip
 \bigskip
@@ -1050,7 +1056,7 @@ celputで指定した番号に準備された絵を表示します。
 
 表示する位置は、mes命令などと同じようにpos命令で指定された位置になります。
 
-準備する画像のファイルは、スクリプトがある場所と同じフォルダに入れておく必要があります。
+準備する画像のファイルは、プログラム(.hsp)がある場所と同じフォルダに入れておく必要があります。
 
 画像ファイル、「sozai1.jpg」は、04フォルダ内にあるはずです。
 
@@ -1098,7 +1104,8 @@ celload命令とcelput命令、絵を出す番号と画像ファイルの関係�
 
 \bigskip
 
-\ \ celload “sozai1.jpg”,1
+{\bfseries
+\ \ celload “sozai1.jpg”,1}
 
 
 \bigskip
@@ -1162,7 +1169,7 @@ mes命令、font命令、color命令、pos命令も書き換えることで、�
 
 絵と文字を表示するプログラム(celput.hsp)を改造して自分で用意した絵を出してみましょう。
 
-準備する画像のファイルは、スクリプトがある場所と同じフォルダに入れておく必要があります。
+準備する画像のファイルは、プログラム(.hsp)がある場所と同じフォルダに入れておく必要があります。
 
 
 \bigskip
@@ -1240,7 +1247,7 @@ Figure \stepcounter{Figure}{\theFigure}: apple.hspの実行画面}
 
 \bigskip
 
-実は、このスクリプトでは背景と「りんご」の2つの画像を使っています。
+実は、このプログラムでは背景と「りんご」の2つの画像を使っています。
 
 背景の上に「りんご」を表示しているのです。
 
@@ -1432,7 +1439,7 @@ Figure \stepcounter{Figure}{\theFigure}: fall.hspの実行画面}
 \bigskip
 \bigskip
 
-スクリプトを見てみましょう。
+プログラムを見てみましょう。
 
 \bigskip
 
@@ -1579,9 +1586,7 @@ Figure \stepcounter{Figure}{\theFigure}: fall.hspの実行画面}
 apple.hspのプログラムを使って、自分で作った絵を動かすようにしてみましょう。
 
 表示させるための画像は、GIMPツールで作ったり、確認することができます。GIMPは、Raspberry
-Piメニューからグラフィックス→「GNU Image
-Manipulation
-Program」をクリックすることで起動させることができます。
+Piメニューからグラフィックス→「GNU Image Manipulation Program」をクリックすることで起動させることができます。
 
 りんごの画像は、「apple.png」です。
 
@@ -2102,7 +2107,7 @@ Figure \stepcounter{Figure}{\theFigure}: ファイルマネージャーを開く
 
 これからHSPで使うことのできるサンプルプログラムをコピーしてもらいます。「/home/ユーザー名」のフォルダに、「sample」フォルダをコピーすることから始めます。
 
-まず、「/usr/local/share/ome/OpenHSP」という場所を開いてみましょう。
+まず、「/usr/local/share/OpenHSP」という場所を開いてみましょう。
 
 この中に、「sample」という名前のフォルダがあります。これから、この「sample」というフォルダを自分の作業フォルダにコピーします。
 
@@ -2114,10 +2119,10 @@ Figure \stepcounter{Figure}{\theFigure}: ファイルマネージャーを開く
 \begin{minipage}{9.781cm}
 \centering
 {\upshape
-\includegraphics[keepaspectratio,width=11.232cm,height=8.424cm]{text04-img/s_ome04b.png}
+\includegraphics[keepaspectratio,width=11.232cm,height=8.424cm]{text04-img/s_ome04e.png}
 \flushleft
 
-Figure \stepcounter{Figure}{\theFigure}: 04フォルダでコピーを選ぶところ}
+Figure \stepcounter{Figure}{\theFigure}: sampleフォルダでコピーを選ぶところ}
 \end{minipage}
 
 \bigskip
@@ -2128,7 +2133,7 @@ Figure \stepcounter{Figure}{\theFigure}: 04フォルダでコピーを選ぶと�
 
 コピー先の場所を開いたら、何もない場所でマウスの右クリックを押して「貼り付け」を選んでください。
 
-これで先ほどの「/usr/local/share/ome/OpenHSP/sample」フォルダが、「/home/ユーザー名/sample」にコピーされます。
+これで先ほどの「/usr/local/share/OpenHSP/sample」フォルダが、「/home/ユーザー名/sample」にコピーされます。
 
 ファイルには、さまざまなプログラムとデータが入っています。
 
@@ -2146,14 +2151,14 @@ Figure \stepcounter{Figure}{\theFigure}: 04フォルダでコピーを選ぶと�
 
 いままで平面的な絵を使ってきました。いわゆる「2D」と呼ばれる表現です。
 
-ゲームやCGでは、立体的な「3D」表現が使われています。実際に、立体的な絵を出すスクリプトを動かしてみましょう。
+ゲームやCGでは、立体的な「3D」表現が使われています。実際に、立体的な絵を出すプログラムを動かしてみましょう。
 
 
 \bigskip
 
-ファイル→「開く」メニューから「gcube.hsp」を読み込んでください。
+先ほどコピーした「/home/ユーザー名/sample」フォルダの中からプログラムを読み込みます。
 
-[F5]キーで実行すると絵が動きます。
+ファイル→「開く」メニューから「/home/ユーザー名/sample/hgimg4」内の「light\_test3.hsp」を読み込んでください。
 
 \bigskip
 \bigskip
@@ -2161,21 +2166,19 @@ Figure \stepcounter{Figure}{\theFigure}: 04フォルダでコピーを選ぶと�
 \begin{minipage}{9.781cm}
 \centering
 {\upshape
-\includegraphics[keepaspectratio,width=10.971cm,height=8.229cm]{text04-img/text04-img034.png}
+\includegraphics[keepaspectratio,width=10.971cm,height=8.229cm]{text04-img/s_lighttest3s.png}
 \flushleft
 
-Figure \stepcounter{Figure}{\theFigure}: gcube.hspの実行画面}
+Figure \stepcounter{Figure}{\theFigure}: light\_test3s.hspのプログラム}
 \end{minipage}
 
 \bigskip
 \bigskip
 \bigskip
 
+[F5]キーで実行すると絵が動きます。
+
 3D表現の画面を出す場合でも、プログラミングの方法は変わりません。ただし、今まで「横」「縦」という2つの軸があったものが、「横」「縦」「奥行き」という3つの軸に増えて、絵を出す方法も複雑になります。
-
-変数や条件判断といった基本的な要素は変わらないので、皆さんはまず「2D」のやり方をよく覚えて、さらにそこからステップアップすることをおすすめします。
-
-立体的な絵は、Gimpのような絵を描くツールではなく、3Dグラフィックツールと呼ばれる、形そのものを細かく決めるツールによって作られています。これは、2Dの絵を描くよりもずっと難しい作業です。しかし、仕組みがわかって学習すれば作れるものでもあるのです。
 
 \bigskip
 \bigskip
@@ -2183,10 +2186,59 @@ Figure \stepcounter{Figure}{\theFigure}: gcube.hspの実行画面}
 \begin{minipage}{9.781cm}
 \centering
 {\upshape
-\includegraphics[keepaspectratio,width=10.834cm,height=7.514cm]{text04-img/text04-img035.png}
+\includegraphics[keepaspectratio,width=10.971cm,height=8.229cm]{text04-img/s_lighttest3.png}
 \flushleft
 
-Figure \stepcounter{Figure}{\theFigure}: ３Ｄモデルの表示例}
+Figure \stepcounter{Figure}{\theFigure}: light\_test3.hspの実行画面}
+\end{minipage}
+
+\bigskip
+\bigskip
+\bigskip
+
+変数や条件判断といった基本的な要素は変わらないので、皆さんはまず「2D」のやり方をよく覚えて、さらにそこからステップアップすることをおすすめします。
+
+もう1つ、立体的なキャラクターを出すプログラムを見てみましょう。
+
+
+ファイル→「開く」メニューから「/home/ユーザー名/sample/pronama3d」内の「pronama2.hsp」を読み込んでください。
+
+[F5]キーで実行するとプロ生ちゃんというキャラクターがダンスする画面になります。
+
+\bigskip
+\bigskip
+
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=10.971cm,height=8.229cm]{text04-img/s_pronama2.png}
+\flushleft
+
+Figure \stepcounter{Figure}{\theFigure}: pronama2.hspの実行画面}
+\end{minipage}
+
+\bigskip
+\bigskip
+\bigskip
+
+立体的な絵は、GIMPのような絵を描くツールではなく、3Dグラフィックツールと呼ばれる、形そのものを細かく決めるツールによって作られています。これは、2Dの絵を描くよりもずっと難しい作業です。しかし、仕組みがわかって学習すれば作れるものでもあるのです。
+
+\bigskip
+
+皆さんが使っているラズベリーパイは、スマホやPCと同じような3D表示にも対応した高性能なコンピュータです。
+
+応用によって本格的なゲームも遊べますし、それを作りだすこともできることを覚えておいてください。
+
+\bigskip
+\bigskip
+
+\begin{minipage}{9.781cm}
+\centering
+{\upshape
+\includegraphics[keepaspectratio,width=10.834cm,height=7.514cm]{text04-img/s_pronamabox.png}
+\flushleft
+
+Figure \stepcounter{Figure}{\theFigure}: 背景とキャラクターを同時に出した画面}
 \end{minipage}
 
 \bigskip
@@ -2307,7 +2359,7 @@ repeat〜loop命令で繰り返している間は、システム変数cntが0,1,
 
 \bigskip
 
-自分なりにスクリプトを改造しながら、どのように変化するか確認してみましょう。
+自分なりにプログラムを改造しながら、どのように変化するか確認してみましょう。
 
 今は10個の絵を動かしていますが、もっと多くするにはどうすればいいか考えてみましょう。
 
@@ -2495,9 +2547,9 @@ if命令の使い方、ルールを覚えていますか?
 
 \bigskip
 
-最初は、条件判断の仕組みがわかりにくいかもしれませんが、スクリプトの１行目から、コンピューターが実行することを想像しながら、1つ1つ確認することが大切です。
+最初は、条件判断の仕組みがわかりにくいかもしれませんが、プログラムの１行目から、コンピューターが実行することを想像しながら、1つ1つ確認することが大切です。
 
-やがて、スクリプトを見て、どのように動くのか想像ができるようになります。
+やがて、プログラムを見て、どのように動くのか想像ができるようになります。
 
 最初はちょっと難しく感じるかもしれませんが、慣れれば誰でも理解できるようになります。
 
@@ -2804,7 +2856,7 @@ Figure \stepcounter{Figure}{\theFigure}: catch.hspの実行画面}
 
 \bigskip
 
-大切なことは、自分で何でも試してみることです。わからないことがあっても、実際に実行すれば結果がわかります。立ち止まらずに、どうなるか想像しながらスクリプトを書いて実行することが、早く上達するコツになります。それでもわからない時は、先生に聞いてみましょう。
+大切なことは、自分で何でも試してみることです。わからないことがあっても、実際に実行すれば結果がわかります。立ち止まらずに、どうなるか想像しながらプログラムを書いて実行することが、早く上達するコツになります。それでもわからない時は、先生に聞いてみましょう。
 
 
 \bigskip
