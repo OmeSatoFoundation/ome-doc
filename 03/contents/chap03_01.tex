@@ -75,14 +75,6 @@
 <#green#pi@raspberrypi#>:<#blue#~ $#>
 \end{lstlisting}
 
-\begin{tcolorbox}[title=\useOmetoi]
-\begin{enumerate}
-\addquiz{\ruby{実際}{じっ|さい}にpwdを使って、カレントディレクトリが\ruby{表示}{ひょう|じ}されることを確かめましょう。
-        表示されたカレントディレクトリを書いてください。}
-\end{enumerate}
-\end{tcolorbox}
-
-
 \subsection{ディレクトリの中を見てみよう}
 \begin{description}
 \item[\texttt{ls}\textvisiblespace \texttt{-F}\textvisiblespace ディレクトリ]\mbox{}\\
@@ -117,6 +109,8 @@ Fは大文字なので注意してください。
 
 \begin{tcolorbox}[title=\useOmetoi]
 \begin{enumerate}
+  \addquiz{\ruby{実際}{じっ|さい}にpwdを使って、カレントディレクトリが\ruby{表示}{ひょう|じ}されることを確かめましょう。
+  表示されたカレントディレクトリを書いてください。}
 \addquiz{\texttt{ls}\textvisiblespace \texttt{-F}と入力して出てきたファイルとディレクトリの名前を１つずつ書きましょう。Fは大文字です。}
 \addquiz{\texttt{ls}\textvisiblespace \texttt{-F}\textvisiblespace Pictures/ と入力して出てきたファイルかディレクトリの名前を１つ書きましょう。}
 \end{enumerate}
@@ -203,7 +197,7 @@ Fは大文字なので注意してください。
 または\emph{カレントディレクトリから見てどこにあるか(相対パス)}で決まります。
 絶対パスの\ruby{特徴}{とく|ちょう}は\emph{パスの先頭に / がついています}。相対パスの特徴は\emph{パスの先頭に / がついていません}。
 
-\textasciitilde から始まるディレクトリの位置は、\textasciitilde を
+\textasciitilde (チルダ)から始まるディレクトリの位置は、\textasciitilde を
 「/home/あなたのユーザ名」と置き\ruby{換}{か}えたものとして扱われます。
 
 カレントディレクトリにあるディレクトリxxxの位置を指定する場合は、
@@ -222,17 +216,17 @@ xxx、xxx/、./xxx、./xxx/などと書きます。いろいろな指定の仕�
     \begin{minipage}{0.6\hsize}
         \begin{itemize}
         \item /は一番上のディレクトリから見ると/
-        \item /はカレントディレクトリが/のとき./
-        \item /はカレントディレクトリがhomeのとき../
-        \item /はカレントディレクトリがpiのとき../../
+        \item /はカレントディレクトリが/のとき.
+        \item /はカレントディレクトリがhomeのとき..
+        \item /はカレントディレクトリがpiのとき../..
         \item homeは一番上のディレクトリから見ると/home
         \item homeはカレントディレクトリが/のとき./home
-        \item homeはカレントディレクトリがhomeのとき./
-        \item homeはカレントディレクトリがpiのとき../
+        \item homeはカレントディレクトリがhomeのとき.
+        \item homeはカレントディレクトリがpiのとき..
         \item piは一番上のディレクトリから見ると/home/pi
         \item piはカレントディレクトリが/のとき./home/pi
         \item piはカレントディレクトリがhomeのとき./pi
-        \item piはカレントディレクトリがpiのとき./
+        \item piはカレントディレクトリがpiのとき.
         \end{itemize}
     \end{minipage}
     \caption{フォルダ間の関係をパスで説明する}
