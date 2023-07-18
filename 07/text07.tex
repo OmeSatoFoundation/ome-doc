@@ -16,7 +16,7 @@
 %	bookmarksnumbered
 %	}
 \usepackage{wrapfig}
-%\usepackage{lastpage}
+\usepackage{lastpage}
 \usepackage{boxedminipage}
 \hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, filecolor=blue, urlcolor=blue}
 \usepackage[dvipdfmx]{graphicx}
@@ -28,7 +28,7 @@
 % 空欄挿入マクロ　引数は空欄の左端の回答ラベル
 \newcommand{\addBlank}[1]{%
 \vspace{16mm} \\%
-\underline{\begin{minipage}{\linewidth}#1：\end{minipage}}\\
+\underline{\begin{minipage}{\linewidth}#1：\end{minipage}}\leavevmode \\
 }
 
 % Outline numbering
@@ -110,20 +110,20 @@
 
 \subsection*{教科書について}
 \begin{itemize}
-\item 教科書には例題、それに似た問題があります\\
-まずは、例題をよく読みながら試してみましょう\\
-そのあと問題を解きましょう\\
-問題の答えは一番最後のページにあります
-\item 例題、問題をクリアしたらシールラリーカードにシールを貼りましょう
-\item すべての問題、例題をクリアできたらTAの先生にシールラリーカードを見せて、\\
-Complete(コンプリート)シールをもらおう
-\item 授業中に終わらなかった例題、問題は、できるだけ家でやって終わらせよう
-\item 授業中にわからないところがあったらすぐにTAの先生に聞こう
-\item 家でわからないことがあったら、すぐに質問フォームから質問しよう
+	\item 教科書には例題、それに似た問題があります\\
+	      まずは、例題をよく読みながら試してみましょう\\
+	      そのあと問題を解きましょう\\
+	      問題の答えは一番最後のページにあります
+	\item 例題、問題をクリアしたらシールラリーカードにシールを貼りましょう
+	\item すべての問題、例題をクリアできたらTAの先生にシールラリーカードを見せて、\\
+	      Complete(コンプリート)シールをもらおう
+	\item 授業中に終わらなかった例題、問題は、できるだけ家でやって終わらせよう
+	\item 授業中にわからないところがあったらすぐにTAの先生に聞こう
+	\item 家でわからないことがあったら、すぐに質問フォームから質問しよう
 \end{itemize}
 
 \clearpage{\bfseries
-ネチケット}
+	ネチケット}
 
 学校の先生たちから、「友達を傷つけてはいけない」、「敬語は正しく使おう」、などとマナーを教えられてきたと思います。マナーは、ネットワークにも存在します。ネットワークのマナーを「\textbf{ネチケット}」と言います。ネットをするときに、何も考えずに利用していると気がつかずに問題や犯罪に手を染める可能性があります。他人に迷惑をかけないことに加えて、ネチケットを守らない人から自分を守るために理解をしましょう。
 
@@ -132,27 +132,27 @@ Complete(コンプリート)シールをもらおう
 \begin{description}
 
 	\item[誰かが作ったものを勝手に使わない]~\\
-		\begin{minipage}[b]{0.6\textwidth}
-インターネットをしているとたくさんの画像や文章などのデータがあります。見て楽しむ程度には問題ないですが、誰かが作ったものや情報には著作権（ちょさくけん）というものがあります。法律で勝手に使うことは禁止されているから気をつけましょう。ただし、著作権は個人で楽しむもの、出典を明らかにして、引用することは認められています。
-		\end{minipage}\hfill
-\includegraphics[width=0.25\textwidth,height=0.20\textwidth]{ome7-img001}
-\item[人を傷つけることや、迷惑になることはやめる]~\\
-		インターネットは自分以外の人も使っています。だから、自分勝手なことや悪い言葉を使ってばかりいると人を傷つけたり、不快に思われて犯罪に巻き込まれたり、訴えられたりする可能性もあります。清らかに生きていきましょう。
-\item[他のひとたちが困らない文字情報を使う]~\\
-ネットワークを使っている人たちはみんな同じものを使っているとは限りません。
-PCだったり、スマートフォンだったり、ラズベリーパイだったりします。文字の種類によっては見えなかったり最悪の場合ネットワークが見られないことも考えられます。
-\item[迷惑メールは見ない、送らない]~\\
-悪い人が色々な都合で出してくる怪しいメールのことです。。これには、変なアドレスがはられてい
-たり、知らないソフトウェアが貼り付けられたりすることがあります。それを見るとウイルスという悪いものが入ってくることことがあります。ウイルスはコンピュータが壊れたり、操作出来なくなったりするものもあります。犯罪者の協力をしたと思われることもあるので、怪しいメールは絶対に開かないようにしましょう。また、チェーンメール（呪いのメールなど）は絶対に信じず他の人に送ってはいけません。
-\item[自分の情報を外に漏らさない]~\\
-自分の名前や、住所などをネットにあげるのはとても危ないから止めましょう。悪い人の目に入ってしまうと家族の身の危険にもつながり命の保証ができません。また、ネットに一度でもあげてしまうと消すことができなくなります。多くの人の目につくからデータが広がってしまうこともあります。ネットにデータをあげるときは問題が無いか確認してからあげましょう。
+	\begin{minipage}[b]{0.6\textwidth}
+		インターネットをしているとたくさんの画像や文章などのデータがあります。見て楽しむ程度には問題ないですが、誰かが作ったものや情報には著作権（ちょさくけん）というものがあります。法律で勝手に使うことは禁止されているから気をつけましょう。ただし、著作権は個人で楽しむもの、出典を明らかにして、引用することは認められています。
+	\end{minipage}\hfill
+	\includegraphics[width=0.25\textwidth,height=0.20\textwidth]{ome7-img001}
+	\item[人を傷つけることや、迷惑になることはやめる]~\\
+	インターネットは自分以外の人も使っています。だから、自分勝手なことや悪い言葉を使ってばかりいると人を傷つけたり、不快に思われて犯罪に巻き込まれたり、訴えられたりする可能性もあります。清らかに生きていきましょう。
+	\item[他のひとたちが困らない文字情報を使う]~\\
+	ネットワークを使っている人たちはみんな同じものを使っているとは限りません。
+	PCだったり、スマートフォンだったり、ラズベリーパイだったりします。文字の種類によっては見えなかったり最悪の場合ネットワークが見られないことも考えられます。
+	\item[迷惑メールは見ない、送らない]~\\
+	悪い人が色々な都合で出してくる怪しいメールのことです。。これには、変なアドレスがはられてい
+	たり、知らないソフトウェアが貼り付けられたりすることがあります。それを見るとウイルスという悪いものが入ってくることことがあります。ウイルスはコンピュータが壊れたり、操作出来なくなったりするものもあります。犯罪者の協力をしたと思われることもあるので、怪しいメールは絶対に開かないようにしましょう。また、チェーンメール（呪いのメールなど）は絶対に信じず他の人に送ってはいけません。
+	\item[自分の情報を外に漏らさない]~\\
+	自分の名前や、住所などをネットにあげるのはとても危ないから止めましょう。悪い人の目に入ってしまうと家族の身の危険にもつながり命の保証ができません。また、ネットに一度でもあげてしまうと消すことができなくなります。多くの人の目につくからデータが広がってしまうこともあります。ネットにデータをあげるときは問題が無いか確認してからあげましょう。
 \end{description}
 
 \clearpage\subsection*{1−1インターネットのキホン}
 \begin{wrapfigure}{r}[10pt]{0.4\textwidth}
-\includegraphics[width=0.4\textwidth]{ome7-img002.eps}
+	\includegraphics[width=0.4\textwidth]{ome7-img002.eps}
 \end{wrapfigure}
-　みんなが使っているパソコンやスマートフォンなどをたくさんつなぎ、おたがいに情報の交換ができるようにしたものを「ネットワーク」とよんでいます。
+みんなが使っているパソコンやスマートフォンなどをたくさんつなぎ、おたがいに情報の交換ができるようにしたものを「ネットワーク」とよんでいます。
 
 インターネットとは、そのネットワークが数えきれないほどのケーブルなどでおたがいにつながりあい、網の目のように世界中に広がっているそのもののことです。
 
@@ -180,7 +180,7 @@ PCだったり、スマートフォンだったり、ラズベリーパイだっ
 
 \bigskip
 
-/\addBlank{答え}
+\addBlank{答え}
 
 
 \bigskip
@@ -198,7 +198,7 @@ PCだったり、スマートフォンだったり、ラズベリーパイだっ
 \clearpage
 
 \subsection*{　1−2　IPアドレスとは何だろう？}
-　ネットワークでコンピュータ同士がつながっているときにどうやって通信相手のコンピュータの場所を探すのでしょうか？
+ネットワークでコンピュータ同士がつながっているときにどうやって通信相手のコンピュータの場所を探すのでしょうか？
 わたしたちのいる住んでいる場所をしめす住所（英語でアドレス)と同じ考え方を使います。
 インターネットの住所のことをIP(アイピー)アドレスと言います。
 わたしたち日本人は住所を東京都港区高輪２−３−２３（東海大学高輪キャンパスの住所)のように表します。
@@ -255,7 +255,7 @@ xxxは0\~{}255の数字が入ります。
 IPアドレスはラズベリーパイのネットワーク上の住所に当たるものです。一つのネットワークではIPアドレスは同じものがあってはいけません。例えば、配達する人は同じ住所が世界中にあればどこへ配達したらよいかわからなくなってしまいます。インターネットの場合も同じです。なのでIPアドレスは同じではいけません。ですが、例外として他のローカルIPアドレスでは同じになってしまうことはあります。%\textbf{例題７−１で自分のラズベリーパイのIPアドレスを調べましょう}
 
 \clearpage\subsection*{\bfseries
-1−3　グローバルIPアドレスとローカルIPアドレス}
+	1−3　グローバルIPアドレスとローカルIPアドレス}
 IPアドレスにはグローバルIPアドレスとローカル（プライベート）IPアドレスという二つに分けられます。
 
 
@@ -268,13 +268,13 @@ IPアドレスにはグローバルIPアドレスとローカル（プライベ�
 \flushleft
 
 {\bfseries
-問題７−２　ローカルIPアドレスがかぶっても良いときはどのときですか。}
+	問題７−２　ローカルIPアドレスがかぶっても良いときはどのときですか。}
 
 {\bfseries
-/\addBlank{答え}}
+	\addBlank{答え}}
 
 \clearpage\subsection*{\bfseries 例題7-1
-IPアドレスを調べてみよう}
+	IPアドレスを調べてみよう}
 ターミナルにコマンド”hostname
 -\texttt{I}”を入力し、自分のラズベリーパイのローカルIPアドレスを確認しよう
 
@@ -315,7 +315,7 @@ IPアドレスを調べてみよう}
 \bigskip
 
 {\bfseries
-調べた自分のラズベリーパイのIPアドレスを書こう}
+	調べた自分のラズベリーパイのIPアドレスを書こう}
 
 \bigskip
 
@@ -337,7 +337,7 @@ IPアドレスを調べてみよう}
 \flushleft
 
 {\bfseries
-グループの友達のIPアドレスも教えてもらって書こう}
+	グループの友達のIPアドレスも教えてもらって書こう}
 
 \bigskip
 
@@ -455,15 +455,15 @@ IPアドレスを調べてみよう}
 
 
 \bigskip
-/\addBlank{答え}
+\addBlank{答え}
 
 \clearpage\subsection*{\bfseries 例題7-2\textmd{
-}ポケットWi-FiルータのグローバルIPアドレスを調べよう}
+	}ポケットWi-FiルータのグローバルIPアドレスを調べよう}
 \begin{minipage}[b]{0.58\textwidth}
-ターミナルを開き、”curl
-inet-ip.info”とコマンドを入力して、自分のラズベリーパイが接続しているwifiルータのグローバルIPアドレスを確認しよう
+	ターミナルを開き、”curl
+	inet-ip.info”とコマンドを入力して、自分のラズベリーパイが接続しているwifiルータのグローバルIPアドレスを確認しよう
 
-curlコマンドはインターネットから情報を取ってくるときに使用します。今回は”inet-ip.info”というサイトからグローバルIPアドレスを調べてターミナルに表示させています。webブラウザから”inet-ip.info”にアクセスしてみると右の図のような形でグローバルIPアドレスを確認することもできます。
+	curlコマンドはインターネットから情報を取ってくるときに使用します。今回は”inet-ip.info”というサイトからグローバルIPアドレスを調べてターミナルに表示させています。webブラウザから”inet-ip.info”にアクセスしてみると右の図のような形でグローバルIPアドレスを確認することもできます。
 \end{minipage}
 \includegraphics[width=0.4\textwidth]{ome7-img017.png}
 
@@ -472,7 +472,7 @@ curlコマンドはインターネットから情報を取ってくるときに�
 \bigskip
 
 {\bfseries
-方法}
+	方法}
 
 
 
@@ -511,7 +511,7 @@ curlコマンドはインターネットから情報を取ってくるときに�
 \bigskip
 
 {\bfseries
-調べたグローバルIPアドレスを書こう}
+	調べたグローバルIPアドレスを書こう}
 
 
 \bigskip
@@ -537,7 +537,7 @@ curlコマンドはインターネットから情報を取ってくるときに�
 \bigskip
 
 {\bfseries
-グループの友達がしらべたポケットWi-FiのIPアドレスも教えてもらって書こう}
+	グループの友達がしらべたポケットWi-FiのIPアドレスも教えてもらって書こう}
 
 
 
@@ -569,7 +569,7 @@ curlコマンドはインターネットから情報を取ってくるときに�
 \includegraphics[width=15.004cm,height=11.0cm]{ome7-img020.png}
 \flushleft
 
-　前のページではみんなはラズベリーパイがどのようにインターネットにつながっているのか理解してくれたと思います。
+前のページではみんなはラズベリーパイがどのようにインターネットにつながっているのか理解してくれたと思います。
 ここではさらにポート番号について知識を深めましょう。
 IPアドレスでは通信相手となる別のネットワークのコンピュータを特定することができます。
 しかし、コンピュータでは通常、多くのプログラム（機能）が動作していて、IPアドレスを指定するだけでは、どのプログラムと接続するかを区別できません。
@@ -590,7 +590,7 @@ IPアドレスでは通信相手となる別のネットワークのコンピュ
 \textbf{問題７−４}　ポート番号はどのようなことに使われますか。
 \bigskip
 
-/\addBlank{答え}
+\addBlank{答え}
 
 
 \clearpage
@@ -659,21 +659,21 @@ IPアドレスでは通信相手となる別のネットワークのコンピュ
 \bigskip
 
 {\bfseries
-問題7−5　コンピュータ上のプログラムを判断するためになにが用いられていますか。}
+	問題7−5　コンピュータ上のプログラムを判断するためになにが用いられていますか。}
 \bigskip
 
 {\bfseries
-/\addBlank{答え}}
-
-\bigskip
-\bigskip
-{\bfseries
-ネット上にサービスを提供するコンピュータとネット上のコンピュータからサービスを受けるコンピュータをそれぞれ何といいますか。}
+	\addBlank{答え}}
 
 \bigskip
 \bigskip
 {\bfseries
-/\addBlank{答え}}
+	ネット上にサービスを提供するコンピュータとネット上のコンピュータからサービスを受けるコンピュータをそれぞれ何といいますか。}
+
+\bigskip
+\bigskip
+{\bfseries
+	\addBlank{答え}}
 
 
 \bigskip
@@ -687,7 +687,7 @@ IPアドレスでは通信相手となる別のネットワークのコンピュ
 \clearpage\subsection*{1−6　DNSについて}
 
 {\bfseries
-IPアドレスは住所であり、それがわからないとサーバのサービスをうけることはできません。ですが以下の図のようなことが起こることがあります。}
+	IPアドレスは住所であり、それがわからないとサーバのサービスをうけることはできません。ですが以下の図のようなことが起こることがあります。}
 
 \centering
 \includegraphics[width=15.004cm,height=8.213cm]{ome7-img026.png}
@@ -718,12 +718,12 @@ IPアドレスは住所であり、それがわからないとサーバのサー
 \bigskip
 
 {\bfseries
-問題７−６　ターミナルを開き、”host
-amazon.co.jp”を実行してグローバルIPアドレスを確認しよう。}
+	問題７−６　ターミナルを開き、”host
+	amazon.co.jp”を実行してグローバルIPアドレスを確認しよう。}
 
 \bigskip
 {\bfseries
-/\addBlank{答え}}
+	\addBlank{答え}}
 
 \clearpage\subsection*{\bfseries コラム　NATについて}
 
@@ -763,7 +763,7 @@ Translation）というものを用います。このNATはルータが行って
 \bigskip
 
 \clearpage\subsection*{\bfseries 例題7-3
-開いているポートを調べてみよう}
+	開いているポートを調べてみよう}
 ターミナルを開き、”nmap
 localhost”とコマンドを入力し、ポートについて知ろう
 
@@ -795,43 +795,43 @@ localhost”とコマンドを入力し、ポートについて知ろう
 
 \bigskip
 {\bfseries
-自分のラズベリーパイに表示されたものを下の表に書こう}
+	自分のラズベリーパイに表示されたものを下の表に書こう}
 
 \begin{flushleft}
-\tablefirsthead{}
-\tablehead{}
-\tabletail{}
-\tablelasttail{}
-\begin{supertabular}{|m{5.467cm}|m{5.4690003cm}|m{5.155cm}|}
-\hline
-PORT &
-STATE &
-SERVICE\\\hline
-~
- &
-~
- &
-~
-\\\hline
-~
- &
-~
- &
-~
-\\\hline
-~
- &
-~
- &
-~
-\\\hline
-~
- &
-~
- &
-~
-\\\hline
-\end{supertabular}
+	\tablefirsthead{}
+	\tablehead{}
+	\tabletail{}
+	\tablelasttail{}
+	\begin{supertabular}{|m{5.467cm}|m{5.4690003cm}|m{5.155cm}|}
+		\hline
+		PORT &
+		STATE &
+		SERVICE\\\hline
+		~
+		&
+		~
+		&
+		~
+		\\\hline
+		~
+		&
+		~
+		&
+		~
+		\\\hline
+		~
+		&
+		~
+		&
+		~
+		\\\hline
+		~
+		&
+		~
+		&
+		~
+		\\\hline
+	\end{supertabular}
 \end{flushleft}
 {\bfseries
 serviceに出てきた言葉をインターネットを使って調べよう。
@@ -845,8 +845,8 @@ serviceに出てきた言葉をインターネットを使って調べよう。
 \clearpage\subsection*{２−１　HTMLについて}
 \subsection*{例題7-4 HTMLの復習}
 {\bfseries
-考え方\newline
-第１回で作成した自己紹介ページのタグや機能を理解することでHTMLについて自分の思ったとおりに作れるようになりましょう。}
+	考え方\newline
+	第１回で作成した自己紹介ページのタグや機能を理解することでHTMLについて自分の思ったとおりに作れるようになりましょう。}
 
 
 \bigskip
@@ -860,29 +860,29 @@ HTMLは、タグという一つの機能をつかい、ウェブページを作�
 のようなタグをpタグと呼びます。pタグはタグの間にある文章を表示します。\newline
 まずは、第１回目の授業でみさなんが作成した自己紹介ページのファイルを第６回のフォルダにコピーし、それをleafpadでhtmlファイルを開いて見ましょう。
 
-		\begin{minipage}[b]{0.5\textwidth}
-\begin{enumerate}
+\begin{minipage}[b]{0.5\textwidth}
+	\begin{enumerate}
 
 
 		\begin{minipage}[b]{1.5\textwidth}
-\item \ \ cp \ \ \~{}/ome/01/self\_intro.html \ \ \ \~{}/ome/07/www/index.html\\
-cpコマンドを使って、 自己紹介ページのhtmlを、 第７回のwwwディレクトリにコピー。\\
-\includegraphics[width=14.73cm]{ome7-img033.png}
+			\item \ \ cp \ \ \~{}/ome/01/self\_intro.html \ \ \ \~{}/ome/07/www/index.html\\
+			cpコマンドを使って、 自己紹介ページのhtmlを、 第７回のwwwディレクトリにコピー。\\
+			\includegraphics[width=14.73cm]{ome7-img033.png}
 		\end{minipage}
 
-\bigskip
+		\bigskip
 
-\item
-\ \ cd \ \ \~{}/ome/07/www/\newline
-cdコマンドを使って、（cpコマンドとは違うよ。) 第７回のwwwディレクトリに移動。
+		\item
+		      \ \ cd \ \ \~{}/ome/07/www/\newline
+		      cdコマンドを使って、（cpコマンドとは違うよ。) 第７回のwwwディレクトリに移動。
 
 
-\item \ \ leafpad \ \ index.html
+		\item \ \ leafpad \ \ index.html
 
-\ \ leafpadでコピーした自己紹介のhtmlを開いてみよう。
+		      \ \ leafpadでコピーした自己紹介のhtmlを開いてみよう。
 
-\end{enumerate}
-		\end{minipage}
+	\end{enumerate}
+\end{minipage}
 \includegraphics[width=0.45\textwidth]{ome7-img034.png}
 
 \bigskip
@@ -899,40 +899,40 @@ self\_intro.html内に使われたタグをまとめました。これを参考�
 HTMLまとめ\ \
 
 \begin{center}
-\tablefirsthead{}
-\tablehead{}
-\tabletail{}
-\tablelasttail{}
-\begin{supertabular}{|m{4.0cm}|m{12.0cm}|}
-\hline
-タグ名 &
-効果\\\hline
-{\textless}title{\textgreater}{\textless}/title{\textgreater} &
-ウェブページのタイトルをつける\\\hline
-{\textless}h1{\textgreater}{\textless}/h1{\textgreater} &
-見出し(h1\~{}h6)まで使える。h1が一番大きい\\\hline
-{\textless}ul{\textgreater}{\textless}/ul{\textgreater} &
-点付のリスト。リストの項目はliを使って表す\\\hline
-{\textless}li{\textgreater}{\textless}/li{\textgreater} &
-リストの項目。ulもしくはolタグなどの中で使う\\\hline
-{\textless}p{\textgreater}{\textless}/p{\textgreater} &
-段落を作るために使う。文字を表示したいときはこれを使う。改行は自動で行われるので自分のタイミングで行いたいときは{\textless}br{\textgreater}を使う\\\hline
-{\textless}br{\textgreater} &
-改行. pの中でも使うことができる\\\hline
-{\textless}i{\textgreater}{\textless}/i{\textgreater} &
-イタリック（少し傾いた感じの文字）\\\hline
-{\textless}u{\textgreater}{\textless}/u{\textgreater} &
-文字の下に線を引くときに使う\\\hline
-{\textless}a href=””{\textgreater}{\textless}/a{\textgreater} &
-リンクを貼りたいときに使う。hrefにはクリックしたときに飛びたいURLを入れる。\\\hline
-{\textless}img src=””{\textgreater} &
-画像を表示するときに使用する。srcには画像の場所を指定する。ラズベリーパイの中の画像を指定しても、URLとして指定しても良い。\\\hline
-{\textless}ol{\textgreater}{\textless}/ol{\textgreater} &
-番号付きのリスト.
-liでリストの項目を決める。
+	\tablefirsthead{}
+	\tablehead{}
+	\tabletail{}
+	\tablelasttail{}
+	\begin{supertabular}{|m{4.0cm}|m{12.0cm}|}
+		\hline
+		タグ名 &
+		効果\\\hline
+		{\textless}title{\textgreater}{\textless}/title{\textgreater} &
+		ウェブページのタイトルをつける\\\hline
+		{\textless}h1{\textgreater}{\textless}/h1{\textgreater} &
+		見出し(h1\~{}h6)まで使える。h1が一番大きい\\\hline
+		{\textless}ul{\textgreater}{\textless}/ul{\textgreater} &
+		点付のリスト。リストの項目はliを使って表す\\\hline
+		{\textless}li{\textgreater}{\textless}/li{\textgreater} &
+		リストの項目。ulもしくはolタグなどの中で使う\\\hline
+		{\textless}p{\textgreater}{\textless}/p{\textgreater} &
+		段落を作るために使う。文字を表示したいときはこれを使う。改行は自動で行われるので自分のタイミングで行いたいときは{\textless}br{\textgreater}を使う\\\hline
+		{\textless}br{\textgreater} &
+		改行. pの中でも使うことができる\\\hline
+		{\textless}i{\textgreater}{\textless}/i{\textgreater} &
+		イタリック（少し傾いた感じの文字）\\\hline
+		{\textless}u{\textgreater}{\textless}/u{\textgreater} &
+		文字の下に線を引くときに使う\\\hline
+		{\textless}a href=””{\textgreater}{\textless}/a{\textgreater} &
+		リンクを貼りたいときに使う。hrefにはクリックしたときに飛びたいURLを入れる。\\\hline
+		{\textless}img src=””{\textgreater} &
+		画像を表示するときに使用する。srcには画像の場所を指定する。ラズベリーパイの中の画像を指定しても、URLとして指定しても良い。\\\hline
+		{\textless}ol{\textgreater}{\textless}/ol{\textgreater} &
+		番号付きのリスト.
+		liでリストの項目を決める。
 
-番号はliの書いた順番通りになる\\\hline
-\end{supertabular}
+		番号はliの書いた順番通りになる\\\hline
+	\end{supertabular}
 \end{center}
 
 \bigskip
@@ -955,35 +955,35 @@ HTMLで使いたい色を探すときにはここを使うと便利です。
 一部のタグを下に記載します。
 
 \begin{center}
-\tablefirsthead{}
-\tablehead{}
-\tabletail{}
-\tablelasttail{}
-\begin{supertabular}{|m{8.6cm}|m{7.91cm}|}
-\hline
-{\textless}form{\textgreater}{\textless}/form{\textgreater}
+	\tablefirsthead{}
+	\tablehead{}
+	\tabletail{}
+	\tablelasttail{}
+	\begin{supertabular}{|m{8.6cm}|m{7.91cm}|}
+		\hline
+		{\textless}form{\textgreater}{\textless}/form{\textgreater}
 
-(使用例)
+		(使用例)
 
-\ {\textless}form action=”cgi-bin/formmail.cgi” {\textgreater} &
-入力送信フォームを作成
+		\ {\textless}form action=”cgi-bin/formmail.cgi” {\textgreater} &
+		入力送信フォームを作成
 
-	formタグの中に
-{\textless}input{\textgreater},
-	{\textless}select{\textgreater},
-	{\textless}textarea{\textgreater}
-	などをいれることで
+		formタグの中に
+		{\textless}input{\textgreater},
+		{\textless}select{\textgreater},
+		{\textless}textarea{\textgreater}
+		などをいれることで
 
-ボタンや文字入力欄を作れる\\\hline
-{\textless}input{\textgreater}{\textless}/input{\textgreater}
+		ボタンや文字入力欄を作れる\\\hline
+		{\textless}input{\textgreater}{\textless}/input{\textgreater}
 
-(使用例)
+		(使用例)
 
-{\textless}input type=”password” name=”pass”{\textgreater} &
-文字の入力や、ボタンなどを作成するタグ。
+		{\textless}input type=”password” name=”pass”{\textgreater} &
+		文字の入力や、ボタンなどを作成するタグ。
 
-inputの次にtypeなどの属性を入れることで一行の文章やパスワードの入力などを決定する\\\hline
-\end{supertabular}
+		inputの次にtypeなどの属性を入れることで一行の文章やパスワードの入力などを決定する\\\hline
+	\end{supertabular}
 \end{center}
 
 \bigskip
@@ -1064,45 +1064,45 @@ inputの次にtypeなどの属性を入れることで一行の文章やパス�
 inputタグの機能になるもの
 
 \begin{flushleft}
-\tablefirsthead{}
-\tablehead{}
-\tabletail{}
-\tablelasttail{}
-\begin{supertabular}{|m{3.4459999cm}|m{7.9160004cm}|}
-\hline
-type=”text” &
-１行のテキストボックスを作ります。\newline
-sizeの属性を指定することで大きさも決定できる。\\\hline
-type=”password” &
-パスワード用のテキストボックスを作ります。\newline
-入力されたら＊のマークなどに置き換わります。送信する際には普通の文字で送られるのに注意。\\\hline
-type=”checkbox” &
-チェックボックスを作ります。
+	\tablefirsthead{}
+	\tablehead{}
+	\tabletail{}
+	\tablelasttail{}
+	\begin{supertabular}{|m{3.4459999cm}|m{7.9160004cm}|}
+		\hline
+		type=”text” &
+		１行のテキストボックスを作ります。\newline
+		sizeの属性を指定することで大きさも決定できる。\\\hline
+		type=”password” &
+		パスワード用のテキストボックスを作ります。\newline
+		入力されたら＊のマークなどに置き換わります。送信する際には普通の文字で送られるのに注意。\\\hline
+		type=”checkbox” &
+		チェックボックスを作ります。
 
-複数選択可能で、checked属性を指定すると予めチェックが入ったかどうかを決めれる。\\\hline
-type=”radio” &
-ラジオボタンを作ります。
+		複数選択可能で、checked属性を指定すると予めチェックが入ったかどうかを決めれる。\\\hline
+		type=”radio” &
+		ラジオボタンを作ります。
 
-複数の中から１つしか選択できないのが特徴。\newline
-こちらもcheckedで状態を決めれる。\\\hline
-type=”submit” &
-送信ボタンを作ります。\\\hline
-type=”button” &
-普通のボタンを作ります。\\\hline
-type=”image” &
-画像のボタンを作ります。\newline
-使用する画像ファイルは、src属性で指定しましょう。またalt属性が必須。\\\hline
-type=”reset” &
-リセットボタンを作ります。
+		複数の中から１つしか選択できないのが特徴。\newline
+		こちらもcheckedで状態を決めれる。\\\hline
+		type=”submit” &
+		送信ボタンを作ります。\\\hline
+		type=”button” &
+		普通のボタンを作ります。\\\hline
+		type=”image” &
+		画像のボタンを作ります。\newline
+		使用する画像ファイルは、src属性で指定しましょう。またalt属性が必須。\\\hline
+		type=”reset” &
+		リセットボタンを作ります。
 
-このボタンを押すと、書いていたデータがなくなり最初の状態に戻ります。\\\hline
-\end{supertabular}
+		このボタンを押すと、書いていたデータがなくなり最初の状態に戻ります。\\\hline
+	\end{supertabular}
 \end{flushleft}
 
 \bigskip
 
 \clearpage\subsection*{2−2　例題7-5
-自分のホームページを公開しよう}
+	自分のホームページを公開しよう}
 考え方
 
 クライアントとサーバーと呼ばれるコンピュータがあります。クライアントとはサービスを利用するコンピュータです。サーバーとはそれと逆にサービスを提供しているコンピュータです。クライアントとサーバーは同じコンピュータにあっても
@@ -1131,15 +1131,15 @@ OK です。例えば、google
 
 2.サーバーを動かしてみましょう。
 
-　\ \ 次のコマンドを打ちましょう。
+\ \ 次のコマンドを打ちましょう。
 
 \ \ 　./webserver.py
 
-　\ \ を実行するとサーバが動き始めます。
+\ \ を実行するとサーバが動き始めます。
 
 \ \ webserver.pyを起動したディレクトリがドキュメントルートになります。
 
-　\ \ ドキュメントルートはサーバから見たルートディレクトリのことです。
+\ \ ドキュメントルートはサーバから見たルートディレクトリのことです。
 
 
 
@@ -1155,11 +1155,11 @@ OK です。例えば、google
 
 3.サーバーが動いているかどうかを確認してみましょう。
 
-　\ \ 別のターミナルを立ち上げ、次のコマンドを打ちましょう。
+\ \ 別のターミナルを立ち上げ、次のコマンドを打ちましょう。
 
 \ \ 　nmap localhost
 
-　\ \ 今回使っているポート番号は:3000です。STATE（状態）がopen（開く）になっています。
+\ \ 今回使っているポート番号は:3000です。STATE（状態）がopen（開く）になっています。
 
 \ \ これでサーバーが動いていることが分かります。
 
@@ -1207,7 +1207,7 @@ OK です。例えば、google
 
 \ \ をブラウザのアドレスバーに打ってみましょう。
 
-　\ \ みなさんが作ったウェブページのHTMLが表示されましたね。
+\ \ みなさんが作ったウェブページのHTMLが表示されましたね。
 
 \ \ これは
 
@@ -1231,7 +1231,7 @@ OK です。例えば、google
 \bigskip
 
 \clearpage\subsection*{2−3　例題7-6
-友だちのホームページを見てみよう}
+	友だちのホームページを見てみよう}
 
 
 \centering
@@ -1246,11 +1246,11 @@ OK です。例えば、google
 1.
 左隣の友達のIPアドレスを確認しよう。
 
-　\ \ 友達のターミナルで次のコマンドをうってもらいましょう。
+\ \ 友達のターミナルで次のコマンドをうってもらいましょう。
 
-　\ \ hostname -I
+\ \ hostname -I
 
-　\ \ そのIPアドレスをメモしましょう。
+\ \ そのIPアドレスをメモしましょう。
 
 \ \ [\underline{　　　　}さんのIP:\underline{　　　　　　　　　　　　　　}]
 
@@ -1259,19 +1259,19 @@ OK です。例えば、google
 
 2.友達のウェブページを見て見ましょう。
 
-　\ \ 自分のサーバーを見るときは
+\ \ 自分のサーバーを見るときは
 
-　\ \ 　\url{http://localhost:3000/}
+\ \ 　\url{http://localhost:3000/}
 
-　\ \ でした。localhostというのが自分のサーバーという意味でした。
+\ \ でした。localhostというのが自分のサーバーという意味でした。
 
-　\ \ 今回は友達のサーバーを見たいのでlocalhostの代わりに友達のIPアドレスを打ちましょう。
+\ \ 今回は友達のサーバーを見たいのでlocalhostの代わりに友達のIPアドレスを打ちましょう。
 
-　\ \ 　\url{http://xxx.xxx.xxx.xxx:3000/}
+\ \ 　\url{http://xxx.xxx.xxx.xxx:3000/}
 
 \ \ \ 　\url{http://xxx.xxx.xxx.xxx:3000/index.html}
 
-　\ \ をブラウザのアドレスバーに打ってみましょう。
+\ \ をブラウザのアドレスバーに打ってみましょう。
 
 \ \ もし左隣の友達のIPアドレスが192.162.33.5だったら
 
@@ -1279,7 +1279,7 @@ OK です。例えば、google
 
 \ \ となります。
 
-　\ \ 友達のウェブページが表示されたら成功です！
+\ \ 友達のウェブページが表示されたら成功です！
 
 
 \bigskip
@@ -1290,7 +1290,7 @@ OK です。例えば、google
 \flushleft
 
 \clearpage\subsection*{\bfseries
-注意}
+	注意}
 
 例題7-6の友達のホームページを見てみようでは、以下の図のように同じルータにつながっているラズベリーパイが公開しているホームページは、見ることができます。基本同じグループの子たちのホームページは見れるので確認してみてください。
 
@@ -1322,25 +1322,25 @@ OK です。例えば、google
 \bigskip
 
 {\bfseries
-問題7−8}　他のグループの友達のホームページを見てみよう、自分とは違うwifiルータに接続している友達のホームページは見れたかどうか答えに書こう
+	問題7−8}　他のグループの友達のホームページを見てみよう、自分とは違うwifiルータに接続している友達のホームページは見れたかどうか答えに書こう
 
 
 \bigskip
 
 {\bfseries
-/\addBlank{答え}}
+	\addBlank{答え}}
 
 
 \bigskip
 
 \if0
-参考　接続できるネットワーク(wifiルータ)
+	参考　接続できるネットワーク(wifiルータ)
 
-NTGR-4643\ \ \ \ パスワード　33995460
+	NTGR-4643\ \ \ \ パスワード　33995460
 
-NTGR-3EBC\ \ \ \ パスワード　34986626
+	NTGR-3EBC\ \ \ \ パスワード　34986626
 
-NTGR-3DFC\ \ \ \ パスワード　36976828
+	NTGR-3DFC\ \ \ \ パスワード　36976828
 
 \fi
 
@@ -1361,7 +1361,7 @@ Interface）を用いることによって動きのあるページ、動的な�
 
 \centering
 \includegraphics[width=8.176cm,height=4.72cm]{ome7-img046.png}
-　　　　\textbf{・アンケートフォーム}\\
+\textbf{・アンケートフォーム}\\
 \includegraphics[width=6.1cm,height=5.801cm]{ome7-img047.png}
 \flushleft
 
@@ -1369,7 +1369,7 @@ Interface）を用いることによって動きのあるページ、動的な�
 \bigskip
 
 {\bfseries
-・掲示板}
+	・掲示板}
 
 
 
@@ -1419,18 +1419,18 @@ CGIを使った動的ページでは、サーバーが皆さんからwebペー�
 
 \bigskip
 
-/\addBlank{答え}
+\addBlank{答え}
 
 
 \bigskip
 
-/\addBlank{答え}
+\addBlank{答え}
 
 
 \bigskip
 
 \clearpage\subsection*{\rmfamily 例題7-7
-CGIを使ってウェブページからLEDをつける}
+	CGIを使ってウェブページからLEDをつける}
 考え方
 
 ウェブサーバはウェブブラウザから要求を受けます。”ファイル名.hsp”ファイルへのアクセスをブラウザから行うとサーバはCGIプログラムをサーバ側で起動します。結果はHTMLとしてブラウザ（クライアント）へ返されます。
@@ -1491,58 +1491,58 @@ cgi-binディレクトリはCGIプログラムを入れるディレクトリで�
 
 \centering
 \begin{boxedminipage}{0.95\textwidth}
-\#include {\textquotedbl}hsp3cl.as{\textquotedbl}
+	\#include {\textquotedbl}hsp3cl.as{\textquotedbl}
 
-\#include {\textquotedbl}rpz-gpio-cl.as{\textquotedbl}
-
-
-\bigskip
-
-mes {\textquotedbl}Content-type: text/html{\textbackslash}n{\textquotedbl}
-
-mes {\textquotedbl}{\textless}html{\textgreater}{\textless}head{\textgreater}{\textless}meta
-charset={\textbackslash}{\textquotedbl}utf-8{\textbackslash}{\textquotedbl}{\textgreater}{\textless}/head{\textgreater}{\textless}body{\textgreater}{\textquotedbl}
+	\#include {\textquotedbl}rpz-gpio-cl.as{\textquotedbl}
 
 
-\bigskip
+	\bigskip
 
-;現在のGPIO 17の値を取得 1 == ON, 0 == OFF
+	mes {\textquotedbl}Content-type: text/html{\textbackslash}n{\textquotedbl}
 
-;CGIからはcgpioinを使う(使い方はgpioinと同じ)
+	mes {\textquotedbl}{\textless}html{\textgreater}{\textless}head{\textgreater}{\textless}meta
+	charset={\textbackslash}{\textquotedbl}utf-8{\textbackslash}{\textquotedbl}{\textgreater}{\textless}/head{\textgreater}{\textless}body{\textgreater}{\textquotedbl}
 
-prev\_led = cgpioin(17)
 
-\bigskip
+	\bigskip
 
-if prev\_led = 0\{
+	;現在のGPIO 17の値を取得 1 == ON, 0 == OFF
 
-\ \ ;ついていなかった
+	;CGIからはcgpioinを使う(使い方はgpioinと同じ)
 
-\ \ mes
-{\textquotedbl}{\textless}p{\textgreater}オフでした。つけます{\textless}/p{\textgreater}{\textquotedbl}
+	prev\_led = cgpioin(17)
 
-\ \ next\_led = 1
+	\bigskip
 
-\}else\{
+	if prev\_led = 0\{
 
-\ \ ;
+	\ \ ;ついていなかった
 
-\ \ mes
-{\textquotedbl}{\textless}p{\textgreater}オンでした。けします{\textless}/p{\textgreater}{\textquotedbl}
+	\ \ mes
+		{\textquotedbl}{\textless}p{\textgreater}オフでした。つけます{\textless}/p{\textgreater}{\textquotedbl}
 
-\ \ next\_led = 0
+	\ \ next\_led = 1
 
-\}
+	\}else\{
 
-mes {\textquotedbl}{\textless}/body{\textgreater}{\textless}/html{\textgreater}{\textquotedbl}
+	\ \ ;
 
-;CGIからはcgpioを使う(使い方はgpioと同じ、0以外を書いた場合プログラムが
+	\ \ mes
+		{\textquotedbl}{\textless}p{\textgreater}オンでした。けします{\textless}/p{\textgreater}{\textquotedbl}
 
-;終了してもLEDは点灯し続ける)
+	\ \ next\_led = 0
 
-cgpio 17, next\_led
+	\}
 
-end
+	mes {\textquotedbl}{\textless}/body{\textgreater}{\textless}/html{\textgreater}{\textquotedbl}
+
+	;CGIからはcgpioを使う(使い方はgpioと同じ、0以外を書いた場合プログラムが
+
+	;終了してもLEDは点灯し続ける)
+
+	cgpio 17, next\_led
+
+	end
 \end{boxedminipage}
 \flushleft
 
@@ -1576,7 +1576,7 @@ prev\_led = cgpioin(17)
 8〜15行目では、条件判断のif文を使って読み取ったLEDの状態を判断します。消灯状態であれば、9行目で
 
 mes
-{\textquotedbl}{\textless}p{\textgreater}オフでした。つけます{\textless}/p{\textgreater}{\textquotedbl}
+	{\textquotedbl}{\textless}p{\textgreater}オフでした。つけます{\textless}/p{\textgreater}{\textquotedbl}
 
 pタグを使ってメッセージを表示します。
 
@@ -1589,7 +1589,7 @@ next\_led = 1
 消灯以外の状態（つまり点灯状態）の場合は、13行目で
 
 mes
-{\textquotedbl}{\textless}p{\textgreater}オンでした。けします{\textless}/p{\textgreater}{\textquotedbl}
+	{\textquotedbl}{\textless}p{\textgreater}オンでした。けします{\textless}/p{\textgreater}{\textquotedbl}
 
 pタグを使ってメッセージを表示します。
 
@@ -1624,45 +1624,45 @@ end
 
 
 \begin{flushleft}
-\tablefirsthead{}
-\tablehead{}
-\tabletail{}
-\tablelasttail{}
-\begin{supertabular}{|m{5.0cm}|m{5.5cm}|m{7.0cm}|}
-\hline
-第3回に使った
-命令名 &
-CGIを使うときの
-命令名&
-効果
-\\\hline
+	\tablefirsthead{}
+	\tablehead{}
+	\tabletail{}
+	\tablelasttail{}
+	\begin{supertabular}{|m{5.0cm}|m{5.5cm}|m{7.0cm}|}
+		\hline
+		第3回に使った
+		命令名 &
+		CGIを使うときの
+		命令名&
+		効果
+		\\\hline
 
-\#include “rpz-gpio.as”&
-\#include “rpz-gpio-cl.as”&
-プログラムのはじめに書くことでLED
-の点灯や消灯の命令が使えるようになります。
-\\\hline
+		\#include “rpz-gpio.as”&
+		\#include “rpz-gpio-cl.as”&
+		プログラムのはじめに書くことでLED
+		の点灯や消灯の命令が使えるようになります。
+		\\\hline
 
-onoff\ = \ gpioin(17)&
+		onoff\ = \ gpioin(17)&
 
-onoff\ = \ cgpioin(17)&
-17番のGPIOのLEDが点灯していれば変数onoffに１が、
-消灯していれば変数onoffに0が入ります。
-17をほかの番号に変えることで、
-ほかのLEDの状態を確認できます。
-\\\hline
+		onoff\ = \ cgpioin(17)&
+		17番のGPIOのLEDが点灯していれば変数onoffに１が、
+		消灯していれば変数onoffに0が入ります。
+		17をほかの番号に変えることで、
+		ほかのLEDの状態を確認できます。
+		\\\hline
 
-gpio \ 18,\ 1&
-cgpioin \ 18,\ 1&
-18番のGPIOのLEDを点灯します。
-1を0にすると消灯になります。
-18をほかの番号に変えることで、
-ほかのLEDを点灯、消灯できます。
-\\\hline
+		gpio \ 18,\ 1&
+		cgpioin \ 18,\ 1&
+		18番のGPIOのLEDを点灯します。
+		1を0にすると消灯になります。
+		18をほかの番号に変えることで、
+		ほかのLEDを点灯、消灯できます。
+		\\\hline
 
 
 
-\end{supertabular}
+	\end{supertabular}
 \end{flushleft}
 
 
@@ -1674,26 +1674,26 @@ cgpioin \ 18,\ 1&
 
 
 \bigskip{\bfseries
-問題7−10}
+	問題7−10}
 
 {\bfseries
-友達のLEDをCGIで点灯させてみよう。}
+	友達のLEDをCGIで点灯させてみよう。}
 
 {\bfseries
-点灯、消灯時のウェブページに表示されるメッセージを変更してみよう。}
+	点灯、消灯時のウェブページに表示されるメッセージを変更してみよう。}
 
 {\bfseries
-他の色のLEDも点灯、消灯できるようにしよう。}
+	他の色のLEDも点灯、消灯できるようにしよう。}
 
 {\bfseries
-Faboのセンサ(LED,
-振動子などのデジタルセンサ）を接続してCGIから動かせるようにしてみよう。}
+	Faboのセンサ(LED,
+	振動子などのデジタルセンサ）を接続してCGIから動かせるようにしてみよう。}
 
 
 \bigskip
 
 \clearpage\subsection*{\rmfamily 例題7-8
-URLを使ってCGIに情報を渡す}
+	URLを使ってCGIに情報を渡す}
 考え方
 
 CGIのプログラムに情報を渡すことができればより便利なプログラムが作れます。ここでは単純なURLを用いた方法を使います。URLに埋め込まれた情報はクエリストリングと呼ばれます。クエリストリングはまずウェブサーバへ送られ、ウェブサーバがCGIプログラムへクエリストリングを渡します。これによりCGIプログラムはURLに埋め込まれた情報を扱うことができます。
@@ -1767,22 +1767,22 @@ goodbyeであることを意味します。HSPの変数と同じような感じ�
 
 \centering
 \begin{boxedminipage}{16.233cm}
-\#include {\textquotedbl}hsp3cl.as{\textquotedbl}
+	\#include {\textquotedbl}hsp3cl.as{\textquotedbl}
 
-\#include {\textquotedbl}cgi.as{\textquotedbl}
+	\#include {\textquotedbl}cgi.as{\textquotedbl}
 
-mes {\textquotedbl}Content-type: text/html{\textbackslash}n{\textquotedbl}
+	mes {\textquotedbl}Content-type: text/html{\textbackslash}n{\textquotedbl}
 
-mes {\textquotedbl}{\textless}html{\textgreater}{\textless}head{\textgreater}{\textless}meta
-charset={\textbackslash}{\textquotedbl}utf-8{\textbackslash}{\textquotedbl}{\textgreater}{\textless}/head{\textgreater}{\textless}body{\textgreater}{\textquotedbl}
+	mes {\textquotedbl}{\textless}html{\textgreater}{\textless}head{\textgreater}{\textless}meta
+	charset={\textbackslash}{\textquotedbl}utf-8{\textbackslash}{\textquotedbl}{\textgreater}{\textless}/head{\textgreater}{\textless}body{\textgreater}{\textquotedbl}
 
-getqueryval {\textquotedbl}msg{\textquotedbl}, q
+	getqueryval {\textquotedbl}msg{\textquotedbl}, q
 
-mes q
+	mes q
 
-mes {\textquotedbl}{\textless}/body{\textgreater}{\textless}/html{\textgreater}{\textquotedbl}
+	mes {\textquotedbl}{\textless}/body{\textgreater}{\textless}/html{\textgreater}{\textquotedbl}
 
-end
+	end
 \end{boxedminipage}
 \flushleft
 
@@ -1814,10 +1814,10 @@ localhost:3000/cgi-bin/querystring.hsp?msg=helloworld
 \bigskip
 
 {\bfseries
-問題7−11}　画面に”ありがとう”と表示させよう。
+	問題7−11}　画面に”ありがとう”と表示させよう。
 
 \clearpage\subsection*{\rmfamily 例題7-9
-クエリストリングを使ってLEDを操作する}
+	クエリストリングを使ってLEDを操作する}
 この例では、クエリストリングを使ってLEDを点灯消灯させてみましょう。
 
 
@@ -1877,69 +1877,69 @@ localhost:3000/cgi-bin/qsled.hsp?led=17\&val=1
 
 \centering
 \begin{boxedminipage}{16.538cm}
-\#include {\textquotedbl}hsp3cl.as{\textquotedbl}
+	\#include {\textquotedbl}hsp3cl.as{\textquotedbl}
 
-\#include {\textquotedbl}rpz-gpio-cl.as{\textquotedbl}
+	\#include {\textquotedbl}rpz-gpio-cl.as{\textquotedbl}
 
-\#include {\textquotedbl}cgi.as{\textquotedbl}
+	\#include {\textquotedbl}cgi.as{\textquotedbl}
 
-mes {\textquotedbl}Content-type: text/html{\textbackslash}n{\textquotedbl}
+	mes {\textquotedbl}Content-type: text/html{\textbackslash}n{\textquotedbl}
 
-mes {\textquotedbl}{\textless}html{\textgreater}{\textless}head{\textgreater}{\textless}meta
-charset={\textbackslash}{\textquotedbl}utf-8{\textbackslash}{\textquotedbl}{\textgreater}{\textless}/head{\textgreater}{\textless}body{\textgreater}{\textquotedbl}
-
-
-\bigskip
-
-;
-クエリストリングからledを探して、値をled\_portへ入れる
-
-getqueryval {\textquotedbl}led{\textquotedbl}, led\_port
-
-;
-クエリストリングからvalを探して、値をled\_valへ入れる
-
-getqueryval {\textquotedbl}val{\textquotedbl}, led\_val
-
-;文字列なので数値へ変換する
-
-led\_port = int(led\_port)
-
-led\_val = int(led\_val)
+	mes {\textquotedbl}{\textless}html{\textgreater}{\textless}head{\textgreater}{\textless}meta
+	charset={\textbackslash}{\textquotedbl}utf-8{\textbackslash}{\textquotedbl}{\textgreater}{\textless}/head{\textgreater}{\textless}body{\textgreater}{\textquotedbl}
 
 
-\bigskip
+	\bigskip
 
-;
-点灯消灯を判断して、メッセージをpタグで表示する
+	;
+	クエリストリングからledを探して、値をled\_portへ入れる
 
-if(led\_val = 1) \{
+	getqueryval {\textquotedbl}led{\textquotedbl}, led\_port
 
-\ \ \ \ mes {\textquotedbl}{\textless}p{\textgreater}GPIO{\textquotedbl} + led\_port +
-{\textquotedbl}を点灯します{\textless}/p{\textgreater}{\textquotedbl}
+	;
+	クエリストリングからvalを探して、値をled\_valへ入れる
 
-\} else \{
+	getqueryval {\textquotedbl}val{\textquotedbl}, led\_val
 
-\ \ \ \ mes {\textquotedbl}{\textless}p{\textgreater}GPIO{\textquotedbl} + led\_port +
-{\textquotedbl}を消灯します{\textless}/p{\textgreater}{\textquotedbl}
+	;文字列なので数値へ変換する
 
-\}
+	led\_port = int(led\_port)
+
+	led\_val = int(led\_val)
 
 
-\bigskip
+	\bigskip
 
-;
-クエリストリングのledで指定されたGPIOにvalで指定された値を書き込む
+	;
+	点灯消灯を判断して、メッセージをpタグで表示する
 
-; localhost:3000/cgi-bin/qsled.hsp?led=17\&val=1
+	if(led\_val = 1) \{
 
-; の場合、LED17を点灯させる
+	\ \ \ \ mes {\textquotedbl}{\textless}p{\textgreater}GPIO{\textquotedbl} + led\_port +
+	{\textquotedbl}を点灯します{\textless}/p{\textgreater}{\textquotedbl}
 
-cgpio led\_port, led\_val
+	\} else \{
 
-mes {\textquotedbl}{\textless}/body{\textgreater}{\textless}/html{\textgreater}{\textquotedbl}
+	\ \ \ \ mes {\textquotedbl}{\textless}p{\textgreater}GPIO{\textquotedbl} + led\_port +
+	{\textquotedbl}を消灯します{\textless}/p{\textgreater}{\textquotedbl}
 
-end
+	\}
+
+
+	\bigskip
+
+	;
+	クエリストリングのledで指定されたGPIOにvalで指定された値を書き込む
+
+	; localhost:3000/cgi-bin/qsled.hsp?led=17\&val=1
+
+	; の場合、LED17を点灯させる
+
+	cgpio led\_port, led\_val
+
+	mes {\textquotedbl}{\textless}/body{\textgreater}{\textless}/html{\textgreater}{\textquotedbl}
+
+	end
 \end{boxedminipage}
 \flushleft
 
@@ -1984,10 +1984,10 @@ cgpio命令は数値でGPIO番号、オンオフ（１，０）を受け付け�
 \bigskip
 
 {\bfseries
-問題7−12}
+	問題7−12}
 
 {\bfseries
-GPIO17以外のLEDを光らせてみよう。}
+	GPIO17以外のLEDを光らせてみよう。}
 
 
 \bigskip
@@ -1996,7 +1996,7 @@ GPIO17以外のLEDを光らせてみよう。}
 \bigskip
 
 \clearpage\subsection*{\rmfamily 例題7-10
-CGIを使ってOpenJtalkに読み上げをさせよう}
+	CGIを使ってOpenJtalkに読み上げをさせよう}
 考え方
 
 ウェブページから読み上げさせたい文章を受け取って、OpenJtalkにCGIから読み上げをさせよう。
@@ -2046,35 +2046,35 @@ localhost:3000/jtalk.html
 
 \centering
 \begin{boxedminipage}{16.148cm}
-{\textless}!DOCTYPE html{\textgreater}
+	{\textless}!DOCTYPE html{\textgreater}
 
-{\textless}html{\textgreater}
+		{\textless}html{\textgreater}
 
-{\textless}head{\textgreater}
+	{\textless}head{\textgreater}
 
-\ \ \ \ {\textless}meta charset={\textquotedbl}utf-8{\textquotedbl}{\textgreater}
+	\ \ \ \ {\textless}meta charset={\textquotedbl}utf-8{\textquotedbl}{\textgreater}
 
-{\textless}/head{\textgreater}
+	{\textless}/head{\textgreater}
 
-{\textless}body{\textgreater}
+	{\textless}body{\textgreater}
 
-\ \ \ \ {\textless}form action={\textquotedbl}cgi-bin/jtalk.hsp{\textquotedbl}
-method={\textquotedbl}GET{\textquotedbl}{\textgreater}
+	\ \ \ \ {\textless}form action={\textquotedbl}cgi-bin/jtalk.hsp{\textquotedbl}
+	method={\textquotedbl}GET{\textquotedbl}{\textgreater}
 
-\ \ \ \ \ \ \ \ {\textless}input type={\textquotedbl}text{\textquotedbl}
-name={\textquotedbl}sentence{\textquotedbl}{\textgreater}
+	\ \ \ \ \ \ \ \ {\textless}input type={\textquotedbl}text{\textquotedbl}
+	name={\textquotedbl}sentence{\textquotedbl}{\textgreater}
 
-\ \ \ \ \ \ \ \ {\textless}input type={\textquotedbl}submit{\textquotedbl}
-value={\textquotedbl}送信{\textquotedbl}{\textgreater}
+	\ \ \ \ \ \ \ \ {\textless}input type={\textquotedbl}submit{\textquotedbl}
+	value={\textquotedbl}送信{\textquotedbl}{\textgreater}
 
-\ \ \ \ \ \ \ \ {\textless}input type={\textquotedbl}reset{\textquotedbl}
-value={\textquotedbl}リセット{\textquotedbl}{\textgreater}
+	\ \ \ \ \ \ \ \ {\textless}input type={\textquotedbl}reset{\textquotedbl}
+	value={\textquotedbl}リセット{\textquotedbl}{\textgreater}
 
-\ \ \ \ {\textless}/form{\textgreater}
+	\ \ \ \ {\textless}/form{\textgreater}
 
-{\textless}/body{\textgreater}
+	{\textless}/body{\textgreater}
 
-{\textless}/html{\textgreater}
+	{\textless}/html{\textgreater}
 \end{boxedminipage}
 \flushleft
 \bigskip
@@ -2161,40 +2161,40 @@ IPアドレス:3000/cgi-bin/jtalk.hsp?sentence=こんにちは
 
 \centering
 \begin{boxedminipage}{\textwidth}
-\#include {\textquotedbl}hsp3cl.as{\textquotedbl}
+	\#include {\textquotedbl}hsp3cl.as{\textquotedbl}
 
-\#include {\textquotedbl}jtalk.as{\textquotedbl}
+	\#include {\textquotedbl}jtalk.as{\textquotedbl}
 
-\#include {\textquotedbl}cgi.as{\textquotedbl}
-
-
-\bigskip
-
-mes {\textquotedbl}Content-type: text/html{\textbackslash}n{\textquotedbl}
-
-mes {\textquotedbl}{\textless}html{\textgreater}{\textless}head{\textgreater}{\textless}meta
-charset={\textbackslash}{\textquotedbl}utf-8{\textbackslash}{\textquotedbl}{\textgreater}{\textless}/head{\textgreater}{\textless}body{\textgreater}{\textquotedbl}
+	\#include {\textquotedbl}cgi.as{\textquotedbl}
 
 
-\bigskip
+	\bigskip
 
-getqueryval {\textquotedbl}sentence{\textquotedbl}, sentence
+	mes {\textquotedbl}Content-type: text/html{\textbackslash}n{\textquotedbl}
 
-jtsave sentence, wav\_file
-
-mes {\textquotedbl}{\textless}p{\textgreater}{\textquotedbl} + sentence +
-{\textquotedbl}{\textless}/p{\textgreater}{\textquotedbl}
+	mes {\textquotedbl}{\textless}html{\textgreater}{\textless}head{\textgreater}{\textless}meta
+	charset={\textbackslash}{\textquotedbl}utf-8{\textbackslash}{\textquotedbl}{\textgreater}{\textless}/head{\textgreater}{\textless}body{\textgreater}{\textquotedbl}
 
 
-\bigskip
+	\bigskip
 
-mes {\textquotedbl}{\textless}audio src={\textbackslash}{\textquotedbl}{\textquotedbl} \ + wav\_file +
-{\textquotedbl}{\textbackslash}{\textquotedbl}
-type={\textbackslash}{\textquotedbl}audio/wav{\textbackslash}{\textquotedbl} controls{\textgreater}{\textquotedbl}
+	getqueryval {\textquotedbl}sentence{\textquotedbl}, sentence
 
-mes {\textquotedbl}{\textless}/body{\textgreater}{\textless}/html{\textgreater}{\textquotedbl}
+	jtsave sentence, wav\_file
 
-end
+	mes {\textquotedbl}{\textless}p{\textgreater}{\textquotedbl} + sentence +
+	{\textquotedbl}{\textless}/p{\textgreater}{\textquotedbl}
+
+
+	\bigskip
+
+	mes {\textquotedbl}{\textless}audio src={\textbackslash}{\textquotedbl}{\textquotedbl} \ + wav\_file +
+	{\textquotedbl}{\textbackslash}{\textquotedbl}
+	type={\textbackslash}{\textquotedbl}audio/wav{\textbackslash}{\textquotedbl} controls{\textgreater}{\textquotedbl}
+
+	mes {\textquotedbl}{\textless}/body{\textgreater}{\textless}/html{\textgreater}{\textquotedbl}
+
+	end
 \end{boxedminipage}
 \flushleft
 
@@ -2218,7 +2218,7 @@ mes {\textquotedbl}{\textless}audio src={\textbackslash}{\textquotedbl}{\textquo
 {\textquotedbl}{\textbackslash}{\textquotedbl}
 type={\textbackslash}{\textquotedbl}audio/wav{\textbackslash}{\textquotedbl} controls{\textgreater}{\textquotedbl}
 
-{\textless}audio{\textgreater}タグは音声ファイルを再生することができます。
+	{\textless}audio{\textgreater}タグは音声ファイルを再生することができます。
 
 src=”ファイル名”
 
@@ -2240,10 +2240,10 @@ controlsをつけると、再生ボタン、ミュートボタンなどが表示
 再生ボタンを押すと音声合成した音声ファイルが再生されます。
 
 \clearpage{\bfseries
-問題7−13}
+	問題7−13}
 
 {\bfseries
-”おはようございます””こんばんは””ありがとうございます”を読ませてみよう。}
+	”おはようございます””こんばんは””ありがとうございます”を読ませてみよう。}
 
 
 \bigskip
@@ -2253,7 +2253,7 @@ controlsをつけると、再生ボタン、ミュートボタンなどが表示
 \ HINT: jtalk.htmlを参考にしてください。
 
 \clearpage\subsection*{\rmfamily 例題7-11
-CGIでセンサーの情報を表示させる}
+	CGIでセンサーの情報を表示させる}
 考え方
 
 温度、温度、気圧、照度センサーの情報をCGIを使ってウェブページから見れるようにしましょう。
@@ -2310,73 +2310,73 @@ localhost:3000/cgi-bin/sensors.hsp
 
 \centering
 \begin{boxedminipage}{16.81cm}
-\#include {\textquotedbl}rpz-gpio-cl.as{\textquotedbl}
+	\#include {\textquotedbl}rpz-gpio-cl.as{\textquotedbl}
 
-\#include {\textquotedbl}hsp3cl.as{\textquotedbl}
-
-
-\bigskip
-
-mes {\textquotedbl}Content-type: text/html{\textbackslash}n{\textquotedbl}
-
-mes {\textquotedbl}{\textless}html{\textgreater}{\textless}head{\textgreater}{\textless}meta
-charset={\textbackslash}{\textquotedbl}utf-8{\textbackslash}{\textquotedbl}{\textgreater}{\textless}/head{\textgreater}{\textless}body{\textgreater}{\textquotedbl}
+	\#include {\textquotedbl}hsp3cl.as{\textquotedbl}
 
 
-\bigskip
+	\bigskip
 
-i2c\_ch\_bme\ = \ 0\\
-i2c\_ch\_tsl \ = \ 1
+	mes {\textquotedbl}Content-type: text/html{\textbackslash}n{\textquotedbl}
 
-\bigskip
-
-fail \ = \ init\_bme(i2c\_ch\_bme)\ \ \ \ ; 温湿度気圧センサ bm280
-を初期化する
-
-if fail \{\ \ \ \ \ \ \ \ \ \ \ \   ; 初期化成功チェック
-
-\ \ mes {\textquotedbl}failed to init bme: {\textquotedbl} + fail
-
-\ \ end
-
-\}
+	mes {\textquotedbl}{\textless}html{\textgreater}{\textless}head{\textgreater}{\textless}meta
+	charset={\textbackslash}{\textquotedbl}utf-8{\textbackslash}{\textquotedbl}{\textgreater}{\textless}/head{\textgreater}{\textless}body{\textgreater}{\textquotedbl}
 
 
-\bigskip
+	\bigskip
 
-init\_lux i2c\_ch\_tsl\ \ \ \ \ \ ; 照度センサ
-tsl2572を初期化する
+	i2c\_ch\_bme\ = \ 0\\
+	i2c\_ch\_tsl \ = \ 1
 
+	\bigskip
 
-\bigskip
+	fail \ = \ init\_bme(i2c\_ch\_bme)\ \ \ \ ; 温湿度気圧センサ bm280
+	を初期化する
 
-*main
+	if fail \{\ \ \ \ \ \ \ \ \ \ \ \   ; 初期化成功チェック
 
+	\ \ mes {\textquotedbl}failed to init bme: {\textquotedbl} + fail
 
-\bigskip
+	\ \ end
 
-\ \ temp = get\_temp(i2c\_ch\_bme)\ \ \ \ ; 温度取得\\
-\ \ hum \ = get\_hum(i2c\_ch\_bme)\ \ \ \ ; 湿度取得\\
-\ \ press= get\_press(i2c\_ch\_bme)\ \ \ \ ; 気圧取得\\
-\ \ lux \ = get\_lux(i2c\_ch\_bme)\ \ \ \ ; 照度取得\\
-
-
-\bigskip
+	\}
 
 
-\bigskip
+	\bigskip
 
-\ \ ; 取得したデータの表示
-
-\ \ mes {\textquotedbl}{\textless}p{\textgreater}温度 : {\textquotedbl} + temp + {\textquotedbl}
-[℃]{\textless}/p{\textgreater}{\textquotedbl}
+	init\_lux i2c\_ch\_tsl\ \ \ \ \ \ ; 照度センサ
+	tsl2572を初期化する
 
 
-\bigskip
+	\bigskip
 
-\ \ \ \ mes {\textquotedbl}{\textless}/body{\textgreater}{\textless}/html{\textgreater}{\textquotedbl}
+	*main
 
-\ \ \ \ end
+
+	\bigskip
+
+	\ \ temp = get\_temp(i2c\_ch\_bme)\ \ \ \ ; 温度取得\\
+	\ \ hum \ = get\_hum(i2c\_ch\_bme)\ \ \ \ ; 湿度取得\\
+	\ \ press= get\_press(i2c\_ch\_bme)\ \ \ \ ; 気圧取得\\
+	\ \ lux \ = get\_lux(i2c\_ch\_bme)\ \ \ \ ; 照度取得\\
+
+
+	\bigskip
+
+
+	\bigskip
+
+	\ \ ; 取得したデータの表示
+
+	\ \ mes {\textquotedbl}{\textless}p{\textgreater}温度 : {\textquotedbl} + temp + {\textquotedbl}
+	[℃]{\textless}/p{\textgreater}{\textquotedbl}
+
+
+	\bigskip
+
+	\ \ \ \ mes {\textquotedbl}{\textless}/body{\textgreater}{\textless}/html{\textgreater}{\textquotedbl}
+
+	\ \ \ \ end
 \end{boxedminipage}
 \flushleft
 この例題は\~{}/ome/03/sensors.hspをもとにしています。詳しい解説はそちらを参照してください。
@@ -2397,16 +2397,16 @@ lux変数へ入っています。
 \bigskip
 
 \clearpage{\bfseries
-問題7-14}
+	問題7-14}
 
 友達のCGIへアクセスして、センサーの値を確認してみよう。
 
 温度センサーと同様に、湿度、気圧、照度センサーの値も表示させてみましょう。
 
 \begin{center}
-\begin{boxedminipage}{0.5\textwidth}
-localhost:3000/cgi-bin/sensors\_table.hsp
-\end{boxedminipage}
+	\begin{boxedminipage}{0.5\textwidth}
+		localhost:3000/cgi-bin/sensors\_table.hsp
+	\end{boxedminipage}
 \end{center}
 
 にブラウザでアクセスをしてみましょう。
@@ -2428,7 +2428,7 @@ localhost:3000/cgi-bin/sensors\_table.hsp
 次は、湿度、気圧、照度センサーの値を表形式で表示するように変更してみましょう。
 
 \clearpage\subsection*{例題7-12
-赤外線をウェブページから送信する}
+	赤外線をウェブページから送信する}
 CGIを使ってウェブページから赤外線を送信できるようにしましょう。
 
 まずは、サンプルを動かしてみましょう。
@@ -2497,35 +2497,35 @@ exec “irsend SEND\_ONCE fan onoff”
 
 \centering
 \begin{boxedminipage}{0.95\textwidth}
-{\textless}!DOCTYPE html{\textgreater}
+	{\textless}!DOCTYPE html{\textgreater}
 
-{\textless}html{\textgreater}
+		{\textless}html{\textgreater}
 
-{\textless}head{\textgreater}
+	{\textless}head{\textgreater}
 
-\ \ \ \ {\textless}meta charset={\textquotedbl}utf-8{\textquotedbl}{\textgreater}
+	\ \ \ \ {\textless}meta charset={\textquotedbl}utf-8{\textquotedbl}{\textgreater}
 
-{\textless}/head{\textgreater}
+	{\textless}/head{\textgreater}
 
-{\textless}body{\textgreater}
+	{\textless}body{\textgreater}
 
-\ \ \ \ {\textless}h2{\textgreater}赤外線リモコン{\textless}/h2{\textgreater}
+	\ \ \ \ {\textless}h2{\textgreater}赤外線リモコン{\textless}/h2{\textgreater}
 
-\ \ \ \ {\textless}form action={\textquotedbl}cgi-bin/ir.hsp{\textquotedbl}
-method={\textquotedbl}GET{\textquotedbl}{\textgreater}
+	\ \ \ \ {\textless}form action={\textquotedbl}cgi-bin/ir.hsp{\textquotedbl}
+	method={\textquotedbl}GET{\textquotedbl}{\textgreater}
 
-\ \ \ \ \ \ \ \ {\textless}p{\textgreater}
+	\ \ \ \ \ \ \ \ {\textless}p{\textgreater}
 
-\ \ \ \ \ \ \ \ \ \ \ \ ファン電源 : {\textless}input type={\textquotedbl}submit{\textquotedbl}
-value={\textquotedbl}power{\textquotedbl} name={\textquotedbl}command{\textquotedbl}{\textgreater}
+	\ \ \ \ \ \ \ \ \ \ \ \ ファン電源 : {\textless}input type={\textquotedbl}submit{\textquotedbl}
+	value={\textquotedbl}power{\textquotedbl} name={\textquotedbl}command{\textquotedbl}{\textgreater}
 
-\ \ \ \ \ \ \ \ {\textless}/p{\textgreater}
+	\ \ \ \ \ \ \ \ {\textless}/p{\textgreater}
 
-\ \ \ \ {\textless}/form{\textgreater}
+	\ \ \ \ {\textless}/form{\textgreater}
 
-{\textless}/body{\textgreater}
+	{\textless}/body{\textgreater}
 
-{\textless}/html{\textgreater}
+	{\textless}/html{\textgreater}
 \end{boxedminipage}
 \flushleft
 \~{}/ome/07/www/cgi-bin/ir.hsp
@@ -2551,48 +2551,48 @@ name={\textquotedbl}command{\textquotedbl}{\textgreater}
 
 \centering
 \begin{boxedminipage}{16.36cm}
-\#include {\textquotedbl}hsp3cl.as{\textquotedbl}
+	\#include {\textquotedbl}hsp3cl.as{\textquotedbl}
 
-\#include {\textquotedbl}cmdexec.as{\textquotedbl}
+	\#include {\textquotedbl}cmdexec.as{\textquotedbl}
 
-\#include {\textquotedbl}cgi.as{\textquotedbl}
-
-
-\bigskip
-
-mes {\textquotedbl}Content-type: text/html{\textbackslash}n{\textquotedbl}
-
-mes {\textquotedbl}{\textless}html{\textgreater}{\textless}head{\textgreater}{\textless}meta
-charset={\textbackslash}{\textquotedbl}utf-8{\textbackslash}{\textquotedbl}{\textgreater}{\textless}/head{\textgreater}{\textless}body{\textgreater}{\textquotedbl}
+	\#include {\textquotedbl}cgi.as{\textquotedbl}
 
 
-\bigskip
+	\bigskip
 
-getqueryval {\textquotedbl}command{\textquotedbl}, cmd
+	mes {\textquotedbl}Content-type: text/html{\textbackslash}n{\textquotedbl}
 
-if cmd = {\textquotedbl}power{\textquotedbl} \{
-
-\ \ mes
-{\textquotedbl}{\textless}p{\textgreater}ファンの電源をおします。{\textless}/p{\textgreater}{\textquotedbl}
-
-\ \ exec {\textquotedbl}irsend SEND\_ONCE fan onoff{\textquotedbl}
-
-\} else \{
-
-\ \ \ \ mes
-{\textquotedbl}{\textless}p{\textgreater}コマンドが正しくありません{\textless}/p{\textgreater}{\textquotedbl}
-
-\ \ \ \ mes {\textquotedbl}{\textless}p{\textgreater}{\textquotedbl} + cmd +
-{\textquotedbl}{\textless}/p{\textgreater}{\textquotedbl}
-
-\}
+	mes {\textquotedbl}{\textless}html{\textgreater}{\textless}head{\textgreater}{\textless}meta
+	charset={\textbackslash}{\textquotedbl}utf-8{\textbackslash}{\textquotedbl}{\textgreater}{\textless}/head{\textgreater}{\textless}body{\textgreater}{\textquotedbl}
 
 
-\bigskip
+	\bigskip
 
-mes {\textquotedbl}{\textless}/body{\textgreater}{\textless}/html{\textgreater}{\textquotedbl}
+	getqueryval {\textquotedbl}command{\textquotedbl}, cmd
 
-end
+	if cmd = {\textquotedbl}power{\textquotedbl} \{
+
+	\ \ mes
+		{\textquotedbl}{\textless}p{\textgreater}ファンの電源をおします。{\textless}/p{\textgreater}{\textquotedbl}
+
+	\ \ exec {\textquotedbl}irsend SEND\_ONCE fan onoff{\textquotedbl}
+
+	\} else \{
+
+	\ \ \ \ mes
+		{\textquotedbl}{\textless}p{\textgreater}コマンドが正しくありません{\textless}/p{\textgreater}{\textquotedbl}
+
+	\ \ \ \ mes {\textquotedbl}{\textless}p{\textgreater}{\textquotedbl} + cmd +
+	{\textquotedbl}{\textless}/p{\textgreater}{\textquotedbl}
+
+	\}
+
+
+	\bigskip
+
+	mes {\textquotedbl}{\textless}/body{\textgreater}{\textless}/html{\textgreater}{\textquotedbl}
+
+	\ \ \ \ end
 \end{boxedminipage}
 \flushleft
 
@@ -2616,7 +2616,7 @@ end
 \bigskip
 
 \bigskip{\bfseries
-問題7−15}
+	問題7−15}
 
 ファンの電源をつける以外の赤外線送信機能を追加してみよう。
 
@@ -2638,82 +2638,82 @@ ir.htmlのフォームを自己紹介ページの一番下に付け加えよう�
 CGIを使うときに便利なHSPの命令一覧
 
 \begin{flushleft}
-\tablefirsthead{}
-\tablehead{}
-\tabletail{}
-\tablelasttail{}
-\begin{supertabular}{|m{5.467cm}|m{3.181cm}|m{7.7cm}|}
-\hline
-命令名/使い方 &
-例題 &
-効果\\\hline
-\#include “cgi.as”
+	\tablefirsthead{}
+	\tablehead{}
+	\tabletail{}
+	\tablelasttail{}
+	\begin{supertabular}{|m{5.467cm}|m{3.181cm}|m{7.7cm}|}
+		\hline
+		命令名/使い方 &
+		例題 &
+		効果\\\hline
+		\#include “cgi.as”
 
-getqueryval “name”, var &
-7-8
+		getqueryval “name”, var &
+		7-8
 
-7-9
+		7-9
 
-7-10
+		7-10
 
-7-12 &
-クエリストリングから名前”name”を探して文字列として値を変数varへ入れる。
+		7-12 &
+		クエリストリングから名前”name”を探して文字列として値を変数varへ入れる。
 
-	\textbf{localhost:3000/cgi-bin/querystring.hsp?name=val}
-	の場合、
-varにはvalが入る。\\\hline
+		\textbf{localhost:3000/cgi-bin/querystring.hsp?name=val}
+		の場合、
+		varにはvalが入る。\\\hline
 
-\#include “rpz-gpio-cl.as”
-cgpio 17, 1&
-7-7
+		\#include “rpz-gpio-cl.as”
+		cgpio 17, 1&
+		7-7
 
-7-9
+		7-9
 
-7-11&
-gpio 命令と使い方は同じ。GPIO17 番に 1 を
-書き込む。gpio 命令との違いはプログラム終
-了時にも書き込んだ値が持続する。例えば、
-cgpio 17, 1 を実行すると、
-プログラム終了時でも 17 番の GPIO は 1 の
-ままになる。\\\hline
+		7-11&
+		gpio 命令と使い方は同じ。GPIO17 番に 1 を
+		書き込む。gpio 命令との違いはプログラム終
+		了時にも書き込んだ値が持続する。例えば、
+		cgpio 17, 1 を実行すると、
+		プログラム終了時でも 17 番の GPIO は 1 の
+		ままになる。\\\hline
 
-\#include “rpz-gpio-cl.as”
-onoff = cgpioin(17)&
-7-7&
-gpio 命令と同じ。cgpio でプログラム終了時
-でも効果を持続させたい場合はこちらを使用
-する必要がある。\\\hline
+		\#include “rpz-gpio-cl.as”
+		onoff = cgpioin(17)&
+		7-7&
+		gpio 命令と同じ。cgpio でプログラム終了時
+		でも効果を持続させたい場合はこちらを使用
+		する必要がある。\\\hline
 
-\#include “rpz-gpio-cl.as”&
-7-7
+		\#include “rpz-gpio-cl.as”&
+		7-7
 
-7-9
+		7-9
 
-7-11&
-\#include “rpz-gpio.as”のコマンドライン版
-コマンドラインや CGI で動くプログラムを書
-く場合はこちらを使う。cgpio, cgpioin 命令
-以外は同じ命令が使える。\\\hline
+		7-11&
+		\#include “rpz-gpio.as”のコマンドライン版
+		コマンドラインや CGI で動くプログラムを書
+		く場合はこちらを使う。cgpio, cgpioin 命令
+		以外は同じ命令が使える。\\\hline
 
-\#include “jtalk.as”
+		\#include “jtalk.as”
 
-jtsave “こんにちは”, hello &
-7-10 &
-“こんにちは”をOpenJtalkで音声合成をして、作った音声ファイルのファイル名をhello変数へ入れる。音声ファイルは/tmp/ディレクトリの下にランダムなファイル名で入る。
+		jtsave “こんにちは”, hello &
+		7-10 &
+		“こんにちは”をOpenJtalkで音声合成をして、作った音声ファイルのファイル名をhello変数へ入れる。音声ファイルは/tmp/ディレクトリの下にランダムなファイル名で入る。
 
-例えば、hello変数の中身は
+		例えば、hello変数の中身は
 
-“/tmp/tmp.abzgda”のような感じになる。 \\\hline
-end &
-すべての例題 &
-プログラムの終了を意味する。この命令はCGI用のプログラムを終了するときに必要。この命令がないとCGIのプログラムは終了しない。（ブラウザの読み込みが終わらなくなる。）\\\hline
-\end{supertabular}
+		“/tmp/tmp.abzgda”のような感じになる。 \\\hline
+		end &
+		すべての例題 &
+		プログラムの終了を意味する。この命令はCGI用のプログラムを終了するときに必要。この命令がないとCGIのプログラムは終了しない。（ブラウザの読み込みが終わらなくなる。）\\\hline
+	\end{supertabular}
 \end{flushleft}
 
 \bigskip
 
 {\bfseries
-付録　ウェブサーバの停止方法}
+	付録  ウェブサーバの停止方法}
 
 電源を切る前、ウェブサーバが起動しているターミナルを閉じる前、ウェブサーバを停止したいときは、ウェブサーバを起動したターミナル（./webserver.pyを実行している画面）を選択して
 
