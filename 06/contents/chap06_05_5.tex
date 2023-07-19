@@ -1,12 +1,12 @@
 \subsection{音声でLEDのON OFFをする}
-HSPプログラムから、音声を使ってLEDをつけたり消したりしてみましょう。/home/pi/ome/06にonoff.yomiファイルがあります。これは音声でLEDのON/OFFをするための辞書ファイルです。\\
+HSPプログラムから、音声を使ってLEDをつけたり消したりしてみましょう。 \textasciitilde /06にonoff.yomiファイルがあります。これは音声でLEDのON/OFFをするための辞書ファイルです。\\
 
 \begin{lstlisting}[caption=onoff.yomi,label=onoff.yomi]
 ON おん
 OFF おふ
 \end{lstlisting}
 
-リスト\ref{onoff.yomi}のように書いてあります。ONとOFFが表示する文字、おんとおふが読み方です。これを\code{convert\_yomi.sh}を使って変換したものがonoff.dicです。onoff.dicを使って、音声からLEDを制御してみましょう。/home/pi/ome/06/ledbyvoice.hsp を開いてください。\\
+リスト\ref{onoff.yomi}のように書いてあります。ONとOFFが表示する文字、おんとおふが読み方です。これを\code{convert\_yomi.sh}を使って変換したものがonoff.dicです。onoff.dicを使って、音声からLEDを制御してみましょう。 \textasciitilde /06/ledbyvoice.hsp を開いてください。\\
 
 \begin{lstlisting}[caption=ledvoice.hsp,label=ledvoice.hsp]
 #include "hsp3dish.as"
@@ -17,7 +17,7 @@ pos 0, 0
 mes "Loading Julius..."
 redraw 1
 
-init_julius "/home/pi/ome/06/onoff.dic"
+init_julius " \textasciitilde /06/onoff.dic"
 
 sockidx = 0
 domain = "127.0.0.1"
@@ -60,9 +60,9 @@ words(cnt)に認識された文字が代入されています。認識された�
 
 \begin{tcolorbox}[title=\useOmetoi]
 \begin{enumerate}
-\item ledbyvoice.hspをHSPスクリプトエディタで実行しましょう。\\□←オン、オフと話しかけてLEDをつけたり消したりできたらチェックしましょう。
-\item 点灯させるLEDを変更しましょう。\\□←できたらチェックしましょう。
-\item 時間があったらやりましょう。\\点灯させるための言葉を「つける」と「けす」に変更しましょう。\\□←できたらチェックしましょう。
-\item 時間があったらやりましょう。\\センサーボードには4色のLEDが点いています。色ONでその色のLEDがつき、色OFFでその色のLEDが消えるようなプログラムを書きましょう。（オレンジONでオレンジ色のLEDがつき、オレンジOFFでオレンジ色のLEDが消えるなど）\\□←できたらチェックしましょう。
+\addex{ledbyvoice.hspをHSPスクリプトエディタで実行しましょう。}
+\addex{点灯させるLEDを変更しましょう。}
+\addex{時間があったらやりましょう。\\点灯させるための言葉を「つける」と「けす」に変更しましょう。}
+\addex{時間があったらやりましょう。\\センサーボードには4色のLEDが点いています。色ONでその色のLEDがつき、色OFFでその色のLEDが消えるようなプログラムを書きましょう。（オレンジONでオレンジ色のLEDがつき、オレンジOFFでオレンジ色のLEDが消えるなど）}
 \end{enumerate}
 \end{tcolorbox}
