@@ -1,12 +1,12 @@
 \subsection{音声でLEDのON OFFをする}
-HSPプログラムから、音声を使ってLEDをつけたり消したりしてみましょう。 \textasciitilde /ome/06にonoff.yomiファイルがあります。これは音声でLEDのON/OFFをするための辞書ファイルです。\\
+HSPプログラムから、音声を使ってLEDをつけたり消したりしてみましょう。 \textasciitilde /06にonoff.yomiファイルがあります。これは音声でLEDのON/OFFをするための辞書ファイルです。\\
 
 \begin{lstlisting}[caption=onoff.yomi,label=onoff.yomi]
 ON おん
 OFF おふ
 \end{lstlisting}
 
-リスト\ref{onoff.yomi}のように書いてあります。ONとOFFが表示する文字、おんとおふが読み方です。これを\code{convert\_yomi.sh}を使って変換したものがonoff.dicです。onoff.dicを使って、音声からLEDを制御してみましょう。 \textasciitilde /ome/06/ledbyvoice.hsp を開いてください。\\
+リスト\ref{onoff.yomi}のように書いてあります。ONとOFFが表示する文字、おんとおふが読み方です。これを\code{convert\_yomi.sh}を使って変換したものがonoff.dicです。onoff.dicを使って、音声からLEDを制御してみましょう。 \textasciitilde /06/ledbyvoice.hsp を開いてください。\\
 
 \begin{lstlisting}[caption=ledvoice.hsp,label=ledvoice.hsp]
 #include "hsp3dish.as"
@@ -17,7 +17,7 @@ pos 0, 0
 mes "Loading Julius..."
 redraw 1
 
-init_julius " \textasciitilde /ome/06/onoff.dic"
+init_julius " \textasciitilde /06/onoff.dic"
 
 sockidx = 0
 domain = "127.0.0.1"
