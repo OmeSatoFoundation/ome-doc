@@ -1,5 +1,5 @@
-\subsection{デジタル出力そうちを使ってみよう}
-デジタル出力そうちをHSPで使ってみましょう。GPIO23にLED（\#101）をつけてください。HSPスクリプトエディタで/home/pi/ome/05/digout.hspを開いて、実行してみましょう。\\
+\subsection{デジタル出力装置を使ってみよう}
+デジタル出力装置をHSP使ってみましょう。GPIO23にLED（\#101）をつけてください。HSPスクリプトエディタで\textasciitilde /05/digout.hspを開いて、実行してみましょう。\\
 \begin{figure}[H]
   \begin{minipage}[t]{0.3\columnwidth}
     \centering
@@ -25,27 +25,27 @@
 	mes "センサーが動いたり止まったりします"
 	redraw 1
 
-	gpio 23,1	<#blue#;GPIO23のブリックを動かす#>
+	gpio 23,1	<#blue#;GPIO23のブリックにONの信号を送る#>
 	wait 100
-	gpio 23,0	<#blue#;GPIO23のブリックを止める#>
+	gpio 23,0	<#blue#;GPIO23のブリックにOFFの信号を送る#>
 	wait 100
 	goto *main
 \end{lstlisting}
 
-GPIO12,GPIO16,GPIO19,GPIO20,GPIO24,GPIO25,GPIO26はデジタル入出力そうち用のピンです。センサーボードで使った\code{gpio}命令で使うことができます。\code{gpio GPIOピン番号,値}でブリックを動かしたり、止めたりできます。\\
+GPIO12,GPIO16,GPIO19,GPIO20,GPIO24,GPIO25,GPIO26はデジタル入出力装置用のピンです。センサーボードで使った\code{gpio}命令で使うことができます。\code{gpio GPIOピン番号,値}でブリックへの信号をONにしたりOFFにしたりすることができます。\\
 
-digout.hspはデジタル出力そうち用のプログラムです。LEDや振動子に使うことができます。\\
-\code{gpio GPIOピン番号,0}でブリックを動かします。\\
-\code{gpio GPIOピン番号,1}でブリックを止めます。\\
+digout.hspはデジタル出力装置用のプログラムです。LEDや振動子に使うことができます。\\
+\code{gpio GPIOピン番号,0}でブリックをONにします。\\
+\code{gpio GPIOピン番号,1}でブリックをOFFにします。\\
 
 \begin{tcolorbox}[title=\useOmetoi]
 \begin{enumerate}
-\item digout.hspのgpio 23,1をgpio 25,1に。gpio 23,0をgpio 25,0に変えましょう。LEDをGPIO25につけて、プログラムを実行しましょう。
+\addex{digout.hspのgpio 23,1をgpio 25,1に。gpio 23,0をgpio 25,0に変えましょう。LEDをGPIO25につけて、プログラムを実行しましょう。}
 \end{enumerate}
 \end{tcolorbox}
 \begin{tcolorbox}[title=\useOmetoi]
 \begin{enumerate}
-\item LEDを振動子(\#105)に変えて、digout.hspを実行しましょう。
+\addex{LEDを振動子(\#105)に変えて、digout.hspを実行しましょう。}
 \end{enumerate}
 \end{tcolorbox}
 

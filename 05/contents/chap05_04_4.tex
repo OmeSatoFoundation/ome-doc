@@ -1,8 +1,8 @@
 \subsection{HSPを使って赤外線を出力するプログラムを作ってみよう}
-HSPスクリプトエディタで/home/pi/ome/05/ir.hspを開いてみましょう。\\
+HSPスクリプトエディタで\textasciitilde /05/ir.hspを開いてみましょう。\\
 HSPではexec命令を使ってターミナルで使うコマンドを実行することができます。\\
 \code{exec "irsend SEND\_ONCE fan onoff"}\\
-\code{exec “コマンド”}と使います。コマンドは先ほどターミナルで実行した\code{irsend SEND\_ONCE \textcolor{red}{fan onoff}}です。\code{\textcolor{red}{fan}}はリモコンの名前、\code{\textcolor{red}{onoff}}は信号の名前でしたね。\code{\textcolor{red}{fan}}と\code{\textcolor{red}{onoff}}は自分で設定ファイルに書いた名前に変えましょう。\\
+exec命令は、\code{exec “コマンド”}とターミナルのコマンドを指定します。ここでのコマンドは先ほどターミナルで実行した\code{irsend SEND\_ONCE \textcolor{red}{fan onoff}}です。\code{\textcolor{red}{fan}}はリモコンの名前、\code{\textcolor{red}{onoff}}は信号の名前でした。\code{\textcolor{red}{fan}}と\code{\textcolor{red}{onoff}}は自分で設定ファイルに書いた名前に変えましょう。\\
 
 \begin{lstlisting}[caption=ir.hsp,label=ir.hsp]
 #include "hsp3dish.as"
@@ -28,6 +28,6 @@ status=0
 
 \begin{tcolorbox}[title=\useOmetoi]
 \begin{enumerate}
-\item ボタンをGPIO24につなげ、自分でコピーした赤外線を出力してみましょう。\code{\textcolor{red}{fan}}と\code{\textcolor{red}{onoff}}は自分で設定ファイルに書いた名前に変えましょう。
+\addex{ボタンをGPIO24につなげ、自分でコピーした赤外線を出力してみましょう。\code{\textcolor{red}{fan}}と\code{\textcolor{red}{onoff}}は自分で設定ファイルに書いた名前に変えましょう。}
 \end{enumerate}
 \end{tcolorbox}
