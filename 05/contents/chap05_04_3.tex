@@ -8,7 +8,7 @@
 \item 音声を使って家電を操作することができる
 \end{itemize}
 
-Raspberry Piをリモコンにするためには、リモコンの信号を覚えて送信することが必要です。信号を覚えるために、まずリモコンから赤外線の信号をセンサーボードの赤外線受信ユニットで受け取ります。次にコマンドを使って信号をテキストに変換します。最後にテキストに記録された信号を赤外線センサーから家電に送信することで、リモコンと同じ信号を家電に送ることができます。
+Raspberry Piをリモコンにするためには、リモコンの信号を記録して、その記録をもとに信号を送信します。まず、リモコンが出す赤外線の信号をセンサーボードの赤外線受信ユニットで受け取り、その信号を記録します。次に、コマンドを使って信号をテキストに変換します。最後に、テキストに記録された信号を赤外線LEDから家電に送信します。こうすることで、Raspberry Piでリモコンと同じ信号を家電に送ることができます。
 
 \begin{figure}[H]
     \centering
@@ -25,12 +25,12 @@ Raspberry Piをリモコンにするためには、リモコンの信号を覚�
   \item 違う信号を受け取らないように、赤外線受信を止めます。 \\ \code{sudo service lircd stop}
   \item 赤外線を受信し、onoff.txtに記録します。コマンドを実行してから、赤外線受信ユニットに向かって、リモコンのボタンを押しましょう。記録が終わったらCtrl+c（Ctrlキーを押しながらcを押す）で終了します。\\ \code{mode2 -d /dev/lirc1 | tee onoff.txt}
   \item 記録した信号を、convert\_pattern コマンドを使って送信用に変換します。\\ \code{convert\_pattern onoff.txt > onoff.pattern}
-  \item 設定ファイルを作ります。/home/pi/ome/05/template.lircd.confを元に作ります。まずはこのテンプレートを05.lircd.confという名前でコピーします。そのあと、leafpadで開きましょう。\\ \code{cp template.lircd.conf 05.lircd.conf\\leafpad 05.lircd.conf}
+  \item 設定ファイルを作ります。\textasciitilde /05/template.lircd.confを元に作ります。まずはこのテンプレートを05.lircd.confという名前でコピーします。そのあと、mousepadで開きましょう。\\ \code{cp template.lircd.conf 05.lircd.conf\\mousepad 05.lircd.conf}
   \item \pageref{template.lircd.conf}ページにあるリスト \ref{template.lircd.conf}の赤字の部分を書き換えます。
   \begin{enumerate}[(1)]
     \item リモコンの名前を決めます。使う家電の名前(fan, robot, TV...)にしましょう。
     \item 信号の名前を決めます。動作(digital\_onoff,walk...)の名前にしましょう。
-    \item “ここに信号をペーストする”と書いてある行を消します。onoff.patternに書かれた信号をコピーして貼り付けます。leafpadを使ってonoff.patternを表示しましょう。\\ \code{leafpad onoff.pattern}
+    \item “ここに信号をペーストする”と書いてある行を消します。onoff.patternに書かれた信号をコピーして貼り付けます。mousepadを使ってonoff.patternを表示しましょう。\\ \code{mousepad onoff.pattern}
 \\onoff.patternに書かれた信号は、たとえば「1207 588 447 838 447 823 475 812 1218」のような文字列です。\\書き換えたら、保存しましょう (名前が05.lircd.confになっていることを確認しましょう)。
   \end{enumerate}
  \end{enumerate}
