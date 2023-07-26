@@ -1,4 +1,4 @@
-\subsection{距離センサーを使ってみよう}
+\subsection{\ruby{距離}{きょ|り}センサーを使ってみよう}
 距離センサーをHSPで使ってみましょう。距離センサー(番号は書いてありません。\pageref{distance}ページを参考にしてください)をA0につなげましょう。HSPスクリプトエディタで、\textasciitilde /05/kyori.hspを開いて実行してください。
 \begin{figure}[H]
   \begin{minipage}[t]{0.3\columnwidth}
@@ -38,10 +38,10 @@ spiopen 0	<#blue#;SPIチャンネルを開く#>
 spiclose 0	<#blue#;SPIチャンネルを閉じる#>
 \end{lstlisting}
 
-距離センサーのデータは\code{spiget}を使って受け取ることができます。値は0～1023になります。これでは距離がわからないので、受け取った値をcm(センチメートル)に変換する必要があります。変換するための式は\ref{distance}ページに書いてあります。今回は入力は\code{data}という変数にしているので、式のxをdataにします。\code{kyori = -1*(data*5000/1023)/36+845/9}で入力を距離に変換し、\code{kyori}変数に代入しています。単位はcmです。\\
+距離センサーのデータは\code{spiget}を使って受け取ることができます。\ruby{値}{あたい}は0～1023になります。これでは距離がわからないので、受け取った値をcm(センチメートル)に変換する必要があります。変換するための式は\ref{distance}ページに書いてあります。今回は入力は\code{data}という変数にしているので、式のxをdataにします。\code{kyori = -1*(data*5000/1023)/36+845/9}で入力を距離に変換し、\code{kyori}変数に代入しています。単位はcmです。\\
 
 \begin{tcolorbox}[title=\useOmetoi]
 \begin{enumerate}
-\addex{距離センサーをA0につなげてkyori.hspを実行してみましょう。測定できる距離はだいたい10～80cmです。}
+\addex{距離センサーをA0につなげてkyori.hspを実行してみましょう。\ruby{測定}{そく|てい}できる距離はだいたい10～80cmです。}
 \end{enumerate}
 \end{tcolorbox}
