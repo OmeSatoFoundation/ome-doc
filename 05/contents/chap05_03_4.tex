@@ -1,8 +1,9 @@
-\subsection{アナログ入力\ruby{装置}{そう|ち}を使ってみよう}
+\newpage
+\section{アナログ入力\ruby{装置}{そう|ち}を使ってみよう}
 デジタル入力装置をHSPで使ってみましょう。GPIO24にボタン(\#103)をつけてください。HSPスクリプトエディタで\textasciitilde /05/digin.hspを開いて実行してみましょう。\\
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.8]{images/chap05/text05-img030.png}
+    \includegraphics[scale=0.6]{images/chap05/text05-img030.png}
     \caption{アナログ入力A0}
 \end{figure}
 
@@ -37,20 +38,8 @@ anain.hspはアナログ入力装置用のプログラムです。アナログ�
 \begin{tcolorbox}[title=\useOmetoi]
 \begin{enumerate}
 \addex{感圧センサー(\#106)をA0につなげて上記のanain.hspを実行してみましょう。感圧センサーにさわる強さによって、画面の数字が変わります。}
-\end{enumerate}
-\end{tcolorbox}
-\begin{tcolorbox}[title=\useOmetoi]
-\begin{enumerate}
 \addex{ボリューム(\#104)をA0につなげてanain.hspを実行してみましょう。ボリュームを動かすと、画面の数字が変わります。}
-\end{enumerate}
-\end{tcolorbox}
-\begin{tcolorbox}[title=\useOmetoi]
-\begin{enumerate}
 \addex{照度センサー(\#109)をA0につなげてanain.hspを実行してみましょう。明るさによって、画面の数字が変わります。}
-\end{enumerate}
-\end{tcolorbox}
-\begin{tcolorbox}[title=\useOmetoi]
-\begin{enumerate}
 \addex{\code{spiget(0,0)}を\code{spiget(1,0)}に変えましょう。A1にアナログ入力そうちをつなぎましょう。anain.hspを実行してみましょう。}
 \end{enumerate}
 \end{tcolorbox}
