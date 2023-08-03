@@ -1,4 +1,6 @@
-\subsection{デジタル出力\ruby{装置}{そう|ち}を使ってみよう}
+%%本の左から開始したい
+\newpage
+\section{デジタル出力\ruby{装置}{そう|ち}を使ってみよう}
 デジタル出力装置をHSP使ってみましょう。GPIO23にLED（\#101）をつけてください。HSPスクリプトエディタで\textasciitilde /05/digout.hspを開いて、実行してみましょう。\\
 \begin{figure}[H]
   \begin{minipage}[t]{0.3\columnwidth}
@@ -41,10 +43,6 @@ digout.hspはデジタル出力装置用のプログラムです。LEDや\ruby{�
 \begin{tcolorbox}[title=\useOmetoi]
 \begin{enumerate}
 \addex{digout.hspのgpio 23,1をgpio 25,1に。gpio 23,0をgpio 25,0に変えましょう。LEDをGPIO25につけて、プログラムを実行しましょう。}
-\end{enumerate}
-\end{tcolorbox}
-\begin{tcolorbox}[title=\useOmetoi]
-\begin{enumerate}
 \addex{LEDを振動子(\#105)に変えて、digout.hspを実行しましょう。}
 \end{enumerate}
 \end{tcolorbox}
