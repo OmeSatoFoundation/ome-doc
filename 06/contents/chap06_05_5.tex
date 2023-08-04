@@ -6,7 +6,7 @@ ON おん
 OFF おふ
 \end{lstlisting}
 
-リスト\ref{onoff.yomi}のように書いてあります。ONとOFFが表示する文字、おんとおふが読み方です。これを\code{convert\_yomi.sh}を使って変換したものがonoff.dicです。onoff.dicを使って、音声からLEDを制御してみましょう。 \textasciitilde /06/ledbyvoice.hsp を開いてください。\\
+リスト\ref{onoff.yomi}のように書いてあります。ONとOFFが表示する文字、おんとおふが読み方です。これを\code{convert\_yomi.sh}を使って変換したものがonoff.dicです。onoff.dicを使って、音声からLEDを\ruby{制御}{せい|ぎょ}してみましょう。 \textasciitilde /06/ledbyvoice.hsp を開いてください。\\
 
 \begin{lstlisting}[caption=ledvoice.hsp,label=ledvoice.hsp]
 #include "hsp3dish.as"
@@ -61,7 +61,7 @@ words(cnt)に認識された文字が代入されています。認識された�
 \begin{tcolorbox}[title=\useOmetoi]
 \begin{enumerate}
 \addex{ledbyvoice.hspをHSPスクリプトエディタで実行しましょう。}
-\addex{点灯させるLEDを変更しましょう。}
+\addex{点灯させるLEDを変\ruby{更}{こう}しましょう。}
 \addex{時間があったらやりましょう。\\点灯させるための言葉を「つける」と「けす」に変更しましょう。}
 \addex{時間があったらやりましょう。\\センサーボードには4色のLEDが点いています。色ONでその色のLEDがつき、色OFFでその色のLEDが消えるようなプログラムを書きましょう。（オレンジONでオレンジ色のLEDがつき、オレンジOFFでオレンジ色のLEDが消えるなど）}
 \end{enumerate}

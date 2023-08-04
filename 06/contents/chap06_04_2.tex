@@ -1,9 +1,9 @@
 \subsection{声音を変えてみる}
-ところで、人間の声は人によって高い声だったり低い声だったり違いますよね。OpenJTalkでは文章を読ませるときの声音を指定することができます。声音はhtsvoiceというファイルフォーマットによって定められおり、setvoice 命令で指定することができます。\\
+ところで、人間の声は人によって高い声だったり低い声だったり\ruby{違}{ちが}いますよね。OpenJTalkでは文章を読ませるときの声音を指定することができます。声音はhtsvoiceというファイルフォーマットによって定められおり、setvoice 命令で指定することができます。\\
 \code{setvoice <声音ファイル>}
 
 % TODO: relative or absolute path
-<声音ファイル>には、 拡張子が .htsvoice であるようなファイルへのパスを指定します。\\
+<声音ファイル>には、 \ruby{拡張子}{かく|ちょう|し}が .htsvoice であるようなファイルへのパスを指定します。\\
 みなさんのRaspberry Piにはいくつかの声音ファイルがすでにダウンロードされています。  \textasciitilde /06/htsvoice-tohoku-f01を見てみてください。
 
 \begin{itemize}
@@ -34,9 +34,9 @@ stop
 \code{setvoice "htsvoice-tohoku-f01/tohoku-f01-sad.htsvoice"}\\
 \code{voice.hsp} は \code{\textasciitilde /06} にあるので、
 \code{voice.hsp} 内に書かれた \code{htsvoice-tohoku-f01/tohoku-f01-sad.htsvoice}
-は \code{\textasciitilde /06} から探されます。
-この行以降、jtloadが呼び出されると \code{\textasciitilde /06/htsvoice-tohoku-f01/tohoku-f01-sad.htsvoice}
-という声音が使用されます。ダブルクォーテーションで囲われている部分を変更することで、別の声音にすることができます。\\
+は \code{\textasciitilde /06} から\ruby{探}{さが}されます。
+この行以\ruby{降}{こう}、jtloadが\ruby{呼}{よ}び出されると \code{\textasciitilde /06/htsvoice-tohoku-f01/tohoku-f01-sad.htsvoice}
+という声音が使用されます。ダブルクォーテーションで囲われている部分を変\ruby{更}{こう}することで、別の声音にすることができます。\\
 
 \begin{tcolorbox}[title=\useOmetoi]
 \begin{enumerate}
