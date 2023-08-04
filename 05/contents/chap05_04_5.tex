@@ -1,4 +1,5 @@
-\subsection{赤外線送受信のまとめ}
+\newpage
+\section{赤外線送受信のまとめ}
 \begin{enumerate}
 \item \code{sudo service lircd stop}
 \item \code{mode2 -d /dev/lirc0| tee ファイル名1.txt}
@@ -9,8 +10,16 @@
 \item \code{irsend SEND\_ONCE <リモコンの名前> <信号の名前>}
 \end{enumerate}
 
+\begin{tcolorbox}[title=\useOmetoi]
+\begin{enumerate}
+\addex{これは宿題です。自分の家にある家電をRaspberry Piで制御してみましょう。エアコン、\ruby{扇風機}{せん|ぷう|き}、テレビなど赤外線を使って\ruby{操作}{そう|さ}する家電を選びましょう。}
+\end{enumerate}
+\end{tcolorbox}
+
+
+
 \subsection{おまけ：信号を２つ以上登録する}
-\ruby{複数}{ふく|すう}の動作を\ruby{制御}{せい|ぎょ}したい場合は、動作ごとに信号を登録する必要があります。template.lircd.confの中の“begin raw\_codes” と “end raw\_codes”の間にname <名前>と信号を\ruby{並}{なら}べることで複数の信号を登録することができます。ただし、信号をあらわす数字の数は255\ruby{個}{こ}以下でないといけないと書きましたが、これはファイルひとつにある信号を全て合わせたものであることに注意してください。この場合、onoffに\ruby{記述}{き|じゅつ}される数字の数と、powerに記述される数字の数の合計が255以下でなければなりません。\\
+\ruby{複数}{ふく|すう}の動作を\ruby{制御}{せい|ぎょ}したい場合は、動作ごとに信号を登録します。template.lircd.confの中の“begin raw\_codes” と “end raw\_codes”の間にname <名前>と信号を\ruby{並}{なら}べて複数の信号を登録できます。ただし、ひとつのファイルの中にあるすべての信号の数の合計は255\ruby{個}{こ}以下でなければなりません。このファイルの場合、onoffに\ruby{記述}{き|じゅつ}される数字の数と、powerに記述される数字の数の合計が255以下でなければなりません。\\
 
 \begin{lstlisting}[caption=２つの信号を登録するときのtemplate.lircd.comf,label=２つの信号を登録するときのtemplate.lircd.comf]
 begin remote
@@ -35,5 +44,3 @@ begin remote
 end remote
 \end{lstlisting}
 
-\subsection{宿題}
-自分の家にある家電をRaspberry Piで制御してみましょう。エアコン、\ruby{扇風機}{せん|ぷう|き}、テレビなど赤外線を使って\ruby{操作}{そう|さ}する家電を選びましょう。
