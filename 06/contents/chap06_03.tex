@@ -1,12 +1,13 @@
+\newpage
 \section{ヘッドセットの使い方}
-\ruby{演}{えん}習の前に、ヘッドセットの\ruby{設定}{せっ|てい}をしましょう。ヘッドセットとは、コンピュータなどから音声を出力するためのヘッドフォンと、コンピュータなどに音声を入力するためのマイクが一体型になったものです。\\
-まずはラズベリーパイの電\ruby{源}{げん}を入れる前に、ヘッドセットとラズベリーパイをつないでおきます。
-ヘッドセットがラズベリーパイに\ruby{接}{せつ}続されていると、右上にマイクのアイコンが追加されます。
+\ruby{演習}{えん|しゅう}の前に、ヘッドセットの\ruby{設定}{せっ|てい}をしましょう。ヘッドセットとは、コンピュータなどから音声を出力するためのヘッドフォンと、コンピュータなどに音声を入力するためのマイクが一体型になったものです。\\
+まずはラズベリーパイの\ruby{電源}{でん|げん}を入れる前に、ヘッドセットとラズベリーパイをつないでおきます。
+ヘッドセットがラズベリーパイに\ruby{接続}{せつ|ぞく}されていると、右上にマイクのアイコンが追加されます。
 
 \begin{figure}[H]
 \begin{center}
-    \includegraphics[width=\linewidth]{images/how_to_connect_headset.jpg}
-    \caption{つなげかた}
+    \includegraphics[width=.6\linewidth]{images/how_to_connect_headset.jpg}
+    \caption{ヘッドセットのつなげかた}
     \label{つなげかた}
 \end{center}
 \end{figure}
@@ -15,37 +16,41 @@
 
 \begin{figure}[H]
 \begin{center}
-    \includegraphics[width=\linewidth]{images/chap06/text06-img004.png}
+    \includegraphics[width=.6\linewidth]{images/chap06/text06-img004.png}
     \caption{ヘッドセットのコントローラーの使い方}
     \label{ヘッドセットのコントローラーの使い方}
 \end{center}
 \end{figure}
 
-一番左のボタンでマイクのミュートを切りかえることができます。ミュートとは音を消すことです。マイクがミュートしているときは赤色のLEDが光っています。マイクを使うときはミュートを\ruby{解除}{かい|じょ}して、赤色のLEDが光っていないようにしましょう。真ん中のボタンは音のミュートです。音が聞こえないときはここを\ruby{押}{お}してみましょう。右側のボタンは ``+" で音量を上げる、``-" で音量を下げることができます。
+ヘッドセットのコントローラーの一番左のボタンでマイクのミュートを切りかえることができます。ミュートとは音を消すことです。マイクがミュートしているときは赤色のLEDが光っています。マイクを使うときはミュートを\ruby{解除}{かい|じょ}して、赤色のLEDが光っていないようにしましょう。真ん中のボタンは音のミュートです。音が聞こえないときはここを\ruby{押}{お}してみましょう。右側のボタンは ``+" で音量を上げる、``-" で音量を下げることができます。
 ヘッドセットの出力音量はディスプレイの右上にあるスピーカーのアイコンからも設定できます。
 
-次に、音を出す音声デバイスを選\ruby{択}{たく}しましょう。ディスプレイの右上にあるスピーカーアイコンを右クリックしてください。
+次に、音を出す音声デバイスを\ruby{選択}{せん|たく}しましょう。ディスプレイの右上にあるスピーカーアイコンを右クリックしてください。
 
-\begin{figure}[H]
-\begin{center}
-    \includegraphics[width=\linewidth]{images/select_sink.png}
-    \caption{使う音声デバイスの選択と設定}
-    \label{使う音声デバイスの選択と設定}
-\end{center}
-\end{figure}
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=\linewidth]{images/select_sink.png}
+            \caption{使う音声デバイスの選択と設定}
+            \label{使う音声デバイスの選択と設定}
+        \end{center}
+    \end{figure}
+\end{minipage}
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=\linewidth]{images/microphone_volume.png}
+            \caption{マイクの入力音量の調節方法}
+            \label{microphone_volume}
+        \end{center}
+    \end{figure}
+\end{minipage}
 
 図 \ref{使う音声デバイスの選択と設定} に使うことのできるデバイスが\ruby{表示}{ひょう|じ}されます。HDMIとはディスプレイのことです。これを左クリックするとディスプレイから音を出すことができます。USB PnP Sound Deviceはヘッドセットのことです。ヘッドセットを使うときはこちらを左クリックします。
 教室ではヘッドセットを使います。おうちでは、お父さんやお母さんに\ruby{許可}{きょ|か}を取って、ディスプレイやテレビから出力することもできます。
 
 マイクの入力音量を変えるときはマイクのアイコンを左クリックし、表示されたスライドバーを調節します。
 
-\begin{figure}[H]
-    \begin{center}
-        \includegraphics[width=\linewidth]{images/microphone_volume.png}
-        \caption{マイクの入力音量の調節方法}
-        \label{microphone_volume}
-    \end{center}
-\end{figure}
 
 
 教室ではヘッドセットで音を聞き、ヘッドセットのマイクで音声を入力するので、図\ref{使う音声デバイスの選択と設定}のように USB PnP Sound Device を選択し、図\ref{microphone_volume}のようにマイクの入力音量を大きめにしておきましょう。
