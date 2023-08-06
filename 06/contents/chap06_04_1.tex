@@ -1,7 +1,6 @@
-\section{OpenJTalk}
-ここでは音声合成ソフトウェアOpenJTalkの\ruby{紹介}{しょう|かい}をします。まずは使ってみましょう。
-\subsection{文を読み上げてもらう}
-文を読み上げるHSPプログラムを紹介します。openjtalk.hsp をHSPスクリプトエディタで開いてください。openjtalk.hsp は  \textasciitilde /06/ の中にあります。\\
+\newpage
+\section{OpenJTalkに文を読み上げてもらう}
+ここでは音声合成ソフトウェアOpenJTalkの\ruby{紹介}{しょう|かい}をします。まずは文を読み上げるHSPプログラムを紹介します。openjtalk.hsp をHSPスクリプトエディタで開いてください。openjtalk.hsp は  \textasciitilde /06/ の中にあります。\\
 
 \begin{lstlisting}[caption=openjtalk.hsp,label=openjtalk.hsp]
 #include "hsp3dish.as"
@@ -17,13 +16,14 @@ mmplay 0			<#blue#;音声ファイルを再生する#>
 stop
 \end{lstlisting}
 
+\noindent
 2行目\\
 \code{\#include “jtalk.as”}\\
 で、openjtalkをHSPで使うのに必要な\ruby{設定}{せっ|てい}が行われます。この行によって、後に説明する jtload 命令と setvoice 命令が使えるようになります。\\
-4行目から7行目までは\ruby{復}{ふく}習です。mes命令で文字を\ruby{表示}{ひょう|じ}させています。\\
+4行目から7行目までは\ruby{復習}{ふく|しゅう}です。mes命令で文字を\ruby{表示}{ひょう|じ}させています。\\
 9行目からが新しい命令です。\\
 \code{jtload "子どもIT未来塾", 0}\\
-で、0番のバッファに “子どもIT未来塾” と読ませた音声ファイルがロードされます。 画\ruby{像}{ぞう}を配置するときや、I2Cを使うときと同じような仕組みです。より一\ruby{般}{ぱん}的に書くと、jtload命令は\\
+で、0番のバッファに “子どもIT未来塾” と読ませた音声ファイルがロードされます。 \ruby{画像}{が|ぞう}を配置するときや、I2Cを使うときと同じような仕組みです。より\ruby{一般}{いっ|ぱん}的に書くと、jtload命令は\\
 jtload <読み上げ文字列>, <バッファ番号>\\
 となります。\\
 10行目\\
@@ -34,7 +34,7 @@ jtload <読み上げ文字列>, <バッファ番号>\\
 
 \begin{tcolorbox}[title=\useOmetoi]
 \begin{enumerate}
-        \addex{「本日は青天なり」と読み上げるようにプログラムを書き変えて、sunny.hspという名前で \textasciitilde /06/に\ruby{保存}{ほ|ぞん}し、実行しましょう。\\ヒント：jtload "子どもIT未来\ruby{塾}{じゅく}", 0をかきかえます。}
+        \addex{「本日は青天なり」と読み上げるようにプログラムを書き変えて、sunny.hspという名前で \textasciitilde /06/に\ruby{保存}{ほ|ぞん}し、実行しましょう。\\ヒント：jtload "子どもIT\ruby{未来塾}{み|らい|じゅく}", 0をかきかえます。}
 \addex{時間があったらやりましょう。\\好きな言葉を読み上げさせましょう。}
 \end{enumerate}
 \end{tcolorbox}

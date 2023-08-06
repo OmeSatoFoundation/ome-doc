@@ -1,4 +1,5 @@
-\subsection{声音を変えてみる}
+\newpage
+\section{OpenJtalkの声の声音を変えてみる}
 ところで、人間の声は人によって高い声だったり低い声だったり\ruby{違}{ちが}いますよね。OpenJTalkでは文章を読ませるときの声音を指定することができます。声音はhtsvoiceというファイルフォーマットによって定められおり、setvoice 命令で指定することができます。\\
 \code{setvoice <声音ファイル>}
 
@@ -35,8 +36,8 @@ stop
 \code{voice.hsp} は \code{\textasciitilde /06} にあるので、
 \code{voice.hsp} 内に書かれた \code{htsvoice-tohoku-f01/tohoku-f01-sad.htsvoice}
 は \code{\textasciitilde /06} から\ruby{探}{さが}されます。
-この行以\ruby{降}{こう}、jtloadが\ruby{呼}{よ}び出されると \code{\textasciitilde /06/htsvoice-tohoku-f01/tohoku-f01-sad.htsvoice}
-という声音が使用されます。ダブルクォーテーションで囲われている部分を変\ruby{更}{こう}することで、別の声音にすることができます。\\
+この行\ruby{以降}{い|こう}、jtloadが\ruby{呼}{よ}び出されると \code{\textasciitilde /06/htsvoice-tohoku-f01/tohoku-f01-sad.htsvoice}
+という声音が使用されます。ダブルクォーテーションで囲われている部分を\ruby{変更}{へん|こう}することで、別の声音にすることができます。\\
 
 \begin{tcolorbox}[title=\useOmetoi]
 \begin{enumerate}
