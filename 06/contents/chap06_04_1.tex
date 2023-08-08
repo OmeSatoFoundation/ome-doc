@@ -19,8 +19,8 @@ stop
 \noindent
 2行目\\
 \code{\#include “jtalk.as”}\\
-で、openjtalkをHSPで使うのに必要な\ruby{設定}{せっ|てい}が行われます。この行によって、後に説明する jtload 命令と setvoice 命令が使えるようになります。\\
-4行目から7行目までは\ruby{復習}{ふく|しゅう}です。mes命令で文字を\ruby{表示}{ひょう|じ}させています。\\
+で、OpenJtalkをHSPで使うのに必要な\ruby{設定}{せっ|てい}が行われます。この行によって、後に説明する \code{jtload} 命令と \code{setvoice} 命令が使えるようになります。\\
+4行目から7行目までは\ruby{復習}{ふく|しゅう}です。\code{mes}命令で文字を\ruby{表示}{ひょう|じ}させています。\\
 9行目からが新しい命令です。\\
 \code{jtload "子どもIT未来塾", 0}\\
 で、0番のバッファに “子どもIT未来塾” と読ませた音声ファイルがロードされます。 \ruby{画像}{が|ぞう}を配置するときや、I2Cを使うときと同じような仕組みです。より\ruby{一般}{いっ|ぱん}的に書くと、jtload命令は\\
@@ -34,7 +34,7 @@ jtload <読み上げ文字列>, <バッファ番号>\\
 
 \begin{tcolorbox}[title=\useOmetoi]
 \begin{enumerate}
-        \addex{「本日は青天なり」と読み上げるようにプログラムを書き変えて、sunny.hspという名前で \textasciitilde /06/に\ruby{保存}{ほ|ぞん}し、実行しましょう。\\ヒント：jtload "子どもIT\ruby{未来塾}{み|らい|じゅく}", 0をかきかえます。}
+        \addex{「本日は青天なり」と読み上げるようにプログラムを書き変えて、sunny.hspという名前で \textasciitilde /06/に\ruby{保存}{ほ|ぞん}し、実行しましょう。\\ヒント：\code{jtload "子どもIT\ruby{未来塾}{み|らい|じゅく}", 0} を書き\ruby{換}{か}えます。}
 \addex{時間があったらやりましょう。\\好きな言葉を読み上げさせましょう。}
 \end{enumerate}
 \end{tcolorbox}
