@@ -42,7 +42,7 @@ spiopen 0	<#blue#;SPIチャンネルを開く#>
 spiclose 0	<#blue#;SPIチャンネルを閉じる#>
 \end{lstlisting}
 
-距離センサーのデータは\code{spiget}を使って受け取ることができます。\ruby{値}{あたい}は0～1023になります。これでは距離がわからないので、受け取った値をcm(センチメートル)に変換する必要があります。変換するための式は\ref{distance}ページに書いてあります。今回は入力は\code{data}という変数にしているので、式のxをdataにします。\code{kyori = -1*(data*5000/1023)/36+845/9}で入力を距離に変換し、\code{kyori}変数に代入しています。単位はcmです。\\
+距離センサーのデータは\code{spiget}を使って受け取ることができます。\ruby{値}{あたい}は0～1023になります。これでは距離がわからないので、受け取った値をcm(センチメートル)に変換する必要があります。変換するための式は\pageref{distance}ページに書いてあります。今回は入力は\code{data}という変数にしているので、式のxをdataにします。\code{kyori = -1*(data*5000/1023)/36+845/9}で入力を距離に変換し、\code{kyori}変数に代入しています。単位はcmです。\\
 
 \begin{tcolorbox}[title=\useOmetoi]
 \begin{enumerate}

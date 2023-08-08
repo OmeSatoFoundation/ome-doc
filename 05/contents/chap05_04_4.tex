@@ -7,14 +7,18 @@ exec命令は、\code{exec “コマンド”}とターミナルのコマンド�
 
 \begin{lstlisting}[caption=ir.hsp,label=ir.hsp]
 #include "hsp3dish.as"
-#include "rpz-gpio.as"
 
 BUTTON_PIN = 24
 prev = 0
 status=0
 
 *main
-        gpmes "ボタンPUSHで赤外線照射!"
+        redraw 0 
+        font "",20
+	pos 0,0
+        mes "ボタンPUSHで赤外線照射!"
+        redraw 1
+	wait 1
         goto *edge
 
 *edge
@@ -23,7 +27,7 @@ status=0
             exec "irsend SEND_ONCE fan onoff"	<#blue#;irsendコマンドを実行する#>
         }
         prev = current
-        update 1
+        wait 1
         goto *edge
 \end{lstlisting}
 
