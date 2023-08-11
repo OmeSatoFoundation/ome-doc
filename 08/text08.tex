@@ -22,6 +22,10 @@
 {./text08-img/}%
 }
 
+\newcounter{Exercise}
+\newcounter{Question}
+\renewcommand\theExercise{例題 8-\arabic{Exercise}}
+\renewcommand\theQuestion{\textbf{問題 8-\arabic{Question}}}
 % Outline numbering
 \setcounter{secnumdepth}{3}
 \renewcommand\thesection{\arabic{section}}
@@ -299,8 +303,9 @@ IPアドレス:ポート
 
 \bigskip
 
-\clearpage\section{例題8-1
-コマンドラインからウェブページをダウンロードする}
+\refstepcounter{Exercise}
+\clearpage\section{\theExercise　コマンドラインからウェブページをダウンロードする}
+\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:CURL}
 インターネットから情報を取ってくるときに使用するツールは
 curl (カール)と言います。 curl
 はデータを送ったり受け取ったりするときに使います。
@@ -402,11 +407,12 @@ leafpadを使ってダウンロードしたHTMLファイルを開いて友達の
 \ \ \ \ Hint :
 ダウンロードしたファイルをleafpadで見てみよう
 
-\clearpage\section{例題8-2
-ダウンロードしたページを調べてみましょう}
+\refstepcounter{Exercise}
+\clearpage\section{\theExercise　ダウンロードしたページを調べてみましょう}
+\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:HTML}
 考え方
 
-例題8-1で、友達のウェブページのHTMLをダウンロードしました。次はほしい情報を取り出します。ここでは、テキストエディタで検索をして、ほしい情報を探し抜き出します。
+\ref*{E:CURL}で、友達のウェブページのHTMLをダウンロードしました。次はほしい情報を取り出します。ここでは、テキストエディタで検索をして、ほしい情報を探し抜き出します。
 
 コマンドラインを開いて
 
@@ -474,7 +480,7 @@ leafpad
 
 {\bfseries
 注意 :
-{\textless}title{\textgreater}は半角文字です。入力モードが半角になっているか確認してください。(詳しくは例題1-4を見てください)}
+{\textless}title{\textgreater}は半角文字です。入力モードが半角になっているか確認してください。}
 
 
 \begin{center}
@@ -488,8 +494,9 @@ leafpad
 \bigskip
 
 毎回手動で友達のウェブページをダウンロードして、検索して探すのは大変です。次はプログラムから自動で行う方法を学びましょう。
-
-\clearpage\section{例題8-3 HSPから情報を取り出す}
+\refstepcounter{Exercise}
+\clearpage\section{\theExercise　HSPから情報を取り出す}
+\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:SCRAPING}
 考え方
 
 前の例題でやったように、毎回手動で友達のウェブページをダウンロードして、テキストエディタを使って検索するのは大変です。
@@ -848,9 +855,8 @@ ASCIIでは0〜127を使用していました。
 \end{itemize}
 
 \bigskip
-
-\clearpage\section{例題8-4
-数字をASCIIを使って文字に変える}
+\refstepcounter{Exercise}
+\clearpage\section{\theExercise　数字をASCIIを使って文字に変える}
 考え方
 
 \ \ printfコマンドを使用すると数字をASCIIに従って文字へ変換できます。
@@ -920,9 +926,9 @@ Char(Character)は文字を意味します。}
 \end{center}
 {\bfseries
 [\url{https://simple.wikipedia.org/wiki/ASCII}]}
-
-\clearpage\section{例題8-5
-数字をUTF-8を使って文字に変える}
+\refstepcounter{Exercise}
+\clearpage\section{\theExercise　数字をUTF-8を使って文字に変える}
+\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:UTF8}
 考え方
 
 \ \ printfコマンドを使用すると数字をUTF-8に従って文字に変換できます。
@@ -997,9 +1003,8 @@ UTF-8を使ってひらがなでとなりの友達の名前を表示させてみ
 \bigskip
 
 [\url{http://orange-factory.com/sample/utf8/code3/e3.html#Hiragana}]
-
-\clearpage\section{例題8-6
-ウェブページで使用されている文字コードを変換する}
+\refstepcounter{Exercise}
+\clearpage\section{\theExercise　ウェブページで使用されている文字コードを変換する}
 考え方
 
 ある文字コードで表現された文字列を他の文字コードで解釈すると文字化けをする可能性があります。
@@ -1201,13 +1206,9 @@ charset=””{\textgreater}を変換後の文字コードに変更するのを�
 \clearpage\section{スクレイピング}
 クレイピングとは、ウェブページから情報を取り出すことをいいます。
 スクレイピングの手順はウェブページをダウンロードして、ウェブページから欲しい情報を探して取り出し、そして、取り出し情報を加工します。
-例題8-1,
-8-2%
-%例題番号UPDATE
-%koyaman 
-%September 24, 2019 4:28 PM
+\ref*{E:CURL},\ref*{E:HTML}
 で手動でウェブページをダウンロードして、そこから情報を取り出しました。
-そのあとの例題8-3では、同じ手順をプログラムで自動で行いました。
+そのあとの\ref*{E:SCRAPING}では、同じ手順をプログラムで自動で行いました。
 ウェブページから取り出した情報をプログラムから有効的に使う方法を学びましょう。
 ウェブページから取り出した情報をもとにセンサーを使ったり、情報をウェブページに反映することもできます。
 ウェブページから価値のある情報を取り出して、今まで習った技術と組み合わせて役に立つプログラムを作れるように考えながら例題を進めていきましょう。
@@ -1215,8 +1216,8 @@ charset=””{\textgreater}を変換後の文字コードに変更するのを�
 
 
 \bigskip
-
-\clearpage\section{例題8-7アメダスのウェブページをスクレイピングする}
+\refstepcounter{Exercise}
+\clearpage\section{\theExercise　アメダスのウェブページをスクレイピングする}
 %\newline
 考え方
 
@@ -1538,7 +1539,7 @@ kionが25.0度以上のときに、現在の気温を表示し、センサーボ
 \bigskip
 
 \clearpage\section{スクレイピングの仕組み}
-例題8-3でHSPのプログラムから友達のウェブページのタイトルを取り出したように、スクレイピングでは、HTMLファイルのタグ(例題8-3では{\textless}title{\textgreater}{\textless}/title{\textgreater})を探します。
+\ref*{E:SCRAPING}でHSPのプログラムから友達のウェブページのタイトルを取り出したように、スクレイピングでは、HTMLファイルのタグ(\ref*{E:SCRAPING}では{\textless}title{\textgreater}{\textless}/title{\textgreater})を探します。
 しかし、ウェブページの欲しい情報はHTMLファイル内のどのタグで作られているでしょうか？ウェブページをダウンロードして、HTMLファイルを眺めても探しても良いのですが、かなり大変です。
 ここでは、ウェブページの欲しい情報がどのHTMLファイル内のどのタグで作られているか調べる方法としてブラウザの検証ツールを使った方法を紹介します。
 アメダスのウェブページを例に試していきます。
@@ -1631,7 +1632,6 @@ data,
 
 表は{\textless}table{\textgreater}{\textless}/table{\textgreater}タグ(table,
 表)で作りました。
-(詳しくは1回目のテキストの例題1-19に説明があります。）
 
 
 アメダスのサイトから情報を取り出す際には、まずは、{\textless}table{\textgreater}{\textless}/table{\textgreater}タグを探して取り出します。
@@ -1665,8 +1665,8 @@ classはいわば名前のようなもので、このタグについている情
 
 
 \bigskip
-
-\clearpage\section{応用例題8-1 amedas.pyをlessで見てみよう}
+\refstepcounter{Exercise}
+\clearpage\section{\theExercise　amedas.pyをlessで見てみよう}
 「スクレイピングの仕組み」では、アメダスのウェブページからアメダス観測値を取得する流れを解説しました。
 実際にウェブページから値を取り出すのに使用しているコマンド(プログラム)を見てみましょう。
 amedas.pyコマンドはHSPのプログラムから呼び出しているものです。
@@ -1799,9 +1799,8 @@ amedas-table-entries{\textquotedbl}{\textgreater} ... {\textless}/table{\textgre
 次は、スクレイピングを習った技術と組み合わせることを学びます。
 スクレイピングだけでも、かなりできることは広がりますが、やはりセンサーボードやJulius、OpenJtalkなど習った技術と組み合わせるとさらに便利で楽しいものが作れます。
 
-
-\clearpage\section{例題 8-8
-スクレイピングした情報をもとにセンサーを使う}
+\refstepcounter{Exercise}
+\clearpage\section{\theExercise　スクレイピングした情報をもとにセンサーを使う}
 スクレイピングで得た情報を習った技術(センサーボードの使い方、OpenJtalk,
 Juliusなど)と組み合わせて便利なことや楽しいことをする練習をしましょう。
 この例では、アメダスのウェブページから取得した気温を使って暑いか涼しいかを判断してLEDで通知してくれるプログラムを試します。
@@ -1894,7 +1893,7 @@ LEDに注目すると、暑いときには緑色のLED、涼しいときはオ�
 
 \bigskip
 
-7行目までは例題8-5と基本的に同じです。
+7行目までは\ref*{E:UTF8}と基本的に同じです。
 
 8〜18行目で、温度をもとに暑いか、涼しいかメッセージを表示させてLEDを点灯させています。
 
