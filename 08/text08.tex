@@ -388,8 +388,8 @@ curlコマンドを何もオプションをつけないで実行すると、タ�
 ”いわきあおと”のウェブページのHTMLファイルがダウンロードできていることが確認できました。
 
 次はダウンロードしたHTMLファイルから情報を取り出してみよう。
-
-\clearpage\subsection*{問題8-1}
+\refstepcounter{Question}
+\clearpage\subsection*{\theQuestion}
 \begin{itemize}
 \item curl
 を使って、グループの友達全員のウェブページを保存しよう。
@@ -399,7 +399,8 @@ curlコマンドを何もオプションをつけないで実行すると、タ�
 
 \ \ \ \ (例: koyama.html) 
 
-\subsection*{問題8-2}
+\refstepcounter{Question}
+\subsection*{\theQuestion}
 \begin{itemize}
 \item
 leafpadを使ってダウンロードしたHTMLファイルを開いて友達の名前を確認してみよう
@@ -748,7 +749,8 @@ src変数のタグを取り外してタグの間にあるテキストだけに�
 例えば、次の例で試すアメダスとよばれる気象情報観測システムの観測情報（気温、降水確率）などの情報を取り出し、LEDなどのセンサーと組み合わせます。
 実現したいアイディアがあったらメモをしておきましょう。
 
-\clearpage\subsection*{問題8-3}
+\refstepcounter{Question}
+\clearpage\subsection*{\theQuestion}
 \begin{itemize}
 \item
 残りのグループ内の友達のウェブページのタイトルを取り出してみよう
@@ -758,14 +760,16 @@ firend\_ipでダウンロードしたい友達のIPアドレスを指定する
 
 \ \ \ \ メモした友達のIPアドレスを使おう
 
-\subsection*{問題8-4}
+\refstepcounter{Question}
+\subsection*{\theQuestion}
 \begin{itemize}
 \item 13行目 curl url, htmlの下の行にmes
 htmlを追加して、実際にダウンロードされたHTMLを確認してみよう
 \end{itemize}
 \ \ HINT : 14行目にmes htmlを書く
 
-\subsection*{問題8-5}
+\refstepcounter{Question}
+\subsection*{\theQuestion}
 \begin{itemize}
 \item 15行目のhtmltag html, “title”,
 tagの”title”を”ol”に変更してみましょう
@@ -781,7 +785,8 @@ tag命令はtag変数の中に、
 タグを探して、結果を入れてくれます。
 
 
-\subsection*{問題8-6}
+\refstepcounter{Question}
+\subsection*{\theQuestion}
 \begin{itemize}
 \item 15行目のhtmltag html, “title”,
 tagの”title”を探したいタグへ変更しよう
@@ -894,17 +899,20 @@ Char(Character)は文字を意味します。}
 {\bfseries
 [\url{https://simple.wikipedia.org/wiki/ASCII}]}
 
-\clearpage\subsection*{問題 8-7}
+\refstepcounter{Question}
+\clearpage\subsection*{\theQuestion}
 \begin{itemize}
 \item
 ASCIIを使ってローマ字で自分の名前を表示させてみよう
 \end{itemize}
-\subsection*{問題8-8}
+\refstepcounter{Question}
+\subsection*{\theQuestion}
 \begin{itemize}
 \item
 ASCIIを使ってローマ字でとなりの友達の名前を表示させてみよう
 \end{itemize}
-\subsection*{問題8-9}
+\refstepcounter{Question}
+\subsection*{\theQuestion}
 \begin{itemize}
 \item
 ASCIIで顔文字を作って表示させてみよう
@@ -979,12 +987,14 @@ E3 81 80 + 2 = E3 81 82
 
 {\textbackslash}xはHE\textbf{X}(16進数であることを指定します)
 
-\clearpage\subsection*{問題 8-10}
+\refstepcounter{Question}
+\clearpage\subsection*{\theQuestion}
 \begin{itemize}
 \item
 UTF-8を使ってひらがなで自分の名前を表示させてみよう
 \end{itemize}
-\subsection*{問題8-11}
+\refstepcounter{Question}
+\subsection*{\theQuestion}
 \begin{itemize}
 \item
 UTF-8を使ってひらがなでとなりの友達の名前を表示させてみよう
@@ -1482,7 +1492,8 @@ orange ← “オレンジ”\\\hline
 
 mes jikan + {\textquotedbl} \ {\textquotedbl} + kion + {\textquotedbl} \ \ {\textquotedbl} + kousui
 
-\clearpage\subsection*{問題8-12}
+\refstepcounter{Question}
+\clearpage\subsection*{\theQuestion}
 \begin{itemize}
 \item
 .例題のプログラムでは、日時、気温、降水だけ表示しています。
@@ -1492,7 +1503,8 @@ mes jikan + {\textquotedbl} \ {\textquotedbl} + kion + {\textquotedbl} \ \ {\tex
 \ \ HINT : それぞれkazamuki, fusoku,
 nisyouという変数に情報が入っています。
 
-\subsection*{問題 8-13}
+\refstepcounter{Question}
+\subsection*{\theQuestion}
 \begin{itemize}
 \item
 kionが25.0度以上のときに、現在の気温を表示し、センサーボードの赤色LEDをつけてみましょう。
@@ -1527,7 +1539,8 @@ kionが25.0度以上のときに、現在の気温を表示し、センサーボ
 
 \bigskip
 
-\subsection*{問題 8-14}
+\refstepcounter{Question}
+\subsection*{\theQuestion}
 \begin{itemize}
 \item
 このアメダスのスクレイピングの例題とすでに習った技術（センサーボードの使い方、ゲーム、Fabo、赤外線など）と組み合わせるとどんなことができるか考えて、１つ上げてみよう。
@@ -1952,7 +1965,8 @@ kionを数値に変換して、28と大小の比較をしています。
 
 \bigskip
 
-\clearpage\subsection*{問題8-15}
+\refstepcounter{Question}
+\clearpage\subsection*{\theQuestion}
 \begin{itemize}
 \item
 例題では気温を文字列から数値へ変換しましたが、変数へは値をいれていません。
@@ -1963,19 +1977,22 @@ kionを数値に変換して、28と大小の比較をしています。
 
 \ \ \ \ 気温(kion)を数値へ変換した値をtemp変数へ入れる。
 
-\subsection*{問題8-16}
+\refstepcounter{Question}
+\subsection*{\theQuestion}
 \begin{itemize}
 \item
 現在の風速も表示するようにしてみよう
 \end{itemize}
-\subsection*{問題8-17}
+\refstepcounter{Question}
+\subsection*{\theQuestion}
 \begin{itemize}
 \item
 例題では、気温を使って比較をしました。
 		次は風向きを使用して風が強いとき(15m/sより大きい)は”強風に注意しましょう”と表示をしてLEDを光らせましょう。
 		それ以外の場合は”現在の風速”を表示して他の色のLEDを光らせましょう。
 \end{itemize}
-\subsection*{問題8-18}
+\refstepcounter{Question}
+\subsection*{\theQuestion}
 \begin{itemize}
 \item
 LEDだけでなくFaboなどのセンサーを使用して通知するようにしてみよう。
@@ -1988,7 +2005,8 @@ LEDだけでなくFaboなどのセンサーを使用して通知するように�
 
 \bigskip
 
-\subsection*{問題 8-19}
+\refstepcounter{Question}
+\subsection*{\theQuestion}
 \begin{itemize}
 \item
 センサーボードについている4つのLEDを使って、現在の温度を表すバーグラフを作ってみよう。
@@ -2011,8 +2029,9 @@ LEDの色は左からLED1(緑)、LED2(黄)、LED3(青)、LED4(白)です。
 
 \bigskip
 
-\clearpage\section*{問題8-20
-TV番組表のウェブページをスクレイピングする}
+\refstepcounter{Exercise}
+\clearpage\section*{\theExercise　TV番組表のウェブページをスクレイピングする}
+\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:TV}
 考え方
 
 まずは、ウェブブラウザでTV番組表のページを見てみよう。
@@ -2135,16 +2154,19 @@ F5を押して実行してみましょう。
 \bigskip
 
 \subsection*{}
-\subsection*{問題8-21}
+\refstepcounter{Question}
+\subsection*{\theQuestion}
 \ \ 6行目のword=”サザエさん”で検索する番組を指定しています。
 自分の検索したい番組名にして実行してみましょう。
 
-\subsection*{問題8-22}
+\refstepcounter{Question}
+\subsection*{\theQuestion}
 \ \ このプログラムでは、日付(date配列)と番組名(ptitle配列)しか表示をしていません。
 ジャンル(genre配列)とテレビ局(station配列)を表示するようにしてみましょう。
 
-\clearpage\subsection*{問題8-23
-Weblioのウェブページをスクレイピングする}
+\refstepcounter{Exercise}
+\clearpage\subsection*{\theExercise　Weblioのウェブページをスクレイピングする}
+\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:Weblio}
 考え方
 
 まずは、ウェブブラウザでWeblioのページを見てみよう。
@@ -2255,7 +2277,8 @@ F5を押して実行してみましょう。
 \includegraphics[width=17.006cm,height=8.698cm]{textbook-img046.png}
 
 \end{center}
-\subsection*{問題8-24}
+\refstepcounter{Question}
+\subsection*{\theQuestion}
 7行目のword=”hello”で検索する英語を指定しています。
 この変数を自分の検索したい英語にして実行してみましょう。
 
@@ -2264,8 +2287,9 @@ F5を押して実行してみましょう。
 
 \bigskip
 
-\clearpage\subsection*{問題8-25
-位置情報のから近くの駅をスクレイピング}
+\refstepcounter{Exercise}
+\clearpage\subsection*{\theExercise　位置情報のから近くの駅をスクレイピング}
+\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:station}
 考え方
 
 まずは、ウェブブラウザで駅検索API情報のページを見てみよう。
@@ -2360,7 +2384,8 @@ F5を押して実行してみましょう。実行結果はターミナルに表
 \includegraphics[width=11.409cm,height=9.795cm]{textbook-img052.png}
 
 \end{center}
-\clearpage\subsection*{問題 8-26}
+\refstepcounter{Question}
+\clearpage\subsection*{\theQuestion}
 \ \ サンプルプログラムでは、青梅市役所の近くの駅名を取得していました。
 次は、自分の好きなもしくは知っている場所を指定してみましょう。
 緯度経度は、授業で使用したウェブページ\textbf{(\~{}/ome/08/links.html)}を開いて、
@@ -2436,8 +2461,9 @@ keido=”139.27542”
 
 \bigskip
 
-\clearpage\subsection*{問題8-27
-郵便番号から住所を調べるウェブページのスクレイピング}
+\refstepcounter{Exercise}
+\clearpage\subsection*{\theExercise　郵便番号から住所を調べるウェブページのスクレイピング}
+\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:postNum}
 考え方
 
 まずは、ウェブブラウザで郵便番号から住所を調べるウェブページを見てみよう。
@@ -2528,7 +2554,8 @@ F5を押して実行してみましょう。実行結果はターミナルに表
 
 
 
-\subsection*{問題8-28}
+\refstepcounter{Question}
+\subsection*{\theQuestion}
 \ \ codeの郵便番号を変更してみよう
 
 \ \ 例: 198-0082
@@ -2541,7 +2568,9 @@ F5を押して実行してみましょう。実行結果はターミナルに表
 \end{enumerate}
 \end{boxedminipage}
 \end{center}
-\clearpage\subsection*{問題8-29 Wikipediaのスクレイピング}
+\refstepcounter{Exercise}
+\clearpage\subsection*{\theExercise　Wikipediaのスクレイピング}
+\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:wikipedia}
 考え方
 
 まずは、ウェブブラウザでWikipediaを見てみよう。
@@ -2651,7 +2680,8 @@ Pi)の概要がWikipediaからとれました。
 
 \bigskip
 
-\subsection*{問題8-30}
+\refstepcounter{Question}
+\subsection*{\theQuestion}
 wordを自分の検索したい単語に変えてみよう。
 
 \ \ HINT:まずは、Wikipediaで検索したい単語を検索をしてみて、ページを開きましょう。
@@ -2721,30 +2751,30 @@ word = “フランシスコ・ザビエル”
 \begin{supertabular}{|m{6.7730002cm}|m{2.042cm}|m{7.5810003cm}|}
 \hline
 ファイルの場所 &
-例題、問題 &
+例題 &
 機能説明\\\hline
 	\textbf{\~{}/ome/08/tv.hsp} &
-問題8-20 &
+\ref*{E:TV} &
 TVの番組表で検索をして次に放送される番組１つを取得して表示するプログラム
 
 スクリプトエディタで読み込んで、F5で実行\\\hline
 	\textbf{\~{}/ome/08/weblio.hsp} &
-問題8-23 &
+\ref*{E:Weblio} &
 英単語を辞書で検索して、日本語訳を表示するプログラム
 
 スクリプトエディタで読み込んで、F5で実行\\\hline
 	\textbf{\~{}/ome/08/eki.hsp} &
-問題8-25 &
+\ref*{E:station} &
 最寄り駅とその路線情報を取得して表示するプログラム
 
 スクリプトエディタで読み込んで、F5で実行\\\hline
 	\textbf{\~{}/ome/08/zipcode.hsp} &
-問題8-27 &
+\ref*{E:postNum} &
 郵便番号から住所を検索するプログラム
 
 スクリプトエディタで読み込んで、F5で実行\\\hline
 	\textbf{\~{}/ome/08/wikipedia.hsp} &
-問題8-29 &
+\ref*{E:wikipedia} &
 ウィキペディアで用語を検索して、最初の数行を表示するプログラム
 
 スクリプトエディタで読み込んで、F5で実行\\\hline
