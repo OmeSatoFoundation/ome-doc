@@ -119,6 +119,11 @@
         \item cd \~/05
         \item sudo service lircd stop
         \item mode2 -d /dev/lirc1 \textbar tee onoff.txt
+        \begin{itemize}
+            \item 受信機に向かってリモコンのボタンを押そう
+            \item onoff.txtに受信した信号が記録される
+            \item Ctrl+cキーで終了！
+        \end{itemize}
         \item convert\_pattern onoff.txt \textgreater onoff.pattern
     \end{enumerate}
 \end{frame}
