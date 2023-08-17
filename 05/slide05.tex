@@ -1,15 +1,5 @@
-\documentclass{beamer}
-
-\usepackage{beamerthemesplit}
-\usepackage[]{graphicx}
-\graphicspath{%
-{./images/}%
-}
-
-\usepackage{listings}
-\usepackage{hyperref}
-%\usepackage{pxjahyper}
-\usepackage{color}
+% LuaLaTeX文書; 文字コードはUTF-8
+\documentclass{beamer}% 'unicode'が必要
 \usepackage{luatexja-fontspec}
 \newjfontface{\nonproportional}{BIZ UDMincho}[YokoFeatures={JFM=ujis}]
 \setmainjfont[Ligatures={Common,TeX},
@@ -36,24 +26,25 @@
   BoldItalicFeatures={FakeSlant=0.23},
   YokoFeatures={JFM=prop}]{BIZ UDPGothic}
 
+\usepackage{svg}
+\usepackage{listings}
+
+\lstset{
+  basicstyle=\fontsize{9}{10}\selectfont\ttfamily
+}
+
 \setbeamertemplate{footline}[frame number]
-\title{子どもIT未来塾　第５回}
+\title{子どもIT未来塾　第5回}
 \author{奥山祐市}
 
-\def\quiz{1}
-
 \begin{document}
-
-\frame{
-   \begin{center}
-    \huge{子どもIT未来塾}\\
-
-    \vspace{48pt}
-	   \Large{第５回}\\
-       {\huge\bf ラズベリーパイをリモコンにしてみよう}
-    \vspace{24pt}
-    \large{奥山祐市}\\
-    \vspace{10pt}
-    \large{\the\year 年 8月19日}
-  \end{center}
-}
+  \input slide_contents/introduction.tex
+  \input slide_contents/sensor.tex
+  \input slide_contents/fabo.tex
+  \input slide_contents/digital_output_device.tex
+  \input slide_contents/digital_input_device.tex
+  \input slide_contents/analog_input_device.tex
+  \input slide_contents/kyori_oled.tex
+  \input slide_contents/sensor_application.tex
+  \input slide_contents/ir.tex
+\end{document}
