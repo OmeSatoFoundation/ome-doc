@@ -71,8 +71,8 @@
    \begin{center}
     \huge{子どもIT未来塾}\\
 
-    \vspace{48pt}
-	   \Large{第6回}\\
+    \vspace{34pt}
+	   {\huge\bf 第6回}\\
 	   {\huge\bf 音声合成と音声認識}\\
     \vspace{24pt}
     \large{奥山 祐市}
@@ -100,6 +100,7 @@
 
 \begin{frame}
   \frametitle{音声合成}
+  \centering
   人間の音声を人工的に作りだすこと
   \begin{figure}
     \centering
@@ -125,7 +126,20 @@
     \item 話し言葉から文字列への変換
     \item 音声の特徴を捉える
   \end{itemize}
-  \note{画像を挿入}
+  \begin{figure}[tbp]
+  \begin{minipage}[b]{0.45\columnwidth}
+    \centering
+    \includegraphics[width=\columnwidth]{voice_assistant.png}
+    \caption{\scriptsize 携帯、スマートフォン、コンピュータの音声認識アシスタント}
+  \end{minipage}
+  \hspace{0.04\columnwidth}
+  \begin{minipage}[b]{0.3\columnwidth}
+    \centering
+    \includegraphics[width=\columnwidth]{google_home.png}
+    \caption{\scriptsize Google Home}
+  \end{minipage}
+\end{figure}
+  
 \end{frame}
 
 \begin{frame}
@@ -148,7 +162,7 @@
 
 \begin{frame}
   \centering
-  準備
+  {\Large 準備}
 \end{frame}
 
 \begin{frame}
@@ -172,9 +186,9 @@
 
   \begin{figure}
     \centering
-    \includegraphics[width=0.8\textwidth]{select_sink.png}
+    \includegraphics[width=0.5\textwidth]{select_sink.png}
     \caption{音声デバイスの選択と設定}
-    \includegraphics[width=0.8\textwidth]{microphone_volume.png}
+    \includegraphics[width=0.5\textwidth]{microphone_volume.png}
     \caption{マイクの入力音量の調整}
   \end{figure}
 
@@ -182,13 +196,13 @@
 
 \begin{frame}
   \centering
-  OpenJTalk
+  {\Large OpenJTalk}
 \end{frame}
 
 \begin{frame}[fragile]
   \frametitle{文章を読み上げてもらう}
   
-  \begin{lstlisting}[caption=openjtalk.hsp,label=openjtalk.hsp]
+  \begin{lstlisting}[title=openjtalk.hsp,label=openjtalk.hsp]
   #include "hsp3dish.as"
   #include "jtalk.as"
 
@@ -228,7 +242,7 @@
 
 \begin{frame}
   \centering
-  Julius
+  {\Large Julius}
 \end{frame}
 
 \begin{frame}
@@ -262,18 +276,49 @@
     \begin{center}
       {\small りんご　みかん　ぶどう　もも　あけび　あんず　いちご　いちじく　かき　スイカ　すもも　	なし　メロン}
     \end{center}
-    \item 結果はどうかな？
+    \item コンピュータは正しく言葉を認識してくれたかな？
     \item 話しかけた単語とターミナルに出てくる単語が同じか友達と話合ってみよう
   \end{itemize}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Juliusの限界}
-  \centering 
-  コンピュータは正しく言葉を認識してくれたかな？
-  \note{画像を入れる}
+  \frametitle{単語辞書}
+  \begin{itemize}
+    \item すべての言葉をコンピュータに理解してもらうのは大変
+    \item そのままのJuliusでは限界がある
+    \item コンピュータに理解してほしい言葉をまとめた辞書を作ると改善される！
+  \end{itemize}
 \end{frame}
-  
+
+\begin{frame}
+  \frametitle{単語辞書を使ってみる}
+  \begin{itemize}
+    \item 単語辞書を使ってJuliusをためす
+    \begin{itemize}
+      \item julius.sh kudamono.sh
+      \item 以下の単語が登録されているよ。マイクに話しかけてみよう
+    \end{itemize}
+  \end{itemize}
+  \begin{center}
+    {\small りんご　みかん　ぶどう　もも　あけび　あんず　いちご　いちじく　かき　スイカ　すもも　	なし　メロン}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{問題を解いてみよう}
+  \begin{itemize}
+    \item 教科書10ページ 問題6-4-1
+    \begin{itemize}
+      \item 1問
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{結果を見てみよう} 
+  \centering
+  \includegraphics[width=0.8\textwidth]{julius_demo_strawberry.png} \\
+  話かけた単語とターミナルに表示される単語は一致しているかな？
 \end{frame}
 
 \end {document}
