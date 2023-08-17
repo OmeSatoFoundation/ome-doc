@@ -1,0 +1,77 @@
+% LuaLaTeX文書; 文字コードはUTF-8
+\documentclass{beamer}% 'unicode'が必要
+\usepackage{luatexja-fontspec}
+\newjfontface{\nonproportional}{BIZ UDMincho}[YokoFeatures={JFM=ujis}]
+\setmainjfont[Ligatures={Common,TeX},
+  ItalicFont={BIZ UDPMincho},
+  ItalicFeatures={FakeSlant=0.27},
+  SlantedFont={BIZ UDPMincho},
+  SlantedFeatures={FakeSlant=0.18},
+  BoldFont={BIZ UDPGothic Bold},
+  BoldSlantedFont={BIZ UDPGothic Bold},
+  BoldSlantedFeatures={FakeSlant=0.18},
+  BoldItalicFont={BIZ UDPGothic Bold},
+  BoldItalicFeatures={FakeSlant=0.27},
+  YokoFeatures={JFM=prop}]{BIZ UDPMincho}
+%\newjfontface{\nonproportional}{BIZ UDGothic}[YokoFeatures={JFM=ujis}]
+\setsansjfont[Ligatures={Common,TeX},
+  ItalicFont={BIZ UDPGothic},
+  ItalicFeatures={FakeSlant=0.23},
+  SlantedFont={BIZ UDPGothic},
+  SlantedFeatures={FakeSlant=0.23},
+  BoldFont={BIZ UDPGothic Bold},
+  BoldSlantedFont={BIZ UDPGothic Bold},
+  BoldSlantedFeatures={FakeSlant=0.23},
+  BoldItalicFont={BIZ UDPGothic Bold},
+  BoldItalicFeatures={FakeSlant=0.23},
+  YokoFeatures={JFM=prop}]{BIZ UDPGothic}
+
+
+\setbeamertemplate{footline}[frame number]
+\title{子どもIT未来塾　第6回}
+\author{塾長　清水尚彦}
+
+\begin{document}
+
+\frame{
+   \begin{center}
+    \huge{子どもIT未来塾}\\
+
+    \vspace{48pt}
+	   \Large{第１回}\\
+	   {\huge\bf ラズベリーパイの使い方・\\
+	   \huge\bf 自己紹介ページを作ろう}\\
+    \vspace{24pt}
+    \large{塾長 しみずせんせい}\\
+    \vspace{10pt}
+    \large{\the\year 年 6月24日}
+  \end{center}
+}
+
+
+\end {document}
+
+
+\begin{frame}[fragile]
+	%\frametitle{今回の授業:テキスト P.1~~~\raisebox{-3mm}{\includegraphics[width=0.1\textwidth]{raspberry}}}
+	\frametitle{今回の授業:テキスト P.1~~~}
+		\begin{description}
+			\item[目標] ~\\
+				\begin{itemize}
+					\item ラズベリーパイになれよう
+					\item 自分のホームページを作ろう
+				\end{itemize}
+
+			\item[授業の進め方]~\\
+				\begin{itemize}
+					\item 重要なことを先生が説明します
+					\item スライドに示すページを開こう
+					\item 例題・問題をすぐやろう\\
+						やった問題にシールを貼ろう
+				\end{itemize}
+		\end{description}
+		\vfill
+		わからないことは、放っておかず、すぐにTAに聞きましょう
+\end{frame}
+
+\end{document}
