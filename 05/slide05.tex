@@ -26,11 +26,18 @@
   BoldItalicFeatures={FakeSlant=0.23},
   YokoFeatures={JFM=prop}]{BIZ UDPGothic}
 
-\usepackage{color}
+\usepackage{beamerthemesplit}
+\usepackage{caption}
+\captionsetup[figure]{labelformat=empty,labelsep=none}
 \usepackage{svg}
+\usepackage[]{graphicx}
+\graphicspath{
+  {./images/}
+}
 \svgsetup{
   inkscapelatex=false
 }
+\usepackage{color}
 \usepackage{listings,jvlisting}
 \lstset{
   language=C++,
@@ -60,6 +67,8 @@
   basicstyle=\fontsize{9}{10}\selectfont\ttfamily
 }
 
+% 余白を広げる
+\setbeamersize{text margin left=15pt, text margin right=15pt}
 \setbeamertemplate{footline}[frame number]
 \title{子どもIT未来塾　第5回}
 \author{奥山祐市}
@@ -73,5 +82,5 @@
   \input slide_contents/analog_input_device.tex
   \input slide_contents/kyori_oled.tex
   \input slide_contents/sensor_application.tex
-  %\input slide_contents/ir.tex
+  \input slide_contents/ir.tex
 \end{document}
