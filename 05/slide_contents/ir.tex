@@ -6,10 +6,165 @@
 \end{frame}
 
 \begin{frame}[fragile]
-    \frametitle{LEDの明るさに強弱をつけるには}
-    \begin{center}
-        %\includesvg[width=0.1\textwidth]{images/chap05/led_frequency.svg}
+    \frametitle{赤外線(IR)とは}
+    \centering
+    \includesvg[width=\linewidth]{images/chap05/electromagnetic_wave.svg}
+\end{frame}
+
+\begin{frame}
+    \frametitle{赤外線で通信する}
+    \begin{itemize}
+        \item ついていたらA, 消えていたらB
+        \item ex.
         \begin{itemize}
-            \item 一定時間のLEDの消灯時間の比率で明るさに強弱をつけることができる
+            \item 点いている: ロボットが前に進む
+            \item 消えている: ロボットが止まる
         \end{itemize}
+    \end{itemize}
+    \note{画像を入れる}
+\end{frame}
+
+\begin{frame}
+   \frametitle{2通りでは足りない} 
+   \begin{itemize}
+        \item 2通りでは
+        \begin{itemize}
+            \item 止まる
+            \item 前に進む
+        \end{itemize}
+        \item だけ\dots
+        \begin{itemize}
+            \item 左に進む
+            \item 右に進む
+            \item 飛ぶ
+            \item \dots
+        \end{itemize}
+   \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{リモコンの原理} 
+    \begin{itemize}
+        \item 1秒点いて2秒消えてまた2秒点いたら歩く
+        \item 2秒点いて3秒消えたらジャンプ
+    \end{itemize}
+    \centering
+    \includesvg[width=0.8\linewidth]{images/chap05/text05-img037.svg}
+\end{frame}
+
+\begin{frame}
+    \frametitle{赤外線をつかった家電}
+    \begin{figure}[H]
+    \begin{minipage}[t]{0.3\columnwidth}
+        \centering
+    \includesvg[scale=0.1]{images/chap05/tv.svg}
+        \caption{テレビ}
+    \end{minipage}
+    %\hspace{0.01\columnwidth} % ここで隙間作成
+    \begin{minipage}[t]{0.3\columnwidth}
+        \centering
+        \includesvg[scale=0.1]{images/chap05/aircondition.svg}
+        \caption{エアコン}
+    \end{minipage}
+    \begin{minipage}[t]{0.3\columnwidth}
+        \centering
+        \includesvg[scale=0.1]{images/chap05/fan.svg}
+        \caption{せんぷう機}
+    \end{minipage}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Raspberry Piをリモコンにする}
+    \begin{itemize}
+        \item リモコンを1つにまとめられる
+        \item プログラムで制御(せいぎょ)できる
+        \begin{itemize}
+            \item 外出先からエアコンをつける
+            \item 音声でテレビのチャンネルを変える
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Raspberry Piリモコンのしくみ}
+    \centering
+    \includesvg[width=0.8\linewidth]{images/chap05/IRproc.svg}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Raspberry Piをリモコンにする手順} 
+    リモコンの動作をマネすることが必要
+    \begin{enumerate}
+        \item リモコンの信号を受信してファイルに記録する
+        \item ファイルに記録された信号を赤外線LEDから出力する
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}
+    \frametitle{班分け}
+    \begin{itemize}
+        \item チームごとに
+        \begin{itemize}
+            \item ロボットを使う班
+            \item 扇風機(せんぷうき)を使う班
+        \end{itemize}
+        \item で別れて、ロボットか扇風機を準備しよう
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{マネするだけの方法(1)} 
+    \begin{enumerate}
+        \item cd \~/05
+        \item sudo service lircd stop
+        \item mode2 -d /dev/lirc1 \textbar tee onoff.txt
+        \item convert\_pattern onoff.txt \textgreater onoff.pattern
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}
+    \frametitle{マネするだけの方法(2)} 
+    onnoff.patternを使って設定ファイルを作る
+    \begin{enumerate}
+        \item cp template.lircd.conf 05.lircd.conf
+        \item mousepad 05.lircd.conf
+        \item mousepad onoff.pattern
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{マネするだけの方法(3)}
+    赤字の部分を書き換えよう
+    \begin{lstlisting}
+begin remote
+    name <#red#fan#>
+    flags RAW_CODES
+    eps 30
+    aeps 100
+
+    gap 200000
+    toggle_bit_mask 0x0
+    
+    begin raw_codes
+        name <#red#onoff#>
+        <#red#1207 588 447 838 447 823 475 812 1218 ...#>
+    end raw_codes
+end remote
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+    \frametitle{マネするだけの方法(4)}
+    \begin{itemize}
+        \item sudo cp 05.lircd.conf /etc/lirc/lircd.conf.d/
+        \begin{itemize}
+            \item 設定ファイルをコピー
+        \end{itemize}
+        \item sudo service lidrcd restart
+        \begin{itemize}
+            \item 設定ファイルが再読み込みされる
+        \end{itemize}
+        \item irsend SEND\_ONCE \color{red}fan onoff\color{black}
+    \end{itemize}
 \end{frame}

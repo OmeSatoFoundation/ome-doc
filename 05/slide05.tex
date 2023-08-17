@@ -26,8 +26,35 @@
   BoldItalicFeatures={FakeSlant=0.23},
   YokoFeatures={JFM=prop}]{BIZ UDPGothic}
 
+\usepackage{color}
 \usepackage{svg}
-\usepackage{listings}
+\svgsetup{
+  inkscapelatex=false
+}
+\usepackage{listings,jvlisting}
+\lstset{
+  language=C++,
+  basicstyle=\ttfamily\footnotesize,
+  % keywordstyle=\bfseries\color{green},
+  showstringspaces=false,
+  frame={tb},
+  %numbers=left,
+  xrightmargin=0\zw,
+  xleftmargin=0\zw,
+  % columns=[l]{fullflexible},
+  columns=fixed,
+  basewidth=0.5em,
+  numberstyle = \footnotesize,
+  frame = tbrl,
+  captionpos = b,
+  moredelim=[is][\color{green}\bfseries]{<\#green\#}{\#>},
+  moredelim=[is][\color{blue}\bfseries]{<\#blue\#}{\#>},
+  moredelim=[is][\color{red}\bfseries]{<\#red\#}{\#>},
+  moredelim=[is][\color{yellow}\bfseries]{<\#yellow\#}{\#>},
+  moredelim=[is][\color{magenta}\bfseries]{<\#magenta\#}{\#>},
+  moredelim=[is][\color{red}]{<\#red\#}{\#>},
+}
+
 
 \lstset{
   basicstyle=\fontsize{9}{10}\selectfont\ttfamily
