@@ -274,6 +274,324 @@
   \note{画像を入れる}
 \end{frame}
   
+\begin{frame}
+  \frametitle{自分の単語辞書を作ってみよう（１）}
+  \begin{itemize}
+    \item 認識させたい単語を登録しよう
+    \begin{itemize}
+      \item kudamono.yomiを参考に…
+      \item \<コンピュータが使う名前\> \<読み方\>
+      \renewcommand{\theenumi}{\roman{enumi}}
+      \begin{enumerate}
+        \item りんご
+        \item ぶどう
+        \item みかん
+      \end{enumerate}
+    \end{itemize}
+    \item \<コンピュータが使う名前\>には日本語も使えるよ
+    \begin{itemize}
+      \item 林檎 りんご
+      \item ブドウ ぶどう
+      \item みかん みかん
+    \end{itemize}
+  \end{itemize}
 \end{frame}
 
-\end {document}
+\begin{frame}
+  \frametitle{自分の単語辞書を作ってみよう（２）}
+  \begin{itemize}
+    \item mousepadで自分だけの辞書を作ってみよう
+    \begin{itemize}
+      \item mousepad jisho.yomi
+    \end{itemize}
+    \item 例えば…
+    \begin{itemize}
+      \item 家電辞書
+      \item 動物辞書
+      \item 植物辞書
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{自分の単語辞書を作ってみよう（３）}
+  \begin{itemize}
+    \item .yomi : テキストファイル
+    \item .dic : コンピュータが読めるファイル
+    \begin{itemize}
+      \item yomiはコンピュータが読めないので変換する必要がある
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{自分の単語辞書を作ってみよう（４）}
+  \begin{itemize}
+    \item convert\_yomi.sh コマンド
+    \begin{itemize}   
+      \item コンピュータ用の辞書へと変換してみよう
+      \item convert\_yomi.sh jisyo.yomi  jisyo.dic
+    \end{itemize}
+    \item julius.sh コマンド
+    \begin{itemize}
+      \item 自分の作った辞書で音声認識をしてみよう
+      \item julius.sh jisyo.dic
+    \end{itemize}
+    \item コンピュータは上手く言葉を理解してくれるかな？
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{問題を解こう}
+  \begin{itemize}
+    \item 教科書17ページ 問題6-9
+    \begin{itemize}
+      \item ５問（１問は宿題）
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{HSPでJuliusの認識結果を使う（１）}
+  \begin{figure}
+    \includesvg[width=\linewidth]{images/chap06/JuliuswithHSP.svg}
+  \end{figure}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{HSPでJuliusの認識結果を使う（２）}
+  \begin{lstlisting}[caption=julius.hsp,label=julius.hsp]
+  #include "hsp3dish.as"
+  #include "julius.as"
+
+  redraw 0
+  pos 0, 0
+  mes "Loading Julius..."
+  redraw 1
+
+  init_julius "kudamono.dic" <#blue#;辞書ファイル読み込み#>
+
+  sockidx = 0
+  domain = "127.0.0.1"
+  PORT = 10500
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{HSPでJuliusの認識結果を使う（３）}
+  \begin{lstlisting}[caption=julius.hsp,label=julius.hsp]
+  sockopen sockidx, domain, PORT
+
+  if stat != 0 { <#blue#;エラー処理#>
+  *errorjulius
+    redraw 0
+    pos 0, 0
+    mes "Error in opening socket"
+    redraw 1
+    await 30
+    goto *errorjulius
+    stop
+  }
+
+  sdim words, 4096, 0
+  ddim cm, 0
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{HSPでJuliusの認識結果を使う（４）}
+  \begin{lstlisting}[caption=julius.hsp,label=julius.hsp,basicstyle=\scriptsize]
+  repeat -1
+    if is_recieved(sockidx) = 0 {
+      get_word_list words, cm
+      len =  "L1 " + length(words)
+      repeat length(words)
+        if cm(cnt) > 0.5 { <#blue#;単語信頼度が0.5より大きいとき#>
+            ans =  "" + cnt + ": " + words(cnt) + " CM = " + cm(cnt)
+        } <#blue#;words(cnt)が認識された文字、cm(cnt)が単語信頼度#>
+      loop
+    }
+    redraw 0
+    pos 0,0
+    mes len
+    mes ans
+    redraw 1
+    await 30
+  loop
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+  \frametitle{問題を解こう}
+  \begin{itemize}
+    \item 教科書20ページ 問題6-10
+    \begin{itemize}
+      \item 2問
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{音声でLEDのON OFFをする（１）}
+  \begin{lstlisting}[caption=ledvoice.hsp,label=ledvoice.hsp]
+    #include "hsp3dish.as"
+    #include "julius.as"
+
+    redraw 0
+    pos 0, 0
+    mes "Loading Julius..."
+    redraw 1
+
+    init_julius " \textasciitilde /06/onoff.dic" <#blue#;辞書を読み込む#>
+
+    sockidx = 0
+    domain = "127.0.0.1"
+    PORT = 10500
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{音声でLEDのON OFFをする（２）}
+  \begin{lstlisting}[caption=ledvoice.hsp,label=ledvoice.hsp]
+    if stat != 0 {
+      redraw 0
+      mes "Error in opening socket"
+      redraw 1
+      wait 30
+      stop
+    }
+
+    sdim wrods, 4096, 0
+    ddim cm, 0
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{音声でLEDのON OFFをする（３）}
+  \begin{lstlisting}[caption=ledvoice.hsp,label=ledvoice.hsp,basicstyle=\scriptsize]
+    repeat -1
+    if is_recieved(sockidx) = 0 {
+      get_word_list words, cm
+      repeat length(words)
+        if cm(cnt) > 0.7 {                <#blue#;単語信頼度が0.7より大きいとき#>
+          if words(cnt) = "ON" {          <#blue#;認識された文字がONのとき#>
+            gpio 17, 1                    <#blue#;GPIO17のLEDを光らせる#>
+          }else : if words(cnt) = "OFF" { <#blue#;認識された文字がOFFのとき#>
+            gpio 17, 0                    <#blue#;GPIO17のLEDを消す#>
+          }
+        }
+      loop
+    }
+    redraw 0
+    pos 0,0
+    mes "話しかけてLEDのONとOFFをしよう"
+    redraw 1
+    await 30
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+  \frametitle{数を認識させてみよう（発展）}
+  \begin{itemize}
+    \item 数を認識できる
+    \begin{itemize}
+      \item いち、じゅうさん、せんよんひゃくさんじゅうなな、など
+    \end{itemize}
+    \item 数を認識させるには「文法」を使う
+    \begin{itemize}
+      \item 1000（千）まで認識させたかったら1000個以上の単語を登録
+      \begin{itemize}
+        \item 1(いち)から1000(千)まで登録
+        \item 同じ数字でも違う読み(7:なな、しち)
+      \end{itemize}
+      \item 文法でルールを決める
+    \end{itemize}
+    \item 参考：
+    \begin{itemize}
+      \item http://www.atmarkit.co.jp/fxml/ddd/ddd004/ddd004-bnf.html
+      \item http://julius.osdn.jp/index.php?q=doc/grammar.html
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{問題を解こう}
+  \begin{itemize}
+    \item 教科書23ページ
+    \begin{itemize}
+      \item 5問(2問は宿題)
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{宿題}
+  \begin{itemize}
+    \item 教科書24ページ
+    \begin{itemize}
+      \item 5問の内、1問だけ挑戦しよう
+      \item レベルアップしたい人は、5問全部に挑戦してみよう
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \centering
+  実験
+\end{frame}
+
+\begin{frame}
+  \frametitle{OpenJTalkやJuliusでできることを考えよう}
+  \begin{itemize}
+    \item 例えば…
+    \begin{itemize}
+      \item ボタンを押すと話してくれる
+      \item 気温や湿度を教えてくれる
+      \item 指示した色のLEDを光らせてくれる
+      \item 時刻を聞くと時刻を話してくれる
+      \item 日付を聞くと日付を話してくれる
+    \end{itemize}
+    \item 例を参考に何が作れるかを自分で考えてみよう
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{作りたいものを考えよう}
+  \begin{itemize}
+    \item OpenJTalkやJuliusを使って作りたいものを考えてみよう(5-10分)
+    \item チームのみんなで作りたいものを発表してみよう、一緒に考えてみよう(5-10分)
+    \begin{itemize}
+      \item むずかしさはどれくらいだろう
+      \item どうやって作ればいいだろう
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+\begin{frame}
+  \frametitle{手順}
+  \begin{enumerate}
+    \item 演習用のフォルダを作る
+    \item 必要なファイルをフォルダにコピーしよう
+    \begin{itemize}
+      \item hspファイル
+      \item yomiファイル
+      \item htsvoiceファイル
+    \end{itemize}
+    \item プログラミングをしてみよう
+    \begin{itemize}
+      \item hspファイルを書き換えてみる
+      \item 新しくhspファイルを作ってみる
+    \end{itemize}
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}
+  \frametitle{できたものをチームのみんなに教えよう}
+  \begin{itemize}
+    \item どんなものを作ったか
+    \item 工夫したところはどこか
+    \item どうしてその作品を作ったか
+  \end{itemize}
+  実際に作品を動かしてみんなに見せてみよう！
+\end{frame}
+
+\end{document}
