@@ -1,0 +1,59 @@
+\documentclass{beamer}
+
+\usepackage{beamerthemesplit}
+\usepackage[]{graphicx}
+\graphicspath{%
+{./images/}%
+}
+
+\usepackage{listings}
+\usepackage{hyperref}
+%\usepackage{pxjahyper}
+\usepackage{color}
+\usepackage{luatexja-fontspec}
+\newjfontface{\nonproportional}{BIZ UDMincho}[YokoFeatures={JFM=ujis}]
+\setmainjfont[Ligatures={Common,TeX},
+  ItalicFont={BIZ UDPMincho},
+  ItalicFeatures={FakeSlant=0.27},
+  SlantedFont={BIZ UDPMincho},
+  SlantedFeatures={FakeSlant=0.18},
+  BoldFont={BIZ UDPGothic Bold},
+  BoldSlantedFont={BIZ UDPGothic Bold},
+  BoldSlantedFeatures={FakeSlant=0.18},
+  BoldItalicFont={BIZ UDPGothic Bold},
+  BoldItalicFeatures={FakeSlant=0.27},
+  YokoFeatures={JFM=prop}]{BIZ UDPMincho}
+%\newjfontface{\nonproportional}{BIZ UDGothic}[YokoFeatures={JFM=ujis}]
+\setsansjfont[Ligatures={Common,TeX},
+  ItalicFont={BIZ UDPGothic},
+  ItalicFeatures={FakeSlant=0.23},
+  SlantedFont={BIZ UDPGothic},
+  SlantedFeatures={FakeSlant=0.23},
+  BoldFont={BIZ UDPGothic Bold},
+  BoldSlantedFont={BIZ UDPGothic Bold},
+  BoldSlantedFeatures={FakeSlant=0.23},
+  BoldItalicFont={BIZ UDPGothic Bold},
+  BoldItalicFeatures={FakeSlant=0.23},
+  YokoFeatures={JFM=prop}]{BIZ UDPGothic}
+
+\setbeamertemplate{footline}[frame number]
+\title{子どもIT未来塾　第５回}
+\author{奥山祐市}
+
+\def\quiz{1}
+
+\begin{document}
+
+\frame{
+   \begin{center}
+    \huge{子どもIT未来塾}\\
+
+    \vspace{48pt}
+	   \Large{第５回}\\
+       {\huge\bf ラズベリーパイをリモコンにしてみよう}
+    \vspace{24pt}
+    \large{奥山祐市}\\
+    \vspace{10pt}
+    \large{\the\year 年 8月19日}
+  \end{center}
+}
