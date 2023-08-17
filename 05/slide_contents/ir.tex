@@ -116,7 +116,7 @@
 \begin{frame}
     \frametitle{マネするだけの方法(1)} 
     \begin{enumerate}
-        \item cd \~/05
+        \item cd \textasciitilde/05
         \item sudo service lircd stop
         \item mode2 -d /dev/lirc1 \textbar tee onoff.txt
         \begin{itemize}
@@ -124,7 +124,7 @@
             \item onoff.txtに受信した信号が記録される
             \item Ctrl+cキーで終了！
         \end{itemize}
-        \item convert\_pattern onoff.txt \textgreater onoff.pattern
+        \item convert\_pattern onoff.txt \textgreater \space onoff.pattern
     \end{enumerate}
 \end{frame}
 
