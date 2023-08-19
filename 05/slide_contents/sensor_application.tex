@@ -28,10 +28,8 @@
 \begin{lstlisting}
 #include "hsp3dish.as"
 #include "rpz-gpio.as"
-
 celload("hyou.png"),2
 p = 50
-
 spiopen 0
 
 *main
@@ -48,7 +46,6 @@ spiopen 0
 
 	wait 10	
 	goto *main
-
 spiclose 0
 \end{lstlisting}
 \end{frame}
