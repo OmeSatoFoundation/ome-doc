@@ -55,7 +55,7 @@
 \begin{frame}
     \frametitle{センサーをピンにつけてみよう}
     \begin{center}
-        \includegraphics[width=0.8\textwidth]{images/chap05/text05-img029.png}
+        \includegraphics[width=0.7\textwidth]{images/chap05/text05-img029.png}
         \begin{itemize}
             \item GPIO23とLEDをつなげてみよう
             \item GPIO24と入力センサをつなげてみよう
@@ -79,12 +79,12 @@
 	goto *digital_off
         
 *digital_on
-	gpio 17, 1
+	gpio 23, 1
 	wait 10
 	goto *main
 
 *digital_off
-	gpio 17, 0
+	gpio 23, 0
 	wait 10
 	goto *main 
 \end{lstlisting}
