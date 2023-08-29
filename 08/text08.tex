@@ -170,7 +170,7 @@
 
 1回目に作った自己紹介ページをindex.htmlとしてコピーします
 
-\textbf{cp \ \~{}/ome/01/self\_intro.html \ \ \~{}/ome/08/www/index.html}
+\textbf{cp \ \~{}/01/self\_intro.html \ \ \~{}/08/www/index.html}
 
 
 
@@ -184,7 +184,7 @@
 
 ウェブサーバの使い方については「付録　webserver.pyの使い方」を確認してください。
 
-\textbf{cd \ \~{}/ome/08/www}
+\textbf{cd \ \~{}/08/www}
 
 \textbf{./webserver.py}
 
@@ -315,7 +315,7 @@ curl (カール)と言います。 curl
 
 ターミナルを開いてください。
 
-\textbf{cd \ \~{}/ome/08}
+\textbf{cd \ \~{}/08}
 
 curl “左となりの友達のIPアドレス”:3000/index.html -o
 friend.html
@@ -366,7 +366,7 @@ curlコマンドを何もオプションをつけないで実行すると、タ�
 \end{center}
 ファイル(F) → 開く(O).. 
 
-をクリックして\textbf{\~{}/ome/08/friend.html}
+をクリックして\textbf{\~{}/08/friend.html}
 
 を開きます。自己紹介のらんにある名前を探して確認してみよう。
 
@@ -410,7 +410,7 @@ leafpadを使ってダウンロードしたHTMLファイルを開いて友達の
 
 コマンドラインを開いて
 
-\textbf{cd \ \~{}/ome/08/}
+\textbf{cd \ \~{}/08/}
 
 leafpad 
 
@@ -427,7 +427,7 @@ leafpad
 
 ファイル(F) → 開く(O).. 
 
-をクリックして\textbf{\~{}/ome/08/friend.html}
+をクリックして\textbf{\~{}/08/friend.html}
 
 
 
@@ -513,7 +513,7 @@ hsed　を実行してください
 \includegraphics[width=16.94cm,height=2.944cm]{textbook-img013.png}
 
 \end{center}
-\textbf{\~{}/ome/08/title.hsp}
+\textbf{\~{}/08/title.hsp}
 
 を開いてください
 
@@ -928,7 +928,7 @@ Char(Character)は文字を意味します。}
 \ \ printfコマンドを使用すると数字をUTF-8に従って文字に変換できます。
 UTF-8は日本語も漢字を含め表現することができます。
 
-授業で使用したホームページを開いてください。\textbf{(\~{}/ome/08/links.html)}
+授業で使用したホームページを開いてください。\textbf{(\~{}/08/links.html)}
 
 
 
@@ -1031,7 +1031,7 @@ LANGに設定されている文字コードと表示したい文字コードが�
 
 試しにUTF-8以外の文字コードを使用しているウェブサイトをcurlでダウンロードして、UTF-8として設定されているターミナルに表示させてみよう
 
-\textbf{cd \~{}/ome/08}
+\textbf{cd \~{}/08}
 
 curl \url{http://x68000.q-e-d.net/~68user/unix/pickup?iconv} -o hsp.html
 
@@ -1125,11 +1125,11 @@ iconv hsp.html -f EUC-JP -t UTF-8 -o hsp\_utf8.html
 charset=””{\textgreater}で文字コードを指定しています。
 ブラウザやHTMLを扱うソフトウェアの多くはここに書かれている文字コードを使用してHTMLを理解します。
 
-試しに、UTF-8に変換したHTMLファイル\textbf{(\~{}/ome/08/hsp\_utf8.html)}をブラウザで開いてみよう。
+試しに、UTF-8に変換したHTMLファイル\textbf{(\~{}/08/hsp\_utf8.html)}をブラウザで開いてみよう。
 
 ブラウザを開いて、
 
-\textbf{\~{}/ome/08/hsp\_utf8.html}　と入力しエンターを押します。
+\textbf{\~{}/08/hsp\_utf8.html}　と入力しエンターを押します。
 
 \begin{center}
   % Unhandled or unsupported graphics:
@@ -1222,7 +1222,7 @@ charset=””{\textgreater}を変換後の文字コードに変更するのを�
 
 まずは、ウェブブラウザでアメダスのページを見てみよう。
 授業で使用したホームページを開いてください。
-\textbf{(\~{}/ome/08/links.html)}
+\textbf{(\~{}/08/links.html)}
 
 アメダスをクリックします。 
 
@@ -1300,7 +1300,7 @@ HSPスクリプトエディタが開くので
 
 ファイル → 開く.. 
 
-をクリックして\textbf{\~{}/ome/08/amedas.hsp}を開きます。
+をクリックして\textbf{\~{}/08/amedas.hsp}を開きます。
 
 プログラムが表示されます。
 
@@ -1548,7 +1548,7 @@ kionが25.0度以上のときに、現在の気温を表示し、センサーボ
 
 まずは、ウェブブラウザでアメダスのページを見てみよう。
 授業で使用したホームページを開いてください。
-\textbf{(\~{}/ome/08/links.html)}
+\textbf{(\~{}/08/links.html)}
 
 アメダスをクリックします。 
 
@@ -1685,7 +1685,7 @@ amedas.pyコマンドもHSPのプログラムと同じくテキストファイ�
 
 \bigskip
 
-\textbf{less \~{}/ome/bin/amedas.py}
+\textbf{less \~{}/bin/amedas.py}
 
 
 
@@ -1821,7 +1821,7 @@ hsed
 
 \end{center}
 ファイル→
-開く　をクリックして\textbf{\~{}/ome/08/amedas\_led.hsp}を開きます。
+開く　をクリックして\textbf{\~{}/08/amedas\_led.hsp}を開きます。
 
 \begin{center}
   % Unhandled or unsupported graphics:
@@ -2018,7 +2018,7 @@ TV番組表のウェブページをスクレイピングする}
 
 まずは、ウェブブラウザでTV番組表のページを見てみよう。
 授業で使用したホームページを開いてください。
-\textbf{(\~{}/ome/08/links.html)}
+\textbf{(\~{}/08/links.html)}
 
 TV番組表をクリックします。 
 
@@ -2085,7 +2085,7 @@ hsed
 HSPスクリプトエディタが開くので
 
 ファイル → 開く..
-\ をクリックして\textbf{\~{}/ome/08/tv.hsp}を開きます。
+\ をクリックして\textbf{\~{}/08/tv.hsp}を開きます。
 
 プログラムが表示されます。
 
@@ -2150,7 +2150,7 @@ Weblioのウェブページをスクレイピングする}
 
 まずは、ウェブブラウザでWeblioのページを見てみよう。
 授業で使用したホームページを開いてください。
-\textbf{(\~{}/ome/08/links.html)}
+\textbf{(\~{}/08/links.html)}
 
 Weblioをクリックします。 
 
@@ -2211,7 +2211,7 @@ hsed
 HSPスクリプトエディタが開くので
 
 ファイル → 開く..
-\ をクリックして\textbf{\~{}/ome/08/weblio.hsp}を開きます。
+\ をクリックして\textbf{\~{}/08/weblio.hsp}を開きます。
 
 プログラムが表示されます。
 
@@ -2271,7 +2271,7 @@ F5を押して実行してみましょう。
 
 まずは、ウェブブラウザで駅検索API情報のページを見てみよう。
 授業で使用したホームページを開いてください。
-\textbf{(\~{}/ome/08/links.html)}
+\textbf{(\~{}/08/links.html)}
 
 駅api情報をクリックします。 
 
@@ -2325,7 +2325,7 @@ hsed
 HSPスクリプトエディタが開くので
 
 ファイル → 開く..
-\ をクリックして\textbf{\~{}/ome/08/eki.hsp}を開きます。
+\ をクリックして\textbf{\~{}/08/eki.hsp}を開きます。
 
 プログラムが表示されます。
 
@@ -2364,7 +2364,7 @@ F5を押して実行してみましょう。実行結果はターミナルに表
 \clearpage\subsection*{問題 8-26}
 \ \ サンプルプログラムでは、青梅市役所の近くの駅名を取得していました。
 次は、自分の好きなもしくは知っている場所を指定してみましょう。
-緯度経度は、授業で使用したウェブページ\textbf{(\~{}/ome/08/links.html)}を開いて、
+緯度経度は、授業で使用したウェブページ\textbf{(\~{}/08/links.html)}を開いて、
 
 緯度経度を調べるをクリックします。
 
@@ -2443,7 +2443,7 @@ keido=”139.27542”
 
 まずは、ウェブブラウザで郵便番号から住所を調べるウェブページを見てみよう。
 授業で使用したホームページを開いてください。
-\textbf{(\~{}/ome/08/links.html)}
+\textbf{(\~{}/08/links.html)}
 
 郵便番号から住所を調べるをクリックします。
 
@@ -2492,7 +2492,7 @@ hsed
 HSPスクリプトエディタが開くので
 
 ファイル → 開く..
-\ をクリックして\textbf{\~{}/ome/08/zipcode.hsp}を開きます。
+\ をクリックして\textbf{\~{}/08/zipcode.hsp}を開きます。
 
 プログラムが表示されます。
 
@@ -2547,7 +2547,7 @@ F5を押して実行してみましょう。実行結果はターミナルに表
 
 まずは、ウェブブラウザでWikipediaを見てみよう。
 授業で使用したホームページを開いてください。
-\textbf{(\~{}/ome/08/links.html)}
+\textbf{(\~{}/08/links.html)}
 
 Wikipediaをクリックします。 
 
@@ -2614,7 +2614,7 @@ HSPスクリプトエディタが開くので
 \bigskip
 
 ファイル → 開く..
-\ をクリックして\textbf{\~{}/ome/08/wikipedia.hsp}を開きます。
+\ をクリックして\textbf{\~{}/08/wikipedia.hsp}を開きます。
 
 プログラムが表示されます。
 
@@ -2724,43 +2724,43 @@ word = “フランシスコ・ザビエル”
 ファイルの場所 &
 例題、問題 &
 機能説明\\\hline
-	\textbf{\~{}/ome/08/tv.hsp} &
+	\textbf{\~{}/08/tv.hsp} &
 問題8-20 &
 TVの番組表で検索をして次に放送される番組１つを取得して表示するプログラム
 
 スクリプトエディタで読み込んで、F5で実行\\\hline
-	\textbf{\~{}/ome/08/weblio.hsp} &
+	\textbf{\~{}/08/weblio.hsp} &
 問題8-23 &
 英単語を辞書で検索して、日本語訳を表示するプログラム
 
 スクリプトエディタで読み込んで、F5で実行\\\hline
-	\textbf{\~{}/ome/08/eki.hsp} &
+	\textbf{\~{}/08/eki.hsp} &
 問題8-25 &
 最寄り駅とその路線情報を取得して表示するプログラム
 
 スクリプトエディタで読み込んで、F5で実行\\\hline
-	\textbf{\~{}/ome/08/zipcode.hsp} &
+	\textbf{\~{}/08/zipcode.hsp} &
 問題8-27 &
 郵便番号から住所を検索するプログラム
 
 スクリプトエディタで読み込んで、F5で実行\\\hline
-	\textbf{\~{}/ome/08/wikipedia.hsp} &
+	\textbf{\~{}/08/wikipedia.hsp} &
 問題8-29 &
 ウィキペディアで用語を検索して、最初の数行を表示するプログラム
 
 スクリプトエディタで読み込んで、F5で実行\\\hline
-	\textbf{\~{}/ome/08/friend.hsp} &
+	\textbf{\~{}/08/friend.hsp} &
 なし &
 friend\_ipで指定したIPアドレスの友達のウェブページからランキングを取得して表示するプログラム
 
 スクリプトエディタで読み込んで、F5で実行\\\hline
-	\textbf{\~{}/ome/08/www/cgi-bin/ascii\_table.hsp} &
+	\textbf{\~{}/08/www/cgi-bin/ascii\_table.hsp} &
 なし &
 ASCIIの表を取得して表示するプログラム。
 
 ウェブサーバを起動して
 
-	\textbf{cd \~{}/ome/08/www}
+	\textbf{cd \~{}/08/www}
 
 	\textbf{./webserver.py}
 
@@ -2769,14 +2769,14 @@ ASCIIの表を取得して表示するプログラム。
 	\textbf{localhost:3000/cgi-bin/ascii\_table.hsp}
 
 を開くすると表が表示されます。\\\hline
-	\textbf{\~{}/ome/08/www/ascii\_table.html} &
+	\textbf{\~{}/08/www/ascii\_table.html} &
 なし &
 上の例題プログラムが表示する表と全く同じもの。
 	ウェブサーバを立ち上げなくても、このファイルをブラウザで開くだけで表が表示できる。
 
 ブラウザで
 
-	\textbf{\~{}/ome/08/www/ascii\_table.html}
+	\textbf{\~{}/08/www/ascii\_table.html}
 
 を開く\\\hline
 \end{supertabular}
@@ -2872,7 +2872,7 @@ buf1を改行を区切り文字として分割して、array(配列)へ格納す
 
 ターミナルを開いて、
 
-\textbf{cd \~{}/ome/08/www}
+\textbf{cd \~{}/08/www}
 
 \textbf{./webserver.py}
 

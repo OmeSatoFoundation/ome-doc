@@ -865,7 +865,7 @@ HTMLは、タグという一つの機能をつかい、ウェブページを作�
 
 
 		\begin{minipage}[b]{1.5\textwidth}
-			\item \ \ cp \ \ \~{}/ome/01/self\_intro.html \ \ \ \~{}/ome/07/www/index.html\\
+			\item \ \ cp \ \ \~{}/01/self\_intro.html \ \ \ \~{}/07/www/index.html\\
 			cpコマンドを使って、 自己紹介ページのhtmlを、 第７回のwwwディレクトリにコピー。\\
 			\includegraphics[width=14.73cm]{ome7-img033.png}
 		\end{minipage}
@@ -873,7 +873,7 @@ HTMLは、タグという一つの機能をつかい、ウェブページを作�
 		\bigskip
 
 		\item
-		      \ \ cd \ \ \~{}/ome/07/www/\newline
+		      \ \ cd \ \ \~{}/07/www/\newline
 		      cdコマンドを使って、（cpコマンドとは違うよ。) 第７回のwwwディレクトリに移動。
 
 
@@ -1120,11 +1120,11 @@ OK です。例えば、google
 \bigskip
 
 1.まず
-/home/pi/ome/07/wwwのディレクトリに移りましょう。
+~/07/wwwのディレクトリに移りましょう。
 
 \ \ ターミナルを立ち上げて次のコマンドを打ちましょう。
 
-\ \ cd /home/pi/ome/07/www
+\ \ cd ~/07/www
 
 
 \bigskip
@@ -1178,7 +1178,7 @@ OK です。例えば、google
 
 \ \ これはwebserver.pyを起動したディレクトリ
 
-\ \ 　/home/pi/ome/07/www/
+\ \ 　/home/pi/07/www/
 
 \ \ を指しています。
 
@@ -1439,7 +1439,7 @@ CGIを使った動的ページでは、サーバーが皆さんからwebペー�
 
 ターミナルを開いて
 
-cd \~{}/ome/07/www/
+cd \~{}/07/www/
 
 ./webserver.py
 
@@ -1447,7 +1447,7 @@ cd \~{}/ome/07/www/
 
 %
 %コマンド実行画面
-%cd \~{}/ome/07/www/
+%cd \~{}/07/www/
 %./webserver.py
 %koyaman
 %September 20, 2019 2:48 AM
@@ -1475,7 +1475,7 @@ localhost:3000/cgi-bin/led.hsp
 \includegraphics[width=16.166cm,height=5.911cm]{ome7-img052.png}
 \flushleft
 
-cgi-binディレクトリはCGIプログラムを入れるディレクトリです。\~{}/ome/07/wwwの下にあります。このディレクトリ内の
+cgi-binディレクトリはCGIプログラムを入れるディレクトリです。\~{}/07/wwwの下にあります。このディレクトリ内の
 
 ”ファイル名”.hsp
 
@@ -2040,7 +2040,7 @@ localhost:3000/jtalk.html
 \clearpage
 プログラム解説
 
-\~{}/ome/07/www/jtalk.html
+\~{}/07/www/jtalk.html
 
 
 
@@ -2157,7 +2157,7 @@ IPアドレス:3000/cgi-bin/jtalk.hsp?sentence=こんにちは
 
 このことをパーセントエンコーディングといいます。CGIプログラムにクエリストリングが渡される前にウェブサーバは記号、数値に変換された文字列をもとに戻します。よって、プログラム内では入力された文字列と同じものを扱うことができます。
 
-\~{}/ome/07/www/cgi-bin/jtalk.hsp
+\~{}/07/www/cgi-bin/jtalk.hsp
 
 \centering
 \begin{boxedminipage}{\textwidth}
@@ -2222,9 +2222,9 @@ type={\textbackslash}{\textquotedbl}audio/wav{\textbackslash}{\textquotedbl} con
 
 src=”ファイル名”
 
-では、再生するファイルを指定します。指定するファイルはドキュメントルート以下にないといけません。つまり、ドキュメントルートである/home/pi/ome/07/wwwの中にある必要があります。
+では、再生するファイルを指定します。指定するファイルはドキュメントルート以下にないといけません。つまり、ドキュメントルートである~/07/wwwの中にある必要があります。
 
-jtsave命令で作った音声ファイルは/home/pi/ome/07/www/tmpの中にあります。ファイル名はwav\_file変数に入っています。
+jtsave命令で作った音声ファイルは~/07/www/tmpの中にあります。ファイル名はwav\_file変数に入っています。
 
 “
 “の中で”を使うには{\textbackslash}”のように書きます。
@@ -2248,7 +2248,7 @@ controlsをつけると、再生ボタン、ミュートボタンなどが表示
 
 \bigskip
 
-できる人は自分の自己紹介ページに（\~{}/ome/07/www/index.html)に作ったフォームを変更して、こちらからCGIプログラムを起動するようにしましょう。
+できる人は自分の自己紹介ページに（\~{}/07/www/index.html)に作ったフォームを変更して、こちらからCGIプログラムを起動するようにしましょう。
 
 \ HINT: jtalk.htmlを参考にしてください。
 
@@ -2379,7 +2379,7 @@ localhost:3000/cgi-bin/sensors.hsp
 	\ \ \ \ end
 \end{boxedminipage}
 \flushleft
-この例題は\~{}/ome/03/sensors.hspをもとにしています。詳しい解説はそちらを参照してください。
+この例題は\~{}/03/sensors.hspをもとにしています。詳しい解説はそちらを参照してください。
 
 20～23行目で温度、湿度、気圧、照度センサーから情報を取得しています。
 
@@ -2460,7 +2460,7 @@ irsend SEND\_ONCE fan onoff
 
 リモコンの名前、信号の名前が違う場合は、
 
-\~{}/ome/07/www/cgi-bin/ir.hsp
+\~{}/07/www/cgi-bin/ir.hsp
 
 を開いて
 
@@ -2491,7 +2491,7 @@ exec “irsend SEND\_ONCE fan onoff”
 \clearpage
 プログラム解説
 
-\~{}/ome/07/www/ir.html
+\~{}/07/www/ir.html
 
 8行目でフォームの内容を受け取るCGIを設定しています。
 
@@ -2528,7 +2528,7 @@ exec “irsend SEND\_ONCE fan onoff”
 	{\textless}/html{\textgreater}
 \end{boxedminipage}
 \flushleft
-\~{}/ome/07/www/cgi-bin/ir.hsp
+\~{}/07/www/cgi-bin/ir.hsp
 
 がCGIとしてに起動します。
 
