@@ -30,7 +30,10 @@
 \vspace{16mm}\leavevmode \\%
 \underline{\begin{minipage}{\linewidth}#1：\end{minipage}}\\
 }
-
+\newcounter{Exercise}
+\newcounter{Question}
+\renewcommand\theExercise{例題 7-\arabic{Exercise}}
+\renewcommand\theQuestion{\textbf{問題 7-\arabic{Question}}}
 % Outline numbering
 \setcounter{secnumdepth}{2}
 \renewcommand\thesection{\arabic{section}}
@@ -169,7 +172,7 @@
 
 \vfill
 
-\textbf{問題７−１}　みんなが使っているパソコンやスマートフォンなどをたくさんつなぎ、おたがいに情報の交換ができるようにしたものを何というでしょうか。
+\refstepcounter{Question}\theQuestion　みんなが使っているパソコンやスマートフォンなどをたくさんつなぎ、おたがいに情報の交換ができるようにしたものを何というでしょうか。
 
 
 
@@ -267,14 +270,13 @@ IPアドレスにはグローバルIPアドレスとローカル（プライベ�
 \includegraphics[width=15.0cm,height=10.0cm]{ome7-img006}
 \flushleft
 
-{\bfseries
-	問題７−２　ローカルIPアドレスがかぶっても良いときはどのときですか。}
+{\refstepcounter{Question}\theQuestion　ローカルIPアドレスがかぶっても良いときはどのときですか。}
 
 {\bfseries
 	\addBlank{答え}}
 
-\clearpage\subsection*{\bfseries 例題7-1
-	IPアドレスを調べてみよう}
+	\refstepcounter{Exercise}
+\clearpage\subsection*{\theExercise　IPアドレスを調べてみよう}
 ターミナルにコマンド”hostname
 -\texttt{I}”を入力し、自分のラズベリーパイのローカルIPアドレスを確認しよう
 
@@ -449,7 +451,7 @@ IPアドレスにはグローバルIPアドレスとローカル（プライベ�
 
 \bigskip
 
-\textbf{問題７−３}　ルータはラズベリーパイたちを見分けるために何を割り当てていますか。
+\refstepcounter{Question}\theQuestion　ルータはラズベリーパイたちを見分けるために何を割り当てていますか。
 
 \bigskip
 
@@ -457,8 +459,8 @@ IPアドレスにはグローバルIPアドレスとローカル（プライベ�
 \bigskip
 \addBlank{答え}
 
-\clearpage\subsection*{\bfseries 例題7-2\textmd{
-	}ポケットWi-FiルータのグローバルIPアドレスを調べよう}
+\refstepcounter{Exercise}
+\clearpage\subsection*{\theExercise　ポケットWi-FiルータのグローバルIPアドレスを調べよう}
 \begin{minipage}[b]{0.58\textwidth}
 	ターミナルを開き、”curl
 	inet-ip.info”とコマンドを入力して、自分のラズベリーパイが接続しているwifiルータのグローバルIPアドレスを確認しよう
@@ -587,7 +589,7 @@ IPアドレスでは通信相手となる別のネットワークのコンピュ
 \bigskip
 
 
-\textbf{問題７−４}　ポート番号はどのようなことに使われますか。
+\refstepcounter{Question}\theQuestion　ポート番号はどのようなことに使われますか。
 \bigskip
 
 \addBlank{答え}
@@ -658,8 +660,7 @@ IPアドレスでは通信相手となる別のネットワークのコンピュ
 
 \bigskip
 
-{\bfseries
-	問題7−5　コンピュータ上のプログラムを判断するためになにが用いられていますか。}
+{\refstepcounter{Question}\theQuestion　コンピュータ上のプログラムを判断するためになにが用いられていますか。}
 \bigskip
 
 {\bfseries
@@ -717,8 +718,7 @@ IPアドレスでは通信相手となる別のネットワークのコンピュ
 
 \bigskip
 
-{\bfseries
-	問題７−６　ターミナルを開き、”host
+{\refstepcounter{Question}\theQuestion　ターミナルを開き、”host
 	amazon.co.jp”を実行してグローバルIPアドレスを確認しよう。}
 
 \bigskip
@@ -762,8 +762,8 @@ Translation）というものを用います。このNATはルータが行って
 
 \bigskip
 
-\clearpage\subsection*{\bfseries 例題7-3
-	開いているポートを調べてみよう}
+\refstepcounter{Exercise}
+\clearpage\subsection*{\theExercise　開いているポートを調べてみよう}
 ターミナルを開き、”nmap
 localhost”とコマンドを入力し、ポートについて知ろう
 
@@ -843,7 +843,8 @@ serviceに出てきた言葉をインターネットを使って調べよう。
 }
 
 \clearpage\subsection*{２−１　HTMLについて}
-\subsection*{例題7-4 HTMLの復習}
+\refstepcounter{Exercise}
+\subsection*{\theExercise　HTMLの復習}
 {\bfseries
 	考え方\newline
 	第１回で作成した自己紹介ページのタグや機能を理解することでHTMLについて自分の思ったとおりに作れるようになりましょう。}
@@ -1050,7 +1051,7 @@ HTMLで使いたい色を探すときにはここを使うと便利です。
 \bigskip
 
 \clearpage
-\textbf{問題7−7}\newline
+\refstepcounter{Question}\theQuestion\newline
 \begin{enumerate}
 	\item 最初に書いたテキストボックスの属性をパスワード入力ボックスに書き換えてみよう。
 	\item 食べ物の名前を{\textless}p{\textgreater}タグを使って３つ追加してその横にチェックボックスを置きましょう。
@@ -1101,8 +1102,8 @@ inputタグの機能になるもの
 
 \bigskip
 
-\clearpage\subsection*{2−2　例題7-5
-	自分のホームページを公開しよう}
+\refstepcounter{Exercise}
+\clearpage\subsection*{2−2　\theExercise　自分のホームページを公開しよう}
 考え方
 
 クライアントとサーバーと呼ばれるコンピュータがあります。クライアントとはサービスを利用するコンピュータです。サーバーとはそれと逆にサービスを提供しているコンピュータです。クライアントとサーバーは同じコンピュータにあっても
@@ -1230,8 +1231,8 @@ OK です。例えば、google
 
 \bigskip
 
-\clearpage\subsection*{2−3　例題7-6
-	友だちのホームページを見てみよう}
+\refstepcounter{Exercise}
+\clearpage\subsection*{2−3　\theExercise　友だちのホームページを見てみよう}
 
 
 \centering
@@ -1321,8 +1322,7 @@ OK です。例えば、google
 
 \bigskip
 
-{\bfseries
-	問題7−8}　他のグループの友達のホームページを見てみよう、自分とは違うwifiルータに接続している友達のホームページは見れたかどうか答えに書こう
+\refstepcounter{Question}\theQuestion　他のグループの友達のホームページを見てみよう、自分とは違うwifiルータに接続している友達のホームページは見れたかどうか答えに書こう
 
 
 \bigskip
@@ -1414,7 +1414,7 @@ CGIを使った動的ページでは、サーバーが皆さんからwebペー�
 
 \bigskip
 
-\bfseries{問題7−9}　動的なページとはどのようなものでしょうか。また、動的なページを作成する場合に用いるものは何でしょう。
+\refstepcounter{Question}\theQuestion　動的なページとはどのようなものでしょうか。また、動的なページを作成する場合に用いるものは何でしょう。
 
 
 \bigskip
@@ -1429,8 +1429,9 @@ CGIを使った動的ページでは、サーバーが皆さんからwebペー�
 
 \bigskip
 
-\clearpage\subsection*{\rmfamily 例題7-7
-	CGIを使ってウェブページからLEDをつける}
+\refstepcounter{Exercise}
+\clearpage\subsection*{\theExercise　CGIを使ってウェブページからLEDをつける}
+\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:CGI}
 考え方
 
 ウェブサーバはウェブブラウザから要求を受けます。”ファイル名.hsp”ファイルへのアクセスをブラウザから行うとサーバはCGIプログラムをサーバ側で起動します。結果はHTMLとしてブラウザ（クライアント）へ返されます。
@@ -1673,8 +1674,8 @@ end
 \bigskip
 
 
-\bigskip{\bfseries
-	問題7−10}
+\bigskip
+\refstepcounter{Question}\theQuestion
 
 {\bfseries
 	友達のLEDをCGIで点灯させてみよう。}
@@ -1692,8 +1693,9 @@ end
 
 \bigskip
 
-\clearpage\subsection*{\rmfamily 例題7-8
-	URLを使ってCGIに情報を渡す}
+\refstepcounter{Exercise}
+\clearpage\subsection*{\theExercise　URLを使ってCGIに情報を渡す}
+\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:URL}
 考え方
 
 CGIのプログラムに情報を渡すことができればより便利なプログラムが作れます。ここでは単純なURLを用いた方法を使います。URLに埋め込まれた情報はクエリストリングと呼ばれます。クエリストリングはまずウェブサーバへ送られ、ウェブサーバがCGIプログラムへクエリストリングを渡します。これによりCGIプログラムはURLに埋め込まれた情報を扱うことができます。
@@ -1813,11 +1815,11 @@ localhost:3000/cgi-bin/querystring.hsp?msg=helloworld
 
 \bigskip
 
-{\bfseries
-	問題7−11}　画面に”ありがとう”と表示させよう。
+\refstepcounter{Question}\theQuestion　画面に”ありがとう”と表示させよう。
 
-\clearpage\subsection*{\rmfamily 例題7-9
-	クエリストリングを使ってLEDを操作する}
+	\refstepcounter{Exercise}
+\clearpage\subsection*{\theExercise　クエリストリングを使ってLEDを操作する}
+\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:QS}
 この例では、クエリストリングを使ってLEDを点灯消灯させてみましょう。
 
 
@@ -1983,8 +1985,7 @@ cgpio命令は数値でGPIO番号、オンオフ（１，０）を受け付け�
 
 \bigskip
 
-{\bfseries
-	問題7−12}
+\refstepcounter{Question}\theQuestion
 
 {\bfseries
 	GPIO17以外のLEDを光らせてみよう。}
@@ -1995,8 +1996,9 @@ cgpio命令は数値でGPIO番号、オンオフ（１，０）を受け付け�
 
 \bigskip
 
-\clearpage\subsection*{\rmfamily 例題7-10
-	CGIを使ってOpenJtalkに読み上げをさせよう}
+\refstepcounter{Exercise}
+\clearpage\subsection*{\theExercise　CGIを使ってOpenJtalkに読み上げをさせよう}
+\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:Jtalk}
 考え方
 
 ウェブページから読み上げさせたい文章を受け取って、OpenJtalkにCGIから読み上げをさせよう。
@@ -2239,8 +2241,8 @@ controlsをつけると、再生ボタン、ミュートボタンなどが表示
 
 再生ボタンを押すと音声合成した音声ファイルが再生されます。
 
-\clearpage{\bfseries
-	問題7−13}
+\clearpage
+\refstepcounter{Question}\theQuestion
 
 {\bfseries
 	”おはようございます””こんばんは””ありがとうございます”を読ませてみよう。}
@@ -2252,8 +2254,9 @@ controlsをつけると、再生ボタン、ミュートボタンなどが表示
 
 \ HINT: jtalk.htmlを参考にしてください。
 
-\clearpage\subsection*{\rmfamily 例題7-11
-	CGIでセンサーの情報を表示させる}
+\refstepcounter{Exercise}
+\clearpage\subsection*{\theExercise　CGIでセンサーの情報を表示させる}
+\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:Sensors}
 考え方
 
 温度、温度、気圧、照度センサーの情報をCGIを使ってウェブページから見れるようにしましょう。
@@ -2396,8 +2399,8 @@ lux変数へ入っています。
 
 \bigskip
 
-\clearpage{\bfseries
-	問題7-14}
+\clearpage
+\refstepcounter{Question}\theQuestion
 
 友達のCGIへアクセスして、センサーの値を確認してみよう。
 
@@ -2427,8 +2430,9 @@ lux変数へ入っています。
 
 次は、湿度、気圧、照度センサーの値を表形式で表示するように変更してみましょう。
 
-\clearpage\subsection*{例題7-12
-	赤外線をウェブページから送信する}
+\refstepcounter{Exercise}
+\clearpage\subsection*{\theExercise　赤外線をウェブページから送信する}
+\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:IR}
 CGIを使ってウェブページから赤外線を送信できるようにしましょう。
 
 まずは、サンプルを動かしてみましょう。
@@ -2615,8 +2619,8 @@ name={\textquotedbl}command{\textquotedbl}{\textgreater}
 
 \bigskip
 
-\bigskip{\bfseries
-	問題7−15}
+\bigskip
+\refstepcounter{Question}\theQuestion
 
 ファンの電源をつける以外の赤外線送信機能を追加してみよう。
 
@@ -2650,13 +2654,13 @@ CGIを使うときに便利なHSPの命令一覧
 		\#include “cgi.as”
 
 		getqueryval “name”, var &
-		7-8
+		\ref*{E:URL}
 
-		7-9
+		\ref*{E:QS}
 
-		7-10
+		\ref*{E:Jtalk}
 
-		7-12 &
+		\ref*{E:IR} &
 		クエリストリングから名前”name”を探して文字列として値を変数varへ入れる。
 
 		\textbf{localhost:3000/cgi-bin/querystring.hsp?name=val}
@@ -2665,11 +2669,11 @@ CGIを使うときに便利なHSPの命令一覧
 
 		\#include “rpz-gpio-cl.as”
 		cgpio 17, 1&
-		7-7
+		\ref*{E:CGI}
 
-		7-9
+		\ref*{E:QS}
 
-		7-11&
+		\ref*{E:Sensors} &
 		gpio 命令と使い方は同じ。GPIO17 番に 1 を
 		書き込む。gpio 命令との違いはプログラム終
 		了時にも書き込んだ値が持続する。例えば、
@@ -2679,17 +2683,17 @@ CGIを使うときに便利なHSPの命令一覧
 
 		\#include “rpz-gpio-cl.as”
 		onoff = cgpioin(17)&
-		7-7&
+		\ref*{E:CGI} &
 		gpio 命令と同じ。cgpio でプログラム終了時
 		でも効果を持続させたい場合はこちらを使用
 		する必要がある。\\\hline
 
 		\#include “rpz-gpio-cl.as”&
-		7-7
+		\ref*{E:CGI}
 
-		7-9
+		\ref*{E:QS}
 
-		7-11&
+		\ref*{E:Sensors} &
 		\#include “rpz-gpio.as”のコマンドライン版
 		コマンドラインや CGI で動くプログラムを書
 		く場合はこちらを使う。cgpio, cgpioin 命令
@@ -2698,7 +2702,7 @@ CGIを使うときに便利なHSPの命令一覧
 		\#include “jtalk.as”
 
 		jtsave “こんにちは”, hello &
-		7-10 &
+		\ref*{E:Jtalk} &
 		“こんにちは”をOpenJtalkで音声合成をして、作った音声ファイルのファイル名をhello変数へ入れる。音声ファイルは/tmp/ディレクトリの下にランダムなファイル名で入る。
 
 		例えば、hello変数の中身は
