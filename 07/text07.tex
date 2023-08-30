@@ -873,7 +873,7 @@ HTMLは、タグという一つの機能をつかい、ウェブページを作�
 
 		\begin{minipage}[b]{1.5\textwidth}
 			\item \ \ cp \ \ \~{}/ome/01/self\_intro.html \ \ \ \~{}/ome/07/www/index.html\\
-			cpコマンドを使って、 自己紹介ページのhtmlとそれに必要な画像などを、 第７回のwwwディレクトリにコピーしましょう。\\
+			cpコマンドを使って、 自己紹介ページのhtmlと<img src="face.png" などimgタグで指定している画像ファイルを、 第７回のwwwディレクトリにコピーしましょう。\\
 			\includegraphics[width=14.73cm]{ome7-img033.png}
 		\end{minipage}
 
@@ -1450,9 +1450,7 @@ CGIを使った動的ページでは、サーバーが皆さんからwebペー�
 
 cd \~{}/ome/07/www/
 
-./webserver.py
-
-で起動できます。
+./webserver.py \ \ \ \ で起動できます。
 
 %
 %コマンド実行画面
@@ -1560,8 +1558,9 @@ cgi-binディレクトリはCGIプログラムを入れるディレクトリで�
 \flushleft
 
 
-第3回に使用した命令ではない命令が入っています。\\
 
+第3回に使用した命令ではない命令が入っています。\\
+詳細はP43に載っています。確認してください。
 
 プログラム解説の3行目
 
@@ -1571,10 +1570,14 @@ mes {\textquotedbl}Content-type: text/html{\textbackslash}n{\textquotedbl}
 
 
 \bigskip
-
+\clearpage
 4行目\ruby{以降}{いこう}のmes命令で出力するものは、HTMLの一部として扱われます。
 
+\bigskip
+
 6行目では、文字コードを設定しています。
+
+\bigskip
 
 9行目からLED点灯消灯のプログラムが始まります。
 
@@ -1593,11 +1596,15 @@ mes
 
 pタグを使ってメッセージを表示します。
 
+\bigskip
+
 12行目で
 
 next\_led = 1
 
 としてLEDを点灯させるための値を用意します。
+
+\bigskip
 
 消灯以外の状態（つまり点灯状態）の場合は、13行目で
 
@@ -1606,11 +1613,15 @@ mes
 
 pタグを使ってメッセージを表示します。
 
+\bigskip
+
 18行目で
 
 next\_led = 0
 
 としてLEDを消灯させるための値を用意します
+
+\bigskip
 
 20行目で実際に値をGPIO17へ書き込みます。
 
@@ -1631,11 +1642,12 @@ end
 \bigskip
 
 
+
 第7回のCGIを使うプログラムでは、第3回の授業とはちがう命令を使います。\\
 第3回の命令でCGIを使おうとすると、上手く動かなくなってしまうからです。\\
 下の表にそれぞれの命令をまとめておきます。\\
 
-
+\clearpage
 \begin{flushleft}
 	\tablefirsthead{}
 	\tablehead{}
