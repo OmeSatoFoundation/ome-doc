@@ -24,6 +24,7 @@
 {./text07-img/}%
 }
 \usepackage{svg}
+
 \usepackage{okumacro}
 % 空欄挿入マクロ　引数は空欄の左端の回答ラベル
 \newcommand{\addBlank}[1]{%
@@ -113,15 +114,18 @@
 
 \subsection*{教科書について}
 \begin{itemize}
+
 	\item 教科書には例題、それに\ruby{似}{に}た問題があります\\
 	      まずは、例題をよく読みながら試してみましょう\\
 	      そのあと問題を\ruby{解}{と}きましょう\\
 	      問題の答えは一番最後のページにあります
 	\item 例題、問題をクリアしたらシールラリーカードにシールを\ruby{貼}{は}りましょう
+
 	\item すべての問題、例題をクリアできたらTAの先生にシールラリーカードを見せて、\\
 	      Complete(コンプリート)シールをもらおう
 	\item 授業中に終わらなかった例題、問題は、できるだけ家でやって終わらせよう
 	\item 授業中にわからないところがあったらすぐにTAの先生に聞こう
+
 	\item 家でわからないことがあったら、すぐに\ruby{質問}{しつもん}フォームから\ruby{質問}{しつもん}しよう
 \end{itemize}
 
@@ -129,6 +133,7 @@
 \begin{itemize}
 	\item /usr/local/share/ome にあるフォルダ 07 をホームディレクトリにコピーしましょう。
 	\item やり方を忘れてしまった人は、「第 1 回 4.1 例題 1-18 教材をじぶんのフォルダに置こう」 を参考にしてみてください。
+
 \end{itemize}
 
 \clearpage{\bfseries
@@ -139,6 +144,7 @@
 
 
 \begin{description}
+
 
 	\item[\ruby{誰}{だれ}かが作ったものを勝手に使わない]~\\
 	\begin{minipage}[b]{0.6\textwidth}
@@ -155,16 +161,17 @@
 	たり、知らないソフトウェアが貼り付けられたりすることがあります。それを見るとウイルスという悪いものが入ってくることことがあります。ウイルスはコンピュータが\ruby{壊}{こわ}れたり、\ruby{操作}{そうさ}出来なくなったりするものもあります。犯罪者の協力をしたと思われることもあるので、怪しいメールは\ruby{絶対}{ぜったい}に開かないようにしましょう。また、チェーンメール（\ruby{呪}{のろ}いのメールなど）は絶対に信じず他の人に送ってはいけません。
 	\item[自分の情報を外に\ruby{漏}{も}らさない]~\\
 	自分の名前や、住所などをネットにあげるのはとても\ruby{危}{あぶ}ないから止めましょう。悪い人の目に入ってしまうと家族の身の\ruby{危険}{きけん}にもつながり命の\ruby{保証}{ほしょう}ができません。また、ネットに一度でもあげてしまうと消すことができなくなります。多くの人の目につくからデータが広がってしまうこともあります。ネットにデータをあげるときは問題が無いか\ruby{確認}{かくにん}してからあげましょう。
+  
 \end{description}
 
 \clearpage\subsection*{1−1インターネットのキホン}
 \begin{wrapfigure}{r}[10pt]{0.4\textwidth}
 	\includegraphics[width=0.4\textwidth]{ome7-img002.eps}
 \end{wrapfigure}
+
 みんなが使っているパソコンやスマートフォンなどをたくさんつなぎ、おたがいに情報の\ruby{交換}{こうかん}ができるようにしたものを「ネットワーク」とよんでいます。
 
 インターネットとは、そのネットワークが数えきれないほどのケーブルなどでおたがいにつながりあい、\ruby{網}{あみ}の目のように世界中に広がっているそのもののことです。
-
 
 
 \bigskip
@@ -207,7 +214,9 @@
 \clearpage
 
 \subsection*{　1−2　IPアドレスとは何だろう？}
+
 ネットワークでコンピュータ同士がつながっているときにどうやって通信相手のコンピュータの場所を\ruby{探}{さが}すのでしょうか？
+
 わたしたちのいる住んでいる場所をしめす住所（英語でアドレス)と同じ考え方を使います。
 インターネットの住所のことをIP(アイピー)アドレスと言います。
 わたしたち日本人は住所を東京都港区高輪２−３−２３（東海大学高輪キャンパスの住所)のように表します。
@@ -469,9 +478,11 @@ IPアドレスにはグローバルIPアドレスとローカル（プライベ�
 \clearpage\subsection*{\theExercise　ポケットWi-FiルータのグローバルIPアドレスを調べよう}
 \begin{minipage}[b]{0.58\textwidth}
 	ターミナルを開き、”curl
+
 	inet-ip.info”とコマンドを入力して、自分のラズベリーパイが接続しているwifiルータのグローバルIPアドレスを確認しよう
 
 	curlコマンドはインターネットから情報を取ってくるときに使用します。今回は”inet-ip.info”というサイトからグローバルIPアドレスを調べてターミナルに\ruby{表示}{ひょうじ}させています。webブラウザから”inet-ip.info”にアクセスしてみると右の図のような形でグローバルIPアドレスを確認することもできます。
+
 \end{minipage}
 \includegraphics[width=0.4\textwidth]{ome7-img017.png}
 
@@ -656,7 +667,7 @@ IPアドレスでは通信相手となる別のネットワークのコンピュ
 
 コンピュータXのようにネット上にサービスを\ruby{提供}{ていきょう}するコンピュータを\underline{サーバ}と言います。
 
-ラズベリーパイ一号機のようにサーバからサービスを受けるコンピュータを\underline{クライアント}言います。
+ラズベリーパイ１号機のようにサーバからサービスを受けるコンピュータを\underline{クライアント}言います。
 
 
 \bigskip
@@ -853,6 +864,7 @@ serviceに出てきた言葉をインターネットを使って調べよう。
 \subsection*{\theExercise　HTMLの復習}
 {\bfseries
 	考え方\newline
+
 	第１回で作成した\ruby{自己紹介}{じこしょうかい}ページのタグや機能を理解することでHTMLについて自分の思ったとおりに作れるようになりましょう。}
 
 
@@ -869,8 +881,6 @@ HTMLは、タグという一つの機能をつかい、ウェブページを作�
 
 \begin{minipage}[b]{0.5\textwidth}
 	\begin{enumerate}
-
-
 		\begin{minipage}[b]{1.5\textwidth}
 			\item \ \ cp \ \ \~{}/ome/01/self\_intro.html \ \ \ \~{}/ome/07/www/index.html\\
 			cpコマンドを使って、 自己紹介ページのhtmlと<img src="face.png" などimgタグで指定している画像ファイルを、 第７回のwwwディレクトリにコピーしましょう。\\
@@ -880,6 +890,7 @@ HTMLは、タグという一つの機能をつかい、ウェブページを作�
 		\bigskip
 
 		\item
+
 		      \ \ cd \ \ \~{}/ome/07/www/\newline
 		      cdコマンドを使って、（cpコマンドとは\ruby{違}{ちが}うよ。) 第７回のwwwディレクトリに\ruby{移動}{いどう}。
 
@@ -913,12 +924,15 @@ HTMLまとめ\ \
 	\begin{supertabular}{|m{4.0cm}|m{12.0cm}|}
 		\hline
 		タグ名 &
+
 		\ruby{効果}{こうか}\\\hline
+
 		{\textless}title{\textgreater}{\textless}/title{\textgreater} &
 		ウェブページのタイトルをつける\\\hline
 		{\textless}h1{\textgreater}{\textless}/h1{\textgreater} &
 		見出し(h1\~{}h6)まで使える。h1が一番大きい\\\hline
 		{\textless}ul{\textgreater}{\textless}/ul{\textgreater} &
+
 		点付のリスト。リストの\ruby{項目}{こうもく}はliを使って表す\\\hline
 		{\textless}li{\textgreater}{\textless}/li{\textgreater} &
 		リストの項目。ulもしくはolタグなどの中で使う\\\hline
@@ -988,6 +1002,7 @@ HTMLで使いたい色を探すときにはここを使うと便利です。
 
 		{\textless}input type=”password” name=”pass”{\textgreater} &
 		文字の入力や、ボタンなどを作成するタグ。
+
 
 		inputの次にtypeなどの\ruby{属性}{ぞくせい}を入れることで一行の文章やパスワードの入力などを決定する\\\hline
 	\end{supertabular}
@@ -1082,14 +1097,13 @@ inputタグの機能になるもの
 		sizeの属性を指定することで大きさも決定できる。\\\hline
 		type=”password” &
 		パスワード用のテキストボックスを作ります。\newline
+
 		入力されたら＊のマークなどに置き換わります。送信する際には\ruby{普通}{ふつう}の文字で送られるのに注意。\\\hline
 		type=”checkbox” &
 		チェックボックスを作ります。
-
 		複数\ruby{選択}{せんたく}可能で、checked属性を指定すると予めチェックが入ったかどうかを決めれる。\\\hline
 		type=”radio” &
 		ラジオボタンを作ります。
-
 		複数の中から１つしか選択できないのが\ruby{特徴}{とくちょう}。\newline
 		こちらもcheckedで\ruby{状態}{じょうたい}を決めれる。\\\hline
 		type=”submit” &
@@ -1112,6 +1126,7 @@ inputタグの機能になるもの
 \clearpage\subsection*{2−2　\theExercise　自分のホームページを公開しよう}
 考え方
 
+
 クライアントとサーバーと呼ばれるコンピュータがあります。クライアントとはサービスを利用するコンピュータです。サーバーとはそれと\ruby{逆}{ぎゃく}にサービスを提供しているコンピュータです。クライアントとサーバーは同じコンピュータにあっても
 OK です。例えば、google
 は検索するためのウェブサイトを提供しています。ウェブサイトを提供するサーバーをウェブサーバーと呼びます。自分のホームページを公開するためには、ウェブサーバーを動かす必要があります。
@@ -1127,11 +1142,11 @@ OK です。例えば、google
 \bigskip
 
 1.まず
-/home/pi/ome/07/wwwのディレクトリに移りましょう。
+~/07/wwwのディレクトリに移りましょう。
 
 \ \ ターミナルを立ち上げて次のコマンドを打ちましょう。
 
-\ \ cd /home/pi/ome/07/www
+\ \ cd ~/07/www
 
 
 \bigskip
@@ -1185,7 +1200,7 @@ OK です。例えば、google
 
 \ \ これはwebserver.pyを起動したディレクトリ
 
-\ \ 　/home/pi/ome/07/www/
+\ \ 　/home/pi/07/www/
 
 \ \ を指しています。
 
@@ -1328,7 +1343,8 @@ OK です。例えば、google
 
 \bigskip
 
-\refstepcounter{Question}\theQuestion　他のグループの友達のホームページを見てみよう、自分とは違うwifiルータに接続している友達のホームページは見れたかどうか答えに書こう
+\refstepcounter{Question}\theQuestion　他のグループの友達のホームページを見てみよう、自分とは違うWi-Fiルータに接続している友達のホームページは見れたかどうか答えに書こう
+
 
 
 \bigskip
@@ -1340,7 +1356,9 @@ OK です。例えば、google
 \bigskip
 
 \if0
-	参考　接続できるネットワーク(wifiルータ)
+
+
+	参考　接続できるネットワーク(Wi-Fiルータ)
 
 	NTGR-4643\ \ \ \ パスワード　33995460
 
@@ -1375,6 +1393,7 @@ Interface）を用いることによって動きのあるページ、動的な�
 \bigskip
 
 {\bfseries
+
 	・\ruby{掲示板}{けいじばん}}
 
 
@@ -1448,13 +1467,13 @@ CGIを使った動的ページでは、サーバーが皆さんからwebペー�
 
 ターミナルを開いて
 
-cd \~{}/ome/07/www/
+cd \~{}/07/www/
 
 ./webserver.py \ \ \ \ で起動できます。
 
 %
 %コマンド実行画面
-%cd \~{}/ome/07/www/
+%cd \~{}/07/www/
 %./webserver.py
 %koyaman
 %September 20, 2019 2:48 AM
@@ -1482,7 +1501,7 @@ localhost:3000/cgi-bin/led.hsp
 \includegraphics[width=16.166cm,height=5.911cm]{ome7-img052.png}
 \flushleft
 
-cgi-binディレクトリはCGIプログラムを入れるディレクトリです。\~{}/ome/07/wwwの下にあります。このディレクトリ内の
+cgi-binディレクトリはCGIプログラムを入れるディレクトリです。\~{}/07/wwwの下にあります。このディレクトリ内の
 
 ”ファイル名”.hsp
 
@@ -1554,6 +1573,7 @@ cgi-binディレクトリはCGIプログラムを入れるディレクトリで�
 
 	\item end
 	\end{enumerate}
+
 \end{boxedminipage}
 \flushleft
 
@@ -1705,6 +1725,7 @@ end
 	友達のLEDをCGIで点灯させてみよう。}
 
 {\bfseries
+
 	点灯、消灯時のウェブページに表示されるメッセージを\ruby{変更}{へんこう}してみよう。}
 
 {\bfseries
@@ -2066,7 +2087,7 @@ localhost:3000/jtalk.html
 \clearpage
 プログラム解説
 
-\~{}/ome/07/www/jtalk.html
+\~{}/07/www/jtalk.html
 
 
 
@@ -2183,7 +2204,7 @@ IPアドレス:3000/cgi-bin/jtalk.hsp?sentence=こんにちは
 
 このことをパーセントエンコーディングといいます。CGIプログラムにクエリストリングが渡される前にウェブサーバは記号、数値に変換された文字列をもとに戻します。よって、プログラム内では入力された文字列と同じものを扱うことができます。
 
-\~{}/ome/07/www/cgi-bin/jtalk.hsp
+\~{}/07/www/cgi-bin/jtalk.hsp
 
 \centering
 \begin{boxedminipage}{\textwidth}
@@ -2248,9 +2269,9 @@ type={\textbackslash}{\textquotedbl}audio/wav{\textbackslash}{\textquotedbl} con
 
 src=”ファイル名”
 
-では、再生するファイルを指定します。指定するファイルはドキュメントルート以下にないといけません。つまり、ドキュメントルートである/home/pi/ome/07/wwwの中にある必要があります。
+では、再生するファイルを指定します。指定するファイルはドキュメントルート以下にないといけません。つまり、ドキュメントルートである~/07/wwwの中にある必要があります。
 
-jtsave命令で作った音声ファイルは/home/pi/ome/07/www/tmpの中にあります。ファイル名はwav\_file変数に入っています。
+jtsave命令で作った音声ファイルは~/07/www/tmpの中にあります。ファイル名はwav\_file変数に入っています。
 
 “
 “の中で”を使うには{\textbackslash}”のように書きます。
@@ -2274,7 +2295,7 @@ controlsをつけると、再生ボタン、ミュートボタンなどが表示
 
 \bigskip
 
-できる人は自分の自己紹介ページに（\~{}/ome/07/www/index.html)に作ったフォームを変更して、こちらからCGIプログラムを起動するようにしましょう。
+できる人は自分の自己紹介ページに（\~{}/07/www/index.html)に作ったフォームを変更して、こちらからCGIプログラムを起動するようにしましょう。
 
 \ HINT: jtalk.htmlを参考にしてください。
 
@@ -2406,7 +2427,7 @@ localhost:3000/cgi-bin/sensors.hsp
 	\ \ \ \ end
 \end{boxedminipage}
 \flushleft
-この例題は\~{}/ome/03/sensors.hspをもとにしています。詳しい解説はそちらを参照してください。
+この例題は\~{}/03/sensors.hspをもとにしています。詳しい解説はそちらを参照してください。
 
 20～23行目で温度、湿度、気圧、照度センサーから情報を取得しています。
 
@@ -2488,7 +2509,7 @@ irsend SEND\_ONCE fan onoff
 
 リモコンの名前、信号の名前が違う場合は、
 
-\~{}/ome/07/www/cgi-bin/ir.hsp
+\~{}/07/www/cgi-bin/ir.hsp
 
 を開いて
 
@@ -2519,7 +2540,7 @@ exec “irsend SEND\_ONCE fan onoff”
 \clearpage
 プログラム解説
 
-\~{}/ome/07/www/ir.html
+\~{}/07/www/ir.html
 
 8行目でフォームの\ruby{内容}{ないよう}を受け取るCGIを設定しています。
 
@@ -2556,7 +2577,7 @@ exec “irsend SEND\_ONCE fan onoff”
 	{\textless}/html{\textgreater}
 \end{boxedminipage}
 \flushleft
-\~{}/ome/07/www/cgi-bin/ir.hsp
+\~{}/07/www/cgi-bin/ir.hsp
 
 がCGIとしてに起動します。
 

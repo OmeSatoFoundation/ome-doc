@@ -1,6 +1,6 @@
 \subsection{LED をチカチカさせよう}
 
-次に LED をチカチカ（点滅）させてみましょう。HSP スクリプトエディタで Ltika.hsp を開いて実
+次に LED をチカチカ（\ruby{点滅}{てん|めつ}）させてみましょう。HSP スクリプトエディタで Ltika.hsp を開いて実
 行してください。\textasciitilde /03 のディレクトリにあります。\\
 
 \begin{lstlisting}[caption=Ltika.hsp,label=Ltika.hsp]
@@ -17,9 +17,9 @@
 	goto *led 		<#blue#;*led にジャンプ（繰り返し）#>
 \end{lstlisting}
 
-プログラムを読んでみましょう。点滅させるためには LED の ON と OFF を交互に繰り返すのでした。
+プログラムを読んでみましょう。点滅させるためには LED の ON と OFF を\ruby{交互}{こう|ご}に繰り返すのでした。
 OFF にする \code{gpio} 命令 (\code{gpio 22, 0}) と ON にする \code{gpio} 命令 (\code{gpio 22, 1}) が \code{wait} 命令と交互に
-現れることを確認しましょう。\\
+\ruby{現}{あらわ}れることを\ruby{確認}{かく|にん}しましょう。\\
 
 \begin{tcolorbox}[title=\useOmetoi]
 \begin{enumerate}
@@ -28,6 +28,6 @@ OFF にする \code{gpio} 命令 (\code{gpio 22, 0}) と ON にする \code{gpio
 教科書第 2 回 2-9 LED が点滅するスクリプトを参考にしましょう）。}
 \addex{チカチカする速さが速くなるように、322.hsp のプログラムを変えてみましょう(ヒント: 2-9 
 LED が点滅するスクリプトを参考にしましょう）。}
-\addex{チカチカする速さが遅くなるように、322.hsp のプログラムを変えてみましょう。}
+\addex{チカチカする速さが\ruby{遅}{おそ}くなるように、322.hsp のプログラムを変えてみましょう。}
 \end{enumerate}
 \end{tcolorbox}

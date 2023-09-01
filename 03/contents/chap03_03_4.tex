@@ -1,6 +1,6 @@
 \section{ボタンを上手に使ってみよう}
 \subsection{ボタンを使って LED をつけてみよう}
-赤いボタンを押している間 LED が光る HSP プログラムを考えてみましょう。HSP スクリプトエディタで\textasciitilde /03/button\_led.hsp を読み込み実行してください。センサーボードのボタンのどちらかを押すと LED が 1 つ点灯します。\\
+赤いボタンを\ruby{押}{お}している間 LED が光る HSP プログラムを考えてみましょう。HSP スクリプトエディタで\textasciitilde /03/button\_led.hsp を読み\ruby{込}{こ}み実行してください。センサーボードのボタンのどちらかを押すと LED が 1 つ点灯します。\\
 
 \begin{lstlisting}[caption=button\_led.hsp,label=button_led.hsp]
 #include "hsp3dish.as"		<#blue#;スクリプトの設定を読み込む#>
@@ -19,8 +19,8 @@
 
 *led
 	btn1 = gpioin(5) 	<#blue#;ボタンの状態を調べる#>
-	if btn1==0 : gpio 18, 1 : else : gpio 18, 0 	<#blue#;ボタンによってLEDを消灯/点灯#>
-	await 10 		<#blue#;0.01 秒待つ#>
+	if btn1=0 : gpio 18, 1 : else : gpio 18, 0 	<#blue#;ボタンによってLEDを消灯/点灯#>
+	wait 10 		<#blue#;0.1 秒待つ#>
 	goto *led 		<#blue#;*led に戻る#>
 \end{lstlisting}
 
@@ -34,13 +34,13 @@ GPIO5 なので５、黒いボタンは GPIO ６なので６）を書きます�
 数字が 0 のとき）LED を光らせる、それ以外のときは消すという命令を書きます。もし～は \code{if} 命令
 を書きます。
 
-\code{if btn1==0} で \code{btn1} 変数の数字が 0 のとき（赤いボタンが押されているとき）は\code{ }: の次に書かれている命令を実行します。\\
+\code{if btn1=0} で \code{btn1} 変数の数字が 0 のとき（赤いボタンが押されているとき）は\code{ }: の次に書かれている命令を実行します。\\
 \code{: gpio 18, 1} で GPIO18 の LED を光らせます。\\
 \code{: else : gpio 18, 0} では、else（それ以外）のとき、GPIO18 の LED を消しています。\\
 
 \begin{tcolorbox}[title=\useOmetoi]
 \begin{enumerate}
-\addquiz{ボタンが押されているか調べる命令を書きましょう。}
+\addquiz{ボタンの状態を調べる命令を書きましょう。}
 \addex{ターミナルを使って button\_led.hsp のコピーを、331.hsp という名前で作りましょう。}
 \addex{黒いボタン(GPIO6)を使って LED を光らせるように、331.hsp のプログラムを変えてみましょう。}
 \addex{ 赤いボタン(GPIO5)で LED1(GPIO17)、黒いボタン(GPIO6)で LED3(GPIO22)が光るように、331.hsp のプログラムを変えてみましょう。}

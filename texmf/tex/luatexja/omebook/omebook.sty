@@ -1,16 +1,52 @@
 % style file for ltjsbook
-% by Hogenimushi
+% Geometryではうまくいかなかった
+%\usepackage[top=25truemm,bottom=15truemm,bindingoffset=20mm]{geometry}
 
-% 傍注スペースを削る
-\addtolength{\fullwidth}{-26truemm} %全体の幅(ヘッダ部の幅)を既定値から26mm小さくする
-\setlength{\textwidth}{\fullwidth}  %本文の幅(textwidth)を全体の幅(=ヘッダ部の幅)にそろえる
-\setlength{\evensidemargin}{1truemm}    %偶数ページの左余白を1mm(+1インチ)にする
-\setlength{\oddsidemargin}{19truemm}    %奇数ページの左余白を19mm(+1インチ)にする
+%\usepackage[margin=1cm]{geometry}
+\addtolength{\fullwidth}{0truemm}    %全体の幅(ヘッダ部の幅)
+\setlength{\textwidth}{\fullwidth}   %本文の幅(textwidth)を全体の幅(=ヘッダ部の幅)にそろえる
+\setlength{\topmargin}{-18truemm}    % 上マージンを削る
+\addtolength{\textheight}{+23truemm} % 上マージン削った分＋下マージンを削る分
 
-% フォントは最終段階で決定する
+\setlength{\evensidemargin}{\paperwidth}      % 綴じしろの計算
+\addtolength{\evensidemargin}{-\fullwidth}
+\setlength{\evensidemargin}{.5\evensidemargin} 
+\addtolength{\evensidemargin}{-1in}
+\setlength{\oddsidemargin}{\evensidemargin} 
+\addtolength{\oddsidemargin}{+7.5truemm}
+\addtolength{\evensidemargin}{-7.5truemm}
+
+% フォントは最終段階で決定する。bizudの設定は
+% https://qiita.com/kakinaguru_zo/items/22c4db21e03d4608e300
+% をGoogle fontsで配布されているフォント用に修正
 %\usepackage[ipaex]{luatexja-preset}
-\usepackage[haranoaji,deluxe]{luatexja-preset}
-\usepackage{luatexja-otf}
+%\usepackage[haranoaji,deluxe]{luatexja-preset}
+%\usepackage{luatexja-otf}
+\usepackage{luatexja-fontspec}
+\newjfontface{\nonproportional}{BIZ UDMincho}[YokoFeatures={JFM=ujis}]
+\setmainjfont[Ligatures={Common,TeX},
+  ItalicFont={BIZ UDPMincho},
+  ItalicFeatures={FakeSlant=0.27},
+  SlantedFont={BIZ UDPMincho},
+  SlantedFeatures={FakeSlant=0.18},
+  BoldFont={BIZ UDPGothic Bold},
+  BoldSlantedFont={BIZ UDPGothic Bold},
+  BoldSlantedFeatures={FakeSlant=0.18},
+  BoldItalicFont={BIZ UDPGothic Bold},
+  BoldItalicFeatures={FakeSlant=0.27},
+  YokoFeatures={JFM=prop}]{BIZ UDPMincho}
+%\newjfontface{\nonproportional}{BIZ UDGothic}[YokoFeatures={JFM=ujis}]
+\setsansjfont[Ligatures={Common,TeX},
+  ItalicFont={BIZ UDPGothic},
+  ItalicFeatures={FakeSlant=0.23},
+  SlantedFont={BIZ UDPGothic},
+  SlantedFeatures={FakeSlant=0.23},
+  BoldFont={BIZ UDPGothic Bold},
+  BoldSlantedFont={BIZ UDPGothic Bold},
+  BoldSlantedFeatures={FakeSlant=0.23},
+  BoldItalicFont={BIZ UDPGothic Bold},
+  BoldItalicFeatures={FakeSlant=0.23},
+  YokoFeatures={JFM=prop}]{BIZ UDPGothic}
 
 \usepackage{graphicx}
 \usepackage{color}
@@ -31,6 +67,8 @@
 \usepackage{multirow}
 \usepackage{enumerate}
 \usepackage{url}
+\usepackage{ascmac}
+\usepackage{fancybox}
 %プログラム挿入の設定
 
 %\lstset{
@@ -75,7 +113,7 @@
 %}
 \lstset{
   language=C++,
-  basicstyle=\ttfamily\small,
+  basicstyle=\ttfamily\footnotesize,
   % keywordstyle=\bfseries\color{green},
   showstringspaces=false,
   frame={tb},
@@ -149,6 +187,6 @@
 
 % 演習マクロ
 \newcommand{\addex}[1]{%
-\item #1 \\%
+\item #1 \vspace{0.5\zh}\\%
 \fbox{\phantom{白}} $\leftarrow$できたらチェックしましょう。\\
 }

@@ -1,22 +1,22 @@
 \subsection{ファイルやディレクトリの名前を変えてみよう}
 \begin{description}
-\item[mv\textvisiblespace 名前\textvisiblespace 変えたい名前]\mbox{}\\
+\item[\texttt{mv}\textvisiblespace 名前\textvisiblespace 変えたい名前]\mbox{}\\
 ファイルやディレクトリの名前を変えることができます。
 \end{description}
 \begin{itemize}
-\item[<例>]rikaディレクトリにあるrika2.pngをbika.pngに名前を変えます。ls\textvisiblespace -F\textvisiblespace rikaで、名前が変わっていることが確認できます。
+\item[<例>]rikaディレクトリにあるrika2.pngをbika.pngに名前を変えます。ls\textvisiblespace -F\textvisiblespace rikaで、名前が変わっていることが\ruby{確認}{かく|にん}できます。
 \end{itemize}
 \begin{lstlisting}[caption=mvNameの例, label=mvName]
 <#green#pi@raspberrypi#>:<#blue#~ $#> cd ~/rika
 <#green#pi@raspberrypi#>:<#blue#~ $#> mv rika2.png bika.png
 <#green#pi@raspberrypi#>:<#blue#~ $#> ls -F
-<#magenta#bika.png	mokei.png		rika.png.#>
+<#magenta#bika.png	mokei.png		rika.png#>
 \end{lstlisting}
 
 \begin{tcolorbox}[title=\useOmetoi]
 %\begin{minipage}{0.94\hsize}
 \begin{enumerate}
-\addex{cd\textvisiblespace\textasciitilde /rikaと入力してrikaディレクトリに移動しましょう。\\
+\addex{cd\textvisiblespace\textasciitilde /rikaと入力してrikaディレクトリに\ruby{移動}{い|どう}しましょう。\\
 mv\textvisiblespace rika2.png\textvisiblespace bika.png と入力してみましょう。\\
 ls\textvisiblespace -Fと入力してrika2.pngがbika.pngに変わっているか見てみましょう。}
 \end{enumerate}

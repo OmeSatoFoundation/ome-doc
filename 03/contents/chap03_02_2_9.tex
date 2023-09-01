@@ -1,17 +1,22 @@
 \subsection{テキストファイルを作ってみよう}
 \begin{description}
-\item[leafpad\textvisiblespace ファイル]\mbox{}\\
-leafpad を使ってファイルを作ることができます。
+\item[\texttt{mousepad}\textvisiblespace ファイル\textvisiblespace \&]\mbox{}\\
+mousepad を使ってファイルを作ることができます。
 \end{description}
 \begin{itemize}
-\item[<例>]my.txt を作り、文字を書いて保存します。
+\item[<例>]my.txt を作り、文字を書いて\ruby{保存}{ほ|ぞん}します。
 \end{itemize}
-\begin{lstlisting}[caption=leafpadの例, label=leafpad]
-<#green#pi@raspberrypi#>:<#blue#~ $#> leafpad my.txt &
+\begin{lstlisting}[caption=mousepadの例, label=mousepad]
+<#green#pi@raspberrypi#>:<#blue#~ $#> mousepad my.txt &
 \end{lstlisting}
+
+\begin{itembox}[c]{\& (アンパサンド)の意味について}
+    ラズベリーパイのターミナルではコマンドの最後に「\&」を付けると、そのコマンドをターミナルから見えない場所で処理を実行してくれます。このようにターミナルから見えない場所で実行している処理を「バックグラウンドジョブ」と呼びます。一方で、今入力して実行しているコマンドは、「フォアグラウンドジョブ」と呼びます。
+\end{itembox}
+
 \begin{tcolorbox}[title=\useOmetoi]
 \begin{enumerate}
-\addex{leafpad\textvisiblespace my.txt\textvisiblespace \&と入力してみましょう。リーフパッドが開きます。自分の名前を書いて保存しましょう。\\
+\addex{ホームディレクトリに移動しましょう。その後、mousepad\textvisiblespace my.txt\textvisiblespace \&と入力してみましょう。マウスパッドが開きます。自分の名前を書いて保存しましょう。\\
 ターミナルにls\textvisiblespace -Fと入力してmy.txtがあるか見てみましょう。}
 \end{enumerate}
 %\end{minipage}

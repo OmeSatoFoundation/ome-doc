@@ -1,4 +1,4 @@
-\section{ターミナルで困ったときの対応とまとめの問題}
+\section{ターミナルで\ruby{困}{こま}ったときの\ruby{対応}{たい|おう}とまとめの問題}
 
 \subsection{エラーメッセージが出たときは}
 \begin{lstlisting}[caption=コマンドがちがうときの例, label=cmdMiss]
@@ -13,23 +13,23 @@ bash: pwb: コマンドが見つかりません
 bash: cd: AAA: そのようなファイルやディレクトリはありません
 <#green#pi@raspberrypi#>:<#blue#~ $#> 
 \end{lstlisting}
-ディレクトリやディレクトリの名前が違います。スペルがあっているか見てみましょう。\\
+ディレクトリやディレクトリの名前が\ruby{違}{ちが}います。スペルがあっているか見てみましょう。\\
 
 
-\subsection{rensyu ディレクトリを最初の状態に戻すには}
-\textasciitilde /03/rensyu ディレクトリはファイルそうさの練習用のディレクトリです。練習することで、内容が変わってしまいます。授業が始まる前の状態に戻すには次のコマンドを使います。rensyu ディレククトリの下の自分で作ったファイルやディレクトリは消えてしまうので注意してください。\\
+\subsection{rensyu ディレクトリを最初の\ruby{状態}{じょう|たい}に\ruby{戻}{もど}すには}
+\textasciitilde /03/rensyu ディレクトリはファイルそうさの練習用のディレクトリです。練習することで、\ruby{内容}{ない|よう}が変わってしまいます。\ruby{授業}{じゅ|ぎょう}が始まる前の状態に戻すには次のコマンドを使います。rensyu ディレククトリの下の自分で作ったファイルやディレクトリは消えてしまうので注意してください。\\
 \begin{enumerate}
 \item  cd\textvisiblespace \textasciitilde /03
-\item  tar\textvisiblespace --recursive-unlink\textvisiblespace -zxvf\textvisiblespace rensyu.tar.gz
+\item  tar\textvisiblespace \verb|--|recursive-unlink\textvisiblespace -zxvf\textvisiblespace rensyu.tar.gz
 % --表示できない
 \end{enumerate}
 
-\subsection{豆知識}
+\subsection{\ruby{豆知識}{まめ|ち|しき}}
 \label{英語と日本語の対応表}
-コマンドは英文や英単語の省略になっています。\\
+コマンドは英文や英単語の\ruby{省略}{しょう|りゃく}になっています。\\
 pwd: print working directory → ワーキングディレクトリを表示する\\
 cd: change directory → ディレクトリを変える\\
 cat: concatenate → 結合する\\
-mv: move → 移動する\\
+mv: move → \ruby{移動}{い|どう}する\\
 mkdir: make directory → ディレクトリを作る\\
 rm: remove → 消す\\

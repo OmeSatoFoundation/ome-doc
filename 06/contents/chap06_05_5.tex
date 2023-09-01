@@ -1,12 +1,11 @@
-\subsection{音声でLEDのON OFFをする}
-HSPプログラムから、音声を使ってLEDをつけたり消したりしてみましょう。/home/pi/ome/06にonoff.yomiファイルがあります。これは音声でLEDのON/OFFをするための辞書ファイルです。\\
+%偶数ページに飛ばしたい
+\newpage
+\section{音声でLEDのON OFFをする}
 
 \begin{lstlisting}[caption=onoff.yomi,label=onoff.yomi]
 ON おん
 OFF おふ
 \end{lstlisting}
-
-リスト\ref{onoff.yomi}のように書いてあります。ONとOFFが表示する文字、おんとおふが読み方です。これを\code{convert\_yomi.sh}を使って変換したものがonoff.dicです。onoff.dicを使って、音声からLEDを制御してみましょう。/home/pi/ome/06/ledbyvoice.hsp を開いてください。\\
 
 \begin{lstlisting}[caption=ledvoice.hsp,label=ledvoice.hsp]
 #include "hsp3dish.as"
@@ -17,7 +16,7 @@ pos 0, 0
 mes "Loading Julius..."
 redraw 1
 
-init_julius "/home/pi/ome/06/onoff.dic"
+init_julius "onoff.dic"
 
 sockidx = 0
 domain = "127.0.0.1"
@@ -56,13 +55,16 @@ repeat -1
 loop
 \end{lstlisting}
 
-words(cnt)に認識された文字が代入されています。認識された文字がONなのかOFFかif文（条件分岐）を使って、LEDを制御しています。\\
+HSPプログラムから、音声を使ってLEDをつけたり消したりしてみましょう。 \textasciitilde /06にonoff.yomiファイルがあります。これは音声でLEDのON/OFFをするための辞書ファイルです。この辞書ファイルはリスト\ref{onoff.yomi}のように書いてあります。ONとOFFが表示する文字、おんとおふが読み方です。これを\code{convert\_yomi.sh}を使って変換したものがonoff.dicです。onoff.dicを使って、音声からLEDを\ruby{制御}{せい|ぎょ}してみましょう。 \textasciitilde /06/ledbyvoice.hsp を開いてください。\\
+
+\code{words}(\code{cnt})に認識された文字が代入されています。認識された文字がONなのかOFFか\code{if}文（条件分岐）を使って、LEDを制御しています。\\
 
 \begin{tcolorbox}[title=\useOmetoi]
 \begin{enumerate}
-\item ledbyvoice.hspをHSPスクリプトエディタで実行しましょう。\\□←オン、オフと話しかけてLEDをつけたり消したりできたらチェックしましょう。
-\item 点灯させるLEDを変更しましょう。\\□←できたらチェックしましょう。
-\item 時間があったらやりましょう。\\点灯させるための言葉を「つける」と「けす」に変更しましょう。\\□←できたらチェックしましょう。
-\item 時間があったらやりましょう。\\センサーボードには4色のLEDが点いています。色ONでその色のLEDがつき、色OFFでその色のLEDが消えるようなプログラムを書きましょう。（オレンジONでオレンジ色のLEDがつき、オレンジOFFでオレンジ色のLEDが消えるなど）\\□←できたらチェックしましょう。
+\addex{ターミナルを開いて、 \textasciitilde /06/に移動しましょう。}
+\addex{ledbyvoice.hspをHSPスクリプトエディタで実行しましょう。}
+\addex{点灯させるLEDを変\ruby{更}{こう}しましょう。}
+\addex{時間があったらやりましょう。\\点灯させるための言葉を「つける」と「けす」に変更しましょう。}
+\addex{時間があったらやりましょう。\\センサーボードには4色のLEDが点いています。色ONでその色のLEDがつき、色OFFでその色のLEDが消えるようなプログラムを書きましょう。（オレンジONでオレンジ色のLEDがつき、オレンジOFFでオレンジ色のLEDが消えるなど）}
 \end{enumerate}
 \end{tcolorbox}
