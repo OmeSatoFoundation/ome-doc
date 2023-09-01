@@ -59,6 +59,16 @@ HSPスクリプトエディタで\textasciitilde /03/button\_led3.hspを読み\r
 
 \code{ledidx = (ledidx+1) \textbackslash \ 4}では、何回\code{*hata}まで戻っているか数えています。LEDは4つあるので、4回動けば一周できます。一周したらまた0に戻りたいので、剰余算を使っています。今回は\code{ledidx}は0～3のどれかの数字になります。\\
 
+実際に計算すると、次のようになります。\\
+\begin{tabular}{llll}
+ledidxが0のとき & \code{ledid=(0+1) \textbackslash \ 4} を計算すると& $1 \div 4=$0あまり1 なので& ledidxは1になる\\
+ledidxが1のとき & \code{ledid=(1+1) \textbackslash \ 4} を計算すると& $2 \div 4=$0あまり2 なので& ledidxは2になる\\
+ledidxが2のとき & \code{ledid=(2+1) \textbackslash \ 4} を計算すると& $3 \div 4=$0あまり3 なので& ledidxは3になる\\
+ledidxが3のとき & \code{ledid=(3+1) \textbackslash \ 4} を計算すると& $4 \div 4=$1あまり0 なので& ledidxは0になる
+\end{tabular}\\
+このように剰余算をうまくつかうことで、4つのLEDの切り替えを実現しています。
+
+
 if \ruby{条件文}{じょう|けん|ぶん}1 \{実行文1\} else : if 条件文2\{実行文2\}\\
 これは条件文1が成り立つときは実行文1を実行します。成り立たないときは、条件文2が成り立つかどうか調べます。条件文2が成り立つときは実行文2を実行します。 \\
 

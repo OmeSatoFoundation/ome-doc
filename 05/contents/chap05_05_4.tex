@@ -9,8 +9,8 @@
 
 \begin{table}[H]
 	\begin{tabular}{|p{\colF}|p{\colG}|}	\hline
-	サンプルコードの場所 & ome/05/digin.hsp\\ \hline
-	raspiへの入力 & センサーが傾くと1、傾いていないと値の値を入力します。\\ \hline
+	サンプルコードの場所 & 05/digin.hsp\\ \hline
+	raspiへの入力 & センサーが傾くと1、傾いていないと0の値を入力します。\\ \hline
 	raspiへの入力方法 & val = gpioin(GPIO番号)\\ \hline
 	raspiからの出力 & なし\\ \hline
 	raspiからの出力方法 & なし\\ \hline
@@ -21,7 +21,7 @@
 	\begin{tabular}{|p{\colF}|p{\colG}|} \hline
 	使い道 & ストーブの安全装置\\ \hline
 	注意事項 & なし\\ \hline
-	補足 & 黒い箱のなかにボールが入っていて、ボールが転がり端子に触れるとONになります。傾いていないときはOFFになります。
+	補足 & 黒い箱のなかにボールが入っていて、ボールが転がり\ruby{端子}{たん|し}に\ruby{触}{ふ}れるとONになります。傾いていないときはOFFになります。
 	\par
 	\begin{minipage}[t]{\linewidth}
     \smallskip
@@ -40,7 +40,7 @@
 	\begin{minipage}[t]{\linewidth}
     \smallskip
       \centering
-      \includegraphics[width=\linewidth]{images/chap05/text05-img018.png}
+      \includegraphics[width=0.5\linewidth]{images/chap05/text05-img018.png}
       \caption{傾斜センサー}
       \smallskip
     \end{minipage} &
@@ -48,7 +48,7 @@
     \begin{minipage}[t]{\linewidth}
     \smallskip
       \centering
-      \includegraphics[width=\linewidth]{images/chap05/text05-img047.png}
+      \includegraphics[width=0.5\linewidth]{images/chap05/text05-img047.png}
       \caption{傾斜センサーの回路図}
       \smallskip
     \end{minipage}\\ \hline

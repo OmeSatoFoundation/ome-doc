@@ -1,67 +1,56 @@
+\newpage
 \section{ヘッドセットの使い方}
-演習の前に、ヘッドセットの設定をしましょう。ヘッドセットとは、コンピュータなどから音声を出力するためのヘッドフォンと、コンピュータなどに音声を入力するためのマイクが一体型になったものです。\\
-まずはラズベリーパイの電源を入れる前に、ヘッドセットとラズベリーパイをつないでおきます。
+\ruby{演習}{えん|しゅう}の前に、ヘッドセットの\ruby{設定}{せっ|てい}をしましょう。ヘッドセットとは、コンピュータなどから音声を出力するためのヘッドフォンと、コンピュータなどに音声を入力するためのマイクが一体型になったものです。\\
+まずはラズベリーパイの\ruby{電源}{でん|げん}を入れる前に、ヘッドセットとラズベリーパイをつないでおきます。
+ヘッドセットがラズベリーパイに\ruby{接続}{せつ|ぞく}されていると、画面の右上にマイクのアイコンが追加されます。
 
 \begin{figure}[H]
 \begin{center}
-    \includegraphics[width=\linewidth]{images/chap06/text06-img003.png}
-    \caption{つなげかた}
+    \includegraphics[width=.6\linewidth]{images/how_to_connect_headset.jpg}
+    \caption{ヘッドセットのつなげかた}
     \label{つなげかた}
 \end{center}
 \end{figure}
 
-ヘッドセットの出力音量はコントローラーかディスプレイで調整できます。
+ヘッドセットの出力音量はヘッドセットにつながっているコントローラーか、ディスプレイ右上のスピーカーのアイコンで調整できます。
 
 \begin{figure}[H]
 \begin{center}
-    \includegraphics[width=\linewidth]{images/chap06/text06-img004.png}
+    \includegraphics[width=.6\linewidth]{images/chap06/text06-img004.png}
     \caption{ヘッドセットのコントローラーの使い方}
     \label{ヘッドセットのコントローラーの使い方}
 \end{center}
 \end{figure}
 
-一番左のボタンでマイクのミュートを切りかえることができます。ミュートとは音を消すことです。マイクがミュートしているときは赤色のLEDが光っています。マイクを使うときはミュートを解除して、赤色のLEDが光っていないようにしましょう。真ん中のボタンは音のミュートです。音が聞こえないときはここを押してみましょう。右側のボタンは”+”で音量を上げる、”-”で音量を下げることができます。
+ヘッドセットのコントローラーの一番左のボタンでマイクのミュートを切りかえることができます。ミュートとは音を消すことです。マイクがミュートしているときは赤色のLEDが光っています。マイクを使うときはミュートを\ruby{解除}{かい|じょ}して、赤色のLEDが光っていないようにしましょう。真ん中のボタンは音のミュートです。音が聞こえないときはここを\ruby{押}{お}してみましょう。右側のボタンは ``+" で音量を上げる、``-" で音量を下げることができます。
+ヘッドセットの出力音量はディスプレイの右上にあるスピーカーのアイコンからも設定できます。
 
-マイクの音量はディスプレイからも設定できます。
+次に、音を出す音声デバイスを\ruby{選択}{せん|たく}しましょう。ディスプレイの右上にあるスピーカーアイコンを右クリックしてください。
 
-\begin{figure}[H]
-\begin{center}
-    \includegraphics[width=\linewidth]{images/chap06/text06-img005.png}
-    \caption{使う音声デバイスの選択と設定}
-    \label{使う音声デバイスの選択と設定}
-\end{center}
-\end{figure}
-
-ディスプレイの右上にある音マークを右クリックしてみましょう。使うことのできるデバイスが表示されます。HDMIとはディスプレイのことです。これを左クリックするとディスプレイから音を出すことができます。教室ではヘッドセットを使いますが、おうちではお父さんやお母さんにいいよと言われたら、ディスプレイやテレビから出力することもできます。USB PnP Sound Deviceはヘッドセットのことです。ヘッドセットを使うときはこちらを左クリックします。\\
-
-音量を変えるときは一番下のUSB Device Settings...を左クリックします。
-
-\begin{figure}[H]
-\begin{minipage}[t]{0.3\linewidth}
-\begin{center}
-    \includegraphics[width=\linewidth]{images/chap06/text06-img006.png}
-    \caption{画面の右上の音マークから USB Device Settings... をクリックしたところ。マイクの入力音量を調節するには、Select Controls をクリックする。}
-    \label{音量変更1}
-\end{center}
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=\linewidth]{images/select_sink.png}
+            \caption{使う音声デバイスの選択と設定}
+            \label{使う音声デバイスの選択と設定}
+        \end{center}
+    \end{figure}
 \end{minipage}
-\begin{minipage}[t]{0.3\linewidth}
-\begin{center}
-    \includegraphics[width=\linewidth]{images/chap06/text06-img007.png}
-    \caption{配布したヘッドセットのマイク設定をするために、「Microphone Capture」 をクリック。}
-    \label{音量変更2}
-\end{center}
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=\linewidth]{images/microphone_volume.png}
+            \caption{マイクの入力音量の調節方法}
+            \label{microphone_volume}
+        \end{center}
+    \end{figure}
 \end{minipage}
-\begin{minipage}[t]{0.3\linewidth}
-\begin{center}
-    \includegraphics[width=\linewidth]{images/chap06/text06-img008.png}
-    \caption{バーを上げ下げしてマイクの音量を調節する。}
-    \label{音量変更3}
-\end{center}
-\end{minipage}
-\end{figure}
 
-左下のSelect Controlsをクリックすると、真ん中の画面が出てきます。Microphone Captureをクリックしチェックを付けて画面を閉じます。すると右の画面のように音量調節バーが出ます。丸いつまみを上下に動かすことで音量を調節することができます。
+図 \ref{使う音声デバイスの選択と設定} に使うことのできるデバイスが\ruby{表示}{ひょう|じ}されます。HDMIとはディスプレイのことです。これを左クリックするとディスプレイから音を出すことができます。\aruby{USB}{ユーエスビー} \aruby{PnP}{プラグ・アンド・プレイ} \aruby{Sound}{サウンド} \aruby{Device}{デバイス}は接続したヘッドセットのことです。ヘッドセットを使うときはこちらを左クリックします。
+教室ではヘッドセットを使います。おうちでは、ディスプレイやテレビから音声を出力することもできます。
 
-教室ではヘッドセットで音を聞き、ヘッドセットのマイクで音声を入力するので、図\ref{使う音声デバイスの選択と設定}のように USB PnP Sound Device を選択し、図\ref{音量変更3}のようにマイクの入力音量を大きめにしておきましょう。
+マイクの入力音量を変えるときはマイクのアイコンを左クリックし、表示されたスライドバーを調節します。
 
-この際，「Make Default」ボタンを押してしまわないように注意してください．このボタンを押すと異なる設定がされてしまい，後で使う音声認識のプログラムが動作しなくなる場合があります．もし誤って押してしまった場合は，一度 /home/pi/.asoundrc を rm コマンドで削除してから，音声デバイスを再度設定してください．すでに使いたい音声デバイスが設定されている場合は，一度他の音声デバイスを選択してからもう一度使いたい音声デバイスを設定してください．たとえば，USB PnP Sound Device を使いたい場合は，一度 Analog を選択してからもう一度 USB PnP Sound Device を設定してください．
+
+
+教室ではヘッドセットで音を聞き、ヘッドセットのマイクで音声を入力するので、図\ref{使う音声デバイスの選択と設定}のように USB PnP Sound Device を選択し、図\ref{microphone_volume}のようにマイクの入力音量を最大にしておきましょう。

@@ -1,8 +1,9 @@
-\subsection{アナログ入力そうちを使ってみよう}
-デジタル入力そうちをHSPで使ってみましょう。GPIO24にボタン(\#103)をつけてください。HSPスクリプトエディタで/home/pi/ome/05/digin.hspを開いて実行してみましょう。\\
+\newpage
+\section{アナログ入力\ruby{装置}{そう|ち}を使ってみよう}
+アナログ入力装置をHSPで使ってみましょう。A0に感圧センサー(\#106)をつけてください。HSPスクリプトエディタで\textasciitilde /05/anain.hspを開いて実行してみましょう。\\
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.8]{images/chap05/text05-img030.png}
+    \includegraphics[scale=0.6]{images/chap05/text05-img030.png}
     \caption{アナログ入力A0}
 \end{figure}
 
@@ -28,29 +29,17 @@ spiopen 0	<#blue#;SPIチャンネルを開く#>
 spiclose 0	<#blue#;SPIチャンネルを閉じる#>
 \end{lstlisting}
 
-anain.hspはアナログ入力そうち用のプログラムです。アナログ入力にはA0,A1,A2,A3のピンを使います。感圧センサー、ボリューム、距離センサー、照度センサーを使うことができます。
+anain.hspはアナログ入力装置用のプログラムです。アナログ入力にはA0,A1,A2,A3のピンを使います。このプログラムは\ruby{感圧}{かん|あつ}センサー、ボリューム、\ruby{距離}{きょ|り}センサー、照度センサーに使うことができます。
 
-アナログ入力そうちから入力を受け取るときにSPI（Serial Peripheral Interface）という方法を使っています。\code{spiopen 0}命令を使ってラズベリーパイとアナログ入力そうちをつなげます。\code{spiclose 0}命令を使ってラズベリーパイとアナログ入力そうちのつながりを切ります。
+アナログ入力装置から入力を受け取るときにはSPI（Serial Peripheral Interface）で\ruby{接続}{せつ|ぞく}しているA/Dコンバータで電圧を\ruby{数値}{すう|ち}に\ruby{変換}{へん|かん}します。\code{spiopen 0}命令を使ってラズベリーパイとA/Dコンバータをつなげます。\code{spiclose 0}命令を使ってラズベリーパイとA/Dコンバータのつながりを切ります。
 
-アナログ入力は\code{spiget(ピン番号,0)}で値を受け取ります。ピン番号はブリックがつながっている番号です。入力される値は0～1023までの数字になります。詳しいアナログ入力そうちの使い方は\pageref{analog_in}ページから見てみましょう。\\
+アナログ入力は\code{spiget(ピン番号,0)}で値を受け取ります。ピン番号はブリックがつながっている番号です。入力される値は0～1023までの数字になります。\ruby{詳}{くわ}しいアナログ入力装置の使い方は\pageref{analog_in}ページから見てみましょう。\\
 
 \begin{tcolorbox}[title=\useOmetoi]
 \begin{enumerate}
-\item 感圧センサー(\#106)をA0につなげて上記のanain.hspを実行してみましょう。感圧センサーにさわる強さによって、画面の数字が変わります。
-\end{enumerate}
-\end{tcolorbox}
-\begin{tcolorbox}[title=\useOmetoi]
-\begin{enumerate}
-\item ボリューム(\#104)をA0につなげてanain.hspを実行してみましょう。ボリュームを動かすと、画面の数字が変わります。
-\end{enumerate}
-\end{tcolorbox}
-\begin{tcolorbox}[title=\useOmetoi]
-\begin{enumerate}
-\item 照度センサー(\#109)をA0につなげてanain.hspを実行してみましょう。明るさによって、画面の数字が変わります。
-\end{enumerate}
-\end{tcolorbox}
-\begin{tcolorbox}[title=\useOmetoi]
-\begin{enumerate}
-\item \code{spiget(0,0)}を\code{spiget(1,0)}に変えましょう。A1にアナログ入力そうちをつなぎましょう。anain.hspを実行してみましょう。
+\addex{感圧センサー(\#106)をA0につなげて上記のanain.hspを実行してみましょう。感圧センサーにさわる強さによって、画面の数字が変わります。}
+\addex{ボリューム(\#104)をA0につなげてanain.hspを実行してみましょう。ボリュームを動かすと、画面の数字が変わります。}
+\addex{照度センサー(\#109)をA0につなげてanain.hspを実行してみましょう。明るさによって、画面の数字が変わります。}
+\addex{\code{spiget(0,0)}を\code{spiget(1,0)}に変えましょう。A1にアナログ入力そうちをつなぎましょう。anain.hspを実行してみましょう。}
 \end{enumerate}
 \end{tcolorbox}

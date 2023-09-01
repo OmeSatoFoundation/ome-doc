@@ -16,12 +16,17 @@
 \usepackage[dvipdfmx]{hyperref}
 \usepackage{pxjahyper}
 \usepackage{url}
+\usepackage{okumacro}
 \hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, filecolor=blue, urlcolor=blue}
 \usepackage[dvipdfmx]{graphicx}
 \graphicspath{%
 {./text08-img/}%
 }
 
+\newcounter{Exercise}
+\newcounter{Question}
+\renewcommand\theExercise{例題 8-\arabic{Exercise}}
+\renewcommand\theQuestion{\textbf{問題 8-\arabic{Question}}}
 % Outline numbering
 \setcounter{secnumdepth}{3}
 \renewcommand\thesection{\arabic{section}}
@@ -78,7 +83,7 @@
 
 \clearpage\section{今回の授業}
 \subsection*{目標 : }
-\subsubsection*{ウェブページから欲しい情報を取り出す（スクレイピング）について学ぼう}
+\subsubsection*{ウェブページから\ruby{欲}{ほ}しい\ruby{情報}{じょうほう}を取り出す（スクレイピング）について学ぼう}
 \subsection*{注意点}
 \begin{itemize}
 \item
@@ -92,23 +97,23 @@
 \subsection*{教科書について}
 \begin{itemize}
 \item
-教科書には例題、それに似た問題があります
+教科書には例題、それに\ruby{似}{に}た問題があります
 
 \begin{itemize}
 \item
 まずは、例題をよく読みながら試してみましょう
-\item そのあと問題を解きましょう
+\item そのあと問題を\ruby{解}{と}きましょう
 \end{itemize}
 \item
-例題、問題をクリアしたらシールラリーカードにシールを貼りましょう
+例題、問題をクリアしたらシールラリーカードにシールを\ruby{貼}{は}りましょう
 \item
-授業中にすべての例題、問題をクリアできたらTAの先生にシールラリーカードを見せて、Complete（コンプリート）シールを貰いましょう
+授業中にすべての例題、問題をクリアできたらTAの先生にシールラリーカードを見せて、Complete（コンプリート）シールを\ruby{貰}{もら}いましょう
 \item
 授業中に終わらなかった例題、問題は宿題になるので、できるだけ授業中に終わらせましょう
 \item
 授業中にわからないところがあったらすぐにTAの先生に聞きましょう
 \item
-家でわからないことがあったら、すぐに質問フォームから質問しましょう。
+家でわからないことがあったら、すぐに\ruby{質問}{しつもん}フォームから質問しましょう。
 \end{itemize}
 
 \subsection*{教材を自分のフォルダに置こう}
@@ -122,7 +127,7 @@
 
 \bigskip
 
-\clearpage\section{ウェブページから情報を取り出す(準備)}
+\clearpage\section{ウェブページから情報を取り出す(\ruby{準備}{じゅんび})}
 ウェブページから自分の必要な情報のみ取り出す方法を学びます。
 まずはプログラムから自動で情報を取り出すのではなく、スクレイピングの仕組みを理解するために、一つずつ手動で行います。
 
@@ -131,16 +136,16 @@
 \bigskip
 
 {\bfseries\color[rgb]{1.0,0.2,0.2}
-※　講義では友達のIPアドレスやwebページを使っていますが、個人で勉強する時は自分の　　　　}
+※ \ruby{講義}{こうぎ}では友達のIPアドレスやwebページを使っていますが、\ruby{個人}{こじん}で勉強する時は自分の }
 
 {\bfseries\color[rgb]{1.0,0.2,0.2}
-　　　IPアドレスやwebページを使って例題や問題を行ってください。}
+    IPアドレスやwebページを使って例題や問題を行ってください。}
 
 手順
 \begin{enumerate}
 
 	\item
-グループの席を円と考えましょう。左となりの友達を確認します
+グループの席を円と考えましょう。左となりの友達を\ruby{確認}{かくにん}します
 
 
 \bigskip
@@ -164,7 +169,7 @@
 
 
 \item
-左となりの人の自己紹介ページをダウンロードします
+左となりの人の\ruby{自己紹介}{じこしょうかい}ページをダウンロードします
 
 \item
 ダウンロードしたページを調べてみましょう。
@@ -176,7 +181,7 @@
 
 1回目に作った自己紹介ページをindex.htmlとしてコピーします
 
-\textbf{cp \ \~{}/ome/01/self\_intro.html \ \ \~{}/ome/08/www/index.html}
+\textbf{cp \ \~{}/01/self\_intro.html \ \ \~{}/08/www/index.html}
 
 
 
@@ -190,7 +195,7 @@
 
 ウェブサーバの使い方については「付録　webserver.pyの使い方」を確認してください。
 
-\textbf{cd \ \~{}/ome/08/www}
+\textbf{cd \ \~{}/08/www}
 
 \textbf{./webserver.py}
 
@@ -208,9 +213,9 @@
 %September 23, 2019 10:21 PM
 
 
-ウェブサーバにアクセスする際は、IPアドレスとともに3000番のポートを指定する必要があります。
+ウェブサーバにアクセスする\ruby{際}{さい}は、IPアドレスとともに3000番のポートを指定する必要があります。
 
-このターミナルは閉じずに、もう一つターミナルを開いてください。
+このターミナルは\ruby{閉}{と}じずに、もう一つターミナルを開いてください。
 
 \textbf{hostname -I}
 
@@ -305,15 +310,16 @@ IPアドレス:ポート
 
 \bigskip
 
-\clearpage\section{例題8-1
-コマンドラインからウェブページをダウンロードする}
+\refstepcounter{Exercise}
+\clearpage\section{\theExercise　コマンドラインからウェブページをダウンロードする}
+\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:CURL}
 インターネットから情報を取ってくるときに使用するツールは
 curl (カール)と言います。 curl
 はデータを送ったり受け取ったりするときに使います。
 
 左となりの友達のウェブページを取得してみましょう。
 
-保存するファイル名はローマ字で”友達の名前.html”にしましょう。
+\ruby{保存}{ほぞん}するファイル名はローマ字で”友達の名前.html”にしましょう。
 
 例 : koyama.html
 
@@ -321,7 +327,7 @@ curl (カール)と言います。 curl
 
 ターミナルを開いてください。
 
-\textbf{cd \ \~{}/ome/08}
+\textbf{cd \ \~{}/08}
 
 curl “左となりの友達のIPアドレス”:3000/index.html -o
 friend.html
@@ -348,11 +354,11 @@ HTMLファイルをダウンロードしてfriend.htmlとして保存してい�
 \begin{center}
 \begin{boxedminipage}{17.228cm}
 \section*{コラム
-curlコマンドのオプション(機能)}
+curlコマンドのオプション(\ruby{機能}{きのう})}
 
 \bigskip
 
-curlコマンドを何もオプションをつけないで実行すると、ターミナルにダウンロードした情報を表示します。コマンドに”-o”オプションをつけることで、ターミナルに表示する代わりに、ファイルに保存することができます。
+curlコマンドを何もオプションをつけないで実行すると、ターミナルにダウンロードした情報を\ruby{表示}{ひょうじ}します。コマンドに”-o”オプションをつけることで、ターミナルに表示する代わりに、ファイルに保存することができます。
 
 “-o
 “の後に保存するファイル名を指定します。
@@ -372,9 +378,9 @@ curlコマンドを何もオプションをつけないで実行すると、タ�
 \end{center}
 ファイル(F) → 開く(O)..
 
-をクリックして\textbf{\~{}/ome/08/friend.html}
+をクリックして\textbf{\~{}/08/friend.html}
 
-を開きます。自己紹介のらんにある名前を探して確認してみよう。
+を開きます。自己紹介のらんにある名前を\ruby{探}{さが}して確認してみよう。
 
 
 
@@ -389,8 +395,8 @@ curlコマンドを何もオプションをつけないで実行すると、タ�
 ”いわきあおと”のウェブページのHTMLファイルがダウンロードできていることが確認できました。
 
 次はダウンロードしたHTMLファイルから情報を取り出してみよう。
-
-\clearpage\subsection*{問題8-1}
+\refstepcounter{Question}
+\clearpage\subsection*{\theQuestion}
 \begin{itemize}
 \item curl
 を使って、グループの友達全員のウェブページを保存しよう。
@@ -400,7 +406,8 @@ curlコマンドを何もオプションをつけないで実行すると、タ�
 
 \ \ \ \ (例: koyama.html)
 
-\subsection*{問題8-2}
+\refstepcounter{Question}
+\subsection*{\theQuestion}
 \begin{itemize}
 \item
 leafpadを使ってダウンロードしたHTMLファイルを開いて友達の名前を確認してみよう
@@ -408,15 +415,17 @@ leafpadを使ってダウンロードしたHTMLファイルを開いて友達の
 \ \ \ \ Hint :
 ダウンロードしたファイルをleafpadで見てみよう
 
-\clearpage\section{例題8-2
-ダウンロードしたページを調べてみましょう}
+\refstepcounter{Exercise}
+\clearpage\section{\theExercise　ダウンロードしたページを調べてみましょう}
+\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:HTML}
 考え方
 
-例題8-1で、友達のウェブページのHTMLをダウンロードしました。次はほしい情報を取り出します。ここでは、テキストエディタで検索をして、ほしい情報を探し抜き出します。
+
+\ref*{E:CURL}で、友達のウェブページのHTMLをダウンロードしました。次はほしい情報を取り出します。ここでは、テキストエディタで\ruby{検索}{けんさく}をして、ほしい情報を探し\ruby{抜}{ぬ}き出します。
 
 コマンドラインを開いて
 
-\textbf{cd \ \~{}/ome/08/}
+\textbf{cd \ \~{}/08/}
 
 leafpad
 
@@ -433,7 +442,7 @@ leafpad
 
 ファイル(F) → 開く(O)..
 
-をクリックして\textbf{\~{}/ome/08/friend.html}
+をクリックして\textbf{\~{}/08/friend.html}
 
 
 
@@ -480,7 +489,8 @@ leafpad
 
 {\bfseries
 注意 :
-{\textless}title{\textgreater}は半角文字です。入力モードが半角になっているか確認してください。(詳しくは例題1-4を見てください)}
+{\textless}title{\textgreater}は半角文字です。入力モードが半角になっているか確認してください。(\ruby{詳}{くわ}しくは例題1-4を見てください)}
+
 
 
 \begin{center}
@@ -494,12 +504,13 @@ leafpad
 \bigskip
 
 毎回手動で友達のウェブページをダウンロードして、検索して探すのは大変です。次はプログラムから自動で行う方法を学びましょう。
-
-\clearpage\section{例題8-3 HSPから情報を取り出す}
+\refstepcounter{Exercise}
+\clearpage\section{\theExercise　HSPから情報を取り出す}
+\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:SCRAPING}
 考え方
 
 前の例題でやったように、毎回手動で友達のウェブページをダウンロードして、テキストエディタを使って検索するのは大変です。
-また、ウェブページが更新されたら、同じ手順を繰り返して情報を取り直さないといけません。
+また、ウェブページが\ruby{更新}{こうしん}されたら、同じ手順を\ruby{繰}{く}り返して情報を取り直さないといけません。
 そこで、今回はこの手順をHSPのプログラムで自動で行う方法を学びます。
 
 友達のウェブページからウェブページのタイトルを取り出してみよう。
@@ -519,7 +530,7 @@ hsed　を実行してください
 \includegraphics[width=16.94cm]{textbook-img013.png}
 
 \end{center}
-\textbf{\~{}/ome/08/title.hsp}
+\textbf{\~{}/08/title.hsp}
 
 を開いてください
 
@@ -545,7 +556,7 @@ hsed　を実行してください
 
 \ \ → friend\_ip = “192.168.1.90”
 
-F5を押して実行してみましょう。
+F5を\ruby{押}{お}して実行してみましょう。
 実行結果はhsedを実行したターミナルに表示されます。
 
 
@@ -597,11 +608,11 @@ html変数内のtitleタグを探してtag変数へいれる
 \item ; tag変数を表示
 \item mes tag
 \item ;
-タグ({\textless}title{\textgreater},{\textless}/title{\textgreater})を取り除いてテキストのみにしてtext変数に入れる
+タグ({\textless}title{\textgreater},{\textless}/title{\textgreater})を取り\ruby{除}{のぞ}いてテキストのみにしてtext変数に入れる
 \item htmluntag tag, text
 \item ; buf変数を表示
 \item mes text
-\item ; プログラム終了
+\item ; プログラム\ruby{終了}{しゅうりょう}
 \item end
 \end{enumerate}
 \end{boxedminipage}
@@ -637,7 +648,7 @@ html変数内のtitleタグを探してtag変数へいれる
 
 curl url, html
 
-はurl変数で指定されているウェブページをダウンロードしてファイルの中身をhtml変数へ読み込んでいます。
+はurl変数で指定されているウェブページをダウンロードしてファイルの中身をhtml変数へ読み\ruby{込}{こ}んでいます。
 
 
 \bigskip
@@ -674,7 +685,7 @@ htmltag命令の使い方
 
 17行目では、titleタグの検索結果を表示しています。
 
-表示結果では、{\textless}title{\textgreater}趣味のページ{\textless}/title{\textgreater}となっています。
+表示結果では、{\textless}title{\textgreater}\ruby{趣味}{しゅみ}のページ{\textless}/title{\textgreater}となっています。
 
 実際に欲しい情報は{\textless}title{\textgreater}{\textless}/title{\textgreater}の間にある文字列つまりこの例では、”趣味のページ”です。
 
@@ -742,12 +753,13 @@ src変数のタグを取り外してタグの間にあるテキストだけに�
 
 \bigskip
 
-このようにさっきターミナルやテキストエディタで頑張って手動で行った動作をプログラムで行うことができました。
-プログラムから情報を取り出すことができると、取り出した情報を使ってウェブページを作ったり、情報をもとにセンサーなどを操作できるようになります。
-例えば、次の例で試すアメダスとよばれる気象情報観測システムの観測情報（気温、降水確率）などの情報を取り出し、LEDなどのセンサーと組み合わせます。
-実現したいアイディアがあったらメモをしておきましょう。
+このようにさっきターミナルやテキストエディタで\ruby{頑張}{がんば}って手動で行った動作をプログラムで行うことができました。
+プログラムから情報を取り出すことができると、取り出した情報を使ってウェブページを作ったり、情報をもとにセンサーなどを\ruby{操作}{そうさ}できるようになります。
+例えば、次の例で試すアメダスとよばれる\ruby{気象情報観測}{きしょうじょうほうかんそく}システムの観測情報（気温、\ruby{降水確率}{こうすいかくりつ}）などの情報を取り出し、LEDなどのセンサーと組み合わせます。
+\ruby{実現}{じつげん}したいアイディアがあったらメモをしておきましょう。
 
-\clearpage\subsection*{問題8-3}
+\refstepcounter{Question}
+\clearpage\subsection*{\theQuestion}
 \begin{itemize}
 \item
 残りのグループ内の友達のウェブページのタイトルを取り出してみよう
@@ -757,14 +769,16 @@ firend\_ipでダウンロードしたい友達のIPアドレスを指定する
 
 \ \ \ \ メモした友達のIPアドレスを使おう
 
-\subsection*{問題8-4}
+\refstepcounter{Question}
+\subsection*{\theQuestion}
 \begin{itemize}
 \item 13行目 curl url, htmlの下の行にmes
 htmlを追加して、実際にダウンロードされたHTMLを確認してみよう
 \end{itemize}
 \ \ HINT : 14行目にmes htmlを書く
 
-\subsection*{問題8-5}
+\refstepcounter{Question}
+\subsection*{\theQuestion}
 \begin{itemize}
 \item 15行目のhtmltag html, “title”,
 tagの”title”を”ol”に変更してみましょう
@@ -780,7 +794,8 @@ tag命令はtag変数の中に、
 タグを探して、結果を入れてくれます。
 
 
-\subsection*{問題8-6}
+\refstepcounter{Question}
+\subsection*{\theQuestion}
 \begin{itemize}
 \item 15行目のhtmltag html, “title”,
 tagの”title”を探したいタグへ変更しよう
@@ -797,11 +812,11 @@ tagの”title”を探したいタグへ変更しよう
 1しかわからないことを学びました。
 0,1の２種類でなる数字列を2進数（バイナリ）といいます。
 ところで、文字はどのように表示されているのでしょうか？そこで使われるのが文字コードです。
-コンピュータは結局数値しかわからないので、数値と文字の対応を用いて、人間のわかる文字を表現します。
-その対応にあたるものが文字コードで、数字列を文字に変換するルールです。
+コンピュータは結局\ruby{数値}{すうち}しかわからないので、数値と文字の\ruby{対応}{たいおう}を用いて、人間のわかる文字を表現します。
+その対応にあたるものが文字コードで、数字列を文字に\ruby{変換}{へんかん}するルールです。
 
 例えば、ASCIIでは英語のアルファベットをすべて表現できます。
-ASCIIはアメリカで決められ、英語圏ではよく使われます。
+ASCIIはアメリカで決められ、\ruby{英語圏}{えいごけん}ではよく使われます。
 ASCIIのテーブルをみて、表現を確認してみましょう。
 
 
@@ -823,7 +838,7 @@ Char(Character)は文字を意味します。}
 
 \end{center}
 ASCII
-コードでは２進数7桁で一つの文字を表します。
+コードでは２進数7\ruby{桁}{けた}で一つの文字を表します。
 128個の文字を表すことができます。
 
 
@@ -837,14 +852,14 @@ ASCII
 
 \clearpage
 ASCIIでは0〜127を使用していました。
-しかし、漢字などたくさんの文字がある日本語、中国語などではこの数値の範囲に収まりません。
-いろいろな会社や組織が別々の方法で工夫して日本語を表現したので、異なる文字コードがあります。
+しかし、漢字などたくさんの文字がある日本語、中国語などではこの数値の\ruby{範囲}{はんい}に\ruby{収}{おさ}まりません。
+いろいろな会社や\ruby{組織}{そしき}が\ruby{別々}{べつべつ}の方法で工夫して日本語を表現したので、\ruby{異}{こと}なる文字コードがあります。
 
 代表的な文字コードと使いみちの例をあげます。
 
 \begin{itemize}
-\item Shift\_JIS　日本語版Windows・Mac
-\item EUC-JP　旧UNIXワークステーション
+\item Shift\_JIS \ruby{日本語版}{にほんごばん}Windows・Mac
+\item EUC-JP　\ruby{旧}{きゅう}UNIXワークステーション
 \item ISO-2022-JP　電子メール
 \item Unicode(UTF-8)
 ラズベリーパイ、スマートフォン、海外版Windows
@@ -854,12 +869,11 @@ ASCIIでは0〜127を使用していました。
 \end{itemize}
 
 \bigskip
-
-\clearpage\section{例題8-4
-数字をASCIIを使って文字に変える}
+\refstepcounter{Exercise}
+\clearpage\section{\theExercise　数字をASCIIを使って文字に変える}
 考え方
 
-\ \ printfコマンドを使用すると数字をASCIIに従って文字へ変換できます。
+\ \ printfコマンドを使用すると数字をASCIIに\ruby{従}{したが}って文字へ変換できます。
 表のHEXの列をみて、41,
 42,
 43を探してみましょう。
@@ -894,17 +908,20 @@ Char(Character)は文字を意味します。}
 {\bfseries
 [\url{https://simple.wikipedia.org/wiki/ASCII}]}
 
-\clearpage\subsection*{問題 8-7}
+\refstepcounter{Question}
+\clearpage\subsection*{\theQuestion}
 \begin{itemize}
 \item
 ASCIIを使ってローマ字で自分の名前を表示させてみよう
 \end{itemize}
-\subsection*{問題8-8}
+\refstepcounter{Question}
+\subsection*{\theQuestion}
 \begin{itemize}
 \item
 ASCIIを使ってローマ字でとなりの友達の名前を表示させてみよう
 \end{itemize}
-\subsection*{問題8-9}
+\refstepcounter{Question}
+\subsection*{\theQuestion}
 \begin{itemize}
 \item
 ASCIIで顔文字を作って表示させてみよう
@@ -926,15 +943,15 @@ Char(Character)は文字を意味します。}
 \end{center}
 {\bfseries
 [\url{https://simple.wikipedia.org/wiki/ASCII}]}
-
-\clearpage\section{例題8-5
-数字をUTF-8を使って文字に変える}
+\refstepcounter{Exercise}
+\clearpage\section{\theExercise　数字をUTF-8を使って文字に変える}
+\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:UTF8}
 考え方
 
 \ \ printfコマンドを使用すると数字をUTF-8に従って文字に変換できます。
-UTF-8は日本語も漢字を含め表現することができます。
+UTF-8は日本語も漢字を\ruby{含}{ふく}め表現することができます。
 
-授業で使用したホームページを開いてください。\textbf{(\~{}/ome/08/links.html)}
+授業で使用したホームページを開いてください。\textbf{(\~{}/08/links.html)}
 
 
 
@@ -979,12 +996,14 @@ E3 81 80 + 2 = E3 81 82
 
 {\textbackslash}xはHE\textbf{X}(16進数であることを指定します)
 
-\clearpage\subsection*{問題 8-10}
+\refstepcounter{Question}
+\clearpage\subsection*{\theQuestion}
 \begin{itemize}
 \item
 UTF-8を使ってひらがなで自分の名前を表示させてみよう
 \end{itemize}
-\subsection*{問題8-11}
+\refstepcounter{Question}
+\subsection*{\theQuestion}
 \begin{itemize}
 \item
 UTF-8を使ってひらがなでとなりの友達の名前を表示させてみよう
@@ -1003,15 +1022,14 @@ UTF-8を使ってひらがなでとなりの友達の名前を表示させてみ
 \bigskip
 
 [\url{http://orange-factory.com/sample/utf8/code3/e3.html#Hiragana}]
-
-\clearpage\section{例題8-6
-ウェブページで使用されている文字コードを変換する}
+\refstepcounter{Exercise}
+\clearpage\section{\theExercise　ウェブページで使用されている文字コードを変換する}
 考え方
 
-ある文字コードで表現された文字列を他の文字コードで解釈すると文字化けをする可能性があります。
-例えば、UTF-8と設定されたターミナルなどのアプリケーションでEUC-JPで書かれたファイルを開くなどすると文字化けをします。
-これは、文字を表現するのに２つの文字コード間で数値が違うからです。
-ターミナルなどのアプリケーションから正しく扱うためには、ターミナルやアプリケーションが使っている文字コードに変換する必要があります。
+ある文字コードで表現された文字列を他の文字コードで\ruby{解釈}{かいしゃく}すると文字化けをする\ruby{可能性}{かのうせい}があります。
+例えば、UTF-8と\ruby{設定}{せってい}されたターミナルなどのアプリケーションでEUC-JPで書かれたファイルを開くなどすると文字化けをします。
+これは、文字を表現するのに２つの文字コード間で数値が\ruby{違}{ちが}うからです。
+ターミナルなどのアプリケーションから正しく\ruby{扱}{あつ}うためには、ターミナルやアプリケーションが使っている文字コードに変換する必要があります。
 この例では変換の練習をします。
 
 ターミナルが使っている文字コードを確認してみよう
@@ -1029,7 +1047,7 @@ jp\_ja.UTF-8
 
 のように表されています。
 ターミナルはUTF-8の文字コードを使用しています。
-LANGは(環境)変数で、アプリケーションやコマンドが使用するロケール（国や地域によって異なる言語や単位、日付などの表記など）の設定をします。
+LANGは(\ruby{環境}{かんきょう})変数で、アプリケーションやコマンドが使用するロケール（国や\ruby{地域}{ちいき}によって異なる言語や単位、日付などの表記など）の設定をします。
 
 
 LANGに設定されている文字コードと表示したい文字コードが異なっていると、文字化けをします。例えば、UTF-8を使っているシステムで、EUC-JPで表現された文字列を表示した場合など。
@@ -1037,7 +1055,7 @@ LANGに設定されている文字コードと表示したい文字コードが�
 
 試しにUTF-8以外の文字コードを使用しているウェブサイトをcurlでダウンロードして、UTF-8として設定されているターミナルに表示させてみよう
 
-\textbf{cd \~{}/ome/08}
+\textbf{cd \~{}/08}
 
 curl \url{http://x68000.q-e-d.net/~68user/unix/pickup?iconv} -o hsp.html
 
@@ -1068,7 +1086,7 @@ charset=”EUC-JP”{\textgreater}という行を探してみよう。
 
 このHTMLファイルはEUC-JPという文字コードが使われています。
 
-ファイルの中を見てみると、文字化けしている箇所があります。
+ファイルの中を見てみると、文字化けしている\ruby{箇所}{かしょ}があります。
 
 
 
@@ -1077,7 +1095,7 @@ charset=”EUC-JP”{\textgreater}という行を探してみよう。
 \includegraphics[width=17.006cm]{textbook-img021-2.png}
 
 \end{center}
-UTF-8を使っているターミナルへEUC-JPで記述されたファイルの中身を表示したので、このように文字化けしてしまいます
+UTF-8を使っているターミナルへEUC-JPで\ruby{記述}{きじゅつ}されたファイルの中身を表示したので、このように文字化けしてしまいます
 
 
 \bigskip
@@ -1131,11 +1149,11 @@ iconv hsp.html -f EUC-JP -t UTF-8 -o hsp\_utf8.html
 charset=””{\textgreater}で文字コードを指定しています。
 ブラウザやHTMLを扱うソフトウェアの多くはここに書かれている文字コードを使用してHTMLを理解します。
 
-試しに、UTF-8に変換したHTMLファイル\textbf{(\~{}/ome/08/hsp\_utf8.html)}をブラウザで開いてみよう。
+試しに、UTF-8に変換したHTMLファイル\textbf{(\~{}/08/hsp\_utf8.html)}をブラウザで開いてみよう。
 
 ブラウザを開いて、
 
-\textbf{\~{}/ome/08/hsp\_utf8.html}　と入力しエンターを押します。
+\textbf{\~{}/08/hsp\_utf8.html}　と入力しエンターを押します。
 
 \begin{center}
   % Unhandled or unsupported graphics:
@@ -1143,10 +1161,10 @@ charset=””{\textgreater}で文字コードを指定しています。
 
 \end{center}
 表示されているほとんどが、文字化けしています。
-画像はダウンロードしていないので表示されません。
+\ruby{画像}{がぞう}はダウンロードしていないので表示されません。
 これは、ファイルの中身をUTF-8に変換したけれど、ブラウザやHTMLを扱う多くのソフトウェアは{\textless}meta
-charset=””{\textgreater}を確認して文字コードを判断します。
-ここを修正しなければ、正しく扱われません。
+charset=””{\textgreater}を確認して文字コードを\ruby{判断}{はんだん}します。
+ここを\ruby{修正}{しゅせい}しなければ、正しく扱われません。
 このタグで指定している文字コードを変換後の文字コードであるUTF-8に変更して置く必要があります。
 
 
@@ -1202,33 +1220,29 @@ charset=”UTF-8”に変更します。
 
 文字化けせずに正しく表示されました。
 HTMLファイルの文字コードを変換するときは、{\textless}meta
-charset=””{\textgreater}を変換後の文字コードに変更するのを忘れないようにしましょう。
+charset=””{\textgreater}を変換後の文字コードに変更するのを\ruby{忘}{わす}れないようにしましょう。
 
 \clearpage\section{スクレイピング}
 クレイピングとは、ウェブページから情報を取り出すことをいいます。
 スクレイピングの手順はウェブページをダウンロードして、ウェブページから欲しい情報を探して取り出し、そして、取り出し情報を加工します。
-例題8-1,
-8-2%
-%例題番号UPDATE
-%koyaman
-%September 24, 2019 4:28 PM
+\ref*{E:CURL},\ref*{E:HTML}
 で手動でウェブページをダウンロードして、そこから情報を取り出しました。
-そのあとの例題8-3では、同じ手順をプログラムで自動で行いました。
-ウェブページから取り出した情報をプログラムから有効的に使う方法を学びましょう。
-ウェブページから取り出した情報をもとにセンサーを使ったり、情報をウェブページに反映することもできます。
-ウェブページから価値のある情報を取り出して、今まで習った技術と組み合わせて役に立つプログラムを作れるように考えながら例題を進めていきましょう。
+そのあとの\ref*{E:SCRAPING}では、同じ手順をプログラムで自動で行いました。
+ウェブページから取り出した情報をプログラムから\ruby{有効的}{ゆうこうてき}に使う方法を学びましょう。
+ウェブページから取り出した情報をもとにセンサーを使ったり、情報をウェブページに\ruby{反映}{はんえい}することもできます。
+ウェブページから\ruby{価値}{かち}のある情報を取り出して、今まで習った\ruby{技術}{ぎじゅつ}と組み合わせて役に立つプログラムを作れるように考えながら例題を進めていきましょう。
 
 
 
 \bigskip
-
-\clearpage\section{例題8-7アメダスのウェブページをスクレイピングする}
+\refstepcounter{Exercise}
+\clearpage\section{\theExercise　アメダスのウェブページをスクレイピングする}
 %\newline
 考え方
 
 まずは、ウェブブラウザでアメダスのページを見てみよう。
 授業で使用したホームページを開いてください。
-\textbf{(\~{}/ome/08/links.html)}
+\textbf{(\~{}/08/links.html)}
 
 アメダスをクリックします。
 
@@ -1254,7 +1268,7 @@ charset=””{\textgreater}を変換後の文字コードに変更するのを�
 
 \end{center}
 \clearpage
-少ししたのほうに”アメダス履歴（10分観測値)”という見出しがあります。
+少ししたのほうに”アメダス\ruby{履歴}{りれき}（10分観測値)”という見出しがあります。
 
 青梅市のアメダス観測データを10分毎に表にしたものです。
 
@@ -1306,7 +1320,7 @@ HSPスクリプトエディタが開くので
 
 ファイル → 開く..
 
-をクリックして\textbf{\~{}/ome/08/amedas.hsp}を開きます。
+をクリックして\textbf{\~{}/08/amedas.hsp}を開きます。
 
 プログラムが表示されます。
 
@@ -1339,7 +1353,7 @@ F5を押して実行してみましょう。実行結果はターミナルに表
 
 \bigskip
 
-表示されている時刻、気温、降水とブラウザで見たアメダスの情報を比べてみてください。
+表示されている\ruby{時刻}{じこく}、気温、降水とブラウザで見たアメダスの情報を\ruby{比}{くら}べてみてください。
 
 
 
@@ -1381,7 +1395,7 @@ F5を押して実行してみましょう。実行結果はターミナルに表
 \end{center}
 4行目でHSPプログラム内からamedas.pyコマンドを実行しています。
 
-cmdexec命令は、execと基本的には同じですが、実行するコマンドの後に変数名をつけます。
+cmdexec命令は、execと\ruby{基本的}{きほんてき}には同じですが、実行するコマンドの後に変数名をつけます。
 この変数にはコマンドの実行結果が文字列で入ります。
 
 一度、amedas.pyコマンドをターミナルで実行してみましょう。
@@ -1411,9 +1425,9 @@ amedas.py を実行します。
 \end{center}
 日時、気温、降水量、風向、風速、日照時間、積雪深の順番で値と値の見出しが表示されています。
 
-このカンマ（,)区切りの数値も同じ並びで表示されています。
+このカンマ（,)区切りの数値も同じ\ruby{並}{なら}びで表示されています。
 
-HSPのプログラムに戻ります。
+HSPのプログラムに\ruby{戻}{もど}ります。
 
 \begin{center}
   % Unhandled or unsupported graphics:
@@ -1487,7 +1501,8 @@ orange ← “オレンジ”\\\hline
 
 mes jikan + {\textquotedbl} \ {\textquotedbl} + kion + {\textquotedbl} \ \ {\textquotedbl} + kousui
 
-\clearpage\subsection*{問題8-12}
+\refstepcounter{Question}
+\clearpage\subsection*{\theQuestion}
 \begin{itemize}
 \item
 .例題のプログラムでは、日時、気温、降水だけ表示しています。
@@ -1497,17 +1512,18 @@ mes jikan + {\textquotedbl} \ {\textquotedbl} + kion + {\textquotedbl} \ \ {\tex
 \ \ HINT : それぞれkazamuki, fusoku,
 nisyouという変数に情報が入っています。
 
-\subsection*{問題 8-13}
+\refstepcounter{Question}
+\subsection*{\theQuestion}
 \begin{itemize}
 \item
-kionが25.0度以上のときに、現在の気温を表示し、センサーボードの赤色LEDをつけてみましょう。
+kionが25.0度以上のときに、\ruby{現在}{げんざい}の気温を表示し、センサーボードの赤色LEDをつけてみましょう。
 		それ以外の場合は、画面に現在の気温を表示し、白色LEDをつけましょう。
 \end{itemize}
 \ \ HINT :
 例題プログラムのkionを数値へ変換してみましょう。
 
 \ \ HINT :
-プログラムに応用するには大小の比較とかできると便利です。
+プログラムに応用するには大小の\ruby{比較}{ひかく}とかできると便利です。
 大小比較をするには文字列から数値へ変換が必要です
 
 \ \ HSPでは、文字列で表された数値はdouble関数を使って文字列から数値へ変換できます。
@@ -1532,7 +1548,8 @@ kionが25.0度以上のときに、現在の気温を表示し、センサーボ
 
 \bigskip
 
-\subsection*{問題 8-14}
+\refstepcounter{Question}
+\subsection*{\theQuestion}
 \begin{itemize}
 \item
 このアメダスのスクレイピングの例題とすでに習った技術（センサーボードの使い方、ゲーム、Fabo、赤外線など）と組み合わせるとどんなことができるか考えて、１つ上げてみよう。
@@ -1544,17 +1561,16 @@ kionが25.0度以上のときに、現在の気温を表示し、センサーボ
 \bigskip
 
 \clearpage\section{スクレイピングの仕組み}
-例題8-3でHSPのプログラムから友達のウェブページのタイトルを取り出したように、スクレイピングでは、HTMLファイルのタグ(例題8-3では{\textless}title{\textgreater}{\textless}/title{\textgreater})を探します。
-しかし、ウェブページの欲しい情報はHTMLファイル内のどのタグで作られているでしょうか？ウェブページをダウンロードして、HTMLファイルを眺めても探しても良いのですが、かなり大変です。
-ここでは、ウェブページの欲しい情報がどのHTMLファイル内のどのタグで作られているか調べる方法としてブラウザの検証ツールを使った方法を紹介します。
+\ref*{E:SCRAPING}でHSPのプログラムから友達のウェブページのタイトルを取り出したように、スクレイピングでは、HTMLファイルのタグ(\ref*{E:SCRAPING}では{\textless}title{\textgreater}{\textless}/title{\textgreater})を探します。
+しかし、ウェブページの欲しい情報はHTMLファイル内のどのタグで作られているでしょうか？ウェブページをダウンロードして、HTMLファイルを\ruby{眺}{なが}めても探しても良いのですが、かなり大変です。
+ここでは、ウェブページの欲しい情報がどのHTMLファイル内のどのタグで作られているか調べる方法としてブラウザの\ruby{検証}{けんしょう}ツールを使った方法を紹介します。
 アメダスのウェブページを例に試していきます。
-
 
 \bigskip
 
 まずは、ウェブブラウザでアメダスのページを見てみよう。
 授業で使用したホームページを開いてください。
-\textbf{(\~{}/ome/08/links.html)}
+\textbf{(\~{}/08/links.html)}
 
 アメダスをクリックします。
 
@@ -1625,7 +1641,7 @@ kionが25.0度以上のときに、現在の気温を表示し、センサーボ
 \includegraphics[width=17.006cm]{textbook-img035-2.png}
 
 \end{center}
-現在、選択しているのは{\textless}td{\textgreater}{\textless}/td{\textgreater}タグです。
+現在、\ruby{選択}{せんたく}しているのは{\textless}td{\textgreater}{\textless}/td{\textgreater}タグです。
 {\textless}td{\textgreater}{\textless}/td{\textgreater}タグ(table
 data,
 表の値)は表の値にあたる部分を書くときに使用します。
@@ -1637,7 +1653,6 @@ data,
 
 表は{\textless}table{\textgreater}{\textless}/table{\textgreater}タグ(table,
 表)で作りました。
-(詳しくは1回目のテキストの例題1-19に説明があります。）
 
 
 アメダスのサイトから情報を取り出す際には、まずは、{\textless}table{\textgreater}{\textless}/table{\textgreater}タグを探して取り出します。
@@ -1664,22 +1679,22 @@ data,
 のようにタグに情報がついています。
 classはいわば名前のようなもので、このタグについている情報を使ってタグをHTMLファイルから取り出すのが良いです。
 このウェブページには、表が何個もあるので、{\textless}table{\textgreater}{\textless}/table{\textgreater}タグだけでは、すべての表が当てはまります。
-しかし、このように名前などタグについた情報を一緒に指定することで、取りたいタグをより限定的にできます。
+しかし、このように名前などタグについた情報を\ruby{一緒}{いっしょ}に指定することで、取りたいタグをより\ruby{限定的}{げんていてき}にできます。
 
 
 \bigskip
 
 
 \bigskip
-
-\clearpage\section{応用例題8-1 amedas.pyをlessで見てみよう}
+\refstepcounter{Exercise}
+\clearpage\section{\theExercise　amedas.pyをlessで見てみよう}
 「スクレイピングの仕組み」では、アメダスのウェブページからアメダス観測値を取得する流れを解説しました。
 実際にウェブページから値を取り出すのに使用しているコマンド(プログラム)を見てみましょう。
-amedas.pyコマンドはHSPのプログラムから呼び出しているものです。
+amedas.pyコマンドはHSPのプログラムから\ruby{呼}{よ}び出しているものです。
 
 このプログラムはPython
-2(パイソン)という言語で書かれています。
-HSPとは書き方が違うので少し難しいかもしれないですが、プログラムの内容が理解できなくても、問題はないので気楽に見てみましょう。
+3(パイソン)という言語で書かれています。
+HSPとは書き方が違うので少し\ruby{難}{むず}しいかもしれないですが、プログラムの\ruby{内容}{ないよう}が理解できなくても、問題はないので気楽に見てみましょう。
 
 
 \bigskip
@@ -1691,7 +1706,7 @@ amedas.pyコマンドもHSPのプログラムと同じくテキストファイ�
 
 \bigskip
 
-\textbf{less \~{}/ome/bin/amedas.py}
+\textbf{less \~{}/bin/amedas.py}
 
 
 
@@ -1717,7 +1732,7 @@ amedas.pyコマンドもHSPのプログラムと同じくテキストファイ�
 \bigskip
 
 \clearpage
-実際のスクレイピングの処理は30行目から下です。
+実際のスクレイピングの\ruby{処理}{しょり}は30行目から下です。
 
 35行目でhtmlを取得しています。
 
@@ -1787,15 +1802,15 @@ amedas-table-entries{\textquotedbl}{\textgreater} ... {\textless}/table{\textgre
 サンプルプログラム、Pythonのことをもっと詳しく知りたい人はブラウザで
 
 \begin{itemize}
-\item Python 2
-\item Python 2 スクレイピング
-\item Python 2 Beautiful Soup4
+\item Python 3
+\item Python 3 スクレイピング
+\item Python 3 Beautiful Soup4
 \end{itemize}
 等を検索してみてください。
 
 
-(※Python 2, Beautiful Soup4(Python
-2用)はインストール済みです)
+(※Python 3, Beautiful Soup4(Python
+3用)はインストール\ruby{済}{ず}みです)
 
 
 \bigskip
@@ -1805,12 +1820,11 @@ amedas-table-entries{\textquotedbl}{\textgreater} ... {\textless}/table{\textgre
 次は、スクレイピングを習った技術と組み合わせることを学びます。
 スクレイピングだけでも、かなりできることは広がりますが、やはりセンサーボードやJulius、OpenJtalkなど習った技術と組み合わせるとさらに便利で楽しいものが作れます。
 
-
-\clearpage\section{例題 8-8
-スクレイピングした情報をもとにセンサーを使う}
+\refstepcounter{Exercise}
+\clearpage\section{\theExercise　スクレイピングした情報をもとにセンサーを使う}
 スクレイピングで得た情報を習った技術(センサーボードの使い方、OpenJtalk,
 Juliusなど)と組み合わせて便利なことや楽しいことをする練習をしましょう。
-この例では、アメダスのウェブページから取得した気温を使って暑いか涼しいかを判断してLEDで通知してくれるプログラムを試します。
+この例では、アメダスのウェブページから取得した気温を使って暑いか\ruby{涼}{すず}しいかを判断してLEDで通知してくれるプログラムを試します。
 その後にこのプログラムを変更して、気温以外の情報を使用してより高度な通知ができるようにしてみましょう。
 
 まずは、実行してみましょう。
@@ -1827,7 +1841,7 @@ hsed
 
 \end{center}
 ファイル→
-開く　をクリックして\textbf{\~{}/ome/08/amedas\_led.hsp}を開きます。
+開く　をクリックして\textbf{\~{}/08/amedas\_led.hsp}を開きます。
 
 \begin{center}
   % Unhandled or unsupported graphics:
@@ -1878,7 +1892,7 @@ LEDに注目すると、暑いときには緑色のLED、涼しいときはオ�
 \item mes kion + {\textquotedbl}度{\textquotedbl}
 \item if int(kion) {\textgreater} 28 \{
 \item \ \ mes
-{\textquotedbl}気温が高いです。熱中症に注意しましょう{\textquotedbl}
+{\textquotedbl}気温が高いです。\ruby{熱中症}{ねっちゅうしょう}に注意しましょう{\textquotedbl}
 \item \ \ gpio 17, 1
 \item \ \ await 100
 \item \ \ gpio 17, 0
@@ -1900,7 +1914,7 @@ LEDに注目すると、暑いときには緑色のLED、涼しいときはオ�
 
 \bigskip
 
-7行目までは例題8-5と基本的に同じです。
+7行目までは\ref*{E:UTF8}と基本的に同じです。
 
 8〜18行目で、温度をもとに暑いか、涼しいかメッセージを表示させてLEDを点灯させています。
 
@@ -1959,7 +1973,8 @@ kionを数値に変換して、28と大小の比較をしています。
 
 \bigskip
 
-\clearpage\subsection*{問題8-15}
+\refstepcounter{Question}
+\clearpage\subsection*{\theQuestion}
 \begin{itemize}
 \item
 例題では気温を文字列から数値へ変換しましたが、変数へは値をいれていません。
@@ -1970,24 +1985,27 @@ kionを数値に変換して、28と大小の比較をしています。
 
 \ \ \ \ 気温(kion)を数値へ変換した値をtemp変数へ入れる。
 
-\subsection*{問題8-16}
+\refstepcounter{Question}
+\subsection*{\theQuestion}
 \begin{itemize}
 \item
 現在の風速も表示するようにしてみよう
 \end{itemize}
-\subsection*{問題8-17}
+\refstepcounter{Question}
+\subsection*{\theQuestion}
 \begin{itemize}
 \item
 例題では、気温を使って比較をしました。
 		次は風向きを使用して風が強いとき(15m/sより大きい)は”強風に注意しましょう”と表示をしてLEDを光らせましょう。
 		それ以外の場合は”現在の風速”を表示して他の色のLEDを光らせましょう。
 \end{itemize}
-\subsection*{問題8-18}
+\refstepcounter{Question}
+\subsection*{\theQuestion}
 \begin{itemize}
 \item
 LEDだけでなくFaboなどのセンサーを使用して通知するようにしてみよう。
 \end{itemize}
-\ \ \ \ HINT : 振動子など
+\ \ \ \ HINT : \ruby{振動子}{しんどうし}など
 
 
 \bigskip
@@ -1995,7 +2013,8 @@ LEDだけでなくFaboなどのセンサーを使用して通知するように�
 
 \bigskip
 
-\subsection*{問題 8-19}
+\refstepcounter{Question}
+\subsection*{\theQuestion}
 \begin{itemize}
 \item
 センサーボードについている4つのLEDを使って、現在の温度を表すバーグラフを作ってみよう。
@@ -2018,13 +2037,14 @@ LEDの色は左からLED1(緑)、LED2(黄)、LED3(青)、LED4(白)です。
 
 \bigskip
 
-\clearpage\section*{問題8-20
-TV番組表のウェブページをスクレイピングする}
+\refstepcounter{Exercise}
+\clearpage\section*{\theExercise　TV番組表のウェブページをスクレイピングする}
+\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:TV}
 考え方
 
 まずは、ウェブブラウザでTV番組表のページを見てみよう。
 授業で使用したホームページを開いてください。
-\textbf{(\~{}/ome/08/links.html)}
+\textbf{(\~{}/08/links.html)}
 
 TV番組表をクリックします。
 
@@ -2043,8 +2063,8 @@ TV番組表をクリックします。
 \bigskip
 
 TV番組表のウェブページが開きます。
-このページの検索欄に検索したいワードを入れて検索をすると結果がでてきます。
-まずは、適当に検索してみましょう。
+このページの\ruby{検索欄}{けんさくらん}に検索したいワードを入れて検索をすると結果がでてきます。
+まずは、\ruby{適当}{てきとう}に検索してみましょう。
 
 
 
@@ -2091,7 +2111,7 @@ hsed
 HSPスクリプトエディタが開くので
 
 ファイル → 開く..
-\ をクリックして\textbf{\~{}/ome/08/tv.hsp}を開きます。
+\ をクリックして\textbf{\~{}/08/tv.hsp}を開きます。
 
 プログラムが表示されます。
 
@@ -2142,21 +2162,24 @@ F5を押して実行してみましょう。
 \bigskip
 
 \subsection*{}
-\subsection*{問題8-21}
+\refstepcounter{Question}
+\subsection*{\theQuestion}
 \ \ 6行目のword=”サザエさん”で検索する番組を指定しています。
 自分の検索したい番組名にして実行してみましょう。
 
-\subsection*{問題8-22}
+\refstepcounter{Question}
+\subsection*{\theQuestion}
 \ \ このプログラムでは、日付(date配列)と番組名(ptitle配列)しか表示をしていません。
 ジャンル(genre配列)とテレビ局(station配列)を表示するようにしてみましょう。
 
-\clearpage\subsection*{問題8-23
-Weblioのウェブページをスクレイピングする}
+\refstepcounter{Exercise}
+\clearpage\subsection*{\theExercise　Weblioのウェブページをスクレイピングする}
+\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:Weblio}
 考え方
 
 まずは、ウェブブラウザでWeblioのページを見てみよう。
 授業で使用したホームページを開いてください。
-\textbf{(\~{}/ome/08/links.html)}
+\textbf{(\~{}/08/links.html)}
 
 Weblioをクリックします。
 
@@ -2217,7 +2240,7 @@ hsed
 HSPスクリプトエディタが開くので
 
 ファイル → 開く..
-\ をクリックして\textbf{\~{}/ome/08/weblio.hsp}を開きます。
+\ をクリックして\textbf{\~{}/08/weblio.hsp}を開きます。
 
 プログラムが表示されます。
 
@@ -2262,7 +2285,8 @@ F5を押して実行してみましょう。
 \includegraphics[width=17.006cm]{textbook-img046.png}
 
 \end{center}
-\subsection*{問題8-24}
+\refstepcounter{Question}
+\subsection*{\theQuestion}
 7行目のword=”hello”で検索する英語を指定しています。
 この変数を自分の検索したい英語にして実行してみましょう。
 
@@ -2271,13 +2295,14 @@ F5を押して実行してみましょう。
 
 \bigskip
 
-\clearpage\subsection*{問題8-25
-位置情報のから近くの駅をスクレイピング}
+\refstepcounter{Exercise}
+\clearpage\subsection*{\theExercise　位置情報のから近くの駅をスクレイピング}
+\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:station}
 考え方
 
 まずは、ウェブブラウザで駅検索API情報のページを見てみよう。
 授業で使用したホームページを開いてください。
-\textbf{(\~{}/ome/08/links.html)}
+\textbf{(\~{}/08/links.html)}
 
 駅api情報をクリックします。
 
@@ -2296,7 +2321,7 @@ F5を押して実行してみましょう。
 \bigskip
 
 駅api情報のウェブページが開きます。
-今回使用するのは最寄り駅取得　APIです
+今回使用するのは\ruby{最寄}{もよ}り駅取得　APIです
 
 
 
@@ -2331,7 +2356,7 @@ hsed
 HSPスクリプトエディタが開くので
 
 ファイル → 開く..
-\ をクリックして\textbf{\~{}/ome/08/eki.hsp}を開きます。
+\ をクリックして\textbf{\~{}/08/eki.hsp}を開きます。
 
 プログラムが表示されます。
 
@@ -2367,10 +2392,11 @@ F5を押して実行してみましょう。実行結果はターミナルに表
 \includegraphics[width=11.409cm]{textbook-img052.png}
 
 \end{center}
-\clearpage\subsection*{問題 8-26}
+\refstepcounter{Question}
+\clearpage\subsection*{\theQuestion}
 \ \ サンプルプログラムでは、青梅市役所の近くの駅名を取得していました。
 次は、自分の好きなもしくは知っている場所を指定してみましょう。
-緯度経度は、授業で使用したウェブページ\textbf{(\~{}/ome/08/links.html)}を開いて、
+\ruby{緯度}{いど}\ruby{経度}{けいど}は、授業で使用したウェブページ\textbf{(\~{}/ome/08/links.html)}を開いて、
 
 緯度経度を調べるをクリックします。
 
@@ -2387,7 +2413,7 @@ F5を押して実行してみましょう。実行結果はターミナルに表
 
 \bigskip
 
-フォームで調べたい場所（今回は青梅市役所）を検索（GPS座標検索）します。
+フォームで調べたい場所（今回は青梅市役所）を検索（GPS\ruby{座標}{ざひょう}検索）します。
 
 
 
@@ -2443,13 +2469,14 @@ keido=”139.27542”
 
 \bigskip
 
-\clearpage\subsection*{問題8-27
-郵便番号から住所を調べるウェブページのスクレイピング}
+\refstepcounter{Exercise}
+\clearpage\subsection*{\theExercise　\ruby{郵便}{ゆうびん}番号から住所を調べるウェブページのスクレイピング}
+\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:postNum}
 考え方
 
 まずは、ウェブブラウザで郵便番号から住所を調べるウェブページを見てみよう。
 授業で使用したホームページを開いてください。
-\textbf{(\~{}/ome/08/links.html)}
+\textbf{(\~{}/08/links.html)}
 
 郵便番号から住所を調べるをクリックします。
 
@@ -2498,7 +2525,7 @@ hsed
 HSPスクリプトエディタが開くので
 
 ファイル → 開く..
-\ をクリックして\textbf{\~{}/ome/08/zipcode.hsp}を開きます。
+\ をクリックして\textbf{\~{}/08/zipcode.hsp}を開きます。
 
 プログラムが表示されます。
 
@@ -2535,11 +2562,12 @@ F5を押して実行してみましょう。実行結果はターミナルに表
 
 
 
-\subsection*{問題8-28}
+\refstepcounter{Question}
+\subsection*{\theQuestion}
 \ \ codeの郵便番号を変更してみよう
 
 \ \ 例: 198-0082
-青梅佐藤財団の郵便番号
+青梅\ruby{佐藤財団}{さとうざいだん}の郵便番号
 
 \begin{center}
 \begin{boxedminipage}{10.927cm}
@@ -2548,12 +2576,14 @@ F5を押して実行してみましょう。実行結果はターミナルに表
 \end{enumerate}
 \end{boxedminipage}
 \end{center}
-\clearpage\subsection*{問題8-29 Wikipediaのスクレイピング}
+\refstepcounter{Exercise}
+\clearpage\subsection*{\theExercise　Wikipediaのスクレイピング}
+\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:wikipedia}
 考え方
 
 まずは、ウェブブラウザでWikipediaを見てみよう。
 授業で使用したホームページを開いてください。
-\textbf{(\~{}/ome/08/links.html)}
+\textbf{(\~{}/08/links.html)}
 
 Wikipediaをクリックします。
 
@@ -2593,7 +2623,7 @@ Pi”と検索してみました。
 \includegraphics[width=17.006cm]{textbook-img059.png}
 
 \end{center}
-今回取得する情報はラズベリーパイの概要です。
+今回取得する情報はラズベリーパイの\ruby{概要}{がいよう}です。
 
 まずはプログラムを動かしてみましょう。
 
@@ -2620,7 +2650,7 @@ HSPスクリプトエディタが開くので
 \bigskip
 
 ファイル → 開く..
-\ をクリックして\textbf{\~{}/ome/08/wikipedia.hsp}を開きます。
+\ をクリックして\textbf{\~{}/08/wikipedia.hsp}を開きます。
 
 プログラムが表示されます。
 
@@ -2658,7 +2688,8 @@ Pi)の概要がWikipediaからとれました。
 
 \bigskip
 
-\subsection*{問題8-30}
+\refstepcounter{Question}
+\subsection*{\theQuestion}
 wordを自分の検索したい単語に変えてみよう。
 
 \ \ HINT:まずは、Wikipediaで検索したい単語を検索をしてみて、ページを開きましょう。
@@ -2728,45 +2759,45 @@ word = “フランシスコ・ザビエル”
 \begin{supertabular}{|m{6.7730002cm}|m{2.042cm}|m{7.5810003cm}|}
 \hline
 ファイルの場所 &
-例題、問題 &
+例題 &
 機能説明\\\hline
-	\textbf{\~{}/ome/08/tv.hsp} &
-問題8-20 &
+	\textbf{\~{}/08/tv.hsp} &
+\ref*{E:TV} &
 TVの番組表で検索をして次に放送される番組１つを取得して表示するプログラム
 
 スクリプトエディタで読み込んで、F5で実行\\\hline
-	\textbf{\~{}/ome/08/weblio.hsp} &
-問題8-23 &
-英単語を辞書で検索して、日本語訳を表示するプログラム
+	\textbf{\~{}/08/weblio.hsp} &
+\ref*{E:Weblio} &
+英単語を辞書で検索して、\ruby{日本語訳}{にほんごやく}を表示するプログラム
 
 スクリプトエディタで読み込んで、F5で実行\\\hline
-	\textbf{\~{}/ome/08/eki.hsp} &
-問題8-25 &
+	\textbf{\~{}/08/eki.hsp} &
+\ref*{E:station} &
 最寄り駅とその路線情報を取得して表示するプログラム
 
 スクリプトエディタで読み込んで、F5で実行\\\hline
-	\textbf{\~{}/ome/08/zipcode.hsp} &
-問題8-27 &
+	\textbf{\~{}/08/zipcode.hsp} &
+\ref*{E:postNum} &
 郵便番号から住所を検索するプログラム
 
 スクリプトエディタで読み込んで、F5で実行\\\hline
-	\textbf{\~{}/ome/08/wikipedia.hsp} &
-問題8-29 &
+	\textbf{\~{}/08/wikipedia.hsp} &
+\ref*{E:wikipedia} &
 ウィキペディアで用語を検索して、最初の数行を表示するプログラム
 
 スクリプトエディタで読み込んで、F5で実行\\\hline
-	\textbf{\~{}/ome/08/friend.hsp} &
+	\textbf{\~{}/08/friend.hsp} &
 なし &
 friend\_ipで指定したIPアドレスの友達のウェブページからランキングを取得して表示するプログラム
 
 スクリプトエディタで読み込んで、F5で実行\\\hline
-	\textbf{\~{}/ome/08/www/cgi-bin/ascii\_table.hsp} &
+	\textbf{\~{}/08/www/cgi-bin/ascii\_table.hsp} &
 なし &
 ASCIIの表を取得して表示するプログラム。
 
 ウェブサーバを起動して
 
-	\textbf{cd \~{}/ome/08/www}
+	\textbf{cd \~{}/08/www}
 
 	\textbf{./webserver.py}
 
@@ -2775,14 +2806,14 @@ ASCIIの表を取得して表示するプログラム。
 	\textbf{localhost:3000/cgi-bin/ascii\_table.hsp}
 
 を開くすると表が表示されます。\\\hline
-	\textbf{\~{}/ome/08/www/ascii\_table.html} &
+	\textbf{\~{}/08/www/ascii\_table.html} &
 なし &
 上の例題プログラムが表示する表と全く同じもの。
 	ウェブサーバを立ち上げなくても、このファイルをブラウザで開くだけで表が表示できる。
 
 ブラウザで
 
-	\textbf{\~{}/ome/08/www/ascii\_table.html}
+	\textbf{\~{}/08/www/ascii\_table.html}
 
 を開く\\\hline
 \end{supertabular}
@@ -2791,7 +2822,7 @@ ASCIIの表を取得して表示するプログラム。
 \bigskip
 
 \clearpage\section{付録
-HSPからスクレイピングをするときに便利な命令一覧}
+HSPからスクレイピングをするときに便利な命令\ruby{一覧}{いちらん}}
 \begin{center}
 \tablefirsthead{}
 \tablehead{}
@@ -2812,12 +2843,12 @@ creattmp &
 
 creattmp filename &
 一時ファイルを作成する。
-	作成したファイル名はfilenameに文字列として渡される\\\hline
+	作成したファイル名はfilenameに文字列として\ruby{渡}{わた}される\\\hline
 deltmp &
 \#include “htmlparser.as”
 
 deltmp filename &
-filenameで指定されるファイルを削除する。
+filenameで指定されるファイルを\ruby{削除}{さくじょ}する。
 	プログラム内で作った、一時ファイルを削除するのに便利\\\hline
 htmltag &
 \#include “htmlparser.as”
@@ -2868,7 +2899,7 @@ buf1の{\textless}table
 attr=val{\textgreater}を探してその中の{\textless}td{\textgreater}{\textless}/td{\textgreater}の間の文字列をbuf2へ入れる\\\hline
 splitnl &
 splitnl buf1, array &
-buf1を改行を区切り文字として分割して、array(配列)へ格納する。
+buf1を改行を区切り文字として\ruby{分割}{ぶんかつ}して、array(配列)へ\ruby{格納}{かくのう}する。
 分割した個数はシステム変数statを参照する\\\hline
 \end{supertabular}
 \end{center}
@@ -2878,7 +2909,7 @@ buf1を改行を区切り文字として分割して、array(配列)へ格納す
 
 ターミナルを開いて、
 
-\textbf{cd \~{}/ome/08/www}
+\textbf{cd \~{}/08/www}
 
 \textbf{./webserver.py}
 
@@ -2925,7 +2956,7 @@ HSPのCGIプログラムはサーバー側（ウェブサーバが起動しま�
 {\bfseries
 ウェブサーバの停止方法}
 
-電源を切る前、ウェブサーバが起動しているターミナルを閉じる前、ウェブサーバを停止したいときは、ウェブサーバを起動したターミナルを選択して
+\ruby{電源}{でんげん}を切る前、ウェブサーバが起動しているターミナルを閉じる前、ウェブサーバを停止したいときは、ウェブサーバを起動したターミナルを選択して
 
 CtrlとCを同時に押します。
 
@@ -2938,7 +2969,7 @@ CtrlとCを同時に押します。
 \end{center}
 これでウェブサーバは終了します。
 
-\section{困ったら質問フォームから質問しよう！}
+\section{\ruby{困}{こま}ったら質問フォームから質問しよう！}
 質問フォームでは、授業でわからなかったことや確認したいことなどをホームページを通して質問できます。
 たくさん質問してわからないことを解決しよう。
 
@@ -3034,7 +3065,7 @@ Figure {\refstepcounter{Figure}\theFigure\label{seq:refFigure2}}: 質問送信�
 \textmd{メールが来るまで、しばらくお待ちください。数日かかる場合があります。}}
 
 \bigskip
-\section{参考文献}
+\section{\ruby{参考文献}{さんこうぶんけん}}
 HeartRails Express　https://express.heartrails.com/api.html
 
 \end{document}
