@@ -181,7 +181,7 @@
 
 1回目に作った自己紹介ページをindex.htmlとしてコピーします
 
-\textbf{cp \ \~{}/01/self\_intro.html \ \ \~{}/08/www/index.html}
+\textbf{cp \ {\textasciitilde}/01/self\_intro.html \ \ {\textasciitilde}/08/www/index.html}
 
 
 
@@ -195,7 +195,7 @@
 
 ウェブサーバの使い方については「付録　webserver.pyの使い方」を確認してください。
 
-\textbf{cd \ \~{}/08/www}
+\textbf{cd \ {\textasciitilde}/08/www}
 
 \textbf{./webserver.py}
 
@@ -327,7 +327,7 @@ curl (カール)と言います。 curl
 
 ターミナルを開いてください。
 
-\textbf{cd \ \~{}/08}
+\textbf{cd \ {\textasciitilde}/08}
 
 curl “左となりの友達のIPアドレス”:3000/index.html -o
 friend.html
@@ -378,7 +378,7 @@ curlコマンドを何もオプションをつけないで実行すると、タ�
 \end{center}
 ファイル(F) → 開く(O)..
 
-をクリックして\textbf{\~{}/08/friend.html}
+をクリックして\textbf{{\textasciitilde}/08/friend.html}
 
 を開きます。自己紹介のらんにある名前を\ruby{探}{さが}して確認してみよう。
 
@@ -425,7 +425,7 @@ mousepadを使ってダウンロードしたHTMLファイルを開いて友達�
 
 コマンドラインを開いて
 
-\textbf{cd \ \~{}/08/}
+\textbf{cd \ {\textasciitilde}/08/}
 
 mousepad 
 
@@ -442,7 +442,7 @@ mousepad
 
 ファイル(F) → 開く(O)..
 
-をクリックして\textbf{\~{}/08/friend.html}
+をクリックして\textbf{{\textasciitilde}/08/friend.html}
 
 
 
@@ -530,7 +530,7 @@ hsed　を実行してください
 \includegraphics[width=16.94cm]{textbook-img013.png}
 
 \end{center}
-\textbf{\~{}/08/title.hsp}
+\textbf{{\textasciitilde}/08/title.hsp}
 
 を開いてください
 
@@ -951,7 +951,7 @@ Char(Character)は文字を意味します。}
 \ \ printfコマンドを使用すると数字をUTF-8に従って文字に変換できます。
 UTF-8は日本語も漢字を\ruby{含}{ふく}め表現することができます。
 
-授業で使用したホームページを開いてください。\textbf{(\~{}/08/links.html)}
+授業で使用したホームページを開いてください。\textbf{({\textasciitilde}/08/links.html)}
 
 
 
@@ -1055,7 +1055,7 @@ LANGに設定されている文字コードと表示したい文字コードが�
 
 試しにUTF-8以外の文字コードを使用しているウェブサイトをcurlでダウンロードして、UTF-8として設定されているターミナルに表示させてみよう
 
-\textbf{cd \~{}/08}
+\textbf{cd {\textasciitilde}/08}
 
 curl \url{http://x68000.q-e-d.net/~68user/unix/pickup?iconv} -o hsp.html
 
@@ -1149,11 +1149,11 @@ iconv hsp.html -f EUC-JP -t UTF-8 -o hsp\_utf8.html
 charset=””{\textgreater}で文字コードを指定しています。
 ブラウザやHTMLを扱うソフトウェアの多くはここに書かれている文字コードを使用してHTMLを理解します。
 
-試しに、UTF-8に変換したHTMLファイル\textbf{(\~{}/08/hsp\_utf8.html)}をブラウザで開いてみよう。
+試しに、UTF-8に変換したHTMLファイル\textbf{({\textasciitilde}/08/hsp\_utf8.html)}をブラウザで開いてみよう。
 
 ブラウザを開いて、
 
-\textbf{\~{}/08/hsp\_utf8.html}　と入力しエンターを押します。
+\textbf{{\textasciitilde}/08/hsp\_utf8.html}　と入力しエンターを押します。
 
 \begin{center}
   % Unhandled or unsupported graphics:
@@ -1242,7 +1242,7 @@ charset=””{\textgreater}を変換後の文字コードに変更するのを\
 
 まずは、ウェブブラウザでアメダスのページを見てみよう。
 授業で使用したホームページを開いてください。
-\textbf{(\~{}/08/links.html)}
+\textbf{({\textasciitilde}/08/links.html)}
 
 アメダスをクリックします。
 
@@ -1320,7 +1320,7 @@ HSPスクリプトエディタが開くので
 
 ファイル → 開く..
 
-をクリックして\textbf{\~{}/08/amedas.hsp}を開きます。
+をクリックして\textbf{{\textasciitilde}/08/amedas.hsp}を開きます。
 
 プログラムが表示されます。
 
@@ -1570,7 +1570,7 @@ kionが25.0度以上のときに、\ruby{現在}{げんざい}の気温を表示
 
 まずは、ウェブブラウザでアメダスのページを見てみよう。
 授業で使用したホームページを開いてください。
-\textbf{(\~{}/08/links.html)}
+\textbf{({\textasciitilde}/08/links.html)}
 
 アメダスをクリックします。
 
@@ -1706,7 +1706,7 @@ amedas.pyコマンドもHSPのプログラムと同じくテキストファイ�
 
 \bigskip
 
-\textbf{less \~{}/bin/amedas.py}
+\textbf{less {\textasciitilde}/bin/amedas.py}
 
 
 
@@ -1841,7 +1841,7 @@ hsed
 
 \end{center}
 ファイル→
-開く　をクリックして\textbf{\~{}/08/amedas\_led.hsp}を開きます。
+開く　をクリックして\textbf{{\textasciitilde}/08/amedas\_led.hsp}を開きます。
 
 \begin{center}
   % Unhandled or unsupported graphics:
@@ -2044,7 +2044,7 @@ LEDの色は左からLED1(緑)、LED2(黄)、LED3(青)、LED4(白)です。
 
 まずは、ウェブブラウザでTV番組表のページを見てみよう。
 授業で使用したホームページを開いてください。
-\textbf{(\~{}/08/links.html)}
+\textbf{({\textasciitilde}/08/links.html)}
 
 TV番組表をクリックします。
 
@@ -2111,7 +2111,7 @@ hsed
 HSPスクリプトエディタが開くので
 
 ファイル → 開く..
-\ をクリックして\textbf{\~{}/08/tv.hsp}を開きます。
+\ をクリックして\textbf{{\textasciitilde}/08/tv.hsp}を開きます。
 
 プログラムが表示されます。
 
@@ -2179,7 +2179,7 @@ F5を押して実行してみましょう。
 
 まずは、ウェブブラウザでWeblioのページを見てみよう。
 授業で使用したホームページを開いてください。
-\textbf{(\~{}/08/links.html)}
+\textbf{({\textasciitilde}/08/links.html)}
 
 Weblioをクリックします。
 
@@ -2240,7 +2240,7 @@ hsed
 HSPスクリプトエディタが開くので
 
 ファイル → 開く..
-\ をクリックして\textbf{\~{}/08/weblio.hsp}を開きます。
+\ をクリックして\textbf{{\textasciitilde}/08/weblio.hsp}を開きます。
 
 プログラムが表示されます。
 
@@ -2302,7 +2302,7 @@ F5を押して実行してみましょう。
 
 まずは、ウェブブラウザで駅検索API情報のページを見てみよう。
 授業で使用したホームページを開いてください。
-\textbf{(\~{}/08/links.html)}
+\textbf{({\textasciitilde}/08/links.html)}
 
 駅api情報をクリックします。
 
@@ -2356,7 +2356,7 @@ hsed
 HSPスクリプトエディタが開くので
 
 ファイル → 開く..
-\ をクリックして\textbf{\~{}/08/eki.hsp}を開きます。
+\ をクリックして\textbf{{\textasciitilde}/08/eki.hsp}を開きます。
 
 プログラムが表示されます。
 
@@ -2396,7 +2396,7 @@ F5を押して実行してみましょう。実行結果はターミナルに表
 \clearpage\subsection*{\theQuestion}
 \ \ サンプルプログラムでは、青梅市役所の近くの駅名を取得していました。
 次は、自分の好きなもしくは知っている場所を指定してみましょう。
-\ruby{緯度}{いど}\ruby{経度}{けいど}は、授業で使用したウェブページ\textbf{(\~{}/ome/08/links.html)}を開いて、
+\ruby{緯度}{いど}\ruby{経度}{けいど}は、授業で使用したウェブページ\textbf{({\textasciitilde}/08/links.html)}を開いて、
 
 緯度経度を調べるをクリックします。
 
@@ -2476,7 +2476,7 @@ keido=”139.27542”
 
 まずは、ウェブブラウザで郵便番号から住所を調べるウェブページを見てみよう。
 授業で使用したホームページを開いてください。
-\textbf{(\~{}/08/links.html)}
+\textbf{({\textasciitilde}/08/links.html)}
 
 郵便番号から住所を調べるをクリックします。
 
@@ -2525,7 +2525,7 @@ hsed
 HSPスクリプトエディタが開くので
 
 ファイル → 開く..
-\ をクリックして\textbf{\~{}/08/zipcode.hsp}を開きます。
+\ をクリックして\textbf{{\textasciitilde}/08/zipcode.hsp}を開きます。
 
 プログラムが表示されます。
 
@@ -2583,7 +2583,7 @@ F5を押して実行してみましょう。実行結果はターミナルに表
 
 まずは、ウェブブラウザでWikipediaを見てみよう。
 授業で使用したホームページを開いてください。
-\textbf{(\~{}/08/links.html)}
+\textbf{({\textasciitilde}/08/links.html)}
 
 Wikipediaをクリックします。
 
@@ -2650,7 +2650,7 @@ HSPスクリプトエディタが開くので
 \bigskip
 
 ファイル → 開く..
-\ をクリックして\textbf{\~{}/08/wikipedia.hsp}を開きます。
+\ をクリックして\textbf{{\textasciitilde}/08/wikipedia.hsp}を開きます。
 
 プログラムが表示されます。
 
@@ -2761,43 +2761,43 @@ word = “フランシスコ・ザビエル”
 ファイルの場所 &
 例題 &
 機能説明\\\hline
-	\textbf{\~{}/08/tv.hsp} &
+	\textbf{{\textasciitilde}/08/tv.hsp} &
 \ref*{E:TV} &
 TVの番組表で検索をして次に放送される番組１つを取得して表示するプログラム
 
 スクリプトエディタで読み込んで、F5で実行\\\hline
-	\textbf{\~{}/08/weblio.hsp} &
+	\textbf{{\textasciitilde}/08/weblio.hsp} &
 \ref*{E:Weblio} &
 英単語を辞書で検索して、\ruby{日本語訳}{にほんごやく}を表示するプログラム
 
 スクリプトエディタで読み込んで、F5で実行\\\hline
-	\textbf{\~{}/08/eki.hsp} &
+	\textbf{{\textasciitilde}/08/eki.hsp} &
 \ref*{E:station} &
 最寄り駅とその路線情報を取得して表示するプログラム
 
 スクリプトエディタで読み込んで、F5で実行\\\hline
-	\textbf{\~{}/08/zipcode.hsp} &
+	\textbf{{\textasciitilde}/08/zipcode.hsp} &
 \ref*{E:postNum} &
 郵便番号から住所を検索するプログラム
 
 スクリプトエディタで読み込んで、F5で実行\\\hline
-	\textbf{\~{}/08/wikipedia.hsp} &
+	\textbf{{\textasciitilde}/08/wikipedia.hsp} &
 \ref*{E:wikipedia} &
 ウィキペディアで用語を検索して、最初の数行を表示するプログラム
 
 スクリプトエディタで読み込んで、F5で実行\\\hline
-	\textbf{\~{}/08/friend.hsp} &
+	\textbf{{\textasciitilde}/08/friend.hsp} &
 なし &
 friend\_ipで指定したIPアドレスの友達のウェブページからランキングを取得して表示するプログラム
 
 スクリプトエディタで読み込んで、F5で実行\\\hline
-	\textbf{\~{}/08/www/cgi-bin/ascii\_table.hsp} &
+	\textbf{{\textasciitilde}/08/www/cgi-bin/ascii\_table.hsp} &
 なし &
 ASCIIの表を取得して表示するプログラム。
 
 ウェブサーバを起動して
 
-	\textbf{cd \~{}/08/www}
+	\textbf{cd {\textasciitilde}/08/www}
 
 	\textbf{./webserver.py}
 
@@ -2806,14 +2806,14 @@ ASCIIの表を取得して表示するプログラム。
 	\textbf{localhost:3000/cgi-bin/ascii\_table.hsp}
 
 を開くすると表が表示されます。\\\hline
-	\textbf{\~{}/08/www/ascii\_table.html} &
+	\textbf{{\textasciitilde}/08/www/ascii\_table.html} &
 なし &
 上の例題プログラムが表示する表と全く同じもの。
 	ウェブサーバを立ち上げなくても、このファイルをブラウザで開くだけで表が表示できる。
 
 ブラウザで
 
-	\textbf{\~{}/08/www/ascii\_table.html}
+	\textbf{{\textasciitilde}/08/www/ascii\_table.html}
 
 を開く\\\hline
 \end{supertabular}
@@ -2867,7 +2867,7 @@ htmltagn &
 buf1内の”tag”を探して、0番目（１つめ）から、1つ分取り出してbuf2へ書き出す(1のタグ)
 
 2)
-buf1内の”tag”を探して、2番目（3つめ）から、すべて取り出してbuf2へ書き出す(3\~{}すべてのタグ)\\\hline
+buf1内の”tag”を探して、2番目（3つめ）から、すべて取り出してbuf2へ書き出す(3{\textasciitilde}すべてのタグ)\\\hline
 htmltagattr &
 \#include “htmlparser.as”
 
@@ -2909,7 +2909,7 @@ buf1を改行を区切り文字として\ruby{分割}{ぶんかつ}して、arra
 
 ターミナルを開いて、
 
-\textbf{cd \~{}/08/www}
+\textbf{cd {\textasciitilde}/08/www}
 
 \textbf{./webserver.py}
 
@@ -2976,7 +2976,7 @@ CtrlとCを同時に押します。
 1.
 ブラウザで\textbf{授業で使うホームページリスト}を開こう。
 
-\textbf{授業で使うホームページリスト}はomeフォルダの08フォルダの中のlinks.htmlです
+\textbf{授業で使うホームページリスト}は08フォルダの中のlinks.htmlです
 
 リストの\textbf{子どもIT未来塾質問フォーム}をクリックして開いてくださいFigure~\ref{seq:refFigure0}。
 
