@@ -1708,7 +1708,7 @@ amedas.pyコマンドもHSPのプログラムと同じくテキストファイ�
 
 \bigskip
 
-\textbf{less {\textasciitilde}/bin/amedas.py}
+\textbf{less /usr/local/bin/amedas.py}
 
 
 
@@ -1736,7 +1736,7 @@ amedas.pyコマンドもHSPのプログラムと同じくテキストファイ�
 \clearpage
 実際のスクレイピングの\ruby{処理}{しょり}は30行目から下です。
 
-35行目でhtmlを取得しています。
+33,34行目でhtmlを取得しています。
 
 \begin{center}
 \begin{boxedminipage}{16.947cm}
@@ -1746,11 +1746,10 @@ amedas.pyコマンドもHSPのプログラムと同じくテキストファイ�
 \item def main():
 \item \ \ \ \ \#アメダスのウェブページのURL
 \item \ \ \ \ url = 'http://tenki.jp/amedas/3/16/44056.html'
-\item
+\item \ \ \ \ with urllib.request.urlopen(url) as response:
+\item \ \ \ \ \ \ \ \ html=response.read()
 \item \ \ \ \ parse\_opts()
-\item \ \ \ \ html = urllib2.urlopen(url).read()
 \item \ \ \ \ soup = BeautifulSoup(html, 'html.parser')
-
 \ \ \ \ …
 \end{enumerate}
 \end{boxedminipage}
@@ -1758,23 +1757,23 @@ amedas.pyコマンドもHSPのプログラムと同じくテキストファイ�
 HTMLからタグを探したりするソフトウェア（ライブラリ）にはBeautiful
 Soupを使用しています。
 
-38行目では、最初の{\textless}table class={\textquotedbl}common-list-entries
+39行目では、最初の{\textless}table class={\textquotedbl}common-list-entries
 amedas-table-entries{\textquotedbl}{\textgreater}を探して取り出しています。
 
-40行目では、取り出した{\textless}table{\textgreater}タグから{\textless}tr{\textgreater}タグを２行分取り出しています。
+41行目では、取り出した{\textless}table{\textgreater}タグから{\textless}tr{\textgreater}タグを２行分取り出しています。
 
-45行目で、値の説明（日時、気温、降水などの文字列）
+46行目で、値の説明（日時、気温、降水などの文字列）
 
 \begin{center}
 \begin{boxedminipage}{17.658cm}
 \begin{enumerate}
 \setlength{\itemsep}{0cm} % 項目間
 \baselineskip 10pt
-\setcounter{enumi}{36}
+\setcounter{enumi}{37}
 \item \# 最初の{\textless}table class={\textquotedbl}common-list-entries
 amedas-table-entries{\textquotedbl}{\textgreater} ... {\textless}/table{\textgreater}を探す
 \item \ \ \ \ table = soup.find\_all('table', attrs=\{'class' : 'common-list-entries amedas-table-entries'\})[0]
-\item \ \ \ \ \# 2行分取り出す
+\item \ \ \ \ \# {\textless}table class={\textquotedbl}common-list-entries amedas-table-entries{\textquotedbl}{\textgreater}{\textless}/table{\textgreater}の中の{\textless}tr{\textgreater}{\textless}/tr{\textgreater}を2行分取り出す
 \item \ \ \ \ tr = [i for i in table.find\_all('tr')[:2]] \#
 ヘッダー、値の２行
 \item \ \ \ \ result = []
@@ -1786,7 +1785,7 @@ amedas-table-entries{\textquotedbl}{\textgreater} ... {\textless}/table{\textgre
 \end{enumerate}
 \end{boxedminipage}
 \end{center}
-46行目で、値（21日6:20、17.9、0.0など値)
+47行目で、値（21日6:20、17.9、0.0など値)
 
 それぞれ{\textless}tr{\textgreater}タグから{\textless}td{\textgreater}の値を取り出しています。
 
