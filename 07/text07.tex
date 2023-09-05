@@ -1531,6 +1531,7 @@ cgi-binディレクトリはCGIプログラムを入れるディレクトリで�
 \begin{boxedminipage}{0.95\textwidth}
 
 	\begin{enumerate}
+	\baselineskip 10pt
 	\setlength{\itemsep}{0cm}
 	\item \#include {\textquotedbl}hsp3cl.as{\textquotedbl}
 
@@ -1594,7 +1595,7 @@ cgi-binディレクトリはCGIプログラムを入れるディレクトリで�
 第3回に使用した命令ではない命令が入っています。\\
 詳細はP43に載っています。確認してください。
 
-プログラム解説の3行目
+プログラム解説の4行目
 
 mes {\textquotedbl}Content-type: text/html{\textbackslash}n{\textquotedbl}
 
@@ -1826,22 +1827,26 @@ goodbyeであることを意味します。HSPの変数と同じような感じ�
 
 \centering
 \begin{boxedminipage}{16.233cm}
-	\#include {\textquotedbl}hsp3cl.as{\textquotedbl}
+	\begin{enumerate}
+	\baselineskip 10pt
+	\setlength{\itemsep}{0cm}
+	\item\#include {\textquotedbl}hsp3cl.as{\textquotedbl}
 
-	\#include {\textquotedbl}cgi.as{\textquotedbl}
+	\item\#include {\textquotedbl}cgi.as{\textquotedbl}
 
-	mes {\textquotedbl}Content-type: text/html{\textbackslash}n{\textquotedbl}
+	\item mes {\textquotedbl}Content-type: text/html{\textbackslash}n{\textquotedbl}
 
-	mes {\textquotedbl}{\textless}html{\textgreater}{\textless}head{\textgreater}{\textless}meta
-	charset={\textbackslash}{\textquotedbl}utf-8{\textbackslash}{\textquotedbl}{\textgreater}{\textless}/head{\textgreater}{\textless}body{\textgreater}{\textquotedbl}
+	\item mes {\textquotedbl}{\textless}html{\textgreater}{\textless}head{\textgreater}{\textless}meta
+	\item charset={\textbackslash}{\textquotedbl}utf-8{\textbackslash}{\textquotedbl}{\textgreater}{\textless}/head{\textgreater}{\textless}body{\textgreater}{\textquotedbl}
 
-	getqueryval {\textquotedbl}msg{\textquotedbl}, q
+	\item getqueryval {\textquotedbl}msg{\textquotedbl}, q
 
-	mes q
+	\item mes q
 
-	mes {\textquotedbl}{\textless}/body{\textgreater}{\textless}/html{\textgreater}{\textquotedbl}
+	\item mes {\textquotedbl}{\textless}/body{\textgreater}{\textless}/html{\textgreater}{\textquotedbl}
 
-	end
+	\item end
+	\end{enumerate}
 \end{boxedminipage}
 \flushleft
 
@@ -1851,7 +1856,7 @@ goodbyeであることを意味します。HSPの変数と同じような感じ�
 
 \bigskip
 
-5行目の
+6行目の
 
 getqueryval “msg”, q
 
@@ -1863,7 +1868,7 @@ localhost:3000/cgi-bin/querystring.hsp?msg=helloworld
 
 変数qにはhelloworldが文字列として入ります。
 
-6行目で表示をしています。
+7行目で表示をしています。
 
 このように\ruby{簡単}{かんたん}にプログラムでクエリストリングを受け取ることができます。クエリストリングが使えると、{\textless}form{\textgreater}{\textless}/form{\textgreater}を使ってCGIに処理を\ruby{依頼}{いらい}できたり、CGIの処理をより高度にすることができます。次の例では、クエリストリングを使ってLEDを点灯消灯します。
 
@@ -1936,69 +1941,66 @@ localhost:3000/cgi-bin/qsled.hsp?led=17\&val=1
 
 \centering
 \begin{boxedminipage}{16.538cm}
-	\#include {\textquotedbl}hsp3cl.as{\textquotedbl}
+	\begin{enumerate}
+	\baselineskip 10pt
+	\setlength{\itemsep}{0cm}
+	\item\#include {\textquotedbl}hsp3cl.as{\textquotedbl}
 
-	\#include {\textquotedbl}rpz-gpio-cl.as{\textquotedbl}
+	\item\#include {\textquotedbl}rpz-gpio-cl.as{\textquotedbl}
 
-	\#include {\textquotedbl}cgi.as{\textquotedbl}
+	\item\#include {\textquotedbl}cgi.as{\textquotedbl}
 
-	mes {\textquotedbl}Content-type: text/html{\textbackslash}n{\textquotedbl}
+	\item mes {\textquotedbl}Content-type: text/html{\textbackslash}n{\textquotedbl}
 
-	mes {\textquotedbl}{\textless}html{\textgreater}{\textless}head{\textgreater}{\textless}meta
-	charset={\textbackslash}{\textquotedbl}utf-8{\textbackslash}{\textquotedbl}{\textgreater}{\textless}/head{\textgreater}{\textless}body{\textgreater}{\textquotedbl}
+	\item mes {\textquotedbl}{\textless}html{\textgreater}{\textless}head{\textgreater}{\textless}meta
+	\item charset={\textbackslash}{\textquotedbl}utf-8{\textbackslash}{\textquotedbl}{\textgreater}{\textless}/head{\textgreater}{\textless}body{\textgreater}{\textquotedbl}
 
+	\item; クエリストリングからledを探して、値をled\_portへ入れる
 
-	\bigskip
+	\item getqueryval {\textquotedbl}led{\textquotedbl}, led\_port
 
-	;
-	クエリストリングからledを探して、値をled\_portへ入れる
+	\item ; クエリストリングからvalを探して、値をled\_valへ入れる
 
-	getqueryval {\textquotedbl}led{\textquotedbl}, led\_port
+	\item getqueryval {\textquotedbl}val{\textquotedbl}, led\_val
 
-	;
-	クエリストリングからvalを探して、値をled\_valへ入れる
+	\item ;文字列なので数値へ変換する
 
-	getqueryval {\textquotedbl}val{\textquotedbl}, led\_val
+	\item led\_port = int(led\_port)
 
-	;文字列なので数値へ変換する
-
-	led\_port = int(led\_port)
-
-	led\_val = int(led\_val)
+	\item led\_val = int(led\_val)
 
 
-	\bigskip
+	\item
 
-	;
-	点灯消灯を判断して、メッセージをpタグで表示する
+	\item; 点灯消灯を判断して、メッセージをpタグで表示する
 
-	if(led\_val = 1) \{
+	\item if(led\_val = 1) \{
 
-	\ \ \ \ mes {\textquotedbl}{\textless}p{\textgreater}GPIO{\textquotedbl} + led\_port +
-	{\textquotedbl}を点灯します{\textless}/p{\textgreater}{\textquotedbl}
+	\item\ \ \ \ mes {\textquotedbl}{\textless}p{\textgreater}GPIO{\textquotedbl} + led\_port +
+	\item{\textquotedbl}を点灯します{\textless}/p{\textgreater}{\textquotedbl}
 
-	\} else \{
+	\item\} else \{
 
-	\ \ \ \ mes {\textquotedbl}{\textless}p{\textgreater}GPIO{\textquotedbl} + led\_port +
-	{\textquotedbl}を消灯します{\textless}/p{\textgreater}{\textquotedbl}
+	\item\ \ \ \ mes {\textquotedbl}{\textless}p{\textgreater}GPIO{\textquotedbl} + led\_port +
+	\item{\textquotedbl}を消灯します{\textless}/p{\textgreater}{\textquotedbl}
 
-	\}
+	\item\}
 
 
-	\bigskip
+	\item
 
-	;
-	クエリストリングのledで指定されたGPIOにvalで指定された値を書き込む
+	\item;クエリストリングのledで指定されたGPIOにvalで指定された値を書き込む
 
-	; localhost:3000/cgi-bin/qsled.hsp?led=17\&val=1
+	\item; localhost:3000/cgi-bin/qsled.hsp?led=17\&val=1
 
-	; の場合、LED17を点灯させる
+	\item; の場合、LED17を点灯させる
 
-	cgpio led\_port, led\_val
+	\item cgpio led\_port, led\_val
 
-	mes {\textquotedbl}{\textless}/body{\textgreater}{\textless}/html{\textgreater}{\textquotedbl}
+	\item mes {\textquotedbl}{\textless}/body{\textgreater}{\textless}/html{\textgreater}{\textquotedbl}
 
-	end
+	\item end
+	\end{enumerate}
 \end{boxedminipage}
 \flushleft
 
@@ -2105,35 +2107,40 @@ localhost:3000/jtalk.html
 
 \centering
 \begin{boxedminipage}{16.148cm}
-	{\textless}!DOCTYPE html{\textgreater}
+	\begin{enumerate}
+	\baselineskip 10pt
+	\setlength{\itemsep}{0cm}
+	\item{\textless}!DOCTYPE html{\textgreater}
 
-		{\textless}html{\textgreater}
+	\item{\textless}html{\textgreater}
 
-	{\textless}head{\textgreater}
+	\item{\textless}head{\textgreater}
 
-	\ \ \ \ {\textless}meta charset={\textquotedbl}utf-8{\textquotedbl}{\textgreater}
+	\item\ \ \ \ {\textless}meta 
+	charset={\textquotedbl}utf-8{\textquotedbl}{\textgreater}
 
-	{\textless}/head{\textgreater}
+	\item{\textless}/head{\textgreater}
 
-	{\textless}body{\textgreater}
+	\item{\textless}body{\textgreater}
 
-	\ \ \ \ {\textless}form action={\textquotedbl}cgi-bin/jtalk.hsp{\textquotedbl}
+	\item\ \ \ \ {\textless}form action={\textquotedbl}cgi-bin/jtalk.hsp{\textquotedbl}
 	method={\textquotedbl}GET{\textquotedbl}{\textgreater}
 
-	\ \ \ \ \ \ \ \ {\textless}input type={\textquotedbl}text{\textquotedbl}
+	\item\ \ \ \ \ \ \ \ {\textless}input type={\textquotedbl}text{\textquotedbl}
 	name={\textquotedbl}sentence{\textquotedbl}{\textgreater}
 
-	\ \ \ \ \ \ \ \ {\textless}input type={\textquotedbl}submit{\textquotedbl}
+	\item\ \ \ \ \ \ \ \ {\textless}input type={\textquotedbl}submit{\textquotedbl}
 	value={\textquotedbl}送信{\textquotedbl}{\textgreater}
 
-	\ \ \ \ \ \ \ \ {\textless}input type={\textquotedbl}reset{\textquotedbl}
+	\item\ \ \ \ \ \ \ \ {\textless}input type={\textquotedbl}reset{\textquotedbl}
 	value={\textquotedbl}リセット{\textquotedbl}{\textgreater}
 
-	\ \ \ \ {\textless}/form{\textgreater}
+	\item\ \ \ \ {\textless}/form{\textgreater}
 
-	{\textless}/body{\textgreater}
+	\item{\textless}/body{\textgreater}
 
-	{\textless}/html{\textgreater}
+	\item{\textless}/html{\textgreater}
+	\end{enumerate}
 \end{boxedminipage}
 \flushleft
 \bigskip
@@ -2220,40 +2227,43 @@ IPアドレス:3000/cgi-bin/jtalk.hsp?sentence=こんにちは
 
 \centering
 \begin{boxedminipage}{\textwidth}
-	\#include {\textquotedbl}hsp3cl.as{\textquotedbl}
+	\begin{enumerate}
+	\baselineskip 10pt
+	\setlength{\itemsep}{0cm}
+	\item \#include {\textquotedbl}hsp3cl.as{\textquotedbl}
 
-	\#include {\textquotedbl}jtalk.as{\textquotedbl}
+	\item\#include {\textquotedbl}jtalk.as{\textquotedbl}
 
-	\#include {\textquotedbl}cgi.as{\textquotedbl}
+	\item\#include {\textquotedbl}cgi.as{\textquotedbl}
 
+	\item
 
-	\bigskip
+	\item mes {\textquotedbl}Content-type: text/html{\textbackslash}n{\textquotedbl}
 
-	mes {\textquotedbl}Content-type: text/html{\textbackslash}n{\textquotedbl}
-
-	mes {\textquotedbl}{\textless}html{\textgreater}{\textless}head{\textgreater}{\textless}meta
+	\item mes {\textquotedbl}{\textless}html{\textgreater}{\textless}head{\textgreater}{\textless}meta
 	charset={\textbackslash}{\textquotedbl}utf-8{\textbackslash}{\textquotedbl}{\textgreater}{\textless}/head{\textgreater}{\textless}body{\textgreater}{\textquotedbl}
 
 
-	\bigskip
+	\item
 
-	getqueryval {\textquotedbl}sentence{\textquotedbl}, sentence
+	\item getqueryval {\textquotedbl}sentence{\textquotedbl}, sentence
 
-	jtsave sentence, wav\_file
+	\item jtsave sentence, wav\_file
 
-	mes {\textquotedbl}{\textless}p{\textgreater}{\textquotedbl} + sentence +
+	\item mes {\textquotedbl}{\textless}p{\textgreater}{\textquotedbl} + sentence +
 	{\textquotedbl}{\textless}/p{\textgreater}{\textquotedbl}
 
 
-	\bigskip
+	\item
 
-	mes {\textquotedbl}{\textless}audio src={\textbackslash}{\textquotedbl}{\textquotedbl} \ + wav\_file +
+	\item mes {\textquotedbl}{\textless}audio src={\textbackslash}{\textquotedbl}{\textquotedbl} \ + wav\_file +
 	{\textquotedbl}{\textbackslash}{\textquotedbl}
-	type={\textbackslash}{\textquotedbl}audio/wav{\textbackslash}{\textquotedbl} controls{\textgreater}{\textquotedbl}
+	 type={\textbackslash}{\textquotedbl}audio/wav{\textbackslash}{\textquotedbl} controls{\textgreater}{\textquotedbl}
 
-	mes {\textquotedbl}{\textless}/body{\textgreater}{\textless}/html{\textgreater}{\textquotedbl}
+	\item mes {\textquotedbl}{\textless}/body{\textgreater}{\textless}/html{\textgreater}{\textquotedbl}
 
-	end
+	\item end
+	\end{enumerate}
 \end{boxedminipage}
 \flushleft
 
@@ -2370,73 +2380,68 @@ localhost:3000/cgi-bin/sensors.hsp
 
 \centering
 \begin{boxedminipage}{16.81cm}
-	\#include {\textquotedbl}rpz-gpio-cl.as{\textquotedbl}
+	\begin{enumerate}
+	\baselineskip 10pt
+	\setlength{\itemsep}{0cm}
+	\item\#include {\textquotedbl}rpz-gpio-cl.as{\textquotedbl}
 
-	\#include {\textquotedbl}hsp3cl.as{\textquotedbl}
+	\item\#include {\textquotedbl}hsp3cl.as{\textquotedbl}
 
+	\item
 
-	\bigskip
+	\item mes {\textquotedbl}Content-type: text/html{\textbackslash}n{\textquotedbl}
 
-	mes {\textquotedbl}Content-type: text/html{\textbackslash}n{\textquotedbl}
+	\item mes {\textquotedbl}{\textless}html{\textgreater}{\textless}head{\textgreater}{\textless}meta
+	 charset={\textbackslash}{\textquotedbl}utf-8{\textbackslash}{\textquotedbl}{\textgreater}{\textless}/head{\textgreater}{\textless}body{\textgreater}{\textquotedbl}
 
-	mes {\textquotedbl}{\textless}html{\textgreater}{\textless}head{\textgreater}{\textless}meta
-	charset={\textbackslash}{\textquotedbl}utf-8{\textbackslash}{\textquotedbl}{\textgreater}{\textless}/head{\textgreater}{\textless}body{\textgreater}{\textquotedbl}
+	\item
 
+	\item i2c\_ch\_bme\ = \ 0
+	
+	\item i2c\_ch\_tsl \ = \ 1
+	
+	\item
+	
+	\item fail \ = \ init\_bme(i2c\_ch\_bme)\ \ \ \ ; 温\ruby{湿}{しつ}度気圧センサ bm280を初期化する
 
-	\bigskip
+	\item if fail \{\ \ \ \ \ \ \ \ \ \ \ \   ; 初期化成功チェック
 
-	i2c\_ch\_bme\ = \ 0\\
-	i2c\_ch\_tsl \ = \ 1
+	\item\ \ mes {\textquotedbl}failed to init bme: {\textquotedbl} + fail
 
-	\bigskip
+	\item\ \ end
 
-	fail \ = \ init\_bme(i2c\_ch\_bme)\ \ \ \ ; 温\ruby{湿}{しつ}度気圧センサ bm280
-	を初期化する
+	\item\}
 
-	if fail \{\ \ \ \ \ \ \ \ \ \ \ \   ; 初期化成功チェック
+	\item
 
-	\ \ mes {\textquotedbl}failed to init bme: {\textquotedbl} + fail
+	\item init\_lux i2c\_ch\_tsl\ \ \ \ \ \ ; 照度センサ
+	
+	\item tsl2572を初期化する
 
-	\ \ end
+	\item
 
-	\}
+	\item*main
 
+	\item\ \ temp = get\_temp(i2c\_ch\_bme)\ \ \ \ ; 温度取得
+	\item\ \ hum \ = get\_hum(i2c\_ch\_bme)\ \ \ \ ; 湿度取得
+	\item\ \ press= get\_press(i2c\_ch\_bme)\ \ \ \ ; 気圧取得
+	\item\ \ lux \ = get\_lux(i2c\_ch\_bme)\ \ \ \ ; 照度取得
 
-	\bigskip
+	\item
 
-	init\_lux i2c\_ch\_tsl\ \ \ \ \ \ ; 照度センサ
-	tsl2572を初期化する
+	\item
 
+	\item\ \ ; 取得したデータの表示
 
-	\bigskip
-
-	*main
-
-
-	\bigskip
-
-	\ \ temp = get\_temp(i2c\_ch\_bme)\ \ \ \ ; 温度取得\\
-	\ \ hum \ = get\_hum(i2c\_ch\_bme)\ \ \ \ ; 湿度取得\\
-	\ \ press= get\_press(i2c\_ch\_bme)\ \ \ \ ; 気圧取得\\
-	\ \ lux \ = get\_lux(i2c\_ch\_bme)\ \ \ \ ; 照度取得\\
-
-
-	\bigskip
-
-
-	\bigskip
-
-	\ \ ; 取得したデータの表示
-
-	\ \ mes {\textquotedbl}{\textless}p{\textgreater}温度 : {\textquotedbl} + temp + {\textquotedbl}
+	\item\ \ mes {\textquotedbl}{\textless}p{\textgreater}温度 : {\textquotedbl} + temp + {\textquotedbl}
 	[℃]{\textless}/p{\textgreater}{\textquotedbl}
 
+	\item
 
-	\bigskip
+	\item\ \ \ \ mes {\textquotedbl}{\textless}/body{\textgreater}{\textless}/html{\textgreater}{\textquotedbl}
 
-	\ \ \ \ mes {\textquotedbl}{\textless}/body{\textgreater}{\textless}/html{\textgreater}{\textquotedbl}
-
-	\ \ \ \ end
+	\item\ \ \ \ end
+	\end{enumerate}
 \end{boxedminipage}
 \flushleft
 この例題は{\textasciitilde}/03/sensors.hspをもとにしています。詳しい解説はそちらを参照してください。
@@ -2558,35 +2563,39 @@ exec “irsend SEND\_ONCE fan onoff”
 
 \centering
 \begin{boxedminipage}{0.95\textwidth}
-	{\textless}!DOCTYPE html{\textgreater}
+	\begin{enumerate}
+	\baselineskip 10pt
+	\setlength{\itemsep}{0cm}
+	\item{\textless}!DOCTYPE html{\textgreater}
 
-		{\textless}html{\textgreater}
+	\item{\textless}html{\textgreater}
 
-	{\textless}head{\textgreater}
+	\item{\textless}head{\textgreater}
 
-	\ \ \ \ {\textless}meta charset={\textquotedbl}utf-8{\textquotedbl}{\textgreater}
+	\item\ \ \ \ {\textless}meta charset={\textquotedbl}utf-8{\textquotedbl}{\textgreater}
 
-	{\textless}/head{\textgreater}
+	\item{\textless}/head{\textgreater}
 
-	{\textless}body{\textgreater}
+	\item{\textless}body{\textgreater}
 
-	\ \ \ \ {\textless}h2{\textgreater}赤外線リモコン{\textless}/h2{\textgreater}
+	\item\ \ \ \ {\textless}h2{\textgreater}赤外線リモコン{\textless}/h2{\textgreater}
 
-	\ \ \ \ {\textless}form action={\textquotedbl}cgi-bin/ir.hsp{\textquotedbl}
+	\item\ \ \ \ {\textless}form action={\textquotedbl}cgi-bin/ir.hsp{\textquotedbl}
 	method={\textquotedbl}GET{\textquotedbl}{\textgreater}
 
-	\ \ \ \ \ \ \ \ {\textless}p{\textgreater}
+	\item\ \ \ \ \ \ \ \ {\textless}p{\textgreater}
 
-	\ \ \ \ \ \ \ \ \ \ \ \ ファン電源 : {\textless}input type={\textquotedbl}submit{\textquotedbl}
+	\item\ \ \ \ \ \ \ \ \ \ \ \ ファン電源 : {\textless}input type={\textquotedbl}submit{\textquotedbl}
 	value={\textquotedbl}power{\textquotedbl} name={\textquotedbl}command{\textquotedbl}{\textgreater}
 
-	\ \ \ \ \ \ \ \ {\textless}/p{\textgreater}
+	\item\ \ \ \ \ \ \ \ {\textless}/p{\textgreater}
 
-	\ \ \ \ {\textless}/form{\textgreater}
+	\item\ \ \ \ {\textless}/form{\textgreater}
 
-	{\textless}/body{\textgreater}
+	\item{\textless}/body{\textgreater}
 
-	{\textless}/html{\textgreater}
+	\item{\textless}/html{\textgreater}
+	\end{enumerate}
 \end{boxedminipage}
 \flushleft
 {\textasciitilde}/07/www/cgi-bin/ir.hsp
@@ -2612,48 +2621,52 @@ name={\textquotedbl}command{\textquotedbl}{\textgreater}
 
 \centering
 \begin{boxedminipage}{16.36cm}
-	\#include {\textquotedbl}hsp3cl.as{\textquotedbl}
+	\begin{enumerate}
+	\baselineskip 10pt
+	\setlength{\itemsep}{0cm}
+	\item\#include {\textquotedbl}hsp3cl.as{\textquotedbl}
 
-	\#include {\textquotedbl}cmdexec.as{\textquotedbl}
+	\item\#include {\textquotedbl}cmdexec.as{\textquotedbl}
 
-	\#include {\textquotedbl}cgi.as{\textquotedbl}
-
-
-	\bigskip
-
-	mes {\textquotedbl}Content-type: text/html{\textbackslash}n{\textquotedbl}
-
-	mes {\textquotedbl}{\textless}html{\textgreater}{\textless}head{\textgreater}{\textless}meta
-	charset={\textbackslash}{\textquotedbl}utf-8{\textbackslash}{\textquotedbl}{\textgreater}{\textless}/head{\textgreater}{\textless}body{\textgreater}{\textquotedbl}
+	\item\#include {\textquotedbl}cgi.as{\textquotedbl}
 
 
-	\bigskip
+	\item
 
-	getqueryval {\textquotedbl}command{\textquotedbl}, cmd
+	\item mes {\textquotedbl}Content-type: text/html{\textbackslash}n{\textquotedbl}
 
-	if cmd = {\textquotedbl}power{\textquotedbl} \{
+	\item mes {\textquotedbl}{\textless}html{\textgreater}{\textless}head{\textgreater}{\textless}meta
+	 charset={\textbackslash}{\textquotedbl}utf-8{\textbackslash}{\textquotedbl}{\textgreater}{\textless}/head{\textgreater}{\textless}body{\textgreater}{\textquotedbl}
 
-	\ \ mes
+
+	\item
+
+	\item getqueryval {\textquotedbl}command{\textquotedbl}, cmd
+
+	\item if cmd = {\textquotedbl}power{\textquotedbl} \{
+
+	\item\ \ mes
 		{\textquotedbl}{\textless}p{\textgreater}ファンの電源をおします。{\textless}/p{\textgreater}{\textquotedbl}
 
-	\ \ exec {\textquotedbl}irsend SEND\_ONCE fan onoff{\textquotedbl}
+		\item\ \ exec {\textquotedbl}irsend SEND\_ONCE fan onoff{\textquotedbl}
 
-	\} else \{
+		\item\} else \{
 
-	\ \ \ \ mes
+		\item\ \ \ \ mes
 		{\textquotedbl}{\textless}p{\textgreater}コマンドが正しくありません{\textless}/p{\textgreater}{\textquotedbl}
 
-	\ \ \ \ mes {\textquotedbl}{\textless}p{\textgreater}{\textquotedbl} + cmd +
+		\item\ \ \ \ mes {\textquotedbl}{\textless}p{\textgreater}{\textquotedbl} + cmd +
 	{\textquotedbl}{\textless}/p{\textgreater}{\textquotedbl}
 
-	\}
+	\item\}
 
 
-	\bigskip
+	\item
 
-	mes {\textquotedbl}{\textless}/body{\textgreater}{\textless}/html{\textgreater}{\textquotedbl}
+	\item mes {\textquotedbl}{\textless}/body{\textgreater}{\textless}/html{\textgreater}{\textquotedbl}
 
-	end
+	\item end
+	\end{enumerate}
 \end{boxedminipage}
 \flushleft
 
