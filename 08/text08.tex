@@ -429,7 +429,7 @@ mousepadを使ってダウンロードしたHTMLファイルを開いて友達�
 
 \textbf{cd \ {\textasciitilde}/08/}
 
-mousepad 
+mousepad
 
 
 
@@ -1708,7 +1708,7 @@ amedas.pyコマンドもHSPのプログラムと同じくテキストファイ�
 
 \bigskip
 
-\textbf{less {\textasciitilde}/bin/amedas.py}
+\textbf{less {\textasciitilde}/usr/local/bin/amedas.py}
 
 
 
@@ -1746,9 +1746,9 @@ amedas.pyコマンドもHSPのプログラムと同じくテキストファイ�
 \item def main():
 \item \ \ \ \ \#アメダスのウェブページのURL
 \item \ \ \ \ url = 'http://tenki.jp/amedas/3/16/44056.html'
-\item
+\item \ \ \ \ with urllib.requset.urlopen(url) as response:
+\item  \ \ \ \ \ \html=response.read()
 \item \ \ \ \ parse\_opts()
-\item \ \ \ \ html = urllib2.urlopen(url).read()
 \item \ \ \ \ soup = BeautifulSoup(html, 'html.parser')
 
 \ \ \ \ …
