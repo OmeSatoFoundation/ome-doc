@@ -33,6 +33,7 @@
 }
 \newcounter{Exercise}
 \newcounter{Question}
+\newcounter {PagePtr}
 \renewcommand\theExercise{例題 7-\arabic{Exercise}}
 \renewcommand\theQuestion{\textbf{問題 7-\arabic{Question}}}
 % Outline numbering
@@ -1592,7 +1593,7 @@ cgi-binディレクトリはCGIプログラムを入れるディレクトリで�
 
 
 第3回に使用した命令ではない命令が入っています。\\
-詳細はP43に載っています。確認してください。
+詳細はP\pageref { P:gpio }に載っています。確認してください。
 
 プログラム解説の3行目
 
@@ -1680,6 +1681,7 @@ end
 下の表にそれぞれの命令をまとめておきます。\\
 
 \clearpage
+\refstepcounter {PagePtr} \label { P:gpio }
 \begin{flushleft}
 	\tablefirsthead{}
 	\tablehead{}
