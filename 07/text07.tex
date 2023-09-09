@@ -1810,7 +1810,7 @@ goodbyeであることを意味します。HSPの変数と同じような感じ�
 	\item mes {\textquotedbl}Content-type: text/html{\textbackslash}n{\textquotedbl}
 
 	\item mes {\textquotedbl}{\textless}html{\textgreater}{\textless}head{\textgreater}{\textless}meta
-	\item charset={\textbackslash}{\textquotedbl}utf-8{\textbackslash}{\textquotedbl}{\textgreater}{\textless}/head{\textgreater}{\textless}body{\textgreater}{\textquotedbl}
+		charset={\textbackslash}{\textquotedbl}utf-8{\textbackslash}{\textquotedbl}{\textgreater}{\textless}/head{\textgreater}{\textless}body{\textgreater}{\textquotedbl}
 
 	\item getqueryval {\textquotedbl}msg{\textquotedbl}, q
 
@@ -1926,7 +1926,7 @@ localhost:3000/cgi-bin/qsled.hsp?led=17\&val=1
 	\item mes {\textquotedbl}Content-type: text/html{\textbackslash}n{\textquotedbl}
 
 	\item mes {\textquotedbl}{\textless}html{\textgreater}{\textless}head{\textgreater}{\textless}meta
-	\item charset={\textbackslash}{\textquotedbl}utf-8{\textbackslash}{\textquotedbl}{\textgreater}{\textless}/head{\textgreater}{\textless}body{\textgreater}{\textquotedbl}
+		charset={\textbackslash}{\textquotedbl}utf-8{\textbackslash}{\textquotedbl}{\textgreater}{\textless}/head{\textgreater}{\textless}body{\textgreater}{\textquotedbl}
 
 	\item; クエリストリングからledを探して、値をled\_portへ入れる
 
@@ -1950,12 +1950,12 @@ localhost:3000/cgi-bin/qsled.hsp?led=17\&val=1
 	\item if(led\_val = 1) \{
 
 	\item\ \ \ \ mes {\textquotedbl}{\textless}p{\textgreater}GPIO{\textquotedbl} + led\_port +
-	\item{\textquotedbl}を点灯します{\textless}/p{\textgreater}{\textquotedbl}
+		{\textquotedbl}を点灯します{\textless}/p{\textgreater}{\textquotedbl}
 
 	\item\} else \{
 
 	\item\ \ \ \ mes {\textquotedbl}{\textless}p{\textgreater}GPIO{\textquotedbl} + led\_port +
-	\item{\textquotedbl}を消灯します{\textless}/p{\textgreater}{\textquotedbl}
+		{\textquotedbl}を消灯します{\textless}/p{\textgreater}{\textquotedbl}
 
 	\item\}
 
@@ -1986,7 +1986,7 @@ localhost:3000/cgi-bin/qsled.hsp?led=17\&val=1
 
 \bigskip
 
-8行目、10行目で使用している
+7行目、9行目で使用している
 
 getqueryval命令でクエリストリングを受け取ります。この命令は
 
@@ -2004,13 +2004,13 @@ getqueryval led, led\_port
 
 led\_portには17が入ります。
 
-12,13行目で
+11,12行目で
 
 文字列から数値へ変換しています。
 
-16〜20行目では、点灯するのか消灯するのかを条件判断を使って判断しています。led\_valが1のとき(val=1がクエリストリングで与えられたとき)に点灯する、その他のときは消灯するとします。
+15〜19行目では、点灯するのか消灯するのかを条件判断を使って判断しています。led\_valが1のとき(val=1がクエリストリングで与えられたとき)に点灯する、その他のときは消灯するとします。
 
-25行目で実際に点灯、消灯を行います。
+24行目で実際に点灯、消灯を行います。
 
 cgpio命令は数値でGPIO番号、オンオフ（１，０）を受け付けるので、文字列から変換をしました。
 
@@ -2385,9 +2385,7 @@ localhost:3000/cgi-bin/sensors.hsp
 
 	\item
 
-	\item init\_lux i2c\_ch\_tsl\ \ \ \ \ \ ; 照度センサ
-
-	\item tsl2572を初期化する
+	\item init\_lux i2c\_ch\_tsl\ \ \ \ \ \ ; 照度センサ tsl2572を初期化する
 
 	\item
 
@@ -2417,12 +2415,12 @@ localhost:3000/cgi-bin/sensors.hsp
 \flushleft
 この例題は{\textasciitilde}/03/sensors.hspをもとにしています。詳しい解説はそちらを参照してください。
 
-20～23行目で温度、湿度、気圧、照度センサーから情報を取得しています。
+19～22行目で温度、湿度、気圧、照度センサーから情報を取得しています。
 
 結果はそれぞれtemp, hum, press,
 lux変数へ入っています。
 
-27行目で、温度センサーの値をpタグで表示しています。
+26行目で、温度センサーの値をpタグで表示しています。
 
 \bigskip
 
