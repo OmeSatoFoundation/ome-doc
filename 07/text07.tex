@@ -34,7 +34,7 @@
 \newcounter{Exercise}
 \newcounter{Question}
 \newcounter {PagePtr}
-\renewcommand\theExercise{例題 7-\arabic{Exercise}}
+\renewcommand\theExercise{\textbf{例題 7-\arabic{Exercise}}}
 \renewcommand\theQuestion{\textbf{問題 7-\arabic{Question}}}
 % Outline numbering
 \setcounter{secnumdepth}{2}
@@ -139,7 +139,7 @@
 
 \clearpage{\bfseries
 	ネチケット}
-
+\refstepcounter{PagePtr}\label{P:Netiquette}
 学校の先生たちから、「友達を\ruby{傷}{きず}つけてはいけない」、「\ruby{敬語}{けいご}は正しく使おう」、などとマナーを教えられてきたと思います。マナーは、ネットワークにも\ruby{存在}{そんざい}します。ネットワークのマナーを「\textbf{ネチケット}」と言います。ネットをするときに、何も考えずに利用していると気がつかずに問題や\ruby{犯罪}{はんざい}に手を\ruby{染}{そ}める\ruby{可能性}{かのうせい}があります。他人に\ruby{迷惑}{めいわく}をかけないことに加えて、ネチケットを守らない人から自分を守るために理解をしましょう。
 
 
@@ -172,6 +172,7 @@
 やり方を忘れてしまった人は、「第1回 4.1 例題1-18 教材をじぶんのフォルダに置こう」 を参考にしてみてください。
 
 \subsection*{1−1インターネットのキホン}
+\refstepcounter{PagePtr}\label{P:internet}
 \begin{wrapfigure}{r}[10pt]{0.4\textwidth}
 	\includegraphics[width=0.4\textwidth]{ome7-img002.eps}
 \end{wrapfigure}
@@ -192,7 +193,7 @@
 
 \vfill
 
-\refstepcounter{Question}\theQuestion　みんなが使っているパソコンやスマートフォンなどをたくさんつなぎ、おたがいに情報の交換ができるようにしたものを何というでしょうか。
+\refstepcounter{Question}\theQuestion　みんなが使っているパソコンやスマートフォンなどをたくさんつなぎ、おたがいに情報の交換ができるようにしたものを何というでしょうか。\label{Q:internet}
 
 
 
@@ -221,6 +222,7 @@
 \clearpage
 
 \subsection*{　1−2　IPアドレスとは何だろう？}
+\refstepcounter{PagePtr}\label{P:IP}
 
 ネットワークでコンピュータ同士がつながっているときにどうやって通信相手のコンピュータの場所を\ruby{探}{さが}すのでしょうか？
 
@@ -286,13 +288,13 @@ IPアドレスにはグローバルIPアドレスとローカル（プライベ�
 \includegraphics[width=15.0cm]{ome7-img006}
 \flushleft
 
-{\refstepcounter{Question}\theQuestion　ローカルIPアドレスがかぶっても良いときはどのときですか。}
+{\refstepcounter{Question}\theQuestion　ローカルIPアドレスがかぶっても良いときはどのときですか。\label{Q:localIP}}
 
 {\bfseries
 	\addBlank{答え}}
 
 	\refstepcounter{Exercise}
-\clearpage\subsection*{\theExercise　IPアドレスを調べてみよう}
+\clearpage\subsection*{\theExercise　IPアドレスを調べてみよう\label{E:checkIP}}
 ターミナルにコマンド”hostname
 -\texttt{I}”を入力し、自分のラズベリーパイのローカルIPアドレスを確認しよう
 
@@ -459,12 +461,12 @@ IPアドレスにはグローバルIPアドレスとローカル（プライベ�
 \flushleft
 
 
-\refstepcounter{Question}\theQuestion　ルータはラズベリーパイたちを見分けるために何を割り当てていますか。
+\refstepcounter{Question}\theQuestion　ルータはラズベリーパイたちを見分けるために何を割り当てていますか。\label{Q:globalIP}
 
 \addBlank{答え}
 
 \refstepcounter{Exercise}
-\clearpage\subsection*{\theExercise　ポケットWi-FiルータのグローバルIPアドレスを調べよう}
+\clearpage\subsection*{\theExercise　ポケットWi-FiルータのグローバルIPアドレスを調べよう\label{E:router}}
 \begin{minipage}[b]{0.58\textwidth}
 	ターミナルを開き、”curl
 
@@ -571,7 +573,7 @@ IPアドレスにはグローバルIPアドレスとローカル（プライベ�
 \bigskip
 
 \clearpage\subsection*{1−5　ポート番号とは}
-
+\refstepcounter{PagePtr}\label{P:port}
 
 \centering
 \includegraphics[width=0.85\textwidth]{ome7-img020.png}
@@ -597,7 +599,7 @@ IPアドレスでは通信相手となる別のネットワークのコンピュ
 \clearpage
 
 
-\refstepcounter{Question}\theQuestion　ポート番号はどのようなことに使われますか。
+\refstepcounter{Question}\theQuestion　ポート番号はどのようなことに使われますか。\label{Q:portUsage}
 
 \addBlank{答え}
 
@@ -666,7 +668,7 @@ IPアドレスでは通信相手となる別のネットワークのコンピュ
 
 \bigskip
 
-{\refstepcounter{Question}\theQuestion　コンピュータ上のプログラムを判断するためになにが用いられていますか。}
+{\refstepcounter{Question}\theQuestion　コンピュータ上のプログラムを判断するためになにが用いられていますか。\label{Q:port}}
 \bigskip
 
 {\bfseries
@@ -689,6 +691,7 @@ IPアドレスでは通信相手となる別のネットワークのコンピュ
 \bigskip
 
 \clearpage\subsection*{1−6　DNS（Domain Name System）について}
+\refstepcounter{PagePtr}\label{P:DNS}
 
 {\bfseries
 	IPアドレスは住所であり、それがわからないとサーバのサービスをうけることはできません。ですが以下の図のようなことが起こることがあります。}
@@ -722,7 +725,7 @@ IPアドレスでは通信相手となる別のネットワークのコンピュ
 \bigskip
 
 {\refstepcounter{Question}\theQuestion　ターミナルを開き、”dig
-	amazon.co.jp”を実行してグローバルIPアドレスを確認しよう。}
+	amazon.co.jp”を実行してグローバルIPアドレスを確認しよう。\label{Q:dig}}
 
 \bigskip
 {\bfseries
@@ -848,8 +851,9 @@ serviceに出てきた言葉をインターネットを使って調べよう。
 }
 
 \clearpage\subsection*{２−１　HTMLについて}
+\refstepcounter{PagePtr}\label{P:HTML}
 \refstepcounter{Exercise}
-\subsection*{\theExercise　HTMLの復習}
+\subsection*{\theExercise　HTMLの復習\label{E:HTML}}
 {\bfseries
 	考え方\newline
 
@@ -1066,7 +1070,7 @@ HTMLで使いたい色を探すときにはここを使うと便利です。
 \bigskip
 
 \clearpage
-\refstepcounter{Question}\theQuestion\newline
+\refstepcounter{Question}\theQuestion\label{Q:HTML}\newline
 \begin{enumerate}
 	\item 最初に書いたテキストボックスの属性をパスワード入力ボックスに書き換えてみよう。
 	\item 食べ物の名前を{\textless}p{\textgreater}タグを使って３つ追加してその横にチェックボックスを置きましょう。
@@ -1116,8 +1120,10 @@ inputタグの機能になるもの
 
 \bigskip
 
+\clearpage
+\refstepcounter{PagePtr}\label{P:HP}
 \refstepcounter{Exercise}
-\clearpage\subsection*{2−2　\theExercise　自分のホームページを公開しよう}
+\subsection*{2−2　\theExercise　自分のホームページを公開しよう\label{E:myHP}}
 考え方
 
 
@@ -1323,7 +1329,7 @@ OK です。例えば、Googleは検索するためのウェブサイトを提�
 
 \bigskip
 
-\refstepcounter{Question}\theQuestion　他のグループの友達のホームページを見てみよう、自分とは違うWi-Fiルータに接続している友達のホームページは見れたかどうか答えに書こう
+\refstepcounter{Question}\theQuestion　他のグループの友達のホームページを見てみよう、自分とは違うWi-Fiルータに接続している友達のホームページは見れたかどうか答えに書こう\label{Q:otherHP}
 
 
 
@@ -1352,6 +1358,7 @@ OK です。例えば、Googleは検索するためのウェブサイトを提�
 \bigskip
 
 \clearpage\subsection*{3−1　CGIについて勉強しよう}
+\refstepcounter{PagePtr}\label{P:CGI}
 ここではCGIについて勉強しよう。第１回で作成したwebページはいわば静的なページです。静的なページとは、常に同じ画面を表示するページのことです。ですが、CGI（Common
 Gateway
 Interface）を用いることによって動きのあるページ、動的なページを作成することができます。動的なページとは表示させるたびに違う画面を表示することができるページのことです。アクセスカウンターはたまにwebページについていることがあります。アクセスカウンタというのは、そのwebページに今までどれぐらいの人がアクセス（接続）したのかを表示させるものです。webページにアクセスするたびにアクセスカウンタの数は\ruby{増}{ふ}えていき、毎回同じ数字にはなりません。これはアクセスするというアクションによってページに変化を起こしているのです。さらにCGIを用いることによって以下の機能を作成することができます。
@@ -1425,7 +1432,7 @@ CGIを使った動的ページでは、サーバーが皆さんからwebペー�
 
 \bigskip
 
-\refstepcounter{Question}\theQuestion　動的なページとはどのようなものでしょうか。また、動的なページを作成する場合に用いるものは何でしょう。
+\refstepcounter{Question}\theQuestion　動的なページとはどのようなものでしょうか。また、動的なページを作成する場合に用いるものは何でしょう。\label{Q:dynamicPage}
 
 
 
@@ -1562,7 +1569,7 @@ cgi-binディレクトリはCGIプログラムを入れるディレクトリで�
 
 
 第3回に使用した命令ではない命令が入っています。\\
-詳細はP\pageref { P:gpio }に載っています。確認してください。
+詳細はP\pageref{P:gpio}に載っています。確認してください。
 
 プログラム解説の4行目
 
@@ -1650,7 +1657,7 @@ end
 下の表にそれぞれの命令をまとめておきます。\\
 
 \clearpage
-\refstepcounter {PagePtr} \label { P:gpio }
+\refstepcounter{PagePtr}\label{P:gpio}
 \begin{flushleft}
 	\tablefirsthead{}
 	\tablehead{}
