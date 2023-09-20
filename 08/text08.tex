@@ -25,7 +25,8 @@
 
 \newcounter{Exercise}
 \newcounter{Question}
-\renewcommand\theExercise{例題 8-\arabic{Exercise}}
+\newcounter {PagePtr}
+\renewcommand\theExercise{\textbf{例題 8-\arabic{Exercise}}}
 \renewcommand\theQuestion{\textbf{問題 8-\arabic{Question}}}
 % Outline numbering
 \setcounter{secnumdepth}{3}
@@ -127,7 +128,9 @@
 
 \bigskip
 
-\clearpage\section{ウェブページから情報を取り出す(\ruby{準備}{じゅんび})}
+\clearpage
+\refstepcounter{PagePtr}\label{P:intro}
+\section{ウェブページから情報を取り出す(\ruby{準備}{じゅんび})}
 ウェブページから自分の必要な情報のみ取り出す方法を学びます。
 まずはプログラムから自動で情報を取り出すのではなく、スクレイピングの仕組みを理解するために、一つずつ手動で行います。
 
@@ -398,7 +401,7 @@ curlコマンドを何もオプションをつけないで実行すると、タ�
 
 次はダウンロードしたHTMLファイルから情報を取り出してみよう。
 \refstepcounter{Question}
-\clearpage\subsection*{\theQuestion}
+\clearpage\subsection*{\theQuestion\label{Q:CURL}}
 \begin{itemize}
 \item curl
 を使って、グループの友達全員のウェブページを保存しよう。
@@ -409,7 +412,7 @@ curlコマンドを何もオプションをつけないで実行すると、タ�
 \ \ \ \ (例: koyama.html)
 
 \refstepcounter{Question}
-\subsection*{\theQuestion}
+\subsection*{\theQuestion\label{Q:HTML}}
 \begin{itemize}
 \item
 mousepadを使ってダウンロードしたHTMLファイルを開いて友達の名前を確認してみよう
@@ -758,7 +761,7 @@ src変数のタグを取り外してタグの間にあるテキストだけに�
 \ruby{実現}{じつげん}したいアイディアがあったらメモをしておきましょう。
 
 \refstepcounter{Question}
-\clearpage\subsection*{\theQuestion}
+\clearpage\subsection*{\theQuestion\label{Q:title}}
 \begin{itemize}
 \item
 残りのグループ内の友達のウェブページのタイトルを取り出してみよう
@@ -769,7 +772,7 @@ firend\_ipでダウンロードしたい友達のIPアドレスを指定する
 \ \ \ \ メモした友達のIPアドレスを使おう
 
 \refstepcounter{Question}
-\subsection*{\theQuestion}
+\subsection*{\theQuestion\label{Q:mes}}
 \begin{itemize}
 \item 13行目 curl url, htmlの下の行にmes
 htmlを追加して、実際にダウンロードされたHTMLを確認してみよう
@@ -777,7 +780,7 @@ htmlを追加して、実際にダウンロードされたHTMLを確認してみ
 \ \ HINT : 14行目にmes htmlを書く
 
 \refstepcounter{Question}
-\subsection*{\theQuestion}
+\subsection*{\theQuestion\label{Q:ol}}
 \begin{itemize}
 \item 15行目のhtmltag html, “title”,
 tagの”title”を”ol”に変更してみましょう
@@ -794,7 +797,7 @@ tag命令はtag変数の中に、
 
 
 \refstepcounter{Question}
-\subsection*{\theQuestion}
+\subsection*{\theQuestion\label{Q:tag}}
 \begin{itemize}
 \item 15行目のhtmltag html, “title”,
 tagの”title”を探したいタグへ変更しよう
@@ -806,7 +809,9 @@ tagの”title”を探したいタグへ変更しよう
 
 \bigskip
 
-\clearpage\section{文字コードについて}
+\clearpage
+\refstepcounter{PagePtr}\label{P:charCode}
+\section{文字コードについて}
 コンピュータは数字の0,
 1しかわからないことを学びました。
 0,1の２種類でなる数字列を2進数（バイナリ）といいます。
@@ -870,6 +875,7 @@ ASCIIでは0〜127を使用していました。
 \bigskip
 \refstepcounter{Exercise}
 \clearpage\section{\theExercise　数字をASCIIを使って文字に変える}
+\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:ASCII}
 考え方
 
 \ \ printfコマンドを使用すると数字をASCIIに\ruby{従}{したが}って文字へ変換できます。
@@ -908,19 +914,19 @@ Char(Character)は文字を意味します。}
 [\url{https://simple.wikipedia.org/wiki/ASCII}]}
 
 \refstepcounter{Question}
-\clearpage\subsection*{\theQuestion}
+\clearpage\subsection*{\theQuestion\label{Q:myName}}
 \begin{itemize}
 \item
 ASCIIを使ってローマ字で自分の名前を表示させてみよう
 \end{itemize}
 \refstepcounter{Question}
-\subsection*{\theQuestion}
+\subsection*{\theQuestion\label{Q:friendName}}
 \begin{itemize}
 \item
 ASCIIを使ってローマ字でとなりの友達の名前を表示させてみよう
 \end{itemize}
 \refstepcounter{Question}
-\subsection*{\theQuestion}
+\subsection*{\theQuestion\label{Q:emoticon}}
 \begin{itemize}
 \item
 ASCIIで顔文字を作って表示させてみよう
@@ -993,13 +999,13 @@ E3 81 80 + 2 = E3 81 82
 {\textbackslash}xはHE\textbf{X}(16進数であることを指定します)
 
 \refstepcounter{Question}
-\subsection*{\theQuestion}
+\subsection*{\theQuestion\label{Q:myNameUTF8}}
 \begin{itemize}
 \item
 UTF-8を使ってひらがなで自分の名前を表示させてみよう
 \end{itemize}
 \refstepcounter{Question}
-\subsection*{\theQuestion}
+\subsection*{\theQuestion\label{Q:friendNameUTF8}}
 \begin{itemize}
 \item
 UTF-8を使ってひらがなでとなりの友達の名前を表示させてみよう
@@ -1020,6 +1026,7 @@ UTF-8を使ってひらがなでとなりの友達の名前を表示させてみ
 [\url{http://orange-factory.com/sample/utf8/code3/e3.html#Hiragana}]
 \refstepcounter{Exercise}
 \clearpage\section{\theExercise　ウェブページで使用されている文字コードを変換する}
+\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:iconv}
 考え方
 
 ある文字コードで表現された文字列を他の文字コードで\ruby{解釈}{かいしゃく}すると文字化けをする\ruby{可能性}{かのうせい}があります。
@@ -1222,7 +1229,9 @@ charset=”UTF-8”に変更します。
 HTMLファイルの文字コードを変換するときは、{\textless}meta
 charset=””{\textgreater}を変換後の文字コードに変更するのを\ruby{忘}{わす}れないようにしましょう。
 
-\clearpage\section{スクレイピング}
+\clearpage
+\refstepcounter{PagePtr}\label{P:scraping}
+\section{スクレイピング}
 クレイピングとは、ウェブページから情報を取り出すことをいいます。
 スクレイピングの手順はウェブページをダウンロードして、ウェブページから欲しい情報を探して取り出し、そして、取り出し情報を加工します。
 \ref*{E:CURL},\ref*{E:HTML}
@@ -1237,6 +1246,7 @@ charset=””{\textgreater}を変換後の文字コードに変更するのを\
 \bigskip
 \refstepcounter{Exercise}
 \clearpage\section{\theExercise　アメダスのウェブページをスクレイピングする}
+\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:amedas}
 %\newline
 考え方
 
@@ -1493,7 +1503,7 @@ orange ← “オレンジ”\\\hline
 mes jikan + {\textquotedbl} \ {\textquotedbl} + kion + {\textquotedbl} \ \ {\textquotedbl} + kousui
 
 \refstepcounter{Question}
-\clearpage\subsection*{\theQuestion}
+\clearpage\subsection*{\theQuestion\label{Q:amedas1}}
 \begin{itemize}
 \item
 .例題のプログラムでは、日時、気温、降水だけ表示しています。
@@ -1504,7 +1514,7 @@ mes jikan + {\textquotedbl} \ {\textquotedbl} + kion + {\textquotedbl} \ \ {\tex
 nisyouという変数に情報が入っています。
 
 \refstepcounter{Question}
-\subsection*{\theQuestion}
+\subsection*{\theQuestion\label{Q:amedas2}}
 \begin{itemize}
 \item
 kionが25.0度以上のときに、\ruby{現在}{げんざい}の気温を表示し、センサーボードの赤色LEDをつけてみましょう。
@@ -1540,7 +1550,7 @@ kionが25.0度以上のときに、\ruby{現在}{げんざい}の気温を表示
 \bigskip
 
 \refstepcounter{Question}
-\subsection*{\theQuestion}
+\subsection*{\theQuestion\label{Q:amedas3}}
 \begin{itemize}
 \item
 このアメダスのスクレイピングの例題とすでに習った技術（センサーボードの使い方、ゲーム、Fabo、赤外線など）と組み合わせるとどんなことができるか考えて、１つ上げてみよう。
@@ -1672,6 +1682,7 @@ classはいわば名前のようなもので、このタグについている情
 \bigskip
 \refstepcounter{Exercise}
 \clearpage\section{\theExercise　amedas.pyをlessで見てみよう}
+\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:amedasLess}
 「スクレイピングの仕組み」では、アメダスのウェブページからアメダス観測値を取得する流れを解説しました。
 実際にウェブページから値を取り出すのに使用しているコマンド(プログラム)を見てみましょう。
 amedas.pyコマンドはHSPのプログラムから\ruby{呼}{よ}び出しているものです。
@@ -1799,6 +1810,7 @@ amedas-table-entries{\textquotedbl}{\textgreater} ... {\textless}/table{\textgre
 
 \refstepcounter{Exercise}
 \clearpage\section{\theExercise　スクレイピングした情報をもとにセンサーを使う}
+\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:amedasSensor}
 スクレイピングで得た情報を習った技術(センサーボードの使い方、OpenJtalk,
 Juliusなど)と組み合わせて便利なことや楽しいことをする練習をしましょう。
 この例では、アメダスのウェブページから取得した気温を使って暑いか\ruby{涼}{すず}しいかを判断してLEDで通知してくれるプログラムを試します。
@@ -1950,7 +1962,7 @@ kionを数値に変換して、28と大小の比較をしています。
 
 
 \refstepcounter{Question}
-\subsection*{\theQuestion}
+\subsection*{\theQuestion\label{Q:amedas4}}
 \begin{itemize}
 \item
 例題では気温を文字列から数値へ変換しましたが、変数へは値をいれていません。
@@ -1962,13 +1974,13 @@ kionを数値に変換して、28と大小の比較をしています。
 \ \ \ \ 気温(kion)を数値へ変換した値をtemp変数へ入れる。
 
 \refstepcounter{Question}
-\subsection*{\theQuestion}
+\subsection*{\theQuestion\label{Q:amedas5}}
 \begin{itemize}
 \item
 現在の風速も表示するようにしてみよう
 \end{itemize}
 \clearpage\refstepcounter{Question}
-\subsection*{\theQuestion}
+\subsection*{\theQuestion\label{Q:amedas6}}
 \begin{itemize}
 \item
 例題では、気温を使って比較をしました。
@@ -1976,7 +1988,7 @@ kionを数値に変換して、28と大小の比較をしています。
 		それ以外の場合は”現在の風速”を表示して他の色のLEDを光らせましょう。
 \end{itemize}
 \refstepcounter{Question}
-\subsection*{\theQuestion}
+\subsection*{\theQuestion\label{Q:amedas7}}
 \begin{itemize}
 \item
 LEDだけでなくFaboなどのセンサーを使用して通知するようにしてみよう。
@@ -1988,7 +2000,7 @@ LEDだけでなくFaboなどのセンサーを使用して通知するように�
 
 
 \refstepcounter{Question}
-\subsection*{\theQuestion}
+\subsection*{\theQuestion\label{Q:amedas8}}
 \begin{itemize}
 \item
 センサーボードについている4つのLEDを使って、現在の温度を表すバーグラフを作ってみよう。
@@ -2130,7 +2142,7 @@ F5を押して実行してみましょう。
 
 \subsection*{}
 \refstepcounter{Question}
-\subsection*{\theQuestion}
+\subsection*{\theQuestion\label{Q:TV}}
 \ \ 6行目のword=”サザエさん”で検索する番組を指定しています。
 自分の検索したい番組名にして実行してみましょう。
 
@@ -2246,7 +2258,7 @@ F5を押して実行してみましょう。
 
 \end{center}
 \refstepcounter{Question}
-\subsection*{\theQuestion}
+\subsection*{\theQuestion\label{Q:weblio}}
 7行目のword=”hello”で検索する英語を指定しています。
 この変数を自分の検索したい英語にして実行してみましょう。
 
@@ -2345,7 +2357,7 @@ F5を押して実行してみましょう。実行結果はターミナルに表
 
 \end{center}
 \refstepcounter{Question}
-\clearpage\subsection*{\theQuestion}
+\clearpage\subsection*{\theQuestion\label{Q:station}}
 \ \ サンプルプログラムでは、青梅市役所の近くの駅名を取得していました。
 次は、自分の好きなもしくは知っている場所を指定してみましょう。
 \ruby{緯度}{いど}\ruby{経度}{けいど}は、授業で使用したウェブページ\textbf{({\textasciitilde}/08/links.html)}を開いて、
@@ -2500,7 +2512,7 @@ F5を押して実行してみましょう。実行結果はターミナルに表
 
 
 \refstepcounter{Question}
-\subsection*{\theQuestion}
+\subsection*{\theQuestion\label{Q:postNum}}
 \ \ codeの郵便番号を変更してみよう
 
 \ \ 例: 198-0082
@@ -2622,7 +2634,7 @@ Pi)の概要がWikipediaからとれました。
 \bigskip
 
 \refstepcounter{Question}
-\subsection*{\theQuestion}
+\subsection*{\theQuestion\label{Q:wikipedia}}
 wordを自分の検索したい単語に変えてみよう。
 
 \ \ HINT:まずは、Wikipediaで検索したい単語を検索をしてみて、ページを開きましょう。
@@ -2649,7 +2661,9 @@ word = “フランシスコ・ザビエル”
 
 \bigskip
 
-\clearpage\section{チャレンジ}
+\clearpage
+\refstepcounter{PagePtr}\label{P:challenge}
+\section{チャレンジ}
 \begin{itemize}
 \item 例題、問題をすべて解こう
 \item
