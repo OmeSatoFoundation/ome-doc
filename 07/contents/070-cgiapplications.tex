@@ -1,5 +1,6 @@
 \refstepcounter{Exercise}
-\clearpage\subsection*{\theExercise　CGIを使ってOpenJtalkに読み上げをさせよう}
+\clearpage
+\subsection*{\theExercise　CGIを使ってOpenJtalkに読み上げをさせよう}
 \addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:Jtalk}
 考え方
 
@@ -25,9 +26,6 @@ localhost:3000/jtalk.html
 
 テキストボックスに読み上げさせたい文章を入れて送信をしてみよう。送信を押すとCGIプログラムへ文章が送られ、OpenJtalkで音声合成をします。
 
-
-\bigskip
-
 結果をウェブページのaudioタグ（音声を再生するタグ）へ渡して\ruby{再生}{さいせい}をします。
 
 %
@@ -36,17 +34,14 @@ localhost:3000/jtalk.html
 %koyaman
 %September 20, 2019 2:50 AM
 
-
 \centering
 \includegraphics[width=0.85\textwidth]{ome7-img057.png}
 \flushleft
 
 \clearpage
-プログラム解説
+\noindent プログラム解説
 
 {\textasciitilde}/07/www/jtalk.html
-
-
 
 \centering
 \begin{boxedminipage}{16.148cm}
@@ -54,49 +49,26 @@ localhost:3000/jtalk.html
 	\baselineskip 10pt
 	\setlength{\itemsep}{0cm}
 	\item{\textless}!DOCTYPE html{\textgreater}
-
 	\item{\textless}html{\textgreater}
-
 	\item{\textless}head{\textgreater}
-
 	\item\ \ \ \ {\textless}meta
 	charset={\textquotedbl}utf-8{\textquotedbl}{\textgreater}
-
 	\item{\textless}/head{\textgreater}
-
 	\item{\textless}body{\textgreater}
-
 	\item\ \ \ \ {\textless}form action={\textquotedbl}cgi-bin/jtalk.hsp{\textquotedbl}
 	method={\textquotedbl}GET{\textquotedbl}{\textgreater}
-
 	\item\ \ \ \ \ \ \ \ {\textless}input type={\textquotedbl}text{\textquotedbl}
 	name={\textquotedbl}sentence{\textquotedbl}{\textgreater}
-
 	\item\ \ \ \ \ \ \ \ {\textless}input type={\textquotedbl}submit{\textquotedbl}
 	value={\textquotedbl}送信{\textquotedbl}{\textgreater}
-
 	\item\ \ \ \ \ \ \ \ {\textless}input type={\textquotedbl}reset{\textquotedbl}
 	value={\textquotedbl}リセット{\textquotedbl}{\textgreater}
-
 	\item\ \ \ \ {\textless}/form{\textgreater}
-
 	\item{\textless}/body{\textgreater}
-
 	\item{\textless}/html{\textgreater}
 	\end{enumerate}
 \end{boxedminipage}
 \flushleft
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-
-\bigskip
 
 7〜11行目では、CGIようにフォーム(form)を用意しています。
 
@@ -107,7 +79,6 @@ localhost:3000/jtalk.html
 %ブラウザでjtalk.htmlを開いた画像
 %koyaman
 %September 19, 2019 11:59 PM
-
 
 7行目の
 
@@ -137,9 +108,6 @@ name=”sentence”
 “こんにちは”とテキストボックスに入力され、送信された場合
 
 \clearpage
-\bigskip
-
-
 
 \centering
 \includegraphics[width=0.85\textwidth]{ome7-img057.png}
@@ -148,15 +116,11 @@ name=”sentence”
 \includegraphics[width=0.85\textwidth]{ome7-img056.png}
 \flushleft
 
-
-\bigskip
-
 %
 %スクショ
 %こんにちはとテキストボックスに
 %koyaman
 %September 20, 2019 12:04 AM
-
 
 ウェブサーバにこのような要求を出します。
 
@@ -174,43 +138,26 @@ IPアドレス:3000/cgi-bin/jtalk.hsp?sentence=こんにちは
 	\baselineskip 10pt
 	\setlength{\itemsep}{0cm}
 	\item \#include {\textquotedbl}hsp3cl.as{\textquotedbl}
-
 	\item\#include {\textquotedbl}jtalk.as{\textquotedbl}
-
 	\item\#include {\textquotedbl}cgi.as{\textquotedbl}
-
 	\item
-
 	\item mes {\textquotedbl}Content-type: text/html{\textbackslash}n{\textquotedbl}
-
 	\item mes {\textquotedbl}{\textless}html{\textgreater}{\textless}head{\textgreater}{\textless}meta
 	charset={\textbackslash}{\textquotedbl}utf-8{\textbackslash}{\textquotedbl}{\textgreater}{\textless}/head{\textgreater}{\textless}body{\textgreater}{\textquotedbl}
-
-
 	\item
-
 	\item getqueryval {\textquotedbl}sentence{\textquotedbl}, sentence
-
 	\item jtsave sentence, wav\_file
-
 	\item mes {\textquotedbl}{\textless}p{\textgreater}{\textquotedbl} + sentence +
 	{\textquotedbl}{\textless}/p{\textgreater}{\textquotedbl}
-
-
 	\item
-
 	\item mes {\textquotedbl}{\textless}audio src={\textbackslash}{\textquotedbl}{\textquotedbl} \ + wav\_file +
 	{\textquotedbl}{\textbackslash}{\textquotedbl}
 	 type={\textbackslash}{\textquotedbl}audio/wav{\textbackslash}{\textquotedbl} controls{\textgreater}{\textquotedbl}
-
 	\item mes {\textquotedbl}{\textless}/body{\textgreater}{\textless}/html{\textgreater}{\textquotedbl}
-
 	\item end
 	\end{enumerate}
 \end{boxedminipage}
 \flushleft
-
-\bigskip
 
 8行目でjtalk.htmlのフォームの
 
@@ -253,26 +200,19 @@ controlsをつけると、再生ボタン、ミュートボタンなどが表示
 
 \clearpage
 \refstepcounter{Question}\theQuestion\label{Q:Jtalk}
-
-{\bfseries
-	”おはようございます””こんばんは””ありがとうございます”を読ませてみよう。}
-
-
-\bigskip
+{\bfseries ”おはようございます””こんばんは””ありがとうございます”を読ませてみよう。}
 
 できる人は自分の自己紹介ページに（{\textasciitilde}/07/www/index.html)に作ったフォームを変更して、こちらからCGIプログラムを起動するようにしましょう。
 
 \ HINT: jtalk.htmlを参考にしてください。
 
 \refstepcounter{Exercise}
-\clearpage\subsection*{\theExercise　CGIでセンサーの情報を表示させる}
+\clearpage
+\subsection*{\theExercise　CGIでセンサーの情報を表示させる}
 \addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:Sensors}
-考え方
+\noindent 考え方
 
 温度、温度、\ruby{気圧}{きあつ}、照度センサーの情報をCGIを使ってウェブページから見れるようにしましょう。
-
-
-\bigskip
 
 まずは、プログラム実行してみましょう。
 
@@ -315,9 +255,7 @@ localhost:3000/cgi-bin/sensors.hsp
 
 
 \clearpage
-プログラム解説
-
-
+\noindent プログラム解説
 
 \centering
 \begin{boxedminipage}{16.81cm}
@@ -325,60 +263,35 @@ localhost:3000/cgi-bin/sensors.hsp
 	\baselineskip 10pt
 	\setlength{\itemsep}{0cm}
 	\item\#include {\textquotedbl}rpz-gpio-cl.as{\textquotedbl}
-
 	\item\#include {\textquotedbl}hsp3cl.as{\textquotedbl}
-
 	\item
-
 	\item mes {\textquotedbl}Content-type: text/html{\textbackslash}n{\textquotedbl}
-
 	\item mes {\textquotedbl}{\textless}html{\textgreater}{\textless}head{\textgreater}{\textless}meta
 	 charset={\textbackslash}{\textquotedbl}utf-8{\textbackslash}{\textquotedbl}{\textgreater}{\textless}/head{\textgreater}{\textless}body{\textgreater}{\textquotedbl}
-
 	\item
-
 	\item i2c\_ch\_bme\ = \ 0
-
 	\item i2c\_ch\_tsl \ = \ 1
-
 	\item
-
 	\item fail \ = \ init\_bme(i2c\_ch\_bme)\ \ \ \ ; 温\ruby{湿}{しつ}度気圧センサ bm280を初期化する
-
 	\item if fail \{\ \ \ \ \ \ \ \ \ \ \ \   ; 初期化成功チェック
-
 	\item\ \ mes {\textquotedbl}failed to init bme: {\textquotedbl} + fail
-
 	\item\ \ end
-
 	\item\}
-
 	\item
-
 	\item init\_lux i2c\_ch\_tsl\ \ \ \ \ \ ; 照度センサ tsl2572を初期化する
-
 	\item
-
 	\item*main
-
 	\item\ \ temp = get\_temp(i2c\_ch\_bme)\ \ \ \ ; 温度取得
 	\item\ \ hum \ = get\_hum(i2c\_ch\_bme)\ \ \ \ ; 湿度取得
 	\item\ \ press= get\_press(i2c\_ch\_bme)\ \ \ \ ; 気圧取得
 	\item\ \ lux \ = get\_lux(i2c\_ch\_bme)\ \ \ \ ; 照度取得
-
 	\item
-
 	\item
-
 	\item\ \ ; 取得したデータの表示
-
 	\item\ \ mes {\textquotedbl}{\textless}p{\textgreater}温度 : {\textquotedbl} + temp + {\textquotedbl}
 	[℃]{\textless}/p{\textgreater}{\textquotedbl}
-
 	\item
-
 	\item\ \ \ \ mes {\textquotedbl}{\textless}/body{\textgreater}{\textless}/html{\textgreater}{\textquotedbl}
-
 	\item\ \ \ \ end
 	\end{enumerate}
 \end{boxedminipage}
@@ -391,14 +304,6 @@ localhost:3000/cgi-bin/sensors.hsp
 lux変数へ入っています。
 
 26行目で、温度センサーの値をpタグで表示しています。
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
 
 \clearpage
 \refstepcounter{Question}\theQuestion\label{Q:sensors}
@@ -424,7 +329,6 @@ lux変数へ入っています。
 %koyaman
 %September 20, 2019 2:44 AM
 
-
 \centering
 \includegraphics[width=0.8\textwidth]{ome7-img060.png}
 \flushleft
@@ -432,7 +336,8 @@ lux変数へ入っています。
 次は、湿度、気圧、照度センサーの値を表形式で表示するように変更してみましょう。
 
 \refstepcounter{Exercise}
-\clearpage\subsection*{\theExercise　赤外線をウェブページから送信する}
+\clearpage
+\subsection*{\theExercise　赤外線をウェブページから送信する}
 \addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:IR}
 CGIを使ってウェブページから赤外線を送信できるようにしましょう。
 
@@ -449,7 +354,6 @@ localhost:3000/ir.html
 %
 %koyaman
 %September 20, 2019 4:01 AM
-
 
 \centering
 \includegraphics[width=17.006cm]{ome7-img061.png}
@@ -481,7 +385,6 @@ exec “irsend SEND\_ONCE fan onoff”
 %koyaman
 %September 20, 2019 4:05 AM
 
-
 \centering
 \includegraphics[width=16.671cm]{ome7-img062.png}
 \flushleft
@@ -491,10 +394,8 @@ exec “irsend SEND\_ONCE fan onoff”
 赤外線を送信します。
 
 
-\bigskip
-
 \clearpage
-プログラム解説
+\noindent プログラム解説
 
 {\textasciitilde}/07/www/ir.html
 
@@ -506,33 +407,20 @@ exec “irsend SEND\_ONCE fan onoff”
 	\baselineskip 10pt
 	\setlength{\itemsep}{0cm}
 	\item{\textless}!DOCTYPE html{\textgreater}
-
 	\item{\textless}html{\textgreater}
-
 	\item{\textless}head{\textgreater}
-
 	\item\ \ \ \ {\textless}meta charset={\textquotedbl}utf-8{\textquotedbl}{\textgreater}
-
 	\item{\textless}/head{\textgreater}
-
 	\item{\textless}body{\textgreater}
-
 	\item\ \ \ \ {\textless}h2{\textgreater}赤外線リモコン{\textless}/h2{\textgreater}
-
 	\item\ \ \ \ {\textless}form action={\textquotedbl}cgi-bin/ir.hsp{\textquotedbl}
 	method={\textquotedbl}GET{\textquotedbl}{\textgreater}
-
 	\item\ \ \ \ \ \ \ \ {\textless}p{\textgreater}
-
 	\item\ \ \ \ \ \ \ \ \ \ \ \ ファン電源 : {\textless}input type={\textquotedbl}submit{\textquotedbl}
 	value={\textquotedbl}power{\textquotedbl} name={\textquotedbl}command{\textquotedbl}{\textgreater}
-
 	\item\ \ \ \ \ \ \ \ {\textless}/p{\textgreater}
-
 	\item\ \ \ \ {\textless}/form{\textgreater}
-
 	\item{\textless}/body{\textgreater}
-
 	\item{\textless}/html{\textgreater}
 	\end{enumerate}
 \end{boxedminipage}
@@ -548,76 +436,36 @@ name={\textquotedbl}command{\textquotedbl}{\textgreater}
 
 クエリストリングの名前はcommandで値はpowerとなります。このボタンが押されるとCGIが起動します。
 
-
-\bigskip
-
-
-\bigskip
-
-\bigskip
-
-
-
 \centering
 \begin{boxedminipage}{16.36cm}
 	\begin{enumerate}
 	\baselineskip 10pt
 	\setlength{\itemsep}{0cm}
 	\item\#include {\textquotedbl}hsp3cl.as{\textquotedbl}
-
 	\item\#include {\textquotedbl}cmdexec.as{\textquotedbl}
-
 	\item\#include {\textquotedbl}cgi.as{\textquotedbl}
-
-
 	\item
-
 	\item mes {\textquotedbl}Content-type: text/html{\textbackslash}n{\textquotedbl}
-
 	\item mes {\textquotedbl}{\textless}html{\textgreater}{\textless}head{\textgreater}{\textless}meta
 	 charset={\textbackslash}{\textquotedbl}utf-8{\textbackslash}{\textquotedbl}{\textgreater}{\textless}/head{\textgreater}{\textless}body{\textgreater}{\textquotedbl}
-
-
 	\item
-
 	\item getqueryval {\textquotedbl}command{\textquotedbl}, cmd
-
 	\item if cmd = {\textquotedbl}power{\textquotedbl} \{
-
 	\item\ \ mes
 		{\textquotedbl}{\textless}p{\textgreater}ファンの電源をおします。{\textless}/p{\textgreater}{\textquotedbl}
-
-		\item\ \ exec {\textquotedbl}irsend SEND\_ONCE fan onoff{\textquotedbl}
-
-		\item\} else \{
-
-		\item\ \ \ \ mes
+	\item\ \ exec {\textquotedbl}irsend SEND\_ONCE fan onoff{\textquotedbl}
+	\item\} else \{
+	\item\ \ \ \ mes
 		{\textquotedbl}{\textless}p{\textgreater}コマンドが正しくありません{\textless}/p{\textgreater}{\textquotedbl}
-
-		\item\ \ \ \ mes {\textquotedbl}{\textless}p{\textgreater}{\textquotedbl} + cmd +
+	\item\ \ \ \ mes {\textquotedbl}{\textless}p{\textgreater}{\textquotedbl} + cmd +
 	{\textquotedbl}{\textless}/p{\textgreater}{\textquotedbl}
-
 	\item\}
-
-
 	\item
-
 	\item mes {\textquotedbl}{\textless}/body{\textgreater}{\textless}/html{\textgreater}{\textquotedbl}
-
 	\item end
 	\end{enumerate}
 \end{boxedminipage}
 \flushleft
-
-\bigskip
-
-
-
-
-\bigskip
-
-
-\bigskip
 
 8行目でクエリストリングから名前がcommandに対応する値を取り出してcmd変数へ入れています。
 
@@ -625,30 +473,17 @@ name={\textquotedbl}command{\textquotedbl}{\textgreater}
 
 それ以外の場合は正しいコマンドでないとして、メッセージを表示しています。
 
-
-\bigskip
-
-\bigskip
 \refstepcounter{Question}\theQuestion\label{Q:IR}
-
 ファンの電源をつける以外の赤外線送信機能を追加してみよう。
 
-\ \ HINT :
-まずは、ir.htmlにボタンを追加しよう。
+\ \ HINT : まずは、ir.htmlにボタンを追加しよう。
 
 \ \ \ \ そのあと、ir.hspの条件判断を追加しよう。
 
 ir.htmlのフォームを自己紹介ページの一番下に付け加えよう。
 
-
-\bigskip
-
-
-\bigskip
-
-
 \clearpage
-CGIを使うときに便利なHSPの命令一覧
+\noindent CGIを使うときに便利なHSPの命令一覧
 
 \begin{flushleft}
 	\tablefirsthead{}
@@ -657,9 +492,7 @@ CGIを使うときに便利なHSPの命令一覧
 	\tablelasttail{}
 	\begin{supertabular}{|m{5.467cm}|m{3.181cm}|m{7.7cm}|}
 		\hline
-		命令名/使い方 &
-		例題 &
-		効果\\\hline
+		命令名/使い方 & 例題 & 効果\\\hline
 		\#include “cgi.as”
 
 		getqueryval “name”, var &
@@ -672,9 +505,7 @@ CGIを使うときに便利なHSPの命令一覧
 		\ref*{E:IR} &
 		クエリストリングから名前”name”を探して文字列として値を変数varへ入れる。
 
-		\textbf{localhost:3000/cgi-bin/querystring.hsp?name=val}
-		の場合、
-		varにはvalが入る。\\\hline
+		\textbf{localhost:3000/cgi-bin/querystring.hsp?name=val} の場合、varにはvalが入る。\\\hline
 
 		\#include “rpz-gpio-cl.as”
 		cgpio 17, 1&
@@ -725,26 +556,10 @@ CGIを使うときに便利なHSPの命令一覧
 
 \bigskip
 
-{\bfseries
-	付録　ウェブサーバの停止方法}
+{\bfseries 付録　ウェブサーバの停止方法}
 
 電源を切る前、ウェブサーバが起動しているターミナルを\ruby{閉}{と}じる前、ウェブサーバを停止したいときは、ウェブサーバを起動したターミナル（./webserver.pyを実行している画面）を選択して
 
-
-\bigskip
-
 CtrlとCを同時に押します。
 
-
-\bigskip
-
 それでウェブサーバは終了します。
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip

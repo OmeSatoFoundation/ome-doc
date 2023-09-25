@@ -20,20 +20,12 @@ IPアドレスでは通信相手となる別のネットワークのコンピュ
 なので、その分のポートを用意しておき、役割を与え、対応している役割のときに\ruby{頑張}{がんば}ってもらう仕組みになっています。
 みんなのラズベリーパイやパソコン、サーバにはポートは何個あるのか調べてみるのも面白いですね。
 
-\bigskip
-
 \clearpage
-
-
 \refstepcounter{Question}\theQuestion　ポート番号はどのようなことに使われますか。\label{Q:portUsage}
 
 \addBlank{答え}
 
-\bigskip
-
 ここでは実際にポートはネットワーク上ではどのように使うのか、下の図を見てみましょう。
-
-
 
 \centering
 \includegraphics[width=0.97\textwidth]{ome7-img021.png}
@@ -43,40 +35,16 @@ IPアドレスでは通信相手となる別のネットワークのコンピュ
 \flushleft
 
 
-\bigskip
-
 \clearpage
 
 \centering
 \includegraphics[width=0.97\textwidth]{ome7-img023.png}
 
-
-
 \centering
 \includegraphics[width=0.97\textwidth]{ome7-img024}
 \flushleft
 
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
 さらにラズベリーパイ側のポートはラズベリーパイが自動で割当ており、そこからデータを受け取っているよ。
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
 
 \centering
 \includegraphics[width=0.97\textwidth]{ome7-img025.png}
@@ -86,41 +54,21 @@ IPアドレスでは通信相手となる別のネットワークのコンピュ
 
 ラズベリーパイ１号機のようにサーバからサービスを受けるコンピュータを\underline{クライアント}言います。
 
-
-\bigskip
-
 これらのポートが今\ruby{現在}{げんざい}どのようなことに使われているのか\textbf{\ref{port}で確認してみましょう。}
 
-
-\bigskip
-
 {\refstepcounter{Question}\theQuestion　コンピュータ上のプログラムを判断するためになにが用いられていますか。\label{Q:port}}
-\bigskip
 
-{\bfseries
-	\addBlank{答え}}
+{\bfseries \addBlank{答え}}
 
-\bigskip
-\bigskip
-{\bfseries
-	ネット上にサービスを提供するコンピュータとネット上のコンピュータからサービスを受けるコンピュータをそれぞれ何といいますか。}
+{\bfseries ネット上にサービスを提供するコンピュータとネット上のコンピュータからサービスを受けるコンピュータをそれぞれ何といいますか。}
 
-\bigskip
-\bigskip
-{\bfseries
-	\addBlank{答え}}
+{\bfseries \addBlank{答え}}
 
-
-\bigskip
-
-
-\bigskip
-
-\clearpage\subsection*{1−6　DNS（Domain Name System）について}
+\clearpage
+\subsection*{1−6　DNS（Domain Name System）について}
 \refstepcounter{PagePtr}\label{P:DNS}
 
-{\bfseries
-	IPアドレスは住所であり、それがわからないとサーバのサービスをうけることはできません。ですが以下の図のようなことが起こることがあります。}
+{\bfseries IPアドレスは住所であり、それがわからないとサーバのサービスをうけることはできません。ですが以下の図のようなことが起こることがあります。}
 
 \centering
 \includegraphics[width=0.97\textwidth]{ome7-img026.png}
@@ -128,15 +76,9 @@ IPアドレスでは通信相手となる別のネットワークのコンピュ
 
 そこで、DNSサーバと言うものを作り、一度そこに”amazon.co.jp”のグローバルIPアドレスを教えてもらってサーバに接続しています。
 
-
-
 \centering
 \includegraphics[width=0.97\textwidth]{ome7-img027}
 \flushleft
-
-
-
-\bigskip
 
 \clearpage
 
@@ -144,67 +86,38 @@ IPアドレスでは通信相手となる別のネットワークのコンピュ
 \includegraphics[width=0.8\textwidth]{ome7-img028.png}
 \flushleft
 
+{\refstepcounter{Question}\theQuestion　ターミナルを開き、”dig amazon.co.jp”を実行してグローバルIPアドレスを確認しよう。\label{Q:dig}}
 
-\bigskip
+{\bfseries \addBlank{答え}}
 
-
-\bigskip
-
-{\refstepcounter{Question}\theQuestion　ターミナルを開き、”dig
-	amazon.co.jp”を実行してグローバルIPアドレスを確認しよう。\label{Q:dig}}
-
-\bigskip
-{\bfseries
-	\addBlank{答え}}
-
-\clearpage\subsection*{\bfseries コラム　NATについて}
+\clearpage
+\subsection*{\bfseries コラム　NATについて}
 
 教科書の前のページでローカルIPアドレスとグローバルIPアドレスが存在することを皆さんは知りましたね。ここではもっと細かくIPアドレスを用いたインターネット接続を勉強しましょう。インターネットに接続するコンピュータは自分自身を示すIPアドレスとして世界で\ruby{唯一}{ゆいつ}のグローバルIPアドレスを使わなければならないのです。みなさんのラズベリーパイにはローカルIPアドレスしか割り当てられていませんので、このままではインターネットをすることはできません。そこでNAT（Network
 Address
 Translation）というものを用います。このNATはルータが行っていて、送信元のローカルIPアドレスをグローバルIPアドレスに変換して通信を行っています。具体的にはどのようになっているのか下の図をみて確認してみよう。
 
-
-
 \centering
 \includegraphics[width=0.9\textwidth]{ome7-img029}
 \flushleft
 
-
-\bigskip
-
-
 \clearpage
-
 ラズベリーパイ１号機からサーバにデータの送信先IPアドレスは200.1.1.1（グローバルIPアドレス）、送信元IPアドレスは192.168.1.1（ローカルIPアドレス）です。NATを行うルータは、プライベートアドレスとグローバルアドレスの\ruby{境界}{きょうかい}に位置しています。ここでルータは、ラズベリーパイから送信されたデータの送信元IPアドレス192.168.1.1を、グローバルIPアドレスの「100.1.1.1」に変換して転送します。このときルータは、その変換情報をNATテーブルに記録しています。この記録が、「返ってくるデータ」、つまりサーバーからラズベリーパイへ送られるデータの転送時に役立ちます。次の図を見てください。
-
-
 
 \centering
 \includegraphics[width=0.9\textwidth]{ome7-img030}
 \flushleft
 
-
-
-\bigskip
-
 サーバーからラズベリーパイへの返事のデータの送信先IPアドレスは「100.1.1.1」、送信元IPアドレス「200.1.1.1」になりますね。データがルータへ転送されてくると、ルータはNATテーブルを確認して、送信元IPアドレスを「100.1.1.1」から元の「192.168.1.1」へ変換します。これにより返りのデータの通信が可能になるのです。NATによって送信元のローカルIPアドレスをグローバルIPアドレスに変換して通信をおこなっているおかげでみんなはインターネットを利用できているんだね。
 
-
-\bigskip
-
-
-\bigskip
-
 \refstepcounter{Exercise}
-\clearpage\subsection*{\theExercise　開いているポートを調べてみよう}
+\clearpage
+\subsection*{\theExercise　開いているポートを調べてみよう}
 \addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{port}
 ターミナルを開き、”nmap
 localhost”とコマンドを入力し、ポートについて知ろう
 
-{\bfseries
-方法}
-
-
+{\bfseries 方法}
 
 \centering
 \includegraphics[width=0.85\textwidth]{ome7-img007.png}
@@ -216,20 +129,12 @@ localhost”とコマンドを入力し、ポートについて知ろう
 
 \clearpage
 
-
-
-
-
 \centering
-
 \includegraphics[width=0.85\textwidth]{ome7-img032.png}
-\bigskip
 \includegraphics[width=0.85\textwidth]{ome7-img031.png}
 \flushleft
 
-\bigskip
-{\bfseries
-	自分のラズベリーパイに表示されたものを下の表に書こう}
+{\bfseries 自分のラズベリーパイに表示されたものを下の表に書こう}
 
 \begin{flushleft}
 	\tablefirsthead{}
@@ -238,33 +143,11 @@ localhost”とコマンドを入力し、ポートについて知ろう
 	\tablelasttail{}
 	\begin{supertabular}{|m{5.467cm}|m{5.4690003cm}|m{5.155cm}|}
 		\hline
-		PORT &
-		STATE &
-		SERVICE\\\hline
-		~
-		&
-		~
-		&
-		~
-		\\\hline
-		~
-		&
-		~
-		&
-		~
-		\\\hline
-		~
-		&
-		~
-		&
-		~
-		\\\hline
-		~
-		&
-		~
-		&
-		~
-		\\\hline
+		PORT & STATE & SERVICE\\\hline
+		~ &	~ & ~ \\\hline
+		~ &	~ & ~ \\\hline
+		~ &	~ & ~ \\\hline
+		~ &	~ & ~ \\\hline
 	\end{supertabular}
 \end{flushleft}
 {\bfseries

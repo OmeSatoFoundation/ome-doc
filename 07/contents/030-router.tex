@@ -8,55 +8,21 @@
 \includegraphics[width=8.186cm]{ome7-img011.png}
 \flushleft
 
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
 この機械のおかげで、みんなは教室内でインターネットをすることができているんだ。
 
 どういう原理で、みんなのラズベリーパイでインターネットを使用できているか説明していくよ。
 
 みんなのラズベリーパイは直接インターネットにつながってはいません。一度、ルータを経由しています。このルータのおかげで\ruby{複数}{ふくすう}のラズベリーパイやPCを同時にインターネットにアクセスさせることができるんだ。以下の図がイメージ図だよ。
 
-
-\bigskip
-
-
-
 \centering
 \includegraphics[width=\textwidth]{ome7-img012.png}
 \flushleft
 
-
-\bigskip
-
 ではどのようにして複数台のラズベリーパイをインターネットに接続しているのでしょうか。それはルータに\textbf{グローバルIPアドレス}というものを\ruby{割}{わ}り当てて、ルータが他のラズベリーパイの代表として通信を行っています。どういうことかわかりずらいので、図でみていきましょう。
-
-
 
 \centering
 \includegraphics[width=0.9\textwidth]{ome7-img013.png}
 \flushleft
-
-
-\bigskip
 
 図ではラズベリーパイ２号機がインターネットにアクセスし、何かしらの　webサイトを観たいと要求したとします。その要求はまずルータのところにいき、ラズベリーパイ２号機の代わりにインターネットに接続します。その接続で、ルータはインターネット先から返事をもらい、そのインターネットからの返事をラズパイに返しています。
 
@@ -64,13 +30,8 @@
 \includegraphics[width=0.9\textwidth]{ome7-img014.png}
 \flushleft
 
-
-\bigskip
-
 \clearpage
 これだけではうまくいかないことがあります。下の図をみてください。
-
-
 
 \centering
 \includegraphics[width=0.9\textwidth]{ome7-img015.png}
@@ -81,19 +42,17 @@
 ルータは自分を\ruby{含}{ふく}め、ローカルIPアドレスを割り当てています。このローカルIPアドレスでラズベリーパイを見分けています。
 %\textbf{例題７−２で自分のラズベリーパイが接続しているグローバルIPアドレスを確認してみよう}
 
-%\bigskip
-
 \centering
 \includegraphics[width=0.9\textwidth]{ome7-img016.png}
 \flushleft
 
-
-\refstepcounter{Question}\theQuestion　ルータはラズベリーパイたちを見分けるために何を割り当てていますか。\label{Q:globalIP}
+\refstepcounter{Question}\theQuestion ルータはラズベリーパイたちを見分けるために何を割り当てていますか。\label{Q:globalIP}
 
 \addBlank{答え}
 
 \refstepcounter{Exercise}
-\clearpage\subsection*{\theExercise　ポケットWi-FiルータのグローバルIPアドレスを調べよう\label{E:router}}
+\clearpage
+\subsection*{\theExercise ポケットWi-FiルータのグローバルIPアドレスを調べよう\label{E:router}}
 \begin{minipage}[b]{0.58\textwidth}
 	ターミナルを開き、”curl
 
@@ -104,14 +63,7 @@
 \end{minipage}
 \includegraphics[width=0.4\textwidth]{ome7-img017.png}
 
-
-
-\bigskip
-
-{\bfseries
-	方法}
-
-
+{\bfseries 方法}
 
 \centering
 \includegraphics[width=0.85\textwidth]{ome7-img007.png}
@@ -120,20 +72,6 @@
 \includegraphics[width=0.85\textwidth]{ome7-img008.png}
 \flushleft
 
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-
-
 \centering
 \includegraphics[width=0.85\textwidth]{ome7-img018.png}
 
@@ -141,18 +79,7 @@
 \includegraphics[width=0.85\textwidth]{ome7-img019.png}
 \flushleft
 
-
-\bigskip
-
-
-\bigskip
-
-{\bfseries
-	調べたグローバルIPアドレスを書こう}
-
-
-\bigskip
-
+{\bfseries 調べたグローバルIPアドレスを書こう}
 
 \centering
 \begin{tabular}{|p{0.8\textwidth}|} \hline
@@ -161,25 +88,9 @@
 	\\
 	\\ \hline
 \end{tabular}
-
-
 \flushleft
 
-
-
-
-\bigskip
-
-
-\bigskip
-
-{\bfseries
-	グループの友達がしらべたポケットWi-FiのIPアドレスも教えてもらって書こう}
-
-
-
-\bigskip
-
+{\bfseries グループの友達がしらべたポケットWi-FiのIPアドレスも教えてもらって書こう}
 
 \centering
 \begin{tabular}{|p{0.8\textwidth}|} \hline
@@ -188,14 +99,4 @@
 	\\
 	\\ \hline
 \end{tabular}
-
-
 \flushleft
-
-
-
-\bigskip
-
-
-\bigskip
-

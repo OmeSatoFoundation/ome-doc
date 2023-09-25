@@ -1,13 +1,7 @@
 
 \clearpage\subsection*{3−1　CGIについて勉強しよう}
 \refstepcounter{PagePtr}\label{P:CGI}
-ここではCGIについて勉強しよう。第１回で作成したwebページはいわば静的なページです。静的なページとは、常に同じ画面を表示するページのことです。ですが、CGI（Common
-Gateway
-Interface）を用いることによって動きのあるページ、動的なページを作成することができます。動的なページとは表示させるたびに違う画面を表示することができるページのことです。アクセスカウンターはたまにwebページについていることがあります。アクセスカウンタというのは、そのwebページに今までどれぐらいの人がアクセス（接続）したのかを表示させるものです。webページにアクセスするたびにアクセスカウンタの数は\ruby{増}{ふ}えていき、毎回同じ数字にはなりません。これはアクセスするというアクションによってページに変化を起こしているのです。さらにCGIを用いることによって以下の機能を作成することができます。
-
-
-\bigskip
-
+ここではCGIについて勉強しよう。第１回で作成したwebページはいわば静的なページです。静的なページとは、常に同じ画面を表示するページのことです。ですが、CGI（Common Gateway Interface）を用いることによって動きのあるページ、動的なページを作成することができます。動的なページとは表示させるたびに違う画面を表示することができるページのことです。アクセスカウンターはたまにwebページについていることがあります。アクセスカウンタというのは、そのwebページに今までどれぐらいの人がアクセス（接続）したのかを表示させるものです。webページにアクセスするたびにアクセスカウンタの数は\ruby{増}{ふ}えていき、毎回同じ数字にはなりません。これはアクセスするというアクションによってページに変化を起こしているのです。さらにCGIを用いることによって以下の機能を作成することができます。
 
 \centering
 \begin{minipage}{\textwidth}
@@ -28,66 +22,38 @@ Interface）を用いることによって動きのあるページ、動的な�
 \end{minipage}
 \flushleft
 
-
-\bigskip
-
-{\bfseries
-
-	・\ruby{掲示板}{けいじばん}}
-
-
+{\bfseries ・\ruby{掲示板}{けいじばん}}
 
 \centering
 \includegraphics[width=4.431cm]{ome7-img048.png}
 \flushleft
 
-
-
-
-
-\bigskip
-
 みんなが作ったwebページやほかの静的なページはどのようなやり取りで表示させているか見ていきましょう。次の図を見てください。
 
-\bigskip
-
 \clearpage
-
-
 \centering
 \includegraphics[width=0.75\textwidth]{ome7-img049}
 \flushleft
 
-
 webブラウザで検索したりしてwebページを表示させることをリクエスト（要求）といい、そのリクエストを受け取ったそのwebページのあるサーバーが要求したところにレスポンス（返答）を返します。要求されたら返すのみで、webページに変化はなく同じものを見せていました。ですが次の画像をみてください。
-
-
-\bigskip
 
 \centering
 \includegraphics[width=0.75\textwidth]{ome7-img050}
 \flushleft
 
-
 CGIを使った動的ページでは、サーバーが皆さんからwebページを要求されるたびに、CGIプログラムで新しいHTMLを生成しています。それにより、毎回違うwebページを見せることが可能なのです。この教科書では皆さんのラズベリーパイと今までの講義で学んだことを生かしたCGIを体験していきます。
-
-
-\bigskip
 
 \refstepcounter{Question}\theQuestion　動的なページとはどのようなものでしょうか。また、動的なページを作成する場合に用いるものは何でしょう。\label{Q:dynamicPage}
 
-
-
 \addBlank{答え}
 
-
 \addBlank{答え}
-
 
 \refstepcounter{Exercise}
-\clearpage\subsection*{\theExercise　CGIを使ってウェブページからLEDをつける}
+\clearpage
+\subsection*{\theExercise　CGIを使ってウェブページからLEDをつける}
 \addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:CGI}
-考え方
+\noindent 考え方
 
 まずはラズパイにセンサーボードを取り付けましょう。今回はFaBoは使用しません。
 
@@ -120,7 +86,6 @@ localhost:3000/cgi-bin/led.hsp
 %koyaman
 %September 20, 2019 2:49 AM
 
-
 \centering
 \includegraphics[width=0.7\textwidth]{ome7-img051.png}
 \flushleft
@@ -138,12 +103,8 @@ cgi-binディレクトリはCGIプログラムを入れるディレクトリで�
 はCGIプログラムとして\ruby{扱}{あつ}われます。led.hspはCGIプログラムです。
 
 
-\bigskip
-
 \clearpage
-プログラム解説
-
-
+\noindent プログラム解説
 
 \centering
 \begin{boxedminipage}{0.95\textwidth}
@@ -152,63 +113,35 @@ cgi-binディレクトリはCGIプログラムを入れるディレクトリで�
 	\baselineskip 10pt
 	\setlength{\itemsep}{0cm}
 	\item \#include {\textquotedbl}hsp3cl.as{\textquotedbl}
-
 	\item \#include {\textquotedbl}rpz-gpio-cl.as{\textquotedbl}
-
-
 	\item
-
 	\item mes {\textquotedbl}Content-type: text/html{\textbackslash}n{\textquotedbl}
-
 	\item mes {\textquotedbl}{\textless}html{\textgreater}{\textless}head{\textgreater}{\textless}meta
 	charset={\textbackslash}{\textquotedbl}utf-8{\textbackslash}{\textquotedbl}{\textgreater}{\textless}/head{\textgreater}{\textless}body{\textgreater}{\textquotedbl}
-
-
 	\item
-
 	\item ;現在のGPIO 17の\ruby{値}{あたい}を取得 1 == ON, 0 == OFF
-
 	\item ;CGIからはcgpioinを使う(使い方はgpioinと同じ)
-
 	\item prev\_led = cgpioin(17)
-
 	\item
-
 	\item if prev\_led = 0\{
-
 	\item ;ついていなかった
-
 	\item mes
 		{\textquotedbl}{\textless}p{\textgreater}オフでした。つけます{\textless}/p{\textgreater}{\textquotedbl}
-
 	\item next\_led = 1
-
 	\item \}else\{
-
 	\item ;
-
 	\item mes
 		{\textquotedbl}{\textless}p{\textgreater}オンでした。けします{\textless}/p{\textgreater}{\textquotedbl}
-
 	\item next\_led = 0
-
 	\item \}
-
 	\item mes {\textquotedbl}{\textless}/body{\textgreater}{\textless}/html{\textgreater}{\textquotedbl}
-
 	\item ;CGIからはcgpioを使う(使い方はgpioと同じ、0以外を書いた場合プログラムが
-
 	\item ;\ruby{終了}{しゅうりょう}してもLEDは点灯し続ける)
-
 	\item cgpio 17, next\_led
-
 	\item end
 	\end{enumerate}
-
 \end{boxedminipage}
 \flushleft
-
-
 
 第3回に使用した命令ではない命令が入っています。\\
 詳細はP\pageref{P:gpio}に載っています。確認してください。
@@ -219,26 +152,16 @@ mes {\textquotedbl}Content-type: text/html{\textbackslash}n{\textquotedbl}
 
 はCGIプログラムがウェブサーバに結果を返すときに、結果がHTMLであることを伝えるために必要です。{\textbackslash}nは改行を意味します。本来は改行は２つ必要ですが、mes命令は自動で改行を入れてくれるので、{\textbackslash}nは１つで十分です。
 
-
-\bigskip
 \clearpage
 4行目\ruby{以降}{いこう}のmes命令で出力するものは、HTMLの一部として扱われます。
 
-\bigskip
-
 6行目では、文字コードを設定しています。
-
-\bigskip
 
 9行目からLED点灯消灯のプログラムが始まります。
 
 prev\_led = cgpioin(17)
 
 では、GPIO17番の状態を調べています。LEDが点灯していれば１になり、消灯していれば０になります。
-
-
-\bigskip
-
 
 10〜17行目では、\ruby{条件}{じょうけん}判断のif文を使って読み取ったLEDの状態を判断します。消灯状態であれば、9行目で
 
@@ -247,15 +170,11 @@ mes
 
 pタグを使ってメッセージを表示します。
 
-\bigskip
-
 12行目で
 
 next\_led = 1
 
 としてLEDを点灯させるための値を用意します。
-
-\bigskip
 
 消灯以外の状態（つまり点灯状態）の場合は、13行目で
 
@@ -264,35 +183,21 @@ mes
 
 pタグを使ってメッセージを表示します。
 
-\bigskip
-
 18行目で
 
 next\_led = 0
 
 としてLEDを消灯させるための値を用意します
 
-\bigskip
-
 20行目で実際に値をGPIO17へ書き込みます。
 
 cgpio 17, next\_led
-
-
-
-
-\bigskip
 
 21行目の
 
 end
 
 でプログラムの終了をします。
-
-
-\bigskip
-
-
 
 第7回のCGIを使うプログラムでは、第3回の授業とはちがう命令を使います。\\
 第3回の命令でCGIを使おうとすると、上手く動かなくなってしまうからです。\\
@@ -337,48 +242,26 @@ end
 		ほかのLEDを点灯、消灯できます。
 		\\\hline
 
-
-
 	\end{supertabular}
 \end{flushleft}
 
-
-
-
-
-
-\bigskip
-
-
-\bigskip
 \refstepcounter{Question}\theQuestion
 
-{\bfseries
-	友達のLEDをCGIで点灯させてみよう。}
+{\bfseries 友達のLEDをCGIで点灯させてみよう。}
 
-{\bfseries
+{\bfseries 点灯、消灯時のウェブページに表示されるメッセージを\ruby{変更}{へんこう}してみよう。}
 
-	点灯、消灯時のウェブページに表示されるメッセージを\ruby{変更}{へんこう}してみよう。}
+{\bfseries 他の色のLEDも点灯、消灯できるようにしよう。}
 
-{\bfseries
-	他の色のLEDも点灯、消灯できるようにしよう。}
-
-{\bfseries
-	Faboのセンサ(LED,
-	\ruby{振動子}{しんどうし}などのデジタルセンサ）を接続してCGIから動かせるようにしてみよう。}
-
-
-\bigskip
+{\bfseries Faboのセンサ(LED, \ruby{振動子}{しんどうし}などのデジタルセンサ）を接続してCGIから動かせるようにしてみよう。}
 
 \refstepcounter{Exercise}
-\clearpage\subsection*{\theExercise　URLを使ってCGIに情報を\ruby{渡}{わた}す}
+\clearpage
+\subsection*{\theExercise　URLを使ってCGIに情報を\ruby{渡}{わた}す}
 \addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:URL}
-考え方
+\noindent 考え方
 
 CGIのプログラムに情報を渡すことができればより便利なプログラムが作れます。ここでは\ruby{単純}{たんじゅん}なURLを用いた方法を使います。URLに\ruby{埋}{う}め込まれた情報はクエリストリングと呼ばれます。クエリストリングはまずウェブサーバへ送られ、ウェブサーバがCGIプログラムへクエリストリングを渡します。これによりCGIプログラムはURLに埋め込まれた情報を扱うことができます。
-
-
-\bigskip
 
 まずは、ブラウザを開いて、
 
@@ -392,10 +275,7 @@ localhost:3000/cgi-bin/querystring.hsp?msg=helloworld
 %koyaman
 %September 20, 2019 2:49 AM
 
-
 画面にhelloworldと表示されたと思います。
-
-
 
 \centering
 \includegraphics[width=0.8\textwidth]{ome7-img053.png}
@@ -411,9 +291,7 @@ localhost:3000/cgi-bin/querystring.hsp?msg=goodbye
 %koyaman
 %September 20, 2019 2:49 AM
 
-
 次はgoodbyeと表示されたと思います。
-
 
 \centering
 \includegraphics[width=0.8\textwidth]{ome7-img054.png}
@@ -440,43 +318,25 @@ goodbyeであることを意味します。HSPの変数と同じような感じ�
 
 次にCGIプログラムでどのようにクエリストリングを扱っているのか見てみましょう。
 
-
-\bigskip
-
-プログラム解説
-
-
-
+\noindent プログラム解説
 \centering
 \begin{boxedminipage}{16.233cm}
 	\begin{enumerate}
 	\baselineskip 10pt
 	\setlength{\itemsep}{0cm}
 	\item\#include {\textquotedbl}hsp3cl.as{\textquotedbl}
-
 	\item\#include {\textquotedbl}cgi.as{\textquotedbl}
-
 	\item mes {\textquotedbl}Content-type: text/html{\textbackslash}n{\textquotedbl}
-
 	\item mes {\textquotedbl}{\textless}html{\textgreater}{\textless}head{\textgreater}{\textless}meta
 		charset={\textbackslash}{\textquotedbl}utf-8{\textbackslash}{\textquotedbl}{\textgreater}{\textless}/head{\textgreater}{\textless}body{\textgreater}{\textquotedbl}
-
 	\item getqueryval {\textquotedbl}msg{\textquotedbl}, q
-
 	\item mes q
-
 	\item mes {\textquotedbl}{\textless}/body{\textgreater}{\textless}/html{\textgreater}{\textquotedbl}
 
 	\item end
 	\end{enumerate}
 \end{boxedminipage}
 \flushleft
-
-
-\bigskip
-
-
-\bigskip
 
 5行目の
 
@@ -497,17 +357,12 @@ localhost:3000/cgi-bin/querystring.hsp?msg=helloworld
 ほとんどのウェブサイトは検索をするさいにURLに検索ワードを埋め込んでいます。
 
 
-\bigskip
-
 \refstepcounter{Question}\theQuestion　画面に”ありがとう”と表示させよう。
 
 	\refstepcounter{Exercise}
 \clearpage\subsection*{\theExercise　クエリストリングを使ってLEDを操作する}
 \addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:QS}
 この例では、クエリストリングを使ってLEDを点灯消灯させてみましょう。
-
-
-\bigskip
 
 まずは、ブラウザを開いて、
 
@@ -520,15 +375,11 @@ localhost:3000/cgi-bin/qsled.hsp?led=17\&val=1
 %koyaman
 %September 20, 2019 2:50 AM
 
-
 \centering
 \includegraphics[width=0.8\textwidth]{ome7-img055.png}
 \flushleft
 
 実行するとLED17が光ります。val=1をval=0にすると消えます。URLに埋め込まれた情報をもとにCGIプログラムはLEDを操作していることがわかります。URLに埋め込まれた情報はクエリストリングと呼ばれます。
-
-
-\bigskip
 
 クエリストリングを\ruby{詳}{くわ}しく見てみましょう。
 
@@ -557,9 +408,7 @@ localhost:3000/cgi-bin/qsled.hsp?led=17\&val=1
 このクエリストリングをプログラムから扱う方法を次に学びましょう。
 
 \clearpage
-プログラム解説
-
-
+\noindent プログラム解説
 
 \centering
 \begin{boxedminipage}{16.538cm}
@@ -567,73 +416,37 @@ localhost:3000/cgi-bin/qsled.hsp?led=17\&val=1
 	\baselineskip 10pt
 	\setlength{\itemsep}{0cm}
 	\item\#include {\textquotedbl}hsp3cl.as{\textquotedbl}
-
 	\item\#include {\textquotedbl}rpz-gpio-cl.as{\textquotedbl}
-
 	\item\#include {\textquotedbl}cgi.as{\textquotedbl}
-
 	\item mes {\textquotedbl}Content-type: text/html{\textbackslash}n{\textquotedbl}
-
 	\item mes {\textquotedbl}{\textless}html{\textgreater}{\textless}head{\textgreater}{\textless}meta
 		charset={\textbackslash}{\textquotedbl}utf-8{\textbackslash}{\textquotedbl}{\textgreater}{\textless}/head{\textgreater}{\textless}body{\textgreater}{\textquotedbl}
-
 	\item; クエリストリングからledを探して、値をled\_portへ入れる
-
 	\item getqueryval {\textquotedbl}led{\textquotedbl}, led\_port
-
 	\item ; クエリストリングからvalを探して、値をled\_valへ入れる
-
 	\item getqueryval {\textquotedbl}val{\textquotedbl}, led\_val
-
 	\item ;文字列なので数値へ変換する
-
 	\item led\_port = int(led\_port)
-
 	\item led\_val = int(led\_val)
-
-
 	\item
-
 	\item; 点灯消灯を判断して、メッセージをpタグで表示する
-
 	\item if(led\_val = 1) \{
-
 	\item\ \ \ \ mes {\textquotedbl}{\textless}p{\textgreater}GPIO{\textquotedbl} + led\_port +
 		{\textquotedbl}を点灯します{\textless}/p{\textgreater}{\textquotedbl}
-
 	\item\} else \{
-
 	\item\ \ \ \ mes {\textquotedbl}{\textless}p{\textgreater}GPIO{\textquotedbl} + led\_port +
 		{\textquotedbl}を消灯します{\textless}/p{\textgreater}{\textquotedbl}
-
 	\item\}
-
-
 	\item
-
 	\item;クエリストリングのledで指定されたGPIOにvalで指定された値を書き込む
-
 	\item; localhost:3000/cgi-bin/qsled.hsp?led=17\&val=1
-
 	\item; の場合、LED17を点灯させる
-
 	\item cgpio led\_port, led\_val
-
 	\item mes {\textquotedbl}{\textless}/body{\textgreater}{\textless}/html{\textgreater}{\textquotedbl}
-
 	\item end
 	\end{enumerate}
 \end{boxedminipage}
 \flushleft
-
-\bigskip
-
-
-
-\bigskip
-
-
-\bigskip
 
 7行目、9行目で使用している
 
@@ -663,16 +476,7 @@ led\_portには17が入ります。
 
 cgpio命令は数値でGPIO番号、オンオフ（１，０）を受け付けるので、文字列から変換をしました。
 
-
-\bigskip
-
 \refstepcounter{Question}\theQuestion
 
-{\bfseries
-	GPIO17以外のLEDを光らせてみよう。}
+{\bfseries	GPIO17以外のLEDを光らせてみよう。}
 
-
-\bigskip
-
-
-\bigskip
