@@ -24,30 +24,30 @@ HSPスクリプトエディタで\textasciitilde /03/button\_led3.hspを読み\r
   ima_btn = gpioin(5)
   if ima_btn = 0{
     ledidx = (ledidx+1) !\textbackslash ! 4	  <#blue#;ledidxで何番目（0～3）のLEDを光らせるか決めています。#>
-		if ledidx=1 {      <#blue#;l番目のときは、GPIO17のLEDを光らせます。#>
-			gpio 17, 1
-			gpio 18, 0
-			gpio 22, 0
-			gpio 27, 0
-		}
-		else : if ledidx=2 {<#blue#;2番目のときは、GPIO18のLEDを光らせます。#>
-			gpio 17, 0
-			gpio 18, 1
-			gpio 22, 0
-			gpio 27, 0
-		}
-		else : if ledidx=3 {<#blue#;3番目のときは、GPIO22のLEDを光らせます。#>
-			gpio 17, 0
-			gpio 18, 0
-			gpio 22, 1
-			gpio 27, 0
-		}
-		else : if ledidx=0 {<#blue#;0番目のときは、GPIO27のLEDを光らせます。#>
-			gpio 17, 0
-			gpio 18, 0
-			gpio 22, 0
-			gpio 27, 1
-		}
+    if ledidx=1 {		   <#blue#;l番目のときは、GPIO17のLEDを光らせます。#>
+      gpio 17, 1
+      gpio 18, 0
+      gpio 22, 0
+      gpio 27, 0
+    }
+    else : if ledidx=2 {	   <#blue#;2番目のときは、GPIO18のLEDを光らせます。#>
+      gpio 17, 0
+      gpio 18, 1
+      gpio 22, 0
+      gpio 27, 0
+    }
+    else : if ledidx=3 {	   <#blue#;3番目のときは、GPIO22のLEDを光らせます。#>
+      gpio 17, 0
+      gpio 18, 0
+      gpio 22, 1
+      gpio 27, 0
+    }
+    else : if ledidx=0 {	   <#blue#;0番目のときは、GPIO27のLEDを光らせます。#>
+      gpio 17, 0
+      gpio 18, 0
+      gpio 22, 0
+      gpio 27, 1
+    }
   }
 
   wait 10

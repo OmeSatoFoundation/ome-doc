@@ -25,6 +25,7 @@
 }
 \usepackage{svg}
 
+\usepackage{okumacro}
 % 空欄挿入マクロ　引数は空欄の左端の回答ラベル
 \newcommand{\addBlank}[1]{%
 \vspace{16mm}\leavevmode \\%
@@ -32,7 +33,8 @@
 }
 \newcounter{Exercise}
 \newcounter{Question}
-\renewcommand\theExercise{例題 7-\arabic{Exercise}}
+\newcounter {PagePtr}
+\renewcommand\theExercise{\textbf{例題 7-\arabic{Exercise}}}
 \renewcommand\theQuestion{\textbf{問題 7-\arabic{Question}}}
 % Outline numbering
 \setcounter{secnumdepth}{2}
@@ -105,74 +107,93 @@
 
 \subsection*{注意点}
 \begin{itemize}
-	\item 授業の合間の休憩では、遠くのものを眺めたりして目を休めましょう
-	\item 水分補給をこまめにしましょう
+	\item 授業の合間の\ruby{休憩}{きゅうけい}では、遠くのものを\ruby{眺}{なが}めたりして目を休めましょう
+	\item 水分\ruby{補給}{ほきゅう}をこまめにしましょう
 	\item 先生が説明中は先生の話を聞きましょう
 	\item わからないことがあったらTAの先生方にすぐ聞きましょう
 \end{itemize}
 
 \subsection*{教科書について}
 \begin{itemize}
-	\item 教科書には例題、それに似た問題があります\\
+
+	\item 教科書には例題、それに\ruby{似}{に}た問題があります\\
 	      まずは、例題をよく読みながら試してみましょう\\
-	      そのあと問題を解きましょう\\
+	      そのあと問題を\ruby{解}{と}きましょう\\
 	      問題の答えは一番最後のページにあります
-	\item 例題、問題をクリアしたらシールラリーカードにシールを貼りましょう
+	\item 例題、問題をクリアしたらシールラリーカードにシールを\ruby{貼}{は}りましょう
+
 	\item すべての問題、例題をクリアできたらTAの先生にシールラリーカードを見せて、\\
 	      Complete(コンプリート)シールをもらおう
 	\item 授業中に終わらなかった例題、問題は、できるだけ家でやって終わらせよう
 	\item 授業中にわからないところがあったらすぐにTAの先生に聞こう
-	\item 家でわからないことがあったら、すぐに質問フォームから質問しよう
+
+	\item 家でわからないことがあったら、すぐに\ruby{質問}{しつもん}フォームから\ruby{質問}{しつもん}しよう
+\end{itemize}
+
+\subsection*{教材を自分のフォルダに置く}
+\begin{itemize}
+	\item /usr/local/share/ome にあるフォルダ 07 をホームディレクトリにコピーしましょう。
+	\item やり方を忘れてしまった人は、「第 1 回 4.1 例題 1-18 教材をじぶんのフォルダに置こう」 を参考にしてみてください。
+
 \end{itemize}
 
 \clearpage{\bfseries
 	ネチケット}
-
-学校の先生たちから、「友達を傷つけてはいけない」、「敬語は正しく使おう」、などとマナーを教えられてきたと思います。マナーは、ネットワークにも存在します。ネットワークのマナーを「\textbf{ネチケット}」と言います。ネットをするときに、何も考えずに利用していると気がつかずに問題や犯罪に手を染める可能性があります。他人に迷惑をかけないことに加えて、ネチケットを守らない人から自分を守るために理解をしましょう。
+\refstepcounter{PagePtr}\label{P:Netiquette}
+学校の先生たちから、「友達を\ruby{傷}{きず}つけてはいけない」、「\ruby{敬語}{けいご}は正しく使おう」、などとマナーを教えられてきたと思います。マナーは、ネットワークにも\ruby{存在}{そんざい}します。ネットワークのマナーを「\textbf{ネチケット}」と言います。ネットをするときに、何も考えずに利用していると気がつかずに問題や\ruby{犯罪}{はんざい}に手を\ruby{染}{そ}める\ruby{可能性}{かのうせい}があります。他人に\ruby{迷惑}{めいわく}をかけないことに加えて、ネチケットを守らない人から自分を守るために理解をしましょう。
 
 
 
 \begin{description}
 
-	\item[誰かが作ったものを勝手に使わない]~\\
-	\begin{minipage}[b]{0.6\textwidth}
-		インターネットをしているとたくさんの画像や文章などのデータがあります。見て楽しむ程度には問題ないですが、誰かが作ったものや情報には著作権（ちょさくけん）というものがあります。法律で勝手に使うことは禁止されているから気をつけましょう。ただし、著作権は個人で楽しむもの、出典を明らかにして、引用することは認められています。
+
+	\item[\ruby{誰}{だれ}かが作ったものを勝手に使わない]~\\
+	\begin{minipage}[b]{0.65\textwidth}
+		インターネットをしているとたくさんの\ruby{画像}{がぞう}や文章などのデータがあります。見て楽しむ\ruby{程度}{ていど}には問題ないですが、誰かが作ったものや\ruby{情報}{じょうほう}には\ruby{著作権}{ちょさくけん}というものがあります。\ruby{法律}{ほうりつ}で勝手に使うことは\ruby{禁止}{きんし}されているから気をつけましょう。ただし、\ruby{著作権}{ちょさくけん}は\ruby{個人}{こじん}で楽しむもの、出典を明らかにして、引用することは\ruby{認}{みと}められています。
 	\end{minipage}\hfill
-	\includegraphics[width=0.25\textwidth,height=0.20\textwidth]{ome7-img001}
+	\includegraphics[width=0.2\textwidth]{ome7-img001}
 	\item[人を傷つけることや、迷惑になることはやめる]~\\
-	インターネットは自分以外の人も使っています。だから、自分勝手なことや悪い言葉を使ってばかりいると人を傷つけたり、不快に思われて犯罪に巻き込まれたり、訴えられたりする可能性もあります。清らかに生きていきましょう。
-	\item[他のひとたちが困らない文字情報を使う]~\\
+	インターネットは自分以外の人も使っています。だから、自分勝手なことや悪い言葉を使ってばかりいると人を傷つけたり、\ruby{不快}{ふかい}に思われて犯罪に\ruby{巻}{ま}き\ruby{込}{こ}まれたり、\ruby{訴}{うった}えられたりする可能性もあります。清らかに生きていきましょう。
+	\item[他のひとたちが\ruby{困}{こま}らない文字情報を使う]~\\
 	ネットワークを使っている人たちはみんな同じものを使っているとは限りません。
-	PCだったり、スマートフォンだったり、ラズベリーパイだったりします。文字の種類によっては見えなかったり最悪の場合ネットワークが見られないことも考えられます。
+	使っている機種が、PCだったり、スマートフォンだったり、ラズベリーパイだったりします。機種によっては、絵文字や特殊文字が見えなくなることが考えられます。
 	\item[迷惑メールは見ない、送らない]~\\
-	悪い人が色々な都合で出してくる怪しいメールのことです。。これには、変なアドレスがはられてい
-	たり、知らないソフトウェアが貼り付けられたりすることがあります。それを見るとウイルスという悪いものが入ってくることことがあります。ウイルスはコンピュータが壊れたり、操作出来なくなったりするものもあります。犯罪者の協力をしたと思われることもあるので、怪しいメールは絶対に開かないようにしましょう。また、チェーンメール（呪いのメールなど）は絶対に信じず他の人に送ってはいけません。
-	\item[自分の情報を外に漏らさない]~\\
-	自分の名前や、住所などをネットにあげるのはとても危ないから止めましょう。悪い人の目に入ってしまうと家族の身の危険にもつながり命の保証ができません。また、ネットに一度でもあげてしまうと消すことができなくなります。多くの人の目につくからデータが広がってしまうこともあります。ネットにデータをあげるときは問題が無いか確認してからあげましょう。
+	悪い人が色々な都合で出してくる\ruby{怪}{あや}しいメールのことです。。これには、変なアドレスがはられてい
+	たり、知らないソフトウェアが貼り付けられたりすることがあります。それを見るとウイルスという悪いものが入ってくることことがあります。ウイルスはコンピュータが\ruby{壊}{こわ}れたり、\ruby{操作}{そうさ}出来なくなったりするものもあります。犯罪者の協力をしたと思われることもあるので、怪しいメールは\ruby{絶対}{ぜったい}に開かないようにしましょう。また、チェーンメール（\ruby{呪}{のろ}いのメールなど）は絶対に信じず他の人に送ってはいけません。メール本文中に、『誰かに回して』 『○○人に転送するように』などと書かれているメールを受け取ったのなら、それはどんな内容でもチェーンメールです。
+	\item[自分の情報を外に\ruby{漏}{も}らさない]~\\
+	自分の名前や、住所などをネットにあげるのはとても\ruby{危}{あぶ}ないから止めましょう。悪い人の目に入ってしまうと家族の身の\ruby{危険}{きけん}にもつながり命の\ruby{保証}{ほしょう}ができません。また、ネットに一度でもあげてしまうと消すことができなくなります。多くの人の目につくからデータが広がってしまうこともあります。ネットにデータをあげるときは問題が無いか\ruby{確認}{かくにん}してからあげましょう。
+
 \end{description}
 
-\clearpage\subsection*{1−1インターネットのキホン}
+\clearpage\subsection*{教材を自分のフォルダに置こう}
+まずは、今回利用する教材をコピーしましょう。
+これまでと同じように、/usr/local/share/ome という場所にあるフォルダ 07をコピーして、/home/ユーザー名 に貼り付けてください。
+
+やり方を忘れてしまった人は、「第1回 4.1 例題1-18 教材をじぶんのフォルダに置こう」 を参考にしてみてください。
+
+\subsection*{1−1インターネットのキホン}
+\refstepcounter{PagePtr}\label{P:internet}
 \begin{wrapfigure}{r}[10pt]{0.4\textwidth}
 	\includegraphics[width=0.4\textwidth]{ome7-img002.eps}
 \end{wrapfigure}
-みんなが使っているパソコンやスマートフォンなどをたくさんつなぎ、おたがいに情報の交換ができるようにしたものを「ネットワーク」とよんでいます。
 
-インターネットとは、そのネットワークが数えきれないほどのケーブルなどでおたがいにつながりあい、網の目のように世界中に広がっているそのもののことです。
+みんなが使っているパソコンやスマートフォンなどをたくさんつなぎ、おたがいに情報の\ruby{交換}{こうかん}ができるようにしたものを「ネットワーク」とよんでいます。
 
+インターネットとは、そのネットワークが数えきれないほどのケーブルなどでおたがいにつながりあい、\ruby{網}{あみ}の目のように世界中に広がっているそのもののことです。
 
 
 \bigskip
 
-みなさんはすでにインターネットを触っています。
+みなさんはすでにインターネットを\ruby{触}{さわ}っています。
 
-第一回の講義でみなさんはwebから画像を自分のラズベリーパイ（PC）に保存しましたね。あれもインターネットを触ったということになるのです。網目のように世界中に広がっているネットワークから好きな画像を調べるということは自分のラズベリーパイでインターネットをしたということになります。
+第一回の\ruby{講義}{こうぎ}でみなさんはwebから画像を自分のラズベリーパイ（PC）に保存しましたね。あれもインターネットを触ったということになるのです。網目のように世界中に広がっているネットワークから好きな画像を調べるということは自分のラズベリーパイでインターネットをしたということになります。
 
-さらに、有名な動画サイト”YouTube”のコンピュータもインターネットにつながっています。そのおかげでインターネットにつながっているパソコンやスマートフォンであればYouTubeの動画を見ることができます。もちろん、インターネットにつながっていなければYouTubeの動画や画像検索など行うことはできません。試しにインターネットを切断してみても面白いかもしれません。
+さらに、有名な動画サイト”YouTube”のコンピュータもインターネットにつながっています。そのおかげでインターネットにつながっているパソコンやスマートフォンであればYouTubeの動画を見ることができます。もちろん、インターネットにつながっていなければYouTubeの動画や画像\ruby{検索}{けんさく}など行うことはできません。試しにインターネットを\ruby{切断}{せつだん}してみても面白いかもしれません。
 
 
 \vfill
 
-\refstepcounter{Question}\theQuestion　みんなが使っているパソコンやスマートフォンなどをたくさんつなぎ、おたがいに情報の交換ができるようにしたものを何というでしょうか。
+\refstepcounter{Question}\theQuestion　みんなが使っているパソコンやスマートフォンなどをたくさんつなぎ、おたがいに情報の交換ができるようにしたものを何というでしょうか。\label{Q:internet}
 
 
 
@@ -201,21 +222,24 @@
 \clearpage
 
 \subsection*{　1−2　IPアドレスとは何だろう？}
-ネットワークでコンピュータ同士がつながっているときにどうやって通信相手のコンピュータの場所を探すのでしょうか？
+\refstepcounter{PagePtr}\label{P:IP}
+
+ネットワークでコンピュータ同士がつながっているときにどうやって通信相手のコンピュータの場所を\ruby{探}{さが}すのでしょうか？
+
 わたしたちのいる住んでいる場所をしめす住所（英語でアドレス)と同じ考え方を使います。
 インターネットの住所のことをIP(アイピー)アドレスと言います。
 わたしたち日本人は住所を東京都港区高輪２−３−２３（東海大学高輪キャンパスの住所)のように表します。
 コンピュータの場合は\textbf{数字}で表します。
 IPアドレスの場合はxxx.xxx.xxx.xxxのように四つの数字を使って表します。
 3ケタづつ「\textbf{.}」点（ドット）で区切ります。
-xxxは0\~{}255の数字が入ります。
+xxxは0～255の数字が入ります。
 
 
 \bigskip
 
 
 \centering
-\includegraphics[width=11.024cm,height=5.436cm]{ome7-img003}
+\includegraphics[width=0.8\textwidth]{ome7-img003}
 
 
 \bigskip
@@ -231,14 +255,8 @@ xxxは0\~{}255の数字が入ります。
 
 
 \centering
-\includegraphics[width=11.412cm,height=5.786cm]{ome7-img004.png}
+\includegraphics[width=0.8\textwidth]{ome7-img004.png}
 \flushleft
-
-
-\bigskip
-
-
-\bigskip
 
 
 \bigskip
@@ -264,19 +282,19 @@ IPアドレスにはグローバルIPアドレスとローカル（プライベ�
 
 
 \centering
-\includegraphics[width=15.0cm,height=10.0cm]{ome7-img005.png}
+\includegraphics[width=15.0cm]{ome7-img005.png}
 
 \centering
-\includegraphics[width=15.0cm,height=10.0cm]{ome7-img006}
+\includegraphics[width=15.0cm]{ome7-img006}
 \flushleft
 
-{\refstepcounter{Question}\theQuestion　ローカルIPアドレスがかぶっても良いときはどのときですか。}
+{\refstepcounter{Question}\theQuestion　ローカルIPアドレスがかぶっても良いときはどのときですか。\label{Q:localIP}}
 
 {\bfseries
 	\addBlank{答え}}
 
 	\refstepcounter{Exercise}
-\clearpage\subsection*{\theExercise　IPアドレスを調べてみよう}
+\clearpage\subsection*{\theExercise　IPアドレスを調べてみよう\label{E:checkIP}}
 ターミナルにコマンド”hostname
 -\texttt{I}”を入力し、自分のラズベリーパイのローカルIPアドレスを確認しよう
 
@@ -286,23 +304,20 @@ IPアドレスにはグローバルIPアドレスとローカル（プライベ�
 
 
 \centering
-\includegraphics[width=14.566cm,height=7.696cm]{ome7-img007.png}
+\includegraphics[width=0.85\textwidth]{ome7-img007.png}
 
 \centering
-\includegraphics[width=14.52cm,height=7.682cm]{ome7-img008.png}
+\includegraphics[width=0.85\textwidth]{ome7-img008.png}
 \flushleft
 
 \clearpage
 
 \centering
 
-\includegraphics[width=13.799cm,height=6.456cm]{ome7-img010.png}
+\includegraphics[width=0.85\textwidth]{ome7-img010.png}
 \centering
-\includegraphics[width=12.771cm,height=6.128cm]{ome7-img009.png}
+\includegraphics[width=0.85\textwidth]{ome7-img009.png}
 \flushleft
-
-
-\bigskip
 
 
 \bigskip
@@ -360,14 +375,11 @@ IPアドレスにはグローバルIPアドレスとローカル（プライベ�
 \clearpage
 \textbf{1−4　インターネットのつながりについて知ろう}
 
-教室内では無線通信を利用してインターネットを使用しています。第１回目の授業の最初に皆さんはインターネット接続をしました。実際にはどこにつながっているかというと下の図のルータです。
+教室内では無線通信を利用してインターネットを使用しています。第１回目の授業の最初に\ruby{皆}{みな}さんはインターネット\ruby{接続}{せつぞく}をしました。\ruby{実際}{じっさい}にはどこにつながっているかというと下の図のルータです。
 
 \centering
-\includegraphics[width=8.186cm,height=6.142cm]{ome7-img011.png}
+\includegraphics[width=8.186cm]{ome7-img011.png}
 \flushleft
-
-
-\bigskip
 
 
 \bigskip
@@ -394,7 +406,7 @@ IPアドレスにはグローバルIPアドレスとローカル（プライベ�
 
 どういう原理で、みんなのラズベリーパイでインターネットを使用できているか説明していくよ。
 
-みんなのラズベリーパイは直接インターネットにつながってはいません。一度、ルータを経由しています。このルータのおかげで複数のラズベリーパイやPCを同時にインターネットにアクセスさせることができるんだ。以下の図がイメージ図だよ。
+みんなのラズベリーパイは直接インターネットにつながってはいません。一度、ルータを経由しています。このルータのおかげで\ruby{複数}{ふくすう}のラズベリーパイやPCを同時にインターネットにアクセスさせることができるんだ。以下の図がイメージ図だよ。
 
 
 \bigskip
@@ -402,18 +414,18 @@ IPアドレスにはグローバルIPアドレスとローカル（プライベ�
 
 
 \centering
-\includegraphics[width=15.214cm,height=9.11cm]{ome7-img012.png}
+\includegraphics[width=\textwidth]{ome7-img012.png}
 \flushleft
 
 
 \bigskip
 
-ではどのようにして複数台のラズベリーパイをインターネットに接続しているのでしょうか。それはルータに\textbf{グローバルIPアドレス}というものを割り当てて、ルータが他のラズベリーパイの代表として通信を行っています。どういうことかわかりずらいので、図でみていきましょう。
+ではどのようにして複数台のラズベリーパイをインターネットに接続しているのでしょうか。それはルータに\textbf{グローバルIPアドレス}というものを\ruby{割}{わ}り当てて、ルータが他のラズベリーパイの代表として通信を行っています。どういうことかわかりずらいので、図でみていきましょう。
 
 
 
 \centering
-\includegraphics[width=16.18cm,height=8.253cm]{ome7-img013.png}
+\includegraphics[width=0.9\textwidth]{ome7-img013.png}
 \flushleft
 
 
@@ -422,7 +434,7 @@ IPアドレスにはグローバルIPアドレスとローカル（プライベ�
 図ではラズベリーパイ２号機がインターネットにアクセスし、何かしらの　webサイトを観たいと要求したとします。その要求はまずルータのところにいき、ラズベリーパイ２号機の代わりにインターネットに接続します。その接続で、ルータはインターネット先から返事をもらい、そのインターネットからの返事をラズパイに返しています。
 
 \centering
-\includegraphics[width=15.921cm,height=4.891cm]{ome7-img014.png}
+\includegraphics[width=0.9\textwidth]{ome7-img014.png}
 \flushleft
 
 
@@ -434,38 +446,34 @@ IPアドレスにはグローバルIPアドレスとローカル（プライベ�
 
 
 \centering
-\includegraphics[width=15.565cm,height=7.444cm]{ome7-img015.png}
+\includegraphics[width=0.9\textwidth]{ome7-img015.png}
 \flushleft
 
-どれかしらのラズベリーパイからwebサイトへの要求があり、ルータを経由してインターネットに接続します。そのあと、インターネットから要求のあったwebサイトの情報がルータにいきます。ここで問題が発生します。それはいったいのどのラズベリーパイの要求であったのかルータがわからないのです。僕らが、勝手にラズベリーパイ１号機、ラズベリーパイ２号機、ラズベリーパイ３号機と名前をつけて判断していても、そのことはルータはわかりません。そこでIPアドレスというものを使います。
+どれかしらのラズベリーパイからwebサイトへの要求があり、ルータを経由してインターネットに接続します。そのあと、インターネットから要求のあったwebサイトの情報がルータにいきます。ここで問題が発生します。それはいったいのどのラズベリーパイの要求であったのかルータがわからないのです。\ruby{僕}{ぼく}らが、勝手にラズベリーパイ１号機、ラズベリーパイ２号機、ラズベリーパイ３号機と名前をつけて\ruby{判断}{はんだん}していても、そのことはルータはわかりません。そこでIPアドレスというものを使います。
 
-ルータは自分を含め、ローカルIPアドレスを割り当てています。このローカルIPアドレスでラズベリーパイを見分けています。
+ルータは自分を\ruby{含}{ふく}め、ローカルIPアドレスを割り当てています。このローカルIPアドレスでラズベリーパイを見分けています。
 %\textbf{例題７−２で自分のラズベリーパイが接続しているグローバルIPアドレスを確認してみよう}
 
-\bigskip
+%\bigskip
 
 \centering
-\includegraphics[width=14.233cm,height=7.0cm]{ome7-img016.png}
+\includegraphics[width=0.9\textwidth]{ome7-img016.png}
 \flushleft
 
 
-\bigskip
+\refstepcounter{Question}\theQuestion　ルータはラズベリーパイたちを見分けるために何を割り当てていますか。\label{Q:globalIP}
 
-\refstepcounter{Question}\theQuestion　ルータはラズベリーパイたちを見分けるために何を割り当てていますか。
-
-\bigskip
-
-
-\bigskip
 \addBlank{答え}
 
 \refstepcounter{Exercise}
-\clearpage\subsection*{\theExercise　ポケットWi-FiルータのグローバルIPアドレスを調べよう}
+\clearpage\subsection*{\theExercise　ポケットWi-FiルータのグローバルIPアドレスを調べよう\label{E:router}}
 \begin{minipage}[b]{0.58\textwidth}
 	ターミナルを開き、”curl
-	inet-ip.info”とコマンドを入力して、自分のラズベリーパイが接続しているwifiルータのグローバルIPアドレスを確認しよう
 
-	curlコマンドはインターネットから情報を取ってくるときに使用します。今回は”inet-ip.info”というサイトからグローバルIPアドレスを調べてターミナルに表示させています。webブラウザから”inet-ip.info”にアクセスしてみると右の図のような形でグローバルIPアドレスを確認することもできます。
+	inet-ip.info”とコマンドを入力して、自分のラズベリーパイが接続しているWi-FiルータのグローバルIPアドレスを確認しよう
+
+	curlコマンドはインターネットから情報を取ってくるときに使用します。今回は”inet-ip.info”というサイトからグローバルIPアドレスを調べてターミナルに\ruby{表示}{ひょうじ}させています。webブラウザから”inet-ip.info”にアクセスしてみると右の図のような形でグローバルIPアドレスを確認することもできます。
+
 \end{minipage}
 \includegraphics[width=0.4\textwidth]{ome7-img017.png}
 
@@ -479,10 +487,10 @@ IPアドレスにはグローバルIPアドレスとローカル（プライベ�
 
 
 \centering
-\includegraphics[width=13.942cm,height=7.366cm]{ome7-img007.png}
+\includegraphics[width=0.85\textwidth]{ome7-img007.png}
 
 \centering
-\includegraphics[width=12.746cm,height=6.742cm]{ome7-img008.png}
+\includegraphics[width=0.85\textwidth]{ome7-img008.png}
 \flushleft
 
 
@@ -500,10 +508,10 @@ IPアドレスにはグローバルIPアドレスとローカル（プライベ�
 
 
 \centering
-\includegraphics[width=13.716cm,height=5.459cm]{ome7-img018.png}
+\includegraphics[width=0.85\textwidth]{ome7-img018.png}
 
 \centering
-\includegraphics[width=13.85cm,height=6.052cm]{ome7-img019.png}
+\includegraphics[width=0.85\textwidth]{ome7-img019.png}
 \flushleft
 
 
@@ -565,47 +573,47 @@ IPアドレスにはグローバルIPアドレスとローカル（プライベ�
 \bigskip
 
 \clearpage\subsection*{1−5　ポート番号とは}
-
+\refstepcounter{PagePtr}\label{P:port}
 
 \centering
-\includegraphics[width=15.004cm,height=11.0cm]{ome7-img020.png}
+\includegraphics[width=0.85\textwidth]{ome7-img020.png}
 \flushleft
 
 前のページではみんなはラズベリーパイがどのようにインターネットにつながっているのか理解してくれたと思います。
-ここではさらにポート番号について知識を深めましょう。
+ここではさらにポート番号について\ruby{知識}{ちしき}を深めましょう。
 IPアドレスでは通信相手となる別のネットワークのコンピュータを特定することができます。
-しかし、コンピュータでは通常、多くのプログラム（機能）が動作していて、IPアドレスを指定するだけでは、どのプログラムと接続するかを区別できません。
+しかし、コンピュータでは\ruby{通常}{つうじょう}、多くのプログラム（機能）が動作していて、IPアドレスを指定するだけでは、どのプログラムと接続するかを区別できません。
 そこでコンピュータ上の、\underline{どのプログラムと接続するかを指定するためにポート番号が用いられます}。
 下の図は小学校を例にしています。
 
-青梅市立第一小学校の住所がみんなのラズベリーパイのIPアドレスに対応しており、IPアドレスの末尾の201（青で囲まれている）が小学校のクラスに対応しています。
-皆さんの学校でも生徒にはそれぞれ係という役割が与えられていますね。
-例えば、プリントなどの配布物を配る配り係、黒板を使い終わったらきれいにする黒板係、教室の窓をきれいにする窓ふき係などこれらの係に相当するものがラズベリーパイにもあり、それが\underline{ポート}です。
-ポート21はファイル転送用の働きをする担当で、ポート22と23は他のコンピュータに接続する担当です。
-ポートには役割がありインターネットの通信はファイル転送であったり、他のコンピュータに接続して遠隔操作したり、webページにアクセスしたりといろいろあります。
-なので、その分のポートを用意しておき、役割を与え、対応している役割のときに頑張ってもらう仕組みになっています。
+青梅市立第一小学校の住所がみんなのラズベリーパイのIPアドレスに\ruby{対応}{たいおう}しており、IPアドレスの\ruby{末尾}{まつび}の201（青で囲まれている）が小学校のクラスに対応しています。
+皆さんの学校でも生徒にはそれぞれ係という役割が\ruby{与}{あた}えられていますね。
+例えば、プリントなどの\ruby{配布物}{はいふぶつ}を配る配り係、黒板を使い終わったらきれいにする黒板係、教室の\ruby{窓}{まど}をきれいにする窓ふき係などこれらの係に相当するものがラズベリーパイにもあり、それが\underline{ポート}です。
+ポート21はファイル転送用の働きをする\ruby{担当}{たんとう}で、ポート22と23は他のコンピュータに接続する担当です。
+ポートには役割がありインターネットの通信はファイル転送であったり、他のコンピュータに接続して\ruby{遠隔}{えんかく}操作したり、webページにアクセスしたりといろいろあります。
+なので、その分のポートを用意しておき、役割を与え、対応している役割のときに\ruby{頑張}{がんば}ってもらう仕組みになっています。
 みんなのラズベリーパイやパソコン、サーバにはポートは何個あるのか調べてみるのも面白いですね。
 
 \bigskip
 
+\clearpage
 
-\refstepcounter{Question}\theQuestion　ポート番号はどのようなことに使われますか。
-\bigskip
+
+\refstepcounter{Question}\theQuestion　ポート番号はどのようなことに使われますか。\label{Q:portUsage}
 
 \addBlank{答え}
 
-
-\clearpage
+\bigskip
 
 ここでは実際にポートはネットワーク上ではどのように使うのか、下の図を見てみましょう。
 
 
 
 \centering
-\includegraphics[width=16.609cm,height=8.043cm]{ome7-img021.png}
+\includegraphics[width=0.97\textwidth]{ome7-img021.png}
 
 \centering
-\includegraphics[width=16.496cm,height=7.895cm]{ome7-img022.png}
+\includegraphics[width=0.97\textwidth]{ome7-img022.png}
 \flushleft
 
 
@@ -614,12 +622,12 @@ IPアドレスでは通信相手となる別のネットワークのコンピュ
 \clearpage
 
 \centering
-\includegraphics[width=16.843cm,height=7.756cm]{ome7-img023.png}
+\includegraphics[width=0.97\textwidth]{ome7-img023.png}
 
 
 
 \centering
-\includegraphics[width=16.875cm,height=7.978cm]{ome7-img024}
+\includegraphics[width=0.97\textwidth]{ome7-img024}
 \flushleft
 
 
@@ -645,22 +653,22 @@ IPアドレスでは通信相手となる別のネットワークのコンピュ
 
 
 \centering
-\includegraphics[width=15.847cm,height=7.853cm]{ome7-img025.png}
+\includegraphics[width=0.97\textwidth]{ome7-img025.png}
 \flushleft
 
-コンピュータXのようにネット上にサービスを提供するコンピュータを\underline{サーバ}と言います。
+コンピュータXのようにネット上にサービスを\ruby{提供}{ていきょう}するコンピュータを\underline{サーバ}と言います。
 
-ラズベリーパイ一号機のようにサーバからサービスを受けるコンピュータを\underline{クライアント}言います。
-
-
-\bigskip
-
-これらのポートが今現在どのようなことに使われているのか\textbf{例題７−３で確認してみましょう。}
+ラズベリーパイ１号機のようにサーバからサービスを受けるコンピュータを\underline{クライアント}言います。
 
 
 \bigskip
 
-{\refstepcounter{Question}\theQuestion　コンピュータ上のプログラムを判断するためになにが用いられていますか。}
+これらのポートが今\ruby{現在}{げんざい}どのようなことに使われているのか\textbf{\ref{port}で確認してみましょう。}
+
+
+\bigskip
+
+{\refstepcounter{Question}\theQuestion　コンピュータ上のプログラムを判断するためになにが用いられていますか。\label{Q:port}}
 \bigskip
 
 {\bfseries
@@ -682,16 +690,14 @@ IPアドレスでは通信相手となる別のネットワークのコンピュ
 
 \bigskip
 
-
-\bigskip
-
-\clearpage\subsection*{1−6　DNSについて}
+\clearpage\subsection*{1−6　DNS（Domain Name System）について}
+\refstepcounter{PagePtr}\label{P:DNS}
 
 {\bfseries
 	IPアドレスは住所であり、それがわからないとサーバのサービスをうけることはできません。ですが以下の図のようなことが起こることがあります。}
 
 \centering
-\includegraphics[width=15.004cm,height=8.213cm]{ome7-img026.png}
+\includegraphics[width=0.97\textwidth]{ome7-img026.png}
 \flushleft
 
 そこで、DNSサーバと言うものを作り、一度そこに”amazon.co.jp”のグローバルIPアドレスを教えてもらってサーバに接続しています。
@@ -699,7 +705,7 @@ IPアドレスでは通信相手となる別のネットワークのコンピュ
 
 
 \centering
-\includegraphics[width=13.051cm,height=7.856cm]{ome7-img027}
+\includegraphics[width=0.97\textwidth]{ome7-img027}
 \flushleft
 
 
@@ -709,7 +715,7 @@ IPアドレスでは通信相手となる別のネットワークのコンピュ
 \clearpage
 
 \centering
-\includegraphics[width=11.924cm,height=6.509cm]{ome7-img028.png}
+\includegraphics[width=0.8\textwidth]{ome7-img028.png}
 \flushleft
 
 
@@ -718,8 +724,8 @@ IPアドレスでは通信相手となる別のネットワークのコンピュ
 
 \bigskip
 
-{\refstepcounter{Question}\theQuestion　ターミナルを開き、”host
-	amazon.co.jp”を実行してグローバルIPアドレスを確認しよう。}
+{\refstepcounter{Question}\theQuestion　ターミナルを開き、”dig
+	amazon.co.jp”を実行してグローバルIPアドレスを確認しよう。\label{Q:dig}}
 
 \bigskip
 {\bfseries
@@ -727,27 +733,28 @@ IPアドレスでは通信相手となる別のネットワークのコンピュ
 
 \clearpage\subsection*{\bfseries コラム　NATについて}
 
-教科書の前のページでローカルIPアドレスとグローバルIPアドレスが存在することを皆さんは知りましたね。ここではもっと細かくIPアドレスを用いたインターネット接続を勉強しましょう。インターネットに接続するコンピュータは自分自身を示すIPアドレスとして世界で唯一のグローバルIPアドレスを使わなければならないのです。みなさんのラズベリーパイにはローカルIPアドレスしか割り当てられていませんので、このままではインターネットをすることはできません。そこでNAT（Network
+教科書の前のページでローカルIPアドレスとグローバルIPアドレスが存在することを皆さんは知りましたね。ここではもっと細かくIPアドレスを用いたインターネット接続を勉強しましょう。インターネットに接続するコンピュータは自分自身を示すIPアドレスとして世界で\ruby{唯一}{ゆいつ}のグローバルIPアドレスを使わなければならないのです。みなさんのラズベリーパイにはローカルIPアドレスしか割り当てられていませんので、このままではインターネットをすることはできません。そこでNAT（Network
 Address
 Translation）というものを用います。このNATはルータが行っていて、送信元のローカルIPアドレスをグローバルIPアドレスに変換して通信を行っています。具体的にはどのようになっているのか下の図をみて確認してみよう。
 
 
 
 \centering
-\includegraphics[width=11.352cm,height=6.38cm]{ome7-img029}
+\includegraphics[width=0.9\textwidth]{ome7-img029}
 \flushleft
 
 
 \bigskip
 
 
+\clearpage
 
-ラズベリーパイ１号機からサーバにデータの送信先IPアドレスは200.1.1.1（グローバルIPアドレス）、送信元IPアドレスは192.168.1.1（ローカルIPアドレス）です。NATを行うルータは、プライベートアドレスとグローバルアドレスの境界に位置しています。ここでルータは、ラズベリーパイから送信されたデータの送信元IPアドレス192.168.1.1を、グローバルIPアドレスの「100.1.1.1」に変換して転送します。このときルータは、その変換情報をNATテーブルに記録しています。この記録が、「返ってくるデータ」、つまりサーバーからラズベリーパイへ送られるデータの転送時に役立ちます。次の図を見てください。
+ラズベリーパイ１号機からサーバにデータの送信先IPアドレスは200.1.1.1（グローバルIPアドレス）、送信元IPアドレスは192.168.1.1（ローカルIPアドレス）です。NATを行うルータは、プライベートアドレスとグローバルアドレスの\ruby{境界}{きょうかい}に位置しています。ここでルータは、ラズベリーパイから送信されたデータの送信元IPアドレス192.168.1.1を、グローバルIPアドレスの「100.1.1.1」に変換して転送します。このときルータは、その変換情報をNATテーブルに記録しています。この記録が、「返ってくるデータ」、つまりサーバーからラズベリーパイへ送られるデータの転送時に役立ちます。次の図を見てください。
 
 
 
 \centering
-\includegraphics[width=10.83cm,height=6.096cm]{ome7-img030}
+\includegraphics[width=0.9\textwidth]{ome7-img030}
 \flushleft
 
 
@@ -764,6 +771,7 @@ Translation）というものを用います。このNATはルータが行って
 
 \refstepcounter{Exercise}
 \clearpage\subsection*{\theExercise　開いているポートを調べてみよう}
+\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{port}
 ターミナルを開き、”nmap
 localhost”とコマンドを入力し、ポートについて知ろう
 
@@ -773,10 +781,10 @@ localhost”とコマンドを入力し、ポートについて知ろう
 
 
 \centering
-\includegraphics[width=14.981cm,height=7.915cm]{ome7-img007.png}
+\includegraphics[width=0.85\textwidth]{ome7-img007.png}
 
 \centering
-\includegraphics[width=14.508cm,height=7.675cm]{ome7-img008.png}
+\includegraphics[width=0.85\textwidth]{ome7-img008.png}
 \flushleft
 
 
@@ -788,9 +796,9 @@ localhost”とコマンドを入力し、ポートについて知ろう
 
 \centering
 
-\includegraphics[width=14.404cm,height=6.722cm]{ome7-img032.png}
+\includegraphics[width=0.85\textwidth]{ome7-img032.png}
 \bigskip
-\includegraphics[width=14.542cm,height=7.458cm]{ome7-img031.png}
+\includegraphics[width=0.85\textwidth]{ome7-img031.png}
 \flushleft
 
 \bigskip
@@ -835,7 +843,7 @@ localhost”とコマンドを入力し、ポートについて知ろう
 \end{flushleft}
 {\bfseries
 serviceに出てきた言葉をインターネットを使って調べよう。
-皆さんにとっては難しい言葉が多いと思います。
+皆さんにとっては\ruby{難}{むず}しい言葉が多いと思います。
 それでも自分で調べてみましょう。
 それが知識を深める近道です。\\
 ポートが開いていない場合、コマンドは何も表示せず、
@@ -843,11 +851,13 @@ serviceに出てきた言葉をインターネットを使って調べよう。
 }
 
 \clearpage\subsection*{２−１　HTMLについて}
+\refstepcounter{PagePtr}\label{P:HTML}
 \refstepcounter{Exercise}
-\subsection*{\theExercise　HTMLの復習}
+\subsection*{\theExercise　HTMLの復習\label{E:HTML}}
 {\bfseries
 	考え方\newline
-	第１回で作成した自己紹介ページのタグや機能を理解することでHTMLについて自分の思ったとおりに作れるようになりましょう。}
+
+	第１回で作成した\ruby{自己紹介}{じこしょうかい}ページのタグや機能を理解することでHTMLについて自分の思ったとおりに作れるようになりましょう。}
 
 
 \bigskip
@@ -858,29 +868,30 @@ HTMLは、タグという一つの機能をつかい、ウェブページを作�
 
 \ \ {\textless}p{\textgreater}文章をここに書きます。{\textless}/p{\textgreater}
 
-のようなタグをpタグと呼びます。pタグはタグの間にある文章を表示します。\newline
-まずは、第１回目の授業でみさなんが作成した自己紹介ページのファイルを第６回のフォルダにコピーし、それをleafpadでhtmlファイルを開いて見ましょう。
+のようなタグをpタグと\ruby{呼}{よ}びます。pタグはタグの間にある文章を表示します。\newline
+まずは、第１回目の授業でみさなんが作成した自己紹介ページとその画像のファイルを第7回のフォルダにコピーし、それをmousepadでhtmlファイルを開いて見ましょう。
 
 \begin{minipage}[b]{0.5\textwidth}
 	\begin{enumerate}
-
-
 		\begin{minipage}[b]{1.5\textwidth}
-			\item \ \ cp \ \ \~{}/ome/01/self\_intro.html \ \ \ \~{}/ome/07/www/index.html\\
-			cpコマンドを使って、 自己紹介ページのhtmlを、 第７回のwwwディレクトリにコピー。\\
+			\item \ \ cp \ \ {\textasciitilde}/01/self\_intro.html \ \ \ {\textasciitilde}/07/www/index.html\\
+			\ \ cp \ \ {\textasciitilde}/01/face.png \ \ \ {\textasciitilde}/07/www/\\
+			cpコマンドを使って、 自己紹介ページのhtmlと<img src="face.png" などimgタグで指定している画像ファイルを、 第７回のwwwディレクトリにコピーしましょう。"face.png"以外にも使っている画像ファイルがあればコピーしてください。\\
 			\includegraphics[width=14.73cm]{ome7-img033.png}
+			\bigskip
 		\end{minipage}
 
 		\bigskip
 
 		\item
-		      \ \ cd \ \ \~{}/ome/07/www/\newline
-		      cdコマンドを使って、（cpコマンドとは違うよ。) 第７回のwwwディレクトリに移動。
+
+		      \ \ cd \ \ {\textasciitilde}/07/www/\newline
+		      cdコマンドを使って、（cpコマンドとは\ruby{違}{ちが}うよ。) 第７回のwwwディレクトリに\ruby{移動}{いどう}。
 
 
-		\item \ \ leafpad \ \ index.html
+		\item \ \ mousepad\ \index.html
 
-		      \ \ leafpadでコピーした自己紹介のhtmlを開いてみよう。
+		      \ \ mousepadでコピーした自己紹介のhtmlを開いてみよう。
 
 	\end{enumerate}
 \end{minipage}
@@ -907,21 +918,24 @@ HTMLまとめ\ \
 	\begin{supertabular}{|m{4.0cm}|m{12.0cm}|}
 		\hline
 		タグ名 &
-		効果\\\hline
+
+		\ruby{効果}{こうか}\\\hline
+
 		{\textless}title{\textgreater}{\textless}/title{\textgreater} &
 		ウェブページのタイトルをつける\\\hline
 		{\textless}h1{\textgreater}{\textless}/h1{\textgreater} &
-		見出し(h1\~{}h6)まで使える。h1が一番大きい\\\hline
+		見出し(h1～h6)まで使える。h1が一番大きい\\\hline
 		{\textless}ul{\textgreater}{\textless}/ul{\textgreater} &
-		点付のリスト。リストの項目はliを使って表す\\\hline
+
+		点付のリスト。リストの\ruby{項目}{こうもく}はliを使って表す\\\hline
 		{\textless}li{\textgreater}{\textless}/li{\textgreater} &
 		リストの項目。ulもしくはolタグなどの中で使う\\\hline
 		{\textless}p{\textgreater}{\textless}/p{\textgreater} &
-		段落を作るために使う。文字を表示したいときはこれを使う。改行は自動で行われるので自分のタイミングで行いたいときは{\textless}br{\textgreater}を使う\\\hline
+		\ruby{段落}{だんらく}を作るために使う。文字を表示したいときはこれを使う。改行は自動で行われるので自分のタイミングで行いたいときは{\textless}br{\textgreater}を使う\\\hline
 		{\textless}br{\textgreater} &
 		改行. pの中でも使うことができる\\\hline
 		{\textless}i{\textgreater}{\textless}/i{\textgreater} &
-		イタリック（少し傾いた感じの文字）\\\hline
+		イタリック（少し\ruby{傾}{かたむ}いた感じの文字）\\\hline
 		{\textless}u{\textgreater}{\textless}/u{\textgreater} &
 		文字の下に線を引くときに使う\\\hline
 		{\textless}a href=””{\textgreater}{\textless}/a{\textgreater} &
@@ -953,7 +967,7 @@ HTMLで使いたい色を探すときにはここを使うと便利です。
 また、HTMLにはボタンや文字を書き込む部分も作れます。\newline
 通常見るだけのウェブページだったものがデータの送受信を可能とするなど、可能性を広げられます。
 
-一部のタグを下に記載します。
+一部のタグを下に\ruby{記載}{きさい}します。
 
 \begin{center}
 	\tablefirsthead{}
@@ -983,7 +997,8 @@ HTMLで使いたい色を探すときにはここを使うと便利です。
 		{\textless}input type=”password” name=”pass”{\textgreater} &
 		文字の入力や、ボタンなどを作成するタグ。
 
-		inputの次にtypeなどの属性を入れることで一行の文章やパスワードの入力などを決定する\\\hline
+
+		inputの次にtypeなどの\ruby{属性}{ぞくせい}を入れることで一行の文章やパスワードの入力などを決定する\\\hline
 	\end{supertabular}
 \end{center}
 
@@ -992,7 +1007,7 @@ HTMLで使いたい色を探すときにはここを使うと便利です。
 それでは、formを使った例題を説いてみましょう。
 
 例題\newline
-自己紹介ページの一番下から2行上あたりにある{\textless}/body{\textgreater}の上の行から{\textless}form{\textgreater}タグで文字の入力をし、送信ボタンを押せる機能を書きましょう。
+自己紹介ページの一番下から2行上あたりにある{\textless}/body{\textgreater}の上の行から{\textless}form{\textgreater}タグで文字の入力をし、送信ボタンを\ruby{押}{お}せる機能を書きましょう。
 
 考え方\newline
 はじめに、formタグの間（{\textless}form{\textgreater}
@@ -1003,7 +1018,7 @@ HTMLで使いたい色を探すときにはここを使うと便利です。
 
 
 \centering
-\includegraphics[width=17.006cm,height=3.046cm]{ome7-img035.png}
+\includegraphics[width=\textwidth]{ome7-img035.png}
 \flushleft
 
 ２．{\textless}form{\textgreater}タグを書き足そう。
@@ -1011,7 +1026,7 @@ HTMLで使いたい色を探すときにはここを使うと便利です。
 
 
 \centering
-\includegraphics[width=17.006cm,height=2.454cm]{ome7-img036.png}
+\includegraphics[width=\textwidth]{ome7-img036.png}
 \flushleft
 
 
@@ -1025,6 +1040,10 @@ HTMLで使いたい色を探すときにはここを使うと便利です。
 \ \ \ \ \textbf{\textit{{\textless}p{\textgreater}テキストボックス{\textless}/p{\textgreater}}}\newline
 \ \ {\textless}/form{\textgreater}
 
+\bigskip
+
+\clearpage
+
 ４．次の行に{\textless}input{\textgreater}タグを入れよう。その際に、テキストを書き込めるようにしよう。
 
 %\newline
@@ -1035,7 +1054,7 @@ HTMLで使いたい色を探すときにはここを使うと便利です。
 \ \ {\textless}/form{\textgreater}
 
 \centering
-\includegraphics[width=16.3cm,height=2.54cm]{ome7-img037.png}
+\includegraphics[width=16.3cm]{ome7-img037.png}
 \flushleft
 
 ５．同じようなやり方で、先にかいた{\textless}input{\textgreater}タグから改行して次の行に{\textless}input{\textgreater}タグで送信ボタンを作成しよう。\newline
@@ -1051,7 +1070,7 @@ HTMLで使いたい色を探すときにはここを使うと便利です。
 \bigskip
 
 \clearpage
-\refstepcounter{Question}\theQuestion\newline
+\refstepcounter{Question}\theQuestion\label{Q:HTML}\newline
 \begin{enumerate}
 	\item 最初に書いたテキストボックスの属性をパスワード入力ボックスに書き換えてみよう。
 	\item 食べ物の名前を{\textless}p{\textgreater}タグを使って３つ追加してその横にチェックボックスを置きましょう。
@@ -1060,7 +1079,7 @@ HTMLで使いたい色を探すときにはここを使うと便利です。
 
 \samepage
 
-わからなかったら、先生に質問をすること。その間は一覧を見て考えてみよう。
+わからなかったら、先生に質問をすること。その間は\ruby{一覧}{いちらん}を見て考えてみよう。
 
 inputタグの機能になるもの
 
@@ -1076,56 +1095,54 @@ inputタグの機能になるもの
 		sizeの属性を指定することで大きさも決定できる。\\\hline
 		type=”password” &
 		パスワード用のテキストボックスを作ります。\newline
-		入力されたら＊のマークなどに置き換わります。送信する際には普通の文字で送られるのに注意。\\\hline
+
+		入力されたら＊のマークなどに置き換わります。送信する際には\ruby{普通}{ふつう}の文字で送られるのに注意。\\\hline
 		type=”checkbox” &
 		チェックボックスを作ります。
-
-		複数選択可能で、checked属性を指定すると予めチェックが入ったかどうかを決めれる。\\\hline
+		複数\ruby{選択}{せんたく}可能で、checked属性を指定すると予めチェックが入ったかどうかを決めれる。\\\hline
 		type=”radio” &
 		ラジオボタンを作ります。
-
-		複数の中から１つしか選択できないのが特徴。\newline
-		こちらもcheckedで状態を決めれる。\\\hline
+		複数の中から１つしか選択できないのが\ruby{特徴}{とくちょう}。\newline
+		こちらもcheckedで\ruby{状態}{じょうたい}を決めれる。\\\hline
 		type=”submit” &
 		送信ボタンを作ります。\\\hline
 		type=”button” &
 		普通のボタンを作ります。\\\hline
 		type=”image” &
 		画像のボタンを作ります。\newline
-		使用する画像ファイルは、src属性で指定しましょう。またalt属性が必須。\\\hline
+		使用する画像ファイルは、src属性で指定しましょう。またalt属性が\ruby{必須}{ひっす}。\\\hline
 		type=”reset” &
 		リセットボタンを作ります。
 
-		このボタンを押すと、書いていたデータがなくなり最初の状態に戻ります。\\\hline
+		このボタンを押すと、書いていたデータがなくなり最初の状態に\ruby{戻}{もど}ります。\\\hline
 	\end{supertabular}
 \end{flushleft}
 
 \bigskip
 
+\clearpage
+\refstepcounter{PagePtr}\label{P:HP}
 \refstepcounter{Exercise}
-\clearpage\subsection*{2−2　\theExercise　自分のホームページを公開しよう}
+\subsection*{2−2　\theExercise　自分のホームページを公開しよう\label{E:myHP}}
 考え方
 
-クライアントとサーバーと呼ばれるコンピュータがあります。クライアントとはサービスを利用するコンピュータです。サーバーとはそれと逆にサービスを提供しているコンピュータです。クライアントとサーバーは同じコンピュータにあっても
-OK です。例えば、google
-は検索するためのウェブサイトを提供しています。ウェブサイトを提供するサーバーをウェブサーバーと呼びます。自分のホームページを公開するためには、ウェブサーバーを動かす必要があります。
+
+クライアントとサーバーと呼ばれるコンピュータがあります。クライアントとはサービスを利用するコンピュータです。サーバーとはそれと\ruby{逆}{ぎゃく}にサービスを提供しているコンピュータです。クライアントとサーバーは同じコンピュータにあっても
+OK です。例えば、Googleは検索するためのウェブサイトを提供しています。ウェブサイトを提供するサーバーをウェブサーバーと呼びます。自分のホームページを公開するためには、ウェブサーバーを動かす必要があります。
 
 注意
 
-今回のみんなのホームページはローカルIPの間だけです。つまり、インターネット上に公開はしません。
-
-%\newline
-これを公開して、実際確認したりみんなで見せ合いをしてみましょう。
+今回のみんなのホームページはローカルIPの間だけです。つまり、インターネット上に公開はしません。これを公開して、実際確認したりみんなで見せ合いをしてみましょう。
 
 
 \bigskip
 
 1.まず
-/home/pi/ome/07/wwwのディレクトリに移りましょう。
+{\textasciitilde}/07/wwwのディレクトリに移りましょう。
 
 \ \ ターミナルを立ち上げて次のコマンドを打ちましょう。
 
-\ \ cd /home/pi/ome/07/www
+\ \ cd {\textasciitilde}/07/www
 
 
 \bigskip
@@ -1136,23 +1153,22 @@ OK です。例えば、google
 
 \ \ 　./webserver.py
 
-\ \ を実行するとサーバが動き始めます。
+\ \ を実行するとウェブサーバが動き始めます。
 
 \ \ webserver.pyを起動したディレクトリがドキュメントルートになります。
 
-\ \ ドキュメントルートはサーバから見たルートディレクトリのことです。
+\ \ これはファイルシステムのルートディレクトリとは別のものでドキュメントルートはウェブ
 
+\ \ サーバから見たルートディレクトリのことです。
+
+\ \ つまりウェブサーバーしかそのディレクトリをルートディレクトリとは認識しません。
+
+\ \ ディレクトリに関しては第3回の教科書3.3.2 「ディレクトリの関係」を参考にしてください。
 
 
 \centering
-\includegraphics[width=14.986cm,height=5.565cm]{ome7-img038.png}
+\includegraphics[width=0.73\textwidth]{ome7-img038.png}
 \flushleft
-
-
-\bigskip
-
-
-\bigskip
 
 3.サーバーが動いているかどうかを確認してみましょう。
 
@@ -1164,22 +1180,20 @@ OK です。例えば、google
 
 \ \ これでサーバーが動いていることが分かります。
 
-
-
 \centering
-\includegraphics[width=16.124cm,height=5.973cm]{ome7-img039.png}
+\includegraphics[width=0.75\textwidth]{ome7-img039.png}
 \flushleft
 
+\clearpage
 
-\bigskip
 
 4.みなさんが作ったウェブページを表示してみましょう。
 
-\ \ みなさんが作ったindex.htmlの場所はwebserver.pyを起動したディレクトリと同じで\ \ したね。「2」で説明したドキュメントルートです。
+\ \ みなさんが作ったindex.htmlの場所はwebserver.pyを起動したディレクトリと同じでしたね。「2」で説明したドキュメントルートです。
 
 \ \ これはwebserver.pyを起動したディレクトリ
 
-\ \ 　/home/pi/ome/07/www/
+\ \ 　{\textasciitilde}/07/www/
 
 \ \ を指しています。
 
@@ -1193,7 +1207,7 @@ OK です。例えば、google
 \ \ なので自分のパソコンのサーバーを見るには
 
 \centering
-\includegraphics[width=13.894cm,height=6.346cm]{ome7-img040.png}
+\includegraphics[width=13.894cm]{ome7-img040.png}
 \flushleft
 
 \ \ 　\url{http://localhost:3000/}
@@ -1202,7 +1216,7 @@ OK です。例えば、google
 
 \ \ サーバー名の後の/（スラッシュ）はドキュメントルートを示しています。
 
-\ \ ブラウザはファイル名を指定しないとindex.htmlというファイルを開くように設定されて\ \ います。
+\ \ ブラウザはファイル名を指定しないとindex.htmlというファイルを開くように\ruby{設定}{せってい}されて\ \ います。
 
 \ \ 　\url{http://localhost:3000/}
 
@@ -1216,10 +1230,10 @@ OK です。例えば、google
 
 \ \ と入力しているのと同じことです。
 
-
+\bigskip
 
 \centering
-\includegraphics[width=9.551cm,height=3.427cm]{ome7-img041.png}
+\includegraphics[width=9.551cm]{ome7-img041.png}
 \flushleft
 
 
@@ -1229,14 +1243,13 @@ OK です。例えば、google
 \bigskip
 
 
-\bigskip
-
 \refstepcounter{Exercise}
 \clearpage\subsection*{2−3　\theExercise　友だちのホームページを見てみよう}
+\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{friend}
 
 
 \centering
-\includegraphics[width=10.423cm,height=5.279cm]{ome7-img042}
+\includegraphics[width=10.423cm]{ome7-img042}
 \flushleft
 
 
@@ -1245,7 +1258,7 @@ OK です。例えば、google
 
 
 1.
-左隣の友達のIPアドレスを確認しよう。
+\ruby{左隣}{ひだりどなり}の友達のIPアドレスを確認しよう。
 
 \ \ 友達のターミナルで次のコマンドをうってもらいましょう。
 
@@ -1287,20 +1300,17 @@ OK です。例えば、google
 
 
 \centering
-\includegraphics[width=10.659cm,height=3.387cm]{ome7-img043.png}
+\includegraphics[width=10.659cm]{ome7-img043.png}
 \flushleft
 
 \clearpage\subsection*{\bfseries
 	注意}
 
-例題7-6の友達のホームページを見てみようでは、以下の図のように同じルータにつながっているラズベリーパイが公開しているホームページは、見ることができます。基本同じグループの子たちのホームページは見れるので確認してみてください。
+	\ref{friend}の友達のホームページを見てみようでは、以下の図のように同じルータにつながっているラズベリーパイが公開しているホームページは、見ることができます。\ruby{基本}{きほん}同じグループの子たちのホームページは見れるので確認してみてください。
 
 \centering
-\includegraphics[width=12.284cm,height=7.632cm]{ome7-img044}
+\includegraphics[width=0.75\textwidth]{ome7-img044}
 \flushleft
-
-
-\bigskip
 
 
 \bigskip
@@ -1313,19 +1323,15 @@ OK です。例えば、google
 \bigskip
 
 \centering
-\includegraphics[width=13.166cm,height=8.239cm]{ome7-img045}
+\includegraphics[width=0.75\textwidth]{ome7-img045}
 \flushleft
 
 
 \bigskip
 
-
-\bigskip
-
-\refstepcounter{Question}\theQuestion　他のグループの友達のホームページを見てみよう、自分とは違うwifiルータに接続している友達のホームページは見れたかどうか答えに書こう
+\refstepcounter{Question}\theQuestion　他のグループの友達のホームページを見てみよう、自分とは違うWi-Fiルータに接続している友達のホームページは見れたかどうか答えに書こう\label{Q:otherHP}
 
 
-\bigskip
 
 {\bfseries
 	\addBlank{答え}}
@@ -1334,7 +1340,9 @@ OK です。例えば、google
 \bigskip
 
 \if0
-	参考　接続できるネットワーク(wifiルータ)
+
+
+	参考　接続できるネットワーク(Wi-Fiルータ)
 
 	NTGR-4643\ \ \ \ パスワード　33995460
 
@@ -1350,31 +1358,45 @@ OK です。例えば、google
 \bigskip
 
 \clearpage\subsection*{3−1　CGIについて勉強しよう}
+\refstepcounter{PagePtr}\label{P:CGI}
 ここではCGIについて勉強しよう。第１回で作成したwebページはいわば静的なページです。静的なページとは、常に同じ画面を表示するページのことです。ですが、CGI（Common
 Gateway
-Interface）を用いることによって動きのあるページ、動的なページを作成することができます。動的なページとは表示させるたびに違う画面を表示することができるページのことです。アクセスカウンターはたまにwebページについていることがあります。アクセスカウンタというのは、そのwebページに今までどれぐらいの人がアクセス（接続）したのかを表示させるものです。webページにアクセスするたびにアクセスカウンタの数は増えていき、毎回同じ数字にはなりません。これはアクセスするというアクションによってページに変化を起こしているのです。さらにCGIを用いることによって以下の機能を作成することができます。
+Interface）を用いることによって動きのあるページ、動的なページを作成することができます。動的なページとは表示させるたびに違う画面を表示することができるページのことです。アクセスカウンターはたまにwebページについていることがあります。アクセスカウンタというのは、そのwebページに今までどれぐらいの人がアクセス（接続）したのかを表示させるものです。webページにアクセスするたびにアクセスカウンタの数は\ruby{増}{ふ}えていき、毎回同じ数字にはなりません。これはアクセスするというアクションによってページに変化を起こしているのです。さらにCGIを用いることによって以下の機能を作成することができます。
 
-{\bfseries
-・アクセスカウンター}
 
+\bigskip
 
 
 \centering
-\includegraphics[width=8.176cm,height=4.72cm]{ome7-img046.png}
-\textbf{・アンケートフォーム}\\
-\includegraphics[width=6.1cm,height=5.801cm]{ome7-img047.png}
+\begin{minipage}{\textwidth}
+          \begin{minipage}{0.45\textwidth}
+	   \textbf{・アクセスカウンター}\\
+	   \centering
+            {\upshape
+              \centering
+              \includegraphics[width=0.8\linewidth]{ome7-img046.png}}
+          \end{minipage}
+          \begin{minipage}{0.45\textwidth}
+	   \textbf{・アンケートフォーム}\\
+	   \centering
+            {\upshape
+              \centering
+              \includegraphics[width=0.8\linewidth]{ome7-img047.png}}
+            \end{minipage}
+\end{minipage}
 \flushleft
 
 
 \bigskip
 
 {\bfseries
-	・掲示板}
+
+	・\ruby{掲示板}{けいじばん}}
 
 
 
 \centering
-\includegraphics[width=4.431cm,height=4.845cm]{ome7-img048.png}
+\includegraphics[width=4.431cm]{ome7-img048.png}
 \flushleft
 
 
@@ -1385,16 +1407,14 @@ Interface）を用いることによって動きのあるページ、動的な�
 
 みんなが作ったwebページやほかの静的なページはどのようなやり取りで表示させているか見ていきましょう。次の図を見てください。
 
-
-
 \bigskip
+
+\clearpage
 
 
 \centering
-\includegraphics[width=13.827cm,height=6.346cm]{ome7-img049}
+\includegraphics[width=0.75\textwidth]{ome7-img049}
 \flushleft
-
-\bigskip
 
 
 webブラウザで検索したりしてwebページを表示させることをリクエスト（要求）といい、そのリクエストを受け取ったそのwebページのあるサーバーが要求したところにレスポンス（返答）を返します。要求されたら返すのみで、webページに変化はなく同じものを見せていました。ですが次の画像をみてください。
@@ -1403,10 +1423,8 @@ webブラウザで検索したりしてwebページを表示させることを�
 \bigskip
 
 \centering
-\includegraphics[width=14.065cm,height=7.364cm]{ome7-img050}
+\includegraphics[width=0.75\textwidth]{ome7-img050}
 \flushleft
-
-\bigskip
 
 
 CGIを使った動的ページでは、サーバーが皆さんからwebページを要求されるたびに、CGIプログラムで新しいHTMLを生成しています。それにより、毎回違うwebページを見せることが可能なのです。この教科書では皆さんのラズベリーパイと今までの講義で学んだことを生かしたCGIを体験していきます。
@@ -1414,25 +1432,22 @@ CGIを使った動的ページでは、サーバーが皆さんからwebペー�
 
 \bigskip
 
-\refstepcounter{Question}\theQuestion　動的なページとはどのようなものでしょうか。また、動的なページを作成する場合に用いるものは何でしょう。
+\refstepcounter{Question}\theQuestion　動的なページとはどのようなものでしょうか。また、動的なページを作成する場合に用いるものは何でしょう。\label{Q:dynamicPage}
 
 
-\bigskip
-
-\addBlank{答え}
-
-
-\bigskip
 
 \addBlank{答え}
 
 
-\bigskip
+\addBlank{答え}
+
 
 \refstepcounter{Exercise}
 \clearpage\subsection*{\theExercise　CGIを使ってウェブページからLEDをつける}
 \addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:CGI}
 考え方
+
+まずはラズパイにセンサーボードを取り付けましょう。今回はFaBoは使用しません。
 
 ウェブサーバはウェブブラウザから要求を受けます。”ファイル名.hsp”ファイルへのアクセスをブラウザから行うとサーバはCGIプログラムをサーバ側で起動します。結果はHTMLとしてブラウザ（クライアント）へ返されます。
 
@@ -1440,15 +1455,13 @@ CGIを使った動的ページでは、サーバーが皆さんからwebペー�
 
 ターミナルを開いて
 
-cd \~{}/ome/07/www/
+cd {\textasciitilde}/07/www/
 
-./webserver.py
-
-で起動できます。
+./webserver.py \ \ \ \ で起動できます。
 
 %
 %コマンド実行画面
-%cd \~{}/ome/07/www/
+%cd {\textasciitilde}/07/www/
 %./webserver.py
 %koyaman
 %September 20, 2019 2:48 AM
@@ -1467,20 +1480,20 @@ localhost:3000/cgi-bin/led.hsp
 
 
 \centering
-\includegraphics[width=16.574cm,height=5.152cm]{ome7-img051.png}
+\includegraphics[width=0.7\textwidth]{ome7-img051.png}
 \flushleft
 
 にアクセスをしてみましょう。アクセスをすると、プログラムが起動してLEDが点灯します。ブラウザのリロードボタンを押すと消灯します。
 
 \centering
-\includegraphics[width=16.166cm,height=5.911cm]{ome7-img052.png}
+\includegraphics[width=0.7\textwidth]{ome7-img052.png}
 \flushleft
 
-cgi-binディレクトリはCGIプログラムを入れるディレクトリです。\~{}/ome/07/wwwの下にあります。このディレクトリ内の
+cgi-binディレクトリはCGIプログラムを入れるディレクトリです。{\textasciitilde}/07/wwwの下にあります。このディレクトリ内の
 
 ”ファイル名”.hsp
 
-はCGIプログラムとして扱われます。led.hspはCGIプログラムです。
+はCGIプログラムとして\ruby{扱}{あつ}われます。led.hspはCGIプログラムです。
 
 
 \bigskip
@@ -1492,66 +1505,73 @@ cgi-binディレクトリはCGIプログラムを入れるディレクトリで�
 
 \centering
 \begin{boxedminipage}{0.95\textwidth}
-	\#include {\textquotedbl}hsp3cl.as{\textquotedbl}
 
-	\#include {\textquotedbl}rpz-gpio-cl.as{\textquotedbl}
+	\begin{enumerate}
+	\baselineskip 10pt
+	\setlength{\itemsep}{0cm}
+	\item \#include {\textquotedbl}hsp3cl.as{\textquotedbl}
+
+	\item \#include {\textquotedbl}rpz-gpio-cl.as{\textquotedbl}
 
 
-	\bigskip
+	\item
 
-	mes {\textquotedbl}Content-type: text/html{\textbackslash}n{\textquotedbl}
+	\item mes {\textquotedbl}Content-type: text/html{\textbackslash}n{\textquotedbl}
 
-	mes {\textquotedbl}{\textless}html{\textgreater}{\textless}head{\textgreater}{\textless}meta
+	\item mes {\textquotedbl}{\textless}html{\textgreater}{\textless}head{\textgreater}{\textless}meta
 	charset={\textbackslash}{\textquotedbl}utf-8{\textbackslash}{\textquotedbl}{\textgreater}{\textless}/head{\textgreater}{\textless}body{\textgreater}{\textquotedbl}
 
 
-	\bigskip
+	\item
 
-	;現在のGPIO 17の値を取得 1 == ON, 0 == OFF
+	\item ;現在のGPIO 17の\ruby{値}{あたい}を取得 1 == ON, 0 == OFF
 
-	;CGIからはcgpioinを使う(使い方はgpioinと同じ)
+	\item ;CGIからはcgpioinを使う(使い方はgpioinと同じ)
 
-	prev\_led = cgpioin(17)
+	\item prev\_led = cgpioin(17)
 
-	\bigskip
+	\item
 
-	if prev\_led = 0\{
+	\item if prev\_led = 0\{
 
-	\ \ ;ついていなかった
+	\item ;ついていなかった
 
-	\ \ mes
+	\item mes
 		{\textquotedbl}{\textless}p{\textgreater}オフでした。つけます{\textless}/p{\textgreater}{\textquotedbl}
 
-	\ \ next\_led = 1
+	\item next\_led = 1
 
-	\}else\{
+	\item \}else\{
 
-	\ \ ;
+	\item ;
 
-	\ \ mes
+	\item mes
 		{\textquotedbl}{\textless}p{\textgreater}オンでした。けします{\textless}/p{\textgreater}{\textquotedbl}
 
-	\ \ next\_led = 0
+	\item next\_led = 0
 
-	\}
+	\item \}
 
-	mes {\textquotedbl}{\textless}/body{\textgreater}{\textless}/html{\textgreater}{\textquotedbl}
+	\item mes {\textquotedbl}{\textless}/body{\textgreater}{\textless}/html{\textgreater}{\textquotedbl}
 
-	;CGIからはcgpioを使う(使い方はgpioと同じ、0以外を書いた場合プログラムが
+	\item ;CGIからはcgpioを使う(使い方はgpioと同じ、0以外を書いた場合プログラムが
 
-	;終了してもLEDは点灯し続ける)
+	\item ;\ruby{終了}{しゅうりょう}してもLEDは点灯し続ける)
 
-	cgpio 17, next\_led
+	\item cgpio 17, next\_led
 
-	end
+	\item end
+	\end{enumerate}
+
 \end{boxedminipage}
 \flushleft
 
 
-第3回に使用した命令ではない命令が入っています。\\
-くわしくは38ページを見てください。\\
 
-プログラム解説の3行目
+第3回に使用した命令ではない命令が入っています。\\
+詳細はP\pageref{P:gpio}に載っています。確認してください。
+
+プログラム解説の4行目
 
 mes {\textquotedbl}Content-type: text/html{\textbackslash}n{\textquotedbl}
 
@@ -1559,12 +1579,16 @@ mes {\textquotedbl}Content-type: text/html{\textbackslash}n{\textquotedbl}
 
 
 \bigskip
+\clearpage
+4行目\ruby{以降}{いこう}のmes命令で出力するものは、HTMLの一部として扱われます。
 
-3行目以降のmes命令で出力するものは、HTMLの一部として扱われます。
+\bigskip
 
-4行目では、文字コードを設定しています。
+6行目では、文字コードを設定しています。
 
-7行目からLED点灯消灯のプログラムが始まります。
+\bigskip
+
+9行目からLED点灯消灯のプログラムが始まります。
 
 prev\_led = cgpioin(17)
 
@@ -1574,18 +1598,22 @@ prev\_led = cgpioin(17)
 \bigskip
 
 
-8〜15行目では、条件判断のif文を使って読み取ったLEDの状態を判断します。消灯状態であれば、9行目で
+10〜17行目では、\ruby{条件}{じょうけん}判断のif文を使って読み取ったLEDの状態を判断します。消灯状態であれば、9行目で
 
 mes
 	{\textquotedbl}{\textless}p{\textgreater}オフでした。つけます{\textless}/p{\textgreater}{\textquotedbl}
 
 pタグを使ってメッセージを表示します。
 
-10行目で
+\bigskip
+
+12行目で
 
 next\_led = 1
 
 としてLEDを点灯させるための値を用意します。
+
+\bigskip
 
 消灯以外の状態（つまり点灯状態）の場合は、13行目で
 
@@ -1594,13 +1622,17 @@ mes
 
 pタグを使ってメッセージを表示します。
 
-14行目で
+\bigskip
+
+18行目で
 
 next\_led = 0
 
 としてLEDを消灯させるための値を用意します
 
-18行目で実際に値をGPIO17へ書き込みます。
+\bigskip
+
+20行目で実際に値をGPIO17へ書き込みます。
 
 cgpio 17, next\_led
 
@@ -1609,7 +1641,7 @@ cgpio 17, next\_led
 
 \bigskip
 
-19行目の
+21行目の
 
 end
 
@@ -1619,11 +1651,13 @@ end
 \bigskip
 
 
+
 第7回のCGIを使うプログラムでは、第3回の授業とはちがう命令を使います。\\
 第3回の命令でCGIを使おうとすると、上手く動かなくなってしまうからです。\\
 下の表にそれぞれの命令をまとめておきます。\\
 
-
+\clearpage
+\refstepcounter{PagePtr}\label{P:gpio}
 \begin{flushleft}
 	\tablefirsthead{}
 	\tablehead{}
@@ -1681,24 +1715,25 @@ end
 	友達のLEDをCGIで点灯させてみよう。}
 
 {\bfseries
-	点灯、消灯時のウェブページに表示されるメッセージを変更してみよう。}
+
+	点灯、消灯時のウェブページに表示されるメッセージを\ruby{変更}{へんこう}してみよう。}
 
 {\bfseries
 	他の色のLEDも点灯、消灯できるようにしよう。}
 
 {\bfseries
 	Faboのセンサ(LED,
-	振動子などのデジタルセンサ）を接続してCGIから動かせるようにしてみよう。}
+	\ruby{振動子}{しんどうし}などのデジタルセンサ）を接続してCGIから動かせるようにしてみよう。}
 
 
 \bigskip
 
 \refstepcounter{Exercise}
-\clearpage\subsection*{\theExercise　URLを使ってCGIに情報を渡す}
+\clearpage\subsection*{\theExercise　URLを使ってCGIに情報を\ruby{渡}{わた}す}
 \addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:URL}
 考え方
 
-CGIのプログラムに情報を渡すことができればより便利なプログラムが作れます。ここでは単純なURLを用いた方法を使います。URLに埋め込まれた情報はクエリストリングと呼ばれます。クエリストリングはまずウェブサーバへ送られ、ウェブサーバがCGIプログラムへクエリストリングを渡します。これによりCGIプログラムはURLに埋め込まれた情報を扱うことができます。
+CGIのプログラムに情報を渡すことができればより便利なプログラムが作れます。ここでは\ruby{単純}{たんじゅん}なURLを用いた方法を使います。URLに\ruby{埋}{う}め込まれた情報はクエリストリングと呼ばれます。クエリストリングはまずウェブサーバへ送られ、ウェブサーバがCGIプログラムへクエリストリングを渡します。これによりCGIプログラムはURLに埋め込まれた情報を扱うことができます。
 
 
 \bigskip
@@ -1721,7 +1756,7 @@ localhost:3000/cgi-bin/querystring.hsp?msg=helloworld
 
 
 \centering
-\includegraphics[width=15.528cm,height=4.775cm]{ome7-img053.png}
+\includegraphics[width=0.8\textwidth]{ome7-img053.png}
 \flushleft
 
 localhost:3000/cgi-bin/querystring.hsp?msg=goodbye
@@ -1737,11 +1772,14 @@ localhost:3000/cgi-bin/querystring.hsp?msg=goodbye
 
 次はgoodbyeと表示されたと思います。
 
+
 \centering
-\includegraphics[width=15.494cm,height=5.546cm]{ome7-img054.png}
+\includegraphics[width=0.8\textwidth]{ome7-img054.png}
 \flushleft
 
-このようにURLに情報を埋め込んでおくことでCGIのプログラムはこれを受け取り処理をすることができます。URLに埋め込まれた情報はクエリストリングと呼ばれます。この情報はまずウェブサーバが受け取ります。ウェブサーバは少し処理をしてCGIプログラムへ渡します。
+\clearpage
+
+このようにURLに情報を埋め込んでおくことでCGIのプログラムはこれを受け取り処理をすることができます。URLに埋め込まれた情報はクエリストリングと呼ばれます。この情報はまずウェブサーバが受け取ります。ウェブサーバは少し\ruby{処理}{しょり}をしてCGIプログラムへ渡します。
 
 クエリストリングはURLの最後に?をつけて始めます。
 
@@ -1769,22 +1807,26 @@ goodbyeであることを意味します。HSPの変数と同じような感じ�
 
 \centering
 \begin{boxedminipage}{16.233cm}
-	\#include {\textquotedbl}hsp3cl.as{\textquotedbl}
+	\begin{enumerate}
+	\baselineskip 10pt
+	\setlength{\itemsep}{0cm}
+	\item\#include {\textquotedbl}hsp3cl.as{\textquotedbl}
 
-	\#include {\textquotedbl}cgi.as{\textquotedbl}
+	\item\#include {\textquotedbl}cgi.as{\textquotedbl}
 
-	mes {\textquotedbl}Content-type: text/html{\textbackslash}n{\textquotedbl}
+	\item mes {\textquotedbl}Content-type: text/html{\textbackslash}n{\textquotedbl}
 
-	mes {\textquotedbl}{\textless}html{\textgreater}{\textless}head{\textgreater}{\textless}meta
-	charset={\textbackslash}{\textquotedbl}utf-8{\textbackslash}{\textquotedbl}{\textgreater}{\textless}/head{\textgreater}{\textless}body{\textgreater}{\textquotedbl}
+	\item mes {\textquotedbl}{\textless}html{\textgreater}{\textless}head{\textgreater}{\textless}meta
+		charset={\textbackslash}{\textquotedbl}utf-8{\textbackslash}{\textquotedbl}{\textgreater}{\textless}/head{\textgreater}{\textless}body{\textgreater}{\textquotedbl}
 
-	getqueryval {\textquotedbl}msg{\textquotedbl}, q
+	\item getqueryval {\textquotedbl}msg{\textquotedbl}, q
 
-	mes q
+	\item mes q
 
-	mes {\textquotedbl}{\textless}/body{\textgreater}{\textless}/html{\textgreater}{\textquotedbl}
+	\item mes {\textquotedbl}{\textless}/body{\textgreater}{\textless}/html{\textgreater}{\textquotedbl}
 
-	end
+	\item end
+	\end{enumerate}
 \end{boxedminipage}
 \flushleft
 
@@ -1808,7 +1850,7 @@ localhost:3000/cgi-bin/querystring.hsp?msg=helloworld
 
 6行目で表示をしています。
 
-このように簡単にプログラムでクエリストリングを受け取ることができます。クエリストリングが使えると、{\textless}form{\textgreater}{\textless}/form{\textgreater}を使ってCGIに処理を依頼できたり、CGIの処理をより高度にすることができます。次の例では、クエリストリングを使ってLEDを点灯消灯します。
+このように\ruby{簡単}{かんたん}にプログラムでクエリストリングを受け取ることができます。クエリストリングが使えると、{\textless}form{\textgreater}{\textless}/form{\textgreater}を使ってCGIに処理を\ruby{依頼}{いらい}できたり、CGIの処理をより高度にすることができます。次の例では、クエリストリングを使ってLEDを点灯消灯します。
 
 ほとんどのウェブサイトは検索をするさいにURLに検索ワードを埋め込んでいます。
 
@@ -1838,7 +1880,7 @@ localhost:3000/cgi-bin/qsled.hsp?led=17\&val=1
 
 
 \centering
-\includegraphics[width=17.006cm,height=4.078cm]{ome7-img055.png}
+\includegraphics[width=0.8\textwidth]{ome7-img055.png}
 \flushleft
 
 実行するとLED17が光ります。val=1をval=0にすると消えます。URLに埋め込まれた情報をもとにCGIプログラムはLEDを操作していることがわかります。URLに埋め込まれた情報はクエリストリングと呼ばれます。
@@ -1846,7 +1888,7 @@ localhost:3000/cgi-bin/qsled.hsp?led=17\&val=1
 
 \bigskip
 
-クエリストリングを詳しく見てみましょう。
+クエリストリングを\ruby{詳}{くわ}しく見てみましょう。
 
 クエリストリングとはURLの最後に?をつけて始めます。?のあとには
 
@@ -1879,69 +1921,66 @@ localhost:3000/cgi-bin/qsled.hsp?led=17\&val=1
 
 \centering
 \begin{boxedminipage}{16.538cm}
-	\#include {\textquotedbl}hsp3cl.as{\textquotedbl}
+	\begin{enumerate}
+	\baselineskip 10pt
+	\setlength{\itemsep}{0cm}
+	\item\#include {\textquotedbl}hsp3cl.as{\textquotedbl}
 
-	\#include {\textquotedbl}rpz-gpio-cl.as{\textquotedbl}
+	\item\#include {\textquotedbl}rpz-gpio-cl.as{\textquotedbl}
 
-	\#include {\textquotedbl}cgi.as{\textquotedbl}
+	\item\#include {\textquotedbl}cgi.as{\textquotedbl}
 
-	mes {\textquotedbl}Content-type: text/html{\textbackslash}n{\textquotedbl}
+	\item mes {\textquotedbl}Content-type: text/html{\textbackslash}n{\textquotedbl}
 
-	mes {\textquotedbl}{\textless}html{\textgreater}{\textless}head{\textgreater}{\textless}meta
-	charset={\textbackslash}{\textquotedbl}utf-8{\textbackslash}{\textquotedbl}{\textgreater}{\textless}/head{\textgreater}{\textless}body{\textgreater}{\textquotedbl}
+	\item mes {\textquotedbl}{\textless}html{\textgreater}{\textless}head{\textgreater}{\textless}meta
+		charset={\textbackslash}{\textquotedbl}utf-8{\textbackslash}{\textquotedbl}{\textgreater}{\textless}/head{\textgreater}{\textless}body{\textgreater}{\textquotedbl}
 
+	\item; クエリストリングからledを探して、値をled\_portへ入れる
 
-	\bigskip
+	\item getqueryval {\textquotedbl}led{\textquotedbl}, led\_port
 
-	;
-	クエリストリングからledを探して、値をled\_portへ入れる
+	\item ; クエリストリングからvalを探して、値をled\_valへ入れる
 
-	getqueryval {\textquotedbl}led{\textquotedbl}, led\_port
+	\item getqueryval {\textquotedbl}val{\textquotedbl}, led\_val
 
-	;
-	クエリストリングからvalを探して、値をled\_valへ入れる
+	\item ;文字列なので数値へ変換する
 
-	getqueryval {\textquotedbl}val{\textquotedbl}, led\_val
+	\item led\_port = int(led\_port)
 
-	;文字列なので数値へ変換する
-
-	led\_port = int(led\_port)
-
-	led\_val = int(led\_val)
+	\item led\_val = int(led\_val)
 
 
-	\bigskip
+	\item
 
-	;
-	点灯消灯を判断して、メッセージをpタグで表示する
+	\item; 点灯消灯を判断して、メッセージをpタグで表示する
 
-	if(led\_val = 1) \{
+	\item if(led\_val = 1) \{
 
-	\ \ \ \ mes {\textquotedbl}{\textless}p{\textgreater}GPIO{\textquotedbl} + led\_port +
-	{\textquotedbl}を点灯します{\textless}/p{\textgreater}{\textquotedbl}
+	\item\ \ \ \ mes {\textquotedbl}{\textless}p{\textgreater}GPIO{\textquotedbl} + led\_port +
+		{\textquotedbl}を点灯します{\textless}/p{\textgreater}{\textquotedbl}
 
-	\} else \{
+	\item\} else \{
 
-	\ \ \ \ mes {\textquotedbl}{\textless}p{\textgreater}GPIO{\textquotedbl} + led\_port +
-	{\textquotedbl}を消灯します{\textless}/p{\textgreater}{\textquotedbl}
+	\item\ \ \ \ mes {\textquotedbl}{\textless}p{\textgreater}GPIO{\textquotedbl} + led\_port +
+		{\textquotedbl}を消灯します{\textless}/p{\textgreater}{\textquotedbl}
 
-	\}
+	\item\}
 
 
-	\bigskip
+	\item
 
-	;
-	クエリストリングのledで指定されたGPIOにvalで指定された値を書き込む
+	\item;クエリストリングのledで指定されたGPIOにvalで指定された値を書き込む
 
-	; localhost:3000/cgi-bin/qsled.hsp?led=17\&val=1
+	\item; localhost:3000/cgi-bin/qsled.hsp?led=17\&val=1
 
-	; の場合、LED17を点灯させる
+	\item; の場合、LED17を点灯させる
 
-	cgpio led\_port, led\_val
+	\item cgpio led\_port, led\_val
 
-	mes {\textquotedbl}{\textless}/body{\textgreater}{\textless}/html{\textgreater}{\textquotedbl}
+	\item mes {\textquotedbl}{\textless}/body{\textgreater}{\textless}/html{\textgreater}{\textquotedbl}
 
-	end
+	\item end
+	\end{enumerate}
 \end{boxedminipage}
 \flushleft
 
@@ -1954,7 +1993,7 @@ localhost:3000/cgi-bin/qsled.hsp?led=17\&val=1
 
 \bigskip
 
-8行目、10行目で使用している
+7行目、9行目で使用している
 
 getqueryval命令でクエリストリングを受け取ります。この命令は
 
@@ -1972,13 +2011,13 @@ getqueryval led, led\_port
 
 led\_portには17が入ります。
 
-12,13行目で
+11,12行目で
 
 文字列から数値へ変換しています。
 
-16〜20行目では、点灯するのか消灯するのかを条件判断を使って判断しています。led\_valが1のとき(val=1がクエリストリングで与えられたとき)に点灯する、その他のときは消灯するとします。
+15〜19行目では、点灯するのか消灯するのかを条件判断を使って判断しています。led\_valが1のとき(val=1がクエリストリングで与えられたとき)に点灯する、その他のときは消灯するとします。
 
-25行目で実際に点灯、消灯を行います。
+24行目で実際に点灯、消灯を行います。
 
 cgpio命令は数値でGPIO番号、オンオフ（１，０）を受け付けるので、文字列から変換をしました。
 
@@ -2018,7 +2057,7 @@ localhost:3000/jtalk.html
 
 
 \centering
-\includegraphics[width=14.319cm,height=3.902cm]{ome7-img056.png}
+\includegraphics[width=0.85\textwidth]{ome7-img056.png}
 \flushleft
 
 テキストボックスに読み上げさせたい文章を入れて送信をしてみよう。送信を押すとCGIプログラムへ文章が送られ、OpenJtalkで音声合成をします。
@@ -2026,7 +2065,7 @@ localhost:3000/jtalk.html
 
 \bigskip
 
-結果をウェブページのaudioタグ（音声を再生するタグ）へ渡して再生をします。
+結果をウェブページのaudioタグ（音声を再生するタグ）へ渡して\ruby{再生}{さいせい}をします。
 
 %
 %
@@ -2036,47 +2075,52 @@ localhost:3000/jtalk.html
 
 
 \centering
-\includegraphics[width=14.392cm,height=3.796cm]{ome7-img057.png}
+\includegraphics[width=0.85\textwidth]{ome7-img057.png}
 \flushleft
 
 \clearpage
 プログラム解説
 
-\~{}/ome/07/www/jtalk.html
+{\textasciitilde}/07/www/jtalk.html
 
 
 
 \centering
 \begin{boxedminipage}{16.148cm}
-	{\textless}!DOCTYPE html{\textgreater}
+	\begin{enumerate}
+	\baselineskip 10pt
+	\setlength{\itemsep}{0cm}
+	\item{\textless}!DOCTYPE html{\textgreater}
 
-		{\textless}html{\textgreater}
+	\item{\textless}html{\textgreater}
 
-	{\textless}head{\textgreater}
+	\item{\textless}head{\textgreater}
 
-	\ \ \ \ {\textless}meta charset={\textquotedbl}utf-8{\textquotedbl}{\textgreater}
+	\item\ \ \ \ {\textless}meta
+	charset={\textquotedbl}utf-8{\textquotedbl}{\textgreater}
 
-	{\textless}/head{\textgreater}
+	\item{\textless}/head{\textgreater}
 
-	{\textless}body{\textgreater}
+	\item{\textless}body{\textgreater}
 
-	\ \ \ \ {\textless}form action={\textquotedbl}cgi-bin/jtalk.hsp{\textquotedbl}
+	\item\ \ \ \ {\textless}form action={\textquotedbl}cgi-bin/jtalk.hsp{\textquotedbl}
 	method={\textquotedbl}GET{\textquotedbl}{\textgreater}
 
-	\ \ \ \ \ \ \ \ {\textless}input type={\textquotedbl}text{\textquotedbl}
+	\item\ \ \ \ \ \ \ \ {\textless}input type={\textquotedbl}text{\textquotedbl}
 	name={\textquotedbl}sentence{\textquotedbl}{\textgreater}
 
-	\ \ \ \ \ \ \ \ {\textless}input type={\textquotedbl}submit{\textquotedbl}
+	\item\ \ \ \ \ \ \ \ {\textless}input type={\textquotedbl}submit{\textquotedbl}
 	value={\textquotedbl}送信{\textquotedbl}{\textgreater}
 
-	\ \ \ \ \ \ \ \ {\textless}input type={\textquotedbl}reset{\textquotedbl}
+	\item\ \ \ \ \ \ \ \ {\textless}input type={\textquotedbl}reset{\textquotedbl}
 	value={\textquotedbl}リセット{\textquotedbl}{\textgreater}
 
-	\ \ \ \ {\textless}/form{\textgreater}
+	\item\ \ \ \ {\textless}/form{\textgreater}
 
-	{\textless}/body{\textgreater}
+	\item{\textless}/body{\textgreater}
 
-	{\textless}/html{\textgreater}
+	\item{\textless}/html{\textgreater}
+	\end{enumerate}
 \end{boxedminipage}
 \flushleft
 \bigskip
@@ -2135,10 +2179,10 @@ name=”sentence”
 
 
 \centering
-\includegraphics[width=14.392cm,height=3.796cm]{ome7-img057.png}
+\includegraphics[width=0.85\textwidth]{ome7-img057.png}
 
 \centering
-\includegraphics[width=14.319cm,height=3.902cm]{ome7-img056.png}
+\includegraphics[width=0.85\textwidth]{ome7-img056.png}
 \flushleft
 
 
@@ -2155,48 +2199,51 @@ name=”sentence”
 
 IPアドレス:3000/cgi-bin/jtalk.hsp?sentence=こんにちは
 
-実際には”こんにちは”という文字列はURL内ではある規則に沿って記号、数値に変換されています。
+実際には”こんにちは”という文字列はURL内ではある\ruby{規則}{きそく}に\ruby{沿}{そ}って記号、数値に変換されています。
 
 このことをパーセントエンコーディングといいます。CGIプログラムにクエリストリングが渡される前にウェブサーバは記号、数値に変換された文字列をもとに戻します。よって、プログラム内では入力された文字列と同じものを扱うことができます。
 
-\~{}/ome/07/www/cgi-bin/jtalk.hsp
+{\textasciitilde}/07/www/cgi-bin/jtalk.hsp
 
 \centering
 \begin{boxedminipage}{\textwidth}
-	\#include {\textquotedbl}hsp3cl.as{\textquotedbl}
+	\begin{enumerate}
+	\baselineskip 10pt
+	\setlength{\itemsep}{0cm}
+	\item \#include {\textquotedbl}hsp3cl.as{\textquotedbl}
 
-	\#include {\textquotedbl}jtalk.as{\textquotedbl}
+	\item\#include {\textquotedbl}jtalk.as{\textquotedbl}
 
-	\#include {\textquotedbl}cgi.as{\textquotedbl}
+	\item\#include {\textquotedbl}cgi.as{\textquotedbl}
 
+	\item
 
-	\bigskip
+	\item mes {\textquotedbl}Content-type: text/html{\textbackslash}n{\textquotedbl}
 
-	mes {\textquotedbl}Content-type: text/html{\textbackslash}n{\textquotedbl}
-
-	mes {\textquotedbl}{\textless}html{\textgreater}{\textless}head{\textgreater}{\textless}meta
+	\item mes {\textquotedbl}{\textless}html{\textgreater}{\textless}head{\textgreater}{\textless}meta
 	charset={\textbackslash}{\textquotedbl}utf-8{\textbackslash}{\textquotedbl}{\textgreater}{\textless}/head{\textgreater}{\textless}body{\textgreater}{\textquotedbl}
 
 
-	\bigskip
+	\item
 
-	getqueryval {\textquotedbl}sentence{\textquotedbl}, sentence
+	\item getqueryval {\textquotedbl}sentence{\textquotedbl}, sentence
 
-	jtsave sentence, wav\_file
+	\item jtsave sentence, wav\_file
 
-	mes {\textquotedbl}{\textless}p{\textgreater}{\textquotedbl} + sentence +
+	\item mes {\textquotedbl}{\textless}p{\textgreater}{\textquotedbl} + sentence +
 	{\textquotedbl}{\textless}/p{\textgreater}{\textquotedbl}
 
 
-	\bigskip
+	\item
 
-	mes {\textquotedbl}{\textless}audio src={\textbackslash}{\textquotedbl}{\textquotedbl} \ + wav\_file +
+	\item mes {\textquotedbl}{\textless}audio src={\textbackslash}{\textquotedbl}{\textquotedbl} \ + wav\_file +
 	{\textquotedbl}{\textbackslash}{\textquotedbl}
-	type={\textbackslash}{\textquotedbl}audio/wav{\textbackslash}{\textquotedbl} controls{\textgreater}{\textquotedbl}
+	 type={\textbackslash}{\textquotedbl}audio/wav{\textbackslash}{\textquotedbl} controls{\textgreater}{\textquotedbl}
 
-	mes {\textquotedbl}{\textless}/body{\textgreater}{\textless}/html{\textgreater}{\textquotedbl}
+	\item mes {\textquotedbl}{\textless}/body{\textgreater}{\textless}/html{\textgreater}{\textquotedbl}
 
-	end
+	\item end
+	\end{enumerate}
 \end{boxedminipage}
 \flushleft
 
@@ -2224,9 +2271,9 @@ type={\textbackslash}{\textquotedbl}audio/wav{\textbackslash}{\textquotedbl} con
 
 src=”ファイル名”
 
-では、再生するファイルを指定します。指定するファイルはドキュメントルート以下にないといけません。つまり、ドキュメントルートである/home/pi/ome/07/wwwの中にある必要があります。
+では、再生するファイルを指定します。指定するファイルはドキュメントルート以下にないといけません。つまり、ドキュメントルートである{\textasciitilde}/07/wwwの中にある必要があります。
 
-jtsave命令で作った音声ファイルは/home/pi/ome/07/www/tmpの中にあります。ファイル名はwav\_file変数に入っています。
+jtsave命令で作った音声ファイルは{\textasciitilde}/07/www/tmpの中にあります。ファイル名はwav\_file変数に入っています。
 
 “
 “の中で”を使うには{\textbackslash}”のように書きます。
@@ -2242,7 +2289,7 @@ controlsをつけると、再生ボタン、ミュートボタンなどが表示
 再生ボタンを押すと音声合成した音声ファイルが再生されます。
 
 \clearpage
-\refstepcounter{Question}\theQuestion
+\refstepcounter{Question}\theQuestion\label{Q:Jtalk}
 
 {\bfseries
 	”おはようございます””こんばんは””ありがとうございます”を読ませてみよう。}
@@ -2250,7 +2297,7 @@ controlsをつけると、再生ボタン、ミュートボタンなどが表示
 
 \bigskip
 
-できる人は自分の自己紹介ページに（\~{}/ome/07/www/index.html)に作ったフォームを変更して、こちらからCGIプログラムを起動するようにしましょう。
+できる人は自分の自己紹介ページに（{\textasciitilde}/07/www/index.html)に作ったフォームを変更して、こちらからCGIプログラムを起動するようにしましょう。
 
 \ HINT: jtalk.htmlを参考にしてください。
 
@@ -2259,7 +2306,7 @@ controlsをつけると、再生ボタン、ミュートボタンなどが表示
 \addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:Sensors}
 考え方
 
-温度、温度、気圧、照度センサーの情報をCGIを使ってウェブページから見れるようにしましょう。
+温度、温度、\ruby{気圧}{きあつ}、照度センサーの情報をCGIを使ってウェブページから見れるようにしましょう。
 
 
 \bigskip
@@ -2281,11 +2328,9 @@ localhost:3000/cgi-bin/sensors.hsp
 
 
 \centering
-\includegraphics[width=17.0cm,height=5.262cm]{ome7-img058.png}
+\includegraphics[width=0.75\textwidth]{ome7-img058.png}
 \flushleft
 
-
-\bigskip
 
 温度センサーの値が表示されていると思います。
 
@@ -2300,7 +2345,7 @@ localhost:3000/cgi-bin/sensors.hsp
 
 
 \centering
-\includegraphics[width=12.34cm,height=6.541cm]{ome7-img059.png}
+\includegraphics[width=0.75\textwidth]{ome7-img059.png}
 \flushleft
 
 次にプログラムを見てみましょう。
@@ -2313,83 +2358,76 @@ localhost:3000/cgi-bin/sensors.hsp
 
 \centering
 \begin{boxedminipage}{16.81cm}
-	\#include {\textquotedbl}rpz-gpio-cl.as{\textquotedbl}
+	\begin{enumerate}
+	\baselineskip 10pt
+	\setlength{\itemsep}{0cm}
+	\item\#include {\textquotedbl}rpz-gpio-cl.as{\textquotedbl}
 
-	\#include {\textquotedbl}hsp3cl.as{\textquotedbl}
+	\item\#include {\textquotedbl}hsp3cl.as{\textquotedbl}
 
+	\item
 
-	\bigskip
+	\item mes {\textquotedbl}Content-type: text/html{\textbackslash}n{\textquotedbl}
 
-	mes {\textquotedbl}Content-type: text/html{\textbackslash}n{\textquotedbl}
+	\item mes {\textquotedbl}{\textless}html{\textgreater}{\textless}head{\textgreater}{\textless}meta
+	 charset={\textbackslash}{\textquotedbl}utf-8{\textbackslash}{\textquotedbl}{\textgreater}{\textless}/head{\textgreater}{\textless}body{\textgreater}{\textquotedbl}
 
-	mes {\textquotedbl}{\textless}html{\textgreater}{\textless}head{\textgreater}{\textless}meta
-	charset={\textbackslash}{\textquotedbl}utf-8{\textbackslash}{\textquotedbl}{\textgreater}{\textless}/head{\textgreater}{\textless}body{\textgreater}{\textquotedbl}
+	\item
 
+	\item i2c\_ch\_bme\ = \ 0
 
-	\bigskip
+	\item i2c\_ch\_tsl \ = \ 1
 
-	i2c\_ch\_bme\ = \ 0\\
-	i2c\_ch\_tsl \ = \ 1
+	\item
 
-	\bigskip
+	\item fail \ = \ init\_bme(i2c\_ch\_bme)\ \ \ \ ; 温\ruby{湿}{しつ}度気圧センサ bm280を初期化する
 
-	fail \ = \ init\_bme(i2c\_ch\_bme)\ \ \ \ ; 温湿度気圧センサ bm280
-	を初期化する
+	\item if fail \{\ \ \ \ \ \ \ \ \ \ \ \   ; 初期化成功チェック
 
-	if fail \{\ \ \ \ \ \ \ \ \ \ \ \   ; 初期化成功チェック
+	\item\ \ mes {\textquotedbl}failed to init bme: {\textquotedbl} + fail
 
-	\ \ mes {\textquotedbl}failed to init bme: {\textquotedbl} + fail
+	\item\ \ end
 
-	\ \ end
+	\item\}
 
-	\}
+	\item
 
+	\item init\_lux i2c\_ch\_tsl\ \ \ \ \ \ ; 照度センサ tsl2572を初期化する
 
-	\bigskip
+	\item
 
-	init\_lux i2c\_ch\_tsl\ \ \ \ \ \ ; 照度センサ
-	tsl2572を初期化する
+	\item*main
 
+	\item\ \ temp = get\_temp(i2c\_ch\_bme)\ \ \ \ ; 温度取得
+	\item\ \ hum \ = get\_hum(i2c\_ch\_bme)\ \ \ \ ; 湿度取得
+	\item\ \ press= get\_press(i2c\_ch\_bme)\ \ \ \ ; 気圧取得
+	\item\ \ lux \ = get\_lux(i2c\_ch\_bme)\ \ \ \ ; 照度取得
 
-	\bigskip
+	\item
 
-	*main
+	\item
 
+	\item\ \ ; 取得したデータの表示
 
-	\bigskip
-
-	\ \ temp = get\_temp(i2c\_ch\_bme)\ \ \ \ ; 温度取得\\
-	\ \ hum \ = get\_hum(i2c\_ch\_bme)\ \ \ \ ; 湿度取得\\
-	\ \ press= get\_press(i2c\_ch\_bme)\ \ \ \ ; 気圧取得\\
-	\ \ lux \ = get\_lux(i2c\_ch\_bme)\ \ \ \ ; 照度取得\\
-
-
-	\bigskip
-
-
-	\bigskip
-
-	\ \ ; 取得したデータの表示
-
-	\ \ mes {\textquotedbl}{\textless}p{\textgreater}温度 : {\textquotedbl} + temp + {\textquotedbl}
+	\item\ \ mes {\textquotedbl}{\textless}p{\textgreater}温度 : {\textquotedbl} + temp + {\textquotedbl}
 	[℃]{\textless}/p{\textgreater}{\textquotedbl}
 
+	\item
 
-	\bigskip
+	\item\ \ \ \ mes {\textquotedbl}{\textless}/body{\textgreater}{\textless}/html{\textgreater}{\textquotedbl}
 
-	\ \ \ \ mes {\textquotedbl}{\textless}/body{\textgreater}{\textless}/html{\textgreater}{\textquotedbl}
-
-	\ \ \ \ end
+	\item\ \ \ \ end
+	\end{enumerate}
 \end{boxedminipage}
 \flushleft
-この例題は\~{}/ome/03/sensors.hspをもとにしています。詳しい解説はそちらを参照してください。
+この例題は{\textasciitilde}/03/sensors.hspをもとにしています。詳しい解説はそちらを参照してください。
 
-20～23行目で温度、湿度、気圧、照度センサーから情報を取得しています。
+19～22行目で温度、湿度、気圧、照度センサーから情報を取得しています。
 
 結果はそれぞれtemp, hum, press,
 lux変数へ入っています。
 
-27行目で、温度センサーの値をpタグで表示しています。
+26行目で、温度センサーの値をpタグで表示しています。
 
 \bigskip
 
@@ -2400,7 +2438,7 @@ lux変数へ入っています。
 \bigskip
 
 \clearpage
-\refstepcounter{Question}\theQuestion
+\refstepcounter{Question}\theQuestion\label{Q:sensors}
 
 友達のCGIへアクセスして、センサーの値を確認してみよう。
 
@@ -2425,7 +2463,7 @@ lux変数へ入っています。
 
 
 \centering
-\includegraphics[width=16.9cm,height=6.059cm]{ome7-img060.png}
+\includegraphics[width=0.8\textwidth]{ome7-img060.png}
 \flushleft
 
 次は、湿度、気圧、照度センサーの値を表形式で表示するように変更してみましょう。
@@ -2451,7 +2489,7 @@ localhost:3000/ir.html
 
 
 \centering
-\includegraphics[width=17.006cm,height=6.142cm]{ome7-img061.png}
+\includegraphics[width=17.006cm]{ome7-img061.png}
 \flushleft
 
 ボタンを押すとCGIで赤外線の送信をするコマンドが実行されます。
@@ -2464,7 +2502,7 @@ irsend SEND\_ONCE fan onoff
 
 リモコンの名前、信号の名前が違う場合は、
 
-\~{}/ome/07/www/cgi-bin/ir.hsp
+{\textasciitilde}/07/www/cgi-bin/ir.hsp
 
 を開いて
 
@@ -2472,7 +2510,7 @@ exec “irsend SEND\_ONCE fan onoff”
 
 を変更して保存しましょう。
 
-同じ場合はそのままで大丈夫です。
+同じ場合はそのままで\ruby{大丈夫}{だいじょうぶ}です。
 
 %
 %スクショ
@@ -2482,10 +2520,10 @@ exec “irsend SEND\_ONCE fan onoff”
 
 
 \centering
-\includegraphics[width=16.671cm,height=4.895cm]{ome7-img062.png}
+\includegraphics[width=16.671cm]{ome7-img062.png}
 \flushleft
 
-ブラウザのファン電源ボタンを押すと、CGIが起動して
+ブラウザのファン\ruby{電源}{でんげん}ボタンを押すと、CGIが起動して
 
 赤外線を送信します。
 
@@ -2495,44 +2533,48 @@ exec “irsend SEND\_ONCE fan onoff”
 \clearpage
 プログラム解説
 
-\~{}/ome/07/www/ir.html
+{\textasciitilde}/07/www/ir.html
 
-8行目でフォームの内容を受け取るCGIを設定しています。
+8行目でフォームの\ruby{内容}{ないよう}を受け取るCGIを設定しています。
 
 \centering
 \begin{boxedminipage}{0.95\textwidth}
-	{\textless}!DOCTYPE html{\textgreater}
+	\begin{enumerate}
+	\baselineskip 10pt
+	\setlength{\itemsep}{0cm}
+	\item{\textless}!DOCTYPE html{\textgreater}
 
-		{\textless}html{\textgreater}
+	\item{\textless}html{\textgreater}
 
-	{\textless}head{\textgreater}
+	\item{\textless}head{\textgreater}
 
-	\ \ \ \ {\textless}meta charset={\textquotedbl}utf-8{\textquotedbl}{\textgreater}
+	\item\ \ \ \ {\textless}meta charset={\textquotedbl}utf-8{\textquotedbl}{\textgreater}
 
-	{\textless}/head{\textgreater}
+	\item{\textless}/head{\textgreater}
 
-	{\textless}body{\textgreater}
+	\item{\textless}body{\textgreater}
 
-	\ \ \ \ {\textless}h2{\textgreater}赤外線リモコン{\textless}/h2{\textgreater}
+	\item\ \ \ \ {\textless}h2{\textgreater}赤外線リモコン{\textless}/h2{\textgreater}
 
-	\ \ \ \ {\textless}form action={\textquotedbl}cgi-bin/ir.hsp{\textquotedbl}
+	\item\ \ \ \ {\textless}form action={\textquotedbl}cgi-bin/ir.hsp{\textquotedbl}
 	method={\textquotedbl}GET{\textquotedbl}{\textgreater}
 
-	\ \ \ \ \ \ \ \ {\textless}p{\textgreater}
+	\item\ \ \ \ \ \ \ \ {\textless}p{\textgreater}
 
-	\ \ \ \ \ \ \ \ \ \ \ \ ファン電源 : {\textless}input type={\textquotedbl}submit{\textquotedbl}
+	\item\ \ \ \ \ \ \ \ \ \ \ \ ファン電源 : {\textless}input type={\textquotedbl}submit{\textquotedbl}
 	value={\textquotedbl}power{\textquotedbl} name={\textquotedbl}command{\textquotedbl}{\textgreater}
 
-	\ \ \ \ \ \ \ \ {\textless}/p{\textgreater}
+	\item\ \ \ \ \ \ \ \ {\textless}/p{\textgreater}
 
-	\ \ \ \ {\textless}/form{\textgreater}
+	\item\ \ \ \ {\textless}/form{\textgreater}
 
-	{\textless}/body{\textgreater}
+	\item{\textless}/body{\textgreater}
 
-	{\textless}/html{\textgreater}
+	\item{\textless}/html{\textgreater}
+	\end{enumerate}
 \end{boxedminipage}
 \flushleft
-\~{}/ome/07/www/cgi-bin/ir.hsp
+{\textasciitilde}/07/www/cgi-bin/ir.hsp
 
 がCGIとしてに起動します。
 
@@ -2555,48 +2597,52 @@ name={\textquotedbl}command{\textquotedbl}{\textgreater}
 
 \centering
 \begin{boxedminipage}{16.36cm}
-	\#include {\textquotedbl}hsp3cl.as{\textquotedbl}
+	\begin{enumerate}
+	\baselineskip 10pt
+	\setlength{\itemsep}{0cm}
+	\item\#include {\textquotedbl}hsp3cl.as{\textquotedbl}
 
-	\#include {\textquotedbl}cmdexec.as{\textquotedbl}
+	\item\#include {\textquotedbl}cmdexec.as{\textquotedbl}
 
-	\#include {\textquotedbl}cgi.as{\textquotedbl}
-
-
-	\bigskip
-
-	mes {\textquotedbl}Content-type: text/html{\textbackslash}n{\textquotedbl}
-
-	mes {\textquotedbl}{\textless}html{\textgreater}{\textless}head{\textgreater}{\textless}meta
-	charset={\textbackslash}{\textquotedbl}utf-8{\textbackslash}{\textquotedbl}{\textgreater}{\textless}/head{\textgreater}{\textless}body{\textgreater}{\textquotedbl}
+	\item\#include {\textquotedbl}cgi.as{\textquotedbl}
 
 
-	\bigskip
+	\item
 
-	getqueryval {\textquotedbl}command{\textquotedbl}, cmd
+	\item mes {\textquotedbl}Content-type: text/html{\textbackslash}n{\textquotedbl}
 
-	if cmd = {\textquotedbl}power{\textquotedbl} \{
+	\item mes {\textquotedbl}{\textless}html{\textgreater}{\textless}head{\textgreater}{\textless}meta
+	 charset={\textbackslash}{\textquotedbl}utf-8{\textbackslash}{\textquotedbl}{\textgreater}{\textless}/head{\textgreater}{\textless}body{\textgreater}{\textquotedbl}
 
-	\ \ mes
+
+	\item
+
+	\item getqueryval {\textquotedbl}command{\textquotedbl}, cmd
+
+	\item if cmd = {\textquotedbl}power{\textquotedbl} \{
+
+	\item\ \ mes
 		{\textquotedbl}{\textless}p{\textgreater}ファンの電源をおします。{\textless}/p{\textgreater}{\textquotedbl}
 
-	\ \ exec {\textquotedbl}irsend SEND\_ONCE fan onoff{\textquotedbl}
+		\item\ \ exec {\textquotedbl}irsend SEND\_ONCE fan onoff{\textquotedbl}
 
-	\} else \{
+		\item\} else \{
 
-	\ \ \ \ mes
+		\item\ \ \ \ mes
 		{\textquotedbl}{\textless}p{\textgreater}コマンドが正しくありません{\textless}/p{\textgreater}{\textquotedbl}
 
-	\ \ \ \ mes {\textquotedbl}{\textless}p{\textgreater}{\textquotedbl} + cmd +
+		\item\ \ \ \ mes {\textquotedbl}{\textless}p{\textgreater}{\textquotedbl} + cmd +
 	{\textquotedbl}{\textless}/p{\textgreater}{\textquotedbl}
 
-	\}
+	\item\}
 
 
-	\bigskip
+	\item
 
-	mes {\textquotedbl}{\textless}/body{\textgreater}{\textless}/html{\textgreater}{\textquotedbl}
+	\item mes {\textquotedbl}{\textless}/body{\textgreater}{\textless}/html{\textgreater}{\textquotedbl}
 
-	end
+	\item end
+	\end{enumerate}
 \end{boxedminipage}
 \flushleft
 
@@ -2620,7 +2666,7 @@ name={\textquotedbl}command{\textquotedbl}{\textgreater}
 \bigskip
 
 \bigskip
-\refstepcounter{Question}\theQuestion
+\refstepcounter{Question}\theQuestion\label{Q:IR}
 
 ファンの電源をつける以外の赤外線送信機能を追加してみよう。
 
@@ -2694,7 +2740,7 @@ CGIを使うときに便利なHSPの命令一覧
 		\ref*{E:QS}
 
 		\ref*{E:Sensors} &
-		\#include “rpz-gpio.as”のコマンドライン版
+		\#include “rpz-gpio.as”のコマンドライン\ruby{版}{ばん}
 		コマンドラインや CGI で動くプログラムを書
 		く場合はこちらを使う。cgpio, cgpioin 命令
 		以外は同じ命令が使える。\\\hline
@@ -2719,7 +2765,7 @@ CGIを使うときに便利なHSPの命令一覧
 {\bfseries
 	付録　ウェブサーバの停止方法}
 
-電源を切る前、ウェブサーバが起動しているターミナルを閉じる前、ウェブサーバを停止したいときは、ウェブサーバを起動したターミナル（./webserver.pyを実行している画面）を選択して
+電源を切る前、ウェブサーバが起動しているターミナルを\ruby{閉}{と}じる前、ウェブサーバを停止したいときは、ウェブサーバを起動したターミナル（./webserver.pyを実行している画面）を選択して
 
 
 \bigskip
