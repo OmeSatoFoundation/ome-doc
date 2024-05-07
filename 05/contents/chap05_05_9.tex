@@ -1,16 +1,16 @@
 \subsubsection{距離センサー}\label{distance}
 \begin{table}[H]
-	{\renewcommand\arraystretch{1.4}
+	\begin{widerrows}
 		\begin{tabular}{|p{\colF}|p{\colG}|} \hline
 		名称 & 距離センサー（きょりせんさー）\\ \hline
 		接続箇所 & アナログコネクタ (3pin)\\ \hline
 		機能概要 & センサーから障害物までの距離を計測\\ \hline
 		\end{tabular}
-	}
+  \end{widerrows}	
 \end{table}
 
 \begin{table}[H]
-	{\renewcommand\arraystretch{1.4}
+	\begin{widerrows}
 		\begin{tabular}{|p{\colF}|p{\colG}|}	\hline
 		サンプルコードの場所 & 05/anain.hsp\\ \hline
 		raspiへの入力 & 距離をあらわす0から1023の値。測定可能な距離は10cmから80cm。\\ \hline
@@ -18,11 +18,11 @@
 		raspiからの出力 & なし\\ \hline
 		raspiからの出力方法 & なし\\ \hline
 		\end{tabular}
-	}
+  \end{widerrows}	
 \end{table}
 
 \begin{table}[H]
-	{\renewcommand\arraystretch{1.4}
+	\begin{widerrows}
 		\begin{tabular}{|p{\colF}|p{\colG}|} \hline
 		使い道 & 距離計測、障害物センサーとして。\\ \hline
 		注意事項 & レンズを\ruby{覗}{のぞ}き\ruby{込}{こ}むと目に\ruby{影響}{えい|きょう}を\ruby{及}{およ}ぼすことがあるため覗き込まないこと。\\ \hline
@@ -33,11 +33,11 @@
 		\end{equation}
 	三角測量の原理により、ある三角形があったとき一辺の長さとそれに対する角の角度がわかれば三角形が決定します（\ruby{余弦}{よ|げん}定理）。距離センサーは\ruby{光源}{こう|げん}と受光器で成っています。受光器は光源から出た光が対象にぶつかって\ruby{反射}{はん|しゃ}してきた光の角度を計測することが出来ます。光源と受光器は固定されているので、その間の距離と対する角の角度がわかり、これと三角関数を使うと対象との距離が求まります\\ \hline
 		\end{tabular}
-	}
+  \end{widerrows}	
 \end{table}
 
 \begin{figure}[H]
-	{\renewcommand\arraystretch{1.4}
+	\begin{widerrows}
 		\begin{tabular}{|p{\colH}|p{\colI}|p{\colH}|p{\colI}|} \hline
 		外観 & 
 		\begin{minipage}[t]{\linewidth}
@@ -49,5 +49,5 @@
 			\end{minipage} &
 			回路記号 & 回路記号はありません。\\ \hline
 		\end{tabular}
-	}
+  \end{widerrows}	
 \end{figure}

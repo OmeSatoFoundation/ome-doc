@@ -11,7 +11,7 @@ FaBoのシールドにはブリックとRaspberry Piを\ruby{繋}{つな}ぐた�
 \begin{table}[H]
   \centering
   \caption{FaBoで使うことができるピン}
-  {\renewcommand\arraystretch{1.4}
+  \begin{widerrows} 
     \begin{tabular}{|c|l|} \hline
       GPIO 12 & \multirow{8}{*}{ボタンやスイッチなどのデジタル用のピン} \\ \cline{1-1}
       GPIO 16 & \\ \cline{1-1} GPIO 19 & \\ \cline{1-1} GPIO 20 & \\ \cline{1-1} GPIO 23 & \\ \cline{1-1}
@@ -20,7 +20,7 @@ FaBoのシールドにはブリックとRaspberry Piを\ruby{繋}{つな}ぐた�
       A1 & \\ \cline{1-1} A2 & \\ \cline{1-1} A3 & \\ \hline
       I2C & \ruby{有機}{ゆう|き}ELディスプレイのような特別な通信のためのピン \\ \hline
     \end{tabular}
-  }
+  \end{widerrows} 
 \end{table}
 
 ケーブルは3ピンと4ピンの2種類があります。今回4ピンは\ruby{有機}{ゆう|き}ELディスプレイで使います。\\
