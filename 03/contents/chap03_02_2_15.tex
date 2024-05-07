@@ -1,9 +1,32 @@
 %　※いい感じに分割してください※
 
+
+
 \begin{tcolorbox}[title=\useOmetoi,breakable]
 \begin{figure}[H]
     \centering
-    \includesvg[width=0.6\linewidth]{images/chap03/ex3-15.svg}
+	\begin{forest}
+		for tree={grow'=0,folder}
+		[/
+			[home/
+				[pi/
+					[rensyu/
+						[kokugo/
+							[syousetu.txt]]
+						[sansu/
+							[nihon.png]
+							[sansu.txt]]
+						[rika/
+							[mokei.png]
+							[rika.png]]
+						[syakai/
+							[sekai.png]]
+					]
+				]
+			]
+		]
+	\end{forest}
+    %\includesvg[width=0.6\linewidth]{images/chap03/ex3-15.svg}
 \end{figure}
 この図はユーザー名が「pi」のときのファイルの配置を\ruby{示}{しめ}した図です。
 ターミナルを開いて、コマンドを使って問題をといてみましょう。\\
