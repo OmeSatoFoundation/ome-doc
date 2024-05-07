@@ -6,6 +6,13 @@
 }
 \setcounter{chapter}{4}
 \setcounter{secnumdepth}{4}
+
+% 表の行間を広げるための環境
+% デフォルトは1.4倍
+\newenvironment{widerrows}[1][1.4]
+  {\renewcommand\arraystretch{#1}}
+  {}
+
 \begin{document}
   \input contents/chap05_01.tex
   \input contents/chap05_02_1.tex
