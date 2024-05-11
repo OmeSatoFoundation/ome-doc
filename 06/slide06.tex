@@ -200,7 +200,7 @@
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{文章を読み上げてもらう}
+  \frametitle{文章を読み上げてもらう(1)}
   
   \begin{lstlisting}[title=openjtalk.hsp,label=openjtalk.hsp]
   #include "hsp3dish.as"
@@ -210,11 +210,44 @@
   mes "発話開始"
   mes "「子どもIT未来塾」"
   redraw 1
-
+  
   jtload "子どもIT未来塾", 0	<#blue#;音声ファイルを出力し、読み込む#>
   mmplay 0			<#blue#;音声ファイルを再生する#>
   stop
   \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+  \frametitle{文章を読み上げてもらう(2)}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{声音を変えてみる(1)}
+  
+  \begin{lstlisting}[title=openjtalk.hsp,label=openjtalk.hsp]
+  #include "hsp3dish.as"
+  #include "jtalk.as"
+
+  redraw 0
+  mes "発話開始"
+  mes "「子どもIT未来塾」"
+  redraw 1
+ 
+  setvoice "htsvoice-tohoku-f01/tohoku-f01-sad.htsvoice" 
+                             <#blue#;音声ファイルを指定#>
+  jtload "子どもIT未来塾", 0	<#blue#;音声ファイルを出力し、読み込む#>
+  mmplay 0			<#blue#;音声ファイルを再生する#>
+  stop
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+ \frametitle{声音を変えてみる(2)}
+  \begin{itemize}
+    \item プログラムの中で音声ファイルを指定している部分を見てみよう
+    \item コマンドの""の中を他のファイルに書き換えると、声音が変わるよ
+    \item 他にどんな声音のファイルがあるかターミナルで確認してみよう
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -224,28 +257,17 @@
     \begin{itemize}
       \item 2問(1問は宿題)
     \end{itemize}
-  \end{itemize}
-\end{frame}
 
-\begin{frame}
-  \begin{itemize}
     \item 教科書9ページ 問題6-4
     \begin{itemize}
       \item 2問(1問は宿題)
     \end{itemize}
-    \item voice.hspを実行する\\
-    \begin{itemize}
-    \item 問題6-3のopenjtalk.hspの時と声音がどう変わったかな\\
-    \end{itemize}
-  \end{itemize}
-\end{frame}
 
-\begin{frame}
-  \begin{itemize}
     \item 教科書11ページ 問題6-5
     \begin{itemize}
       \item 2問(1問は宿題)
     \end{itemize}
+
     \item 教科書13ページ 問題6-6
     \begin{itemize}
       \item 2問(1問は宿題)
