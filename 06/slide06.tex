@@ -233,8 +233,8 @@
   mes "「子どもIT未来塾」"
   redraw 1
  
-  setvoice "htsvoice-tohoku-f01/tohoku-f01-sad.htsvoice" 
-                             <#blue#;音声ファイルを指定#>
+  <#red# setvoice "htsvoice-tohoku-f01/tohoku-f01-sad.htsvoice" #>
+                             <#red#;音声ファイルを指定#>
   jtload "子どもIT未来塾", 0	<#blue#;音声ファイルを出力し、読み込む#>
   mmplay 0			<#blue#;音声ファイルを再生する#>
   stop
@@ -245,8 +245,8 @@
  \frametitle{声音を変えてみる(2)}
   \begin{itemize}
     \item プログラムの中で音声ファイルを指定している部分を見てみよう
-    \item コマンドの""の中を他のファイルに書き換えると、声音が変わるよ
-    \item 他にどんな声音のファイルがあるかターミナルで確認してみよう
+    \item setvoiceの右にある""の中を他のファイルに書き換えると、声音が変わるよ
+    \item 他にどんな声音のファイルがあるか教科書を確認してみよう
   \end{itemize}
 \end{frame}
 
