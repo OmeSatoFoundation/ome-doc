@@ -1,8 +1,49 @@
 \newpage
+\section{ターミナルでファイルを\ruby{操作}{そう|さ}してみよう（２）}
+
+\subsection{ファイルの中身を見てみよう（２）}
+\begin{description}
+\item[\texttt{less}\textvisiblespace ファイル]\mbox{}\\
+ファイルに書かれている文字を一画面ずつ見ることができます。e を押すと一行\ruby{進}{すす}みます。y を押すと一行\ruby{戻}{もど}ります。q を押すと終わります。
+
+\end{description}
+\begin{itemize}
+\item[<例>]syousetu.txt の中を見てみます。
+\end{itemize}
+\begin{lstlisting}[caption=lessの例, label=less]
+<#green#pi@raspberrypi#>:<#blue#~ $#> less ~/03/rensyu/kokugo/syousetu.txt
+ごん狐
+新美南吉
+
+
++目次
+
+一
+
+　これは、私わたしが小さいときに、村の茂平もへいというおじいさんからきいたお話です。
+　むかしは、私たちの村のちかくの、中山なかやまというところに小さなお城があって、中山
+さまというおとのさまが、おられたそうです。　その中山から、少しはなれた山の中に、
+「ごん狐ぎつね」という狐がいました。ごんは、一人ひとりぼっちの小狐で、しだの一ぱいしげった
+森の中に穴をほって住んでいました。そして、夜でも昼でも、あたりの村へ出てきて、
+いたずらばかりしました。はたけへ入って芋をほりちらしたり、菜種なたねがらの、ほしてあるのへ
+火をつけたり、百姓家ひゃくしょうやの裏手につるしてあるとんがらしをむしりとって、いったり、
+いろんなことをしました。
+　或ある秋あきのことでした。二、三日雨がふりつづいたその間あいだ、ごんは、
+外へも出られなくて穴の中にしゃがんでいました。
+　雨があがると、ごんは、ほっとして穴からはい出ました。空はからっと晴れていて、
+百舌鳥もずの声がきんきん、ひびいていました。
+　ごんは、村の小川おがわの堤つつみまで出て来ました。あたりの、すすきの穂には、
+まだ雨のしずくが光っていました。川は、いつもは水が少すくないのですが、三日もの雨で、
+水が、どっとましていました。ただのときは水につかることのない、川べりのすすきや、
+萩はぎの株が、黄いろくにごった水に横だおしになって、もまれています。
+ごんは川下かわしもの方へと、ぬかるみみちを歩いていきました。
+：
+\end{lstlisting}
+
 \subsection{テキストファイルを作ってみよう}
 \begin{description}
 \item[\texttt{mousepad}\textvisiblespace ファイル\textvisiblespace \&]\mbox{}\\
-mousepad を使ってファイルを作ることができます。
+mousepad を使ってファイルを作成または\ruby{編集}{へん|しゅう}します。
 \end{description}
 \begin{itemize}
 \item[<例>]my.txt を作り、文字を書いて\ruby{保存}{ほ|ぞん}します。
@@ -15,10 +56,67 @@ mousepad を使ってファイルを作ることができます。
     ラズベリーパイのターミナルではコマンドの最後に「\&」を付けると、そのコマンドをターミナルから見えない場所で処理を実行してくれます。このようにターミナルから見えない場所で実行している処理を「バックグラウンドジョブ」と呼びます。一方で、今入力して実行しているコマンドは、「フォアグラウンドジョブ」と呼びます。
 \end{itembox}
 
+\subsection{ディレクトリを作ってみよう}
+\begin{description}
+\item[\texttt{mkdir}\textvisiblespace ディレクトリ]\mbox{}\\
+ディレクトリを作成します。
+\end{description}
+\begin{itemize}
+\item[<例>]my ディレクトリを作ります。
+\end{itemize}
+\begin{lstlisting}[caption=mkdirの例, label=mkdir]
+<#green#pi@raspberrypi#>:<#blue#~ $#> mkdir my
+<#green#pi@raspberrypi#>:<#blue#~ $#> ls -F
+<#blue#Desktop/	MagPi/	my/	 ...#>
+\end{lstlisting}
+
+\subsection{ファイルやディレクトリを消してみよう}
+\begin{description}
+\item[\texttt{rm}\textvisiblespace ファイル]\mbox{}\\
+ファイルを\ruby{消去}{しょう|きょ}します。ファイルやディレクトリは一度消すと\textbf{元には\ruby{戻}{もど}りません}。
+\end{description}
+\begin{itemize}
+\item[<例>]my.txt を消します。
+\end{itemize}
+\begin{lstlisting}[caption=cpの例, label=cp]
+<#green#pi@raspberrypi#>:<#blue#~ $#> ls -F
+<#blue#Desktop/	MagPi/	my/	 #>	<#magenta#my.txt#>	<#blue#...#>
+<#green#pi@raspberrypi#>:<#blue#~ $#> rm my.txt
+<#green#pi@raspberrypi#>:<#blue#~ $#> ls -F
+<#blue#Desktop/	MagPi/	my/	 ...#>
+\end{lstlisting}
+\begin{description}
+\item[\texttt{rm}\textvisiblespace \texttt{-r}\textvisiblespace ディレクトリ]\mbox{}\\
+ディレクトリを消去します。
+\end{description}
+\begin{itemize}
+\item[<例>]my ディレクトリを消します。
+\end{itemize}
+\begin{lstlisting}[caption=cp -rの例, label=cp-R]
+<#green#pi@raspberrypi#>:<#blue#~ $#> ls -F
+<#blue#Desktop/	MagPi/	my/	 ...#>
+<#green#pi@raspberrypi#>:<#blue#~ $#> rm -r my
+<#green#pi@raspberrypi#>:<#blue#~ $#> ls -F
+<#blue#Desktop/	MagPi/	Public/	 ...#>
+\end{lstlisting}
+
+
 \begin{tcolorbox}[title=\useOmetoi]
 \begin{enumerate}
-\addex{ホームディレクトリに移動しましょう。その後、mousepad\textvisiblespace my.txt\textvisiblespace \&と入力してみましょう。マウスパッドが開きます。自分の名前を書いて保存しましょう。\\
-ターミナルにls\textvisiblespace -Fと入力してmy.txtがあるか見てみましょう。}
-\end{enumerate}
-%\end{minipage}
+    \addex{less\textvisiblespace \textasciitilde /03/rensyu/kokugo/syousetu.txt と入力してみましょう。}
+    \addex{qを押して終了してみよう。}
+    \addex{ホームディレクトリに移動しましょう。その後、mousepad\textvisiblespace my.txt\textvisiblespace \&と入力してみましょう。マウスパッドが開きます。自分の名前を書いて保存しましょう。\\
+    ターミナルにls\textvisiblespace -Fと入力してmy.txtがあるか見てみましょう。}
+    \addex{mkdir\textvisiblespace myと入力してみましょう。\\
+    ls\textvisiblespace -Fと入力してmyディレクトリがあるか見てみましょう。}
+    \addex{rm\textvisiblespace my.txtと入力してみましょう。\\
+    ls\textvisiblespace -Fと入力してmy.txtファイルが消えているか見てみましょう。}
+    \addex{rm\textvisiblespace -r\textvisiblespace myと入力してみましょう。\\
+    ls\textvisiblespace -Fと入力してmyディレクトリが消えているか見てみましょう。}
+    \end{enumerate}
+    %\end{minipage}
 \end{tcolorbox}
+
+    
+    
+        
