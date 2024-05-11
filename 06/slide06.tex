@@ -81,7 +81,6 @@
   \end{center}
 }
 
-
 \begin{frame}
 	\frametitle{今日やること}
   \begin{enumerate}
@@ -200,7 +199,7 @@
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{文章を読み上げてもらう}
+  \frametitle{文章を読み上げてもらう(1)}
   
   \begin{lstlisting}[title=openjtalk.hsp,label=openjtalk.hsp]
   #include "hsp3dish.as"
@@ -215,6 +214,39 @@
   mmplay 0			<#blue#;音声ファイルを再生する#>
   stop
   \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+  \frametitle{文章を読み上げてもらう(2)}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{声色を変えてみる(1)}
+  
+  \begin{lstlisting}[title=openjtalk.hsp,label=openjtalk.hsp]
+  #include "hsp3dish.as"
+  #include "jtalk.as"
+
+  redraw 0
+  mes "発話開始"
+  mes "「子どもIT未来塾」"
+  redraw 1
+
+  <#red#setvoice "htsvoice-tohoku-f01/tohoku-f01-sad.htsvoice" #>
+                             <#red#;音声ファイルを指定#>
+  jtload "子どもIT未来塾", 0	<#blue#;音声ファイルを出力し、読み込む#>
+  mmplay 0			<#blue#;音声ファイルを再生する#>
+  stop
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+\frametitle{声音を変えてみる(2)}
+  \begin{itemize}
+    \item プログラムの中で音声ファイルを指定している部分を見てみよう
+    \item setvoiceの右にある""の中を他のファイルに書き換えると、声音が変わるよ
+    \item 他にどんな声音のファイルがあるか教科書を確認してみよう
+\end{itemize}
 \end{frame}
 
 \begin{frame}
