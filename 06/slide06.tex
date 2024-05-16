@@ -211,7 +211,7 @@
   mes "「子どもIT未来塾」"
   redraw 1
   
-  jtload "子どもIT未来塾", 0	<#blue#;音声ファイルを出力し、読み込む#>
+  <#red#jtload "子どもIT未来塾", 0	;音声ファイルを出力し、読み込む#>
   mmplay 0			<#blue#;音声ファイルを再生する#>
   stop
   \end{lstlisting}
@@ -219,11 +219,15 @@
 
 \begin{frame}
   \frametitle{文章を読み上げてもらう(2)}
+  \begin{itemize}
+    \item プログラムの中の jtload "子どもIT未来塾", 0 の部分を見てみよう
+    \item jtload "読ませたい文字列", <バッファ番号>
+    \item ""の中の文字列を変えると、好きな言葉を読ませられるよ！
+  \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]
   \frametitle{声音を変えてみる(1)}
-  
   \begin{lstlisting}[title=voice.hsp,label=voice.hsp]
   #include "hsp3dish.as"
   #include "jtalk.as"
@@ -248,6 +252,27 @@
     \item setvoiceの右にある""の中を他のファイルに書き換えると、声音が変わるよ
     \item 他にどんな声音のファイルがあるか教科書を確認してみよう
   \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{読み上げる文字列に変数を使う(1)}
+  \begin{lstlisting}[title=readdate.hsp,label=readdate.hsp]
+    #include "hsp3dish.as"
+    #include "jtalk.as"
+
+    <#red#date = "" + gettime(0) + "年" + 
+                gettime(1) + "月" + gettime(3) + "日"#>
+
+    redraw 0
+    mes "日付を読み上げます"
+    mes date
+    redraw 1
+
+    jtload date, 0 <#blue#;date変数に代入されている文字を
+                          音声ファイルにし、読み込む#>
+    mmplay 0 ;<#blue#;音声ファイルを再生する#>
+    stop
+  \end{lstlisting}
 \end{frame}
 
 \begin{frame}
