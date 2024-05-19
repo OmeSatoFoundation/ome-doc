@@ -54,25 +54,28 @@ HSPスクリプトエディタで\textasciitilde /03/button\_led3.hspを読み\r
   goto *hata		<#blue#;*hataまで戻る#>
 \end{lstlisting}
 
-\textbf{\ruby{剰余算}{じょう|よ|ざん}}\\
+\noindent \textbf{\ruby{剰余算}{じょう|よ|ざん}}\\
 今回、新たに\textbackslash (バックスラッシュ)という記号が登場しています。これは剰余算といって\ruby{割}{わ}り算をしたときの余りを計算できます。例えば、5 \textbackslash \ 4 は5を4で割った余りである1になります。
 
-\code{ledidx = (ledidx+1) \textbackslash \ 4}では、何回\code{*hata}まで戻っているか数えています。LEDは4つあるので、4回動けば一周できます。一周したらまた0に戻りたいので、剰余算を使っています。今回は\code{ledidx}は0～3のどれかの数字になります。\\
-
-実際に計算すると、次のようになります。\\
+\code{ledidx = (ledidx+1) \textbackslash \ 4}では、何回\code{*hata}まで戻っているか数えています。LEDは4つあるので、4回動けば一周できます。一周したらまた0に戻りたいので、剰余算を使っています。今回は\code{ledidx}は0～3のどれかの数字になります。実際に計算すると、次のようになります。\\
+\\
+{\small 
 \begin{tabular}{llll}
-ledidxが0のとき & \code{ledid=(0+1) \textbackslash \ 4} を計算すると& $1 \div 4=$0あまり1 なので& ledidxは1になる\\
-ledidxが1のとき & \code{ledid=(1+1) \textbackslash \ 4} を計算すると& $2 \div 4=$0あまり2 なので& ledidxは2になる\\
-ledidxが2のとき & \code{ledid=(2+1) \textbackslash \ 4} を計算すると& $3 \div 4=$0あまり3 なので& ledidxは3になる\\
-ledidxが3のとき & \code{ledid=(3+1) \textbackslash \ 4} を計算すると& $4 \div 4=$1あまり0 なので& ledidxは0になる
-\end{tabular}\\
+ledidxが0のとき & \code{ledidx=(0+1) \textbackslash \ 4} を計算すると& $1 \div 4=$0あまり1 なので& 次のledidxは1になる\\
+ledidxが1のとき & \code{ledidx=(1+1) \textbackslash \ 4} を計算すると& $2 \div 4=$0あまり2 なので& 次のledidxは2になる\\
+ledidxが2のとき & \code{ledidx=(2+1) \textbackslash \ 4} を計算すると& $3 \div 4=$0あまり3 なので& 次のledidxは3になる\\
+ledidxが3のとき & \code{ledidx=(3+1) \textbackslash \ 4} を計算すると& $4 \div 4=$1あまり0 なので& 次のledidxは0になる
+\end{tabular}
+}
+\\
 このように剰余算をうまくつかうことで、4つのLEDの切り替えを実現しています。
+\\
 
+\noindent {\bf if \ruby{条件文}{じょう|けん|ぶん}1 \{実行文1\} else : if 条件文2\{実行文2\}}
 
-if \ruby{条件文}{じょう|けん|ぶん}1 \{実行文1\} else : if 条件文2\{実行文2\}\\
-これは条件文1が成り立つときは実行文1を実行します。成り立たないときは、条件文2が成り立つかどうか調べます。条件文2が成り立つときは実行文2を実行します。 \\
+この文は条件文1が成り立つときは実行文1を実行します。成り立たないときは、条件文2が成り立つかどうか調べます。条件文2が成り立つときは実行文2を実行します。 
 
-けれど、このままだとボタンを押すたびにLEDが右どなりに動いているようには見えないですね？それはコンピュータが計算するのが速すぎるせいです。ボタンを一回押したら、ひとつ右どなりに動くようにするにはどうしたらよいでしょうか。\pageref{button_led2_toi}ページの問題の「変化を\ruby{検出}{けん|しゅつ}する」を参考に問題をといてみましょう。\\
+しかし、このままだとボタンを押すたびにLEDが右どなりに動いているようには見えないですね？それはコンピュータが計算するのが速すぎるせいです。ボタンを一回押したら、ひとつ右どなりに動くようにするにはどうしたらよいでしょうか。\pageref{button_led2_toi}ページの問題の「変化を\ruby{検出}{けん|しゅつ}する」を参考に問題をといてみましょう。\\
 
 \begin{tcolorbox}[title=\useOmetoi]
 \begin{enumerate}

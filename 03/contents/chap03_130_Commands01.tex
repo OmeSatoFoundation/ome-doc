@@ -1,0 +1,152 @@
+\newpage
+\section{ターミナルでファイルを\ruby{操作}{そう|さ}してみよう（１）}
+
+\subsection{カレントディレクトリを\ruby{変更}{へん|こう}してみよう}
+\begin{description}
+\item[\texttt{cd}\textvisiblespace ディレクトリ]\mbox{}\\
+カレントディレクトリを指定したディレクトリに変更します。このことを「移動する」と言います。
+\end{description}
+\begin{itemize}
+\item[<例>] Picturesディレクトリに移動するときはcd\textvisiblespace Pictures/と入力します
+\end{itemize}
+
+\begin{lstlisting}[caption=cd directoryの例, label=cdDir]
+<#green#pi@raspberrypi#>:<#blue#~ $#> cd Pictures/
+<#green#pi@raspberrypi#>:<#blue#~/Pictures $#>
+\end{lstlisting}
+文字の左側が変わっています。ここにはカレントディレクトリが書かれています。
+
+\begin{description}
+\item[\texttt{cd}]\mbox{}\\
+ホームディレクトリに移動します。
+\end{description}
+\begin{itemize}
+\item[<例>] Picturesディレクトリに移動したあとに、cdとだけ入力するとホームディレクトリに移動できます。
+\end{itemize}
+\begin{lstlisting}[caption=cdの例, label=cd]
+<#green#pi@raspberrypi#>:<#blue#~/Pictures $#> cd
+<#green#pi@raspberrypi#>:<#blue#~ $#> 
+\end{lstlisting}
+ディレクトリを入力しなくてもホームディレクトリに移動できました。\\
+
+
+\subsection{ファイルの中身を見てみよう}
+\begin{description}
+\item[\texttt{cat}\textvisiblespace ファイル]\mbox{}\\
+ファイルに書かれている\ruby{内容}{ない|よう}を\ruby{表示}{ひょう|じ}します。
+\end{description}
+\begin{itemize}
+\item[<例>]syousetu.txt に書かれている文字を表示します。
+\end{itemize}
+\begin{lstlisting}[caption=catの例, label=cat]
+<#green#pi@raspberrypi#>:<#blue#~ $#> cat ~/03/rensyu/kokugo/syousetu.txt
+
+した。
+
+
+
+
+底本：「新美南吉童話集」岩波文庫、岩波書店
+　　　1996（平成8）年7月16日発行第1刷
+　　　1997（平成9）年7月15日発行第2刷
+初出：「赤い鳥　復刊第三巻第一号」
+　　　1932（昭和7）年1月号
+※入力時に使われた底本が不明とのことなので、表記は岩波文庫版に合わせた。
+入力：林裕司
+校正：浜野智
+1998年10月23日公開
+2012年5月8日修正
+青空文庫作成ファイル：
+このファイルは、インターネットの図書館、青空文庫（http://www.aozora.gr.jp/）で作られ
+ました。入力、校正、制作にあたったのは、ボランティアの皆さんです。<#green#pi@raspberrypi#>:<#blue#~ $#>
+\end{lstlisting}
+
+
+
+\subsection{コピーしてみよう}
+\begin{description}
+\item[\texttt{cp}\textvisiblespace ファイル1\textvisiblespace ファイル2]\mbox{}\\
+ファイル1をファイル2という名前でコピーします。
+\end{description}
+\begin{itemize}
+\item[<例>]\textasciitilde /03/rensyu/rika/rika.png をrika2.png という名前でホームディレクトリにコピー
+します。ls\textvisiblespace -F を実行すると rika2.png がコピーされていることを\ruby{確認}{かく|にん}できます。
+\end{itemize}
+\begin{lstlisting}[caption=cpの例, label=cp]
+<#green#pi@raspberrypi#>:<#blue#~ $#> cp ~/03/rensyu/rika/rika.png ~/rika2.png
+<#green#pi@raspberrypi#>:<#blue#~ $#> ls -F
+<#blue#MagPi/	#>	<#magenta#rika2.png#>	<#blue#...#>
+\end{lstlisting}
+\begin{description}
+\item[\texttt{cp}\textvisiblespace \texttt{-r}\textvisiblespace ディレクトリ1\textvisiblespace ディレクトリ2]\mbox{}\\
+ディレクトリをコピーします。
+\end{description}
+\begin{itemize}
+\item[<例>]\textasciitilde /03/rensyu/rika をrikaという名前でホームディレクトリにコピー
+します。ls\textvisiblespace -F を実行すると rikaディレクトリ がコピーされていることを確認できます。
+\end{itemize}
+\begin{lstlisting}[caption=cp -rの例, label=cp-R]
+<#green#pi@raspberrypi#>:<#blue#~ $#> cp -r ~/03/rensyu/rika ~/rika
+<#green#pi@raspberrypi#>:<#blue#~ $#> ls -F
+<#blue#MagPi/	#>	<#blue#rika/#>	<#magenta#rika2.png#>	<#blue#...#>
+\end{lstlisting}
+
+
+
+\subsection{ファイルやディレクトリを\ruby{移動}{い|どう}してみよう}
+\begin{description}
+\item[\texttt{mv}\textvisiblespace ファイルやディレクトリ\textvisiblespace 移動先]\mbox{}\\
+ファイルやディレクトリを移動先に移動します。
+\end{description}
+\begin{itemize}
+\item[<例>]rika2.pngをrika ディレクトリに移動します。ls\textvisiblespace -F\textvisiblespace rikaとコマンドを実行するとrika2.pngがrikaディレクトリの中に移動されていることを\ruby{確認}{かく|にん}できます。
+\end{itemize}
+\begin{lstlisting}[caption=mvの例, label=mv]
+<#green#pi@raspberrypi#>:<#blue#~ $#> mv ~/rika2.png ~/rika
+<#green#pi@raspberrypi#>:<#blue#~ $#> ls -F rika
+<#magenta#mokei.png#>	<#magenta#rika.png#>	<#magenta#rika2.png#>
+\end{lstlisting}
+
+
+\subsection{ファイルやディレクトリの名前を変えてみよう}
+\begin{description}
+\item[\texttt{mv}\textvisiblespace 名前\textvisiblespace 変えたい名前]\mbox{}\\
+ファイルやディレクトリの名前を変更します。
+\end{description}
+\begin{itemize}
+\item[<例>]rikaディレクトリにあるrika2.pngをbika.pngに名前を変えます。ls\textvisiblespace -F\textvisiblespace rikaで、名前が変わっていることが\ruby{確認}{かく|にん}できます。
+\end{itemize}
+\begin{lstlisting}[caption=mvNameの例, label=mvName]
+<#green#pi@raspberrypi#>:<#blue#~ $#> cd ~/rika
+<#green#pi@raspberrypi#>:<#blue#~ $#> mv rika2.png bika.png
+<#green#pi@raspberrypi#>:<#blue#~ $#> ls -F
+<#magenta#bika.png	mokei.png		rika.png#>
+\end{lstlisting}
+
+\begin{tcolorbox}[title=\useOmetoi]
+    \begin{enumerate}
+        \addex{\code{cd\textvisiblespace Pictures}と入力してPicturesディレクトリに移動し、\code{pwd} コマンドでカレントディレクトリを確認してみましょう。}
+        \addex{\code{cd}と入力してホームディレクトリに移動し、\code{pwd} コマンドでカレントディレクトリを確認してみましょう。}
+        \addex{\code{cd ..} と入力して一つ上のディレクトリへ移動し、pwd コマンドでカレントディレクトリを確認してみましょう。}
+        \addex{\code{cd \textasciitilde} と入力して、pwd コマンドでカレントディレクトリを確認してみましょう。}\\　\\%調整用の空行に注意
+        \addquiz{cat\textvisiblespace \textasciitilde /03/rensyu/kokugo/syousetu.txt と入力してみましょう。\\表示された小説の題名はなんでしょうか。}
+    \end{enumerate}
+\end{tcolorbox}
+
+\begin{tcolorbox}[title=\useOmetoi]
+    %\begin{minipage}{0.94\hsize}
+    \begin{enumerate}
+    \addex{ホームディレクトリに移動しましょう。}
+    \addex{cp\textvisiblespace \textasciitilde /03/rensyu/rika/rika.png\textvisiblespace \textasciitilde /rika2.png と入力してみましょう。\\
+    ls\textvisiblespace -Fと入力してrika2.pngがコピーされているか見てみましょう。}
+    \addex{cp\textvisiblespace -r\textvisiblespace \textasciitilde /03/rensyu/rika\textvisiblespace \textasciitilde /rikaと入力してみましょう。\\
+    ls\textvisiblespace -Fと入力してrikaディレクトリがコピーされているか見てみましょう。}
+    \addex{cdと入力してホームディレクトリに移動しましょう。\\
+    mv\textvisiblespace rika2.png\textvisiblespace rika/ と入力してみましょう。\\
+    ls\textvisiblespace -F\textvisiblespace rikaと入力してrika2.pngが rika ディレクトリの下に移動しているか見てみましょう。}
+    \addex{cd\textvisiblespace\textasciitilde /rikaと入力してrikaディレクトリに\ruby{移動}{い|どう}しましょう。\\
+    mv\textvisiblespace rika2.png\textvisiblespace bika.png と入力してみましょう。\\
+    ls\textvisiblespace -Fと入力してrika2.pngがbika.pngに変わっているか見てみましょう。}
+    \end{enumerate}
+    %\end{minipage}
+\end{tcolorbox}

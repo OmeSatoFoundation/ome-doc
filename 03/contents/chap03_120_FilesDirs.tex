@@ -1,155 +1,4 @@
-\chapter{温度や\ruby{湿度}{しつ|ど}、明るさを\ruby{測}{はか}ってみよう}
-\section{はじめに}
-\subsection{この章で学ぶこと}
-この章では以下のことを学びます。
-
-\begin{itemize}
-  \item コンピュータをコマンドを使って動かす
-  \item ファイルとディレクトリを文字で指定する
-  \item センサーボードをプログラムで動かす
-  \begin{itemize}
-    \item LEDの点灯・消灯
-    \item 温湿度\ruby{気圧}{き|あつ}センサーの値を\ruby{読}{よ}む
-    \item ボタンを上手に使う
-  \end{itemize}
-\end{itemize}
-
-まずコンピュータをコマンドで動かす方法を学びます。
-マウスではなく、コマンドでコンピュータを\ruby{操作}{そう|さ}することは、とても重要です。
-コマンドを使うと、コンピュータがするべき操作を文字で記録したり、
-\ruby{離}{はな}れたコンピュータを\ruby{簡単}{かん|たん}に操作できるようになります。
-また、コマンドでファイルを\ruby{扱}{あつか}うために、ファイルが置いてある場所を\ruby{指示}{し|じ}する方法を学びます。
-ターミナルを利用して、文字を使ってファイルの操作をできるようになりましょう。
-
-次に、センサーボードをプログラムから動かす方法を学びます。
-センサーボードに取り付けてあるLEDを点灯・消灯させたり、
-温湿度気圧センサーの\ruby{情報}{じょう|ほう}を読み取ったり、ボタンを上手に使ったりして、
-センサーボードをプログラムから動かすことができるようになりましょう。
-
-\subsection{教材を自分のフォルダに置こう}
-まずは、今回利用する教材をコピーしましょう。
-第1回, 第2回と同じように、\nobreak/usr/local/share/ome という場所にあるフォルダ 03 をコピーして、/home/ユーザー名 に\ruby{貼}{は}り付けてください。
-
-やり方を\ruby{忘}{わす}れてしまった人は、「第1回 4.1 例題1-18 教材をじぶんのフォルダに置こう」 を参考にしてみてください。
-
-\section{ターミナルを使ってみよう}
-\subsection{コマンドについて知ろう}
-
-ターミナルではコマンドを使ってコンピュータとやりとりをします。
-コマンドとはコンピュータに\ruby{与}{あた}える命令のことです。
-コマンドは下のような\ruby{形}{かたち}で書きます。
-
-\begin{description}
-\item[コマンド\textvisiblespace オプション\textvisiblespace \ruby{引数}{ひき|すう}１\textvisiblespace 
-\ruby{引数}{ひき|すう}２]\mbox{}\\
-コマンドは動作、引数は操作の\ruby{対象}{たい|しょう}です。
- コマンドの最後にEnter（（エンター）キーを\ruby{押}{お}して、
- コンピュータにコマンドを送ります。
- EnterキーはReturn（リターン）キーと\ruby{呼}{よ}ぶこともあります。
-\end{description}
-
-使うときは次のことに気を付けましょう。
-\begin{itemize}
-\item \emph{半角英数字でかくこと}
-\item \emph{\ruby{間}{あいだ}にスペース（空白）をいれること}
-\end{itemize}
-
-
-教科書ではわかりやすいように、スペースを「\textvisiblespace 」のように示すこともあります。
-必ずそうなっているわけではありませんので、どこにスペースを入れるべきかをしっかり自分で覚えましょう。
-また、みなさんが使うラズパイでは英語が使われています。最初から入っているフォルダの名前も英語になっています。
-読み方を知りたい人は\pageref{英語と日本語の対応表}ページの英語と日本語の\ruby{対応表}{たい|おう|ひょう}を見てみましょう。
-
-\subsection{カレントディレクトリを知ろう}
-ディレクトリとは、第１回で習ったフォルダと\ruby{基本的}{き|ほん|てき}に同じものです。
-マウスで操作する場合はフォルダ、コマンドで操作する場合はディレクトリと呼ぶことが多いです。
-ターミナルで作業をするディレクトリを{\bf カレントディレクトリ}と呼びます。
-カレントディレクトリを調べるには以下のコマンドを使用します。
-
-\begin{description}
-\item[\texttt{pwd}]\mbox{}\\
- カレントディレクトリ（ターミナルでの作業ディレクトリ）を表示します。
-\end{description}
-
-\begin{lstlisting}[caption=pwdコマンドの例,label=pwdtest]
-<#green#pi@raspberrypi#>:<#blue#~ $#> pwd
-/home/pi   <-- カレントディレクトリを表示します
-<#green#pi@raspberrypi#>:<#blue#~ $#>
-\end{lstlisting}
-
-\subsection{ディレクトリの中を見てみよう}
-\begin{description}
-\item[\texttt{ls}\textvisiblespace \texttt{-F}\textvisiblespace ディレクトリ]\mbox{}\\
-ディレクトリの中のファイルやディレクトリが表示されます。
-ファイルはピンクの文字、ディレクトリは青い文字になっています。
-Fは大文字なので注意してください。
-\end{description}
-
-%//terminal[lsF-test][ls -F コマンドの例]{
-\begin{minipage}{\linewidth}
-\begin{lstlisting}[caption=ls -F コマンドの例。ファイルやディレクトリが表示されます,label=lsFtest]
-<#green#pi@raspberrypi#>:<#blue#~ $#> ls -F
-<#blue#01/  03/         Desktop/    Downloads/  Pictures/  Templates/
-02/  Bookshelf/  Documents/  Music/      Public/    Videos/#>
-<#green#pi@raspberrypi#>:<#blue#~ $#>
-\end{lstlisting}
-\end{minipage}
-
-\begin{itemize}
-\item[<例>] ls\textvisiblespace -Fだけを入力するとカレントディレクトリの中を見ることができます。 
-\item[<例>] Picturesというディレクトリの中を見たい場合は ls\textvisiblespace -F\textvisiblespace Pictures/と入力します。 
-\end{itemize}
-
-ディレクトリの中にあるファイルは人によってちがいます。
-\begin{lstlisting}[caption=ls -F Pictures/コマンドの例,label=lsFPicttest]
-<#green#pi@raspberrypi#>:<#blue#~ $#> ls -F Pictures/
-<#magenta#2019-07-08-145604_1366X768_scrot.png  2019-07-08-150326_1366X768_scrot.png  
-2019-07-08-150313_1366X768_scrot.png  2019-07-08-150348_1366X768_scrot.png  
-2019-07-08-150323_1366X768_scrot.png  2019-07-08-150356_1366X768_scrot.png  #>
-<#green#pi@raspberrypi#>:<#blue#~ $#> 
-\end{lstlisting}
-
-\subsection{便利な Tab（タブ）キーを使ってみよう}
-入力したい文字の\ruby{途中}{と|ちゅう}まで入力してから、Tab キーを\ruby{押}{お}すと、コンピュータが残りの文字を\ruby{推測}{すい|そく}して
-くれます。似たような文字があるときは、\ruby{候補}{こう|ほ}を出してくれます。
-\begin{itemize}
-\item[<例>]コマンドを入力する途中で Tab キーを使ってみます。
-\end{itemize}
-\begin{lstlisting}[caption=Tabの例1, label=Tab1]
-<#green#pi@raspberrypi#>:<#blue#~ $#> pw
-pwck  pwconv  pwd  pwdx  pwunconv <--Tabを打つと出てくる
-<#green#pi@raspberrypi#>:<#blue#~ $#> pw
-\end{lstlisting}
-どのコマンドのことかわからないので、コマンドの候補を出してくれました。
-\begin{itemize}
-\item[<例>]ファイルやディレクトリの名前の途中で Tab キーを使ってみます。
-\end{itemize}
-\begin{lstlisting}[caption=Tabの例2, label=Tab2]
-<#green#pi@raspberrypi#>:<#blue#~ $#> ls -F Pi
-<#green#pi@raspberrypi#>:<#blue#~ $#> ls -F Pictures	<--Tabを打つと出てくる
-\end{lstlisting}
-コンピュータが残りの文字を入力してくれました。
-\begin{itemize}
-\item[<例>]ファイルやディレクトリの名前の途中で Tab キーを使ってみます。
-\end{itemize}
-\begin{lstlisting}[caption=Tabの例3, label=Tab3]
-<#green#pi@raspberrypi#>:<#blue#~ $#> ls -F 0
-01/	02/	03/	<--Tabを打つと出てくる
-<#green#pi@raspberrypi#>:<#blue#~ $#> ls -F 0
-\end{lstlisting}
-どのファイルやディレクトリかわからないので、ディレクトリやファイルの候補を出してくれました。
-
-\begin{figure}[b]
-\begin{tcolorbox}[title=\useOmetoi]
-\begin{enumerate}
-  \addquiz{\ruby{実際}{じっ|さい}にpwdを使って、カレントディレクトリが\ruby{表示}{ひょう|じ}されることを確かめましょう。
-  表示されたカレントディレクトリを書いてください。}
-\addquiz{\texttt{ls}\textvisiblespace \texttt{-F}と入力しましょう。実行して\ruby{表示}{ひょう|じ}されたファイルとディレクトリの名前を１つずつ書きましょう。Fは大文字です。}
-\addquiz{Tabキーを使いながら \texttt{ls}\textvisiblespace \texttt{-F}\textvisiblespace Pictures/ と入力しましょう。実行して\ruby{表示}{ひょう|じ}されたファイルかディレクトリの名前を１つ書きましょう。}
-\end{enumerate}
-\end{tcolorbox}
-\end{figure}
-
+% fill the proper sections here
 \newpage
 \section{ファイルとディレクトリ}
 \subsection{ファイルってなんだろう？}
@@ -256,7 +105,14 @@ pwck  pwconv  pwd  pwdx  pwunconv <--Tabを打つと出てくる
 \end{enumerate}
 \end{tcolorbox}
 
-\subsection{ディレクトリの関係}
+\section{ディレクトリとパス}
+ディレクトリの中にはファイルとディレクトリを作ることができます。
+ディレクトリの中にディレクトリを作り、その中にさらにディレクトリを作る・・・ということができるため、
+ラズパイの中にはたくさんのファイルやディレクトリがあります。
+処理に使うファイルやディレクトリの\ruby{位置}{い|ち}を正しくラズパイに\ruby{指定}{し|てい}するために、
+ディレクトリやファイルの指定方法を学びます。
+
+\subsection{ディレクトリの\ruby{関係}{かん|けい}と\ruby{特殊}{とく|しゅ}なディレクトリ}
 
 \noindent {\bf ●ディレクトリの\ruby{上下関係}{じょう|げ|かん|けい}}
 
@@ -265,7 +121,7 @@ pwck  pwconv  pwd  pwdx  pwunconv <--Tabを打つと出てくる
 
 \noindent {\bf ●ルートディレクトリ}
 
-一番上のディレクトリは / (スラッシュ)で書きます。特別なディレクトリで、root(ルート)ディレクトリと呼びます。その下にあるbin boot dev etcなどのディレクトリはコンピュータの\ruby{設定}{せっ|てい}ファイルを持っているので、\ruby{間違}{ま|ちが}った使い方をすると\ruby{壊}{こわ}れます。気を付けましょう。
+一番上のディレクトリは / (スラッシュ)で書きます。特別なディレクトリで、root(ルート)ディレクトリと呼びます。その下にある bin/ boot/ dev/ etc/ などのディレクトリはラズパイの\ruby{設定}{せっ|てい}ファイルを持っているので、\ruby{間違}{ま|ちが}った使い方をするとラズパイが\ruby{壊}{こわ}れます。気を付けましょう。
 
 \noindent {\bf ●ホームディレクトリ}
 
@@ -281,20 +137,20 @@ pwck  pwconv  pwd  pwdx  pwunconv <--Tabを打つと出てくる
 カレントディレクトリからひとつ上のディレクトリは「..」と書くことができます。
 
 \subsection{\ruby{絶対}{ぜっ|たい}パスと\ruby{相対}{そう|たい}パス}
-ディレクトリの位置はパスというディレクトリを / で区切ったもので指定します。
+ディレクトリの位置は、ディレクトリを / で区切った{\bf 「パス」}というもので指定します。
 ディレクトリの位置の指定の方法は\ruby{絶対}{ぜっ|たい}パスと\ruby{相対}{そう|たい}パスの2種類があります。
 
 \noindent {\bf ●\ruby{絶対}{ぜっ|たい}パス}
 
 ディレクトリの位置を{\bf ルートディレクトリ（/）から}見てどこにあるかで指定します。
 絶対パスの\ruby{特徴}{とく|ちょう}はパスの先頭に / がついています。
-例えば、/usr/local/bin などとして指定します。
+例えば、/usr/bin/ などとして指定します。
 
 \noindent {\bf ●\ruby{相対}{そう|たい}パス}
 
 ディレクトリの位置を{\bf カレントディレクトリから}見てどこにあるかで指定します。
 相対パスの特徴はパスの先頭に / がついていません。
-例えば、./usr/local/bin などとして指定します。
+例えば、./usr/bin/ や usr/bin/ などとして指定します。
 
 \noindent {\bf ●ホームディレクトリ}
 
@@ -394,10 +250,10 @@ xxx、xxx/、./xxx、./xxx/などと書きます。いろいろな指定の仕�
 ユーザー名を「pi」としたときに以下の問題に答えてみましょう。
 \begin{enumerate}
 \addquiz{ホームディレクトリはどれでしょうか}
-\addquiz{カレントディレクトリが/home/pi/Videoのとき、ひとつ上のディレクトリはどれでしょうか。}
-\addquiz{カレントディレクトリが/home/piのとき、ひとつ下のディレクトリはどれでしょうか。４つあります。}
-\addquiz{カレントディレクトリが/home/pi/Desktopのとき、ひとつ上のディレクトリはどれでしょうか。}
-\addquiz{カレントディレクトリが\textasciitilde /Desktopのとき、ひとつ下のディレクトリはどれでしょうか。}
+\addquiz{カレントディレクトリが /home/pi/Video/ のとき、ひとつ上のディレクトリはどれでしょうか。}
+\addquiz{カレントディレクトリが /home/pi/ のとき、ひとつ下のディレクトリはどれでしょうか。４つあります。}
+\addquiz{カレントディレクトリが /home/pi/Desktop/ のとき、ひとつ上のディレクトリはどれでしょうか。}
+\addquiz{カレントディレクトリが \textasciitilde /Desktop のとき、ひとつ下のディレクトリはどれでしょうか。}
 \end{enumerate}
 \end{tcolorbox}
 
