@@ -81,6 +81,7 @@
   \end{center}
 }
 
+
 \begin{frame}
 	\frametitle{今日やること}
   \begin{enumerate}
@@ -209,8 +210,8 @@
   mes "発話開始"
   mes "「子どもIT未来塾」"
   redraw 1
-
-  jtload "子どもIT未来塾", 0	<#blue#;音声ファイルを出力し、読み込む#>
+  
+  <#red#jtload "子どもIT未来塾", 0	;音声ファイルを出力し、読み込む#>
   mmplay 0			<#blue#;音声ファイルを再生する#>
   stop
   \end{lstlisting}
@@ -218,12 +219,16 @@
 
 \begin{frame}
   \frametitle{文章を読み上げてもらう(2)}
+  \begin{itemize}
+    \item プログラムの中の jtload "子どもIT未来塾", 0 の部分を見てみよう
+    \item jtload "読ませたい文字列", <バッファ番号>
+    \item ""の中の文字列を変えると、好きな言葉を読ませられるよ！
+  \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{声色を変えてみる(1)}
-  
-  \begin{lstlisting}[title=openjtalk.hsp,label=openjtalk.hsp]
+  \frametitle{声音を変えてみる(1)}
+  \begin{lstlisting}[title=voice.hsp,label=voice.hsp]
   #include "hsp3dish.as"
   #include "jtalk.as"
 
@@ -231,7 +236,7 @@
   mes "発話開始"
   mes "「子どもIT未来塾」"
   redraw 1
-
+ 
   <#red#setvoice "htsvoice-tohoku-f01/tohoku-f01-sad.htsvoice" #>
                              <#red#;音声ファイルを指定#>
   jtload "子どもIT未来塾", 0	<#blue#;音声ファイルを出力し、読み込む#>
@@ -241,12 +246,85 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{声音を変えてみる(2)}
+ \frametitle{声音を変えてみる(2)}
   \begin{itemize}
     \item プログラムの中で音声ファイルを指定している部分を見てみよう
     \item setvoiceの右にある""の中を他のファイルに書き換えると、声音が変わるよ
     \item 他にどんな声音のファイルがあるか教科書を確認してみよう
-\end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{読み上げる文字列に変数を使う(1)}
+  \begin{lstlisting}[title=readdate.hsp,label=readdate.hsp]
+    #include "hsp3dish.as"
+    #include "jtalk.as"
+
+    <#red#date = "" + gettime(0) + "年" + 
+                gettime(1) + "月" + gettime(3) + "日"#>
+
+    redraw 0
+    mes "日付を読み上げます"
+    mes date
+    redraw 1
+
+    jtload date, 0 <#blue#;date変数に代入されている文字を
+                          音声ファイルにし、読み込む#>
+    mmplay 0 ;<#blue#;音声ファイルを再生する#>
+    stop
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+  \frametitle{読み上げる文字列に変数を使う(2)}
+  \begin{itemize}
+    \item gettime 関数で今日の日付を取得している
+    \item gettime() ()の中には 0\sim 6 の数字を入れて使う
+    \item 0 = 年、1 = 月、2 = 曜日、3 = 日、4 = 時間、5 = 分、6 = 秒
+    \item gettime関数の()の中を変えると、時間や曜日も読ませられるよ!
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{読み上げる文字列に変数を使う(3)}
+  \begin{lstlisting}[title=readcalc.hsp,label=readcalc.hsp]
+    #include "hsp3dish.as"
+    #include "jtalk.as"
+
+    a = 3
+    b = 2
+
+    <#blue#;問題描画#>
+    redraw 0
+    mes "" + a " + " + b
+    redraw 1
+
+    <#red#;問題読み上げ
+    jtload "" + a + "たす" + b, 0
+    mmplay 0
+    wait 100#>    
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{読み上げる文字列に変数を使う(コード続き)}
+  \begin{lstlisting}[title=readcalc.hsp,label=readcalc.hsp]
+    <#blue#;答え計算#>
+    kotae = a + b
+
+    <#red#;答え読み上げ
+    jtload "こたえは" + kotae, 1
+    mmplay 1#>
+
+    <#blue#;答え描画#>
+    redraw 0
+    mes "" + a + " + " + b
+    mes "= " + kotae
+    redraw 1
+
+    wait 30
+    stop
+  \end{lstlisting}
 \end{frame}
 
 \begin{frame}
@@ -256,14 +334,17 @@
     \begin{itemize}
       \item 2問(1問は宿題)
     \end{itemize}
+
     \item 教科書9ページ 問題6-4
     \begin{itemize}
       \item 2問(1問は宿題)
     \end{itemize}
+
     \item 教科書11ページ 問題6-5
     \begin{itemize}
       \item 2問(1問は宿題)
     \end{itemize}
+
     \item 教科書13ページ 問題6-6
     \begin{itemize}
       \item 2問(1問は宿題)
