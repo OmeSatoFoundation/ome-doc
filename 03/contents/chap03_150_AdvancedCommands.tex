@@ -11,11 +11,21 @@
 
 　チャネルに何も指定せずにコマンドを実行すると、標準入力はキーボードに設定されます。標準出力と標準エラー出力はディスプレイに設定されます。
 
+\begin{figure}
+    \vspace{5cm}
+    \caption{ここにコマンドと標準入力・標準出力・標準エラー出力の図を入れる}
+    \label{ch03:stdioerr}
+\end{figure}
+
 コマンドによっては、標準の入力をコマンドの引数として与えることができるものがあります。例えば cat などのコマンドは cat ファイル名 で指定したファイルを標準出力に出力します。cat にファイル名を指定しないと、標準入力、つまりからデータを受け取ります。
 
-cat 
+\begin{lstlisting}[caption=catの標準入力・標準出力, label=stdioCat]
+<#green#pi@raspberrypi#>:<#blue#~ $#> cat 
 aaaa <enter> <- 標準入力（キーボード）からの入力
 aaaa         <- 標準出力（ディスプレイ）への出力
+<Ctrl-d>     <- 標準入力からEOFを入力し、入力が終了したことを伝える
+<#green#pi@raspberrypi#>:<#blue#~ $#>
+\end{lstlisting}
 
 
 \subsection{リダイレクト}
@@ -24,6 +34,14 @@ aaaa         <- 標準出力（ディスプレイ）への出力
 
 標準出力を出力先は、ファイルに変更することができます。
 
+\begin{figure}
+    \vspace{5cm}
+    \caption{ここにリダイレクトの概念図を入れる}
+    \label{ch03:redirect}
+\end{figure}
+
+
+\begin{lstlisting}[caption=lsの出力をリダイレクトする, label=redirectLs]
 ls 
 ほげ　ほげほげ　げげげ
 ls $\gt$ lsfile
@@ -31,6 +49,7 @@ cat lsfile
 ほげ
 ほげほげ
 げげげ
+\end{lstlisting}
 
 「$\gt$」の後にファイル名を指定することで、
 ファイルを作成し、そのファイルにコマンドの結果を保存します。
@@ -38,10 +57,12 @@ cat lsfile
 
 
 標準入力の入力元を、ファイルに変更することができます。
+\begin{lstlisting}[caption=catコマンドにリダイレクトでファイルを入力する, label=redirectCat]
 cat < lsfile
 ほげ
 ほげほげ
 げげげ
+\end{lstlisting}
 
 今回はリダイレクトの練習のため、
 catコマンドでファイル名を指定するのではなく、リダイレクトと同じことをしました。
@@ -51,7 +72,16 @@ catコマンドでファイル名を指定するのではなく、リダイレ�
 パイプ記号「|」を使うことで、パイプ記号の前のコマンドの標準出力と、
 パイプ記号の後のコマンドの標準入力をつなぐことができます。
 
+\begin{figure}
+    \vspace{5cm}
+    \caption{ここパイプの概念図を入れる}
+    \label{ch03:redirect}
+\end{figure}
+
+
+\begin{lstlisting}[caption=catコマンドにリダイレクトでファイルを入力する, label=redirectCat]
 ls | less
+\end{lstlisting}
 
 lsした結果が一画面に収まらない場合は、1画面ずつ 表示する。
 
@@ -62,11 +92,20 @@ lsした結果が一画面に収まらない場合は、1画面ずつ 表示す�
 ラズパイのコマンドは、入力を受け取って、それを加工してから、出力をする。
 
 
-
 \subsection{xargsによるコマンドの組み立て}
 
 
-\section{フィルタコマンド}
+\section{パイプラインと文字列処理}
+
+\subsection{出力をつくるコマンド}
+\begin{tabular}{ll}
+    コマンド & 動作 \\ \hline
+    ls & ファイルやディレクトリを出力する \\
+    du & ディレクトリの中のファイルの大きさを報告する\\
+    wc & 入力の文字数・単語数・行数を出力する\\
+    echo & 文字をそのまま出力する\\ \hline
+\end{tabular}
+
 
 \subsection{フィルタコマンド}
 \begin{tabular}{ll}
@@ -77,20 +116,11 @@ lsした結果が一画面に収まらない場合は、1画面ずつ 表示す�
     head & 先頭のいくつかの行を表示する \\
     tail & 末尾のいくつかの行を表示する\\
     sort & 行を順番にならべかえる\\
-    grep & 検索パターンに一致する行を出力する\\
+    grep & 検索パターンに一致する行を出力する\\ \hline
 \end{tabular}
 
-\subsection{}
-\begin{tabular}{ll}
-    コマンド & 動作 \\ \hline
-    tr & 入力された文字を指定する方法で置き換えて出力する \\
-    sed & 入力から指定するパターンを見つけ、それを置き換えて出力する \\
-    grep & 検索パターンに一致する行を出力する\\
-    du & \\
-    echo & \\
-    wc & 行数などを出力する\\ \hline
-\end{tabular}
 
+\subsection{置き換えをするコマンド}
 \begin{tabular}{ll}
     コマンド & 動作 \\ \hline
     tr & 入力された文字を指定する方法で置き換えて出力する \\
@@ -116,7 +146,6 @@ sed s/xxx/yyy/g の説明
 
 問題
 
-
 \subsection{計算をする}
 
 コマンドの説明： echo \$(式)
@@ -127,7 +156,7 @@ sed s/xxx/yyy/g の説明
 
 問題
 
-\section{コマンドに別名を付ける}
+\subsection{コマンドに別名を付ける}
 
 aliasの説明
 
