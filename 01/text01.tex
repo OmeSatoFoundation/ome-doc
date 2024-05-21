@@ -1,36 +1,29 @@
 % This file was converted to LaTeX by Writer2LaTeX ver. 1.6.1
 % see http://writer2latex.sourceforge.net for more info
-\documentclass[a4paper,12pt]{jarticle}
-\input contents/chap01_preamble.tex
-\graphicspath{%
-  {./text01-img/}%
+\documentclass[a4paper]{ltjsbook}
+% \usepackage{okumacro}
+\usepackage{luatexja-ruby}
+\usepackage{udline}
+\usepackage{omebook}
+\usepackage{svg}
+% \usepackage{supertabular}
+
+% \usepackage{amssymb}
+
+\svgsetup{
+  inkscapelatex=false
 }
-% !TEX root = ./text01.tex
-\title{\Huge\bf 子どもIT未来塾 第1回}
-\author{
-\huge\bf ラズベリーパイの使い方・\\
-\huge\bf 自己紹介ページを作ろう\\
-\vspace{15mm}
-}
-\date{ \Huge 清水 尚彦 先生 }
+\setcounter{chapter}{0}
+\setcounter{secnumdepth}{2}
 \begin{document}
-\clearpage\setcounter{page}{1}\pagestyle{Standard}
-\thispagestyle{FirstPage}
-
-\maketitle
-
-\setcounter{page}{1}\pagestyle{Standard}
-\clearpage
-
-\if00
-
-\input contents/chap01_01.tex
-\input contents/chap01_02.tex
-\input contents/chap01_03.tex
-\input contents/chap01_04.tex
-\input contents/chap01_05.tex
-\input contents/chap01_06.tex
-\input contents/chap01_07.tex
-\input contents/chap01_08.tex
-
+  \input contents/chap01_01.tex
+  \input contents/chap01_02.tex
+  \input contents/chap01_03.tex
+  \input contents/chap01_04.tex
+  \input contents/chap01_05.tex
+  \input contents/chap01_06.tex
+  \input contents/chap01_07.tex
+  \input contents/chap01_08.tex
 \end{document}
+
+
