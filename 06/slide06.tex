@@ -68,12 +68,12 @@
 \begin{document}
 
 \frame{
-   \begin{center}
+  \begin{center}
     \huge{子どもIT未来塾}\\
 
     \vspace{34pt}
-	   {\huge 第6回}\\
-	   {\huge 音声合成と音声認識}\\
+    {\huge 第6回}\\
+    {\huge 音声合成と音声認識}\\
     \vspace{24pt}
     \large{奥山 祐市}
     \vspace{10pt}
@@ -81,20 +81,19 @@
   \end{center}
 }
 
-
 \begin{frame}
-	\frametitle{今日やること}
+  \frametitle{今日やること}
   \begin{enumerate}
     \item 音声合成
-    \begin{enumerate}
-      \item 音声合成とは
-      \item Open JTalkとは
-    \end{enumerate}
+          \begin{enumerate}
+            \item 音声合成とは
+            \item Open JTalkとは
+          \end{enumerate}
     \item 音声認識
-    \begin{enumerate}
-      \item 音声認識とは
-      \item Juliusとは
-    \end{enumerate}
+          \begin{enumerate}
+            \item 音声認識とは
+            \item Juliusとは
+          \end{enumerate}
   \end{enumerate}
 \end{frame}
 
@@ -127,19 +126,19 @@
     \item 音声の特徴を捉える
   \end{itemize}
   \begin{figure}[tbp]
-  \begin{minipage}[b]{0.45\columnwidth}
-    \centering
-    \includegraphics[width=\columnwidth]{voice_assistant.png}
-    \caption{\scriptsize 携帯、スマートフォン、コンピュータの音声認識アシスタント}
-  \end{minipage}
-  \hspace{0.04\columnwidth}
-  \begin{minipage}[b]{0.3\columnwidth}
-    \centering
-    \includegraphics[width=\columnwidth]{google_home.png}
-    \caption{\scriptsize Google Home}
-  \end{minipage}
-\end{figure}
-  
+    \begin{minipage}[b]{0.45\columnwidth}
+      \centering
+      \includegraphics[width=\columnwidth]{voice_assistant.png}
+      \caption{\scriptsize 携帯、スマートフォン、コンピュータの音声認識アシスタント}
+    \end{minipage}
+    \hspace{0.04\columnwidth}
+    \begin{minipage}[b]{0.3\columnwidth}
+      \centering
+      \includegraphics[width=\columnwidth]{google_home.png}
+      \caption{\scriptsize Google Home}
+    \end{minipage}
+  \end{figure}
+
 \end{frame}
 
 \begin{frame}
@@ -201,7 +200,7 @@
 
 \begin{frame}[fragile]
   \frametitle{文章を読み上げてもらう(1)}
-  
+
   \begin{lstlisting}[title=openjtalk.hsp,label=openjtalk.hsp]
   #include "hsp3dish.as"
   #include "jtalk.as"
@@ -246,7 +245,7 @@
 \end{frame}
 
 \begin{frame}
- \frametitle{声音を変えてみる(2)}
+  \frametitle{声音を変えてみる(2)}
   \begin{itemize}
     \item プログラムの中で音声ファイルを指定している部分を見てみよう
     \item setvoiceの右にある""の中を他のファイルに書き換えると、声音が変わるよ
@@ -278,79 +277,40 @@
 \begin{frame}
   \frametitle{読み上げる文字列に変数を使う(2)}
   \begin{itemize}
-    \item gettime 関数で今日の日付を取得している
-    \item gettime() ()の中には 0\sim 6 の数字を入れて使う
-    \item 0 = 年、1 = 月、2 = 曜日、3 = 日、4 = 時間、5 = 分、6 = 秒
-    \item gettime関数の()の中を変えると、時間や曜日も読ませられるよ!
+    \item openjtalk は date に代入された文字列を読んでいる
+    \item gettime関数の()の中の数字を変えると、時間や曜日も読ませられるよ!
+    \begin{itemize}
+      \item 0 = 年、1 = 月、2 = 曜日、3 = 日
+      \item 4 = 時、5 = 分、6 = 秒、7 = ミリ秒
+    \end{itemize}
   \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]
-  \frametitle{読み上げる文字列に変数を使う(3)}
-  \begin{lstlisting}[title=readcalc.hsp,label=readcalc.hsp]
-    #include "hsp3dish.as"
-    #include "jtalk.as"
-
-    a = 3
-    b = 2
-
-    <#blue#;問題描画#>
-    redraw 0
-    mes "" + a " + " + b
-    redraw 1
-
-    <#red#;問題読み上げ
-    jtload "" + a + "たす" + b, 0
-    mmplay 0
-    wait 100#>    
-  \end{lstlisting}
-\end{frame}
-
-\begin{frame}[fragile]
-  \frametitle{読み上げる文字列に変数を使う(コード続き)}
-  \begin{lstlisting}[title=readcalc.hsp,label=readcalc.hsp]
-    <#blue#;答え計算#>
-    kotae = a + b
-
-    <#red#;答え読み上げ
-    jtload "こたえは" + kotae, 1
-    mmplay 1#>
-
-    <#blue#;答え描画#>
-    redraw 0
-    mes "" + a + " + " + b
-    mes "= " + kotae
-    redraw 1
-
-    wait 30
-    stop
-  \end{lstlisting}
-\end{frame}
 
 \begin{frame}
   \frametitle{問題を解こう}
   \begin{itemize}
     \item 教科書7ページ 問題6-3
-    \begin{itemize}
-      \item 2問(1問は宿題)
-    \end{itemize}
+          \begin{itemize}
+            \item 2問(1問は宿題)
+          \end{itemize}
 
     \item 教科書9ページ 問題6-4
-    \begin{itemize}
-      \item 2問(1問は宿題)
-    \end{itemize}
+          \begin{itemize}
+            \item 2問(1問は宿題)
+          \end{itemize}
 
     \item 教科書11ページ 問題6-5
-    \begin{itemize}
-      \item 2問(1問は宿題)
-    \end{itemize}
+          \begin{itemize}
+            \item 2問(1問は宿題)
+          \end{itemize}
 
     \item 教科書13ページ 問題6-6
-    \begin{itemize}
-      \item 2問(1問は宿題)
-    \end{itemize}
+          \begin{itemize}
+            \item 2問(1問は宿題)
+          \end{itemize}
   \end{itemize}
-  
+
 \end{frame}
 
 \begin{frame}
@@ -372,9 +332,9 @@
   \frametitle{問題を解いてみよう}
   \begin{itemize}
     \item 教科書14ページ 問題6-7
-    \begin{itemize}
-      \item 1問
-    \end{itemize}
+          \begin{itemize}
+            \item 1問
+          \end{itemize}
   \end{itemize}
 \end{frame}
 
@@ -382,9 +342,9 @@
   \frametitle{Juliusを使ってみる(2)}
   \begin{itemize}
     \item 果物の名前を話かけてみよう
-    \begin{center}
-      {\small りんご　みかん　ぶどう　もも　あけび　あんず　いちご　いちじく　かき　スイカ　すもも　	なし　メロン}
-    \end{center}
+          \begin{center}
+            {\small りんご　みかん　ぶどう　もも　あけび　あんず　いちご　いちじく　かき　スイカ　すもも　	なし　メロン}
+          \end{center}
     \item コンピュータは正しく言葉を認識してくれたかな？
     \item 話しかけた単語とターミナルに出てくる単語が同じか友達と話合ってみよう
   \end{itemize}
@@ -403,13 +363,13 @@
   \frametitle{単語辞書を使ってみる}
   \begin{itemize}
     \item 単語辞書を使ってJuliusをためす
-    \begin{itemize}
-      \item julius.sh kudamono.sh
-      \item 以下の単語が登録されているよ。マイクに話しかけてみよう
-    \end{itemize}
+          \begin{itemize}
+            \item julius.sh kudamono.sh
+            \item 以下の単語が登録されているよ。マイクに話しかけてみよう
+          \end{itemize}
   \end{itemize}
   \begin{center}
-    {\small りんご　みかん　ぶどう　もも　あけび　あんず　いちご　いちじく　かき　スイカ　すもも　	なし　メロン}
+    {\small りんご　みかん　ぶどう　もも　あけび　あんず　いちご　いちじく　かき　スイカ　すもも　 なし　メロン}
   \end{center}
 \end{frame}
 
@@ -417,14 +377,14 @@
   \frametitle{問題を解いてみよう}
   \begin{itemize}
     \item 教科書15ページ 問題6-8
-    \begin{itemize}
-      \item 2問
-    \end{itemize}
+          \begin{itemize}
+            \item 2問
+          \end{itemize}
   \end{itemize}
 \end{frame}
 
 \begin{frame}
-\frametitle{結果を見てみよう} 
+  \frametitle{結果を見てみよう}
   \centering
   \includegraphics[width=0.8\textwidth]{julius_demo_strawberry.png} \\
   話かけた単語とターミナルに表示される単語は一致しているかな？
@@ -434,22 +394,22 @@
   \frametitle{自分の単語辞書を作ってみよう（１）}
   \begin{itemize}
     \item 認識させたい単語を登録しよう
-    \begin{itemize}
-      \item kudamono.yomiを参考に…
-      \item \<コンピュータが使う名前\> \<読み方\>
-      \renewcommand{\theenumi}{\roman{enumi}}
-      \begin{enumerate}
-        \item りんご
-        \item ぶどう
-        \item みかん
-      \end{enumerate}
-    \end{itemize}
+          \begin{itemize}
+            \item kudamono.yomiを参考に…
+            \item \<コンピュータが使う名前\> \<読み方\>
+                  \renewcommand{\theenumi}{\roman{enumi}}
+                  \begin{enumerate}
+                    \item りんご
+                    \item ぶどう
+                    \item みかん
+                  \end{enumerate}
+          \end{itemize}
     \item \<コンピュータが使う名前\>には日本語も使えるよ
-    \begin{itemize}
-      \item 林檎 りんご
-      \item ブドウ ぶどう
-      \item みかん みかん
-    \end{itemize}
+          \begin{itemize}
+            \item 林檎 りんご
+            \item ブドウ ぶどう
+            \item みかん みかん
+          \end{itemize}
   \end{itemize}
 \end{frame}
 
@@ -457,15 +417,15 @@
   \frametitle{自分の単語辞書を作ってみよう（２）}
   \begin{itemize}
     \item mousepadで自分だけの辞書を作ってみよう
-    \begin{itemize}
-      \item mousepad jisho.yomi
-    \end{itemize}
+          \begin{itemize}
+            \item mousepad jisho.yomi
+          \end{itemize}
     \item 例えば…
-    \begin{itemize}
-      \item 家電辞書
-      \item 動物辞書
-      \item 植物辞書
-    \end{itemize}
+          \begin{itemize}
+            \item 家電辞書
+            \item 動物辞書
+            \item 植物辞書
+          \end{itemize}
   \end{itemize}
 \end{frame}
 
@@ -474,9 +434,9 @@
   \begin{itemize}
     \item .yomi : テキストファイル
     \item .dic : コンピュータが読めるファイル
-    \begin{itemize}
-      \item yomiはコンピュータが読めないので変換する必要がある
-    \end{itemize}
+          \begin{itemize}
+            \item yomiはコンピュータが読めないので変換する必要がある
+          \end{itemize}
   \end{itemize}
 \end{frame}
 
@@ -484,15 +444,15 @@
   \frametitle{自分の単語辞書を作ってみよう（４）}
   \begin{itemize}
     \item convert\_yomi.sh コマンド
-    \begin{itemize}   
-      \item コンピュータ用の辞書へと変換してみよう
-      \item convert\_yomi.sh jisyo.yomi  jisyo.dic
-    \end{itemize}
+          \begin{itemize}
+            \item コンピュータ用の辞書へと変換してみよう
+            \item convert\_yomi.sh jisyo.yomi  jisyo.dic
+          \end{itemize}
     \item julius.sh コマンド
-    \begin{itemize}
-      \item 自分の作った辞書で音声認識をしてみよう
-      \item julius.sh jisyo.dic
-    \end{itemize}
+          \begin{itemize}
+            \item 自分の作った辞書で音声認識をしてみよう
+            \item julius.sh jisyo.dic
+          \end{itemize}
     \item コンピュータは上手く言葉を理解してくれるかな？
   \end{itemize}
 \end{frame}
@@ -501,9 +461,9 @@
   \frametitle{問題を解こう}
   \begin{itemize}
     \item 教科書17ページ 問題6-9
-    \begin{itemize}
-      \item ５問（１問は宿題）
-    \end{itemize}
+          \begin{itemize}
+            \item ５問（１問は宿題）
+          \end{itemize}
   \end{itemize}
 \end{frame}
 
@@ -581,9 +541,9 @@
   \frametitle{問題を解こう}
   \begin{itemize}
     \item 教科書20ページ 問題6-10
-    \begin{itemize}
-      \item 2問
-    \end{itemize}
+          \begin{itemize}
+            \item 2問
+          \end{itemize}
   \end{itemize}
 \end{frame}
 
@@ -650,23 +610,23 @@
   \frametitle{数を認識させてみよう（発展）}
   \begin{itemize}
     \item 数を認識できる
-    \begin{itemize}
-      \item いち、じゅうさん、せんよんひゃくさんじゅうなな、など
-    \end{itemize}
+          \begin{itemize}
+            \item いち、じゅうさん、せんよんひゃくさんじゅうなな、など
+          \end{itemize}
     \item 数を認識させるには「文法」を使う
-    \begin{itemize}
-      \item 1000（千）まで認識させたかったら1000個以上の単語を登録
-      \begin{itemize}
-        \item 1(いち)から1000(千)まで登録
-        \item 同じ数字でも違う読み(7:なな、しち)
-      \end{itemize}
-      \item 文法でルールを決める
-    \end{itemize}
+          \begin{itemize}
+            \item 1000（千）まで認識させたかったら1000個以上の単語を登録
+                  \begin{itemize}
+                    \item 1(いち)から1000(千)まで登録
+                    \item 同じ数字でも違う読み(7:なな、しち)
+                  \end{itemize}
+            \item 文法でルールを決める
+          \end{itemize}
     \item 参考：
-    \begin{itemize}
-      \item http://www.atmarkit.co.jp/fxml/ddd/ddd004/ddd004-bnf.html
-      \item http://julius.osdn.jp/index.php?q=doc/grammar.html
-    \end{itemize}
+          \begin{itemize}
+            \item http://www.atmarkit.co.jp/fxml/ddd/ddd004/ddd004-bnf.html
+            \item http://julius.osdn.jp/index.php?q=doc/grammar.html
+          \end{itemize}
   \end{itemize}
 \end{frame}
 
@@ -674,9 +634,9 @@
   \frametitle{問題を解こう}
   \begin{itemize}
     \item 教科書23ページ 問題6-11
-    \begin{itemize}
-      \item 5問(2問は宿題)
-    \end{itemize}
+          \begin{itemize}
+            \item 5問(2問は宿題)
+          \end{itemize}
   \end{itemize}
 \end{frame}
 
@@ -684,10 +644,10 @@
   \frametitle{宿題}
   \begin{itemize}
     \item 教科書24ページ
-    \begin{itemize}
-      \item 5問の内、1問だけ挑戦しよう
-      \item レベルアップしたい人は、5問全部に挑戦してみよう
-    \end{itemize}
+          \begin{itemize}
+            \item 5問の内、1問だけ挑戦しよう
+            \item レベルアップしたい人は、5問全部に挑戦してみよう
+          \end{itemize}
   \end{itemize}
 \end{frame}
 
@@ -700,13 +660,13 @@
   \frametitle{OpenJTalkやJuliusでできることを考えよう}
   \begin{itemize}
     \item 例えば…
-    \begin{itemize}
-      \item ボタンを押すと話してくれる
-      \item 気温や湿度を教えてくれる
-      \item 指示した色のLEDを光らせてくれる
-      \item 時刻を聞くと時刻を話してくれる
-      \item 日付を聞くと日付を話してくれる
-    \end{itemize}
+          \begin{itemize}
+            \item ボタンを押すと話してくれる
+            \item 気温や湿度を教えてくれる
+            \item 指示した色のLEDを光らせてくれる
+            \item 時刻を聞くと時刻を話してくれる
+            \item 日付を聞くと日付を話してくれる
+          \end{itemize}
     \item 例を参考に何が作れるかを自分で考えてみよう
   \end{itemize}
 \end{frame}
@@ -716,10 +676,10 @@
   \begin{itemize}
     \item OpenJTalkやJuliusを使って作りたいものを考えてみよう(5-10分)
     \item チームのみんなで作りたいものを発表してみよう、一緒に考えてみよう(5-10分)
-    \begin{itemize}
-      \item むずかしさはどれくらいだろう
-      \item どうやって作ればいいだろう
-    \end{itemize}
+          \begin{itemize}
+            \item むずかしさはどれくらいだろう
+            \item どうやって作ればいいだろう
+          \end{itemize}
   \end{itemize}
 \end{frame}
 \begin{frame}
@@ -727,16 +687,16 @@
   \begin{enumerate}
     \item 演習用のフォルダを作る
     \item 必要なファイルをフォルダにコピーしよう
-    \begin{itemize}
-      \item hspファイル
-      \item yomiファイル
-      \item htsvoiceファイル
-    \end{itemize}
+          \begin{itemize}
+            \item hspファイル
+            \item yomiファイル
+            \item htsvoiceファイル
+          \end{itemize}
     \item プログラミングをしてみよう
-    \begin{itemize}
-      \item hspファイルを書き換えてみる
-      \item 新しくhspファイルを作ってみる
-    \end{itemize}
+          \begin{itemize}
+            \item hspファイルを書き換えてみる
+            \item 新しくhspファイルを作ってみる
+          \end{itemize}
   \end{enumerate}
 \end{frame}
 
