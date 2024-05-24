@@ -245,7 +245,6 @@
 \end{frame}
 
 \begin{frame}
-
   \begin{itemize}
     \item プログラムの中で音声ファイルを指定している部分を見てみよう
     \item setvoiceの右にある""の中を他のファイルに書き換えると、声音が変わるよ
@@ -269,7 +268,7 @@
 
     jtload date, 0 <#blue#;date変数に代入されている文字を
                           音声ファイルにし、読み込む#>
-    mmplay 0 ;<#blue#;音声ファイルを再生する#>
+    mmplay 0 <#blue#;音声ファイルを再生する#>
     stop
   \end{lstlisting}
 \end{frame}
@@ -277,16 +276,17 @@
 \begin{frame}
   \frametitle{読み上げる文字列に変数を使う(2)}
   \begin{itemize}
-    \item date = "" + gettime(0) + "年" + gettime(1) + "月" + gettime(3)
+    \item openjtalk は date 変数に代入された文字列を読む
     \item gettime 関数で今日の日付を取得する
     \begin{itemize}
-       \item 0 = 年、1 = 月、2 = 曜日、3 = 日、4 = 時間、5 = 分、6 = 秒
+       \item 0 = 年、1 = 月、2 = 曜日、3 = 日
+       \item 4 = 時間、5 = 分、6 = 秒、7 = ミリ秒
     \end{itemize}
     \item gettime関数の()の中を変えると、時間や曜日も読ませられるよ!
   \end{itemize}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[fragile]
   \frametitle{読み上げる文字列に変数を使う(3)}
   \begin{lstlisting}[title=readcalc.hsp,label=readcalc.hsp]
     #include "hsp3dish.as"
@@ -295,29 +295,29 @@
     a = 3
     b = 2
 
-   ; 問題描画
+    <#blue#;問題描画#>
     redraw 0
-    mes "" + a + " + " + b
+    mes = "" + a + " + " + b
     redraw 1
 
-   <#red#; 問題読み上げ
+    <#blue#;問題読み上げ#>
     jtload "" + a + "たす" + b, 0
     mmplay 0
-    wait 100#>
+    <#red#wait 100#>
   \end{lstlisting}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[fragile]
   \frametitle{読み上げる文字列に変数を使う(コード続き)}
   \begin{lstlisting}[title=readcalc.hsp,label=readcalc.hsp]
-   ; 答え計算
+    <#blue#;答え計算#>
     kotae = a + b
 
-   <#red#; 答え読み上げ
+    <#red#;答え読み上げ
     jtload "こたえは" + kotae, 1
     mmplay 1#>
 
-   ; 答え描画
+    <#blue#;答え描画#>
     redraw 0
     mes "" + a + " + " + b
     mes "= " + kotae
@@ -326,7 +326,15 @@
     wait 30
     stop
   \end{lstlisting}
+\end{frame}
 
+\begin{frame}
+  \frametitle{読み上げる文字列に変数を使う(4)}
+  \begin{itemize}
+    \item a + b の計算結果を kotae に代入
+    \item openjtalk はkotaeに代入された値を読んでいる
+    \item 問題と答えを読む音声が重ならないように wait 100 で少し待っている
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
