@@ -132,11 +132,46 @@ lsした結果が一画面に収まらない場合は、1画面ずつ 表示す�
 
 \subsection{文字を置き換える}
 
-trコマンドの説明
+% trコマンドの説明
 
-実行例の説明
+文字を置き換える為のコマンドとしてtrコマンドを紹介します。
+trコマンドを使うことで、入力された文字を指定する方法で置き換えて出力することができます。
+trコマンドの\ruby{基本的}{き|ほん|てき}な使い方は、次の通りです。
 
-問題
+\begin{lstlisting}[caption=trコマンドの基本的な使い方, label=tr_basic_usage]
+tr 置き換え対象の文字 置き換え後の文字
+\end{lstlisting}
+
+ここで、「置き換え対象の文字」には、置き換えたい文字を指定します。「置き換え後の文字」には、置き換え後の文字を指定します。
+
+% 実行例の説明
+
+例えば、trコマンドを使って、大文字を小文字に変換することができます。
+「Hello, World!」という文章があるとします。
+この文章の大文字を小文字に変えたい時は、次のようにコマンドを入力します。
+
+\begin{lstlisting}[caption=trコマンドを使った大文字から小文字への変換, label=tr_cap_to_low]
+echo "Hello, World!" | tr A-Z a-z
+\end{lstlisting}
+
+すると、次のような結果が表示されます。
+\begin{lstlisting}[caption=大文字を小文字に変換した結果, label=result_tr_cap_to_low]
+hello, world!
+\end{lstlisting}
+
+「A-Z」は大文字のアルファベット、「a-z」は小文字のアルファベットを表しています。
+このように、trコマンドを使うと、文字の置き換えが簡単にできます。
+
+% 問題
+それでは、次の問題に取り組んでみましょう。
+\begin{enumerate}
+    \item 次の文章の大文字を小文字に変換してください。 
+
+    "I LOVE PROGRAMMING!"
+    \item 次の文章の小文字を大文字に変換してください。 
+
+    "i love programming!"
+\end{enumerate}
 
 \subsection{単語を置き換える}
 
