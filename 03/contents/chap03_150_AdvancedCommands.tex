@@ -139,12 +139,57 @@ trコマンドの説明
 問題
 
 \subsection{単語を置き換える}
+tr は一文字ごとの置き換えを処理できました。
+それでは、単語など文字列、つまり複数の文字を置き換えたいときはどうしたらよいでしょう。
+このために、また別なコマンドがあります。
+sed コマンドです。
 
-sed s/xxx/yyy/g の説明
+\begin{lstlisting}[caption=sed コマンドの基本的な使い方, label=sed_usage]
+sed 's/置き換え対象の文字列/置き換え後の文字列/g'
+\end{lstlisting}
 
-実行例の説明
+tr コマンドと似たように、「置き換え対象の文字列」には、置き換えたい文字列を指定します。
+「置き換え後の文字列」には、置き換え後の文字列を指定します。
+tr コマンドと異なり、置き換えは一文字ずつではなく文字列を指定することができます。
 
-問題
+再度「Hello, World!」という文章で例を示します。
+この文章の「Hello」を「Hi」に置き換えたいときは、次のようにコマンドを入力します。
+
+\begin{lstlisting}[caption=sed コマンドを使った例, label=sed_app]
+echo "Hello, World!" | sed 's/Hello/Hi/g'
+\end{lstlisting}
+
+すると、次のような結果が表示されます。
+
+\begin{lstlisting}[caption=sed コマンドで変換した結果, label=sed_result]
+Hi, Wowld!
+\end{lstlisting}
+
+それでは、次の問題に取り組んでみましょう。
+
+\begin{enumerate}
+    \addex{%
+次の文章の「love」を「like」に置き換えましょう。\\%
+"I like programming!"%
+}
+    \addex{%
+/home/pi/03/rensyu/kokugo/syosetsu.txt には小説「ごんぎつね」が掲載されています。%
+「ごんぎつね」に出てくる「ごん」の名前を「エーミール」に変えて標準出力に出力しましょう。\\%
+ヒント: cat /home/pi/03/rensyu/kokugo/syosetsu.txt | sed ???%
+}
+\end{enumerate}
+
+ここまで単語を置き換える使い方を説明しました。
+実は sed というコマンド名は 「stream editor」の略で、まどろっこしい名前をしています
+(単語を置き換える機能だけなら、「replace」や「substutite」などの簡単な英単語をコマンド名にすればいいはずです)。
+その名前に相応しく、sed はほんとうは非常に多くの機能を持ちます。
+興味がある人は
+
+\begin{lstlisting}
+man sed
+\end{lstlisting}
+
+と実行してオンラインマニュアルを閲覧したり、ブラウザで「sed 使い方」などで検索してみたりしましょう。
 
 \subsection{計算をする}
 
