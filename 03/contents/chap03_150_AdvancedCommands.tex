@@ -130,12 +130,10 @@ lsした結果が一画面に収まらない場合は、1画面ずつ 表示す�
 
 \section{その他の便利なコマンド}
 
-\subsection{文字を置き換える}
-
+\subsection{文字の置き換え}
 % trコマンドの説明
-
-文字を置き換える為のコマンドとしてtrコマンドを紹介します。
-trコマンドを使うことで、入力された文字を指定する方法で置き換えて出力することができます。
+文字を置き換えるためのコマンドとして、trコマンドを紹介します。
+trコマンドを使うと、入力された文字列の中の指定した文字を、別の文字に置き換えて出力することができます。
 trコマンドの\ruby{基本的}{き|ほん|てき}な使い方は、次の通りです。
 
 \begin{lstlisting}[caption=trコマンドの基本的な使い方, label=tr_basic_usage]
@@ -145,32 +143,59 @@ tr 置き換え対象の文字 置き換え後の文字
 ここで、「置き換え対象の文字」には、置き換えたい文字を指定します。「置き換え後の文字」には、置き換え後の文字を指定します。
 
 % 実行例の説明
+trコマンドの使い方を、段階的に見ていきましょう。
 
-例えば、trコマンドを使って、大文字を小文字に変換することができます。
-「Hello, World!」という文章があるとします。
-この文章の大文字を小文字に変えたい時は、次のようにコマンドを入力します。
+まず、3文字程度の置き換えから始めてみます。
+「HELLO, WORLD!」という文字列があるとします。
+この文字列の"H"、"E"、"L"を小文字の"h"、"e"、"l"に変えてみましょう。
 
-\begin{lstlisting}[caption=trコマンドを使った大文字から小文字への変換, label=tr_cap_to_low]
-echo "Hello, World!" | tr A-Z a-z
+\begin{lstlisting}[caption=3文字の置き換え, label=tr_3_chars]
+echo "HELLO, WORLD!" | tr HEL hel
 \end{lstlisting}
 
 すると、次のような結果が表示されます。
-\begin{lstlisting}[caption=大文字を小文字に変換した結果, label=result_tr_cap_to_low]
+
+\begin{lstlisting}[caption=3文字を置き換えた結果, label=result_tr_3_chars]
+hellO, WORlD!
+\end{lstlisting}
+
+文字列中の"H"、"E"、"L"が"h"、"e"、"l"に置き換わっていることが分かります。
+
+次に、アルファベット全体を大文字から小文字に置き換えてみましょう。
+
+\begin{lstlisting}[caption=アルファベット全体の置き換え, label=tr_all_chars]
+echo "HELLO, WORLD!" | tr ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz
+\end{lstlisting}
+
+この例では、trコマンドにアルファベットの大文字全てと対応する小文字全てを指定しています。
+このコマンドを実行すると、次のような結果が表示されます。
+
+\begin{lstlisting}[caption=アルファベット全体を置き換えた結果, label=result_tr_all_chars]
 hello, world!
 \end{lstlisting}
 
-「A-Z」は大文字のアルファベット、「a-z」は小文字のアルファベットを表しています。
-このように、trコマンドを使うと、文字の置き換えが簡単にできます。
+しかし、アルファベット全てを指定するのは面倒ですよね。
+そこで、trコマンドでは、「A-Z」や「a-z」のように範囲指定を使うことができます。
+
+\begin{lstlisting}[caption=範囲指定を使った置き換え, label=tr_range]
+echo "HELLO, WORLD!" | tr A-Z a-z
+\end{lstlisting}
+
+このコマンドでも先程と同じ結果が表示されます。
+
+このように、trコマンドを使うと、文字列の中の文字を簡単に置き換えることができます。
 
 % 問題
-それでは、次の問題に取り組んでみましょう。
+それでは、次の問題に挑戦してみましょう。
 \begin{enumerate}
-    \item 次の文章の大文字を小文字に変換してください。 
-
-    "I LOVE PROGRAMMING!"
-    \item 次の文章の小文字を大文字に変換してください。 
-
-    "i love programming!"
+    \addex{
+        次の文字列の大文字を小文字に変換してみましょう。\\
+        "I LOVE PROGRAMMING!"
+    }
+    \addex{
+        次の文字列の小文字を大文字に変換してみましょう。\\
+        "i love programming!"
+    }
 \end{enumerate}
 
 \subsection{単語を置き換える}
