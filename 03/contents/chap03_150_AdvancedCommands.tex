@@ -150,7 +150,7 @@ trコマンドの使い方を、段階的に見ていきましょう。
 この文字列の"H"、"E"、"L"を小文字の"h"、"e"、"l"に変えてみましょう。
 
 \begin{lstlisting}[caption=3文字の置き換え, label=tr_3_chars]
-echo "HELLO, WORLD!" | tr HEL hel
+<#green#pi@raspberrypi#>:<#blue#~ $#> echo "HELLO, WORLD!" | tr HEL hel
 \end{lstlisting}
 
 すると、次のような結果が表示されます。
@@ -164,7 +164,8 @@ hellO, WORlD!
 次に、アルファベット全体を大文字から小文字に置き換えてみましょう。
 
 \begin{lstlisting}[caption=アルファベット全体の置き換え, label=tr_all_chars]
-echo "HELLO, WORLD!" | tr ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz
+<#green#pi@raspberrypi#>:<#blue#~ $#> echo "HELLO, WORLD!" \
+| tr ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz
 \end{lstlisting}
 
 この例では、trコマンドにアルファベットの大文字全てと対応する小文字全てを指定しています。
@@ -178,7 +179,7 @@ hello, world!
 そこで、trコマンドでは、「A-Z」や「a-z」のように範囲指定を使うことができます。
 
 \begin{lstlisting}[caption=範囲指定を使った置き換え, label=tr_range]
-echo "HELLO, WORLD!" | tr A-Z a-z
+<#green#pi@raspberrypi#>:<#blue#~ $#> echo "HELLO, WORLD!" | tr A-Z a-z
 \end{lstlisting}
 
 このコマンドでも先程と同じ結果が表示されます。
