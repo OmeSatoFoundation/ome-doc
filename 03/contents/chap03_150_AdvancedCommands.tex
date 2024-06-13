@@ -12,8 +12,9 @@
 　チャネルに何も指定せずにコマンドを実行すると、標準入力はキーボードに設定されます。標準出力と標準エラー出力はディスプレイに設定されます。
 
 \begin{figure}
-    \vspace{5cm}
-    \caption{ここにコマンドと標準入力・標準出力・標準エラー出力の図を入れる}
+    \centering
+    \includesvg[width=0.8\linewidth]{images/chap03/std_in_out_err.svg}
+    \caption{標準入力・標準出力・標準エラー出力の図}
     \label{ch03:stdioerr}
 \end{figure}
 
@@ -21,9 +22,9 @@
 
 \begin{lstlisting}[caption=catの標準入力・標準出力, label=stdioCat]
 <#green#pi@raspberrypi#>:<#blue#~ $#> cat 
-aaaa <enter> <- 標準入力（キーボード）からの入力
-aaaa         <- 標準出力（ディスプレイ）への出力
-<Ctrl-d>     <- 標準入力からEOFを入力し、入力が終了したことを伝える
+sansu <enter> <- 標準入力（キーボード）からの入力
+sansu         <- 標準出力（ディスプレイ）への出力
+<Ctrl-d>      <- 標準入力からEOFを入力し、入力が終了したことを伝える
 <#green#pi@raspberrypi#>:<#blue#~ $#>
 \end{lstlisting}
 
@@ -35,33 +36,55 @@ aaaa         <- 標準出力（ディスプレイ）への出力
 標準出力を出力先は、ファイルに変更することができます。
 
 \begin{figure}
-    \vspace{5cm}
-    \caption{ここにリダイレクトの概念図を入れる}
+    \centering
+    \includesvg[width=0.8\linewidth]{images/chap03/redirect.svg}
+    \caption{リダイレクトを表した図}
     \label{ch03:redirect}
 \end{figure}
 
 
 \begin{lstlisting}[caption=lsの出力をリダイレクトする, label=redirectLs]
-ls 
-ほげ　ほげほげ　げげげ
-ls $\gt$ lsfile
-cat lsfile
-ほげ
-ほげほげ
-げげげ
+<#green#pi@raspberrypi#>:<#blue#~ $#> ls 
+<#blue#01  03         Desktop    Downloads  Pictures  Templates
+02  Bookshelf  Documents  Music      Public    Videos#>
+<#green#pi@raspberrypi#>:<#blue#~ $#> ls > lsfile
+<#green#pi@raspberrypi#>:<#blue#~ $#> cat lsfile
+01
+02
+03
+Bookshelf
+Desktop
+Documents
+Downloads
+Music
+Pictures
+Public
+Templates
+Videos
+lsfile
 \end{lstlisting}
 
-「$\gt$」の後にファイル名を指定することで、
+「>」の後にファイル名を指定することで、
 ファイルを作成し、そのファイルにコマンドの結果を保存します。
 いつも画面で見ている結果を、リダイレクトでファイルに保存するように変更しました。
 
 
 標準入力の入力元を、ファイルに変更することができます。
 \begin{lstlisting}[caption=catコマンドにリダイレクトでファイルを入力する, label=redirectCat]
-cat < lsfile
-ほげ
-ほげほげ
-げげげ
+<#green#pi@raspberrypi#>:<#blue#~ $#> cat < lsfile
+01
+02
+03
+Bookshelf
+Desktop
+Documents
+Downloads
+Music
+Pictures
+Public
+Templates
+Videos
+lsfile
 \end{lstlisting}
 
 今回はリダイレクトの練習のため、
@@ -73,27 +96,121 @@ catコマンドでファイル名を指定するのではなく、リダイレ�
 パイプ記号の後のコマンドの標準入力をつなぐことができます。
 
 \begin{figure}
-    \vspace{5cm}
-    \caption{ここパイプの概念図を入れる}
-    \label{ch03:redirect}
+    \centering
+    \includesvg[width=0.8\linewidth]{images/chap03/pipe.svg}
+    \caption{パイプを表した図}
+    \label{ch03:pipe}
 \end{figure}
 
 
-\begin{lstlisting}[caption=catコマンドにリダイレクトでファイルを入力する, label=redirectCat]
-ls | less
+\begin{lstlisting}[caption=lsコマンドの出力をパイプでlessコマンドに渡す, label=redirectCat]
+<#green#pi@raspberrypi#>:<#blue#~ $#> ls | less
+01
+02
+03
+Bookshelf
+Desktop
+Documents
+Downloads
+Music
+Pictures
+Public
+Templates
+Videos
+lsfile
 \end{lstlisting}
 
-lsした結果が一画面に収まらない場合は、1画面ずつ 表示する。
+lsコマンドはリダイレクトやパイプを使うと1ファイルが一行ずつ出力されるようになっています。
+lessコマンドにlsコマンドの標準出力を渡すことによってファイルやディレクトリを一画面に表示することができました。
 
-この方法では1ファイルが一行になるが、それは正しい結果である。
 
-
-↓はフィルタ。
-ラズパイのコマンドは、入力を受け取って、それを加工してから、出力をする。
+%↓はフィルタ。
+%ラズパイのコマンドは、入力を受け取って、それを加工してから、出力をする。
 
 
 \subsection{xargsによるコマンドの組み立て}
 
+\begin{figure}
+    \centering
+    \includesvg[width=0.8\linewidth]{images/chap03/xargs_command.svg}
+    \caption{xargsコマンドを表した図}
+    \label{ch03:xargs_command}
+\end{figure}
+
+標準入力を受け取って、標準出力を出力に出すコマンドをフィルタコマンドといいます。
+xargsコマンドもフィルタコマンドのうちの一つです。
+xargsコマンドは標準入力を受け取って実行したいコマンドの引数として渡すことができます。
+
+\begin{lstlisting}[caption=xargsコマンドを使う準備をする]
+<#green#pi@raspberrypi#>:<#blue#~ $#> cd 03/rensyu
+<#green#pi@raspberrypi#>:<#blue#~/03/rensyu $#> mkdir xargs
+<#green#pi@raspberrypi#>:<#blue#~/03/rensyu $#> cp ~/lsfile ./xargs
+<#green#pi@raspberrypi#>:<#blue#~/03/rensyu $#> cp ./kokugo/syousetu.txt ./xargs
+<#green#pi@raspberrypi#>:<#blue#~/03/rensyu $#> cd xargs 
+<#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#> ls
+<#magenta#lsfile  syousetu.txt $#>
+\end{lstlisting}
+xargsコマンドを使うためのディレクトリを$\texttt{~/03/rensyu/xargs}$に作りました。
+
+\begin{lstlisting}[caption=xargsコマンドを使ってwcコマンドを使う]
+<#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#> ls | xargs wc
+   13    13    93 lsfile
+  118    99 16061 syousetu.txt
+  131   112 16154 total
+\end{lstlisting}
+wcコマンドはファイルについて順番に行数、単語数、ファイルの大きさ(バイト数)を調べるコマンドです。
+lsコマンドで取り出したファイル名をxargsコマンドに渡して、ファイルの中身を調べることができました。
+
+
+xargsにもオプションがいくつかあります。そのうち、よくつかわれるオプション3つを紹介します。
+
+\begin{description}
+\item[\texttt{xargs}\textvisiblespace \texttt{-p}\textvisiblespace コマンド]\mbox{}\\
+どのようなコマンドが実行されるかを表示してくれます。
+<enter>を押すと何もせずに終了。<y>を押すとコマンドを実行します。
+\end{description}
+
+\begin{lstlisting}[caption=xargsコマンドのオプションp]
+<#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#> ls | xargs -p wc
+wc lsfile syousetu.txt?...<enter>
+<#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#> ls | xargs -p wc
+wc lsfile syousetu.txt?...<y>
+   13    13    93 lsfile
+  118    99 16061 syousetu.txt
+  131   112 16154 total
+\end{lstlisting}
+
+\begin{description}
+\item[\texttt{xargs}\textvisiblespace \texttt{-i}\textvisiblespace コマンド\textvisiblespace \{\}]\mbox{}\\
+標準入力を受け取って\{\}の中に1つづつ引数に当てはめます。
+\end{description}
+
+\begin{lstlisting}[caption=xargsコマンドのオプションi]
+<#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#> ls | xargs -i wc  {}
+13 13 93 lsfile
+  118    99 16061 syousetu.txt
+<#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#> ls | xargs -l2 wc
+   13    13    93 lsfile
+  118    99 16061 syousetu.txt
+  131   112 16154 total
+\end{lstlisting}
+
+\begin{description}
+\item[\texttt{xargs}\textvisiblespace \texttt{-L}\textvisiblespace 数字\textvisiblespace コマンド]\mbox{}\\
+標準入力を受け取って数字の数づつ引数に当てはめて実行します。
+
+-iオプションと-Lオプションを一緒に使うことはできません。
+\end{description}
+
+\begin{lstlisting}[caption=xargsコマンドのオプションL]
+<#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#> ls | xargs -L 1 wc
+13 13 93 lsfile
+  118    99 16061 syousetu.txt
+<#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#> ls | xargs -L 2 wc
+   13    13    93 lsfile
+  118    99 16061 syousetu.txt
+  131   112 16154 total
+\end{lstlisting}
 
 \section{パイプラインと文字列処理}
 
