@@ -1,0 +1,80 @@
+% LuaLaTeX文書; 文字コードはUTF-8
+\documentclass[14pt]{beamer}% 'unicode'が必要
+\usepackage{luatexja-fontspec}
+\newjfontface{\nonproportional}{BIZ UDMincho}[YokoFeatures={JFM=ujis}]
+\setmainjfont[Ligatures={Common,TeX},
+  ItalicFont={BIZ UDPMincho},
+  ItalicFeatures={FakeSlant=0.27},
+  SlantedFont={BIZ UDPMincho},
+  SlantedFeatures={FakeSlant=0.18},
+  BoldFont={BIZ UDPGothic Bold},
+  BoldSlantedFont={BIZ UDPGothic Bold},
+  BoldSlantedFeatures={FakeSlant=0.18},
+  BoldItalicFont={BIZ UDPGothic Bold},
+  BoldItalicFeatures={FakeSlant=0.27},
+  YokoFeatures={JFM=prop}]{BIZ UDPMincho}
+%\newjfontface{\nonproportional}{BIZ UDGothic}[YokoFeatures={JFM=ujis}]
+\setsansjfont[Ligatures={Common,TeX},
+  ItalicFont={BIZ UDPGothic},
+  ItalicFeatures={FakeSlant=0.23},
+  SlantedFont={BIZ UDPGothic},
+  SlantedFeatures={FakeSlant=0.23},
+  BoldFont={BIZ UDPGothic Bold},
+  BoldSlantedFont={BIZ UDPGothic Bold},
+  BoldSlantedFeatures={FakeSlant=0.23},
+  BoldItalicFont={BIZ UDPGothic Bold},
+  BoldItalicFeatures={FakeSlant=0.23},
+  YokoFeatures={JFM=prop}]{BIZ UDPGothic}
+
+\usepackage{beamerthemesplit}
+\usepackage{caption}
+\captionsetup[figure]{labelformat=empty,labelsep=none}
+\usepackage{svg}
+\usepackage[]{graphicx}
+\graphicspath{
+  {./images/}
+}
+\svgsetup{
+  inkscapelatex=false
+}
+\usepackage{color}
+\usepackage{listings,jvlisting}
+\lstset{
+  language=C++,
+  basicstyle=\ttfamily\footnotesize,
+  % keywordstyle=\bfseries\color{green},
+  showstringspaces=false,
+  frame={tb},
+  %numbers=left,
+  xrightmargin=0\zw,
+  xleftmargin=0\zw,
+  % columns=[l]{fullflexible},
+  columns=fixed,
+  basewidth=0.5em,
+  numberstyle = \footnotesize,
+  frame = tbrl,
+  captionpos = b,
+  moredelim=[is][\color{green}\bfseries]{<\#green\#}{\#>},
+  moredelim=[is][\color{blue}\bfseries]{<\#blue\#}{\#>},
+  moredelim=[is][\color{red}\bfseries]{<\#red\#}{\#>},
+  moredelim=[is][\color{yellow}\bfseries]{<\#yellow\#}{\#>},
+  moredelim=[is][\color{magenta}\bfseries]{<\#magenta\#}{\#>},
+  moredelim=[is][\color{red}]{<\#red\#}{\#>},
+}
+
+
+\lstset{
+  basicstyle=\fontsize{9}{9}\selectfont\ttfamily
+}
+
+% 余白を広げる
+\setbeamersize{text margin left=15pt, text margin right=15pt}
+\setbeamertemplate{footline}[frame number]
+\title{子どもIT未来塾　第3回}
+\author{奥山祐市}
+
+\begin{document}
+  \input slide_contents/title.tex
+  \input slide_contents/shell_command.tex
+  \input slide_contents/sensorboard.tex
+\end{document}

@@ -275,10 +275,46 @@ sed s/xxx/yyy/g の説明
 
 \subsection{コマンドに別名を付ける}
 
-aliasの説明
+コマンドを打っていて、よく使うのに覚えにくいものがあったりします。
+そんな時はコマンドに別名を付けてしまいましょう。これを英語ではalias(エイリアス)と言います。
 
-実行例の説明
+例えば、
 
-.bashrcの簡単な説明。記述を間違えるとラズパイが正しく動作しなくなるので注意。
+\begin{lstlisting}[caption=lsコマンド, label=lsAlias]
+    ls -l
+\end{lstlisting}
+
+に ll という別名を付けたいとします。
+
+コマンドに別名を付けるためにはにはホームディレクトリに .bash{\_}aliases というファイルを作成し編集しなければなりません。
+mousepad を使って .bash{\_}aliases というファイルを作成し、編集します。
+\begin{lstlisting}[caption=.bashaliasesを開く, label=openBashAliases]
+    <#green#pi@raspberrypi#>:<#blue#~ $#> mousepad ~/.bash_aliases &
+\end{lstlisting}
+
+.bash{\_}aliases には、次のように記述し、保存します。
+\begin{lstlisting}[caption=.bashaliasesの中身, label=bashAliasesContents]
+    alias ll='ls -l'
+\end{lstlisting}
+
+保存が終わったら、.bash{\_}aliases を実行して、別名を適用しなければなりません。
+.bash{\_}aliases を実行します。
+\begin{lstlisting}[caption=.bashaliasesを実行, label=executeBashAliases]
+    <#green#pi@raspberrypi#>:<#blue#~ $#> ~/.bash_aliases
+\end{lstlisting}
+
+別名を付けたコマンドを打ってみましょう。
+\begin{lstlisting}[caption=別名の確認, label=confirmAlias]
+    <#green#pi@raspberrypi#>:<#blue#~ $#> ll
+\end{lstlisting}
+
+別名を付けた元のコマンドも打ってみましょう。
+\begin{lstlisting}[caption=元のコマンドの確認, label=confirmCommand]
+    <#green#pi@raspberrypi#>:<#blue#~ $#> ls -l
+\end{lstlisting}
+
+同じ出力が出るはずです。
+
+.bash{\_}aliases は正しい文法で記述しないとラズベリーパイが正しく動作しなくなるので注意して編集してください。
 
 問題
