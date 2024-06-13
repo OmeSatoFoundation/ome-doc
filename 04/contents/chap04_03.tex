@@ -2,47 +2,48 @@
 
 第2回で出てきた条件判断について思い出してみましょう。
 
-プログラムは最初の行から、下に向かって順番に実行されます。実際には、一瞬で過ぎてしまうのでわかりにくいですが、どのような順番でコンピューターが動くのか、想像しながら見てみることが大切です。わからない命令は以前の講座を復習してみましょう。
+プログラムは最初の行から、下に向かって\ruby{順番}{じゅん|ばん}に実行されます。\ruby{実際}{じっ|さい}には、\ruby{一瞬}{いっ|しゅん}ですぎてしまうのでわかりにくいですが、どのような順番でコンピューターが動くのか、想像しながら見てみることが大切です。わからない命令は以前の教科書を復習してみましょう。
+\clearpage
 
-「*hata」から「goto *hata」までの間が「スイッチ押して」という文字を表示する部分です。
+「*hata」から「goto *hata」までの\ruby{間}{あいだ}が「スイッチ押して」という文字を\ruby{表示}{ひょう|じ}する部分です。
 
 
 
 
 \begin{description}
     \item \textgt{\bf *hata}
-    \item \textgt{\bf \ \ redraw 0}
-    \item \textgt{\bf \ \ font {\textquotedbl}{\textquotedbl},60}
-    \item \textgt{\bf \ \ pos 60,180}
-    \item \textgt{\bf \ \ color 0,0,255}
-    \item \textgt{\bf \ \ mes {\textquotedbl}スイッチ押して{\textquotedbl}}
-    \item \textgt{\bf \ \ redraw 1}
-    \item \textgt{\bf \ \ await 16}
-    \item \textgt{\bf \ \ if gpioin(5)=0 : goto *hata2}
-    \item \textgt{\bf \ \ goto *hata}
+    \item \textgt{\bf \ \ \ \ redraw 0}
+    \item \textgt{\bf \ \ \ \ font {\textquotedbl}{\textquotedbl},60}
+    \item \textgt{\bf \ \ \ \ pos 60,180}
+    \item \textgt{\bf \ \ \ \ color 0,0,255}
+    \item \textgt{\bf \ \ \ \ mes {\textquotedbl}スイッチ押して{\textquotedbl}}
+    \item \textgt{\bf \ \ \ \ redraw 1}
+    \item \textgt{\bf \ \ \ \ await 16}
+    \item \textgt{\bf \ \ \ \ if gpioin(5)=0 : goto *hata2}
+    \item \textgt{\bf \ \ \ \ goto *hata}
 \end{description}
 
 ここでセンサーボードのスイッチを押すと流れが変わります。
 
 \begin{description}
     \item \textgt{\bf *hata2}
-    \item \textgt{\bf \ \ redraw 0}
-    \item \textgt{\bf \ \ font {\textquotedbl}{\textquotedbl},60}
-    \item \textgt{\bf \ \ pos 60,180}
-    \item \textgt{\bf \ \ color 255,0,0}
-    \item \textgt{\bf \ \ mes {\textquotedbl}押しましたね!{\textquotedbl}}
-    \item \textgt{\bf \ \ redraw 1}
-    \item \textgt{\bf \ \ await 16}
-    \item \textgt{\bf \ \ if gpioin(6)=0 : goto *hata}
-    \item \textgt{\bf \ \ goto *hata2}
+    \item \textgt{\bf \ \ \ \ redraw 0}
+    \item \textgt{\bf \ \ \ \ font {\textquotedbl}{\textquotedbl},60}
+    \item \textgt{\bf \ \ \ \ pos 60,180}
+    \item \textgt{\bf \ \ \ \ color 255,0,0}
+    \item \textgt{\bf \ \ \ \ mes {\textquotedbl}押しましたね!{\textquotedbl}}
+    \item \textgt{\bf \ \ \ \ redraw 1}
+    \item \textgt{\bf \ \ \ \ await 16}
+    \item \textgt{\bf \ \ \ \ if gpioin(6)=0 : goto *hata}
+    \item \textgt{\bf \ \ \ \ goto *hata2}
 \end{description}
 
 
 「*hata2」から「goto *hata2」までの間で「押しましたね」という文字を表示しています。
 
-それぞれの切り替えにスイッチを使っていますが、そのために条件判断を使っています。
+それぞれの\ruby{切}{き}り\ruby{替}{か}えにスイッチを使っていますが、そのために条件判断を使っています。
 
-スイッチの状態などを知る場合は、gpioinという関数を使います。
+スイッチの\ruby{状態}{じょう|たい}などを知る\ruby{場合}{ば|あい}は、gpioinという\ruby{関数}{かん|すう}を使います。
 
 
 
@@ -64,8 +65,7 @@
 
 
 
-スイッチが接続されているGPIOの番号を指定することで変数に値が入ります。
-
+スイッチが接続されているGPIOの番号を指定することで\ruby{変数}{へん|すう}に値を入れることができます。
 
 \begin{description}
     \item \textgt{\bf \ \ a = gpioin(5)}
