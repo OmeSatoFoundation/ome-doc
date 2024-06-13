@@ -148,9 +148,9 @@ xargsコマンドは標準入力を受け取って実行したいコマンドの
 <#green#pi@raspberrypi#>:<#blue#~/03/rensyu $#> cp ./kokugo/syousetu.txt ./xargs
 <#green#pi@raspberrypi#>:<#blue#~/03/rensyu $#> cd xargs 
 <#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#> ls
-<#magenta#lsfile  syousetu.txt $#>
+<#magenta#lsfile  syousetu.txt#>
 \end{lstlisting}
-xargsコマンドを使うためのディレクトリを$\texttt{~/03/rensyu/xargs}$に作りました。
+xargsコマンドを使うためのディレクトリを\textasciitilde /03/rensyu/xargsに作りました。
 
 \begin{lstlisting}[caption=xargsコマンドを使ってwcコマンドを使う]
 <#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#> ls | xargs wc
@@ -189,10 +189,6 @@ wc lsfile syousetu.txt?...<y>
 <#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#> ls | xargs -i wc  {}
 13 13 93 lsfile
   118    99 16061 syousetu.txt
-<#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#> ls | xargs -l2 wc
-   13    13    93 lsfile
-  118    99 16061 syousetu.txt
-  131   112 16154 total
 \end{lstlisting}
 
 \begin{description}
