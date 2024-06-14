@@ -371,13 +371,27 @@ man sed
 
 \subsection{計算をする}
 
-コマンドの説明： echo \$(式)
-\$()で式を囲むと、計算ができる。echoコマンドは引数で与えられた文字列をそのまま標準出力に出力する。計算は整数で行われる。
+コマンドの説明： echo \$((式))
+\$(())で式を囲むと、計算ができます。echoコマンドは引数で与えられた文字列をそのまま標準出力に出力します。
+$138 + 395$のように電卓を使って計算したいものを目の前のコンピュータに計算してもらえたら便利ですね。
 
+\begin{lstlisting}[caption=echo コマンドを使った例, label=echo]
+echo $((138 + 395))
+\end{lstlisting}
 
-実行例の説明
+実行すると次のような出力が得られます。
 
-問題
+\begin{lstlisting}[caption=echo コマンドを実行した結果, label=echo_result]
+533
+\end{lstlisting}
+
+それでは、次の問題に取り組んでみましょう。
+
+\begin{enumerate}
+   \addquiz{$2024 - 727$}
+   \addquiz{$117 \times 13$}
+   \addquiz{$(84 + 67 + 49 + 96) \div 4$}
+\end{enumerate}
 
 \subsection{コマンドに別名を付ける}
 
