@@ -1,24 +1,16 @@
 \begin{frame}
     \frametitle{今日の目標} 
     \begin{itemize}
-        \item 1時間目
-        \begin{itemize}
-            \item 「ファイル」と「ディレクトリ」の基本を知ろう：コンピュータでのデータ管理をするため
-            \item 「ターミナル」で「コマンド」を使ってみよう：テキストでコンピュータに命令するため
-        \end{itemize}
-        \item 2時間目
-        \begin{itemize}
-            \item 「ターミナル」で「コマンド」を使ってみよう：テキストでコンピュータに命令するため
-        \end{itemize}
-        \item 3時間目
-        \begin{itemize}
-            \item 「センサーボード」の基本について知ろう：コンピュータと周りの世界のやりとり
-            \item 「センサーボード」を使ってスクリプトを書いてみよう：コンピュータに自動で仕事をさせる
-        \end{itemize}
-        \item 4時間目
-        \begin{itemize}
-            \item 「センサーボード」を使ってスクリプトを書いてみよう（応用）自分で０からスクリプトを書いてみよう：新しいプログラムをひとりで作ろう
-        \end{itemize}
+        \item 1時間目\\
+        {\footnotesize「ファイル」と「ディレクトリ」の基本を知ろう：コンピュータでのデータ管理\\
+        「ターミナル」で「コマンド」を使ってみよう：テキストでコンピュータに命令\\}
+        \item 2時間目\\
+        {\footnotesize「ターミナル」で「コマンド」を使ってみよう：テキストでコンピュータに命令\\}
+        \item 3時間目\\
+        {\footnotesize「センサーボード」の基本について知ろう：コンピュータと周りの世界のやりとり\\
+        「センサーボード」を使ってスクリプトを書いてみよう：コンピュータに自動で仕事をさせる\\}
+        \item 4時間目\\
+        {\footnotesize「センサーボード」を使ってスクリプトを書いてみよう（応用）自分で０からスクリプトを書いてみよう：新しいプログラムをひとりで作ろう\\}
     \end{itemize}
 \end{frame}
 
@@ -36,20 +28,24 @@
             \item データの名前.拡張子 で名前をつけるよ
         \end{itemize}
     \end{itemize}
-    \begin{figure}[!h]
+    
+    \begin{figure}[h]
+    \centering
+    \begin{minipage}[b]{0.32\columnwidth}
         \centering
-        \includesvg{images/chap03/douga.svg}
-        \caption{douga.mp4}
-    \end{figure}
-    \begin{figure}[!h]
-        \centering
-        \includesvg{images/chap03/oto.svg}
-        \caption{oto.mp3}
-    \end{figure}
-    \begin{figure}[!h]
-        \centering
-        \includesvg{images/chap03/image.svg}
+        \includesvg[width=0.5\columnwidth]{images/chap03/image.svg}
         \caption{gazou.jpg}
+    \end{minipage}
+    \begin{minipage}[b]{0.32\columnwidth}
+        \centering
+        \includesvg[width=0.5\columnwidth]{images/chap03/oto.svg}
+        \caption{oto.mp3}
+    \end{minipage}
+    \begin{minipage}[b]{0.32\columnwidth}
+        \centering
+        \includesvg[width=0.5\columnwidth]{images/chap03/douga.svg}
+        \caption{douga.mp4}
+    \end{minipage}
     \end{figure}
 \end{frame}
 
@@ -63,41 +59,61 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{ディレクトリの関係}
-    \begin{itemize}
-        \item /は一番上のディレクトリルートディレクトリと呼ぶよ
-        \item コンピュータの設定を変える大事なファイルもあるので、間違って消さないように気を付けよう！
-    \end{itemize}
+    \frametitle{ディレクトリの関係（１）}
+    \begin{columns}
+        \column{0.4\textwidth}
+            \centering
+            \includesvg[width=0.8\textwidth]{images/chap03/root_directory.svg}
+        \column{0.6\textwidth}
+            \begin{itemize}
+                \item /は一番上のディレクトリをルートディレクトリと呼ぶよ
+                \item コンピュータの設定を変える大事なファイルもあるので、間違って消さないように気を付けよう！
+            \end{itemize}
+    \end{columns}
 \end{frame}
 
 \begin{frame}
     \frametitle{ディレクトリの関係（２）}
-    \begin{itemize}
-        \item 自分がいま使っているディレクトリはカレントディレクトリ
-        \item みんなはホームディレクトリ（/home/pi）で作業するよ
-        \item ディレクトリの位置は一番上からどこにあるかまたはカレントディレクトリからどこにあるかで決まるよ
-    \end{itemize}
+    \begin{columns}
+        \column{0.4\textwidth}
+            \centering
+            \includesvg[width=0.8\textwidth]{images/chap03/home_directory.svg}
+        \column{0.6\textwidth}
+            \begin{itemize}
+                \item 自分がいま使っているディレクトリはカレントディレクトリ
+                \item みんなはホームディレクトリ（/home/pi）で作業するよ
+                \item ディレクトリの位置は一番上からどこにあるかまたはカレントディレクトリからどこにあるかで決まるよ
+            \end{itemize}
+    \end{columns}
 \end{frame}
 
 \begin{frame}
-    \frametitle{フォルダの関係（３）}
-    一番上から見たら /\\
-    カレントディレクトリが/のとき ./ カレントディレクトリがhomeのとき ../\\
-    カレントディレクトリがpiのとき ../../\\
-
-    一番上から見たら /home カレントディレクトリが/のとき ./home\\
-    カレントディレクトリがhomeのとき ./\\
-    カレントディレクトリがpiのとき ../\\
-
-    一番上から見たら /home/pi カレントディレクトリが/のとき ./home/pi\\
-    カレントディレクトリがhomeのとき ./pi\\
-    カレントディレクトリがpiのとき ./\\
-
-    \begin{itemize}
-        \item カレントディレクトリは ./ を使うよ
-        \item 上のディレクトリ ../ を使うよ
-        \item ディレクトリを区切るとき / を使うよ
-    \end{itemize}
+    \frametitle{ディレクトリの関係（３）}
+    \begin{columns}
+        \column{0.4\textwidth}
+            \centering
+            \includesvg[width=0.8\textwidth]{images/chap03/directory_arc.svg}
+        \column{0.6\textwidth}
+        {\small
+        一番上から見たら /\\
+        カレントディレクトリが/のとき ./ カレントディレクトリがhomeのとき ../\\
+        カレントディレクトリがpiのとき ../../\\
+        \vskip.1\baselineskip
+        一番上から見たら /home カレントディレクトリが/のとき ./home\\
+        カレントディレクトリがhomeのとき ./\\
+        カレントディレクトリがpiのとき ../\\
+        \vskip.1\baselineskip
+        一番上から見たら /home/pi カレントディレクトリが/のとき ./home/pi\\
+        カレントディレクトリがhomeのとき ./pi\\
+        カレントディレクトリがpiのとき ./\\
+        
+        \begin{itemize}
+            \item カレントディレクトリは ./ を使うよ
+            \item 上のディレクトリ ../ を使うよ
+            \item ディレクトリを区切るとき / を使うよ
+        \end{itemize}
+        }
+    \end{columns}
 \end{frame}
 
 \begin{frame}
@@ -115,6 +131,10 @@
         \item 命令を直接、入力することができるよ
         \item キーボードをカタカタしているとかっこいいね！
     \end{itemize}
+    \begin{figure}[h]
+        \centering
+        \includesvg[width=0.5\columnwidth]{images/chap03/terminal.svg}
+    \end{figure}
 \end{frame}
 
 \begin{frame}
@@ -122,14 +142,26 @@
     \begin{itemize}
         \item コマンドはコンピュータに対する命令のこと
     \end{itemize}
+    \begin{figure}[h]
+        \centering
+        \includesvg[width=0.9\columnwidth]{images/chap03/command1.svg}
+    \end{figure}
 \end{frame}
 
 \begin{frame}
     \frametitle{コマンドの使い方}
+    \begin{figure}[h]
+        \centering
+        \includesvg[width=0.9\columnwidth]{images/chap03/command2.svg}
+    \end{figure}
     \begin{itemize}
         \item コマンドは動作、引数は動作の対象
         \item すべて半角の英語だよ
         \item 間にスペース（空白）がいるよ
+            \begin{itemize}
+                \item ここではスペースは␣と書いてあるよ
+                \item 打つときには半角のスペースを打ってね
+            \end{itemize}
         \item オプションはあるときとないときがあるよ
     \end{itemize}
 \end{frame}
@@ -140,6 +172,10 @@
         \item Tab（タブ）キーを押すとそれまでに入力した文字から残りの文字をコンピュータが推測してくれるよ
         \item いくつかあるときは候補を表示するよ
     \end{itemize}
+    \begin{figure}[h]
+        \centering
+        \includesvg[width=0.9\columnwidth]{images/chap03/tab.svg}
+    \end{figure}
 \end{frame}
 
 \begin{frame}
@@ -193,31 +229,41 @@
 \begin{frame}
     \frametitle{コマンド（３）}
     \begin{itemize}
-        \item mv 移動したいファイルやディレクトリ 移動先
+        \item mv␣移動したいファイルやディレクトリ␣移動先
         \begin{itemize}
             \item ファイルやディレクトリを移動できるよ
         \end{itemize}
-        \item mv ファイルやディレクトリの名前 変えた後の名前
+        \item mv␣ファイルやディレクトリの名前␣変えた後の名前
         \begin{itemize}
             \item ファイルやディレクトリの名前を変えることができるよ
         \end{itemize}
-        \item less ファイルの名前
+        \item less␣ファイルの名前
         \begin{itemize}
             \item ファイルに書かれている文字を一画面ずつ見ることができるよ
         \end{itemize}
-        \item rm ファイル
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{コマンド（４）}
+    \begin{itemize}
+        \item rm␣ファイル
         \begin{itemize}
             \item ファイルを消したいときは
         \end{itemize}
-        \item rm -r ディレクトリ
+        \item rm␣-r␣ディレクトリ
         \begin{itemize}
             \item ディレクトリを消したいときは
         \end{itemize}
-        \item mkdir ディレクトリ
+        \item mkdir␣ディレクトリ
         \begin{itemize}
             \item 新しいディレクトリを作ることができるよ
         \end{itemize}
     \end{itemize}
+    \begin{figure}[h]
+        \centering
+        \includesvg[width=0.5\columnwidth]{images/chap03/command3.svg}
+    \end{figure}
 \end{frame}
 
 \begin{frame}
