@@ -1,15 +1,15 @@
 \newpage
-\section{コマンドをつなげて便利に使う}
-ラズパイにはコマンドをつなげて便利に使うための方法が用意されています。
-コマンドをつなげると、いくつかの処理を連続して行うことができるようになります。
-まずは、コマンドが入力・出力をどのように行うのかを理解しましょう。
-次に入出力を変更して、コマンドの入力と出力がどのように変わるのかを理解しましょう。
-最後に、コマンドをいくつかつなげて、複雑な処理をやってみましょう。
+\section{コマンドをつなげて\ruby{便利}{べん|り}に使う}
+ラズパイにはコマンドをつなげて便利に使うための方法が\ruby{用意}{よう|い}されています。
+コマンドをつなげると、いくつかの\ruby{処理}{しょ|り}を連続して行うことができるようになります。
+まずは、コマンドが入力・出力をどのように行うのかを\ruby{理解}{り|かい}しましょう。
+次に入出力を変更して、コマンドの入力と出力がどのように変わるのかを\ruby{理解}{り|かい}しましょう。
+最後に、コマンドをいくつかつなげて、\ruby{複雑}{ふく|ざつ}な\ruby{処理}{しょ|り}をやってみましょう。
 
 \subsection{コマンドの\ruby{入出力}{にゅう|しゅつ|りょく}}
-　コマンドを実行すると、{\bf 標準入力}、{\bf 標準出力}、{\bf 標準エラー出力}の3つのデータの通り道が準備されます。このデータの通り道をチャネルといいます。
+　コマンドを\ruby{実行}{じっ|こう}すると、{\bf \ruby{標準入力}{ひょう|じゅん|にゅう|りょく}}、{\bf \ruby{標準出力}{ひょう|じゅん|しゅつ|りょく}}、{\bf \ruby{標準}{ひょう|じゅん}エラー出力}の3つのデータの\ruby{通}{とお}り道が\ruby{準備}{じゅん|び}されます。このデータの\ruby{通}{とお}り道をチャネルといいます。
 
-　チャネルに何も指定せずにコマンドを実行すると、標準入力はキーボードに設定されます。標準出力と標準エラー出力はディスプレイに設定されます。
+　チャネルに何も指定せずにコマンドを\ruby{実行}{じっ|こう}すると、\ruby{標準入力}{ひょう|じゅん|にゅう|りょく}はキーボードに\ruby{設定}{せっ|てい}されます。\ruby{標準出力}{ひょう|じゅん|しゅつ|りょく}と\ruby{標準}{ひょう|じゅん}エラー出力はディスプレイに\ruby{設定}{せっ|てい}されます。
 
 \begin{figure}
     \centering
@@ -18,22 +18,21 @@
     \label{ch03:stdioerr}
 \end{figure}
 
-コマンドによっては、標準の入力をコマンドの引数として与えることができるものがあります。例えば cat などのコマンドは cat ファイル名 で指定したファイルを標準出力に出力します。cat にファイル名を指定しないと、標準入力、つまりからデータを受け取ります。
+コマンドによっては、\ruby{標準}{ひょう|じゅん}の入力をコマンドの引数として与えることができるものがあります。例えば cat などのコマンドは cat ファイル名 で\ruby{指定}{し|てい}したファイルを\ruby{標準出力}{ひょう|じゅん|しゅつ|りょく}に出力します。cat にファイル名を指定しないと、\ruby{標準入力}{ひょう|じゅん|にゅう|りょく}、つまりからデータを受け取ります。
 
 \begin{lstlisting}[caption=catの標準入力・標準出力, label=stdioCat]
 <#green#pi@raspberrypi#>:<#blue#~ $#> cat 
-sansu <enter> <- 標準入力（キーボード）からの入力
+sansu <Enter> <- 標準入力（キーボード）からの入力
 sansu         <- 標準出力（ディスプレイ）への出力
-<Ctrl-d>      <- 標準入力からEOFを入力し、入力が終了したことを伝える
+<Ctrl+D>      <- 標準入力からEOFを入力し、入力が終了したことを伝える
 <#green#pi@raspberrypi#>:<#blue#~ $#>
 \end{lstlisting}
+EOFとはEnd Of File(エンドオブファイル)の\ruby{略称}{りゃく|しょう}でどこがファイルの最後なのかを教えるために使います。
 
 
 \subsection{リダイレクト}
-標準入力、標準出力、標準エラー出力の出力先は、ファイルに変更することができます。
-この機能を使うと、ファイルからデータを読み込んだり、結果をファイルに保存したりすることが簡単にできるようになります。
-
-標準出力を出力先は、ファイルに変更することができます。
+\ruby{標準入力}{ひょう|じゅん|にゅう|りょく}、\ruby{標準出力}{ひょう|じゅん|しゅつ|りょく}、\ruby{標準}{ひょう|じゅん}エラー出力の出力先は、ファイルに\ruby{変更}{へん|こう}することができます。
+この\ruby{機能}{き|のう}を使うと、ファイルからデータを読み込んだり、結果をファイルに保存したりすることが\ruby{簡単}{かん|たん}にできるようになります。
 
 \begin{figure}
     \centering
@@ -66,10 +65,10 @@ lsfile
 
 「>」の後にファイル名を指定することで、
 ファイルを作成し、そのファイルにコマンドの結果を保存します。
-いつも画面で見ている結果を、リダイレクトでファイルに保存するように変更しました。
+いつも画面で見ている結果を、リダイレクトでファイルに保存するように\ruby{変更}{へん|こう}しました。
 
 
-標準入力の入力元を、ファイルに変更することができます。
+\ruby{標準入力}{ひょう|じゅん|にゅう|りょく}の入力元を、ファイルに\ruby{変更}{へん|こう}することができます。
 \begin{lstlisting}[caption=catコマンドにリダイレクトでファイルを入力する, label=redirectCat]
 <#green#pi@raspberrypi#>:<#blue#~ $#> cat < lsfile
 01
@@ -87,13 +86,13 @@ Videos
 lsfile
 \end{lstlisting}
 
-今回はリダイレクトの練習のため、
-catコマンドでファイル名を指定するのではなく、リダイレクトと同じことをしました。
+今回はリダイレクトの\ruby{練習}{れん|しゅう}のため、
+catコマンドでファイル名を\ruby{指定}{し|てい}するのではなく、リダイレクトと同じことをしました。
 
 \subsection{パイプライン}
 
-パイプ記号「|」を使うことで、パイプ記号の前のコマンドの標準出力と、
-パイプ記号の後のコマンドの標準入力をつなぐことができます。
+パイプ\ruby{記号}{き|ごう}「|」を使うことで、パイプ記号の前のコマンドの\ruby{標準出力}{ひょう|じゅん|しゅつ|りょく}と、
+パイプ記号の後のコマンドの\ruby{標準入力}{ひょう|じゅん|にゅう|りょく}をつなぐことができます。
 
 \begin{figure}
     \centering
@@ -121,12 +120,7 @@ lsfile
 \end{lstlisting}
 
 lsコマンドはリダイレクトやパイプを使うと1ファイルが一行ずつ出力されるようになっています。
-lessコマンドにlsコマンドの標準出力を渡すことによってファイルやディレクトリを一画面に表示することができました。
-
-
-%↓はフィルタ。
-%ラズパイのコマンドは、入力を受け取って、それを加工してから、出力をする。
-
+lessコマンドにlsコマンドの\ruby{標準出力}{ひょう|じゅん|しゅつ|りょく}を渡すことによってファイルやディレクトリを一画面に表示することができました。
 
 \subsection{xargsによるコマンドの組み立て}
 
@@ -137,9 +131,9 @@ lessコマンドにlsコマンドの標準出力を渡すことによってフ�
     \label{ch03:xargs_command}
 \end{figure}
 
-標準入力を受け取って、標準出力を出力に出すコマンドをフィルタコマンドといいます。
+\ruby{標準入力}{ひょう|じゅん|にゅう|りょく}を受け取って、\ruby{標準出力}{ひょう|じゅん|しゅつ|りょく}を出力に出すコマンドをフィルタコマンドといいます。
 xargsコマンドもフィルタコマンドのうちの一つです。
-xargsコマンドは標準入力を受け取って実行したいコマンドの引数として渡すことができます。
+xargsコマンドは\ruby{標準入力}{ひょう|じゅん|にゅう|りょく}を受け取って実行したいコマンドの引数として渡すことができます。
 
 \begin{lstlisting}[caption=xargsコマンドを使う準備をする]
 <#green#pi@raspberrypi#>:<#blue#~ $#> cd 03/rensyu
@@ -148,69 +142,115 @@ xargsコマンドは標準入力を受け取って実行したいコマンドの
 <#green#pi@raspberrypi#>:<#blue#~/03/rensyu $#> cp ./kokugo/syousetu.txt ./xargs
 <#green#pi@raspberrypi#>:<#blue#~/03/rensyu $#> cd xargs 
 <#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#> ls
-<#magenta#lsfile  syousetu.txt $#>
+<#magenta#lsfile  syousetu.txt#>
 \end{lstlisting}
-xargsコマンドを使うためのディレクトリを$\texttt{~/03/rensyu/xargs}$に作りました。
+xargsコマンドを使うためのディレクトリを\textasciitilde /03/rensyu/xargsに作りました。
 
-\begin{lstlisting}[caption=xargsコマンドを使ってwcコマンドを使う]
-<#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#> ls | xargs wc
-   13    13    93 lsfile
-  118    99 16061 syousetu.txt
-  131   112 16154 total
+\begin{lstlisting}[caption=xargsコマンドを使ってcatコマンドを使う]
+<#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#> ls | xargs cat
+01
+02
+03
+Bookshelf
+Desktop
+                                           ...
+このファイルは、インターネットの図書館、青空文庫（http://www.aozora.gr.jp/）で作られました。
+入力、校正、制作にあたったのは、ボランティアの皆さんです。
+
+
+
+https://www.aozora.gr.jp/cards/000121/files/628_14895.html
+<#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#>
 \end{lstlisting}
-wcコマンドはファイルについて順番に行数、単語数、ファイルの大きさ(バイト数)を調べるコマンドです。
-lsコマンドで取り出したファイル名をxargsコマンドに渡して、ファイルの中身を調べることができました。
+lsコマンドで取り出したファイル名をxargsコマンドに渡して、2つのファイルの中身を同時に見ることができました。
 
+\subsection{xargsのオプション}
+xargsのオプションの紹介の前にこの章で使うコマンドの説明をします。
+\begin{description}
+\item[\texttt{seq}\textvisiblespace 数字1\textvisiblespace 数字2]\mbox{}\\
+数字1から数字2までの数字を出力します。
+\end{description}
 
-xargsにもオプションがいくつかあります。そのうち、よくつかわれるオプション3つを紹介します。
+\begin{lstlisting}[caption=seqコマンド]
+<#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#> seq 1 5
+1
+2
+3
+4
+5
+<#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#>
+\end{lstlisting}
+seqコマンドを使うことで、数字を\ruby{順番}{じゅん|ばん}に出力することができました。
+
+\begin{description}
+\item[\texttt{echo}\textvisiblespace 文字]\mbox{}\\
+文字をそのまま出力します。
+\end{description}
+
+\begin{lstlisting}[caption=seqコマンド]
+<#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#> echo hello
+hello
+<#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#>
+\end{lstlisting}
+echoコマンドを使うことで好きな文字を出力できました。
+
+xargsにもオプションがいくつかあります。そのうち、よくつかわれるオプション3つを\ruby{紹介}{しょう|かい}します。
 
 \begin{description}
 \item[\texttt{xargs}\textvisiblespace \texttt{-p}\textvisiblespace コマンド]\mbox{}\\
 どのようなコマンドが実行されるかを表示してくれます。
-<enter>を押すと何もせずに終了。<y>を押すとコマンドを実行します。
+<Enter>を押すと何もせずに終了。<y>を押すとコマンドを実行します。
 \end{description}
 
 \begin{lstlisting}[caption=xargsコマンドのオプションp]
-<#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#> ls | xargs -p wc
-wc lsfile syousetu.txt?...<enter>
-<#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#> ls | xargs -p wc
-wc lsfile syousetu.txt?...<y>
-   13    13    93 lsfile
-  118    99 16061 syousetu.txt
-  131   112 16154 total
+<#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#> ls | xargs -p echo
+echo lsfile syousetu.txt?...<Enter>
+<#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#> ls | xargs -p echo
+echo lsfile syousetu.txt?...<Y><Enter>
+lsfile syousetu.txt
+<#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#>
 \end{lstlisting}
 
 \begin{description}
 \item[\texttt{xargs}\textvisiblespace \texttt{-i}\textvisiblespace コマンド\textvisiblespace \{\}]\mbox{}\\
-標準入力を受け取って\{\}の中に1つづつ引数に当てはめます。
+\ruby{標準入力}{ひょう|じゅん|にゅう|りょく}を受け取って\{\}の中に1つづつ引数に当てはめます。
 \end{description}
 
 \begin{lstlisting}[caption=xargsコマンドのオプションi]
-<#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#> ls | xargs -i wc  {}
-13 13 93 lsfile
-  118    99 16061 syousetu.txt
-<#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#> ls | xargs -l2 wc
-   13    13    93 lsfile
-  118    99 16061 syousetu.txt
-  131   112 16154 total
+<#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#> ls | xargs -i echo {}
+lsfile
+syousetu.txt
+<#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#>
 \end{lstlisting}
 
 \begin{description}
 \item[\texttt{xargs}\textvisiblespace \texttt{-L}\textvisiblespace 数字\textvisiblespace コマンド]\mbox{}\\
-標準入力を受け取って数字の数づつ引数に当てはめて実行します。
-
+Lオプションは、xarg引数コマンドに一度に\ruby{展開}{てん|かい}されるデータの最大数を指定します。
+\ruby{標準出力}{ひょう|じゅん|しゅつ|りょく}から渡されたデータ数が、-Lで指定された数より大きい場合、全てのデータが\ruby{展開}{てん|かい}し終わるまで xargs引数コマンドが繰り返し実行されます。
 -iオプションと-Lオプションを一緒に使うことはできません。
 \end{description}
 
 \begin{lstlisting}[caption=xargsコマンドのオプションL]
-<#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#> ls | xargs -L 1 wc
-13 13 93 lsfile
-  118    99 16061 syousetu.txt
-<#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#> ls | xargs -L 2 wc
-   13    13    93 lsfile
-  118    99 16061 syousetu.txt
-  131   112 16154 total
+<#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#> seq 1 5 | xargs -L 1 echo
+1
+2
+3
+4
+5
+<#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#> seq 1 5 | xargs -L 2 echo
+1 2
+3 4
+5
 \end{lstlisting}
+
+\begin{tcolorbox}[title=\useOmetoi]
+\begin{enumerate}
+    \addex{catと入力して好きな文字を打ち込みましょう。}
+    \addex{echo\textvisiblespace 好きな文字\textvisiblespace >\textvisiblespace rensyufile と入力して好きな文字をrensyufileに保存しよう。}
+    \addex{リダイレクトの記号「<」を使ってrensyufileの中身を表示してみよう。}
+    \addex{xargsを使って、rensyufileとlsfileを合体して表示してみよう。}
+\end{enumerate}
+\end{tcolorbox}
 
 \section{パイプラインと文字列処理}
 
@@ -250,71 +290,69 @@ wc lsfile syousetu.txt?...<y>
 \subsection{文字の置き換え}
 % trコマンドの説明
 文字を置き換えるためのコマンドとして、trコマンドを紹介します。
-trコマンドを使うと、入力された文字列の中の指定した文字を、別の文字に置き換えて出力することができます。
-trコマンドの\ruby{基本的}{き|ほん|てき}な使い方は、次の通りです。
+trコマンドを使うと、文字列中の特定の文字を、別の文字に置き換えることができます。
+trコマンドの使い方は、次の通りです。
 
-\begin{lstlisting}[caption=trコマンドの基本的な使い方, label=tr_basic_usage]
-tr 置き換え対象の文字 置き換え後の文字
+\begin{lstlisting}[caption=trコマンドの使い方, label=tr_basic_usage]
+tr 置き換えたい文字 置き換える文字
 \end{lstlisting}
 
-ここで、「置き換え対象の文字」には、置き換えたい文字を指定します。「置き換え後の文字」には、置き換え後の文字を指定します。
+ここで、「置き換えたい文字」には、置き換えたい文字を書きます。
+「置き換える文字」には、新しく変える文字を書きます。
+例えば、「置き換えたい文字」に "ABC"、「置き換える文字」に "XYZ" を書くと、"A" は "X" に、"B" は "Y" に、"C" は "Z" に置き換わります。
 
 % 実行例の説明
-trコマンドの使い方を、段階的に見ていきましょう。
+それでは、trコマンドの使い方を少しずつ見ていきましょう。
 
-まず、3文字程度の置き換えから始めてみます。
-「HELLO, WORLD!」という文字列があるとします。
-この文字列の"H"、"E"、"L"を小文字の"h"、"e"、"l"に変えてみましょう。
+まず、3つの文字を置き換えるところから始めてみます。
+"HELLO, WORLD!" という文字列があるとします。
+この文字列の "H"、"L"、"W" を小文字の "h"、"l"、"w" に置き変えてみましょう。
 
 \begin{lstlisting}[caption=3文字の置き換え, label=tr_3_chars]
-<#green#pi@raspberrypi#>:<#blue#~ $#> echo "HELLO, WORLD!" | tr HEL hel
+<#green#pi@raspberrypi#>:<#blue#~ $#> echo "HELLO, WORLD!" | tr HLW hlw
+hEllO, wORlD!
 \end{lstlisting}
 
-すると、次のような結果が表示されます。
+文字列中の "H"、"L"、"W" が "h"、"l"、"w" に置き換わっていることが分かります。
 
-\begin{lstlisting}[caption=3文字を置き換えた結果, label=result_tr_3_chars]
-hellO, WORlD!
-\end{lstlisting}
-
-文字列中の"H"、"E"、"L"が"h"、"e"、"l"に置き換わっていることが分かります。
-
-次に、アルファベット全体を大文字から小文字に置き換えてみましょう。
+次に、アルファベットの大文字全てを小文字に置き換えてみましょう。
 
 \begin{lstlisting}[caption=アルファベット全体の置き換え, label=tr_all_chars]
 <#green#pi@raspberrypi#>:<#blue#~ $#> echo "HELLO, WORLD!" \
 | tr ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz
-\end{lstlisting}
-
-この例では、trコマンドにアルファベットの大文字全てと対応する小文字全てを指定しています。
-このコマンドを実行すると、次のような結果が表示されます。
-
-\begin{lstlisting}[caption=アルファベット全体を置き換えた結果, label=result_tr_all_chars]
 hello, world!
 \end{lstlisting}
 
-しかし、アルファベット全てを指定するのは面倒ですよね。
-そこで、trコマンドでは、「A-Z」や「a-z」のように範囲指定を使うことができます。
+この例では、trコマンドにアルファベットの大文字全てと対応する小文字全てを書きました。
+また、この例で使用している "\textbackslash" は、コマンドを複数行に分けて書くための記号です。
+コマンドの実行後、アルファベット全てが小文字に置き換わっていることが分かります。
+
+しかし、アルファベット全てを書くのは大変ですよね。
+そこで、trコマンドでは、連続するアルファベットや数字などに関して "A-Z" や "a-z"、"0-9" のように範囲を指定することで簡潔に書くことができます。
 
 \begin{lstlisting}[caption=範囲指定を使った置き換え, label=tr_range]
 <#green#pi@raspberrypi#>:<#blue#~ $#> echo "HELLO, WORLD!" | tr A-Z a-z
+hello, world!
 \end{lstlisting}
 
 このコマンドでも先程と同じ結果が表示されます。
+ちなみに、範囲指定を使うときは次のことに気をつけましょう。
+\begin{itemize}
+    \item "-" は置き換えられない。
+    \item 範囲は、"A" から "Z"、"a" から "z" のように、前の方の文字から後ろの方の文字へと順番に書きます。(例えば "Z-A" はエラーになります) 
+\end{itemize}
 
 このように、trコマンドを使うと、文字列の中の文字を簡単に置き換えることができます。
+また、trコマンドを使うことで文字の削除なども行うことができます。
+興味がある人は、文字の置き換え以外にもどのような使い方ができるか、調べてみましょう。
 
 % 問題
-それでは、次の問題に挑戦してみましょう。
-\begin{enumerate}
-    \addex{
-        次の文字列の大文字を小文字に変換してみましょう。\\
-        "I LOVE PROGRAMMING!"
-    }
-    \addex{
-        次の文字列の小文字を大文字に変換してみましょう。\\
-        "i love programming!"
-    }
-\end{enumerate}
+\begin{tcolorbox}[title=\useOmetoi]
+    \begin{enumerate}
+        \addex{次の文字列の大文字を小文字に変換してみましょう。\\ "I LOVE PROGRAMMING!"}
+        \addex{次の文字列の小文字を大文字に変換してみましょう。\\ "i love programming!"}
+    \end{enumerate}
+\end{tcolorbox}
 
 \subsection{単語を置き換える}
 tr は一文字ごとの置き換えを処理できました。
@@ -334,7 +372,7 @@ tr コマンドと異なり、置き換えは一文字ずつではなく文字�
 この文章の「Hello」を「Hi」に置き換えたいときは、次のようにコマンドを入力します。
 
 \begin{lstlisting}[caption=sed コマンドを使った例, label=sed_app]
-echo "Hello, World!" | sed 's/Hello/Hi/g'
+<#green#pi@raspberrypi#>:<#blue#~ $#> echo "Hello, World!" | sed 's/Hello/Hi/g'
 \end{lstlisting}
 
 すると、次のような結果が表示されます。
@@ -347,37 +385,52 @@ Hi, Wowld!
 
 \begin{enumerate}
     \addex{%
-次の文章の「love」を「like」に置き換えましょう。\\%
-"I like programming!"%
+次の文章の「like」を「love」に置き換えましょう。\\%
+``I like programming!"%
 }
     \addex{%
-/home/pi/03/rensyu/kokugo/syosetsu.txt には小説「ごんぎつね」が掲載されています。%
-「ごんぎつね」に出てくる「ごん」の名前を「エーミール」に変えて標準出力に出力しましょう。\\%
-ヒント: cat /home/pi/03/rensyu/kokugo/syosetsu.txt | sed ???%
+\textasciitilde /03/rensyu/kokugo/syosetsu.txt には小説「ごんぎつね」が掲載されています。%
+「ごんぎつね」に出てくる「ごんぎつね」の名前を「Fox」に変えて標準出力に出力しましょう。\\%
+ヒント: cat \textasciitilde /03/rensyu/kokugo/syosetsu.txt | sed ???%
 }
 \end{enumerate}
 
-ここまで単語を置き換える使い方を説明しました。
-実は sed というコマンド名は 「stream editor」の略で、まどろっこしい名前をしています
-(単語を置き換える機能だけなら、「replace」や「substutite」などの簡単な英単語をコマンド名にすればいいはずです)。
-その名前に相応しく、sed はほんとうは非常に多くの機能を持ちます。
+さて、リスト \ref{sed_usage} には変換する文字列や仕切り文字 / の他に、
+s や g といった文字がついているのに気付いたでしょうか。
+実は sed は文字列を置き換える以外にも様々な機能を持ちます。
+今回は sed に含まれる s と g というコマンドを用いて文字列を置き換えましたが、
+そのほかにも d や p など様々なコマンドが sed には収録されています。
 興味がある人は
 
 \begin{lstlisting}
-man sed
+<#green#pi@raspberrypi#>:<#blue#~ $#> man sed
 \end{lstlisting}
 
-と実行してオンラインマニュアルを閲覧したり、ブラウザで「sed 使い方」などで検索してみたりしましょう。
+と実行してオンラインマニュアルを閲覧したり、ブラウザで「sed 使い方」などと検索してみたりしましょう。
 
 \subsection{計算をする}
 
-コマンドの説明： echo \$(式)
-\$()で式を囲むと、計算ができる。echoコマンドは引数で与えられた文字列をそのまま標準出力に出力する。計算は整数で行われる。
+コマンドの説明： echo \$((式))
+\$(())で式を囲むと、計算ができます。echoコマンドは引数で与えられた文字列をそのまま標準出力に出力します。
+$138 + 395$のように電卓を使って計算したいものを目の前のコンピュータに計算してもらえたら便利ですね。
 
+\begin{lstlisting}[caption=echo コマンドを使った例, label=echo]
+echo $((138 + 395))
+\end{lstlisting}
 
-実行例の説明
+実行すると次のような出力が得られます。
 
-問題
+\begin{lstlisting}[caption=echo コマンドを実行した結果, label=echo_result]
+533
+\end{lstlisting}
+
+それでは、次の問題に取り組んでみましょう。
+
+\begin{enumerate}
+   \addquiz{$2024 - 727$}
+   \addquiz{$117 \times 13$}
+   \addquiz{$(84 + 67 + 49 + 96) \div 4$}
+\end{enumerate}
 
 \subsection{コマンドに別名を付ける}
 
