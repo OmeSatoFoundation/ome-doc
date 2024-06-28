@@ -263,12 +263,120 @@ Lオプションは、xarg引数コマンドに一度に\ruby{展開}{てん|か
     echo & 文字をそのまま出力する\\ \hline
 \end{tabular}
 
+\subsubsection{duコマンド}
+duコマンドは、ディレクトリやファイルの大きさを報告するコマンドです。
+
+まず、duコマンドの使い方は、次の通りです。
+
+\begin{lstlisting}[caption=duコマンドの使い方, label=du_usage]
+du 大きさを調べたいディレクトリ、ファイルのパス
+\end{lstlisting}
+
+このコマンドを実行することで、パスに指定したディレクトリやファイルの大きさを表示します。
+
+次に、具体的な例を見てみましょう。
+
+\begin{lstlisting}[caption=duコマンドの実行例, label=du_example]
+<#green#pi@raspberrypi#>:<#blue#~ $#> du ~/03
+124	/home/pi/03/rensyu/rika
+20	/home/pi/03/rensyu/kokugo
+68	/home/pi/03/rensyu/sansu
+256	/home/pi/03/rensyu/syakai
+500	/home/pi/03/rensyu
+980	/home/pi/03
+\end{lstlisting}
+
+この例では、\textasciitilde/03の中のディレクトリの中のディレクトリの大きさを報告しています。
+左側の数字が各ディレクトリの大きさを表しています。
+ただし、このままでは各数字がどれくらいの大きさを表しているのかがわかりにくいですよね。
+そこで、-hオプションを使って、数字に単位を付与することができます。
+
+\begin{lstlisting}[caption=du -hの実行例, label=du_example]
+<#green#pi@raspberrypi#>:<#blue#~ $#> du -h ~/03
+124K	/home/pi/03/rensyu/rika
+20K	/home/pi/03/rensyu/kokugo
+68K	/home/pi/03/rensyu/sansu
+256K	/home/pi/03/rensyu/syakai
+500K	/home/pi/03/rensyu
+980K	/home/pi/03
+\end{lstlisting}
+
+このように、-hオプションを使うことで、数字に単位を付与することができます。
+この例では、全てのディレクトリの大きさがキロバイトで表示されています。
+
+また、この例では、ディレクトリの大きさのみを表示していますが、-aオプションを使うことで、ディレクトリ内のファイルの大きさも表示することができます。
+
+\begin{lstlisting}[caption=du -haの実行例, label=du_example]
+<#green#pi@raspberrypi#>:<#blue#~ $#> du -ha ~/03
+24K     /home/pi/03/rensyu/rika/rika.png
+96K     /home/pi/03/rensyu/rika/mokei.png
+124K	/home/pi/03/rensyu/rika
+4.0K	/home/pi/03/rensyu/kanji.txt
+16K     /home/pi/03/rensyu/kokugo/syousetu.txt
+20K     /home/pi/03/rensyu/kokugo
+24K     /home/pi/03/rensyu/oda.jpg
+60K     /home/pi/03/rensyu/sansu/nihon.png
+4.0K	/home/pi/03/rensyu/sansu/sansu.txt
+68K     /home/pi/03/rensyu/sansu
+252K	/home/pi/03/rensyu/syakai/sekai.png
+256K	/home/pi/03/rensyu/syakai
+500K	/home/pi/03/rensyu
+4.0K	/home/pi/03/Ltika.hsp
+4.0K	/home/pi/03/led.hsp
+4.0K	/home/pi/03/button_led2.hsp
+4.0K	/home/pi/03/button.hsp
+4.0K	/home/pi/03/button_led.hsp
+4.0K	/home/pi/03/README.md
+4.0K	/home/pi/03/button_led3.hsp
+444K	/home/pi/03/rensyu.tar.gz
+4.0K	/home/pi/03/sensors.hsp
+980K	/home/pi/03
+\end{lstlisting}
+
+このように、-aオプションを使うことで、ディレクトリ内のファイルの大きさも表示することができます。
+この実行例ではわかりやすさのためにhオプションも同時に使用しています。
+
+最後に、-sオプションを用いてディレクトリの大きさの合計だけを表示する方法を紹介します。
+
+\begin{lstlisting}[caption=du -hsの実行例, label=du_example]
+<#green#pi@raspberrypi#>:<#blue#~ $#> du -hs ~/03
+980K	/home/pi/03
+\end{lstlisting}
+
+このように、-sオプションを使うことで、ディレクトリの大きさの合計だけを表示することができます。
+
 \begin{tcolorbox}[title=\useOmetoi]
     \begin{enumerate}
-        \addex{03ディレクトリの中身を出力しましょう。}
-        \addex{03ディレクトリの中のファイルの大きさを確認してみましょう。}
-        \addex{03/rensyu/kokugo/syosetsu.txtの行数を数えてみましょう。}
-        \addex{"I love programming!"という文字列を出力してみましょう。}
+        \addex{duコマンドを使って、\textasciitilde/02ディレクトリの大きさを表示してみましょう。}
+        \addex{duコマンドを使って、\textasciitilde/02ディレクトリの中のファイルの大きさを表示してみましょう。}
+        \addex{duコマンドを使って、\textasciitilde/02ディレクトリの中のファイルの大きさの合計だけを表示してみましょう。}
+    \end{enumerate}
+\end{tcolorbox}
+
+\subsubsection{wcコマンド}
+wcコマンドは、入力の文字数・単語数・行数を出力するコマンドです。
+
+まず、wcコマンドの使い方は、次の通りです。
+
+\begin{lstlisting}[caption=wcコマンドの使い方, label=wc_usage]
+wc 対象のファイルのパス
+\end{lstlisting}
+
+このコマンドを実行することで、パスに指定したファイルの文字数・単語数・行数を表示します。
+    
+次に、具体的な例を見てみましょう。
+
+\begin{lstlisting}[caption=wcコマンドの実行例, label=wc_example]
+<#green#pi@raspberrypi#>:<#blue#~ $#> wc ~/lsfile
+13 13 93 /home/pi/lsfile
+\end{lstlisting}
+
+この例では、\textasciitilde/lsfileの中身の文字数・単語数・行数を表示しています。
+左から順に、行数、単語数、文字数、ファイルのパスを表しています。
+
+\begin{tcolorbox}[title=\useOmetoi]
+    \begin{enumerate}
+        \addex{wcコマンドを使って、\textasciitilde/03/rensyu/kokugo/syosetsu.txtの中身の文字数・単語数・行数を表示してみましょう。}
     \end{enumerate}
 \end{tcolorbox}
 
@@ -299,8 +407,14 @@ I love programming! # 出力
 catコマンドを実行後、キーボードで文字を入力し、エンターキーを押すと、入力した文字列がそのまま出力されます。
 終了したい場合は、Ctrl+Dを押します。
 
-また、catはファイルの中身を表示するためにも使われます。\\
-\colorbox[gray]{0.8}{cat \textvisiblespace 表示したいファイルのパス} を入力することで、ファイルの中身を表示することができます。
+また、catはファイルの中身を表示するためにも使われます。
+
+\begin{lstlisting}[caption=catコマンドでファイルの中身を表示する例, label=cat_file_example]
+cat 表示したいファイルのパス
+\end{lstlisting}
+
+このように、catの後にファイルのパスを指定することで、ファイルの中身を表示することができます。
+では、具体的な例を見てみましょう。
 
 \begin{lstlisting}[caption=catコマンドでファイルの中身を表示する例, label=cat_file_example]
 <#green#pi@raspberrypi#>:<#blue#~ $#> cat ~/03/rensyu/sansu/sansu.txt
@@ -316,8 +430,17 @@ catコマンドを実行後、キーボードで文字を入力し、エンタ�
 \end{tcolorbox}
 
 \subsubsection{tacコマンド}
-tacコマンドは、行を逆順に出力するコマンドです。\\
-\colorbox[gray]{0.8}{tac \textvisiblespace 表示したいファイルのパス} を入力することで、ファイルの中身を逆順に表示することができます。
+tacコマンドは、行を逆順に出力するコマンドです。
+
+まず、tacコマンドの使い方は、次の通りです。
+
+\begin{lstlisting}[caption=tacコマンドの使い方, label=tac_usage]
+tac 表示したいファイルのパス
+\end{lstlisting}
+
+このコマンドを実行することで、パスに指定したファイルの中身を逆順にして表示します。
+
+次に、具体的な例を見てみましょう
 
 \begin{lstlisting}[caption=tacコマンドの実行例, label=tac_example]
 <#green#pi@raspberrypi#>:<#blue#~ $#> tac ~/lsfile
@@ -345,8 +468,17 @@ Bookshelf
 \end{tcolorbox}
 
 \subsubsection{shufコマンド}
-shufコマンドは、行をランダムに入れ替えて出力するコマンドです。\\
-\colorbox[gray]{0.8}{shuf \textvisiblespace 表示したいファイルのパス} を入力することで、ファイルの中身の行をランダムに入れ替えて表示することができます。
+shufコマンドは、行をランダムに入れ替えて出力するコマンドです。
+
+まず、shufコマンドの使い方は、次の通りです。
+
+\begin{lstlisting}[caption=shufコマンドの使い方, label=shuf_usage]
+shuf 表示したいファイルのパス
+\end{lstlisting}
+
+このコマンドを実行することで、パスに指定したファイルの中身をランダムに入れ替えて表示します。
+
+次に、具体的な例を見てみましょう。
 
 \begin{lstlisting}[caption=shufコマンドの実行例, label=shuf_example]
 <#green#pi@raspberrypi#>:<#blue#~ $#> shuf ~/lsfile
@@ -375,8 +507,19 @@ Downloads
 \end{tcolorbox}
 
 \subsubsection{headコマンド}
-headコマンドは、先頭のいくつかの行を表示するコマンドです。\\
-\colorbox[gray]{0.8}{head \textvisiblespace 表示したいファイルのパス \textvisiblespace -n \textvisiblespace 行数} を入力することで、ファイルの中身の先頭のいくつかの行を表示することができます。
+headコマンドは、先頭のいくつかの行を表示するコマンドです。
+
+まず、headコマンドの使い方は、次の通りです。
+
+\begin{lstlisting}[caption=headコマンドの使い方, label=head_usage]
+head 表示したいファイルのパス -n 行数
+\end{lstlisting}
+
+このコマンドを実行することで、パスに指定したファイルの中身の内、先頭の数行を表示します。
+表示する行数は、nオプションの後に指定した行数に依存します。
+
+次に、具体的な例を見てみましょう。
+
 \begin{lstlisting}[caption=headコマンドの実行例, label=shuf_example]
 <#green#pi@raspberrypi#>:<#blue#~ $#> head ~/lsfile -n 2
 01
@@ -392,8 +535,19 @@ headコマンドは、先頭のいくつかの行を表示するコマンドで�
 \end{tcolorbox}
 
 \subsubsection{tailコマンド}
-tailコマンドは、末尾のいくつかの行を表示するコマンドです。\\
-\colorbox[gray]{0.8}{tail \textvisiblespace 表示したいファイルのパス \textvisiblespace -n \textvisiblespace 行数} を入力することで、ファイルの中身の末尾のいくつかの行を表示することができます。
+tailコマンドは、末尾のいくつかの行を表示するコマンドです。
+
+まず、tailコマンドの使い方は、次の通りです。
+
+\begin{lstlisting}[caption=tailコマンドの使い方, label=tail_usage]
+tail 表示したいファイルのパス -n 行数
+\end{lstlisting}
+
+このコマンドを実行することで、パスに指定したファイルの中身の内、末尾の数行を表示します。
+表示する行数は、nオプションの後に指定した行数に依存します。
+
+次に、具体的な例を見てみましょう。
+
 \begin{lstlisting}[caption=tailコマンドの実行例, label=shuf_example]
 <#green#pi@raspberrypi#>:<#blue#~ $#> tail ~/lsfile -n 2
 Videos
@@ -409,8 +563,17 @@ lsfile
 \end{tcolorbox}
 
 \subsubsection{sortコマンド}
-sortコマンドは行を順番にならべかえるコマンドです。\\
-\colorbox[gray]{0.8}{sort \textvisiblespace 表示したいファイルのパス} を入力することで、ファイルの中身の行を順番に並べ替えて表示することができます。
+sortコマンドは行を順番にならべかえるコマンドです。
+
+まず、sortコマンドの使い方は、次の通りです。
+
+\begin{lstlisting}[caption=sortコマンドの使い方, label=sort_usage]
+sort 表示したいファイルのパス
+\end{lstlisting}
+
+パスに指定したファイルの中身を行ごとに並べ替えて表示します。
+
+次に、具体的な例を見てみましょう。
 
 \begin{lstlisting}[caption=sortコマンドの実行例, label=sort_example]
 <#green#pi@raspberrypi#>:<#blue#~ $#> sort ~/lsfile
@@ -431,11 +594,62 @@ Videos
 
 この例では、lsfileの中身を順番に並べ替えて表示してみました。
 数字とアルファベットが混在している場合、数字が先に表示され、その後にアルファベットが表示されます。
-また、アルファベットの大文字と小文字同士を区別せずに並べ替えをします。
+
+また、パイプラインを使って他のコマンドと組み合わせることもできます。
+例えば、先程の例についてlsコマンドを使ってファイルの一覧を表示してからsortコマンドを使って並べ替えるというもう一つの方法があります。
+
+\begin{lstlisting}[caption=パイプラインを用いたsortコマンドの実行例, label=sort_example]
+<#green#pi@raspberrypi#>:<#blue#~ $#> ls ~/03 | sort
+01
+02
+03
+Bookshelf
+Desktop
+Documents
+Downloads
+lsfile
+Music
+Pictures
+Public
+Templates
+Videos
+\end{lstlisting}
+
+この例では、lsコマンドで\textasciitilde/03の中身を表示し、その結果をsortコマンドに渡して並べ替えています。
+
+\begin{tcolorbox}[title=\useOmetoi]
+    \begin{enumerate}
+        \addex{\textasciitilde/02ディレクトリの中身をsortコマンドを使って並べ替えて表示してみましょう。}
+    \end{enumerate}
+\end{tcolorbox}
 
 \subsubsection{grepコマンド}
-grepコマンドは、検索パターンに一致する行を出力するコマンドです。\\
-\colorbox[gray]{0.8}{grep \textvisiblespace 検索パターン \textvisiblespace 表示したいファイルのパス} を入力することで、ファイルの中身から検索パターンに一致する行を表示することができます。
+grepコマンドは、検索パターンに一致する行を出力するコマンドです。
+
+まず、grepコマンドの使い方は、次の通りです。
+
+\begin{lstlisting}[caption=grepコマンドの使い方, label=grep_usage]
+grep 検索パターン 表示したいファイルのパス
+\end{lstlisting}
+
+パスに指定したファイルから、検索パターンに一致する行を表示します。
+
+次に、具体的な例を見てみましょう。
+
+\begin{lstlisting}[caption=grepコマンドの実行例, label=grep_example]
+<#green#pi@raspberrypi#>:<#blue#~ $#> grep 03 ~/lsfile
+<#red#03#>
+\end{lstlisting}
+
+この例では、lsfileの中身から"03"という文字列に一致する行を表示してみました。
+このように、一致する行がある場合はその行のみが表示されます。
+また、一致する文字列は赤字で表示されます。
+
+\begin{tcolorbox}[title=\useOmetoi]
+    \begin{enumerate}
+        \addex{\textasciitilde/03/rensyu/kokugo/syosetsu.txtの中身から"ごんぎつね"という文字列に一致する行を表示してみましょう。}
+    \end{enumerate}
+\end{tcolorbox}
 
 \subsection{置き換えをするコマンド}
 \begin{tabular}{ll}
