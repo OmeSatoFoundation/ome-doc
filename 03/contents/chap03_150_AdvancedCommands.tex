@@ -392,43 +392,6 @@ wc 対象のファイルのパス
     grep & 検索パターンに一致する行を出力する\\ \hline
 \end{tabular}
 
-\subsubsection{catコマンド}
-catは、入力を何もせずに出力するコマンドです。
-
-\begin{lstlisting}[caption=catコマンドの実行例, label=cat_example]
-<#green#pi@raspberrypi#>:<#blue#~ $#> cat 
-Hello World!        # キーボードからの入力
-Hello World!        # 出力
-I love programming! # キーボードからの入力
-I love programming! # 出力
-\end{lstlisting}
-
-この例では、catコマンドを使って、キーボードから入力した文字列をそのまま出力しています。
-catコマンドを実行後、キーボードで文字を入力し、エンターキーを押すと、入力した文字列がそのまま出力されます。
-終了したい場合は、Ctrl+Dを押します。
-
-また、catはファイルの中身を表示するためにも使われます。
-
-\begin{lstlisting}[caption=catコマンドでファイルの中身を表示する例, label=cat_file_example]
-cat 表示したいファイルのパス
-\end{lstlisting}
-
-このように、catの後にファイルのパスを指定することで、ファイルの中身を表示することができます。
-では、具体的な例を見てみましょう。
-
-\begin{lstlisting}[caption=catコマンドでファイルの中身を表示する例, label=cat_file_example]
-<#green#pi@raspberrypi#>:<#blue#~ $#> cat ~/03/rensyu/sansu/sansu.txt
-1 + 1 = 2<#green#pi@raspberrypi#>:<#blue#~ $#> 
-\end{lstlisting}
-
-この例では、\textasciitilde/03/rensyu/sansu/sansu.txtの中身を表示しています。
-
-\begin{tcolorbox}[title=\useOmetoi]
-    \begin{enumerate}
-        \addex{\textasciitilde/03/rensyu/kokugo/syosetsu.txtの中身を表示してみましょう。}
-    \end{enumerate}
-\end{tcolorbox}
-
 \subsubsection{tacコマンド}
 tacコマンドは、行を逆順に出力するコマンドです。
 
