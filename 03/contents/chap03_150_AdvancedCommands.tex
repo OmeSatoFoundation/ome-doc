@@ -263,6 +263,14 @@ Lオプションは、xarg引数コマンドに一度に\ruby{展開}{てん|か
     echo & 文字をそのまま出力する\\ \hline
 \end{tabular}
 
+\begin{tcolorbox}[title=\useOmetoi]
+    \begin{enumerate}
+        \addex{03ディレクトリの中身を出力しましょう。}
+        \addex{03ディレクトリの中のファイルの大きさを確認してみましょう。}
+        \addex{03/rensyu/kokugo/syosetsu.txtの行数を数えてみましょう。}
+        \addex{"I love programming!"という文字列を出力してみましょう。}
+    \end{enumerate}
+\end{tcolorbox}
 
 \subsection{フィルタコマンド}
 \begin{tabular}{ll}
@@ -276,6 +284,158 @@ Lオプションは、xarg引数コマンドに一度に\ruby{展開}{てん|か
     grep & 検索パターンに一致する行を出力する\\ \hline
 \end{tabular}
 
+\subsubsection{catコマンド}
+catは、入力を何もせずに出力するコマンドです。
+
+\begin{lstlisting}[caption=catコマンドの実行例, label=cat_example]
+<#green#pi@raspberrypi#>:<#blue#~ $#> cat 
+Hello World!        # キーボードからの入力
+Hello World!        # 出力
+I love programming! # キーボードからの入力
+I love programming! # 出力
+\end{lstlisting}
+
+この例では、catコマンドを使って、キーボードから入力した文字列をそのまま出力しています。
+catコマンドを実行後、キーボードで文字を入力し、エンターキーを押すと、入力した文字列がそのまま出力されます。
+終了したい場合は、Ctrl+Dを押します。
+
+また、catはファイルの中身を表示するためにも使われます。\\
+\colorbox[gray]{0.8}{cat \textvisiblespace 表示したいファイルのパス} を入力することで、ファイルの中身を表示することができます。
+
+\begin{lstlisting}[caption=catコマンドでファイルの中身を表示する例, label=cat_file_example]
+<#green#pi@raspberrypi#>:<#blue#~ $#> cat ~/03/rensyu/sansu/sansu.txt
+1 + 1 = 2<#green#pi@raspberrypi#>:<#blue#~ $#> 
+\end{lstlisting}
+
+この例では、\textasciitilde/03/rensyu/sansu/sansu.txtの中身を表示しています。
+
+\begin{tcolorbox}[title=\useOmetoi]
+    \begin{enumerate}
+        \addex{\textasciitilde/03/rensyu/kokugo/syosetsu.txtの中身を表示してみましょう。}
+    \end{enumerate}
+\end{tcolorbox}
+
+\subsubsection{tacコマンド}
+tacコマンドは、行を逆順に出力するコマンドです。\\
+\colorbox[gray]{0.8}{tac \textvisiblespace 表示したいファイルのパス} を入力することで、ファイルの中身を逆順に表示することができます。
+
+\begin{lstlisting}[caption=tacコマンドの実行例, label=tac_example]
+<#green#pi@raspberrypi#>:<#blue#~ $#> tac ~/lsfile
+lsfile
+Videos
+Templates
+Public
+Pictures
+Music
+Downloads
+Documents
+Desktop
+Bookshelf
+03
+02
+01 
+\end{lstlisting}
+
+この例では、リスト\ref{redirectLs}で使用したlsfileの中身を逆順に表示してみました。
+
+\begin{tcolorbox}[title=\useOmetoi]
+    \begin{enumerate}
+        \addex{\textasciitilde/03/rensyu/kokugo/syosetsu.txtの中身を逆順に表示してみましょう。}
+    \end{enumerate}
+\end{tcolorbox}
+
+\subsubsection{shufコマンド}
+shufコマンドは、行をランダムに入れ替えて出力するコマンドです。\\
+\colorbox[gray]{0.8}{shuf \textvisiblespace 表示したいファイルのパス} を入力することで、ファイルの中身の行をランダムに入れ替えて表示することができます。
+
+\begin{lstlisting}[caption=shufコマンドの実行例, label=shuf_example]
+<#green#pi@raspberrypi#>:<#blue#~ $#> shuf ~/lsfile
+03
+Desktop
+Documents
+02
+Music
+01
+Videos
+Pictures
+Bookshelf
+Templates
+Public
+lsfile
+Downloads
+\end{lstlisting}
+
+この例では、リスト\ref{redirectLs}で使用したlsfileの中身をランダムに入れ替えて表示してみました。
+実行するたびにランダムに入れ替わるので、この例とは異なる結果が表示されるかもしれません。
+
+\begin{tcolorbox}[title=\useOmetoi]
+    \begin{enumerate}
+        \addex{\textasciitilde/03/rensyu/kokugo/syosetsu.txtの行をランダムに入れ替えて表示してみましょう。}
+    \end{enumerate}
+\end{tcolorbox}
+
+\subsubsection{headコマンド}
+headコマンドは、先頭のいくつかの行を表示するコマンドです。\\
+\colorbox[gray]{0.8}{head \textvisiblespace 表示したいファイルのパス \textvisiblespace -n \textvisiblespace 行数} を入力することで、ファイルの中身の先頭のいくつかの行を表示することができます。
+\begin{lstlisting}[caption=headコマンドの実行例, label=shuf_example]
+<#green#pi@raspberrypi#>:<#blue#~ $#> head ~/lsfile -n 2
+01
+02
+\end{lstlisting}
+
+この例では、lsfileの中身の先頭の2行を表示してみました。
+
+\begin{tcolorbox}[title=\useOmetoi]
+    \begin{enumerate}
+        \addex{\textasciitilde/03/rensyu/kokugo/syosetsu.txtの先頭の5行を表示してみましょう。}
+    \end{enumerate}
+\end{tcolorbox}
+
+\subsubsection{tailコマンド}
+tailコマンドは、末尾のいくつかの行を表示するコマンドです。\\
+\colorbox[gray]{0.8}{tail \textvisiblespace 表示したいファイルのパス \textvisiblespace -n \textvisiblespace 行数} を入力することで、ファイルの中身の末尾のいくつかの行を表示することができます。
+\begin{lstlisting}[caption=tailコマンドの実行例, label=shuf_example]
+<#green#pi@raspberrypi#>:<#blue#~ $#> tail ~/lsfile -n 2
+Videos
+lsfile
+\end{lstlisting}
+
+この例では、lsfileの中身の末尾の2行を表示してみました。
+
+\begin{tcolorbox}[title=\useOmetoi]
+    \begin{enumerate}
+        \addex{\textasciitilde/03/rensyu/kokugo/syosetsu.txtの末尾の5行を表示してみましょう。}
+    \end{enumerate}
+\end{tcolorbox}
+
+\subsubsection{sortコマンド}
+sortコマンドは行を順番にならべかえるコマンドです。\\
+\colorbox[gray]{0.8}{sort \textvisiblespace 表示したいファイルのパス} を入力することで、ファイルの中身の行を順番に並べ替えて表示することができます。
+
+\begin{lstlisting}[caption=sortコマンドの実行例, label=sort_example]
+<#green#pi@raspberrypi#>:<#blue#~ $#> sort ~/lsfile
+01
+02
+03
+Bookshelf
+Desktop
+Documents
+Downloads
+lsfile
+Music
+Pictures
+Public
+Templates
+Videos
+\end{lstlisting}
+
+この例では、lsfileの中身を順番に並べ替えて表示してみました。
+数字とアルファベットが混在している場合、数字が先に表示され、その後にアルファベットが表示されます。
+また、アルファベットの大文字と小文字同士を区別せずに並べ替えをします。
+
+\subsubsection{grepコマンド}
+grepコマンドは、検索パターンに一致する行を出力するコマンドです。\\
+\colorbox[gray]{0.8}{grep \textvisiblespace 検索パターン \textvisiblespace 表示したいファイルのパス} を入力することで、ファイルの中身から検索パターンに一致する行を表示することができます。
 
 \subsection{置き換えをするコマンド}
 \begin{tabular}{ll}
@@ -283,7 +443,6 @@ Lオプションは、xarg引数コマンドに一度に\ruby{展開}{てん|か
     tr & 入力された文字を指定する方法で置き換えて出力する \\
     sed & 入力から指定するパターンを見つけ、それを置き換えて出力する \\ \hline
 \end{tabular}
-
 
 \section{その他の便利なコマンド}
 
