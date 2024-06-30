@@ -7,9 +7,11 @@
 最後に、コマンドをいくつかつなげて、\ruby{複雑}{ふく|ざつ}な\ruby{処理}{しょ|り}をやってみましょう。
 
 \subsection{コマンドの\ruby{入出力}{にゅう|しゅつ|りょく}}
-　コマンドを\ruby{実行}{じっ|こう}すると、{\bf \ruby{標準入力}{ひょう|じゅん|にゅう|りょく}}、{\bf \ruby{標準出力}{ひょう|じゅん|しゅつ|りょく}}、{\bf \ruby{標準}{ひょう|じゅん}エラー出力}の3つのデータの\ruby{通}{とお}り道が\ruby{準備}{じゅん|び}されます。このデータの\ruby{通}{とお}り道をチャネルといいます。
+コマンドを\ruby{実行}{じっ|こう}すると、{\bf \ruby{標準入力}{ひょう|じゅん|にゅう|りょく}}、{\bf
+\ruby{標準出力}{ひょう|じゅん|しゅつ|りょく}}、{\bf
+\ruby{標準}{ひょう|じゅん}エラー出力}の3つのデータの\ruby{通}{とお}り道が\ruby{準備}{じゅん|び}されます。このデータの\ruby{通}{とお}り道をチャネルといいます。
 
-　チャネルに何も指定せずにコマンドを\ruby{実行}{じっ|こう}すると、\ruby{標準入力}{ひょう|じゅん|にゅう|りょく}はキーボードに\ruby{設定}{せっ|てい}されます。\ruby{標準出力}{ひょう|じゅん|しゅつ|りょく}と\ruby{標準}{ひょう|じゅん}エラー出力はディスプレイに\ruby{設定}{せっ|てい}されます。
+チャネルに何も指定せずにコマンドを\ruby{実行}{じっ|こう}すると、\ruby{標準入力}{ひょう|じゅん|にゅう|りょく}はキーボードに\ruby{設定}{せっ|てい}されます。\ruby{標準出力}{ひょう|じゅん|しゅつ|りょく}と\ruby{標準}{ひょう|じゅん}エラー出力はディスプレイに\ruby{設定}{せっ|てい}されます。
 
 \begin{figure}
     \centering
@@ -18,7 +20,9 @@
     \label{ch03:stdioerr}
 \end{figure}
 
-コマンドによっては、\ruby{標準}{ひょう|じゅん}の入力をコマンドの引数として与えることができるものがあります。例えば cat などのコマンドは cat ファイル名 で\ruby{指定}{し|てい}したファイルを\ruby{標準出力}{ひょう|じゅん|しゅつ|りょく}に出力します。cat にファイル名を指定しないと、\ruby{標準入力}{ひょう|じゅん|にゅう|りょく}、つまりからデータを受け取ります。
+コマンドによっては、\ruby{標準}{ひょう|じゅん}の入力をコマンドの引数として与えることができるものがあります。例えば cat などのコマンドは cat
+ファイル名 で\ruby{指定}{し|てい}したファイルを\ruby{標準出力}{ひょう|じゅん|しゅつ|りょく}に出力します。cat
+にファイル名を指定しないと、\ruby{標準入力}{ひょう|じゅん|にゅう|りょく}、つまりからデータを受け取ります。
 
 \begin{lstlisting}[caption=catの標準入力・標準出力, label=stdioCat]
 <#green#pi@raspberrypi#>:<#blue#~ $#> cat 
@@ -28,7 +32,6 @@ sansu         <- 標準出力（ディスプレイ）への出力
 <#green#pi@raspberrypi#>:<#blue#~ $#>
 \end{lstlisting}
 EOFとはEnd Of File(エンドオブファイル)の\ruby{略称}{りゃく|しょう}でどこがファイルの最後なのかを教えるために使います。
-
 
 \subsection{リダイレクト}
 \ruby{標準入力}{ひょう|じゅん|にゅう|りょく}、\ruby{標準出力}{ひょう|じゅん|しゅつ|りょく}、\ruby{標準}{ひょう|じゅん}エラー出力の出力先は、ファイルに\ruby{変更}{へん|こう}することができます。
@@ -40,7 +43,6 @@ EOFとはEnd Of File(エンドオブファイル)の\ruby{略称}{りゃく|し�
     \caption{リダイレクトを表した図}
     \label{ch03:redirect}
 \end{figure}
-
 
 \begin{lstlisting}[caption=lsの出力をリダイレクトする, label=redirectLs]
 <#green#pi@raspberrypi#>:<#blue#~ $#> ls 
@@ -66,7 +68,6 @@ lsfile
 「>」の後にファイル名を指定することで、
 ファイルを作成し、そのファイルにコマンドの結果を保存します。
 いつも画面で見ている結果を、リダイレクトでファイルに保存するように\ruby{変更}{へん|こう}しました。
-
 
 \ruby{標準入力}{ひょう|じゅん|にゅう|りょく}の入力元を、ファイルに\ruby{変更}{へん|こう}することができます。
 \begin{lstlisting}[caption=catコマンドにリダイレクトでファイルを入力する, label=redirectCat]
@@ -100,7 +101,6 @@ catコマンドでファイル名を\ruby{指定}{し|てい}するのではな�
     \caption{パイプを表した図}
     \label{ch03:pipe}
 \end{figure}
-
 
 \begin{lstlisting}[caption=lsコマンドの出力をパイプでlessコマンドに渡す, label=redirectCat]
 <#green#pi@raspberrypi#>:<#blue#~ $#> ls | less
@@ -167,8 +167,8 @@ lsコマンドで取り出したファイル名をxargsコマンドに渡して�
 \subsection{xargsのオプション}
 xargsのオプションの紹介の前にこの章で使うコマンドの説明をします。
 \begin{description}
-\item[\texttt{seq}\textvisiblespace 数字1\textvisiblespace 数字2]\mbox{}\\
-数字1から数字2までの数字を出力します。
+    \item[\texttt{seq}\textvisiblespace 数字1\textvisiblespace 数字2]\mbox{}\\
+    数字1から数字2までの数字を出力します。
 \end{description}
 
 \begin{lstlisting}[caption=seqコマンド]
@@ -183,8 +183,8 @@ xargsのオプションの紹介の前にこの章で使うコマンドの説明
 seqコマンドを使うことで、数字を\ruby{順番}{じゅん|ばん}に出力することができました。
 
 \begin{description}
-\item[\texttt{echo}\textvisiblespace 文字]\mbox{}\\
-文字をそのまま出力します。
+    \item[\texttt{echo}\textvisiblespace 文字]\mbox{}\\
+    文字をそのまま出力します。
 \end{description}
 
 \begin{lstlisting}[caption=seqコマンド]
@@ -197,9 +197,10 @@ echoコマンドを使うことで好きな文字を出力できました。
 xargsにもオプションがいくつかあります。そのうち、よくつかわれるオプション3つを\ruby{紹介}{しょう|かい}します。
 
 \begin{description}
-\item[\texttt{xargs}\textvisiblespace \texttt{-p}\textvisiblespace コマンド]\mbox{}\\
-どのようなコマンドが実行されるかを表示してくれます。
-<Enter>を押すと何もせずに終了。<y>を押すとコマンドを実行します。
+    \item[\texttt{xargs}\textvisiblespace \texttt{-p}\textvisiblespace
+                コマンド]\mbox{}\\
+    どのようなコマンドが実行されるかを表示してくれます。
+    <Enter>を押すと何もせずに終了。<y>を押すとコマンドを実行します。
 \end{description}
 
 \begin{lstlisting}[caption=xargsコマンドのオプションp]
@@ -212,8 +213,9 @@ lsfile syousetu.txt
 \end{lstlisting}
 
 \begin{description}
-\item[\texttt{xargs}\textvisiblespace \texttt{-i}\textvisiblespace コマンド\textvisiblespace \{\}]\mbox{}\\
-\ruby{標準入力}{ひょう|じゅん|にゅう|りょく}を受け取って\{\}の中に1つづつ引数に当てはめます。
+    \item[\texttt{xargs}\textvisiblespace \texttt{-i}\textvisiblespace
+                コマンド\textvisiblespace \{\}]\mbox{}\\
+    \ruby{標準入力}{ひょう|じゅん|にゅう|りょく}を受け取って\{\}の中に1つづつ引数に当てはめます。
 \end{description}
 
 \begin{lstlisting}[caption=xargsコマンドのオプションi]
@@ -224,10 +226,12 @@ syousetu.txt
 \end{lstlisting}
 
 \begin{description}
-\item[\texttt{xargs}\textvisiblespace \texttt{-L}\textvisiblespace 数字\textvisiblespace コマンド]\mbox{}\\
-Lオプションは、xarg引数コマンドに一度に\ruby{展開}{てん|かい}されるデータの最大数を指定します。
-\ruby{標準出力}{ひょう|じゅん|しゅつ|りょく}から渡されたデータ数が、-Lで指定された数より大きい場合、全てのデータが\ruby{展開}{てん|かい}し終わるまで xargs引数コマンドが繰り返し実行されます。
--iオプションと-Lオプションを一緒に使うことはできません。
+    \item[\texttt{xargs}\textvisiblespace \texttt{-L}\textvisiblespace
+                数字\textvisiblespace コマンド]\mbox{}\\
+    Lオプションは、xarg引数コマンドに一度に\ruby{展開}{てん|かい}されるデータの最大数を指定します。
+    \ruby{標準出力}{ひょう|じゅん|しゅつ|りょく}から渡されたデータ数が、-Lで指定された数より大きい場合、全てのデータが\ruby{展開}{てん|かい}し終わるまで
+    xargs引数コマンドが繰り返し実行されます。
+    -iオプションと-Lオプションを一緒に使うことはできません。
 \end{description}
 
 \begin{lstlisting}[caption=xargsコマンドのオプションL]
@@ -244,46 +248,44 @@ Lオプションは、xarg引数コマンドに一度に\ruby{展開}{てん|か
 \end{lstlisting}
 
 \begin{tcolorbox}[title=\useOmetoi]
-\begin{enumerate}
-    \addex{catと入力して好きな文字を打ち込みましょう。}
-    \addex{echo\textvisiblespace 好きな文字\textvisiblespace >\textvisiblespace rensyufile と入力して好きな文字をrensyufileに保存しよう。}
-    \addex{リダイレクトの記号「<」を使ってrensyufileの中身を表示してみよう。}
-    \addex{xargsを使って、rensyufileとlsfileを合体して表示してみよう。}
-\end{enumerate}
+    \begin{enumerate}
+        \addex{catと入力して好きな文字を打ち込みましょう。}
+        \addex{echo\textvisiblespace 好きな文字\textvisiblespace >\textvisiblespace
+            rensyufile と入力して好きな文字をrensyufileに保存しよう。}
+        \addex{リダイレクトの記号「<」を使ってrensyufileの中身を表示してみよう。}
+        \addex{xargsを使って、rensyufileとlsfileを合体して表示してみよう。}
+    \end{enumerate}
 \end{tcolorbox}
 
 \section{パイプラインと文字列処理}
 
 \subsection{出力をつくるコマンド}
 \begin{tabular}{ll}
-    コマンド & 動作 \\ \hline
-    ls & ファイルやディレクトリを出力する \\
-    du & ディレクトリの中のファイルの大きさを報告する\\
-    wc & 入力の文字数・単語数・行数を出力する\\
-    echo & 文字をそのまま出力する\\ \hline
+    コマンド & 動作                                         \\ \hline
+    ls       & ファイルやディレクトリを出力する             \\
+    du       & ディレクトリの中のファイルの大きさを報告する \\
+    wc       & 入力の文字数・単語数・行数を出力する         \\
+    echo     & 文字をそのまま出力する                       \\ \hline
 \end{tabular}
-
 
 \subsection{フィルタコマンド}
 \begin{tabular}{ll}
-    コマンド & 動作 \\ \hline
-    cat & 入力をなにもせずに出力する \\
-    tac & 行を逆順に出力する\\
-    shuf & 行をランダムに入れ替えて出力する \\
-    head & 先頭のいくつかの行を表示する \\
-    tail & 末尾のいくつかの行を表示する\\
-    sort & 行を順番にならべかえる\\
-    grep & 検索パターンに一致する行を出力する\\ \hline
+    コマンド & 動作                               \\ \hline
+    cat      & 入力をなにもせずに出力する         \\
+    tac      & 行を逆順に出力する                 \\
+    shuf     & 行をランダムに入れ替えて出力する   \\
+    head     & 先頭のいくつかの行を表示する       \\
+    tail     & 末尾のいくつかの行を表示する       \\
+    sort     & 行を順番にならべかえる             \\
+    grep     & 検索パターンに一致する行を出力する \\ \hline
 \end{tabular}
-
 
 \subsection{置き換えをするコマンド}
 \begin{tabular}{ll}
-    コマンド & 動作 \\ \hline
-    tr & 入力された文字を指定する方法で置き換えて出力する \\
-    sed & 入力から指定するパターンを見つけ、それを置き換えて出力する \\ \hline
+    コマンド & 動作                                                       \\ \hline
+    tr       & 入力された文字を指定する方法で置き換えて出力する           \\
+    sed      & 入力から指定するパターンを見つけ、それを置き換えて出力する \\ \hline
 \end{tabular}
-
 
 \section{その他の便利なコマンド}
 
@@ -299,7 +301,8 @@ tr 置き換えたい文字 置き換える文字
 
 ここで、「置き換えたい文字」には、置き換えたい文字を書きます。
 「置き換える文字」には、新しく変える文字を書きます。
-例えば、「置き換えたい文字」に "ABC"、「置き換える文字」に "XYZ" を書くと、"A" は "X" に、"B" は "Y" に、"C" は "Z" に置き換わります。
+例えば、「置き換えたい文字」に "ABC"、「置き換える文字」に "XYZ" を書くと、"A" は "X" に、"B" は "Y" に、"C" は "Z"
+に置き換わります。
 
 % 実行例の説明
 それでは、trコマンドの使い方を少しずつ見ていきましょう。
@@ -328,7 +331,8 @@ hello, world!
 コマンドの実行後、アルファベット全てが小文字に置き換わっていることが分かります。
 
 しかし、アルファベット全てを書くのは大変ですよね。
-そこで、trコマンドでは、連続するアルファベットや数字などに関して "A-Z" や "a-z"、"0-9" のように範囲を指定することで簡潔に書くことができます。
+そこで、trコマンドでは、連続するアルファベットや数字などに関して "A-Z" や "a-z"、"0-9"
+のように範囲を指定することで簡潔に書くことができます。
 
 \begin{lstlisting}[caption=範囲指定を使った置き換え, label=tr_range]
 <#green#pi@raspberrypi#>:<#blue#~ $#> echo "HELLO, WORLD!" | tr A-Z a-z
@@ -339,7 +343,8 @@ hello, world!
 ちなみに、範囲指定を使うときは次のことに気をつけましょう。
 \begin{itemize}
     \item "-" は置き換えられない。
-    \item 範囲は、"A" から "Z"、"a" から "z" のように、前の方の文字から後ろの方の文字へと順番に書きます。(例えば "Z-A" はエラーになります) 
+    \item 範囲は、"A" から "Z"、"a" から "z" のように、前の方の文字から後ろの方の文字へと順番に書きます。(例えば "Z-A"
+          はエラーになります)
 \end{itemize}
 
 このように、trコマンドを使うと、文字列の中の文字を簡単に置き換えることができます。
@@ -386,14 +391,16 @@ Hi, Wowld!
 \begin{tcolorbox}[title=\useOmetoi]
 \begin{enumerate}
     \addex{%
-次の文章の「like」を「love」に置き換えましょう。\\%
-``I like programming!"%
-}
+        次の文章の「like」を「love」に置き換えましょう。\\%
+        ``I like programming!"%
+    }
     \addex{%
-\textasciitilde /03/rensyu/kokugo/syosetsu.txt には小説「ごんぎつね」が掲載されています。%
-「ごんぎつね」に出てくる「ごんぎつね」の名前を「Fox」に変えて標準出力に出力しましょう。\\%
-ヒント: cat \textasciitilde /03/rensyu/kokugo/syosetsu.txt | sed ???%
-}
+        \textasciitilde /03/rensyu/kokugo/syosetsu.txt
+        には小説「ごんぎつね」が掲載されています。%
+        「ごんぎつね」に出てくる「ごんぎつね」の名前を「Fox」に変えて標準出力に出力しましょう。\\%
+        ヒント: cat \textasciitilde /03/rensyu/kokugo/syosetsu.txt | sed
+        ???%
+    }
 \end{enumerate}
 \end{tcolorbox}
 
@@ -411,13 +418,27 @@ s や g といった文字がついているのに気付いたでしょうか。
 と実行してオンラインマニュアルを閲覧したり、ブラウザで「sed 使い方」などと検索してみたりしましょう。
 
 \subsection{計算をする}
+コマンドの説明： echo\textvisiblespace\$(コマンド) \\
+22ページでは、echoコマンドは引数で与えられた文字列をそのまま標準出力に出力するコマンドとして登場しました。
+今回はechoコマンドから他のコマンドを実行します。
+コマンドの中で使用される \$() はコマンド置換を行うための構文です。コマンド置換
+を使用すると、別のコマンドの出力を取得し、その出力を別のコマンドの引数として使用することができます。
+\begin{lstlisting}[caption=echo コマンドを使った例1, label=echo]
+<#green#pi@raspberrypi#>:<#blue#~/ $#> echo $(ls)
+\end{lstlisting} 
 
-コマンドの説明： echo \$((式))
-\$(())で式を囲むと、計算ができます。echoコマンドは引数で与えられた文字列をそのまま標準出力に出力します。
-$138 + 395$のように電卓を使って計算したいものを目の前のコンピュータに計算してもらえたら便利ですね。
+\begin{lstlisting}[caption=lsコマンドと比較, label=ls]
+<#green#pi@raspberrypi#>:<#blue#~/ $#> ls
+\end{lstlisting}
 
-\begin{lstlisting}[caption=echo コマンドを使った例, label=echo]
-echo $((138 + 395))
+二つのコマンドから同じ結果を得られることがわかります。\$()の中に書いたコマンドが実行されます。
+echoコマンドの他の使い方を見てみましょう。echo \$((式))と打つと計算結果を出力してくれます。
+ここで内側にも()があることに注意しましょう。これはシェルが内側の算術式の評価結果を変数として認識し、その結果を表示するために使用します。
+つまり、数字の計算をするためのものです。
+
+\newpage
+\begin{lstlisting}[caption=echo コマンドを使った例2, label=echo]
+<#green#pi@raspberrypi#>:<#blue#~ $#> echo $((138 + 395))
 \end{lstlisting}
 
 実行すると次のような出力が得られます。
@@ -426,14 +447,22 @@ echo $((138 + 395))
 533
 \end{lstlisting}
 
-それでは、次の問題に取り組んでみましょう。
+このように電卓を使って計算したいものを目の前のコンピュータに計算してもらえたら便利ですね
+\vskip\baselineskip
+\noindent ターミナルでの四則演算\\
+足し算 $+$\\
+引き算 $-$\\
+掛け算 $*$\\
+割り算 $/$ 割り算は商のみを整数で出力\\
 
-\begin{enumerate}
-   \addquiz{$2024 - 727$}
-   \addquiz{$117 \times 13$}
-   \addquiz{$(84 + 67 + 49 + 96) \div 4$}
-\end{enumerate}
-
+\begin{tcolorbox}[title=\useOmetoi]
+    それでは、次の問題に取り組んでみましょう。
+    \begin{enumerate}
+        \addquiz{$2024 - 727$}
+        \addquiz{$117 \times 13$}
+        \addquiz{$(84 + 67 + 49 + 96) \div 4$}
+    \end{enumerate}
+\end{tcolorbox}
 \subsection{コマンドに別名を付ける}
 
 コマンドを打っていて、よく使うのに覚えにくいものがあったりします。
