@@ -344,6 +344,7 @@ du 大きさを調べたいディレクトリ、ファイルのパス
 \end{lstlisting}
 
 このように、-sオプションを使うことで、ディレクトリの大きさの合計だけを表示することができます。
+もし特定のディレクトリの合計容量を知りたい場合には、このオプションを使うと便利です。
 
 \begin{tcolorbox}[title=\useOmetoi]
     \begin{enumerate}
@@ -559,7 +560,7 @@ Videos
 数字とアルファベットが混在している場合、数字が先に表示され、その後にアルファベットが表示されます。
 
 また、パイプラインを使って他のコマンドと組み合わせることもできます。
-例えば、先程の例についてlsコマンドを使ってファイルの一覧を表示してからsortコマンドを使って並べ替えるというもう一つの方法があります。
+例えば、lsコマンドの標準出力をsortに渡すことで、ソートされたファイルの一覧を表示する方法を紹介します。
 
 \begin{lstlisting}[caption=パイプラインを用いたsortコマンドの実行例, label=sort_example]
 <#green#pi@raspberrypi#>:<#blue#~ $#> ls ~/03 | sort
@@ -579,6 +580,7 @@ Videos
 \end{lstlisting}
 
 この例では、lsコマンドで\textasciitilde/03の中身を表示し、その結果をsortコマンドに渡して並べ替えています。
+lsfileをsortコマンドに渡した際と同じ結果が表示されていることが分かります。
 
 \begin{tcolorbox}[title=\useOmetoi]
     \begin{enumerate}
