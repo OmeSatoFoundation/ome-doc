@@ -471,7 +471,7 @@ echo $((138 + 395))
 別名を保存しておくには、ホームディレクトリに .bash{\_}aliases というファイルを作成し\ruby{編集}{へん|しゅう}します。なぜかというと、bash は起動時に \textasciitilde/.bash{\_}aliases というファイルの中に書いてあるコマンドをすべて実行してくれるからです。
 
 .bash{\_}aliases には、次のようにコマンドを\ruby{記述}{き|じゅつ}し、保存します。
-\begin{lstlisting}[caption=\textasciitilde/.bashaliasesの書き方1, label=bashAliasesGrammar1]
+\begin{lstlisting}[caption=\textasciitilde/.bash\_aliasesの書き方1, label=bashAliasesGrammar1]
 alias 名前='コマンド'
 alias name='command'
             :
@@ -479,7 +479,7 @@ alias name='command'
 \end{lstlisting}
 
 保存が終わったら、.bash{\_}aliases の中のコマンドを実行することで、別名を\ruby{適用}{てき|よう}します。source というコマンドで .bash{\_}aliases の中のコマンドを実行します。
-\begin{lstlisting}[caption=\textasciitilde/.bashaliasesの読込, label=sourceBashAliases]
+\begin{lstlisting}[caption=\textasciitilde/.bash\_aliasesの読込, label=sourceBashAliases]
 <#green#pi@raspberrypi#>:<#blue#~ $#> source ~/.bash_aliases
 <#green#pi@raspberrypi#>:<#blue#~ $#>
 \end{lstlisting}
