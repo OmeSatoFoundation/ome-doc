@@ -418,44 +418,39 @@ s や g といった文字がついているのに気付いたでしょうか。
 と実行してオンラインマニュアルを閲覧したり、ブラウザで「sed 使い方」などと検索してみたりしましょう。
 
 \subsection{計算をする}
-コマンドの説明： echo\textvisiblespace\$(コマンド) \\
+
+\noindent
+{\bf echo\textvisiblespace\$(コマンド) }
+
+%注マージ後ページ参照を解決
 22ページでは、echoコマンドは引数で与えられた文字列をそのまま標準出力に出力するコマンドとして登場しました。
-今回はechoコマンドから他のコマンドを実行します。
+今回は他のコマンドの実行結果をechoコマンドの引数に与えて、それを標準出力に出力します。
 コマンドの中で使用される \$() はコマンド置換を行うための構文です。コマンド置換
 を使用すると、別のコマンドの出力を取得し、その出力を別のコマンドの引数として使用することができます。
-\begin{lstlisting}[caption=echo コマンドを使った例1, label=echo]
+\begin{lstlisting}[caption=echo コマンドを使った例1, label=cmdsbs:echo]
 <#green#pi@raspberrypi#>:<#blue#~/ $#> echo $(ls)
 \end{lstlisting} 
 
-\begin{lstlisting}[caption=lsコマンドと比較, label=ls]
+\begin{lstlisting}[caption=lsコマンドと比較, label=cmdsbs:ls]
 <#green#pi@raspberrypi#>:<#blue#~/ $#> ls
 \end{lstlisting}
 
 二つのコマンドから同じ結果を得られることがわかります。\$()の中に書いたコマンドが実行されます。
-echoコマンドの他の使い方を見てみましょう。echo \$((式))と打つと計算結果を出力してくれます。
+echoコマンドとコマンド置換の他の使い方を見てみましょう。echo \$((式))と打つと計算結果を出力してくれます。
 
-ここで内側にも()があることに注意しましょう。これはシェルが内側の算術式の評価結果を変数として認識し、その結果を表示するために使用します。
-つまり、数字の計算をするためのものです。
+ここで内側にも()があることに注意しましょう。この()は内側の算術式の評価結果を変数として認識して、その変数の中身をechoの引数に渡すために使用します。
+つまり、計算の結果を表示をするためのものです。
+ターミナルでの計算には、足し算（$+$）、引き算（$-$）、掛け算（$*$）、割り算（$/$）などが利用できます。 割り算は商のみを整数で出力しますので注意してください。
 
-\newpage
-
-\begin{lstlisting}[caption=echo コマンドを使った例2, label=echo]
+$138+395$の計算を実行すると次のような出力が得られます。
+\begin{lstlisting}[caption=echo コマンドを使った例2, label=cmdsbs:calc]
 <#green#pi@raspberrypi#>:<#blue#~ $#> echo $((138 + 395))
-\end{lstlisting}
-
-実行すると次のような出力が得られます。
-
-\begin{lstlisting}[caption=echo コマンドを実行した結果, label=echo_result]
 533
 \end{lstlisting}
 
-このように電卓を使って計算したいものを目の前のコンピュータに計算してもらえたら便利ですね
+このようにコンピュータが計算してくれると、電卓取り出して計算しなくてもよいので便利ですね。
+
 \vskip\baselineskip
-\noindent ターミナルでの四則演算\\
-足し算 $+$\\
-引き算 $-$\\
-掛け算 $*$\\
-割り算 $/$ 割り算は商のみを整数で出力\\
 
 \begin{tcolorbox}[title=\useOmetoi]
     それでは、次の問題に取り組んでみましょう。
