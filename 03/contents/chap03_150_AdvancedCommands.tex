@@ -440,46 +440,83 @@ echo $((138 + 395))
 
 \subsection{コマンドに別名を付ける}
 
-コマンドを打っていて、よく使うのに覚えにくいものがあったりします。
-そんな時はコマンドに別名を付けてしまいましょう。これを英語ではalias(エイリアス)と言います。
+コマンドを打っていて、よく使うのに覚えにくいものがあったりします。そんな時はコマンドに別名を付けてしまいましょう。これを英語では alias (エイリアス)と言います。エイリアスは alias コマンドで追加できます。
 
-例えば、
+\begin{description}
+\item[\texttt{alias}\textvisiblespace 名前='コマンド']\mbox{}\\
+コマンドの別名として名前を設定します。コマンドの両脇の小さい点をシングルクオーテーションと呼びます。
+\end{description}
 
-\begin{lstlisting}[caption=lsコマンド, label=lsAlias]
-    ls -l
+では、使用例を見てみましょう。例えば、
+
+\begin{description}
+\item[\texttt{ls}\textvisiblespace -alF]
+\end{description}
+
+に l (小文字のL)という別名を付けたいとします。つまり、l と実行したら ls -alF が実行されるようにしたいということです。
+
+\begin{lstlisting}[caption=aliasコマンドの例, label=aliasCommandExample]
+<#green#pi@raspberrypi#>:<#blue#~ $#> alias l='ls -alF'
+<#green#pi@raspberrypi#>:<#blue#~ $#>
 \end{lstlisting}
 
-に ll という別名を付けたいとします。
+何も出力がなければ別名の設定が完了しています。別名を付けたコマンドを入力してみましょう。
 
-コマンドに別名を付けるためにはにはホームディレクトリに .bash{\_}aliases というファイルを作成し編集しなければなりません。
-mousepad を使って .bash{\_}aliases というファイルを作成し、編集します。
-\begin{lstlisting}[caption=.bashaliasesを開く, label=openBashAliases]
-    <#green#pi@raspberrypi#>:<#blue#~ $#> mousepad ~/.bash_aliases &
-\end{lstlisting}
-
-.bash{\_}aliases には、次のように記述し、保存します。
-\begin{lstlisting}[caption=.bashaliasesの中身, label=bashAliasesContents]
-    alias ll='ls -l'
-\end{lstlisting}
-
-保存が終わったら、.bash{\_}aliases を実行して、別名を適用しなければなりません。
-.bash{\_}aliases を実行します。
-\begin{lstlisting}[caption=.bashaliasesを実行, label=executeBashAliases]
-    <#green#pi@raspberrypi#>:<#blue#~ $#> ~/.bash_aliases
-\end{lstlisting}
-
-別名を付けたコマンドを打ってみましょう。
 \begin{lstlisting}[caption=別名の確認, label=confirmAlias]
-    <#green#pi@raspberrypi#>:<#blue#~ $#> ll
+<#green#pi@raspberrypi#>:<#blue#~ $#> l
 \end{lstlisting}
 
-別名を付けた元のコマンドも打ってみましょう。
+別名を付けた元のコマンドも入力してみましょう。
+
 \begin{lstlisting}[caption=元のコマンドの確認, label=confirmCommand]
-    <#green#pi@raspberrypi#>:<#blue#~ $#> ls -l
+<#green#pi@raspberrypi#>:<#blue#~ $#> ls -alF
 \end{lstlisting}
 
-同じ出力が出るはずです。
+同じ出力が得られるはずです。しかし、bash を閉じると今設定した別名は消えてしまいます。
 
-.bash{\_}aliases は正しい文法で記述しないとラズベリーパイが正しく動作しなくなるので注意して編集してください。
+別名を保存しておくには、ホームディレクトリに .bash{\_}aliases というファイルを作成し\ruby{編集}{へん|しゅう}します。なぜかというと、bash は起動時に \textasciitilde/.bash{\_}aliases というファイルの中に書いてあるコマンドをすべて実行してくれるからです。
 
-問題
+.bash{\_}aliases には、次のようにコマンドを\ruby{記述}{き|じゅつ}し、保存します。
+\begin{lstlisting}[caption=\textasciitilde/.bash\_aliasesの書き方1, label=bashAliasesGrammar1]
+alias 名前='コマンド'
+alias name='command'
+            :
+            :
+\end{lstlisting}
+
+保存が終わったら、.bash{\_}aliases の中のコマンドを実行することで、別名を\ruby{適用}{てき|よう}します。source というコマンドで .bash{\_}aliases の中のコマンドを実行します。
+\begin{lstlisting}[caption=\textasciitilde/.bash\_aliasesの読込, label=sourceBashAliases]
+<#green#pi@raspberrypi#>:<#blue#~ $#> source ~/.bash_aliases
+<#green#pi@raspberrypi#>:<#blue#~ $#>
+\end{lstlisting}
+
+上のように実行して何も表示されなければ正常に\ruby{適用}{てき|よう}できています。
+
+% alias コマンドにシングルクオーテーションが必要なのは、次のように記述できるからです。
+% \begin{description}
+%     \item[\texttt{alias}\textvisiblespace 名前 = 'コマンド'\textvisiblespace name = 'command'\textvisiblespace ...]\\
+%     設定したいコマンドにスペースが含まれていた場合、bash はスペースの後の文字列を新たな別名として\ruby{認識}{にん|しき}し、\ruby{意図}{い|と}とは異なった別名を設定しようとします。
+% \end{description}
+
+\begin{itemize}
+    \item[<補足1>] bash が\ruby{起動}{き|どう}したとき、\textasciitilde/.bashrc というファイルの中身が自動で実行されます。\\
+    さらにその中で \textasciitilde/.bash{\_}aliases の中身を実行する\ruby{記述}{き|じゅつ}があります。ただし、\\
+    そのタイミングでしか読み込まれないので、ファイルを\ruby{編集}{へん|しゅう}した後に読み込みなおす\\
+    必要があります。また、\textasciitilde/.bash{\_}aliases に上で述べたように正しく\ruby{記述}{き|じゅつ}しないと、\\
+    bash \ruby{起動}{き|どう}時に毎回エラーメッセージが表示されるようになります。正しく\ruby{記述}{き|じゅつ}するように\\
+    しましょう。
+    \item[<補足2>] source コマンドは\ruby{引数}{ひき|すう}として渡されたファイルの中身を bash コマンドとして実行します。\\
+    つまり、ファイルの中に書いてあるコマンドを手打ちで実行していくのと変わらないのです。
+\end{itemize}
+
+\begin{tcolorbox}[title=\useOmetoi]
+    \begin{enumerate}
+        \addex{
+            rm\textvisiblespace -i というコマンドに rm と別名を付けてみましょう。
+            (オプション) bash を\ruby{再起動}{さい|き|どう}しても別名が残るようにしてみましょう。
+        }
+        \addex{
+            好きなコマンドに好きな別名を付けてみましょう。
+        }
+    \end{enumerate}
+\end{tcolorbox}
