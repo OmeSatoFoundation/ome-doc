@@ -15,6 +15,82 @@
 \end{frame}
 
 \begin{frame}
+    \frametitle{ターミナルを使ってみよう}
+    \begin{itemize}
+        \item ファイルやディレクトリを使ってたくさんのことができるようになるよ
+        \item 命令を直接、入力することができるよ
+        \item キーボードをカタカタしているとかっこいいね！
+    \end{itemize}
+    \begin{figure}[h]
+        \centering
+        \includesvg[width=0.5\columnwidth]{images/chap03/terminal.svg}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{コマンドってなんだろう}
+    \begin{itemize}
+        \item コマンドはコンピュータに対する命令のこと
+    \end{itemize}
+    \begin{figure}[h]
+        \centering
+        \includesvg[width=0.9\columnwidth]{images/chap03/command1.svg}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{コマンドの使い方}
+    \begin{figure}[h]
+        \centering
+        \includesvg[width=0.9\columnwidth]{images/chap03/command2.svg}
+    \end{figure}
+    \begin{itemize}
+        \item コマンドは動作、引数は動作の対象
+        \item すべて半角の英語だよ
+        \item 間にスペース（空白）がいるよ
+            \begin{itemize}
+                \item ここではスペースは␣と書いてあるよ
+                \item 打つときには半角のスペースを打ってね
+            \end{itemize}
+        \item オプションはあるときとないときがあるよ
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{コマンドを使ってみよう}
+    \begin{itemize}
+        \item pwd
+        \begin{itemize}
+            \item カレントディレクトリ(自分がどのディレクトリにいるか)がわかるよ
+        \end{itemize}
+        \item ls -F ディレクトリ
+        \begin{itemize}
+            \item ディレクトリの中のファイルを見ることができるよ
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Tabキーで楽しよう}
+    \begin{itemize}
+        \item Tab（タブ）キーを押すとそれまでに入力した文字から残りの文字をコンピュータが推測してくれるよ
+        \item いくつかあるときは候補を表示するよ
+    \end{itemize}
+    \begin{figure}[h]
+        \centering
+        \includesvg[width=0.9\columnwidth]{images/chap03/tab.svg}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{問題をといてみよう！}
+    \begin{itemize}
+        \item 教科書4ページ 問題3-1
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}
     \frametitle{ファイルって何だろう}
     \begin{itemize}
         \item ファイルとは
@@ -50,7 +126,7 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{ディレクトリって何だろう？}
+    \frametitle{ディレクトリってなんだろう？}
     \begin{itemize}
         \item ファイルを整理整頓するためのもの
         \item ディレクトリの中にファイルやディレクトリをしまうよ
@@ -59,194 +135,241 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{ディレクトリの関係（１）}
-    \begin{columns}
-        \column{0.4\textwidth}
-            \centering
-            \includesvg[width=0.8\textwidth]{images/chap03/root_directory.svg}
-        \column{0.6\textwidth}
-            \begin{itemize}
-                \item /は一番上のディレクトリをルートディレクトリと呼ぶよ
-                \item コンピュータの設定を変える大事なファイルもあるので、間違って消さないように気を付けよう！
-            \end{itemize}
-    \end{columns}
-\end{frame}
-
-\begin{frame}
-    \frametitle{ディレクトリの関係（２）}
-    \begin{columns}
-        \column{0.4\textwidth}
-            \centering
-            \includesvg[width=0.8\textwidth]{images/chap03/home_directory.svg}
-        \column{0.6\textwidth}
-            \begin{itemize}
-                \item 自分がいま使っているディレクトリはカレントディレクトリ
-                \item みんなはホームディレクトリ（/home/pi）で作業するよ
-                \item ディレクトリの位置は一番上からどこにあるかまたはカレントディレクトリからどこにあるかで決まるよ
-            \end{itemize}
-    \end{columns}
-\end{frame}
-
-\begin{frame}
-    \frametitle{ディレクトリの関係（３）}
-    \begin{columns}
-        \column{0.4\textwidth}
-            \centering
-            \includesvg[width=0.8\textwidth]{images/chap03/directory_arc.svg}
-        \column{0.6\textwidth}
-        {\small
-        一番上から見たら /\\
-        カレントディレクトリが/のとき ./ カレントディレクトリがhomeのとき ../\\
-        カレントディレクトリがpiのとき ../../\\
-        \vskip.1\baselineskip
-        一番上から見たら /home カレントディレクトリが/のとき ./home\\
-        カレントディレクトリがhomeのとき ./\\
-        カレントディレクトリがpiのとき ../\\
-        \vskip.1\baselineskip
-        一番上から見たら /home/pi カレントディレクトリが/のとき ./home/pi\\
-        カレントディレクトリがhomeのとき ./pi\\
-        カレントディレクトリがpiのとき ./\\
-        
-        \begin{itemize}
-            \item カレントディレクトリは ./ を使うよ
-            \item 上のディレクトリ ../ を使うよ
-            \item ディレクトリを区切るとき / を使うよ
-        \end{itemize}
+    \frametitle{ラズパイの主なディレクトリ}
+    \begin{minipage}{0.3\hsize}
+        {\footnotesize 
+        \begin{forest}
+          for tree={grow'=0,folder, scale=0.7}
+          [/
+            [bin/]
+            [dev/]
+            [etc/]
+            [home/
+              [あなたのユーザ名/]]
+            [sbin/]
+            [tmp/]
+            [usr/
+              [bin/]
+              [lib/]
+              [local/]]
+            [var/]
+          ]
+        \end{forest}
         }
-    \end{columns}
+    \end{minipage}
+    \begin{minipage}{0.65\hsize}
+        \footnotesize
+        \begin{itemize}
+        \item [/bin] システムの動作に必要なコマンドの実行ファイルを置くためのディレクトリ
+        \item [/dev] ディスクやキーボードなどのハードウェアを操作するためのファイルを格納する
+        \item [/etc] ラズパイで動作するさまざまなアプリケーションの動作を設定するためのテキストファイルが置かれる
+        \item [/home] ホームディレクトリが配置される
+        \item [/sbin] shutdownなどの管理者用のコマンドを置くためのディレクトリ
+        \item [/tmp] 一時的な作業ファイル(テンポラリファイル)を置くためのディレクトリ
+        \item [/usr] 追加でアプリケーションをインストールした場合にはこのディレクトリの下に配置される
+        \item [/var] 変化するデータを置くためのディレクトリ
+        \end{itemize}
+    \end{minipage}
 \end{frame}
 
 \begin{frame}
     \frametitle{問題をといてみよう！}
     \begin{itemize}
-        \item 教科書2ページ 問題3-1（3問）
-        \item 教科書4ページ 問題3-2（5問）
+        \item 教科書6ページ 問題3-2
     \end{itemize}
 \end{frame}
 
 \begin{frame}
-    \frametitle{ターミナルを使ってみよう}
-    \begin{itemize}
-        \item ファイルやディレクトリを使ってたくさんのことができるようになるよ
-        \item 命令を直接、入力することができるよ
-        \item キーボードをカタカタしているとかっこいいね！
-    \end{itemize}
-    \begin{figure}[h]
+    \frametitle{ルートディレクトリとホームディレクトリ}
+    \begin{minipage}{0.45\hsize}
+        \footnotesize
         \centering
-        \includesvg[width=0.5\columnwidth]{images/chap03/terminal.svg}
+        \includesvg[width=0.7\textwidth]{images/chap03/root_directory.svg}
+        \begin{itemize}
+            \item 一番上のディレクトリをルートディレクトリ( / )と呼ぶよ
+            \item コンピュータの設定を変える大事なファイルもあるので、間違って消さないように気を付けよう！
+        \end{itemize}
+    \end{minipage}
+    \begin{minipage}{0.45\hsize}
+        \footnotesize
+        \centering
+        \includesvg[width=0.7\textwidth]{images/chap03/home_directory.svg}
+        \begin{itemize}
+            \item みんなはホームディレクトリ\\( /home/あなたのユーザ名 )で作業するよ。ここではユーザ名をpiにしているよ
+            \item ホームディレクトリは「\textasciitilde」(チルダ)を使って表せるよ
+        \end{itemize}
+    \end{minipage}
+\end{frame}
+
+\begin{frame}
+    \frametitle{カレントディレクトリ}
+    \begin{itemize}
+        \item 自分がいま使っているディレクトリはカレントディレクトリだよ
+        \item カレントディレクトリは「.」と書けるよ
+        \item カレントディレクトリからひとつ上のディレクトリは「..」と書けるよ
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{絶対パスと相対パス}
+    ディレクトリの位置は、絶対パスと相対パスの２種類で指定できるよ\\
+    \begin{itemize}
+        \item 絶対パス
+        \begin{itemize}
+            \item ディレクトリの位置をルートディレクトリ（/）から見てどこにあるかで指定するよ
+            \item 絶対パスの先頭には / がついているよ (/usr/bin など)
+        \end{itemize}
+        \item 相対パス
+        \begin{itemize}
+            \item ディレクトリの位置をカレントディレクトリから見てどこにあるかで指定するよ
+            \item 相対パスには先頭に / がついていないよ (./usr/bin や usr/bin など)
+        \end{itemize}
+        \item ホームディレクトリ
+        \begin{itemize}
+            \item ホームディレクトリは「\textasciitilde」(チルダ)を使って表せるよ
+            \item 「\textasciitilde」(チルダ)と「/home/あなたのユーザ名」は同じだよ
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{パスを指定しよう}
+    \begin{figure}
+        \begin{minipage}{0.2\hsize}
+            \begin{forest}
+            for tree={grow'=0,folder}
+            [/, draw
+              [home/
+                [pi/]]]
+            \end{forest}
+        \end{minipage}
+        \begin{minipage}{0.75\hsize}
+            \footnotesize
+            \begin{tabular}{ll}
+                絶対パス & /からの相対パス \\ \hline
+                / & . \\ \hline
+                /home\quad/home/ & \begin{tabular}{l} home\quad./home  \\ home/\quad./home/ \end{tabular} \\ \hline 
+                /home/pi\quad/home/pi/ & \begin{tabular}{l} home/pi\quad./home/pi  \\ home/pi/\quad./home/pi/ \end{tabular} \\ \hline
+            \end{tabular}
+        \end{minipage}
+    \end{figure}
+      
+    \begin{figure}[H]
+        \begin{minipage}{0.2\hsize}
+            \begin{forest}
+                for tree={grow'=0,folder}
+                [/
+                    [home/ , draw
+                        [pi/]]]
+            \end{forest}
+        \end{minipage}
+        \begin{minipage}{0.75\hsize}
+        \footnotesize
+            \begin{tabular}{ll}
+                絶対パス & /home/からの相対パス \\ \hline
+                / & \begin{tabular}{l} ..\quad../ \\\quad./..\quad./../ \end{tabular} \\ \hline
+                /home\quad/home/ & \begin{tabular}{l} . \\./  \end{tabular} \\ \hline 
+                /home/pi\quad/home/pi/ & \begin{tabular}{l} pi\quad./pi \\ pi/\quad./pi/ \end{tabular} \\ \hline
+            \end{tabular}
+        \end{minipage}
     \end{figure}
 \end{frame}
 
 \begin{frame}
-    \frametitle{コマンドを使おう}
-    \begin{itemize}
-        \item コマンドはコンピュータに対する命令のこと
-    \end{itemize}
-    \begin{figure}[h]
-        \centering
-        \includesvg[width=0.9\columnwidth]{images/chap03/command1.svg}
+    \frametitle{パスを指定しよう}   
+    \begin{figure}[H]
+        \begin{minipage}{0.2\hsize}
+            \begin{forest}
+                for tree={grow'=0,folder}
+                [/
+                    [home/
+                        [pi/ , draw ]]]
+            \end{forest}
+        \end{minipage}
+        \begin{minipage}{0.75\hsize}
+        \footnotesize
+            \begin{tabular}{ll}
+                絶対パス & /home/pi/からの相対パス \\ \hline
+                / & \begin{tabular}{l} ../..\quad../../ \\ ./../..\quad./../../ \end{tabular} \\ \hline
+                /home\quad/home/ & \begin{tabular}{l} ..\quad../ \\ ./..\quad./../ \end{tabular} \\ \hline 
+                /home/pi\quad/home/pi/ & \begin{tabular}{l} . \\ ./ \end{tabular} \\ \hline
+            \end{tabular}
+        \end{minipage}
     \end{figure}
-\end{frame}
-
-\begin{frame}
-    \frametitle{コマンドの使い方}
-    \begin{figure}[h]
-        \centering
-        \includesvg[width=0.9\columnwidth]{images/chap03/command2.svg}
-    \end{figure}
-    \begin{itemize}
-        \item コマンドは動作、引数は動作の対象
-        \item すべて半角の英語だよ
-        \item 間にスペース（空白）がいるよ
-            \begin{itemize}
-                \item ここではスペースは␣と書いてあるよ
-                \item 打つときには半角のスペースを打ってね
-            \end{itemize}
-        \item オプションはあるときとないときがあるよ
-    \end{itemize}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Tabキーで楽しよう}
-    \begin{itemize}
-        \item Tab（タブ）キーを押すとそれまでに入力した文字から残りの文字をコンピュータが推測してくれるよ
-        \item いくつかあるときは候補を表示するよ
-    \end{itemize}
-    \begin{figure}[h]
-        \centering
-        \includesvg[width=0.9\columnwidth]{images/chap03/tab.svg}
-    \end{figure}
-\end{frame}
-
-\begin{frame}
-    \frametitle{コマンド（１）}
-    \begin{itemize}
-        \item pwd
-        \begin{itemize}
-            \item 自分がどのディレクトリにいるかわかるよ
-        \end{itemize}
-        \item ls -F ディレクトリ
-        \begin{itemize}
-            \item ディレクトリの中のファイルを見ることができるよ
-        \end{itemize}
-        \item cd ディレクトリ
-        \begin{itemize}
-            \item ディレクトリへ移動することができるよ
-        \end{itemize}
-        \item cat ファイル
-        \begin{itemize}
-            \item ファイルに書かれている文字を表示することができるよ
-        \end{itemize}
-    \end{itemize}
-\end{frame}
-
-\begin{frame}
-    \frametitle{コマンド（２）}
-    \begin{itemize}
-        \item cp コピーするファイル コピーした後のファイル
-        \begin{itemize}
-            \item ファイルをコピーする
-        \end{itemize}
-        \item cp -r コピーするディレクトリ コピーした後のディレクトリ
-        \begin{itemize}
-            \item ディレクトリをコピーするとき
-        \end{itemize}
-        \item いまあるファイルやディレクトリと同じ名前にならないように気を付けよう
-    \end{itemize}
 \end{frame}
 
 \begin{frame}
     \frametitle{問題をといてみよう！}
     \begin{itemize}
-        \item 教科書6ページ 問題3-3
-        \item 教科書7ページ 問題3-4
-        \item 教科書8ページ 問題3-5
-        \item 教科書10ページ 問題3-6
-        \item 教科書11ページ 問題3-7 （2問）
+        \item 教科書9\textasciitilde10ページ 問題3-3
     \end{itemize}
 \end{frame}
 
 \begin{frame}
-    \frametitle{コマンド（３）}
+    \frametitle{ターミナルでファイルを操作してみよう}
     \begin{itemize}
+        \item cd␣ディレクトリ
+        \begin{itemize}
+            \item カレントディレクトリを指定したディレクトリに移動するよ
+        \end{itemize}
+        \item cd
+        \begin{itemize}
+            \item ホームディレクトリに移動するよ
+        \end{itemize}
+        \item cat␣ファイル
+        \begin{itemize}
+            \item ファイルに書かれている文字を表示するよ
+        \end{itemize}
+        \item cp␣ファイル1␣ファイル2
+        \begin{itemize}
+            \item ファイル1をファイル2という名前でコピーするよ
+        \end{itemize}
+        \item cp␣-r␣ディレクトリ1␣ディレクトリ2
+        \begin{itemize}
+            \item ディレクトリ1をディレクトリ2という名前でコピーするよ
+        \end{itemize}
         \item mv␣移動したいファイルやディレクトリ␣移動先
         \begin{itemize}
-            \item ファイルやディレクトリを移動できるよ
+            \item ファイルやディレクトリを移動するよ
         \end{itemize}
-        \item mv␣ファイルやディレクトリの名前␣変えた後の名前
+        \item mv␣ファイルやディレクトリの名前␣変えたいの名前
         \begin{itemize}
-            \item ファイルやディレクトリの名前を変えることができるよ
-        \end{itemize}
-        \item less␣ファイルの名前
-        \begin{itemize}
-            \item ファイルに書かれている文字を一画面ずつ見ることができるよ
+            \item ファイルやディレクトリの名前を変えるよ
         \end{itemize}
     \end{itemize}
 \end{frame}
 
 \begin{frame}
-    \frametitle{コマンド（４）}
+    \frametitle{問題をといてみよう！}
     \begin{itemize}
+        \item 教科書13ページ 問題3-4
+        \item 教科書14ページ 問題3-5
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{ターミナルでファイルを操作してみよう}
+    \begin{itemize}
+        \item less␣ファイル
+        \begin{itemize}
+            \item ファイルに書かれている文字を一画面ずつ見ることができるよ
+            \item eを押すと一行進んで、yを押すと一行戻るよ
+            \item qを押すと終わるよ
+        \end{itemize}
+        \item mousepad␣ファイル␣\&
+        \begin{itemize}
+            \item mousepadを使ってファイルを作成または編集するよ
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{ターミナルでファイルを操作してみよう}
+    \begin{itemize}
+        \item mkdir␣ディレクトリ
+        \begin{itemize}
+            \item 新しいディレクトリを作ることができるよ
+        \end{itemize}
         \item rm␣ファイル
         \begin{itemize}
             \item ファイルを消したいときは
@@ -254,10 +377,6 @@
         \item rm␣-r␣ディレクトリ
         \begin{itemize}
             \item ディレクトリを消したいときは
-        \end{itemize}
-        \item mkdir␣ディレクトリ
-        \begin{itemize}
-            \item 新しいディレクトリを作ることができるよ
         \end{itemize}
     \end{itemize}
     \begin{figure}[h]
@@ -269,13 +388,6 @@
 \begin{frame}
     \frametitle{問題をといてみよう！}
     \begin{itemize}
-        \item 教科書12ページ 問題3-8
-        \item 教科書12ページ 問題3-9
-        \item 教科書13ページ 問題3-10
-        \item 教科書13ページ 問題3-11
-        \item 教科書14ページ 問題3-12（2問）
-        \item 教科書15ページ 問題3-13（2問）
-        \item 教科書17ページ 問題3-14
-        \item 教科書19ページから21ページ まとめ問題3-15
+        \item 教科書17ページ 問題3-6
     \end{itemize}
 \end{frame}
