@@ -383,6 +383,7 @@ Hi, Wowld!
 
 それでは、次の問題に取り組んでみましょう。
 
+\begin{tcolorbox}[title=\useOmetoi]
 \begin{enumerate}
     \addex{%
 次の文章の「like」を「love」に置き換えましょう。\\%
@@ -390,23 +391,24 @@ Hi, Wowld!
 }
     \addex{%
 \textasciitilde /03/rensyu/kokugo/syosetsu.txt には小説「ごんぎつね」が掲載されています。%
-「ごんぎつね」に出てくる「ごんぎつね」の名前を「Fox」に変えて標準出力に出力しましょう。\\%
+「ごんぎつね」に登場するキャラクター「ごん」の名前を「Fox」に変えて標準出力に出力しましょう。\\%
 ヒント: cat \textasciitilde /03/rensyu/kokugo/syosetsu.txt | sed ???%
 }
 \end{enumerate}
+\end{tcolorbox}
 
 さて、リスト \ref{sed_usage} には変換する文字列や仕切り文字 / の他に、
 s や g といった文字がついているのに気付いたでしょうか。
 実は sed は文字列を置き換える以外にも様々な機能を持ちます。
 今回は sed に含まれる s と g というコマンドを用いて文字列を置き換えましたが、
-そのほかにも d や p など様々なコマンドが sed には収録されています。
+そのほかにもパターンスペースを削除する d やパターンスペースを表示する p など様々なコマンドが sed には収録されています。
 興味がある人は
 
 \begin{lstlisting}
 <#green#pi@raspberrypi#>:<#blue#~ $#> man sed
 \end{lstlisting}
 
-と実行してオンラインマニュアルを閲覧したり、ブラウザで「sed 使い方」などと検索してみたりしましょう。
+と実行してオンラインマニュアル (英語) を閲覧したり、ブラウザで「sed 使い方」などと検索してみたりしましょう。
 
 \subsection{計算をする}
 
