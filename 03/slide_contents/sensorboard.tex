@@ -59,9 +59,9 @@
 \begin{frame}[fragile]
   \frametitle{LEDを光らせてみよう(2)}
   \begin{lstlisting}[title=led.hsp,label=led.hsp]
-  #include "hsp3dish.as"   <#blue#;スクリプトの設定を読み込む#>
-  #include "rpz-gpio.as"   <#blue#;スクリプトの設定を読み込む#>
-          redraw 0         <#blue#;画面更新 (仮想画面に描画)#>
+  #include "hsp3dish.as"   <#blue#; スクリプトの設定を読み込む#>
+  #include "rpz-gpio.as"   <#blue#; スクリプトの設定を読み込む#>
+          redraw 0         <#blue#; 画面更新 (仮想画面に描画)#>
           font "",30       <#blue#;文字のフォント、サイズを決める#>
           pos 20, 20       <#blue#;文字の場所を決める#>
           mes "LEDが光るよ" <#blue#;文字を決める#>
@@ -95,7 +95,7 @@
 \begin{frame}
   \frametitle{温度、湿度、気圧、明るさを調べてみよう(1)}
   \begin{itemize}
-    \item sensors.hspを実行しよう
+    \item ファイル \rightarrow \sim/03/sensors.hspを実行しよう
   \end{itemize}
 \end{frame}
 
@@ -151,7 +151,7 @@
 \begin{frame}
   \frametitle{ボタンを使ってLEDをつけてみよう(1)}
   \begin{itemize}
-    \item button\_led.hspを実行しよう
+    \item ファイル \rightarrow \sim/03/button\_led.hspを実行しよう
   \end{itemize}
 \end{frame}
 
@@ -205,7 +205,7 @@
 \begin{frame}
   \frametitle{ボタンを使ってLEDをつけてみよう(3)}
   \begin{itemize}
-    \item button\_led2.hspを実行しよう
+    \item ファイル \rightarrow \sim/03/button\_led2.hspを実行しよう
   \end{itemize}
 \end{frame}
 
@@ -276,7 +276,7 @@
 \begin{frame}
   \frametitle{ボタンを使ってLEDをつけてみよう(5)}
   \begin{itemize}
-    \item button\_led3.hspを実行しよう
+    \item ファイル \rightarrow \sim/03/button\_led3.hspを実行しよう
   \end{itemize}
 \end{frame}
 
@@ -298,7 +298,7 @@
           redraw 1
 
           ima_btn = 1 
-          ledidx = 0
+          ledidx = 0  <#blue#;ledidxを初期化#>
   \end{lstlisting}
 \end{frame}
 
@@ -349,11 +349,28 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{LEDを右に動くようにするには？}
+  \frametitle{LEDはどうして動いて見えている？}
   \begin{itemize}
-    \item ボタンを押したかどうか調べる
-    \item ボタンを押した回数を調べる
-    \item 何回目に押されたかで光るLEDを変える
+    \item ima\_btn ボタンを押したかどうか調べる
+    \item ledidx ボタンを押した回数を調べる
+    \begin{itemize}
+      \item ledidx = 0のときledidx = $(0+1)\backslash4$
+      \begin{itemize}
+        \item 計算すると$1\div4$ = 0あまり1なので次のledidx = 1になる
+      \end{itemize}
+      \item ledidx = 1のときledidx = $(1+1)\backslash4$ 
+      \begin{itemize}
+        \item 計算すると$2\div4$ = 0あまり2なので次のledidx = 2になる 
+      \end{itemize}
+      \item ledidx = 2のときledidx = $(2+1)\backslash4$ 
+      \begin{itemize}
+        \item 計算すると$3\div4$ = 0あまり3なので次のledidx = 3になる
+      \end{itemize}
+      \item ledidx = 3のときledidx = $(3+1)\backslash4$ 
+      \begin{itemize}
+        \item 計算すると$4\div4$ = 1あまり0なので次のledidx = 0になる
+      \end{itemize}
+    \end{itemize}
   \end{itemize}
 \end{frame}
 
