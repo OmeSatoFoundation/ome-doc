@@ -88,7 +88,7 @@ lsfile
 catコマンドでファイル名を\ruby{指定}{し|てい}するのではなく、リダイレクトと同じことをしました。
 
 \newpage
-\subsection{パイプライン}
+\subsection{パイプライン}\label{sec:pipelne}
 
 パイプ\ruby{記号}{き|ごう}「|」を使うことで、パイプ記号の前のコマンドの\ruby{標準出力}{ひょう|じゅん|しゅつ|りょく}と、
 パイプ記号の後のコマンドの\ruby{標準入力}{ひょう|じゅん|にゅう|りょく}をつなぐことができます。
@@ -564,32 +564,9 @@ Videos
 この例では、lsfileの中身を順番に並べ替えて表示してみました。
 数字とアルファベットが混在している場合、数字が先に表示され、その後にアルファベットが表示されます。
 
-また、パイプラインを使って他のコマンドと組み合わせることもできます。
-例えば、lsコマンドの標準出力をsortに渡すことで、ソートされたファイルの一覧を表示する方法を紹介します。
-
-\begin{lstlisting}[caption=パイプラインを用いたsortコマンドの実行例, label=sort_example]
-<#green#pi@raspberrypi#>:<#blue#~ $#> ls ~/03 | sort
-01
-02
-03
-Bookshelf
-Desktop
-Documents
-Downloads
-lsfile
-Music
-Pictures
-Public
-Templates
-Videos
-\end{lstlisting}
-
-この例では、lsコマンドで\textasciitilde/03の中身を表示し、その結果をsortコマンドに渡して並べ替えています。
-lsfileをsortコマンドに渡した際と同じ結果が表示されていることが分かります。
-
 \begin{tcolorbox}[title=\useOmetoi]
     \begin{enumerate}
-        \addex{\textasciitilde/02ディレクトリの中身をsortコマンドを使って並べ替えて表示してみましょう。}
+        \addex{\textasciitilde/02ディレクトリの中身をsortコマンドを使って並べ替えて表示してみましょう。 \\ ヒント:まず、02の中身を表示するコマンドの標準出力をリダイレクトでファイル書き込もう。次にsortコマンドを使ってファイルの中身を並べ替えてみよう。}
     \end{enumerate}
 \end{tcolorbox}
 
@@ -618,6 +595,50 @@ grep 検索パターン 表示したいファイルのパス
 \begin{tcolorbox}[title=\useOmetoi]
     \begin{enumerate}
         \addex{\textasciitilde/03/rensyu/kokugo/syosetsu.txtの中身から"ごんぎつね"という文字列に一致する行を表示してみましょう。}
+    \end{enumerate}
+\end{tcolorbox}
+
+\subsubsection{パイプラインとフィルタコマンドを組み合わせた使い方}
+これまでフィルタコマンドについて基本的な使い方を紹介してきました。
+これらのフィルタコマンドは、節\ref{sec:pipelne}で勉強したパイプラインと組み合わせることでより便利に使うことができます。
+
+まず、パイプラインとフィルタコマンドを組み合わせた使い方は次の通りです。
+
+\begin{lstlisting}[caption=パイプラインを用いたフィルタコマンドの実行例, label=pipeline_filter]
+標準出力を出すコマンド | フィルタコマンド
+\end{lstlisting}
+
+パイプラインを使うことで、標準出力を出すコマンドの結果をフィルタコマンドに渡すことができます。
+また、更にパイプでフィルタコマンドを繋げることで、さらにフィルタリングを行うことができます。
+
+次に、具体的な例を見てみましょう。
+例えば、lsコマンドの標準出力をsortに渡すことで、ファイルの一覧を並び替える方法を紹介します。
+
+\begin{lstlisting}[caption=パイプラインを用いたsortコマンドの実行例, label=sort_example]
+<#green#pi@raspberrypi#>:<#blue#~ $#> ls ~/03 | sort
+01
+02
+03
+Bookshelf
+Desktop
+Documents
+Downloads
+lsfile
+Music
+Pictures
+Public
+Templates
+Videos
+\end{lstlisting}
+
+この例では、lsコマンドで\textasciitilde/03の中身を表示し、その結果をsortコマンドに渡して並べ替えています。
+lsfileをsortコマンドに渡した際と同じ結果が表示されていることが分かります。
+
+\begin{tcolorbox}[title=\useOmetoi]
+    \begin{enumerate}
+        \addquiz{ls \$HOME | command1 \\ ホームディレクトリの中身を並び替えるように command1 を埋めましょう。}
+        \addquiz{ls \$HOME | command1 | command2 Downloads \\ 1の結果から Downloads を検索するように command1 と command2 を埋めましょう。}
+        \addquiz{cat \textasciitilde/03/rensyu/kokugo/syosetsu.txt | tail -n 数字1 | head -n 数字2 \\ syosetsu.txtの下から3行目を表示するように 数字1 と 数字2 を埋めましょう。}
     \end{enumerate}
 \end{tcolorbox}
 
