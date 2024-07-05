@@ -88,7 +88,7 @@ lsfile
 catコマンドでファイル名を\ruby{指定}{し|てい}するのではなく、リダイレクトと同じことをしました。
 
 \newpage
-\subsection{パイプライン}
+\subsection{パイプライン}\label{sec:pipelne}
 
 パイプ\ruby{記号}{き|ごう}「|」を使うことで、パイプ記号の前のコマンドの\ruby{標準出力}{ひょう|じゅん|しゅつ|りょく}と、
 パイプ記号の後のコマンドの\ruby{標準入力}{ひょう|じゅん|にゅう|りょく}をつなぐことができます。
@@ -257,30 +257,392 @@ syousetu.txt
     \end{enumerate}
 \end{tcolorbox}
 
-\section{パイプラインと文字列処理}
+\section{パイプラインと文字列\ruby{処理}{しょ|り}}
 
 \subsection{出力をつくるコマンド}
 \begin{tabular}{ll}
     コマンド & 動作                                         \\ \hline
     ls       & ファイルやディレクトリを出力する             \\
-    du       & ディレクトリの中のファイルの大きさを報告する \\
+    du       & ディレクトリの中のファイルの大きさを\ruby{報告}{ほう|こく}する \\
     wc       & 入力の文字数・単語数・行数を出力する         \\
     echo     & 文字をそのまま出力する                       \\ \hline
 \end{tabular}
+
+\subsubsection{duコマンド}
+duコマンドは、ディレクトリやファイルの大きさを報告するコマンドです。
+
+まず、duコマンドの使い方は、次の通りです。
+
+\begin{lstlisting}[caption=duコマンドの使い方, label=du_usage]
+du 大きさを調べたいディレクトリ、ファイルのパス
+\end{lstlisting}
+
+このコマンドを実行することで、パスに指定したディレクトリやファイルの大きさを表示します。
+
+次に、具体的な例を見てみましょう。
+
+\begin{lstlisting}[caption=duコマンドの実行例, label=du_example]
+<#green#pi@raspberrypi#>:<#blue#~ $#> du ~/03
+124	/home/pi/03/rensyu/rika
+20	/home/pi/03/rensyu/kokugo
+68	/home/pi/03/rensyu/sansu
+256	/home/pi/03/rensyu/syakai
+500	/home/pi/03/rensyu
+980	/home/pi/03
+\end{lstlisting}
+
+この例では、\textasciitilde/03の中のディレクトリの中のディレクトリの大きさを報告しています。
+左側の数字が各ディレクトリの大きさを表しています。
+ただし、このままでは各数字がどれくらいの大きさを表しているのかがわかりにくいですよね。
+そこで、-hオプションを使って、数字に単位を付与することができます。
+
+\begin{lstlisting}[caption=du -hの実行例, label=du_example]
+<#green#pi@raspberrypi#>:<#blue#~ $#> du -h ~/03
+124K	/home/pi/03/rensyu/rika
+20K	/home/pi/03/rensyu/kokugo
+68K	/home/pi/03/rensyu/sansu
+256K	/home/pi/03/rensyu/syakai
+500K	/home/pi/03/rensyu
+980K	/home/pi/03
+\end{lstlisting}
+
+このように、-hオプションを使うことで、数字に単位を付与することができます。
+この例では、全てのディレクトリの大きさがキロバイトで表示されています。
+
+また、この例では、ディレクトリの大きさのみを表示していますが、-aオプションを使うことで、ディレクトリ内のファイルの大きさも表示することができます。
+
+\begin{lstlisting}[caption=du -haの実行例, label=du_example]
+<#green#pi@raspberrypi#>:<#blue#~ $#> du -ha ~/03
+24K     /home/pi/03/rensyu/rika/rika.png
+96K     /home/pi/03/rensyu/rika/mokei.png
+124K	/home/pi/03/rensyu/rika
+4.0K	/home/pi/03/rensyu/kanji.txt
+16K     /home/pi/03/rensyu/kokugo/syousetu.txt
+20K     /home/pi/03/rensyu/kokugo
+24K     /home/pi/03/rensyu/oda.jpg
+60K     /home/pi/03/rensyu/sansu/nihon.png
+4.0K	/home/pi/03/rensyu/sansu/sansu.txt
+68K     /home/pi/03/rensyu/sansu
+252K	/home/pi/03/rensyu/syakai/sekai.png
+256K	/home/pi/03/rensyu/syakai
+500K	/home/pi/03/rensyu
+4.0K	/home/pi/03/Ltika.hsp
+4.0K	/home/pi/03/led.hsp
+4.0K	/home/pi/03/button_led2.hsp
+4.0K	/home/pi/03/button.hsp
+4.0K	/home/pi/03/button_led.hsp
+4.0K	/home/pi/03/README.md
+4.0K	/home/pi/03/button_led3.hsp
+444K	/home/pi/03/rensyu.tar.gz
+4.0K	/home/pi/03/sensors.hsp
+980K	/home/pi/03
+\end{lstlisting}
+
+このように、-aオプションを使うことで、ディレクトリ内のファイルの大きさも表示することができます。
+この実行例ではわかりやすさのためにhオプションも同時に使用しています。
+
+最後に、-sオプションを用いてディレクトリの大きさの合計だけを表示する方法を紹介します。
+
+\begin{lstlisting}[caption=du -hsの実行例, label=du_example]
+<#green#pi@raspberrypi#>:<#blue#~ $#> du -hs ~/03
+980K	/home/pi/03
+\end{lstlisting}
+
+このように、-sオプションを使うことで、ディレクトリの大きさの合計だけを表示することができます。
+もし特定のディレクトリの合計\ruby{容量}{よう|りょう}を知りたい場合には、このオプションを使うと便利です。
+
+\begin{tcolorbox}[title=\useOmetoi]
+    \begin{enumerate}
+        \addex{duコマンドを使って、\textasciitilde/02ディレクトリの大きさを表示してみましょう。}
+        \addex{duコマンドを使って、\textasciitilde/02ディレクトリの中のファイルの大きさを表示してみましょう。}
+        \addex{duコマンドを使って、\textasciitilde/02ディレクトリの中のファイルの大きさの合計だけを表示してみましょう。}
+    \end{enumerate}
+\end{tcolorbox}
+
+\subsubsection{wcコマンド}
+wcコマンドは、入力の文字数・単語数・行数を出力するコマンドです。
+
+まず、wcコマンドの使い方は、次の通りです。
+
+\begin{lstlisting}[caption=wcコマンドの使い方, label=wc_usage]
+wc 対象のファイルのパス
+\end{lstlisting}
+
+このコマンドを実行することで、パスに指定したファイルの文字数・単語数・行数を表示します。
+    
+次に、具体的な例を見てみましょう。
+
+\begin{lstlisting}[caption=wcコマンドの実行例, label=wc_example]
+<#green#pi@raspberrypi#>:<#blue#~ $#> wc ~/lsfile
+13 13 93 /home/pi/lsfile
+\end{lstlisting}
+
+この例では、\textasciitilde/lsfileの中身の文字数・単語数・行数を表示しています。
+左から順に、行数、単語数、文字数、ファイルのパスを表しています。
+
+\begin{tcolorbox}[title=\useOmetoi]
+    \begin{enumerate}
+        \addex{wcコマンドを使って、\textasciitilde/03/rensyu/kokugo/syosetsu.txtの中身の文字数・単語数・行数を表示してみましょう。}
+    \end{enumerate}
+\end{tcolorbox}
 
 \subsection{フィルタコマンド}
 \begin{tabular}{ll}
     コマンド & 動作                               \\ \hline
     cat      & 入力をなにもせずに出力する         \\
-    tac      & 行を逆順に出力する                 \\
-    shuf     & 行をランダムに入れ替えて出力する   \\
+    tac      & 行を\ruby{逆順}{ぎゃく|じゅん}に出力する                 \\
+    shuf     & 行をランダムに入れ\ruby{替}{か}えて出力する   \\
     head     & 先頭のいくつかの行を表示する       \\
-    tail     & 末尾のいくつかの行を表示する       \\
+    tail     & \ruby{末尾}{まつ|び}のいくつかの行を表示する       \\
     sort     & 行を順番にならべかえる             \\
-    grep     & 検索パターンに一致する行を出力する \\ \hline
+    grep     & \ruby{検索}{けん|さく}パターンに\ruby{一致}{いっ|ち}する行を出力する \\ \hline
 \end{tabular}
 
-\subsection{置き換えをするコマンド}
+\subsubsection{tacコマンド}
+tacコマンドは、行を逆順に出力するコマンドです。
+
+まず、tacコマンドの使い方は、次の通りです。
+
+\begin{lstlisting}[caption=tacコマンドの使い方, label=tac_usage]
+tac 表示したいファイルのパス
+\end{lstlisting}
+
+このコマンドを実行することで、パスに指定したファイルの中身を逆順にして表示します。
+
+次に、具体的な例を見てみましょう
+
+\begin{lstlisting}[caption=tacコマンドの実行例, label=tac_example]
+<#green#pi@raspberrypi#>:<#blue#~ $#> tac ~/lsfile
+lsfile
+Videos
+Templates
+Public
+Pictures
+Music
+Downloads
+Documents
+Desktop
+Bookshelf
+03
+02
+01 
+\end{lstlisting}
+
+この例では、リスト\ref{redirectLs}で使用したlsfileの中身を逆順に表示してみました。
+
+\begin{tcolorbox}[title=\useOmetoi]
+    \begin{enumerate}
+        \addex{\textasciitilde/03/rensyu/kokugo/syosetsu.txtの中身を逆順に表示してみましょう。}
+    \end{enumerate}
+\end{tcolorbox}
+
+\subsubsection{shufコマンド}
+shufコマンドは、行をランダムに入れ替えて出力するコマンドです。
+
+まず、shufコマンドの使い方は、次の通りです。
+
+\begin{lstlisting}[caption=shufコマンドの使い方, label=shuf_usage]
+shuf 表示したいファイルのパス
+\end{lstlisting}
+
+このコマンドを実行することで、パスに指定したファイルの中身をランダムに入れ替えて表示します。
+
+次に、具体的な例を見てみましょう。
+
+\begin{lstlisting}[caption=shufコマンドの実行例, label=shuf_example]
+<#green#pi@raspberrypi#>:<#blue#~ $#> shuf ~/lsfile
+03
+Desktop
+Documents
+02
+Music
+01
+Videos
+Pictures
+Bookshelf
+Templates
+Public
+lsfile
+Downloads
+\end{lstlisting}
+
+この例では、リスト\ref{redirectLs}で使用したlsfileの中身をランダムに入れ替えて表示してみました。
+実行するたびにランダムに入れ替わるので、この例とは\ruby{異}{こと}なる結果が表示されるかもしれません。
+
+\begin{tcolorbox}[title=\useOmetoi]
+    \begin{enumerate}
+        \addex{\textasciitilde/03/rensyu/kokugo/syosetsu.txtの行をランダムに入れ替えて表示してみましょう。}
+    \end{enumerate}
+\end{tcolorbox}
+
+\subsubsection{headコマンド}
+headコマンドは、先頭のいくつかの行を表示するコマンドです。
+
+まず、headコマンドの使い方は、次の通りです。
+
+\begin{lstlisting}[caption=headコマンドの使い方, label=head_usage]
+head 表示したいファイルのパス -n 行数
+\end{lstlisting}
+
+このコマンドを実行することで、パスに指定したファイルの中身の内、先頭の数行を表示します。
+表示する行数は、nオプションの後に指定した行数に\ruby{依存}{い|そん}します。
+
+次に、具体的な例を見てみましょう。
+
+\begin{lstlisting}[caption=headコマンドの実行例, label=shuf_example]
+<#green#pi@raspberrypi#>:<#blue#~ $#> head ~/lsfile -n 2
+01
+02
+\end{lstlisting}
+
+この例では、lsfileの中身の先頭の2行を表示してみました。
+
+\begin{tcolorbox}[title=\useOmetoi]
+    \begin{enumerate}
+        \addex{\textasciitilde/03/rensyu/kokugo/syosetsu.txtの先頭の5行を表示してみましょう。}
+    \end{enumerate}
+\end{tcolorbox}
+
+\subsubsection{tailコマンド}
+tailコマンドは、末尾のいくつかの行を表示するコマンドです。
+
+まず、tailコマンドの使い方は、次の通りです。
+
+\begin{lstlisting}[caption=tailコマンドの使い方, label=tail_usage]
+tail 表示したいファイルのパス -n 行数
+\end{lstlisting}
+
+このコマンドを実行することで、パスに指定したファイルの中身の内、末尾の数行を表示します。
+表示する行数は、nオプションの後に指定した行数に依存します。
+
+次に、具体的な例を見てみましょう。
+
+\begin{lstlisting}[caption=tailコマンドの実行例, label=shuf_example]
+<#green#pi@raspberrypi#>:<#blue#~ $#> tail ~/lsfile -n 2
+Videos
+lsfile
+\end{lstlisting}
+
+この例では、lsfileの中身の末尾の2行を表示してみました。
+
+\begin{tcolorbox}[title=\useOmetoi]
+    \begin{enumerate}
+        \addex{\textasciitilde/03/rensyu/kokugo/syosetsu.txtの末尾の5行を表示してみましょう。}
+    \end{enumerate}
+\end{tcolorbox}
+
+\subsubsection{sortコマンド}
+sortコマンドは行を順番にならべかえるコマンドです。
+
+まず、sortコマンドの使い方は、次の通りです。
+
+\begin{lstlisting}[caption=sortコマンドの使い方, label=sort_usage]
+sort 表示したいファイルのパス
+\end{lstlisting}
+
+パスに指定したファイルの中身を行ごとに\ruby{並}{なら}べ替えて表示します。
+
+次に、具体的な例を見てみましょう。
+
+\begin{lstlisting}[caption=sortコマンドの実行例, label=sort_example]
+<#green#pi@raspberrypi#>:<#blue#~ $#> sort ~/lsfile
+01
+02
+03
+Bookshelf
+Desktop
+Documents
+Downloads
+lsfile
+Music
+Pictures
+Public
+Templates
+Videos
+\end{lstlisting}
+
+この例では、lsfileの中身を順番に並べ替えて表示してみました。
+数字とアルファベットが\ruby{混在}{こん|ざい}している場合、数字が先に表示され、その後にアルファベットが表示されます。
+
+\begin{tcolorbox}[title=\useOmetoi]
+    \begin{enumerate}
+        \addex{\textasciitilde/02ディレクトリの中身をsortコマンドを使って並べ替えて表示してみましょう。 \\ ヒント:まず、02の中身を表示するコマンドの標準出力をリダイレクトでファイル書き込もう。次にsortコマンドを使ってファイルの中身を並べ替えてみよう。}
+    \end{enumerate}
+\end{tcolorbox}
+
+\subsubsection{grepコマンド}
+grepコマンドは、検索パターンに一致する行を出力するコマンドです。
+
+まず、grepコマンドの使い方は、次の通りです。
+
+\begin{lstlisting}[caption=grepコマンドの使い方, label=grep_usage]
+grep 検索パターン 表示したいファイルのパス
+\end{lstlisting}
+
+パスに指定したファイルから、検索パターンに一致する行を表示します。
+
+次に、具体的な例を見てみましょう。
+
+\begin{lstlisting}[caption=grepコマンドの実行例, label=grep_example]
+<#green#pi@raspberrypi#>:<#blue#~ $#> grep 03 ~/lsfile
+<#red#03#>
+\end{lstlisting}
+
+この例では、lsfileの中身から"03"という文字列に一致する行を表示してみました。
+このように、一致する行がある場合はその行のみが表示されます。
+また、一致する文字列は赤字で表示されます。
+
+\begin{tcolorbox}[title=\useOmetoi]
+    \begin{enumerate}
+        \addex{\textasciitilde/03/rensyu/kokugo/syosetsu.txtの中身から"ごんぎつね"という文字列に一致する行を表示してみましょう。}
+    \end{enumerate}
+\end{tcolorbox}
+
+\subsubsection{パイプラインとフィルタコマンドを組み合わせた使い方}
+これまでフィルタコマンドの使い方を紹介してきました。
+これらのフィルタコマンドは、節\ref{sec:pipelne}で勉強したパイプラインと組み合わせることでより便利に使うことができます。
+
+まず、パイプラインとフィルタコマンドを組み合わせた使い方は次の通りです。
+
+\begin{lstlisting}[caption=パイプラインを用いたフィルタコマンドの実行例, label=pipeline_filter]
+標準出力を出すコマンド | フィルタコマンド
+\end{lstlisting}
+
+パイプラインを使うことで、標準出力を出すコマンドの結果をフィルタコマンドに渡すことができます。
+また、更にパイプでフィルタコマンドを\ruby{繋}{つな}げることで、さらなるフィルタリングを行うこともできます。
+
+次に、具体的な例を見てみましょう。
+例えば、lsコマンドの標準出力をsortに渡すことで、ファイルの\ruby{一覧}{いち|らん}を並び替える方法を紹介します。
+
+\begin{lstlisting}[caption=パイプラインを用いたsortコマンドの実行例, label=sort_example]
+<#green#pi@raspberrypi#>:<#blue#~ $#> ls ~/03 | sort
+01
+02
+03
+Bookshelf
+Desktop
+Documents
+Downloads
+lsfile
+Music
+Pictures
+Public
+Templates
+Videos
+\end{lstlisting}
+
+この例では、lsコマンドで\textasciitilde/03の中身を表示し、その結果をsortコマンドに渡して並べ替えています。
+lsfileをsortコマンドに渡した\ruby{際}{さい}と同じ結果が表示されていることが分かります。
+
+\begin{tcolorbox}[title=\useOmetoi]
+    \begin{enumerate}
+        \addquiz{ls \$HOME | command1 \\ ホームディレクトリの中身を並び替えるように command1 を\ruby{埋}{う}めましょう。}
+        \addquiz{ls \$HOME | command1 | command2 Downloads \\ 1の結果から Downloads を検索するように command1 と command2 を埋めましょう。}
+        \addquiz{cat \textasciitilde/03/rensyu/kokugo/syosetsu.txt | tail -n 数字1 | head -n 数字2 \\ syosetsu.txtの下から3行目を表示するように 数字1 と 数字2 を埋めましょう。}
+    \end{enumerate}
+\end{tcolorbox}
+
+\subsection{置き\ruby{換}{か}えをするコマンド}
 \begin{tabular}{ll}
     コマンド & 動作                                                       \\ \hline
     tr       & 入力された文字を指定する方法で置き換えて出力する           \\
@@ -326,20 +688,20 @@ hEllO, wORlD!
 hello, world!
 \end{lstlisting}
 
-この例では、trコマンドにアルファベットの大文字全てと対応する小文字全てを書きました。
-また、この例で使用している "\textbackslash" は、コマンドを複数行に分けて書くための記号です。
+この例では、trコマンドにアルファベットの大文字全てと\ruby{対応}{たい|おう}する小文字全てを書きました。
+また、この例で使用している "\textbackslash" は、コマンドを\ruby{複数行}{ふく|すう|ぎょう}に分けて書くための記号です。
 コマンドの実行後、アルファベット全てが小文字に置き換わっていることが分かります。
 
 しかし、アルファベット全てを書くのは大変ですよね。
 そこで、trコマンドでは、連続するアルファベットや数字などに関して "A-Z" や "a-z"、"0-9"
-のように範囲を指定することで簡潔に書くことができます。
+のように\ruby{範囲}{はん|い}を指定することで\ruby{簡潔}{かん|けつ}に書くことができます。
 
 \begin{lstlisting}[caption=範囲指定を使った置き換え, label=tr_range]
 <#green#pi@raspberrypi#>:<#blue#~ $#> echo "HELLO, WORLD!" | tr A-Z a-z
 hello, world!
 \end{lstlisting}
 
-このコマンドでも先程と同じ結果が表示されます。
+このコマンドでも\ruby{先程}{さき|ほど}と同じ結果が表示されます。
 ちなみに、範囲指定を使うときは次のことに気をつけましょう。
 \begin{itemize}
     \item "-" は置き換えられない。
@@ -348,8 +710,8 @@ hello, world!
 \end{itemize}
 
 このように、trコマンドを使うと、文字列の中の文字を簡単に置き換えることができます。
-また、trコマンドを使うことで文字の削除なども行うことができます。
-興味がある人は、文字の置き換え以外にもどのような使い方ができるか、調べてみましょう。
+また、trコマンドを使うことで文字の\ruby{削除}{さく|じょ}なども行うことができます。
+\ruby{興味}{きょう|み}がある人は、文字の置き換え以外にもどのような使い方ができるか、調べてみましょう。
 
 % 問題
 \begin{tcolorbox}[title=\useOmetoi]
