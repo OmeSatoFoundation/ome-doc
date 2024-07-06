@@ -1,7 +1,7 @@
 \section{温度、\ruby{湿度}{しつ|ど}、\ruby{気圧}{き|あつ}、明るさを調べてみよう}\label{sec:sensors}
 次はセンサーボードに\ruby{繋}{つな}がっている BME280（温湿度気圧センサー）と、TSL2572（照度センサー）を使ってみましょう。HSP スクリプトエディタで\textasciitilde /03/sensors.hsp を読み\ruby{込}{こ}み実行してください。\\
 
-\begin{lstlisting}[caption=sensors.hsp,label=sensors.hsp]
+\begin{lstlisting}[caption=\textasciitilde/03/sensors.hsp,label=sensors.hsp]
 #include "hsp3dish.as"		<#blue#;スクリプトの設定を読み込む#>
 #include "rpz-gpio.as"		<#blue#;スクリプトの設定を読み込む#>
 
@@ -38,9 +38,7 @@ geti2c_lux_init 		<#blue#; 照度センサ tsl2572 を初期化する#>
 
 まずは BME280 に関する行について説明します。\\
 \code{init\_bme}\\
-という命令で BME280 を初期化しています。実際にはキャリブレーション（\ruby{補正}{ほ|せい}）のパラメータ取得をしたり、動作モードを決定したりしています。気になる方はデータシート（英語）を読んでみましょう。\\
-この命令の\ruby{値}{あたい}が変数 stat に代入されています。初期化に失敗すると success に 0 以外の値が入るの
-で、次の if 文で\ruby{確認}{かく|にん}しています。\\
+という命令で BME280 を初期化しています。この命令の\ruby{実行結果}{じっ|こう|けっ|か}が変数 stat に代入されています。初期化に失敗すると success に 0 以外の値が入るので、次の if 文で初期化が成功したかどうかを\ruby{確認}{かく|にん}しています。\\
 \code{init\_bme} によって、\code{get\_temp}, \code{get\_humidity}, \code{get\_pressure} が使えるようになりました。\\
 \code{get\_temp}	; rpz\_temp に温度取得\\
 \code{get\_humidity}	; rpz\_hum に湿度取得\\
@@ -49,15 +47,11 @@ geti2c_lux_init 		<#blue#; 照度センサ tsl2572 を初期化する#>
 
 次は TSL2572 に関係する行を説明します。\\
 \code{geti2c\_lux\_init}
-によって TSL2572 が初期化されます。BME280 のときと\ruby{違}{ちが}って返り値を取らず、エラーチェック
-をする必要が無いことに気をつけましょう。実際には感度の設定等が行われます。\ruby{詳}{くわ}しく知りたい方
-はデータシート（英語）を読んでみましょう。
-
-初期化によって、\code{geti2c\_lux\_als} が使えるようになりました。 \\
+によって TSL2572 が初期化されます。BME280 のときと\ruby{違}{ちが}ってエラーチェックをする必要はありません。この初期化によって、\code{geti2c\_lux\_als} が使えるようになります。 \\
 \code{geti2c\_lux\_als} ; rpz\_lux に照度取得
 とすることで、rpz\_lux に照度が入ります。
 
-これらで得られた値を変数 \code{temp}, \code{hum}, \code{press}, \code{lux} にいれていきます。\\
+TSL2572から得られた値を変数 \code{temp}, \code{hum}, \code{press}, \code{lux} にいれていきます。\\
 \code{temp = rpz\_temp\\
 hum = rpz\_hum\\
 press = rpz\_press\\
@@ -67,8 +61,8 @@ lux = rpz\_lux\\}
 
 \begin{tcolorbox}[title=\useOmetoi]
 \begin{enumerate}
-\addquiz{温湿度気圧センサ bme280 を初期化する命令を書きましょう。}
-\addquiz{照度センサ tsl2572 を初期化する命令を書きましょう。}
+\addquiz{温湿度気圧センサ BME280 を初期化する命令を書きましょう。}
+\addquiz{照度センサ TSL2572 を初期化する命令を書きましょう。}
 \addquiz{温度を調べる命令を書きましょう。}
 \addquiz{湿度（しつど）を調べる命令を書きましょう。}
 \addquiz{気圧を調べる命令を書きましょう。}
