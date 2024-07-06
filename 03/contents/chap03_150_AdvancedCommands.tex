@@ -8,18 +8,15 @@
 
 \begin{figure}[h]
     \centering
-    \includesvg[width=0.8\linewidth]{images/chap03/std_in_out_err.svg}
+    \includesvg[width=0.65\linewidth]{images/chap03/std_in_out_err.svg}
     \caption{標準入力・標準出力・標準エラー出力の図}
     \label{ch03:stdioerr}
 \end{figure}
 
 \subsection{コマンドの\ruby{入出力}{にゅう|しゅつ|りょく}}
-　コマンドを\ruby{実行}{じっ|こう}すると、{\bf \ruby{標準入力}{ひょう|じゅん|にゅう|りょく}}、{\bf \ruby{標準出力}{ひょう|じゅん|しゅつ|りょく}}、{\bf \ruby{標準}{ひょう|じゅん}エラー出力}の3つのデータの\ruby{通}{とお}り道が\ruby{準備}{じゅん|び}されます。このデータの\ruby{通}{とお}り道をチャネルといいます。
+　コマンドを\ruby{実行}{じっ|こう}すると、{\bf \ruby{標準入力}{ひょう|じゅん|にゅう|りょく}}、{\bf \ruby{標準出力}{ひょう|じゅん|しゅつ|りょく}}、{\bf \ruby{標準}{ひょう|じゅん}エラー出力}の3つのデータの\ruby{通}{とお}り道が\ruby{準備}{じゅん|び}されます。このデータの\ruby{通}{とお}り道をチャネルといいます。チャネルに何も指定せずにコマンドを\ruby{実行}{じっ|こう}すると、\ruby{標準入力}{ひょう|じゅん|にゅう|りょく}はキーボードに\ruby{設定}{せっ|てい}されます。\ruby{標準出力}{ひょう|じゅん|しゅつ|りょく}と\ruby{標準}{ひょう|じゅん}エラー出力はディスプレイに\ruby{設定}{せっ|てい}されます。
 
-　チャネルに何も指定せずにコマンドを\ruby{実行}{じっ|こう}すると、\ruby{標準入力}{ひょう|じゅん|にゅう|りょく}はキーボードに\ruby{設定}{せっ|てい}されます。\ruby{標準出力}{ひょう|じゅん|しゅつ|りょく}と\ruby{標準}{ひょう|じゅん}エラー出力はディスプレイに\ruby{設定}{せっ|てい}されます。
-
-
-コマンドによっては、\ruby{標準}{ひょう|じゅん}の入力をコマンドの引数として与えることができるものがあります。例えば cat などのコマンドは cat ファイル名 で\ruby{指定}{し|てい}したファイルを\ruby{標準出力}{ひょう|じゅん|しゅつ|りょく}に出力します。cat にファイル名を指定しないと、\ruby{標準入力}{ひょう|じゅん|にゅう|りょく}、つまりからデータを受け取ります。
+catコマンドは、"cat ファイル名"と実行することで、ファイルの内容を\ruby{標準}{ひょう|じゅん}出力に表示するコマンドでした。cat にファイル名を指定しないと、\ruby{標準入力}{ひょう|じゅん|にゅう|りょく}、つまりからデータを受け取ります。このように、コマンドによっては入力するデータをコマンドの引数として与えるか、\ruby{標準}{ひょう|じゅん}入力から与えるかを選ぶことができるものがあります。
 
 \begin{lstlisting}[caption=catの標準入力・標準出力, label=stdioCat]
 <#green#pi@raspberrypi#>:<#blue#~ $#> cat 
@@ -28,19 +25,17 @@ sansu         <- 標準出力（ディスプレイ）への出力
 <Ctrl+D>      <- 標準入力からEOFを入力し、入力が終了したことを伝える
 <#green#pi@raspberrypi#>:<#blue#~ $#>
 \end{lstlisting}
-EOFとはEnd Of File(エンドオブファイル)の\ruby{略称}{りゃく|しょう}でどこがファイルの最後なのかを教えるために使います。
+EOFはファイルがここで終ることを示す記号です。End Of File(エンドオブファイル)と呼びます。キーボードからcatコマンドを使って文字を入力するときには、最後にEOFを入力します。
 
 \subsection{リダイレクト}
-\ruby{標準入力}{ひょう|じゅん|にゅう|りょく}、\ruby{標準出力}{ひょう|じゅん|しゅつ|りょく}、\ruby{標準}{ひょう|じゅん}エラー出力の出力先は、ファイルに\ruby{変更}{へん|こう}することができます。
-この\ruby{機能}{き|のう}を使うと、ファイルからデータを読み込んだり、結果をファイルに保存したりすることが\ruby{簡単}{かん|たん}にできるようになります。
-
+\ruby{標準}{ひょう|じゅん}入力、\ruby{標準}{ひょう|じゅん}出力、\ruby{標準}{ひょう|じゅん}エラー出力の出力先は、ファイルに\ruby{変更}{へん|こう}することができます。この\ruby{機能}{き|のう}を{\bf リダイレクト}と呼びます。
+リダイレクトを使うと、ファイルからデータを読み込んだり、結果をファイルに保存したりすることが\ruby{簡単}{かん|たん}にできるようになります。
 \begin{figure}
     \centering
-    \includesvg[width=0.8\linewidth]{images/chap03/redirect.svg}
+    \includesvg[width=0.65\linewidth]{images/chap03/redirect.svg}
     \caption{リダイレクトを表した図}
     \label{ch03:redirect}
 \end{figure}
-
 \begin{lstlisting}[caption=lsの出力をリダイレクトする, label=redirectLs]
 <#green#pi@raspberrypi#>:<#blue#~ $#> ls 
 <#blue#01  03         Desktop    Downloads  Pictures  Templates
@@ -84,18 +79,16 @@ Videos
 lsfile
 \end{lstlisting}
 
-今回はリダイレクトの\ruby{練習}{れん|しゅう}のため、
-catコマンドでファイル名を\ruby{指定}{し|てい}するのではなく、リダイレクトと同じことをしました。
+ちなみに、"cat lsfile"と入力しても同じことができます。
 
-\newpage
 \subsection{パイプライン}\label{sec:pipelne}
 
 パイプ\ruby{記号}{き|ごう}「|」を使うことで、パイプ記号の前のコマンドの\ruby{標準出力}{ひょう|じゅん|しゅつ|りょく}と、
 パイプ記号の後のコマンドの\ruby{標準入力}{ひょう|じゅん|にゅう|りょく}をつなぐことができます。
 
-\begin{figure}
+\begin{figure}[h]
     \centering
-    \includesvg[width=0.8\linewidth]{images/chap03/pipe.svg}
+    \includesvg[width=0.65\linewidth]{images/chap03/pipe.svg}
     \caption{パイプを表した図}
     \label{ch03:pipe}
 \end{figure}
@@ -117,37 +110,35 @@ Videos
 lsfile
 \end{lstlisting}
 
-lsコマンドはリダイレクトやパイプを使うと1ファイルが一行ずつ出力されるようになっています。
-lessコマンドにlsコマンドの\ruby{標準出力}{ひょう|じゅん|しゅつ|りょく}を渡すことによってファイルやディレクトリを一画面に表示することができました。
+lsコマンドはリダイレクトやパイプを使うとファイルが一行ずつ出力されます。
+lessコマンドにlsコマンドの\ruby{標準}{ひょう|じゅん}出力を渡すことで、ファイルやディレクトリを一画面ずつ表示することができました。
 
 \newpage
-\begin{figure}[t]
+\section{xargsをつかったコマンドの実行}
+%\ruby{標準入力}{ひょう|じゅん|にゅう|りょく}を受け取って、\ruby{標準出力}{ひょう|じゅん|しゅつ|りょく}を出力に出すコマンドをフィルタコマンドといいます。
+%xargsコマンドもフィルタコマンドのうちの一つです。
+xargsコマンドは\ruby{標準}{ひょう|じゅん}入力を受け取り、実行したいコマンドの引数として使うことができます。
+xargsを使うと、引数にいろいろなものを指定することができるようになります。
+\begin{figure}[h]
     \centering
-    \includesvg[width=0.8\linewidth]{images/chap03/xargs_command.svg}
+    \includesvg[width=0.65\linewidth]{images/chap03/xargs_command.svg}
     \caption{xargsコマンドを表した図}
     \label{ch03:xargs_command}
 \end{figure}
-
-\subsection{xargsによるコマンドの組み立て}
-
-\ruby{標準入力}{ひょう|じゅん|にゅう|りょく}を受け取って、\ruby{標準出力}{ひょう|じゅん|しゅつ|りょく}を出力に出すコマンドをフィルタコマンドといいます。
-xargsコマンドもフィルタコマンドのうちの一つです。
-xargsコマンドは\ruby{標準入力}{ひょう|じゅん|にゅう|りょく}を受け取って実行したいコマンドの引数として渡すことができます。
-
 \begin{lstlisting}[caption=xargsコマンドを使う準備をする]
 <#green#pi@raspberrypi#>:<#blue#~ $#> cd 03/rensyu
-<#green#pi@raspberrypi#>:<#blue#~/03/rensyu $#> mkdir xargs
-<#green#pi@raspberrypi#>:<#blue#~/03/rensyu $#> cp ~/lsfile ./xargs
-<#green#pi@raspberrypi#>:<#blue#~/03/rensyu $#> cp ./kokugo/syousetu.txt ./xargs
-<#green#pi@raspberrypi#>:<#blue#~/03/rensyu $#> cd xargs 
-<#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#> ls
+<#green#pi@raspberrypi#>:<#blue#~/03/rensyu $#> mkdir xargstest
+<#green#pi@raspberrypi#>:<#blue#~/03/rensyu $#> cp ~/lsfile ./xargstest
+<#green#pi@raspberrypi#>:<#blue#~/03/rensyu $#> cp ./kokugo/syousetu.txt ./xargstest
+<#green#pi@raspberrypi#>:<#blue#~/03/rensyu $#> cd xargstest
+<#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargstest $#> ls
 <#magenta#lsfile  syousetu.txt#>
 \end{lstlisting}
-xargsコマンドを使うためのディレクトリを\textasciitilde /03/rensyu/xargsに作りました。
+xargsコマンドを使うためのディレクトリを\textasciitilde /03/rensyu/xargstestとして作りました。
 
 \newpage
 \begin{lstlisting}[caption=xargsコマンドを使ってcatコマンドを使う]
-<#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#> ls | xargs cat
+<#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargstest $#> ls | xargs cat
 01
 02
 03
@@ -162,9 +153,10 @@ Desktop
 https://www.aozora.gr.jp/cards/000121/files/628_14895.html
 <#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#>
 \end{lstlisting}
+cat コマンドに2つ以上のファイル名を指定すると、それらのファイルがつながって表示されます。
 lsコマンドで取り出したファイル名をxargsコマンドに渡して、2つのファイルの中身を同時に見ることができました。
 
-\subsection{xargsのオプション}
+\subsection{出力を作るコマンド}
 xargsのオプションの紹介の前にこの章で使うコマンドの説明をします。
 \begin{description}
     \item[\texttt{seq}\textvisiblespace 数字1\textvisiblespace 数字2]\mbox{}\\
@@ -194,6 +186,7 @@ hello
 \end{lstlisting}
 echoコマンドを使うことで好きな文字を出力できました。
 
+\subsection{xargsのオプション}
 xargsにもオプションがいくつかあります。そのうち、よくつかわれるオプション3つを\ruby{紹介}{しょう|かい}します。
 
 \begin{description}
@@ -215,7 +208,7 @@ lsfile syousetu.txt
 \begin{description}
     \item[\texttt{xargs}\textvisiblespace \texttt{-i}\textvisiblespace
                 コマンド\textvisiblespace \{\}]\mbox{}\\
-    \ruby{標準入力}{ひょう|じゅん|にゅう|りょく}を受け取って\{\}の中に1つづつ引数に当てはめます。
+    \ruby{標準}{ひょう|じゅん}入力をひとつずつ受け取って\{\}の中に当てはめて、コマンドを実行します。
 \end{description}
 
 \begin{lstlisting}[caption=xargsコマンドのオプションi]
@@ -228,9 +221,9 @@ syousetu.txt
 \begin{description}
     \item[\texttt{xargs}\textvisiblespace \texttt{-L}\textvisiblespace
                 数字\textvisiblespace コマンド]\mbox{}\\
-    Lオプションは、xarg引数コマンドに一度に\ruby{展開}{てん|かい}されるデータの最大数を指定します。
-    \ruby{標準出力}{ひょう|じゅん|しゅつ|りょく}から渡されたデータ数が、-Lで指定された数より大きい場合、全てのデータが\ruby{展開}{てん|かい}し終わるまで
-    xargs引数コマンドが繰り返し実行されます。
+    Lオプションは、xargで一度にコマンドに渡す引数の最大数を指定します。
+    \ruby{標準}{ひょう|じゅん}出力から渡されたデータ数が、-Lで指定された数より大きい場合、全ての入力が\ruby{展開}{てん|かい}し終わるまで
+    コマンドが繰り返し実行されます。
     -iオプションと-Lオプションを一緒に使うことはできません。
 \end{description}
 
@@ -721,7 +714,7 @@ hello, world!
     \end{enumerate}
 \end{tcolorbox}
 
-\subsection{単語を置き換える}
+\subsection{単語の置き換え}
 tr は一文字ごとの置き換えを処理できました。
 それでは、単語など文字列、つまり複数の文字を置き換えたいときはどうしたらよいでしょう。
 このために、また別なコマンドがあります。
@@ -820,20 +813,14 @@ $138+395$の計算を実行すると次のような出力が得られます。
 \end{tcolorbox}
 \subsection{コマンドに別名を付ける}
 
-コマンドを打っていて、よく使うのに覚えにくいものがあったりします。そんな時はコマンドに別名を付けてしまいましょう。これを英語では alias (エイリアス)と言います。エイリアスは alias コマンドで追加できます。
+よく使うコマンドなのに、入力しにくいものがありませんか。そんな時はエイリアスという\ruby{機能}{き|のう}でコマンドに別名を付けてしまいましょう。別名のことを英語で alias (エイリアス)と言います。
 
 \begin{description}
 \item[\texttt{alias}\textvisiblespace 名前='コマンド']\mbox{}\\
 コマンドの別名として名前を設定します。コマンドの両脇の小さい点をシングルクオーテーションと呼びます。
 \end{description}
 
-では、使用例を見てみましょう。例えば、
-
-\begin{description}
-\item[\texttt{ls}\textvisiblespace -alF]
-\end{description}
-
-に l (小文字のL)という別名を付けたいとします。つまり、l と実行したら ls -alF が実行されるようにしたいということです。
+では、使用例を見てみましょう。例えば、"{\texttt ls\textvisiblespace -alF}" に l (小文字のL)という別名を付けたいとします。この時はaliasコマンドを以下のように使います。
 
 \begin{lstlisting}[caption=aliasコマンドの例, label=aliasCommandExample]
 <#green#pi@raspberrypi#>:<#blue#~ $#> alias l='ls -alF'
@@ -852,9 +839,11 @@ $138+395$の計算を実行すると次のような出力が得られます。
 <#green#pi@raspberrypi#>:<#blue#~ $#> ls -alF
 \end{lstlisting}
 
-同じ出力が得られるはずです。しかし、bash を閉じると今設定した別名は消えてしまいます。
+同じ出力が得られるはずです。しかし、ターミナルを閉じると今設定した別名は消えてしまいます。
 
-別名を保存しておくには、ホームディレクトリに .bash{\_}aliases というファイルを作成し\ruby{編集}{へん|しゅう}します。なぜかというと、bash は起動時に \textasciitilde/.bash{\_}aliases というファイルの中に書いてあるコマンドをすべて実行してくれるからです。
+別名を保存しておくには、ホームディレクトリに .bash{\_}aliases というファイルを作成し\ruby{編集}{へん|しゅう}します。
+ターミナルは起動時に \textasciitilde/.bash{\_}aliases というファイルの中に書いてあるコマンドをすべて実行するため、
+このファイルにaliasコマンドを書いておくと、ターミナルを\ruby{起動}{き|どう}するたびにaliasコマンドを実行してくれます。
 
 .bash{\_}aliases には、次のようにコマンドを\ruby{記述}{き|じゅつ}し、保存します。
 \begin{lstlisting}[caption=\textasciitilde/.bash\_aliasesの書き方1, label=bashAliasesGrammar1]
@@ -864,13 +853,13 @@ alias name='command'
             :
 \end{lstlisting}
 
-保存が終わったら、.bash{\_}aliases の中のコマンドを実行することで、別名を\ruby{適用}{てき|よう}します。source というコマンドで .bash{\_}aliases の中のコマンドを実行します。
+保存が終わったら、.bash{\_}aliases の中のコマンドを実行することで、別名を\ruby{適用}{てき|よう}します。source コマンドで .bash{\_}aliases の中のコマンドを実行します。
 \begin{lstlisting}[caption=\textasciitilde/.bash\_aliasesの読込, label=sourceBashAliases]
 <#green#pi@raspberrypi#>:<#blue#~ $#> source ~/.bash_aliases
 <#green#pi@raspberrypi#>:<#blue#~ $#>
 \end{lstlisting}
 
-上のように実行して何も表示されなければ正常に\ruby{適用}{てき|よう}できています。
+上のように実行して何も表示されなければ正常に\ruby{実行}{じっ|こう}できています。
 
 % alias コマンドにシングルクオーテーションが必要なのは、次のように記述できるからです。
 % \begin{description}
@@ -879,9 +868,9 @@ alias name='command'
 % \end{description}
 
 \begin{itemize}
-    \item[<補足1>] bash が\ruby{起動}{き|どう}したとき、\textasciitilde/.bashrc というファイルの中身が自動で実行されます。\\
-    さらにその中で \textasciitilde/.bash{\_}aliases の中身を実行する\ruby{記述}{き|じゅつ}があります。ただし、\\
-    そのタイミングでしか読み込まれないので、ファイルを\ruby{編集}{へん|しゅう}した後に読み込みなおす\\
+    \item[<補足1>] ターミナルを起動すると、コマンドを実行するプログラムである bash が\ruby{起動}{き|どう}します。bash が\ruby{起動}{き|どう}したとき、\textasciitilde/.bashrc というファイルの中身が自動で実行されます。\\
+    さらに\textasciitilde/.bashrc の中で \textasciitilde/.bash{\_}aliases の中身を実行する\ruby{記述}{き|じゅつ}があります。ただし、\\
+    これらのファイルは\ruby{起動}{き|どう}のタイミングでしか読み込まれないので、ファイルを\ruby{編集}{へん|しゅう}した後に読み込みなおす\\
     必要があります。また、\textasciitilde/.bash{\_}aliases に上で述べたように正しく\ruby{記述}{き|じゅつ}しないと、\\
     bash \ruby{起動}{き|どう}時に毎回エラーメッセージが表示されるようになります。正しく\ruby{記述}{き|じゅつ}するように\\
     しましょう。
@@ -892,11 +881,11 @@ alias name='command'
 \begin{tcolorbox}[title=\useOmetoi]
     \begin{enumerate}
         \addex{
-            rm\textvisiblespace -i というコマンドに rm と別名を付けてみましょう。
+            source \textasciitilde/.bashrc というコマンドに loadrc と別名を付けてみましょう。
             (オプション) bash を\ruby{再起動}{さい|き|どう}しても別名が残るようにしてみましょう。
         }
         \addex{
-            好きなコマンドに好きな別名を付けてみましょう。
+            clear コマンドは、ターミナルの表示を消すコマンドです。このコマンドに好きな別名を付けてみましょう。
         }
     \end{enumerate}
 \end{tcolorbox}
