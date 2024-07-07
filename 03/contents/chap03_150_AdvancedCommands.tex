@@ -891,34 +891,89 @@ alias name='command'
 \end{tcolorbox}
 
 
-\section{複数ファイルの指定}
-コマンドによっては、ファイルを2つ以上指定しても動作します。
-
-
-\section{ワイルドカード}
-
-どんな文字が入ってもよい、ということを表す。
-
-
-（*）アスタリスク任意の文字が、0文字以上入っていることを示します。
-（?）クエスチョンマークは、任意の文字が1文字入っていることを示します。
-（[]） 角括弧で囲まれた文字は、囲まれた文字の中のどれか一文字が入る
-
-
 \section{ファイルを探す}
-ディレクトリの中から指定されたファイルを探す
+たくさんファイルができると、必要なファイルがどこにあったか覚えておくのが大変になります。
+ある名前から始まるファイルを探したり、ある拡張子を持ったファイルをすべて探し出したりできると便利です。
+ここでは、ファイルを探すコマンドであるfindを紹介します。加えて、findを便利に使うためにワイルドカードを紹介します。
 
-\section{Touchコマンド}
+\subsection{findコマンド}
+findコマンドは、ディレクトリの中から指定されたファイルを探します。とてもたくさんのことができるので、ここでは見つけたファイルの場所を表示する方法を示します。
 
 \begin{description}
-    \item[\labelitemi touch ファイル名]\mbox{}\\空のファイルを作成します。ファイルがすでにある場合は、ファイルの更新日時とアクセス日時を更新します。 
+    \item[● \texttt{find}\textvisiblespace \underline{ディレクトリ}$\cdots$ \texttt{-name} \underline{ファイル名} ]\mbox{}\\ 
+    \underline{ファイル名}と同じ名前のファイルがある場所をパスで表示します。\underline{ディレクトリ}$\cdots$の指定が無いときはカレントディレクトリ「.」を指定したものとします。
 \end{description}
 
-ファイルの日付を変更する。
-空のファイルを作る。
+\begin{lstlisting}[caption=ワイルドカードの使い方, label=wildcard]
+    <#green#pi@raspberrypi#>:<#blue#~ $#> find -name rika.png
+    適切な例をこれから探します！
+    <#green#pi@raspberrypi#>:<#blue#~ $#>
+\end{lstlisting}
+
+このままfindを使ってもよいのですが、ある文字から始まるファイルを探したり、
+ある拡張子を持っているファイルを探すことができるととても便利になります。
+ターミナルで複数のファイルを指定する方法を覚えて、findを便利に使うことができるようにします。
+
+\subsection{複数ファイルの指定}
+コマンドによっては、操作の対象を2つ以上指定しても動作するものがあります。
+例えば、\\
+\texttt{ls}\textvisiblespace \texttt{-F} \underline{ファイル}$\cdots$\\
+と説明されているコマンドは、\underline{ファイル}の後に「$\cdots$（三点リーダ）」がついています。これは、複数のファイルやディレクトリを指定できるという意味です。\\
+\texttt{ls}\textvisiblespace \texttt{-F} 01/ 02/ 03/ \\
+とするなどして、複数のディレクトリの中に入ったファイルを一つのコマンドで見ることができます。
+
+\subsection{ワイルドカード}
+複数のファイルなどを指定する際に便利なのが、ワイルドカードによる名前の指定です。
+ワイルドカード(wilde card)とはどんな文字が入ってもよい、ということを表す英語です。
+ラズパイのターミナルで使うことができるワイルドカードは、次のようなものがあります。
+
+\vspace{1\zh}
+\begin{tabular}{cp{0.7\columnwidth}} \hline
+    書き方 & 意味 \\ \hline
+    \texttt{*} （アスタリスク）  & 任意の文字が、0文字以上入っていることを示します。\\
+    \texttt{?} （クエスチョンマーク） & 任意の文字が1文字入っていることを示します。\\
+    \texttt{[abc]} & かっこで囲まれた文字の中のどれか一文字が入る。この場合はaかbかcのどれか。\\
+    \texttt{[!abc]} & かっこで囲まれた文字の中{\bf 以外}の文字が入る。この場合はzなどの、a,b,c以外の文字。\\
+    \texttt{\{abc, opq, xyz\}} & 波かっこ\{\}で囲まれた、「,」で区切られている文字列のうちどれかを示す。\\ \hline
+\end{tabular}
+
+この中でももっとも良く使うのが*です。例えば、0から始まるファイルやディレクトリをlsコマンドで表示させる例は以下のようになります。
+
+\begin{lstlisting}[caption=ワイルドカードの使い方, label=wildcard]
+    <#green#pi@raspberrypi#>:<#blue#~ $#> ls -F 0*
+    01/ 02/ 03/ 04/ 05/ 06/ 07/ 
+    <#green#pi@raspberrypi#>:<#blue#~ $#>
+\end{lstlisting}
+
+ワイルドカードを使ったファイル名の指定に少しずつ慣れていきましょう。
+
+\subsection{便利なfindコマンドの使い方}
+findコマンドは、ワイルドカードを使って探すファイルを指定することができます。
+
+\begin{description}
+    \item[● \texttt{find}\textvisiblespace \texttt{-name '}\underline{パターン}\texttt{'}]\mbox{}\\ 
+    \underline{パターン}に一致する名前のファイルがある場所をパスで表示します。\underline{パターン}はワイルドカードで指定し、シングルクォート「\texttt{'}」で囲みます。
+\end{description}
+
+\begin{lstlisting}[caption=03ディレクトリからPNGファイルを探す, label=findwild]
+    <#green#pi@raspberrypi#>:<#blue#~ $#> find 03 -name '*.png'
+    PNGファイルなどを探すようにする。
+    <#green#pi@raspberrypi#>:<#blue#~ $#>
+\end{lstlisting}
+
+
+\section{touchコマンド}
+
+\begin{description}
+    \item[● touch \underline{ファイル名}]\mbox{}\\
+    名前が\underline{ファイル名}の空のファイルを作成します。ファイルがすでにある場合は、ファイルの更新日時とアクセス日時を更新します。 
+\end{description}
+　ファイルの更新日時とアクセス日時とは、それぞれ最後にファイルを保存した日時と、最後にファイルを読んだ日時になります。 ls -a で確認することができます。
 
 \begin{lstlisting}[caption=別名の確認, label=confirmAlias]
-    <#green#pi@raspberrypi#>:<#blue#~ $#> l
+    <#green#pi@raspberrypi#>:<#blue#~ $#> touch testtouch
+    <#green#pi@raspberrypi#>:<#blue#~ $#> ls -a testtouch
+    -rw-r--r-- 1 okuyama okuyama 0 Jul  8 13:05 testtouch <- （表示が正しいかチェックが必要）7月8日13:05に更新されたことが分かります。
 \end{lstlisting}
 
     
