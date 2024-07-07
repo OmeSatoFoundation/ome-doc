@@ -84,7 +84,7 @@ RUN cd ~/ \
 
 WORKDIR /install-tl-unx
 COPY ./prod/texlive.profile ./
-RUN wget -nv https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2023/install-tl-unx.tar.gz
+RUN wget -nv --no-check-certificate https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2023/install-tl-unx.tar.gz
 RUN tar -xzf ./install-tl-unx.tar.gz --strip-components=1
 RUN perl ./install-tl --scheme=full --no-doc-install --no-src-install --no-interaction --repository https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2023/tlnet-final/
 RUN ln -sf /usr/local/texlive/*/bin/* /usr/local/bin/texlive
