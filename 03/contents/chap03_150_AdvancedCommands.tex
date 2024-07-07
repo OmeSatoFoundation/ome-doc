@@ -889,3 +889,36 @@ alias name='command'
         }
     \end{enumerate}
 \end{tcolorbox}
+
+
+\section{複数ファイルの指定}
+コマンドによっては、ファイルを2つ以上指定しても動作します。
+
+
+\section{ワイルドカード}
+
+どんな文字が入ってもよい、ということを表す。
+
+
+（*）アスタリスク任意の文字が、0文字以上入っていることを示します。
+（?）クエスチョンマークは、任意の文字が1文字入っていることを示します。
+（[]） 角括弧で囲まれた文字は、囲まれた文字の中のどれか一文字が入る
+
+
+\section{ファイルを探す}
+ディレクトリの中から指定されたファイルを探す
+
+\section{Touchコマンド}
+
+\begin{description}
+    \item[\labelitemi touch ファイル名]\mbox{}\\空のファイルを作成します。ファイルがすでにある場合は、ファイルの更新日時とアクセス日時を更新します。 
+\end{description}
+
+ファイルの日付を変更する。
+空のファイルを作る。
+
+\begin{lstlisting}[caption=別名の確認, label=confirmAlias]
+    <#green#pi@raspberrypi#>:<#blue#~ $#> l
+\end{lstlisting}
+
+    

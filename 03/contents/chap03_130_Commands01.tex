@@ -3,8 +3,8 @@
 
 \subsection{カレントディレクトリを\ruby{変更}{へん|こう}してみよう}
 \begin{description}
-\item[\texttt{cd}\textvisiblespace ディレクトリ]\mbox{}\\
-カレントディレクトリを指定したディレクトリに変更します。このことを「移動する」と言います。
+\item[● \texttt{cd}\textvisiblespace \underline{ディレクトリ}]\mbox{}\\
+カレントディレクトリを\underline{ディレクトリ}に変更します。このことを「移動する」と言います。
 \end{description}
 \begin{itemize}
 \item[<例>] Picturesディレクトリに移動するときはcd\textvisiblespace Pictures/と入力します
@@ -17,7 +17,7 @@
 プロンプトのカレントディレクトリ\ruby{表示}{ひょう|じ}が変わっています。
 
 \begin{description}
-\item[\texttt{cd}]\mbox{}\\
+\item[● \texttt{cd}]\mbox{}\\
 ホームディレクトリに移動します。
 \end{description}
 \begin{itemize}
@@ -32,8 +32,8 @@
 
 \subsection{ファイルの中身を見てみよう}
 \begin{description}
-\item[\texttt{cat}\textvisiblespace ファイル]\mbox{}\\
-ファイルに書かれている\ruby{内容}{ない|よう}を\ruby{表示}{ひょう|じ}します。
+\item[● \texttt{cat}\textvisiblespace \underline{ファイル}$\cdots$ ]\mbox{}\\
+\underline{ファイル}$\cdots$に書かれている\ruby{内容}{ない|よう}を\ruby{表示}{ひょう|じ}します。
 \end{description}
 \begin{itemize}
 \item[<例>]syousetu.txt に書かれている文字を表示します。
@@ -65,7 +65,7 @@
 
 \subsection{コピーしてみよう}
 \begin{description}
-\item[\texttt{cp}\textvisiblespace ファイル1\textvisiblespace ファイル2]\mbox{}\\
+\item[● \texttt{cp}\textvisiblespace \underline{ファイル1}\textvisiblespace \underline{ファイル2}]\mbox{}\\
 ファイル1をファイル2という名前でコピーします。
 \end{description}
 \begin{itemize}
@@ -78,12 +78,11 @@
 <#blue#MagPi/	#>	<#magenta#rika2.png#>	<#blue#...#>
 \end{lstlisting}
 \begin{description}
-\item[\texttt{cp}\textvisiblespace \texttt{-r}\textvisiblespace ディレクトリ1\textvisiblespace ディレクトリ2]\mbox{}\\
-ディレクトリをコピーします。
+\item[\texttt{cp}\textvisiblespace \texttt{-r}\textvisiblespace \underline{ディレクトリ1}\textvisiblespace \underline{ディレクトリ2}]\mbox{}\\
+\underline{ディレクトリ1}を\underline{ディレクトリ2}という名前でコピーします。ディレクトリのなかみもすべてコピーします。
 \end{description}
 \begin{itemize}
-\item[<例>]\textasciitilde /03/rensyu/rika をrikaという名前でホームディレクトリにコピー
-します。ls\textvisiblespace -F を実行すると rikaディレクトリ がコピーされていることを確認できます。
+\item[<例>]\textasciitilde /03/rensyu/rika をrikaという名前でホームディレクトリにコピーします。ls\textvisiblespace -F を実行すると rikaディレクトリ がコピーされていることを確認できます。
 \end{itemize}
 \begin{lstlisting}[caption=cp -rの例, label=cp-R]
 <#green#pi@raspberrypi#>:<#blue#~ $#> cp -r ~/03/rensyu/rika ~/rika
@@ -91,12 +90,10 @@
 <#blue#MagPi/	#>	<#blue#rika/#>	<#magenta#rika2.png#>	<#blue#...#>
 \end{lstlisting}
 
-
-
 \subsection{ファイルやディレクトリを\ruby{移動}{い|どう}してみよう}
 \begin{description}
-\item[\texttt{mv}\textvisiblespace ファイルやディレクトリ\textvisiblespace 移動先]\mbox{}\\
-ファイルやディレクトリを移動先に移動します。
+\item[● \texttt{mv}\textvisiblespace \underline{ファイルやディレクトリ}$\cdots$\textvisiblespace \underline{移動先ディレクトリ}]\mbox{}\\
+\underline{ファイルやディレクトリ}$\cdots$を\underline{移動先ディレクトリ}に移動します。
 \end{description}
 \begin{itemize}
 \item[<例>]rika2.pngをrika ディレクトリに移動します。ls\textvisiblespace -F\textvisiblespace rikaとコマンドを実行するとrika2.pngがrikaディレクトリの中に移動されていることを\ruby{確認}{かく|にん}できます。
@@ -110,8 +107,8 @@
 
 \subsection{ファイルやディレクトリの名前を変えてみよう}
 \begin{description}
-\item[\texttt{mv}\textvisiblespace 名前\textvisiblespace 変えたい名前]\mbox{}\\
-ファイルやディレクトリの名前を変更します。
+\item[● \texttt{mv}\textvisiblespace \underline{名前}\textvisiblespace \underline{変えたい名前}]\mbox{}\\
+ファイルやディレクトリの\underline{名前}を\underline{変えたい名前}に変更します。
 \end{description}
 \begin{itemize}
 \item[<例>]rikaディレクトリにあるrika2.pngをbika.pngに名前を変えます。ls\textvisiblespace -F\textvisiblespace rikaで、名前が変わっていることが\ruby{確認}{かく|にん}できます。
