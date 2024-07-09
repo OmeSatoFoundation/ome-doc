@@ -7,13 +7,13 @@
 多くの場合、人間はコンピュータを使ってファイルを操作することで仕事をします。
 ファイルには「\ruby{拡張子}{かく|ちょう|し}」がついており、
 そのファイルがどんな種類なのかを表します。
-たとえば、画像を表す.jpgや、動画を表す.mp4、
+たとえば、画像を表す.jpgと.pngや、動画を表す.mp4、音楽を表す.mp3、
 テキストを表す.txtなどがあります。
 
 \begin{table}[H]
   \begin{center}
     \caption[tab:files]{ファイルの種類}
-    \begin{tabular}{|c|c|c|} \hline
+    \begin{tabular}{|c|c|c|c|c|} \hline
     \begin{minipage}{0.12\hsize}
       \begin{center}
         \includesvg[width=\linewidth]{images/chap03/oto.svg}
@@ -28,8 +28,18 @@
       \begin{center}
         \includesvg[width=\linewidth]{images/chap03/douga.svg}
       \end{center} 
+    \end{minipage} &
+    \begin{minipage}{0.12\hsize}
+      \begin{center}
+        \includesvg[width=\linewidth]{images/chap03/image.svg}
+      \end{center} 
+    \end{minipage} &
+    \begin{minipage}{0.12\hsize}
+      \begin{center}
+        \includesvg[width=\linewidth]{images/chap03/text.svg}
+      \end{center} 
     \end{minipage} \\ \hline
-    oto.mp3 & gazou.jpg & douga.mp4 \\ \hline
+    oto.mp3 & gazou.jpg & douga.mp4 & image.png & memo.txt \\ \hline
   \end{tabular}
  \end{center}
 \end{table}
@@ -159,7 +169,10 @@
 
 \subsection{パスを\ruby{指定}{し|てい}する}
 カレントディレクトリにあるディレクトリxxxの位置を指定する場合は、
-xxx、xxx/、./xxx、./xxx/などと書きます。いろいろな指定の仕方があるのは面白いですね。
+xxx、xxx/、./xxx、./xxx/などと書きます。
+ディレクトリをそのまま書いても、./から始めても、同じ意味になります。
+また、ディレクトリの最後に/をつけるとディレクトリであることがわかりやすいですが、省略してもよいことになっています。
+いろいろな指定の仕方があるのは面白いですね。
 
 ホームディレクトリにあるファイルyyyの位置を指定する場合は、
 \textasciitilde /yyy, または /home/あなたのユーザ名/yyy と書きます。ファイルの後ろにはスラッシュ記号(/)はつけません。

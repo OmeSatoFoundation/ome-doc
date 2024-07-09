@@ -1,6 +1,6 @@
-\subsection{LED をチカチカさせよう}
+\section{LED をチカチカさせよう}
 
-次に LED をチカチカ（\ruby{点滅}{てん|めつ}）させてみましょう。HSP スクリプトエディタで Ltika.hsp を開いて実
+LED をチカチカ（\ruby{点滅}{てん|めつ}）させてみましょう。HSP スクリプトエディタで Ltika.hsp を開いて実
 行してください。\textasciitilde /03 のディレクトリにあります。\\
 
 \begin{lstlisting}[caption=\textasciitilde/03/Ltika.hsp,label=Ltika.hsp]
@@ -19,15 +19,16 @@
 
 プログラムを読んでみましょう。点滅させるためには LED の ON と OFF を\ruby{交互}{こう|ご}に繰り返すのでした。
 OFF にする \code{gpio} 命令 (\code{gpio 22, 0}) と ON にする \code{gpio} 命令 (\code{gpio 22, 1}) が \code{wait} 命令と交互に
-\ruby{現}{あらわ}れることを\ruby{確認}{かく|にん}しましょう。\\
+\ruby{現}{あらわ}れることを\ruby{確認}{かく|にん}しましょう。wait命令は渡した値$\times 10$ミリ秒待つ命令でした。waitで待つ時間が長くなれば、
+LEDの点滅がゆっくりになります。また、waitで待つ時間が短くなれば、LEDの点滅が速くなります。
 
 \begin{tcolorbox}[title=\useOmetoi]
-\begin{enumerate}
-\addex{ターミナルを使って Ltika.hsp のコピーを、322.hsp という名前で作りましょう。}
-\addex{ほかの色の LED がチカチカするように 322.hsp のプログラムを変えてみましょう(ヒント:
-教科書第 2 回 2.3.3 LED がてんめつするスクリプトを参考にしましょう）。}
-\addex{チカチカする速さが速くなるように、322.hsp のプログラムを変えてみましょう(ヒント: 2.3.3 
-LED がてんめつするスクリプトを参考にしましょう）。}
-\addex{チカチカする速さが\ruby{遅}{おそ}くなるように、322.hsp のプログラムを変えてみましょう。}
-\end{enumerate}
+	\begin{enumerate}
+		\addquiz{緑色のLED を光らせる命令を書きましょう。ヒント: この節の説明と、図\ref{sensors}を参考にしましょう。}
+		\addquiz{緑色のLED を消す命令を書きましょう。ヒント: この節の説明と、図\ref{sensors}を参考にしましょう。}
+		\addex{ターミナルを使って Ltika.hsp のコピーを、myLtika.hsp という名前で作りましょう。}
+		\addex{ほかの色の LED がチカチカするように myLtika.hsp のプログラムを変えてみましょう。ヒント: この節の説明と、図\ref{sensors}を参考にしましょう。}
+		\addex{チカチカする速さが速くなるように、myLtika.hsp のプログラムを変えてみましょう。ヒント: この節の説明と、図\ref{sensors}を参考にしましょう。}
+		\addex{チカチカする速さが\ruby{遅}{おそ}くなるように、myLtika.hsp のプログラムを変えてみましょう。}
+	\end{enumerate}
 \end{tcolorbox}

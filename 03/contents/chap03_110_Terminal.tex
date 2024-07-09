@@ -72,7 +72,8 @@
 \end{lstlisting}
 
 \subsection{便利な Tab（タブ）キーを使ってみよう}
-入力したい文字の\ruby{途中}{と|ちゅう}まで入力してから、Tab キーを\ruby{押}{お}すと、コンピュータが残りの文字を\ruby{推測}{すい|そく}して
+ターミナルはbash（バッシュ）というプログラムで入力を受け取ります。
+bashでは、入力したい文字の\ruby{途中}{と|ちゅう}まで入力してから、Tab キーを\ruby{押}{お}すと、コンピュータが残りの文字を\ruby{推測}{すい|そく}して
 くれます。似たような文字があるときは、\ruby{候補}{こう|ほ}を出してくれます。
 \begin{itemize}
 \item[<例>]コマンドを入力する途中で Tab キーを使ってみます。
@@ -101,13 +102,30 @@ pwck  pwconv  pwd  pwdx  pwunconv <--Tabを打つと出てくる
 \end{lstlisting}
 どのファイルやディレクトリかわからないので、ディレクトリやファイルの候補を出してくれました。
 
+\subsection{コマンド\ruby{履歴}{り|れき}}
+bashは今までにどのようなコマンドを受け付けたのかを記録しています。
+\begin{figure}[h]
+  \begin{tabular}{ll}\hline
+    キー & 機能 \\ \hline
+    ↑ または Ctrl+P & ひとつ前のコマンドを表示\\
+    ↓ または Ctrl+N & ひとつ後ろのコマンドを表示\\ \hline
+  \end{tabular}
+\end{figure}
+
+コマンドを表示した後に、カーソルキーの左右キー（←→）でカーソルを移動したり、
+文字を入力したり、文字を削除したりすることで、コマンドを\ruby{編集}{へん|しゅう}することができます。
+
+Tabキーとコマンド\ruby{履歴}{り|れき}の機能を使うと、コマンドの入力がとても楽になります。
+コマンドの入力をするときは、これらの機能を使ってみましょう。
+
 \begin{figure}[h]
 \begin{tcolorbox}[title=\useOmetoi]
 \begin{enumerate}
   \addquiz{\ruby{実際}{じっ|さい}にpwdを使って、カレントディレクトリが\ruby{表示}{ひょう|じ}されることを確かめましょう。
   表示されたカレントディレクトリを書いてください。}
-\addquiz{\texttt{ls}\textvisiblespace \texttt{-F}と入力しましょう。実行して\ruby{表示}{ひょう|じ}されたファイルとディレクトリの名前を１つずつ書きましょう。Fは大文字です。}
-\addquiz{Tabキーを使いながら \texttt{ls}\textvisiblespace \texttt{-F}\textvisiblespace Pictures/ と入力しましょう。実行して\ruby{表示}{ひょう|じ}されたファイルかディレクトリの名前を１つ書きましょう。}
+  \addquiz{\texttt{ls}\textvisiblespace \texttt{-F}と入力しましょう。実行して\ruby{表示}{ひょう|じ}されたファイルとディレクトリの名前を１つずつ書きましょう。Fは大文字です。}
+  \addquiz{Tabキーを使いながら \texttt{ls}\textvisiblespace \texttt{-F}\textvisiblespace Pictures/ と入力しましょう。実行して\ruby{表示}{ひょう|じ}されたファイルかディレクトリの名前を１つ書きましょう。}
+  \addex{ターミナルの中で、カーソルの上下キーを押し、コマンドの\ruby{履歴}{り|れき}を見てみましょう。}
 \end{enumerate}
 \end{tcolorbox}
 \end{figure}

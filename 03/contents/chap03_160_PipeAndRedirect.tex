@@ -437,19 +437,6 @@ findコマンドは、ワイルドカードを使って探すファイルを指�
 \end{lstlisting}
 
 
-\section{touchコマンド}
-
-\begin{description}
-    \item[● touch \underline{ファイル名}]\mbox{}\\
-    名前が\underline{ファイル名}の空のファイルを作成します。ファイルがすでにある場合は、ファイルの更新日時とアクセス日時を更新します。 
-\end{description}
-　ファイルの更新日時とアクセス日時とは、それぞれ最後にファイルを保存した日時と、最後にファイルを読んだ日時になります。 ls -a で確認することができます。
-
-\begin{lstlisting}[caption=別名の確認, label=confirmAlias]
-    <#green#pi@raspberrypi#>:<#blue#~ $#> touch testtouch
-    <#green#pi@raspberrypi#>:<#blue#~ $#> ls -a testtouch
-    -rw-r--r-- 1 okuyama okuyama 0 Jul  8 13:05 testtouch <- （表示が正しいかチェックが必要）7月8日13:05に更新されたことが分かります。
-\end{lstlisting}
 
     
 
