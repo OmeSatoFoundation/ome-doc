@@ -6,12 +6,12 @@
     \center
     \begin{tabular}{ll}\hline
     コマンド & 動作                                         \\ \hline
-    ls       & ファイルやディレクトリを出力する（紹介ずみ）             \\
-    du       & ディレクトリの中のファイルの大きさを\ruby{報告}{ほう|こく}する \\
-    wc       & 入力の文字数・単語数・行数を出力する         \\
+    ls      & ファイルやディレクトリを出力する（紹介ずみ）             \\
+    du      & ディレクトリの中のファイルの大きさを\ruby{報告}{ほう|こく}する \\
+    wc      & 入力の文字数・単語数・行数を出力する         \\
     seq     & 数字の列を出力する                       \\ 
-    echo     & 文字をそのまま出力する                       \\ 
-    touch     & 空のファイルを作成する(出力はありません)                       \\ \hline
+    echo    & 文字をそのまま出力する                       \\ 
+    touch   & 空のファイルを作成する(出力はありません)                       \\ \hline
     \end{tabular}
 \end{figure}
 
@@ -116,6 +116,7 @@ seqコマンドを使うことで、数字を\ruby{順番}{じゅん|ばん}に�
 \begin{description}
     \item[● \texttt{echo}\textvisiblespace \underline{文字列}$\ldots$]\mbox{}\\
     \underline{文字列}$\ldots$をそのまま出力します。
+    \label{cmd:echo}
 \end{description}
 
 \begin{lstlisting}[caption=echoコマンド]
@@ -410,11 +411,12 @@ Videos
 \end{description}
 次に、具体的な例を見てみましょう。
 \begin{lstlisting}[caption=grepコマンドの実行例, label=grep_example]
-<#green#pi@raspberrypi#>:<#blue#~ $#> grep 03 ~/lsfile
-<#red#03#>
+<#green#pi@raspberrypi#>:<#blue#~ $#> grep Do ~/lsfile
+<#red#Do#>cuments
+<#red#Do#>wnloads
 \end{lstlisting}
-この例では、lsfileの中身から"03"という文字列に一致する行を表示してみました。
-このように、一致する行がある場合はその行のみが表示されます。
+この例では、lsfileの中身から"Do"という文字列に一致する行を表示してみました。
+このように、一致する行がある場合はその行が表示されます。
 また、一致する文字列は赤字で表示されます。
 
 
