@@ -13,15 +13,22 @@ xargsを使うと、引数にいろいろなものを指定することができ
 \begin{lstlisting}[caption=xargsコマンドを使う準備をする]
 <#green#pi@raspberrypi#>:<#blue#~ $#> cd 03/rensyu
 <#green#pi@raspberrypi#>:<#blue#~/03/rensyu $#> mkdir xargstest
-<#green#pi@raspberrypi#>:<#blue#~/03/rensyu $#> cp ~/lsfile ./xargstest
+<#green#pi@raspberrypi#>:<#blue#~/03/rensyu $#> ls ~ > ./xargstest/lsfile
 <#green#pi@raspberrypi#>:<#blue#~/03/rensyu $#> cp ./kokugo/syousetu.txt ./xargstest
 <#green#pi@raspberrypi#>:<#blue#~/03/rensyu $#> cd xargstest
 <#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargstest $#> ls
 <#magenta#lsfile  syousetu.txt#>
 \end{lstlisting}
 xargsコマンドを使うためのディレクトリを\textasciitilde /03/rensyu/xargstestとして作りました。
+xargsコマンドは以下のように使います。
 
-\newpage
+\begin{description}
+    \item[● \texttt{xargs}\textvisiblespace \underline{オプション}$\ldots$\textvisiblespace \underline{コマンド}]\mbox{}\\
+    標準入力から一行ずつ入力を受け取り、\underline{コマンド}の引数として並べた状態で、\underline{コマンド}を実行します。
+    \underline{コマンド}が無い場合は、引数を横に並べて標準出力に出力します。
+\end{description}
+
+
 \begin{lstlisting}[caption=xargsコマンドを使ってcatコマンドを使う]
 <#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargstest $#> ls | xargs cat
 01
@@ -41,15 +48,13 @@ https://www.aozora.gr.jp/cards/000121/files/628_14895.html
 cat コマンドに2つ以上のファイル名を指定すると、それらのファイルがつながって表示されます。
 lsコマンドで取り出したファイル名をxargsコマンドに渡して、2つのファイルの中身を同時に見ることができました。
 
-
 \subsection{xargsのオプション}
 xargsにもオプションがいくつかあります。そのうち、よくつかわれるオプション3つを\ruby{紹介}{しょう|かい}します。
 
 \begin{description}
-    \item[\texttt{xargs}\textvisiblespace \texttt{-p}\textvisiblespace
-                コマンド]\mbox{}\\
-    どのようなコマンドが実行されるかを表示してくれます。
-    <Enter>を押すと何もせずに終了。<y>を押すとコマンドを実行します。
+    \item[● \texttt{xargs}\textvisiblespace \texttt{-p}\textvisiblespace \underline{コマンド}]\mbox{}\\
+    どのように\underline{コマンド}が実行されるかを表示してくれます。
+    <Enter>キーを押すと何もせずに終了し、<y>キーを押すとコマンドを実行します。
 \end{description}
 
 \begin{lstlisting}[caption=xargsコマンドのオプションp]
@@ -62,8 +67,7 @@ lsfile syousetu.txt
 \end{lstlisting}
 
 \begin{description}
-    \item[\texttt{xargs}\textvisiblespace \texttt{-i}\textvisiblespace
-                コマンド\textvisiblespace \{\}]\mbox{}\\
+    \item[● \texttt{xargs}\textvisiblespace \texttt{-i}\textvisiblespace コマンド\textvisiblespace \{\}]\mbox{}\\
     \ruby{標準}{ひょう|じゅん}入力をひとつずつ受け取って\{\}の中に当てはめて、コマンドを実行します。
 \end{description}
 
@@ -75,10 +79,9 @@ syousetu.txt
 \end{lstlisting}
 
 \begin{description}
-    \item[\texttt{xargs}\textvisiblespace \texttt{-L}\textvisiblespace
-                数字\textvisiblespace コマンド]\mbox{}\\
-    Lオプションは、xargで一度にコマンドに渡す引数の最大数を指定します。
-    \ruby{標準}{ひょう|じゅん}出力から渡されたデータ数が、-Lで指定された数より大きい場合、全ての入力が\ruby{展開}{てん|かい}し終わるまで
+    \item[● \texttt{xargs}\textvisiblespace \texttt{-L}\textvisiblespace\underline{数字}\textvisiblespace\underline{コマンド}]\mbox{}\\
+    Lオプションは、xargで一度に\underline{コマンド}に渡す引数の最大数を指定します。
+    \ruby{標準}{ひょう|じゅん}出力から渡されたデータ数が、-Lで\underline{指定された数}より大きい場合、全ての入力が\ruby{展開}{てん|かい}し終わるまで
     コマンドが繰り返し実行されます。
     -iオプションと-Lオプションを一緒に使うことはできません。
 \end{description}
@@ -98,11 +101,8 @@ syousetu.txt
 
 \begin{tcolorbox}[title=\useOmetoi]
     \begin{enumerate}
-        \addex{catと入力して好きな文字を打ち込みましょう。}
-        \addex{echo\textvisiblespace 好きな文字\textvisiblespace >\textvisiblespace
-            rensyufile と入力して好きな文字をrensyufileに保存しよう。}
-        \addex{リダイレクトの記号「<」を使ってrensyufileの中身を表示してみよう。}
-        \addex{xargsを使って、rensyufileとlsfileを合体して表示してみよう。}
+        \addquiz{xargsを使って、lsfileの内容を横につなげて表示しましょう。}
+        \addquiz{seq, xargs, touchを組み合わせて、10から19までの10個の空のファイルを作りましょう。}
     \end{enumerate}
 \end{tcolorbox}
 
@@ -111,12 +111,13 @@ syousetu.txt
 
 \newpage
 \section{置き\ruby{換}{か}えをするコマンド}
-\begin{tabular}{ll}
+\begin{figure}[h]
+    \begin{tabular}{ll}
     コマンド & 動作                                                       \\ \hline
     tr       & 入力された文字を指定する方法で置き換えて出力する           \\
     sed      & 入力から指定するパターンを見つけ、それを置き換えて出力する \\ \hline
-\end{tabular}
-
+    \end{tabular}
+\end{figure}
 
 \subsection{文字の置き換え}
 % trコマンドの説明
@@ -124,14 +125,15 @@ syousetu.txt
 trコマンドを使うと、文字列中の特定の文字を、別の文字に置き換えることができます。
 trコマンドの使い方は、次の通りです。
 
-\begin{lstlisting}[caption=trコマンドの使い方, label=tr_basic_usage]
-tr 置き換えたい文字 置き換える文字
-\end{lstlisting}
 
-ここで、「置き換えたい文字」には、置き換えたい文字を書きます。
-「置き換える文字」には、新しく変える文字を書きます。
-例えば、「置き換えたい文字」に "ABC"、「置き換える文字」に "XYZ" を書くと、"A" は "X" に、"B" は "Y" に、"C" は "Z"
-に置き換わります。
+\begin{description}
+    \item[● \texttt{tr}\textvisiblespace \underline{置き換えたい文字}\textvisiblespace \underline{置き換える文字}]\mbox{}\\
+    ここで、\underline{置き換えたい文字}には、置き換えたい文字を書きます。
+    \underline{置き換える文字}には、新しく変える文字を書きます。
+    例えば、\underline{置き換えたい文字}に "ABC"、\underline{置き換える文字}に "XYZ" を書くと、"A" は "X" に、"B" は "Y" に、"C" は "Z"
+    に置き換わります。
+\end{description}
+
 
 % 実行例の説明
 それでは、trコマンドの使い方を少しずつ見ていきましょう。
@@ -139,22 +141,18 @@ tr 置き換えたい文字 置き換える文字
 まず、3つの文字を置き換えるところから始めてみます。
 "HELLO, WORLD!" という文字列があるとします。
 この文字列の "H"、"L"、"W" を小文字の "h"、"l"、"w" に置き変えてみましょう。
-
 \begin{lstlisting}[caption=3文字の置き換え, label=tr_3_chars]
 <#green#pi@raspberrypi#>:<#blue#~ $#> echo "HELLO, WORLD!" | tr HLW hlw
 hEllO, wORlD!
 \end{lstlisting}
-
 文字列中の "H"、"L"、"W" が "h"、"l"、"w" に置き換わっていることが分かります。
 
 次に、アルファベットの大文字全てを小文字に置き換えてみましょう。
-
 \begin{lstlisting}[caption=アルファベット全体の置き換え, label=tr_all_chars]
 <#green#pi@raspberrypi#>:<#blue#~ $#> echo "HELLO, WORLD!" \
 | tr ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz
 hello, world!
 \end{lstlisting}
-
 この例では、trコマンドにアルファベットの大文字全てと\ruby{対応}{たい|おう}する小文字全てを書きました。
 また、この例で使用している "\textbackslash" は、コマンドを\ruby{複数行}{ふく|すう|ぎょう}に分けて書くための記号です。
 コマンドの実行後、アルファベット全てが小文字に置き換わっていることが分かります。
@@ -167,7 +165,6 @@ hello, world!
 <#green#pi@raspberrypi#>:<#blue#~ $#> echo "HELLO, WORLD!" | tr A-Z a-z
 hello, world!
 \end{lstlisting}
-
 このコマンドでも\ruby{先程}{さき|ほど}と同じ結果が表示されます。
 ちなみに、範囲指定を使うときは次のことに気をつけましょう。
 \begin{itemize}
@@ -175,18 +172,9 @@ hello, world!
     \item 範囲は、"A" から "Z"、"a" から "z" のように、前の方の文字から後ろの方の文字へと順番に書きます。(例えば "Z-A"
           はエラーになります)
 \end{itemize}
-
 このように、trコマンドを使うと、文字列の中の文字を簡単に置き換えることができます。
 また、trコマンドを使うことで文字の\ruby{削除}{さく|じょ}なども行うことができます。
 \ruby{興味}{きょう|み}がある人は、文字の置き換え以外にもどのような使い方ができるか、調べてみましょう。
-
-% 問題
-\begin{tcolorbox}[title=\useOmetoi]
-    \begin{enumerate}
-        \addex{次の文字列の大文字を小文字に変換してみましょう。\\ "I LOVE PROGRAMMING!"}
-        \addex{次の文字列の小文字を大文字に変換してみましょう。\\ "i love programming!"}
-    \end{enumerate}
-\end{tcolorbox}
 
 \subsection{単語の置き換え}
 tr は一文字ごとの置き換えを処理できました。
@@ -194,35 +182,43 @@ tr は一文字ごとの置き換えを処理できました。
 このために、また別なコマンドがあります。
 sed コマンドです。
 
-\begin{lstlisting}[caption=sed コマンドの\ruby{基本的}{き|ほん|てき}な使い方, label=sed_usage]
-sed 's/置き換え対象の文字列/置き換え後の文字列/g'
-\end{lstlisting}
 
-tr コマンドと\ruby{似}{に}たように、「置き換え対象の文字列」には、置き換えたい文字列を指定します。
-「置き換え後の文字列」には、置き換え後の文字列を指定します。
-tr コマンドと\ruby{異}{こと}なり、置き換えは一文字ずつではなく文字列を指定することができます。
+\begin{description}
+    \item[● \texttt{sed}\textvisiblespace\texttt{'s/}\underline{置き換え対象の文字列}\texttt{/}\underline{置き換え後の文字列}\texttt{/g'}]\mbox{}\\
+    tr コマンドと\ruby{似}{に}たように、\underline{置き換え対象の文字列}には、置き換えたい文字列を指定します。
+    \underline{置き換え後の文字列}には、置き換え後の文字列を指定します。
+    tr コマンドと\ruby{異}{こと}なり、置き換えは一文字ずつではなく文字列を指定することができます。
+\end{description}
 
 \ruby{再度}{さい|ど}「Hello, World!」という文章で例を示します。
 この文章の「Hello」を「Hi」に置き換えたいときは、次のようにコマンドを入力します。
-
 \begin{lstlisting}[caption=sed コマンドを使った例, label=sed_app]
 <#green#pi@raspberrypi#>:<#blue#~ $#> echo "Hello, World!" | sed 's/Hello/Hi/g'
 \end{lstlisting}
-
 すると、次のような結果が表示されます。
-
 \begin{lstlisting}[caption=sed コマンドで変換した結果, label=sed_result]
 Hi, Wowld!
 \end{lstlisting}
 
-それでは、次の問題に取り組んでみましょう。
+さて、sedコマンドの説明には変換する文字列や仕切り文字 / の他に、s や g といった文字がついているのに気付いたでしょうか。
+実は sed は文字列を置き換える以外にもさまざまな\ruby{機能}{き|のう}を持ちます。
+今回は sed に\ruby{含}{ふく}まれる s と g というコマンドを用いて文字列を置き換えましたが、
+そのほかにもパターンスペースを削除する d やパターンスペースを表示する p などさまざまなコマンドが sed には\ruby{収録}{しゅう|ろく}されています。
+興味がある人は
+\begin{lstlisting}
+<#green#pi@raspberrypi#>:<#blue#~ $#> man sed
+\end{lstlisting}
+と実行してオンラインマニュアル (英語) を\ruby{閲覧}{えつ|らん}したり、ブラウザで「sed 使い方」などと検索してみたりしましょう。
 
+% 問題
 \begin{tcolorbox}[title=\useOmetoi]
-\begin{enumerate}
-    \addex{%
-        次の文章の「like」を「love」に置き換えましょう。\\%
-        ``I like programming!"%
-    }
+    \begin{enumerate}
+        \addex{%
+        次の文章をcatを使ってファイルilpに保存しましょう。最後に改行とCtrl+Dを入れることを忘れないでください。\\%
+        I like programming!%
+        }
+        \addex{trコマンドを使って、ファイルilpに含まれる英子文字をすべて英大文字に変換してみましょう。}
+        \addex{sedコマンドを使って、ファイルilpに含まれるlikeという単語をloveに変えてみましょう。}
     \addex{%
 \textasciitilde /03/rensyu/kokugo/syosetsu.txt には小説「ごんぎつね」が\ruby{掲載}{けい|さい}されています。%
 「ごんぎつね」に登場するキャラクター「ごん」の名前を「Fox」に変えて標準出力に出力しましょう。\\%
@@ -231,23 +227,10 @@ Hi, Wowld!
 \end{enumerate}
 \end{tcolorbox}
 
-さて、リスト \ref{sed_usage} には変換する文字列や仕切り文字 / の他に、
-s や g といった文字がついているのに気付いたでしょうか。
-実は sed は文字列を置き換える以外にもさまざまな\ruby{機能}{き|のう}を持ちます。
-今回は sed に\ruby{含}{ふく}まれる s と g というコマンドを用いて文字列を置き換えましたが、
-そのほかにもパターンスペースを削除する d やパターンスペースを表示する p などさまざまなコマンドが sed には\ruby{収録}{しゅう|ろく}されています。
-興味がある人は
-
-\begin{lstlisting}
-<#green#pi@raspberrypi#>:<#blue#~ $#> man sed
-\end{lstlisting}
-
-と実行してオンラインマニュアル (英語) を\ruby{閲覧}{えつ|らん}したり、ブラウザで「sed 使い方」などと検索してみたりしましょう。
-
 \newpage
-\section{その他の便利なコマンド}
-\subsection{計算をする}
+\section{Bashで計算をする}
 \noindent
+
 {\bf echo\textvisiblespace\$(コマンド) }
 
 %注マージ後ページ参照を解決
@@ -279,11 +262,11 @@ $138+395$の計算を実行すると次のような出力が得られます。
 \vskip\baselineskip
 
 \begin{tcolorbox}[title=\useOmetoi]
-    それでは、次の問題に取り組んでみましょう。
+    Bashで以下の計算をしてみましょう。
     \begin{enumerate}
-        \addquiz{$2024 - 727$}
-        \addquiz{$117 \times 13$}
-        \addquiz{$(84 + 67 + 49 + 96) \div 4$}
+        \addex{$2024 - 727$}
+        \addex{$117 \times 13$}
+        \addex{$(84 + 67 + 49 + 96) \div 4$}
     \end{enumerate}
 \end{tcolorbox}
 \subsection{コマンドに別名を付ける}
