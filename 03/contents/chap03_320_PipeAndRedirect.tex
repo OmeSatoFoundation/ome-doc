@@ -17,7 +17,7 @@ xargsを使うと、引数にいろいろなものを指定することができ
 <#green#pi@raspberrypi#>:<#blue#~/03/rensyu $#> cp ./kokugo/syousetu.txt ./xargstest
 <#green#pi@raspberrypi#>:<#blue#~/03/rensyu $#> cd xargstest
 <#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargstest $#> ls
-<#magenta#lsfile  syousetu.txt#>
+lsfile  syousetu.txt
 \end{lstlisting}
 xargsコマンドを使うためのディレクトリを\textasciitilde /03/rensyu/xargstestとして作りました。
 xargsコマンドは以下のように使います。
@@ -42,8 +42,8 @@ Desktop
 
 
 
-https://www.aozora.gr.jp/cards/000121/files/628_14895.html
-<#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#>
+https:／／www.aozora.gr.jp/cards/000121/files/628_14895.html<#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargst
+est $#>
 \end{lstlisting}
 cat コマンドに2つ以上のファイル名を指定すると、それらのファイルがつながって表示されます。
 lsコマンドで取り出したファイル名をxargsコマンドに渡して、2つのファイルの中身を同時に見ることができました。
@@ -58,12 +58,12 @@ xargsにもオプションがいくつかあります。そのうち、よくつ
 \end{description}
 
 \begin{lstlisting}[caption=xargsコマンドのオプションp]
-<#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#> ls | xargs -p echo
+<#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargstest $#> ls | xargs -p echo
 echo lsfile syousetu.txt?...<Enter>
-<#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#> ls | xargs -p echo
+<#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargstest $#> ls | xargs -p echo
 echo lsfile syousetu.txt?...<Y><Enter>
 lsfile syousetu.txt
-<#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#>
+<#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargstest $#>
 \end{lstlisting}
 
 \begin{description}
@@ -72,10 +72,10 @@ lsfile syousetu.txt
 \end{description}
 
 \begin{lstlisting}[caption=xargsコマンドのオプションi]
-<#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#> ls | xargs -i echo {}
+<#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargstest $#> ls | xargs -i echo {}
 lsfile
 syousetu.txt
-<#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#>
+<#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargstest $#>
 \end{lstlisting}
 
 \begin{description}
@@ -87,13 +87,13 @@ syousetu.txt
 \end{description}
 
 \begin{lstlisting}[caption=xargsコマンドのオプションL]
-<#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#> seq 1 5 | xargs -L 1 echo
+<#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargstest $#> seq 1 5 | xargs -L 1 echo
 1
 2
 3
 4
 5
-<#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#> seq 1 5 | xargs -L 2 echo
+<#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargstest $#> seq 1 5 | xargs -L 2 echo
 1 2
 3 4
 5
@@ -232,9 +232,10 @@ Bashの機能を使って、計算をしてみましょう。
 コマンドの中で使用される \$() はコマンド\ruby{置換}{ち|かん}を行うための\ruby{構文}{こう|ぶん}です。コマンド\ruby{置換}{ち|かん}を使用すると、中のコマンドの\ruby{実行結果}{じっ|こう|けっ|か}を、別のコマンドの\ruby{引数}{ひき|すう}として使用することができます。
 \begin{lstlisting}[caption=echo コマンド置換を使った例1, label=cmdsbs:echo]
 <#green#pi@raspberrypi#>:<#blue#~/ $#> echo $(ls)
-実行結果を貼る
+01 02 03 Bookshelf Desktop Documents Downloads Music Pictures Public Templates Videos lsfile rika
 <#green#pi@raspberrypi#>:<#blue#~/ $#> ls
-実行結果を貼る
+<#blue#01  03         Desktop    Downloads  Pictures  Templates#> lsfile
+<#blue#02  Bookshelf  Documents  Music      Public    Videos    rika#> 
 \end{lstlisting}
 二つのコマンドから同じ\ruby{結果}{けっ|か}を\ruby{得}{え}られることがわかります。\$()の中に書いたコマンドが実行されます。
 
