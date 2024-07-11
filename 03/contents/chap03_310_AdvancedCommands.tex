@@ -1,16 +1,19 @@
 \newpage
 \section{出力をつくるいろいろなコマンド}
 この節では、下の表に書かれた出力を作るコマンドを\ruby{紹介}{しょう|かい}します。
-\vspace{1.5\zh}
-\begin{tabular}{ll}\hline
+
+\begin{figure}[h]
+    \center
+    \begin{tabular}{ll}\hline
     コマンド & 動作                                         \\ \hline
-    ls       & ファイルやディレクトリを出力する（紹介ずみ）             \\
-    du       & ディレクトリの中のファイルの大きさを\ruby{報告}{ほう|こく}する \\
-    wc       & 入力の文字数・単語数・行数を出力する         \\
+    ls      & ファイルやディレクトリを出力する（紹介ずみ）             \\
+    du      & ディレクトリの中のファイルの大きさを\ruby{報告}{ほう|こく}する \\
+    wc      & 入力の文字数・単語数・行数を出力する         \\
     seq     & 数字の列を出力する                       \\ 
-    echo     & 文字をそのまま出力する                       \\ \hline
-\end{tabular}
-\vspace{1.5\zh}
+    echo    & 文字をそのまま出力する                       \\ 
+    touch   & 空のファイルを作成する(出力はありません)                       \\ \hline
+    \end{tabular}
+\end{figure}
 
 \subsection{ディレクトリやファイルの大きさを報告する}
 
@@ -85,11 +88,12 @@
 \end{description}
 次に、具体的な例を見てみましょう。
 \begin{lstlisting}[caption=wcコマンドの実行例, label=wc_example]
-<#green#pi@raspberrypi#>:<#blue#~ $#> wc ~/lsfile
+<#green#pi@raspberrypi#>:<#blue#~ $#> wc ~/03/rensyu/kokugo/syosetsu.txt
 13 13 93 /home/pi/lsfile
 \end{lstlisting}
 この例では、\textasciitilde/lsfileの中身の文字数・単語数・行数を表示しています。
 左から順に、行数、単語数、文字数、ファイルのパスを表しています。
+ただし、単語数は英単語の数え方で数えますので、日本語の文章では正しい数にならないことがあります。
 
 \subsection{数字の列を出力する}
 \begin{description}
@@ -112,6 +116,7 @@ seqコマンドを使うことで、数字を\ruby{順番}{じゅん|ばん}に�
 \begin{description}
     \item[● \texttt{echo}\textvisiblespace \underline{文字列}$\ldots$]\mbox{}\\
     \underline{文字列}$\ldots$をそのまま出力します。
+    \label{cmd:echo}
 \end{description}
 
 \begin{lstlisting}[caption=echoコマンド]
@@ -121,21 +126,36 @@ hello
 \end{lstlisting}
 echoコマンドを使うことでhelloと出力できました。
 
+%%%%%%%%
+
+\subsection{\ruby{空}{から}のファイルを作成する}
+出力を作るコマンドではありませんが、\ruby{空}{から}のファイルを作成するコマンドを紹介ます。
+
+\begin{description}
+    \item[● \texttt{touch} \underline{ファイル名}$\cdots$]\mbox{}\\
+    名前が\underline{ファイル名}$\cdots$の空のファイルを作成します。ファイルがすでにある場合は、ファイルの更新日時とアクセス日時を更新します。 
+\end{description}
+　ファイルの更新日時とアクセス日時とは、それぞれ最後にファイルを保存した日時と、最後にファイルを読んだ日時になります。 ls -a で確認することができます。
+
+\begin{lstlisting}[caption=空のファイルを作成, label=cmd:touch]
+    <#green#pi@raspberrypi#>:<#blue#~ $#> touch testtouch
+    <#green#pi@raspberrypi#>:<#blue#~ $#> ls -a testtouch
+    -rw-r--r-- 1 okuyama okuyama 0 Jul  8 13:05 testtouch <- 7月8日13:05に更新された。
+    ↑ラズパイの実行結果に合わせる
+\end{lstlisting}
+
 \begin{tcolorbox}[title=\useOmetoi]
     \begin{enumerate}
         \addex{duコマンドを使って、\textasciitilde/02ディレクトリの大きさを表示してみましょう。}
-        \addex{duコマンドを使って、\textasciitilde/02ディレクトリの中のファイルの大きさを表示してみましょう。}
-        \addex{duコマンドを使って、\textasciitilde/02ディレクトリの中のファイルの大きさの合計だけを表示してみましょう。}
         \addex{wcコマンドを使って、\textasciitilde/03/rensyu/kokugo/syosetsu.txtの中身の文字数・単語数・行数を表示してみましょう。}
-        \addex{seq問題をつくる}
-        \addex{echo問題をつくる}
+        \addex{seqコマンドを使って、100から200までの数字を表示してみましょう。}
+        \addex{echoコマンドを使って、I LOVE PROGRAMMING!と表示してみましょう。echoに空白を含む文字列をわたすときは、文字列を「'」で囲みましょう。}
+        \addex{touchコマンドを使って、touchtestという名前のファイルを作成してください。ファイルができたことを確認したら、touchtestを\ruby{削除}{さく|じょ}してください。}
     \end{enumerate}
 \end{tcolorbox}
 
 \newpage
 %%%%%%%%%%%%%%%%% コマンドをつなげて便利に使うをいれる？
-%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%
 \section{コマンドをつなげて使う}
 ラズパイにはコマンドをつなげて便利に使うための方法が\ruby{用意}{よう|い}されています。
 コマンドをつなげると、いくつかの\ruby{処理}{しょ|り}を連続して行うことができるようになります。
@@ -151,7 +171,8 @@ echoコマンドを使うことでhelloと出力できました。
 \end{figure}
 
 \subsection{コマンドの\ruby{入出力}{にゅう|しゅつ|りょく}}
-　コマンドを\ruby{実行}{じっ|こう}すると、{\bf \ruby{標準}{ひょう|じゅん}入力}、{\bf \ruby{標準}{ひょう|じゅん}出力}、{\bf \ruby{標準}{ひょう|じゅん}エラー出力}の3つのデータの\ruby{通}{とお}り道が\ruby{準備}{じゅん|び}されます。このデータの\ruby{通}{とお}り道をチャネルといいます。チャネルに何も指定せずにコマンドを\ruby{実行}{じっ|こう}すると、\ruby{標準}{ひょう|じゅん}入力はキーボードに\ruby{設定}{せっ|てい}されます。\ruby{標準}{ひょう|じゅん}出力と\ruby{標準}{ひょう|じゅん}エラー出力はディスプレイに\ruby{設定}{せっ|てい}されます。
+
+コマンドを\ruby{実行}{じっ|こう}すると、{\bf \ruby{標準}{ひょう|じゅん}入力}、{\bf \ruby{標準}{ひょう|じゅん}出力}、{\bf \ruby{標準}{ひょう|じゅん}エラー出力}の3つのデータの\ruby{通}{とお}り道が\ruby{準備}{じゅん|び}されます。このデータの\ruby{通}{とお}り道をチャネルといいます。チャネルに何も指定せずにコマンドを\ruby{実行}{じっ|こう}すると、\ruby{標準}{ひょう|じゅん}入力はキーボードに\ruby{設定}{せっ|てい}されます。\ruby{標準}{ひょう|じゅん}出力と\ruby{標準}{ひょう|じゅん}エラー出力はディスプレイに\ruby{設定}{せっ|てい}されます。
 
 catコマンドは、"cat ファイル名"と実行することで、ファイルの内容を\ruby{標準}{ひょう|じゅん}出力に表示するコマンドでした。cat にファイル名を指定しないと、\ruby{標準}{ひょう|じゅん}入力、つまりキーボードからデータを受け取ります。このように、コマンドによっては入力するデータをコマンドの引数として与えるか、\ruby{標準}{ひょう|じゅん}入力から与えるかを選ぶことができるものがあります。
 
@@ -256,12 +277,11 @@ lessコマンドにlsコマンドの\ruby{標準}{ひょう|じゅん}出力を�
 
 \begin{tcolorbox}[title=\useOmetoi]
     \begin{enumerate}
-        \addex{リダイレクト（ls > lsfile）}
-        \addex{cat lsfile}
-        \addex{パイプラインの例}
+        \addex{コマンドラインで \texttt{cat > keytest} を実行して、ファイルkeytestにキーボードの入力を保存してみましょう。保存できたら、内容を確認してみましょう。}
+        \addex{lsコマンドの実行結果をファイルlsfileに保存してください。保存できたら、内容を確認してください。}
+        \addex{\texttt{seq 1 100 | less} を実行すると、どのようなことが起きるでしょうか。まず結果を\ruby{想像}{そう|ぞう}して、TAや周りの人に話してください。次に、コマンドを実行して結果を確かめてください。}
     \end{enumerate}
 \end{tcolorbox}
-
 
 \newpage 
 \section{フィルタコマンド}
@@ -391,11 +411,12 @@ Videos
 \end{description}
 次に、具体的な例を見てみましょう。
 \begin{lstlisting}[caption=grepコマンドの実行例, label=grep_example]
-<#green#pi@raspberrypi#>:<#blue#~ $#> grep 03 ~/lsfile
-<#red#03#>
+<#green#pi@raspberrypi#>:<#blue#~ $#> grep Do ~/lsfile
+<#red#Do#>cuments
+<#red#Do#>wnloads
 \end{lstlisting}
-この例では、lsfileの中身から"03"という文字列に一致する行を表示してみました。
-このように、一致する行がある場合はその行のみが表示されます。
+この例では、lsfileの中身から"Do"という文字列に一致する行を表示してみました。
+このように、一致する行がある場合はその行が表示されます。
 また、一致する文字列は赤字で表示されます。
 
 

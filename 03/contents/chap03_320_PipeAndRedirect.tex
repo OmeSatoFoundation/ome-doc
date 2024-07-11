@@ -13,15 +13,22 @@ xargsを使うと、引数にいろいろなものを指定することができ
 \begin{lstlisting}[caption=xargsコマンドを使う準備をする]
 <#green#pi@raspberrypi#>:<#blue#~ $#> cd 03/rensyu
 <#green#pi@raspberrypi#>:<#blue#~/03/rensyu $#> mkdir xargstest
-<#green#pi@raspberrypi#>:<#blue#~/03/rensyu $#> cp ~/lsfile ./xargstest
+<#green#pi@raspberrypi#>:<#blue#~/03/rensyu $#> ls ~ > ./xargstest/lsfile
 <#green#pi@raspberrypi#>:<#blue#~/03/rensyu $#> cp ./kokugo/syousetu.txt ./xargstest
 <#green#pi@raspberrypi#>:<#blue#~/03/rensyu $#> cd xargstest
 <#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargstest $#> ls
 <#magenta#lsfile  syousetu.txt#>
 \end{lstlisting}
 xargsコマンドを使うためのディレクトリを\textasciitilde /03/rensyu/xargstestとして作りました。
+xargsコマンドは以下のように使います。
 
-\newpage
+\begin{description}
+    \item[● \texttt{xargs}\textvisiblespace \underline{オプション}$\ldots$\textvisiblespace \underline{コマンド}]\mbox{}\\
+    標準入力から一行ずつ入力を受け取り、\underline{コマンド}の引数として並べた状態で、\underline{コマンド}を実行します。
+    \underline{コマンド}が無い場合は、引数を横に並べて標準出力に出力します。
+\end{description}
+
+
 \begin{lstlisting}[caption=xargsコマンドを使ってcatコマンドを使う]
 <#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargstest $#> ls | xargs cat
 01
@@ -41,15 +48,13 @@ https://www.aozora.gr.jp/cards/000121/files/628_14895.html
 cat コマンドに2つ以上のファイル名を指定すると、それらのファイルがつながって表示されます。
 lsコマンドで取り出したファイル名をxargsコマンドに渡して、2つのファイルの中身を同時に見ることができました。
 
-
 \subsection{xargsのオプション}
 xargsにもオプションがいくつかあります。そのうち、よくつかわれるオプション3つを\ruby{紹介}{しょう|かい}します。
 
 \begin{description}
-    \item[\texttt{xargs}\textvisiblespace \texttt{-p}\textvisiblespace
-                コマンド]\mbox{}\\
-    どのようなコマンドが実行されるかを表示してくれます。
-    <Enter>を押すと何もせずに終了。<y>を押すとコマンドを実行します。
+    \item[● \texttt{xargs}\textvisiblespace \texttt{-p}\textvisiblespace \underline{コマンド}]\mbox{}\\
+    どのように\underline{コマンド}が実行されるかを表示してくれます。
+    <Enter>キーを押すと何もせずに終了し、<y>キーを押すとコマンドを実行します。
 \end{description}
 
 \begin{lstlisting}[caption=xargsコマンドのオプションp]
@@ -62,8 +67,7 @@ lsfile syousetu.txt
 \end{lstlisting}
 
 \begin{description}
-    \item[\texttt{xargs}\textvisiblespace \texttt{-i}\textvisiblespace
-                コマンド\textvisiblespace \{\}]\mbox{}\\
+    \item[● \texttt{xargs}\textvisiblespace \texttt{-i}\textvisiblespace コマンド\textvisiblespace \{\}]\mbox{}\\
     \ruby{標準}{ひょう|じゅん}入力をひとつずつ受け取って\{\}の中に当てはめて、コマンドを実行します。
 \end{description}
 
@@ -75,10 +79,9 @@ syousetu.txt
 \end{lstlisting}
 
 \begin{description}
-    \item[\texttt{xargs}\textvisiblespace \texttt{-L}\textvisiblespace
-                数字\textvisiblespace コマンド]\mbox{}\\
-    Lオプションは、xargで一度にコマンドに渡す引数の最大数を指定します。
-    \ruby{標準}{ひょう|じゅん}出力から渡されたデータ数が、-Lで指定された数より大きい場合、全ての入力が\ruby{展開}{てん|かい}し終わるまで
+    \item[● \texttt{xargs}\textvisiblespace \texttt{-L}\textvisiblespace\underline{数字}\textvisiblespace\underline{コマンド}]\mbox{}\\
+    Lオプションは、xargで一度に\underline{コマンド}に渡す引数の最大数を指定します。
+    \ruby{標準}{ひょう|じゅん}出力から渡されたデータ数が、-Lで\underline{指定された数}より大きい場合、全ての入力が\ruby{展開}{てん|かい}し終わるまで
     コマンドが繰り返し実行されます。
     -iオプションと-Lオプションを一緒に使うことはできません。
 \end{description}
@@ -98,25 +101,20 @@ syousetu.txt
 
 \begin{tcolorbox}[title=\useOmetoi]
     \begin{enumerate}
-        \addex{catと入力して好きな文字を打ち込みましょう。}
-        \addex{echo\textvisiblespace 好きな文字\textvisiblespace >\textvisiblespace
-            rensyufile と入力して好きな文字をrensyufileに保存しよう。}
-        \addex{リダイレクトの記号「<」を使ってrensyufileの中身を表示してみよう。}
-        \addex{xargsを使って、rensyufileとlsfileを合体して表示してみよう。}
+        \addquiz{xargsを使って、lsfileの内容を横につなげて表示しましょう。}
+        \addquiz{seq, xargs, touchを組み合わせて、10から19までの10個の空のファイルを作りましょう。}
     \end{enumerate}
 \end{tcolorbox}
-
-
 %%%%%%%%%%
-
 \newpage
 \section{置き\ruby{換}{か}えをするコマンド}
-\begin{tabular}{ll}
+\begin{figure}[h]
+    \begin{tabular}{ll}
     コマンド & 動作                                                       \\ \hline
     tr       & 入力された文字を指定する方法で置き換えて出力する           \\
     sed      & 入力から指定するパターンを見つけ、それを置き換えて出力する \\ \hline
-\end{tabular}
-
+    \end{tabular}
+\end{figure}
 
 \subsection{文字の置き換え}
 % trコマンドの説明
@@ -124,14 +122,15 @@ syousetu.txt
 trコマンドを使うと、文字列中の特定の文字を、別の文字に置き換えることができます。
 trコマンドの使い方は、次の通りです。
 
-\begin{lstlisting}[caption=trコマンドの使い方, label=tr_basic_usage]
-tr 置き換えたい文字 置き換える文字
-\end{lstlisting}
 
-ここで、「置き換えたい文字」には、置き換えたい文字を書きます。
-「置き換える文字」には、新しく変える文字を書きます。
-例えば、「置き換えたい文字」に "ABC"、「置き換える文字」に "XYZ" を書くと、"A" は "X" に、"B" は "Y" に、"C" は "Z"
-に置き換わります。
+\begin{description}
+    \item[● \texttt{tr}\textvisiblespace \underline{置き換えたい文字}\textvisiblespace \underline{置き換える文字}]\mbox{}\\
+    ここで、\underline{置き換えたい文字}には、置き換えたい文字を書きます。
+    \underline{置き換える文字}には、新しく変える文字を書きます。
+    例えば、\underline{置き換えたい文字}に "ABC"、\underline{置き換える文字}に "XYZ" を書くと、"A" は "X" に、"B" は "Y" に、"C" は "Z"
+    に置き換わります。
+\end{description}
+
 
 % 実行例の説明
 それでは、trコマンドの使い方を少しずつ見ていきましょう。
@@ -139,22 +138,18 @@ tr 置き換えたい文字 置き換える文字
 まず、3つの文字を置き換えるところから始めてみます。
 "HELLO, WORLD!" という文字列があるとします。
 この文字列の "H"、"L"、"W" を小文字の "h"、"l"、"w" に置き変えてみましょう。
-
 \begin{lstlisting}[caption=3文字の置き換え, label=tr_3_chars]
 <#green#pi@raspberrypi#>:<#blue#~ $#> echo "HELLO, WORLD!" | tr HLW hlw
 hEllO, wORlD!
 \end{lstlisting}
-
 文字列中の "H"、"L"、"W" が "h"、"l"、"w" に置き換わっていることが分かります。
 
 次に、アルファベットの大文字全てを小文字に置き換えてみましょう。
-
 \begin{lstlisting}[caption=アルファベット全体の置き換え, label=tr_all_chars]
 <#green#pi@raspberrypi#>:<#blue#~ $#> echo "HELLO, WORLD!" \
 | tr ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz
 hello, world!
 \end{lstlisting}
-
 この例では、trコマンドにアルファベットの大文字全てと\ruby{対応}{たい|おう}する小文字全てを書きました。
 また、この例で使用している "\textbackslash" は、コマンドを\ruby{複数行}{ふく|すう|ぎょう}に分けて書くための記号です。
 コマンドの実行後、アルファベット全てが小文字に置き換わっていることが分かります。
@@ -167,7 +162,6 @@ hello, world!
 <#green#pi@raspberrypi#>:<#blue#~ $#> echo "HELLO, WORLD!" | tr A-Z a-z
 hello, world!
 \end{lstlisting}
-
 このコマンドでも\ruby{先程}{さき|ほど}と同じ結果が表示されます。
 ちなみに、範囲指定を使うときは次のことに気をつけましょう。
 \begin{itemize}
@@ -175,54 +169,47 @@ hello, world!
     \item 範囲は、"A" から "Z"、"a" から "z" のように、前の方の文字から後ろの方の文字へと順番に書きます。(例えば "Z-A"
           はエラーになります)
 \end{itemize}
-
 このように、trコマンドを使うと、文字列の中の文字を簡単に置き換えることができます。
 また、trコマンドを使うことで文字の\ruby{削除}{さく|じょ}なども行うことができます。
 \ruby{興味}{きょう|み}がある人は、文字の置き換え以外にもどのような使い方ができるか、調べてみましょう。
 
-% 問題
-\begin{tcolorbox}[title=\useOmetoi]
-    \begin{enumerate}
-        \addex{次の文字列の大文字を小文字に変換してみましょう。\\ "I LOVE PROGRAMMING!"}
-        \addex{次の文字列の小文字を大文字に変換してみましょう。\\ "i love programming!"}
-    \end{enumerate}
-\end{tcolorbox}
-
 \subsection{単語の置き換え}
 tr は一文字ごとの置き換えを処理できました。
 それでは、単語など文字列、つまり複数の文字を置き換えたいときはどうしたらよいでしょう。
-このために、また別なコマンドがあります。
-sed コマンドです。
 
-\begin{lstlisting}[caption=sed コマンドの\ruby{基本的}{き|ほん|てき}な使い方, label=sed_usage]
-sed 's/置き換え対象の文字列/置き換え後の文字列/g'
-\end{lstlisting}
-
-tr コマンドと\ruby{似}{に}たように、「置き換え対象の文字列」には、置き換えたい文字列を指定します。
-「置き換え後の文字列」には、置き換え後の文字列を指定します。
-tr コマンドと\ruby{異}{こと}なり、置き換えは一文字ずつではなく文字列を指定することができます。
+\begin{description}
+    \item[● \texttt{sed}\textvisiblespace\texttt{'s/}\underline{置き換え対象の文字列}\texttt{/}\underline{置き換え後の文字列}\texttt{/g'}]\mbox{}\\
+    tr コマンドと\ruby{似}{に}たように、\underline{置き換え対象の文字列}には、置き換えたい文字列を指定します。
+    \underline{置き換え後の文字列}には、置き換え後の文字列を指定します。
+    tr コマンドと\ruby{異}{こと}なり、置き換えは一文字ずつではなく文字列を指定することができます。
+\end{description}
 
 \ruby{再度}{さい|ど}「Hello, World!」という文章で例を示します。
 この文章の「Hello」を「Hi」に置き換えたいときは、次のようにコマンドを入力します。
-
 \begin{lstlisting}[caption=sed コマンドを使った例, label=sed_app]
 <#green#pi@raspberrypi#>:<#blue#~ $#> echo "Hello, World!" | sed 's/Hello/Hi/g'
-\end{lstlisting}
-
-すると、次のような結果が表示されます。
-
-\begin{lstlisting}[caption=sed コマンドで変換した結果, label=sed_result]
 Hi, Wowld!
 \end{lstlisting}
 
-それでは、次の問題に取り組んでみましょう。
+さて、sedコマンドの説明には変換する文字列や仕切り文字 / の他に、s や g といった文字がついているのに気付いたでしょうか。
+実は sed は文字列を置き換える以外にもさまざまな\ruby{機能}{き|のう}を持ちます。
+今回は sed に\ruby{含}{ふく}まれる s と g というコマンドを用いて文字列を置き換えましたが、
+そのほかにもパターンスペースを削除する d やパターンスペースを表示する p などさまざまなコマンドが sed には\ruby{収録}{しゅう|ろく}されています。
+興味がある人は
+\begin{lstlisting}
+<#green#pi@raspberrypi#>:<#blue#~ $#> man sed
+\end{lstlisting}
+と実行してオンラインマニュアル (英語) を\ruby{閲覧}{えつ|らん}したり、ブラウザで「sed 使い方」などと検索してみたりしましょう。
 
+% 問題
 \begin{tcolorbox}[title=\useOmetoi]
-\begin{enumerate}
-    \addex{%
-        次の文章の「like」を「love」に置き換えましょう。\\%
-        ``I like programming!"%
-    }
+    \begin{enumerate}
+        \addex{%
+        次の文章をcatを使ってファイルilpに保存しましょう。最後に改行とCtrl+Dを入れることを忘れないでください。\\%
+        I like programming!%
+        }
+        \addex{trコマンドを使って、ファイルilpに含まれる英子文字をすべて英大文字に変換してみましょう。}
+        \addex{sedコマンドを使って、ファイルilpに含まれるlikeという単語をloveに変えてみましょう。}
     \addex{%
 \textasciitilde /03/rensyu/kokugo/syosetsu.txt には小説「ごんぎつね」が\ruby{掲載}{けい|さい}されています。%
 「ごんぎつね」に登場するキャラクター「ごん」の名前を「Fox」に変えて標準出力に出力しましょう。\\%
@@ -231,41 +218,27 @@ Hi, Wowld!
 \end{enumerate}
 \end{tcolorbox}
 
-さて、リスト \ref{sed_usage} には変換する文字列や仕切り文字 / の他に、
-s や g といった文字がついているのに気付いたでしょうか。
-実は sed は文字列を置き換える以外にもさまざまな\ruby{機能}{き|のう}を持ちます。
-今回は sed に\ruby{含}{ふく}まれる s と g というコマンドを用いて文字列を置き換えましたが、
-そのほかにもパターンスペースを削除する d やパターンスペースを表示する p などさまざまなコマンドが sed には\ruby{収録}{しゅう|ろく}されています。
-興味がある人は
-
-\begin{lstlisting}
-<#green#pi@raspberrypi#>:<#blue#~ $#> man sed
-\end{lstlisting}
-
-と実行してオンラインマニュアル (英語) を\ruby{閲覧}{えつ|らん}したり、ブラウザで「sed 使い方」などと検索してみたりしましょう。
-
 \newpage
-\section{その他の便利なコマンド}
-\subsection{計算をする}
-\noindent
-{\bf echo\textvisiblespace\$(コマンド) }
+\section{Bashで計算をする}
 
-%注マージ後ページ参照を解決
-22ページでは、echoコマンドは\ruby{引数}{ひき|すう}で与えられた\ruby{文字列}{も|じ|れつ}をそのまま\ruby{標準}{ひょう|じゅん}出力に出力するコマンドとして\ruby{登場}{とう|じょう}しました。
+Bashの機能を使って、計算をしてみましょう。
+\begin{description}
+    \item[● \texttt{echo}\textvisiblespace\texttt{\$(}\underline{コマンド}\texttt{)}]\mbox{}\\
+    \underline{コマンド}を実行し、\ruby{標準}{ひょう|じゅん}出力に出力された結果を\texttt{echo}コマンドで受け取り、\ruby{標準}{ひょう|じゅん}出力に表示します。
+\end{description}
+
+\pageref{cmd:echo}ページでは、echoコマンドは\ruby{引数}{ひき|すう}で与えられた\ruby{文字列}{も|じ|れつ}をそのまま\ruby{標準}{ひょう|じゅん}出力に出力するコマンドとして\ruby{登場}{とう|じょう}しました。
 今回は他のコマンドの\ruby{実行結果}{じっ|こう|けっ|か}をechoコマンドの引数に与えて、それを\ruby{標準}{ひょう|じゅん}出力に出力します。
 コマンドの中で使用される \$() はコマンド\ruby{置換}{ち|かん}を行うための\ruby{構文}{こう|ぶん}です。コマンド\ruby{置換}{ち|かん}を使用すると、中のコマンドの\ruby{実行結果}{じっ|こう|けっ|か}を、別のコマンドの\ruby{引数}{ひき|すう}として使用することができます。
 \begin{lstlisting}[caption=echo コマンド置換を使った例1, label=cmdsbs:echo]
 <#green#pi@raspberrypi#>:<#blue#~/ $#> echo $(ls)
-\end{lstlisting} 
-
-\begin{lstlisting}[caption=lsコマンドの出力, label=cmdsbs:ls]
+実行結果を貼る
 <#green#pi@raspberrypi#>:<#blue#~/ $#> ls
+実行結果を貼る
 \end{lstlisting}
-
 二つのコマンドから同じ\ruby{結果}{けっ|か}を\ruby{得}{え}られることがわかります。\$()の中に書いたコマンドが実行されます。
-echoコマンドとコマンド\ruby{置換}{ち|かん}の他の使い方を見てみましょう。echo \$((式))と打つと\ruby{計算結果}{けい|さん|けっ|か}を出力してくれます。
 
-ここで内側にも()があることに注意しましょう。この()は内側の\ruby{算術式}{さん|じゅつ|しき}の\ruby{評価結果}{ひょう|か|けっ|か}を変数として\ruby{認識}{にん|しき}して、その変数の中身をechoの\ruby{引数}{ひき|すう}に渡すために使用します。つまり、計算の結果を表示をするためのものです。
+echoコマンドとコマンド\ruby{置換}{ち|かん}を使って計算をしてみましょう。echo \$((式))と打つと\ruby{計算結果}{けい|さん|けっ|か}を出力してくれます。この方法では、内側にも()があることに注意しましょう。この()は内側の\ruby{算術式}{さん|じゅつ|しき}の\ruby{評価結果}{ひょう|か|けっ|か}を変数として\ruby{認識}{にん|しき}して、その変数の中身をechoの\ruby{引数}{ひき|すう}に渡すために使用します。つまり、計算の結果を表示をするためのものです。
 ターミナルでの計算には、足し算（$+$）、引き算（$-$）、掛け算（$*$）、割り算（$/$）などが利用できます。 割り算は商のみを\ruby{整数}{せい|すう}で出力しますので注意してください。
 
 $138+395$の計算を実行すると次のような出力が得られます。
@@ -273,26 +246,25 @@ $138+395$の計算を実行すると次のような出力が得られます。
 <#green#pi@raspberrypi#>:<#blue#~ $#> echo $((138 + 395))
 533
 \end{lstlisting}
-
 このようにコンピュータが計算してくれると、電卓を取り出して計算しなくてもよいので便利ですね。
 
 \vskip\baselineskip
 
 \begin{tcolorbox}[title=\useOmetoi]
-    それでは、次の問題に取り組んでみましょう。
+    Bashで以下の計算をしてみましょう。
     \begin{enumerate}
-        \addquiz{$2024 - 727$}
-        \addquiz{$117 \times 13$}
-        \addquiz{$(84 + 67 + 49 + 96) \div 4$}
+        \addex{$117 \times 13$}
+        \addex{$(84 + 67 + 49 + 96) \div 4$}
     \end{enumerate}
 \end{tcolorbox}
-\subsection{コマンドに別名を付ける}
 
+
+\section{コマンドに別名を付ける}
 よく使うコマンドなのに、入力しにくいものがありませんか。そんな時はエイリアスという\ruby{機能}{き|のう}でコマンドに別名を付けてしまいましょう。別名のことを英語で alias (エイリアス)と言います。
 
 \begin{description}
-\item[\texttt{alias}\textvisiblespace 名前='コマンド']\mbox{}\\
-コマンドの別名として名前を設定します。コマンドの両脇の小さい点をシングルクオーテーションと呼びます。
+    \item[● \texttt{alias}\textvisiblespace \underline{名前}\texttt{='}\underline{コマンド}\texttt{'}]\mbox{}\\
+    \underline{コマンド}の別名として\underline{名前}を設定します。\underline{コマンド}の両脇の点をシングルクォーテーションと呼びます。
 \end{description}
 
 では、使用例を見てみましょう。例えば、"{\texttt ls\textvisiblespace -alF}" に l (小文字のL)という別名を付けたいとします。この時はaliasコマンドを以下のように使います。
@@ -301,23 +273,17 @@ $138+395$の計算を実行すると次のような出力が得られます。
 <#green#pi@raspberrypi#>:<#blue#~ $#> alias l='ls -alF'
 <#green#pi@raspberrypi#>:<#blue#~ $#>
 \end{lstlisting}
-
-何も出力がなければ別名の設定が完了しています。別名を付けたコマンドを入力してみましょう。
-
+何も出力がなければ別名の設定が完了しています。別名を付けたコマンドと元のコマンドを入力して確認してみましょう。
 \begin{lstlisting}[caption=別名の確認, label=confirmAlias]
 <#green#pi@raspberrypi#>:<#blue#~ $#> l
-\end{lstlisting}
-
-別名を付けた元のコマンドも入力してみましょう。
-
-\begin{lstlisting}[caption=元のコマンドの確認, label=confirmCommand]
+結果の一部を貼る
 <#green#pi@raspberrypi#>:<#blue#~ $#> ls -alF
+結果の一部を貼る
 \end{lstlisting}
-
 同じ出力が得られるはずです。しかし、ターミナルを閉じると今設定した別名は消えてしまいます。
 
 別名を保存しておくには、ホームディレクトリに .bash{\_}aliases というファイルを作成し\ruby{編集}{へん|しゅう}します。
-ターミナルは起動時に \textasciitilde/.bash{\_}aliases というファイルの中に書いてあるコマンドをすべて実行するため、
+ターミナルは起動時bashを起動し、bashは \textasciitilde/.bash{\_}aliases というファイルの中に書いてあるコマンドをすべて実行するため、
 このファイルにaliasコマンドを書いておくと、ターミナルを\ruby{起動}{き|どう}するたびにaliasコマンドを実行してくれます。
 
 .bash{\_}aliases には、次のようにコマンドを\ruby{記述}{き|じゅつ}し、保存します。
@@ -333,31 +299,26 @@ alias name='command'
 <#green#pi@raspberrypi#>:<#blue#~ $#> source ~/.bash_aliases
 <#green#pi@raspberrypi#>:<#blue#~ $#>
 \end{lstlisting}
-
-上のように実行して何も表示されなければ正常に\ruby{実行}{じっ|こう}できています。
+上のように実行して何も表示されなければ正常に.bash\_aliasesを読み込むことができています。
+source コマンドは\ruby{引数}{ひき|すう}として渡されたファイルの中身を順番に実行します。
+つまり、ファイルの中に書いてあるコマンドを手で入力して実行していくのと同じことをします。
 
 % alias コマンドにシングルクオーテーションが必要なのは、次のように記述できるからです。
 % \begin{description}
 %     \item[\texttt{alias}\textvisiblespace 名前 = 'コマンド'\textvisiblespace name = 'command'\textvisiblespace ...]\\
 %     設定したいコマンドにスペースが含まれていた場合、bash はスペースの後の文字列を新たな別名として\ruby{認識}{にん|しき}し、\ruby{意図}{い|と}とは異なった別名を設定しようとします。
 % \end{description}
-
-\begin{itemize}
-    \item[<補足1>] ターミナルを起動すると、コマンドを実行するプログラムである bash が\ruby{起動}{き|どう}します。bash が\ruby{起動}{き|どう}したとき、\textasciitilde/.bashrc というファイルの中身が自動で実行されます。\\
-    さらに\textasciitilde/.bashrc の中で \textasciitilde/.bash{\_}aliases の中身を実行する\ruby{記述}{き|じゅつ}があります。ただし、\\
-    これらのファイルは\ruby{起動}{き|どう}のタイミングでしか読み込まれないので、ファイルを\ruby{編集}{へん|しゅう}した後に読み込みなおす\\
-    必要があります。また、\textasciitilde/.bash{\_}aliases に上で述べたように正しく\ruby{記述}{き|じゅつ}しないと、\\
-    bash \ruby{起動}{き|どう}時に毎回エラーメッセージが表示されるようになります。正しく\ruby{記述}{き|じゅつ}するように\\
-    しましょう。
-    \item[<補足2>] source コマンドは\ruby{引数}{ひき|すう}として渡されたファイルの中身を bash コマンドとして実行します。\\
-    つまり、ファイルの中に書いてあるコマンドを手打ちで実行していくのと変わらないのです。
-\end{itemize}
+\begin{itembox}[c]{\& (アンパサンド)の意味について}
+    ターミナルを起動すると、bash が\ruby{起動}{き|どう}します。bash が\ruby{起動}{き|どう}するときに、\textasciitilde/.bashrc の中身が実行されます。さらに\textasciitilde/.bashrc の中で \textasciitilde/.bash\_ aliases の中身を実行するように\ruby{記述}{き|じゅつ}されています。
+    これらの.bashrcや.bash\_ aliasesはbashが\ruby{起動}{き|どう}するときにしか読み込まれないので、ファイルを\ruby{編集}{へん|しゅう}した後にはこれらを読み込みなおす必要があります。また、\textasciitilde/.bash\_ aliases にまちがいがあると、
+    bash \ruby{起動}{き|どう}時に毎回エラーメッセージが表示されるようになります。正しく\ruby{記述}{き|じゅつ}するようにしましょう。
+\end{itembox}
 
 \begin{tcolorbox}[title=\useOmetoi]
     \begin{enumerate}
         \addex{
             source \textasciitilde/.bashrc というコマンドに loadrc と別名を付けてみましょう。
-            (オプション) bash を\ruby{再起動}{さい|き|どう}しても別名が残るようにしてみましょう。
+            また、bash を\ruby{再起動}{さい|き|どう}しても別名が残るようにしてみましょう。
         }
         \addex{
             clear コマンドは、ターミナルの表示を消すコマンドです。このコマンドに好きな別名を付けてみましょう。
@@ -365,7 +326,7 @@ alias name='command'
     \end{enumerate}
 \end{tcolorbox}
 
-
+\newpage
 \section{ファイルを探す}
 たくさんファイルができると、必要なファイルがどこにあったか覚えておくのが大変になります。
 ある名前から始まるファイルを探したり、ある拡張子を持ったファイルをすべて探し出したりできると便利です。
@@ -375,13 +336,13 @@ alias name='command'
 findコマンドは、ディレクトリの中から指定されたファイルを探します。とてもたくさんのことができるので、ここでは見つけたファイルの場所を表示する方法を示します。
 
 \begin{description}
-    \item[● \texttt{find}\textvisiblespace \underline{ディレクトリ}$\cdots$ \texttt{-name} \underline{ファイル名} ]\mbox{}\\ 
-    \underline{ファイル名}と同じ名前のファイルがある場所をパスで表示します。\underline{ディレクトリ}$\cdots$の指定が無いときはカレントディレクトリ「.」を指定したものとします。
+    \item[● \texttt{find}\textvisiblespace \underline{ディレクトリ}$\cdots$\textvisiblespace \texttt{-name}\textvisiblespace \texttt{'}\underline{パターン}\texttt{'} ]\mbox{}\\ 
+    \underline{パターン}と同じ名前のファイルがある場所をパスで表示します。\underline{ディレクトリ}$\cdots$の指定が無いときはカレントディレクトリ「.」を指定したものとします。
 \end{description}
 
 \begin{lstlisting}[caption=ワイルドカードの使い方, label=wildcard]
     <#green#pi@raspberrypi#>:<#blue#~ $#> find -name rika.png
-    適切な例をこれから探します！
+    実行結果を貼ること！
     <#green#pi@raspberrypi#>:<#blue#~ $#>
 \end{lstlisting}
 
@@ -392,64 +353,54 @@ findコマンドは、ディレクトリの中から指定されたファイル�
 \subsection{複数ファイルの指定}
 コマンドによっては、操作の対象を2つ以上指定しても動作するものがあります。
 例えば、\\
-\texttt{ls}\textvisiblespace \texttt{-F} \underline{ファイル}$\cdots$\\
-と説明されているコマンドは、\underline{ファイル}の後に「$\cdots$（三点リーダ）」がついています。これは、複数のファイルやディレクトリを指定できるという意味です。\\
-\texttt{ls}\textvisiblespace \texttt{-F} 01/ 02/ 03/ \\
+\texttt{ls}\textvisiblespace \texttt{-F} \underline{ファイル}$\ldots$\\
+と説明されているコマンドは、\underline{ファイル}の後に「$\ldots$（三点リーダ）」がついています。これは、複数のファイルやディレクトリを指定できるという意味です。\\
+\texttt{ls}\textvisiblespace \texttt{-F}\textvisiblespace 01\textvisiblespace 02\textvisiblespace 03 \\
 とするなどして、複数のディレクトリの中に入ったファイルを一つのコマンドで見ることができます。
 
 \subsection{ワイルドカード}
 複数のファイルなどを指定する際に便利なのが、ワイルドカードによる名前の指定です。
 ワイルドカード(wilde card)とはどんな文字が入ってもよい、ということを表す英語です。
 ラズパイのターミナルで使うことができるワイルドカードは、次のようなものがあります。
+\newpage %強制調整用
+\begin{figure}[h]
+    \begin{tabular}{cp{0.7\columnwidth}} \hline
+        書き方 & 意味 \\ \hline
+        \texttt{*} （アスタリスク）  & 任意の文字が、0文字以上入っていることを示します。\\
+        \texttt{?} （クエスチョンマーク） & 任意の文字が1文字入っていることを示します。\\
+        \texttt{[abc]} & かっこで囲まれた文字の中のどれか一文字が入る。この場合はaかbかcのどれか。\\
+        \texttt{[!abc]} & かっこで囲まれた文字の中{\bf 以外}の文字が入る。この場合はzなどの、a,b,c以外の文字。\\
+        \texttt{\{abc,opq,xyz\}} & 波かっこ\{\}で囲まれた、「,」で区切られている文字列のうちどれかを示す。\\ \hline
+    \end{tabular}
+\end{figure}
 
-\vspace{1\zh}
-\begin{tabular}{cp{0.7\columnwidth}} \hline
-    書き方 & 意味 \\ \hline
-    \texttt{*} （アスタリスク）  & 任意の文字が、0文字以上入っていることを示します。\\
-    \texttt{?} （クエスチョンマーク） & 任意の文字が1文字入っていることを示します。\\
-    \texttt{[abc]} & かっこで囲まれた文字の中のどれか一文字が入る。この場合はaかbかcのどれか。\\
-    \texttt{[!abc]} & かっこで囲まれた文字の中{\bf 以外}の文字が入る。この場合はzなどの、a,b,c以外の文字。\\
-    \texttt{\{abc, opq, xyz\}} & 波かっこ\{\}で囲まれた、「,」で区切られている文字列のうちどれかを示す。\\ \hline
-\end{tabular}
-
-この中でももっとも良く使うのが*です。例えば、0から始まるファイルやディレクトリをlsコマンドで表示させる例は以下のようになります。
-
+この中でももっとも良く使うのが*です。例えば、Pから始まるファイルやディレクトリをlsコマンドで表示させる例は以下のようになります。
 \begin{lstlisting}[caption=ワイルドカードの使い方, label=wildcard]
-    <#green#pi@raspberrypi#>:<#blue#~ $#> ls -F 0*
-    01/ 02/ 03/ 04/ 05/ 06/ 07/ 
+    <#green#pi@raspberrypi#>:<#blue#~ $#> ls -F P*
+    Pictures:
+    ....
+
+    Public:
     <#green#pi@raspberrypi#>:<#blue#~ $#>
 \end{lstlisting}
 
 ワイルドカードを使ったファイル名の指定に少しずつ慣れていきましょう。
 
 \subsection{便利なfindコマンドの使い方}
-findコマンドは、ワイルドカードを使って探すファイルを指定することができます。
-
-\begin{description}
-    \item[● \texttt{find}\textvisiblespace \texttt{-name '}\underline{パターン}\texttt{'}]\mbox{}\\ 
-    \underline{パターン}に一致する名前のファイルがある場所をパスで表示します。\underline{パターン}はワイルドカードで指定し、シングルクォート「\texttt{'}」で囲みます。
-\end{description}
+findコマンドは、波かっこ\{,\}以外のワイルドカードを使って探すファイルを指定することができます。
 
 \begin{lstlisting}[caption=03ディレクトリからPNGファイルを探す, label=findwild]
     <#green#pi@raspberrypi#>:<#blue#~ $#> find 03 -name '*.png'
     PNGファイルなどを探すようにする。
-    <#green#pi@raspberrypi#>:<#blue#~ $#>
 \end{lstlisting}
 
-
-\section{touchコマンド}
-
-\begin{description}
-    \item[● touch \underline{ファイル名}]\mbox{}\\
-    名前が\underline{ファイル名}の空のファイルを作成します。ファイルがすでにある場合は、ファイルの更新日時とアクセス日時を更新します。 
-\end{description}
-　ファイルの更新日時とアクセス日時とは、それぞれ最後にファイルを保存した日時と、最後にファイルを読んだ日時になります。 ls -a で確認することができます。
-
-\begin{lstlisting}[caption=別名の確認, label=confirmAlias]
-    <#green#pi@raspberrypi#>:<#blue#~ $#> touch testtouch
-    <#green#pi@raspberrypi#>:<#blue#~ $#> ls -a testtouch
-    -rw-r--r-- 1 okuyama okuyama 0 Jul  8 13:05 testtouch <- （表示が正しいかチェックが必要）7月8日13:05に更新されたことが分かります。
-\end{lstlisting}
+\begin{tcolorbox}[title=\useOmetoi]
+    \begin{enumerate}
+        \addquiz{\texttt{ls -F 01 02 03}を、ワイルドカード\texttt{[]}を使って書いてみましょう。できたら、実際に実行してみましょう。}
+        \addquiz{\textasciitilde/03ディレクトリの中にあるテキストファイルを探してみましょう。findを使い、.txtで終わるファイル名のファイルを探します。}
+        \addquiz{\textasciitilde/03ディレクトリの中にある.pngファイルが、いくつあるか数えてみましょう。パイプとwcコマンドを使うと便利です。}
+    \end{enumerate}
+\end{tcolorbox}
 
     
 
