@@ -277,15 +277,40 @@ $138+395$の計算を実行すると次のような出力が得られます。
 何も出力がなければ別名の設定が完了しています。別名を付けたコマンドと元のコマンドを入力して確認してみましょう。
 \begin{lstlisting}[caption=別名の確認, label=confirmAlias]
 <#green#pi@raspberrypi#>:<#blue#~ $#> l
-結果の一部を貼る
+合計 140
+drwxr-xr-x 21 pi      pi       4096  5月 22 18:59 <#blue#./#>
+drwxr-xr-x  3 root    root     4096  9月 22  2022 <#blue#../#>
+-rw-------  1 pi      pi         56  5月 22 18:39 .Xauthority
+-rw-------  1 pi      pi       1053  5月 22 18:38 .bash_history
+-rw-r--r--  1 pi      pi        220  9月 22  2022 .bash_logout
+-rw-r--r--  1 pi      pi       3523  9月 22  2022 .bashrc
+                          :
+drwxr-xr-x  2 pi      pi       4096  5月 10 11:02 <#blue#Videos/#>
+-rw-r--r--  1 pi      pi        111  5月 22 18:35 lsfile
+drwxr-xr-x  2 pi      pi       4096  5月 22 16:54 <#blue#rika/#>
 <#green#pi@raspberrypi#>:<#blue#~ $#> ls -alF
-結果の一部を貼る
+合計 140
+drwxr-xr-x 21 pi      pi       4096  5月 22 18:59 <#blue#./#>
+drwxr-xr-x  3 root    root     4096  9月 22  2022 <#blue#../#>
+-rw-------  1 pi      pi         56  5月 22 18:39 .Xauthority
+-rw-------  1 pi      pi       1053  5月 22 18:38 .bash_history
+-rw-r--r--  1 pi      pi        220  9月 22  2022 .bash_logout
+-rw-r--r--  1 pi      pi       3523  9月 22  2022 .bashrc
+                          :
+drwxr-xr-x  2 pi      pi       4096  5月 10 11:02 <#blue#Videos/#>
+-rw-r--r--  1 pi      pi        111  5月 22 18:35 lsfile
+drwxr-xr-x  2 pi      pi       4096  5月 22 16:54 <#blue#rika/#>
 \end{lstlisting}
 同じ出力が得られるはずです。しかし、ターミナルを閉じると今設定した別名は消えてしまいます。
 
 別名を保存しておくには、ホームディレクトリに .bash{\_}aliases というファイルを作成し\ruby{編集}{へん|しゅう}します。
 ターミナルは起動時bashを起動し、bashは \textasciitilde/.bash{\_}aliases というファイルの中に書いてあるコマンドをすべて実行するため、
 このファイルにaliasコマンドを書いておくと、ターミナルを\ruby{起動}{き|どう}するたびにaliasコマンドを実行してくれます。
+
+Mousepadをターミナルで開くことができます。開くときに使うコマンドは`mousepad`です。mousepadコマンドを使って.bash{\_}aliasesを編集します。
+\begin{lstlisting}[caption=\textasciitilde/.bash\_aliasesを開く, label=openingbashAliases]
+<#green#pi@raspberrypi#>:<#blue#~ $#> mousepad .bash_aliases &
+\end{lstlisting}
 
 .bash{\_}aliases には、次のようにコマンドを\ruby{記述}{き|じゅつ}し、保存します。
 \begin{lstlisting}[caption=\textasciitilde/.bash\_aliasesの書き方1, label=bashAliasesGrammar1]
@@ -342,9 +367,10 @@ findコマンドは、ディレクトリの中から指定されたファイル�
 \end{description}
 
 \begin{lstlisting}[caption=ワイルドカードの使い方, label=wildcard]
-    <#green#pi@raspberrypi#>:<#blue#~ $#> find -name rika.png
-    実行結果を貼ること！
-    <#green#pi@raspberrypi#>:<#blue#~ $#>
+<#green#pi@raspberrypi#>:<#blue#~ $#> find -name rika.png
+./rika/rika.png
+./03/rensyu/rika.png
+<#green#pi@raspberrypi#>:<#blue#~ $#>
 \end{lstlisting}
 
 このままfindを使ってもよいのですが、ある文字から始まるファイルを探したり、
@@ -377,12 +403,11 @@ findコマンドは、ディレクトリの中から指定されたファイル�
 
 この中でももっとも良く使うのが*です。例えば、Pから始まるファイルやディレクトリをlsコマンドで表示させる例は以下のようになります。
 \begin{lstlisting}[caption=ワイルドカードの使い方, label=wildcard]
-    <#green#pi@raspberrypi#>:<#blue#~ $#> ls -F P*
-    Pictures:
-    ....
+<#green#pi@raspberrypi#>:<#blue#~ $#> ls -F P*
+Pictures:
 
-    Public:
-    <#green#pi@raspberrypi#>:<#blue#~ $#>
+Public:
+<#green#pi@raspberrypi#>:<#blue#~ $#>
 \end{lstlisting}
 
 ワイルドカードを使ったファイル名の指定に少しずつ慣れていきましょう。
@@ -391,8 +416,11 @@ findコマンドは、ディレクトリの中から指定されたファイル�
 findコマンドは、波かっこ\{,\}以外のワイルドカードを使って探すファイルを指定することができます。
 
 \begin{lstlisting}[caption=03ディレクトリからPNGファイルを探す, label=findwild]
-    <#green#pi@raspberrypi#>:<#blue#~ $#> find 03 -name '*.png'
-    PNGファイルなどを探すようにする。
+<#green#pi@raspberrypi#>:<#blue#~ $#> find 03 -name '*.png'
+03/rensyu/rika/rika.png
+03/rensyu/rika/mokei.png
+03/rensyu/syakai/nihon.png
+03/rensyu/syakai/sekai.png
 \end{lstlisting}
 
 \begin{tcolorbox}[title=\useOmetoi]
