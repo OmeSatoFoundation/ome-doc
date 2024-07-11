@@ -129,19 +129,18 @@ echoコマンドを使うことでhelloと出力できました。
 %%%%%%%%
 
 \subsection{\ruby{空}{から}のファイルを作成する}
-出力を作るコマンドではありませんが、\ruby{空}{から}のファイルを作成するコマンドを紹介ます。
+出力を作るコマンドではありませんが、\ruby{空}{から}のファイルを作成する便利なコマンドを紹介します。
 
 \begin{description}
     \item[● \texttt{touch} \underline{ファイル名}$\cdots$]\mbox{}\\
     名前が\underline{ファイル名}$\cdots$の空のファイルを作成します。ファイルがすでにある場合は、ファイルの更新日時とアクセス日時を更新します。 
 \end{description}
-　ファイルの更新日時とアクセス日時とは、それぞれ最後にファイルを保存した日時と、最後にファイルを読んだ日時になります。 ls -l で確認することができます。
 
+ファイルの更新日時とアクセス日時とは、それぞれ最後にファイルを保存した日時と、最後にファイルを読んだ日時になります。 ls -l で確認することができます。
 \begin{lstlisting}[caption=空のファイルを作成, label=cmd:touch]
 <#green#pi@raspberrypi#>:<#blue#~ $#> touch testtouch
 <#green#pi@raspberrypi#>:<#blue#~ $#> ls -l testtouch
 -rw-r--r-- 1 pi pi 0  7月 11 19:40 testtouch <- 7月11日19:40に更新された。
-↑ラズパイの実行結果に合わせる
 \end{lstlisting}
 
 \begin{tcolorbox}[title=\useOmetoi]
