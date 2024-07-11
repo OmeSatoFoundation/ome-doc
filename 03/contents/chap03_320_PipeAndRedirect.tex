@@ -1,7 +1,5 @@
 \newpage
 \section{xargsをつかったコマンドの実行}
-%\ruby{標準入力}{ひょう|じゅん|にゅう|りょく}を受け取って、\ruby{標準出力}{ひょう|じゅん|しゅつ|りょく}を出力に出すコマンドをフィルタコマンドといいます。
-%xargsコマンドもフィルタコマンドのうちの一つです。
 xargsコマンドは\ruby{標準}{ひょう|じゅん}入力を受け取り、実行したいコマンドの引数として使うことができます。
 xargsを使うと、引数にいろいろなものを指定することができるようになります。
 \begin{figure}[h]
@@ -25,10 +23,10 @@ xargsコマンドは以下のように使います。
 \begin{description}
     \item[● \texttt{xargs}\textvisiblespace \underline{オプション}$\ldots$\textvisiblespace \underline{コマンド}]\mbox{}\\
     標準入力から一行ずつ入力を受け取り、\underline{コマンド}の引数として並べた状態で、\underline{コマンド}を実行します。
-    \underline{コマンド}が無い場合は、引数を横に並べて標準出力に出力します。
+    \underline{コマンド}が無い場合は、受け取った行を横に並べて標準出力に出力します。
 \end{description}
 
-
+\newpage
 \begin{lstlisting}[caption=xargsコマンドを使ってcatコマンドを使う]
 <#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargstest $#> ls | xargs cat
 01
@@ -77,7 +75,7 @@ lsfile
 syousetu.txt
 <#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargstest $#>
 \end{lstlisting}
-
+\newpage
 \begin{description}
     \item[● \texttt{xargs}\textvisiblespace \texttt{-L}\textvisiblespace\underline{数字}\textvisiblespace\underline{コマンド}]\mbox{}\\
     Lオプションは、xargで一度に\underline{コマンド}に渡す引数の最大数を指定します。
@@ -85,7 +83,6 @@ syousetu.txt
     コマンドが繰り返し実行されます。
     -iオプションと-Lオプションを一緒に使うことはできません。
 \end{description}
-
 \begin{lstlisting}[caption=xargsコマンドのオプションL]
 <#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargstest $#> seq 1 5 | xargs -L 1 echo
 1
@@ -101,8 +98,8 @@ syousetu.txt
 
 \begin{tcolorbox}[title=\useOmetoi]
     \begin{enumerate}
-        \addquiz{xargsを使って、lsfileの内容を横につなげて表示しましょう。}
-        \addquiz{seq, xargs, touchを組み合わせて、10から19までの10個の空のファイルを作りましょう。}
+        \addquiz{xargsを使って、lsfileの内容を横につなげて表示しましょう。xargsにコマンドを指定しないと、標準入力で受け取った行を横に並べて出力します。リダイレクトかパイプを使ってlsfileの内容をxargsに入力しましょう。}
+        \addquiz{seq, xargs, touchを組み合わせて、10から19までの10個の空のファイルを作りましょう。\texttt{touch}\textvisiblespace\texttt{10}\textvisiblespace\texttt{11}\textvisiblespace\texttt{12}\textvisiblespace$\cdots$\textvisiblespace\texttt{19}と入力できれば問題が解けます。この\texttt{touch}の引数をseqとxargsで作りましょう。}
     \end{enumerate}
 \end{tcolorbox}
 %%%%%%%%%%
@@ -232,12 +229,13 @@ Bashの機能を使って、計算をしてみましょう。
 コマンドの中で使用される \$() はコマンド\ruby{置換}{ち|かん}を行うための\ruby{構文}{こう|ぶん}です。コマンド\ruby{置換}{ち|かん}を使用すると、中のコマンドの\ruby{実行結果}{じっ|こう|けっ|か}を、別のコマンドの\ruby{引数}{ひき|すう}として使用することができます。
 \begin{lstlisting}[caption=echo コマンド置換を使った例1, label=cmdsbs:echo]
 <#green#pi@raspberrypi#>:<#blue#~/ $#> echo $(ls)
-01 02 03 Bookshelf Desktop Documents Downloads Music Pictures Public Templates Videos lsfile rika
+01 02 03 Bookshelf Desktop Documents Downloads Music Pictures Public Templates Videos lsfile r
+ika
 <#green#pi@raspberrypi#>:<#blue#~/ $#> ls
 <#blue#01  03         Desktop    Downloads  Pictures  Templates#> lsfile
 <#blue#02  Bookshelf  Documents  Music      Public    Videos    rika#> 
 \end{lstlisting}
-二つのコマンドから同じ\ruby{結果}{けっ|か}を\ruby{得}{え}られることがわかります。\$()の中に書いたコマンドが実行されます。
+コマンド置換でlsの\ruby{結果}{けっ|か}が\ruby{表示}{ひょう|じ}されることがわかります。
 
 echoコマンドとコマンド\ruby{置換}{ち|かん}を使って計算をしてみましょう。echo \$((式))と打つと\ruby{計算結果}{けい|さん|けっ|か}を出力してくれます。この方法では、内側にも()があることに注意しましょう。この()は内側の\ruby{算術式}{さん|じゅつ|しき}の\ruby{評価結果}{ひょう|か|けっ|か}を変数として\ruby{認識}{にん|しき}して、その変数の中身をechoの\ruby{引数}{ひき|すう}に渡すために使用します。つまり、計算の結果を表示をするためのものです。
 ターミナルでの計算には、足し算（$+$）、引き算（$-$）、掛け算（$*$）、割り算（$/$）などが利用できます。 割り算は商のみを\ruby{整数}{せい|すう}で出力しますので注意してください。
@@ -284,7 +282,7 @@ drwxr-xr-x  3 root    root     4096  9月 22  2022 <#blue#../#>
 -rw-------  1 pi      pi       1053  5月 22 18:38 .bash_history
 -rw-r--r--  1 pi      pi        220  9月 22  2022 .bash_logout
 -rw-r--r--  1 pi      pi       3523  9月 22  2022 .bashrc
-                          :
+                          : 
 drwxr-xr-x  2 pi      pi       4096  5月 10 11:02 <#blue#Videos/#>
 -rw-r--r--  1 pi      pi        111  5月 22 18:35 lsfile
 drwxr-xr-x  2 pi      pi       4096  5月 22 16:54 <#blue#rika/#>
@@ -307,7 +305,7 @@ drwxr-xr-x  2 pi      pi       4096  5月 22 16:54 <#blue#rika/#>
 ターミナルは起動時bashを起動し、bashは \textasciitilde/.bash{\_}aliases というファイルの中に書いてあるコマンドをすべて実行するため、
 このファイルにaliasコマンドを書いておくと、ターミナルを\ruby{起動}{き|どう}するたびにaliasコマンドを実行してくれます。
 
-Mousepadをターミナルで開くことができます。開くときに使うコマンドは`mousepad`です。mousepadコマンドを使って.bash{\_}aliasesを編集します。
+mousepadコマンドを使って.bash{\_}aliasesを編集しましょう。
 \begin{lstlisting}[caption=\textasciitilde/.bash\_aliasesを開く, label=openingbashAliases]
 <#green#pi@raspberrypi#>:<#blue#~ $#> mousepad .bash_aliases &
 \end{lstlisting}
