@@ -12,6 +12,8 @@
 \end{itemize}
 \begin{lstlisting}[caption=lessの例, label=less]
 <#green#pi@raspberrypi#>:<#blue#~ $#> less ~/03/rensyu/kokugo/syousetu.txt
+\end{lstlisting}
+\begin{lstlisting}[caption=lessの結果, label=less-result]
 ごん狐
 新美南吉
 
@@ -37,7 +39,7 @@
 水が、どっとましていました。ただのときは水につかることのない、川べりのすすきや、
 萩はぎの株が、黄いろくにごった水に横だおしになって、もまれています。
 ごんは川下かわしもの方へと、ぬかるみみちを歩いていきました。
-：
+~/home/pi/03/rensyu/kokugo/syosetsu.txt
 \end{lstlisting}
 
 \subsection{テキストファイルを作ってみよう}
@@ -45,6 +47,7 @@
 \item[● \texttt{mousepad}\textvisiblespace \underline{ファイル}\textvisiblespace \&]\mbox{}\\
 mousepad を使って\underline{ファイル}を作成または\ruby{編集}{へん|しゅう}します。
 \end{description}
+\newpage
 \begin{itemize}
 \item[<例>]my.txt を作り、文字を書いて\ruby{保存}{ほ|ぞん}します。
 \end{itemize}
@@ -67,7 +70,8 @@ mousepad を使って\underline{ファイル}を作成または\ruby{編集}{へ
 \begin{lstlisting}[caption=mkdirの例, label=mkdir]
 <#green#pi@raspberrypi#>:<#blue#~ $#> mkdir my
 <#green#pi@raspberrypi#>:<#blue#~ $#> ls -F
-<#blue#Desktop/	MagPi/	my/	 ...#>
+<#blue#01/  03/         Desktop/    Downloads/  my/     Pictures/  rika/       Videos/#>
+<#blue#02/  Bookshelf/  Documents/  Music/#>      my.txt  <#blue#Public/    Templates/#>
 \end{lstlisting}
 
 \subsection{ファイルやディレクトリを消してみよう}
@@ -78,26 +82,31 @@ mousepad を使って\underline{ファイル}を作成または\ruby{編集}{へ
 \begin{itemize}
 \item[<例>]my.txt を消します。
 \end{itemize}
-\begin{lstlisting}[caption=cpの例, label=cp]
+\begin{lstlisting}[caption=rmの例, label=rm]
 <#green#pi@raspberrypi#>:<#blue#~ $#> ls -F
-<#blue#Desktop/	MagPi/	my/	 #>	<#magenta#my.txt#>	<#blue#...#>
+<#blue#01/  03/         Desktop/    Downloads/  my/     Pictures/  rika/       Videos/#>
+<#blue#02/  Bookshelf/  Documents/  Music/#>      my.txt  <#blue#Public/    Templates/#>
 <#green#pi@raspberrypi#>:<#blue#~ $#> rm my.txt
 <#green#pi@raspberrypi#>:<#blue#~ $#> ls -F
-<#blue#Desktop/	MagPi/	my/	 ...#>
+<#blue#01/  03/         Desktop/    Downloads/  my/        Public/  Templates/#>
+<#blue#02/  Bookshelf/  Documents/  Music/      Pictures/  rika/    Videos/#>
 \end{lstlisting}
 \begin{description}
 \item[● \texttt{rm}\textvisiblespace \texttt{-r}\textvisiblespace \underline{ディレクトリ}$\ldots$]\mbox{}\\
 \underline{ディレクトリ}$\ldots$を消去します。
 \end{description}
+\newpage
 \begin{itemize}
 \item[<例>]my ディレクトリを消します。
 \end{itemize}
-\begin{lstlisting}[caption=cp -rの例, label=cp-R]
+\begin{lstlisting}[caption=rm -rの例, label=rm-R]
 <#green#pi@raspberrypi#>:<#blue#~ $#> ls -F
-<#blue#Desktop/	MagPi/	my/	 ...#>
+<#blue#01/  03/         Desktop/    Downloads/  my/        Public/  Templates/#>
+<#blue#02/  Bookshelf/  Documents/  Music/      Pictures/  rika/    Videos/#>
 <#green#pi@raspberrypi#>:<#blue#~ $#> rm -r my
 <#green#pi@raspberrypi#>:<#blue#~ $#> ls -F
-<#blue#Desktop/	MagPi/	Public/	 ...#>
+<#blue#01/  03/         Desktop/    Downloads/  Pictures/  rika/       Videos/#>
+<#blue#02/  Bookshelf/  Documents/  Music/      Public/    Templates/#>
 \end{lstlisting}
 
 \begin{tcolorbox}[title=\useOmetoi]
