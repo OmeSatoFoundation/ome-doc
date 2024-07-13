@@ -105,6 +105,9 @@ syousetu.txt
 %%%%%%%%%%
 \newpage
 \section{置き\ruby{換}{か}えをするコマンド}
+受け取った文字列から、文字を置き換えたり、単語を置き換えたりすることができます。
+これを使うと、テキストの変更や修正ができます。
+
 \begin{figure}[h]
     \begin{tabular}{ll}
     コマンド & 動作                                                       \\ \hline
@@ -208,9 +211,9 @@ Hi, Wowld!
         \addex{trコマンドを使って、ファイルilpに含まれる英子文字をすべて英大文字に変換してみましょう。}
         \addex{sedコマンドを使って、ファイルilpに含まれるlikeという単語をloveに変えてみましょう。}
     \addex{%
-\textasciitilde /03/rensyu/kokugo/syosetsu.txt には小説「ごんぎつね」が\ruby{掲載}{けい|さい}されています。%
+\textasciitilde /03/rensyu/kokugo/syosetsu.txt には小説「ごんぎつね」が\ruby{収録}{しゅう|ろく}されています。%
 「ごんぎつね」に登場するキャラクター「ごん」の名前を「Fox」に変えて標準出力に出力しましょう。\\%
-ヒント: cat \textasciitilde /03/rensyu/kokugo/syosetsu.txt | sed ???%
+ヒント: cat \textasciitilde /03/rensyu/kokugo/syosetsu.txt | sed \fbox{置き換えの指示}%
 }
 \end{enumerate}
 \end{tcolorbox}
