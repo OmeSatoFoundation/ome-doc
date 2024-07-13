@@ -18,7 +18,7 @@
 
 \begin{description}
 \item[● \texttt{cd}]\mbox{}\\
-ホームディレクトリに移動します。
+cdに\ruby{引数}{ひき|すう}をつけずに\ruby{実行}{じっ|こう}すると、ホームディレクトリに移動します。
 \end{description}
 \begin{itemize}
 \item[<例>] Picturesディレクトリに移動したあとに、cdとだけ入力するとホームディレクトリに移動できます。
@@ -33,7 +33,7 @@
 \subsection{ファイルの中身を見てみよう}
 \begin{description}
 \item[● \texttt{cat}\textvisiblespace \underline{ファイル}$\ldots$ ]\mbox{}\\
-\underline{ファイル}$\ldots$に書かれている\ruby{内容}{ない|よう}を\ruby{表示}{ひょう|じ}します。
+\underline{ファイル}$\ldots$に書かれている\ruby{内容}{ない|よう}をテキストで\ruby{表示}{ひょう|じ}します。
 \end{description}
 \begin{itemize}
 \item[<例>]syousetu.txt に書かれている文字を表示します。
@@ -64,13 +64,14 @@
 
 https:／／www.aozora.gr.jp/cards/000121/files/628_14895.html<#green#pi@raspberrypi#>:<#blue#~ $#>
 \end{lstlisting}
-
-
+テキストファイルでないファイルをcatで表示すると、ターミナルの表示がおかしくなったり、コマンドが入力できなくなったりします。テキストファイルでないファイルは、それぞれに対応したコマンドで開くようにしてください。
 
 \subsection{コピーしてみよう}
 \begin{description}
-\item[● \texttt{cp}\textvisiblespace \underline{ファイル1}\textvisiblespace \underline{ファイル2}]\mbox{}\\
-ファイル1をファイル2という名前でコピーします。
+    \item[● \texttt{cp}\textvisiblespace \underline{ファイル1}\textvisiblespace \underline{ファイル2}]\mbox{}\\
+    ファイル1をファイル2という名前でコピーします。
+    \item[● \texttt{cp}\textvisiblespace \underline{ファイル}$\ldots$\textvisiblespace \underline{ディレクトリ}]\mbox{}\\
+    \underline{ファイル}$\ldots$で指定されたファイルを同じ名前で\underline{ディレクトリ}の下にコピーします。
 \end{description}
 \begin{itemize}
 \item[<例>]\textasciitilde /03/rensyu/rika/rika.png をrika2.png という名前でホームディレクトリにコピー
