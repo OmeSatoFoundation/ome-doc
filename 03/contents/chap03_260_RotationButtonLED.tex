@@ -1,8 +1,5 @@
 \newpage
 \section{ボタンを\ruby{押}{お}して光るLEDを変えてみよう}
-赤いボタンを押すと点くLEDが次々に変わるHSPプログラムを考えてみましょう。
-HSPスクリプトエディタで\textasciitilde/03/button\_led3.hspを読み\ruby{込}{こ}み実行してください。
-
 \begin{lstlisting}[escapechar=!,caption=\textasciitilde/03/button\_led3.hsp,label=button_led3.hsp]
 #include "hsp3dish.as"		<#blue#;スクリプトの設定を読み込む#>
 #include "rpz-gpio.as"		<#blue#;スクリプトの設定を読み込む#>
@@ -55,6 +52,9 @@ HSPスクリプトエディタで\textasciitilde/03/button\_led3.hspを読み\ru
   goto *hata		<#blue#;*hataまで戻る#>
 \end{lstlisting}
 
+赤いボタンを押すと点くLEDが次々に変わるHSPプログラムを考えてみましょう。
+HSPスクリプトエディタで\textasciitilde/03/button\_led3.hspを読み\ruby{込}{こ}み実行してください。
+
 \noindent \textbf{\ruby{剰余算}{じょう|よ|ざん}}\\
 今回、新たに\textbackslash (バックスラッシュ)という記号が登場しています。これは剰余算といって\ruby{割}{わ}り算をしたときの余りを計算できます。例えば、5 \textbackslash \ 4 は5を4で割った余りである1になります。
 
@@ -76,6 +76,7 @@ ledidxが3のとき & \code{ledidx=(3+1) \textbackslash \ 4} を計算すると&
 
 この文は条件文1が成り立つときは実行文1を実行します。成り立たないときは、条件文2が成り立つかどうか調べます。条件文2が成り立つときは実行文2を実行します。 
 
+\vspace{1\zh}
 ここまででプログラムの全体を説明しました。しかしこのプログラムを実行しても、ボタンを押すたびにLEDがひとつだけ右どなりに動いているようには見えないですね？それはコンピュータが計算するのが速すぎるせいです。ボタンを一回押したら、ひとつ右どなりに動くようにするにはどうしたらよいでしょうか。\pageref{button_led2_toi}ページの問題の「変化を\ruby{検出}{けん|しゅつ}する」を参考に問題をといてみましょう。\\
 
 \begin{tcolorbox}[title=\useOmetoi]

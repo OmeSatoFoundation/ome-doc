@@ -4,11 +4,10 @@
 
 ターミナルではコマンドを使ってコンピュータとやりとりをします。
 コマンドとはコンピュータに\ruby{与}{あた}える命令のことです。
-コマンドは下のような\ruby{形}{かたち}で書きます。
+コマンドは次のような\ruby{形}{かたち}で書きます。
 
 \begin{description}
-\item[コマンド\textvisiblespace オプション\textvisiblespace \ruby{引数}{ひき|すう}１\textvisiblespace 
-\ruby{引数}{ひき|すう}２]\mbox{}\\
+\item[コマンド\textvisiblespace オプション\textvisiblespace \ruby{引数}{ひき|すう}１\textvisiblespace\ruby{引数}{ひき|すう}２]\mbox{}\\
 コマンドは動作、引数は操作の\ruby{対象}{たい|しょう}です。
  コマンドの最後にEnter（エンター）キーを\ruby{押}{お}して、
  コンピュータにコマンドを送ります。
@@ -21,15 +20,15 @@
 読み方を知りたい人は\pageref{英語と日本語の対応表}ページの英語と日本語の\ruby{対応表}{たい|おう|ひょう}を見てみましょう。
 
 \subsection{この章で使うファイルをコピーしよう}
-はじめに、この章で使うファイルをコピーしてもらいます。コマンドの説明はあとで行いますので以下のコマンドを入力して実行してみましょう。
+はじめに、この章で使うファイルをコピーしてもらいます。コマンドの説明はあとで行いますので、以下のコマンドを入力して実行してみましょう。
 \begin{lstlisting}[caption=使うファイルのコピー,label=workfilecopy]
   <#green#pi@raspberrypi#>:<#blue#~ $#> cp -r /usr/local/share/ome/03 ~
   <#green#pi@raspberrypi#>:<#blue#~ $#>
 \end{lstlisting}
-「\textasciitilde 」記号とスペースに気を付けて入力してください。ふあんな時はTAの先生に確認してもらってください。
+「\textasciitilde 」記号とスペースに気を付けて入力してください。不安な時はTAの先生に確認してもらってください。
 
 \subsection{カレントディレクトリを知ろう}
-ディレクトリとは、第１回で習ったフォルダと\ruby{基本的}{き|ほん|てき}に同じものです。
+ディレクトリとは、第１回で習ったフォルダと同じものです。
 マウスで操作する場合はフォルダ、コマンドで操作する場合はディレクトリと呼ぶことが多いです。
 ターミナルで作業をするディレクトリを{\bf カレントディレクトリ}と呼びます。
 カレントディレクトリを調べるには以下のコマンドを使用します。
@@ -52,22 +51,21 @@
 \subsection{ディレクトリの中を見てみよう}
 \begin{description}
 \item[● \texttt{ls}\textvisiblespace \texttt{-F}\textvisiblespace \underline{ファイル}$\ldots$]\mbox{}\\
-\underline{ファイル}$\ldots$の中のファイルやディレクトリが表示されます。\underline{ファイル}$\ldots$を指定しないときは、カレントディレクトリのファイルやディレクトリが表示されます。ファイルはピンクの文字、ディレクトリは青い文字で表示されます。Fは大文字なので注意してください。
+\underline{ファイル}$\ldots$やその中のファイルやディレクトリの\ruby{一覧}{いち|らん}を表示します。\underline{ファイル}$\ldots$を指定しないときは、カレントディレクトリのファイルやディレクトリの\ruby{一覧}{いち|らん}を表示します。ファイルはピンクの文字、ディレクトリは青い文字で表示されます。Fは大文字なので注意してください。
 \end{description}
+\begin{itemize}
+  \item[<例>] ls\textvisiblespace -Fだけを入力するとカレントディレクトリの中を見ることができます。
+\end{itemize}
 
-%//terminal[lsF-test][ls -F コマンドの例]{
-\begin{minipage}{\linewidth}
 \begin{lstlisting}[caption=ls -F コマンドの例。ファイルやディレクトリが表示されます,label=lsFtest]
 <#green#pi@raspberrypi#>:<#blue#~ $#> ls -F
 <#blue#01/  03/         Desktop/    Downloads/  Pictures/  Templates/
 02/  Bookshelf/  Documents/  Music/      Public/    Videos/#>
 <#green#pi@raspberrypi#>:<#blue#~ $#>
 \end{lstlisting}
-\end{minipage}
 
 \begin{itemize}
-\item[<例>] ls\textvisiblespace -Fだけを入力するとカレントディレクトリの中を見ることができます。 
-\item[<例>] Picturesというディレクトリの中を見たい場合は ls\textvisiblespace -F\textvisiblespace Pictures/と入力します。 
+  \item[<例>] Picturesというディレクトリの中を見たい場合は ls\textvisiblespace -F\textvisiblespace Pictures/と入力します。 
 \end{itemize}
 
 ディレクトリの中にあるファイルは人によってちがいます。
@@ -115,26 +113,30 @@ pwconv         pwdx           pw-midirecord  pw-record                 <--Tabを
 どのファイルやディレクトリかわからないので、ディレクトリやファイルの候補を出してくれました。
 
 \subsection{コマンド\ruby{履歴}{り|れき}}
-bashは今までにどのようなコマンドを受け付けたのかを記録しています。
+bashは今までにどのようなコマンドを受け付けたのかを記録しています。次の表の操作で以前に入力したコマンドを表示できます。
+コマンドを表示した後に、カーソルキーの左右キー（←→）でカーソルを移動したり、
+文字を入力したり、文字を削除したりすることで、
+コマンドを\ruby{編集}{へん|しゅう}することができます。
+
 \begin{figure}[h]
+  \center
   \begin{tabular}{ll}\hline
     キー & 機能 \\ \hline
     ↑ または Ctrl+P & ひとつ前のコマンドを表示\\
     ↓ または Ctrl+N & ひとつ後ろのコマンドを表示\\ \hline
   \end{tabular}
 \end{figure}
-コマンドを表示した後に、カーソルキーの左右キー（←→）でカーソルを移動したり、
-文字を入力したり、文字を削除したりすることで、コマンドを\ruby{編集}{へん|しゅう}することができます。
+
 
 Tabキーとコマンド\ruby{履歴}{り|れき}の機能を使うと、コマンドの入力がとても楽になります。
 コマンドの入力をするときは、これらの機能を使ってみましょう。
 \begin{tcolorbox}[title=\useOmetoi]
 \begin{enumerate}
-  \addex{\texttt{cp}\textvisiblespace\texttt{-r}\textvisiblespace\texttt{/usr/local/share/ome/03}\textvisiblespace\texttt{~}と入力して実行しましょう。}\\
+  \addex{\texttt{cp}\textvisiblespace\texttt{-r}\textvisiblespace\texttt{/usr/local/share/ome/03}\textvisiblespace\texttt{\textasciitilde}と入力して実行しましょう。}\\
   \vspace{\zh}
-  \addquiz{\ruby{実際}{じっ|さい}にpwdを使って、カレントディレクトリが\ruby{表示}{ひょう|じ}されることを確かめましょう。
+  \addquiz{ターミナルにpwdと入力し、実行しましょう。カレントディレクトリが\ruby{表示}{ひょう|じ}されることを確かめましょう。
   表示されたカレントディレクトリを書いてください。}
-  \addquiz{\texttt{ls}\textvisiblespace \texttt{-F}と入力しましょう。実行して\ruby{表示}{ひょう|じ}されたファイルとディレクトリの名前を１つずつ書きましょう。Fは大文字です。}
+  \addquiz{\texttt{ls}\textvisiblespace \texttt{-F}と入力し、実行しましょう。Fは大文字です。\ruby{表示}{ひょう|じ}されたファイルとディレクトリの名前をそれぞれ１つずつ書きましょう。}
   \addquiz{Tabキーを使いながら \texttt{ls}\textvisiblespace \texttt{-F}\textvisiblespace Pictures/ と入力しましょう。実行して\ruby{表示}{ひょう|じ}されたファイルかディレクトリの名前を１つ書きましょう。}
   \addex{ターミナルの中で、カーソルの上下キーを押し、コマンドの\ruby{履歴}{り|れき}を見てみましょう。}
 \end{enumerate}

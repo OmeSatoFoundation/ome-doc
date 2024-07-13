@@ -6,7 +6,7 @@
     \center
     \begin{tabular}{ll}\hline
     コマンド & 動作                                         \\ \hline
-    ls      & ファイルやディレクトリを出力する（紹介ずみ）             \\
+    ls      & ファイルやディレクトリのいちらんを出力する（紹介ずみ）             \\
     du      & ディレクトリの中のファイルの大きさを\ruby{報告}{ほう|こく}する \\
     wc      & 入力の文字数・単語数・行数を出力する         \\
     seq     & 数字の列を出力する                       \\ 
@@ -31,7 +31,7 @@
 500	/home/pi/03/rensyu
 980	/home/pi/03
 \end{lstlisting}
-この例では、\textasciitilde/03の中のディレクトリの中のディレクトリの大きさを表示しています。
+この例では、\textasciitilde/03の中のディレクトリの大きさを表示しています。
 左側の数字が各ディレクトリの大きさで「キロバイト」という単位を使って表しています。
 ただし、このままでは各数字がどれくらいの大きさを表しているのかがわかりにくいですよね。
 そこで、-hオプションを使って、数字に単位を付けることができます。
@@ -473,6 +473,7 @@ lsfileをsortコマンドに渡した\ruby{際}{さい}と同じ結果が表示�
 
 
 \begin{tcolorbox}[title=\useOmetoi]
+    以下の問題を解きましょう。Tabキーやコマンド\ruby{履歴}{り|れき}の\ruby{機能}{き|のう}を使うと便利です。
     \begin{enumerate}
         \addex{\textasciitilde/03/rensyu/kokugo/syosetsu.txtの中身を逆順に表示してみましょう。}
         \addex{\textasciitilde/03/rensyu/kokugo/syosetsu.txtの行をランダムに入れ替えて表示してみましょう。}
@@ -485,9 +486,9 @@ lsfileをsortコマンドに渡した\ruby{際}{さい}と同じ結果が表示�
 \end{tcolorbox}
 \begin{tcolorbox}[title=\useOmetoi]
     \begin{enumerate}
-        \addquiz{ls \$HOME | command1 \\ ホームディレクトリの中身を\ruby{辞書}{じ|しょ}順に並び替えるように command1 を\ruby{埋}{う}めましょう。}
-        \addquiz{ls \$HOME | command1 | command2 Downloads \\ 1の結果から Downloads を検索するように command1 と command2 を埋めましょう。}
-        \addquiz{cat \textasciitilde/03/rensyu/kokugo/syosetsu.txt | tail -n 数字1 | head -n 数字2 \\ syosetsu.txtの下から3行目を表示するように 数字1 と 数字2 を埋めましょう。}
+        \addquiz{ls \$HOME | \fbox{コマンド1} \\ ホームディレクトリの中身を\ruby{辞書}{じ|しょ}順に並び替えるように \fbox{コマンド1} を\ruby{埋}{う}めましょう。}
+        \addquiz{ls \$HOME | \fbox{コマンド1} | \fbox{コマンド2} Downloads \\ 1の結果から Downloads を含む行を抜き出すように \fbox{コマンド2} を埋めましょう。}
+        \addquiz{cat \textasciitilde/03/rensyu/kokugo/syosetsu.txt | tail -n \fbox{数字1} | head -n \fbox{数字2} \\ syosetsu.txtの下から3行目を表示するように \fbox{数字1} と \fbox{数字2} を埋めて、コマンドを実行しましょう。}
     \end{enumerate}
 \end{tcolorbox}
 
