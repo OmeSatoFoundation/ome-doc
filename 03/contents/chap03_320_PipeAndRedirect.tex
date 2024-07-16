@@ -98,8 +98,8 @@ syousetu.txt
 
 \begin{tcolorbox}[title=\useOmetoi]
     \begin{enumerate}
-        \addquiz{xargsを使って、lsfileの内容を横につなげて表示しましょう。xargsにコマンドを指定しないと、標準入力で受け取った行を横に並べて出力します。リダイレクトかパイプを使ってlsfileの内容をxargsに入力しましょう。}
-        \addquiz{seq, xargs, touchを組み合わせて、10から19までの10個の空のファイルを作りましょう。\texttt{touch}\textvisiblespace\texttt{10}\textvisiblespace\texttt{11}\textvisiblespace\texttt{12}\textvisiblespace$\cdots$\textvisiblespace\texttt{19}と入力できれば問題が解けます。この\texttt{touch}の引数をseqとxargsで作りましょう。}
+        \addquiz{xargsを使って、lsfileの内容を横につなげて表示しましょう。xargsにコマンドを指定しないと、標準入力で受け取った行を横に並べて出力します。リダイレクトかパイプを使ってlsfileの内容をxargsに入力しましょう。思った通りに動作したら、そのコマンドを書きましょう。}
+        \addquiz{seq, xargs, touchを組み合わせて、10から19までの10個の空のファイルを作りましょう。\texttt{touch}\textvisiblespace\texttt{10}\textvisiblespace\texttt{11}\textvisiblespace\texttt{12}\textvisiblespace$\cdots$\textvisiblespace\texttt{19}と入力できれば問題が解けます。この\texttt{touch}の引数をseqとxargsで作りましょう。思った通りに動作したら、そのコマンドを書きましょう。}
     \end{enumerate}
 \end{tcolorbox}
 %%%%%%%%%%
@@ -335,7 +335,7 @@ source コマンドは\ruby{引数}{ひき|すう}として渡されたファイ
 %     \item[\texttt{alias}\textvisiblespace 名前 = 'コマンド'\textvisiblespace name = 'command'\textvisiblespace ...]\\
 %     設定したいコマンドにスペースが含まれていた場合、bash はスペースの後の文字列を新たな別名として\ruby{認識}{にん|しき}し、\ruby{意図}{い|と}とは異なった別名を設定しようとします。
 % \end{description}
-\begin{itembox}[c]{\& (アンパサンド)の意味について}
+\begin{itembox}[c]{bashの設定ファイルについて}
     ターミナルを起動すると、bash が\ruby{起動}{き|どう}します。bash が\ruby{起動}{き|どう}するときに、\textasciitilde/.bashrc の中身が実行されます。さらに\textasciitilde/.bashrc の中で \textasciitilde/.bash\_ aliases の中身を実行するように\ruby{記述}{き|じゅつ}されています。
     これらの.bashrcや.bash\_ aliasesはbashが\ruby{起動}{き|どう}するときにしか読み込まれないので、ファイルを\ruby{編集}{へん|しゅう}した後にはこれらを読み込みなおす必要があります。また、\textasciitilde/.bash\_ aliases にまちがいがあると、
     bash \ruby{起動}{き|どう}時に毎回エラーメッセージが表示されるようになります。正しく\ruby{記述}{き|じゅつ}するようにしましょう。

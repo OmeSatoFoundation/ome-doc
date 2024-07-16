@@ -62,7 +62,7 @@ HSPスクリプトエディタで\textasciitilde /03/button\_led2.hspを読み\r
 \includesvg[width=\linewidth]{images/chap03/edge_trigger.svg}
 \end{center}
 
-ボタンを使ってLEDをつけたり消したりするには 工夫が必要です。「前回はボタンが押されていたかったけど今はボタンが押されている」ときのみLEDのON/OFFを切り替える必要があります。これを「変化を\ruby{検出}{けん|しゅつ}する」といいます。
+ボタンを使ってLEDをつけたり消したりするには 工夫が必要です。「前回はボタンが押されていなかったけれど、今はボタンが押されている」ときのみLEDのON/OFFを切り替える必要があります。これを「変化を\ruby{検出}{けん|しゅつ}する」といいます。
 
 LEDのON/OFFを切り替えているのは、\code{led = 1 – led}の部分です。
 例えば、変数ledの中身が1だったとします。そうすると\code{led = 1 – led} は\code{led = 1 – 1} となるので変数ledは0になります。
