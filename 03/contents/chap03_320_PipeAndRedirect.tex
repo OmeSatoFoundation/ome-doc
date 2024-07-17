@@ -52,7 +52,7 @@ xargsにもオプションがいくつかあります。そのうち、よくつ
 \begin{description}
     \item[● \texttt{xargs}\textvisiblespace \texttt{-p}\textvisiblespace \underline{コマンド}]\mbox{}\\
     どのように\underline{コマンド}が実行されるかを表示してくれます。
-    <Enter>キーを押すと何もせずに終了し、<y>キーを押すとコマンドを実行します。
+    <Enter>キーを押すと何もせずに終了し、<y>を入力して<Enter>キーを押すとコマンドを実行します。
 \end{description}
 
 \begin{lstlisting}[caption=xargsコマンドのオプションp]
@@ -396,9 +396,9 @@ findコマンドは、ディレクトリの中から指定されたファイル�
         書き方 & 意味 \\ \hline
         \texttt{*} （アスタリスク）  & 任意の文字が、0文字以上入っていることを示します。\\
         \texttt{?} （クエスチョンマーク） & 任意の文字が1文字入っていることを示します。\\
-        \texttt{[abc]} & かっこで囲まれた文字の中のどれか一文字が入る。この場合はaかbかcのどれか。\\
-        \texttt{[!abc]} & かっこで囲まれた文字の中{\bf 以外}の文字が入る。この場合はzなどの、a,b,c以外の文字。\\
-        \texttt{\{abc,opq,xyz\}} & 波かっこ\{\}で囲まれた、「,」で区切られている文字列のうちどれかを示す。\\ \hline
+        \texttt{[abc]} & かっこで囲まれた文字の中のどれか一文字が入っていることを示します。この場合はaかbかcのどれかです。\\
+        \texttt{[!abc]} & かっこで囲まれた文字の中{\bf 以外}の文字が入っていることを示します。この場合はzなどの、a,b,c以外の文字です。\\
+        \texttt{\{abc,opq,xyz\}} & 波かっこ\{\}で囲まれた、「,」で区切られている文字列のうちどれかを示します。\\ \hline
     \end{tabular}
 \end{figure}
 
