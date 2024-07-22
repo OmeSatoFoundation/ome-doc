@@ -44,53 +44,53 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}
-  \frametitle{LEDを光らせてみよう(1)}
-  \begin{itemize}
-    \item led.hspを実行しよう
-          \begin{itemize}
-            \item 03ディレクトリに移動しよう
-            \item ターミナルで hsed コマンドを使おう
-            \item ファイル\rightarrow 開く\rightarrow led.hsp
-          \end{itemize}
-  \end{itemize}
-\end{frame}
+% \begin{frame}
+%   \frametitle{LEDを光らせてみよう(1)}
+%   \begin{itemize}
+%     \item led.hspを実行しよう
+%           \begin{itemize}
+%             \item 03ディレクトリに移動しよう
+%             \item ターミナルで hsed コマンドを使おう
+%             \item ファイル\rightarrow 開く\rightarrow led.hsp
+%           \end{itemize}
+%   \end{itemize}
+% \end{frame}
 
-\begin{frame}[fragile]
-  \frametitle{LEDを光らせてみよう(2)}
-  \begin{lstlisting}[title=led.hsp,label=led.hsp]
-  #include "hsp3dish.as"   <#blue#; スクリプトの設定を読み込む#>
-  #include "rpz-gpio.as"   <#blue#; スクリプトの設定を読み込む#>
-          redraw 0         <#blue#; 画面更新 (仮想画面に描画)#>
-          font "",30       <#blue#;文字のフォント、サイズを決める#>
-          pos 20, 20       <#blue#;文字の場所を決める#>
-          mes "LEDが光るよ" <#blue#;文字を決める#>
-          redraw 1         <#blue#;画面更新(実際の画面に描画)#>
-  *led
-          gpio 17, 1     <#blue#;GPIO17を点灯させる#>
-          wait 100       <#blue#;0.1 秒待つ#>
-          goto *led      <#blue#;*led まで戻る#>
-          gpio 17, 0     <#blue#;GPIO17を消灯させる#>
-  \end{lstlisting}
-\end{frame}
+% \begin{frame}[fragile]
+%   \frametitle{LEDを光らせてみよう(2)}
+%   \begin{lstlisting}[title=led.hsp,label=led.hsp]
+%   #include "hsp3dish.as"   <#blue#; スクリプトの設定を読み込む#>
+%   #include "rpz-gpio.as"   <#blue#; スクリプトの設定を読み込む#>
+%           redraw 0         <#blue#; 画面更新 (仮想画面に描画)#>
+%           font "",30       <#blue#;文字のフォント、サイズを決める#>
+%           pos 20, 20       <#blue#;文字の場所を決める#>
+%           mes "LEDが光るよ" <#blue#;文字を決める#>
+%           redraw 1         <#blue#;画面更新(実際の画面に描画)#>
+%   *led
+%           gpio 17, 1     <#blue#;GPIO17を点灯させる#>
+%           wait 100       <#blue#;0.1 秒待つ#>
+%           goto *led      <#blue#;*led まで戻る#>
+%           gpio 17, 0     <#blue#;GPIO17を消灯させる#>
+%   \end{lstlisting}
+% \end{frame}
 
-\begin{frame}
-  \frametitle{LEDを光らせてみよう(3)}
-  \begin{itemize}
-    \item gpio 17, 1 の部分でLEDを光らせているよ
-          \begin{itemize}
-            \item 17 は光らせたいLEDのGPIO番号
-            \item 1で点灯、0で消灯
-          \end{itemize}
-  \end{itemize}
-\end{frame}
+% \begin{frame}
+%   \frametitle{LEDを光らせてみよう(3)}
+%   \begin{itemize}
+%     \item gpio 17, 1 の部分でLEDを光らせているよ
+%           \begin{itemize}
+%             \item 17 は光らせたいLEDのGPIO番号
+%             \item 1で点灯、0で消灯
+%           \end{itemize}
+%   \end{itemize}
+% \end{frame}
 
-\begin{frame}
-  \frametitle{問題をといてみよう!}
-  \begin{itemize}
-    \item 教科書28ページ 問題3-7(4問)
-  \end{itemize}
-\end{frame}
+% \begin{frame}
+%   \frametitle{問題をといてみよう!}
+%   \begin{itemize}
+%     \item 教科書28ページ 問題3-7(4問)
+%   \end{itemize}
+% \end{frame}
 
 \begin{frame}
   \frametitle{温度、湿度、気圧、明るさを調べてみよう(1)}
@@ -144,7 +144,38 @@
 \begin{frame}
   \frametitle{問題をといてみよう!}
   \begin{itemize}
-    \item 教科書32ページ 問題3-9(8問)
+    \item 教科書23ページ 問題3-6(8問)
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{LEDをチカチカさせよう(1)}
+  \begin{itemize}
+    \item ファイル \rightarrow \sim/03/Ltika.hspを実行しよう
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{LEDをチカチカさせよう(2)}
+  \begin{lstlisting}[title=\textasciitilde/03/Ltika.hsp,label=Ltika.hsp]
+    #include "hsp3dish.as"		<#blue#;スクリプトの設定を読み込む#>
+    #include "rpz-gpio.as"		<#blue#;スクリプトの設定を読み込む#>
+      redraw 0		<#blue#;画面更新（仮想画面に描画）#>
+      mes "0.5 秒毎に青色の LED がチカチカするよ"
+      redraw 1		<#blue#;画面更新（実際の画面に描画）#>
+    *led
+      gpio 22,0		<#blue#;gpio22 を消灯#>
+      wait 50 		<#blue#;500 ミリ秒待つ#>
+      gpio 22, 1 		<#blue#;gpio22 を点灯#>
+      wait 50 		<#blue#;500 ミリ秒待つ#>
+      goto *led 		<#blue#;*led にジャンプ（繰り返し）#>
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+  \frametitle{問題をといてみよう!}
+  \begin{itemize}
+    \item 教科書25ページ 問題3-7(6問)
   \end{itemize}
 \end{frame}
 
@@ -198,7 +229,7 @@
 \begin{frame}
   \frametitle{問題をといてみよう!}
   \begin{itemize}
-    \item 教科書34ページ 問題3-10(3問)
+    \item 教科書27ページ 問題3-8(4問)
   \end{itemize}
 \end{frame}
 
@@ -269,7 +300,7 @@
 \begin{frame}
   \frametitle{問題をといてみよう!}
   \begin{itemize}
-    \item 教科書36ページ 問題3-11(4問)
+    \item 教科書30ページ 問題3-9(3問)
   \end{itemize}
 \end{frame}
 
@@ -377,21 +408,6 @@
 \begin{frame}
   \frametitle{問題をといてみよう!}
   \begin{itemize}
-    \item 教科書38ページ 問題3-12(3問)
-  \end{itemize}
-\end{frame}
-
-\begin{frame}
-  \frametitle{チャレンジ問題を解いてみよう}
-  \begin{itemize}
-    \item 教科書39ページ 闇夜を照らすLED
-    \item 教科書40ページ GIFアニメーションの作成
-  \end{itemize}
-\end{frame}
-
-\begin{frame}
-  \frametitle{参考文献}
-  \begin{itemize}
-  \item Indoor Corgi Elec. RPZ-IR-Sensor https://www.indoorcorgielec.com/products/rpz-ir-sensor/
+    \item 教科書32ページ 問題3-10(3問)
   \end{itemize}
 \end{frame}
