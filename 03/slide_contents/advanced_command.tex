@@ -107,15 +107,13 @@
 
 \begin{frame}[fragile]
     \frametitle{catコマンド}
+    cat␣\underline{ファイル}$\ldots$
     \begin{itemize}
-        \item cat␣\underline{ファイル}$\ldots$
-        \begin{itemize}
-            \item \underline{ファイル}$\ldots$の中身を標準出力(ディスプレイ)に表示する
-        \end{itemize}
-        \item cat
-        \begin{itemize}
-            \item ファイルを指定しないと標準入力(キーボード)からデータを受け取るよ
-        \end{itemize}
+        \item \underline{ファイル}$\ldots$の中身を標準出力(ディスプレイ)に表示する
+    \end{itemize}
+    cat
+    \begin{itemize}
+        \item ファイルを指定しないと標準入力(キーボード)からデータを受け取るよ
     \end{itemize}
     \begin{lstlisting}[title=catの標準入力・標準出力, label=stdioCat]
     <#green#pi@raspberrypi#>:<#blue#~ $#> cat 
@@ -357,6 +355,10 @@
     \frametitle{問題をといてみよう！}
     \begin{itemize}
         \item 教科書45ページ 問題3-13(6問)
+        \begin{itemize}
+            \item 問題修正 6. \textasciitilde/03/rensyu/kokugo/syousetu.txt の中身から”\textcolor{red}{ごん}” という文字列に一致
+            する行を表示してみましょう
+        \end{itemize}
         \item 教科書46ページ 問題3-14(3問)
     \end{itemize}
 \end{frame}
@@ -434,6 +436,7 @@
 
 \begin{frame}
     \frametitle{置き換えをするコマンド}
+    \footnotesize
     \begin{tabular}{ll}
         コマンド & 動作                                                       \\ \hline
         tr       & 入力された文字を指定する方法で置き換えて出力する           \\
