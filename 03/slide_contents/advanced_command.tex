@@ -141,11 +141,11 @@ hello
         \end{itemize}
     \end{itemize}
     \begin{lstlisting}[title=catの標準入力・標準出力, label=stdioCat]
-    <#green#pi@raspberrypi#>:<#blue#~ $#> cat 
-    sansu <Enter> <- 標準入力（キーボード）からの入力
-    sansu         <- 標準出力（ディスプレイ）への出力
-    <Ctrl+D>      <- 標準入力からEOFを入力し、入力が終了したことを伝える
-    <#green#pi@raspberrypi#>:<#blue#~ $#>
+<#green#pi@raspberrypi#>:<#blue#~ $#> cat 
+sansu <Enter> <- 標準入力（キーボード）からの入力
+sansu         <- 標準出力（ディスプレイ）への出力
+<Ctrl+D>      <- 標準入力からEOFを入力し、入力が終了したことを伝える
+<#green#pi@raspberrypi#>:<#blue#~ $#>
     \end{lstlisting}
 \end{frame}
 
@@ -338,20 +338,20 @@ lsfile
     \end{itemize}
 \end{itemize}
 \begin{lstlisting}[title=sortコマンドの実行例, label=sort_example]
-    <#green#pi@raspberrypi#>:<#blue#~ $#> sort ~/lsfile
-    01
-    02
-    03
-    Bookshelf
-    Desktop
-    Documents
-    Downloads
-    lsfile
-    Music
-    Pictures
-    Public
-    Templates
-    Videos
+<#green#pi@raspberrypi#>:<#blue#~ $#> sort ~/lsfile
+01
+02
+03
+Bookshelf
+Desktop
+Documents
+Downloads
+lsfile
+Music
+Pictures
+Public
+Templates
+Videos
     \end{lstlisting}
 \end{frame}
 
@@ -545,8 +545,8 @@ hello, world!
         \end{itemize}
     \end{itemize}
     \begin{lstlisting}[title=sedでの文字の置き換え, label=sed_app]
-    <#green#pi@raspberrypi#>:<#blue#~ $#> echo "Hello, World!" | sed 's/Hello/Hi/g'
-    Hi, World!
+<#green#pi@raspberrypi#>:<#blue#~ $#> echo "Hello, World!" | sed 's/Hello/Hi/g'
+Hi, World!
     \end{lstlisting}
 \end{frame}
 
@@ -641,11 +641,11 @@ alias name='command'
         \item 複数のファイルなどを指定するときに便利だよ
     \end{itemize}
     \begin{lstlisting}[title=ワイルドカードの使い方の例]
-    <#green#pi@raspberrypi#>:<#blue#~ $#> ls -F P*
-    Pictures:
+<#green#pi@raspberrypi#>:<#blue#~ $#> ls -F P*
+Pictures:
             
-    Public:
-    <#green#pi@raspberrypi#>:<#blue#~ $#>
+Public:
+<#green#pi@raspberrypi#>:<#blue#~ $#>
     \end{lstlisting}
 \end{frame}
 
@@ -673,17 +673,17 @@ alias name='command'
     \frametitle{ターミナルで困ったとき}
     エラーメッセージが出た場合
     \begin{lstlisting}
-        <#green#pi@raspberrypi#>:<#blue#~ $#> pwb
-        bash: pwb: コマンドが見つかりません
-        <#green#pi@raspberrypi#>:<#blue#~ $#> 
+<#green#pi@raspberrypi#>:<#blue#~ $#> pwb
+bash: pwb: コマンドが見つかりません
+<#green#pi@raspberrypi#>:<#blue#~ $#> 
         \end{lstlisting}
     \begin{itemize}
         \item コマンドのスペル(アルファベット)を確かめよう
     \end{itemize}
     \begin{lstlisting}
-        <#green#pi@raspberrypi#>:<#blue#~ $#> cd AAA
-        bash: cd: AAA: そのようなファイルやディレクトリはありません
-        <#green#pi@raspberrypi#>:<#blue#~ $#> 
+<#green#pi@raspberrypi#>:<#blue#~ $#> cd AAA
+bash: cd: AAA: そのようなファイルやディレクトリはありません
+<#green#pi@raspberrypi#>:<#blue#~ $#> 
         \end{lstlisting}
     \begin{itemize}
         \item ファイルやディレクトリのスペルを確かめよう
