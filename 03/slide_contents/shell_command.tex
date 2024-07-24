@@ -56,6 +56,18 @@
     \end{itemize}
 \end{frame}
 
+\begin{frame}[fragile]
+    \frametitle{今回使うファイルをコマンドでコピーしよう}
+    \begin{itemize}
+        \item 下のコマンドを実行しよう
+        \item 「\textasciitilde(チルダ)」記号とスペースに気をつけよう
+    \end{itemize}
+    \begin{lstlisting}[caption=使うファイルのコピー,label=workfilecopy]
+    <#green#pi@raspberrypi#>:<#blue#~ $#> cp -r /usr/local/share/ome/03 ~
+    <#green#pi@raspberrypi#>:<#blue#~ $#>
+    \end{lstlisting}
+\end{frame}
+
 \begin{frame}
     \frametitle{コマンドを使ってみよう}
     \begin{itemize}
@@ -63,15 +75,17 @@
         \begin{itemize}
             \item カレントディレクトリ(自分がどのディレクトリにいるか)がわかるよ
         \end{itemize}
-        \item ls -F ディレクトリ
+        \item ls -F \underline{ファイル}$\ldots$
         \begin{itemize}
-            \item ディレクトリの中のファイルを見ることができるよ
+            \item \underline{ファイル}$\ldots$を表示するよ
+            \item \underline{ファイル}$\ldots$を\underline{ディレクトリ}$\ldots$にするとディレクトリの中にあるファイルやディレクトリを表示するよ
+            \item \underline{ファイル}$\ldots$を指定しないときはカレントディレクトリの中を表示するよ
         \end{itemize}
     \end{itemize}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Tabキーで楽しよう}
+    \frametitle{便利なTab(タブ)キーを使ってみよう}
     \begin{itemize}
         \item Tab（タブ）キーを押すとそれまでに入力した文字から残りの文字をコンピュータが推測してくれるよ
         \item いくつかあるときは候補を表示するよ
@@ -83,12 +97,27 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{問題をといてみよう！}
+    \frametitle{コマンド履歴}
     \begin{itemize}
-        \item 教科書4ページ 問題3-1
+        \item bashは今まで受け付けたコマンドを記録しているよ
+        \item 前に使ったコマンドを表示できるよ
     \end{itemize}
+    \begin{figure}[h]
+        \center
+        \begin{tabular}{ll}\hline
+          キー & 機能 \\ \hline
+          ↑ または Ctrl+P & ひとつ前のコマンドを表示\\
+          ↓ または Ctrl+N & ひとつ後ろのコマンドを表示\\ \hline
+        \end{tabular}
+    \end{figure}
 \end{frame}
 
+\begin{frame}
+    \frametitle{問題をといてみよう！}
+    \begin{itemize}
+        \item 教科書4ページ 問題3-1(5問)
+    \end{itemize}
+\end{frame}
 
 \begin{frame}
     \frametitle{ファイルって何だろう}
@@ -173,10 +202,21 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{問題をといてみよう！}
+    \frametitle{ディレクトリの上下関係}
     \begin{itemize}
-        \item 教科書6ページ 問題3-2
+        \item 下のディレクトリ / サブディレクトリ
+        \begin{itemize}
+            \item 注目しているディレクトリの中に入っているディレクトリ
+        \end{itemize}
+        \item 上のディレクトリ / 親ディレクトリ
+        \begin{itemize}
+            \item 注目しているディレクトリを中に持っているディレクトリ
+        \end{itemize}
     \end{itemize}
+    \begin{figure}[h]
+        \centering
+        \includesvg[width=0.7\columnwidth]{images/chap03/directory_relation.svg}
+    \end{figure}
 \end{frame}
 
 \begin{frame}
@@ -301,83 +341,91 @@
 \begin{frame}
     \frametitle{問題をといてみよう！}
     \begin{itemize}
-        \item 教科書9\textasciitilde10ページ 問題3-3
+        \item 教科書9\textasciitilde10ページ 問題3-2(5問)
     \end{itemize}
 \end{frame}
 
 \begin{frame}
     \frametitle{ターミナルでファイルを操作してみよう}
+    cd␣\underline{ディレクトリ}
     \begin{itemize}
-        \item cd␣ディレクトリ
-        \begin{itemize}
-            \item カレントディレクトリを指定したディレクトリに移動するよ
-        \end{itemize}
-        \item cd
-        \begin{itemize}
-            \item ホームディレクトリに移動するよ
-        \end{itemize}
-        \item cat␣ファイル
-        \begin{itemize}
-            \item ファイルに書かれている文字を表示するよ
-        \end{itemize}
-        \item cp␣ファイル1␣ファイル2
-        \begin{itemize}
-            \item ファイル1をファイル2という名前でコピーするよ
-        \end{itemize}
-        \item cp␣-r␣ディレクトリ1␣ディレクトリ2
-        \begin{itemize}
-            \item ディレクトリ1をディレクトリ2という名前でコピーするよ
-        \end{itemize}
-        \item mv␣移動したいファイルやディレクトリ␣移動先
-        \begin{itemize}
-            \item ファイルやディレクトリを移動するよ
-        \end{itemize}
-        \item mv␣ファイルやディレクトリの名前␣変えたい名前
-        \begin{itemize}
-            \item ファイルやディレクトリの名前を変えるよ
-        \end{itemize}
+        \small
+        \item カレントディレクトリを\underline{ディレクトリ}に移動するよ
+    \end{itemize}
+    cd
+    \begin{itemize}
+        \small
+        \item ホームディレクトリに移動するよ
+    \end{itemize}
+    cat␣\underline{ファイル}$\ldots$
+    \begin{itemize}
+        \small
+        \item \underline{ファイル}$\ldots$に書かれている文字を表示するよ
+    \end{itemize}
+    cp␣\underline{ファイル1}␣\underline{ファイル2}
+    \begin{itemize}
+        \small
+        \item \underline{ファイル1}を\underline{ファイル2}という名前でコピーするよ
+    \end{itemize}
+    cp␣\underline{ファイル}$\ldots$␣\underline{ディレクトリ}
+    \begin{itemize}
+        \small
+        \item \underline{ファイル}$\ldots$で指定されたファイルを同じ名前で\underline{ディレクトリ}の下にコピーするよ
+    \end{itemize}
+    cp␣-r␣\underline{ディレクトリ1}␣\underline{ディレクトリ2}
+    \begin{itemize}
+        \small
+        \item \underline{ディレクトリ1}を\underline{ディレクトリ2}という名前でコピーするよ
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{ターミナルでファイルを操作してみよう}
+    mv␣\underline{ファイルやディレクトリ}$\ldots$␣\underline{移動先ディレクトリ}
+    \begin{itemize}
+        \item \underline{ファイルやディレクトリ}$\ldots$を\underline{移動先ディレクトリ}に移動するよ
+    \end{itemize}
+    mv␣\underline{名前}␣\underline{変えたい名前}
+    \begin{itemize}
+        \item ファイルやディレクトリの\underline{名前}を\underline{変えたい名前}に変えるよ
     \end{itemize}
 \end{frame}
 
 \begin{frame}
     \frametitle{問題をといてみよう！}
     \begin{itemize}
-        \item 教科書13ページ 問題3-4
-        \item 教科書14ページ 問題3-5
+        \item 教科書14ページ 問題3-3(5問)
+        \item 教科書15ページ 問題3-4(5問)
     \end{itemize}
 \end{frame}
 
 \begin{frame}
     \frametitle{ターミナルでファイルを操作してみよう}
+    less␣\underline{ファイル}$\ldots$
     \begin{itemize}
-        \item less␣ファイル
-        \begin{itemize}
-            \item ファイルに書かれている文字を一画面ずつ見ることができるよ
-            \item eを押すと一行進んで、yを押すと一行戻るよ
-            \item qを押すと終わるよ
-        \end{itemize}
-        \item mousepad␣ファイル␣\&
-        \begin{itemize}
-            \item mousepadを使ってファイルを作成または編集するよ
-        \end{itemize}
+        \item \underline{ファイル}$\ldots$に書かれている文字を一画面ずつ見ることができるよ
+        \item eを押すと一行進んで、yを押すと一行戻るよ
+        \item qを押すと終わるよ
+    \end{itemize}
+    mousepad␣ファイル␣\&
+    \begin{itemize}
+        \item mousepadを使ってファイルを作成または編集するよ
     \end{itemize}
 \end{frame}
 
 \begin{frame}
     \frametitle{ターミナルでファイルを操作してみよう}
+    mkdir␣\underline{ディレクトリ}$\ldots$
     \begin{itemize}
-        \item mkdir␣ディレクトリ
-        \begin{itemize}
-            \item 新しいディレクトリを作ることができるよ
-        \end{itemize}
-        \item rm␣ファイル
-        \begin{itemize}
-            \item ファイルを消したいときは
-        \end{itemize}
-        \item rm␣-r␣ディレクトリ
-        \begin{itemize}
-            \item ディレクトリを消したいときは
-        \end{itemize}
+        \item 新しいディレクトリを作ることができるよ
+    \end{itemize}
+    rm␣\underline{ファイル}$\ldots$
+    \begin{itemize}
+        \item \underline{ファイル}$\ldots$を消すよ
+    \end{itemize}
+    rm␣-r␣\underline{ディレクトリ}$\ldots$
+    \begin{itemize}
+        \item \underline{ディレクトリ}$\ldots$を消すよ
     \end{itemize}
     \begin{figure}[h]
         \centering
@@ -388,475 +436,6 @@
 \begin{frame}
     \frametitle{問題をといてみよう！}
     \begin{itemize}
-        \item 教科書17ページ 問題3-6
+        \item 教科書18ページ 問題3-5(6問)
     \end{itemize}
-\end{frame}
-
-\begin{frame}
-    \frametitle{コマンドの入出力}
-    コマンドを実行すると３つのデータの通り道(チャネル)が準備されるよ
-    \begin{itemize}
-        \item 標準入力
-        \item 標準出力
-        \item 標準エラー出力
-    \end{itemize}
-    \begin{figure}[h]
-        \centering
-        \includesvg[width=0.8\columnwidth]{images/chap03/std_in_out_err.svg}
-    \end{figure}
-\end{frame}
-
-\begin{frame}[fragile]
-    \frametitle{catコマンド}
-    \begin{itemize}
-        \item cat␣ファイル
-        \begin{itemize}
-            \item ファイルの中身を標準出力(ディスプレイ)に表示する
-        \end{itemize}
-        \item cat
-        \begin{itemize}
-            \item ファイルを指定しないと標準入力(キーボード)からデータを受け取るよ
-        \end{itemize}
-    \end{itemize}
-    \begin{lstlisting}[title=catの標準入力・標準出力, label=stdioCat]
-    <#green#pi@raspberrypi#>:<#blue#~ $#> cat 
-    sansu <Enter> <- 標準入力（キーボード）からの入力
-    sansu         <- 標準出力（ディスプレイ）への出力
-    <Ctrl+D>      <- 標準入力からEOFを入力し、入力が終了したことを伝える
-    <#green#pi@raspberrypi#>:<#blue#~ $#>
-    \end{lstlisting}
-\end{frame}
-
-\begin{frame}
-    \frametitle{リダイレクトってなんだろう？}
-    \begin{itemize}
-        \item 標準入力、標準出力、標準エラー出力の出力先をファイルに変更することだよ
-    \end{itemize}
-    \begin{figure}
-        \centering
-        \includesvg[width=0.7\linewidth]{images/chap03/redirect.svg}
-    \end{figure}
-\end{frame}
-
-\begin{frame}[fragile]
-    \frametitle{リダイレクトの例}
-    \begin{lstlisting}[title=lsの出力をリダイレクトする, label=redirectLs]
-    <#green#pi@raspberrypi#>:<#blue#~ $#> ls 
-    <#blue#01  03         Desktop    Downloads  Pictures  Templates
-    02  Bookshelf  Documents  Music      Public    Videos#>
-    <#green#pi@raspberrypi#>:<#blue#~ $#> ls > lsfile
-    <#green#pi@raspberrypi#>:<#blue#~ $#> cat lsfile
-    01
-    02
-    03
-    Bookshelf
-    Desktop
-    Documents
-    Downloads
-    Music
-    Pictures
-    Public
-    Templates
-    Videos
-    lsfile
-    \end{lstlisting}
-\end{frame}
-
-\begin{frame}
-    \frametitle{パイプライン}
-    \begin{itemize}
-        \item パイプ（｜）を使って標準出力と標準入力をつなげることができるよ
-    \end{itemize}
-    \begin{figure}
-        \centering
-        \includesvg[width=1\linewidth]{images/chap03/pipe.svg}
-    \end{figure}
-\end{frame}
-
-\begin{frame}[fragile]
-    \frametitle{パイプラインの例}
-    \begin{lstlisting}[title=lsコマンドの出力をパイプでlessコマンドに渡す, label=redirectCat]
-    <#green#pi@raspberrypi#>:<#blue#~ $#> ls | less
-    01
-    02
-    03
-    Bookshelf
-    Desktop
-    Documents
-    Downloads
-    Music
-    Pictures
-    Public
-    Templates
-    Videos
-    lsfile
-    \end{lstlisting}
-\end{frame}
-
-\begin{frame}
-    \frametitle{xargsコマンドってなんだろう？}
-    \begin{itemize}
-        \item 標準入力を受け取り、実行したいコマンドの引数として使えるよ
-        \item xargsコマンドを使うと引数にいろいろなものを指定できるよ
-    \end{itemize}
-    \begin{figure}
-        \centering
-        \includesvg[width=0.55\linewidth]{images/chap03/xargs_command.svg}
-    \end{figure}
-\end{frame}
-
-\begin{frame}[fragile]
-    \frametitle{xargsコマンドを使う準備をしよう}
-    \begin{itemize}
-        \item xargsコマンドを使うためのディレクトリ\textasciitilde/03/rensyu/xargstestを作ろう
-    \end{itemize}
-    \begin{lstlisting}
-    <#green#pi@raspberrypi#>:<#blue#~ $#> cd 03/rensyu
-    <#green#pi@raspberrypi#>:<#blue#~/03/rensyu $#> mkdir xargstest
-    <#green#pi@raspberrypi#>:<#blue#~/03/rensyu $#> cp ~/lsfile ./xargstest
-    <#green#pi@raspberrypi#>:<#blue#~/03/rensyu $#> cp ./kokugo/syousetu.txt ./xargstest
-    <#green#pi@raspberrypi#>:<#blue#~/03/rensyu $#> cd xargstest
-    <#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargstest $#> ls
-    <#magenta#lsfile  syousetu.txt#>
-    \end{lstlisting}
-\end{frame}
-
-\begin{frame}[fragile]
-    \frametitle{xargsコマンドを実際に使ってみよう}
-    \begin{lstlisting}[title=xargsコマンドを使ってcatコマンドを使う]
-    <#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargstest $#> ls | xargs cat
-    01
-    02
-    03
-    Bookshelf
-    Desktop
-                                                   ...
-    このファイルは、インターネットの図書館、青空文庫（http://www.aozora.gr.jp/）で作られました。
-    入力、校正、制作にあたったのは、ボランティアの皆さんです。
-        
-        
-        
-    https://www.aozora.gr.jp/cards/000121/files/628_14895.html
-    <#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#>
-    \end{lstlisting}
-\end{frame}
-
-\begin{frame}[fragile]
-    \frametitle{出力を作るコマンド}
-    \begin{itemize}
-        \item seq␣数字1␣数字2
-        \begin{itemize}
-            \item 数字1から数字2までの数字を順番に出力するよ
-            \begin{lstlisting}
-            <#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#> seq 1 5
-            1
-            2
-            3
-            4
-            5
-            <#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#>
-            \end{lstlisting}
-        \end{itemize}
-        \item echo␣文字
-        \begin{itemize}
-            \item 文字をそのまま出力するよ
-            \begin{lstlisting}
-            <#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#> echo hello
-            hello
-            <#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#>
-            \end{lstlisting}
-        \end{itemize}
-    \end{itemize}
-\end{frame}
-
-\begin{frame}
-    \frametitle{xargsコマンドのオプション}
-    \begin{itemize}
-        \item xargs␣-p␣コマンド
-        \begin{itemize}
-            \item どのようなコマンドが実行されるかを表示するよ
-        \end{itemize}
-        \item xargs␣-i␣コマンド␣\{\}
-        \begin{itemize}
-            \item 標準入力を1つずつ受け取って{}の中に当てはめ、コマンドを実行するよ
-        \end{itemize}
-        \item xargs␣-L␣数字␣コマンド
-        \begin{itemize}
-            \item xargsで一度にコマンドを渡す引数の最大数を指定するよ
-            \item 標準出力から渡されたデータ数が-Lオプションの指定した数より大きい場合は、すべての入力が終わるまでコマンドが繰り返されるよ
-            \item -iオプションと-Lオプションは一緒に使えないよ
-        \end{itemize}
-    \end{itemize}
-\end{frame}
-
-\begin{frame}
-    \frametitle{出力を作るコマンド}
-    \begin{tabular}{ll}
-        コマンド & 動作                                         \\ \hline
-        ls       & ファイルやディレクトリを出力する             \\
-        du       & ディレクトリの中のファイルの大きさを報告する \\
-        wc       & 入力の文字数・単語数・行数を出力する         \\
-        echo     & 文字をそのまま出力する                       \\ \hline
-    \end{tabular}
-\end{frame}
-
-\begin{frame}
-    \frametitle{duコマンド}
-    du␣大きさを調べたいディレクトリやファイルのパス
-    \begin{itemize}
-        \item ディレクトリやファイルの大きさを報告するコマンドだよ
-    \end{itemize}
-    duコマンドのオプション
-    \begin{itemize}
-        \item  -hオプション
-        \begin{itemize}
-            \item ディレクトリの大きさの数字に単位を付けるよ
-        \end{itemize}
-        \item -aオプション
-        \begin{itemize}
-            \item ディレクトリ内のファイルの大きさも表示するよ
-        \end{itemize}
-        \item -sオプション
-        \begin{itemize}
-            \item ディレクトリの大きさの合計のみを表示するよ
-        \end{itemize}
-    \end{itemize}
-\end{frame}
-
-\begin{frame}[fragile]
-    \frametitle{wcコマンド}
-    wc␣対象のファイルのパス
-    \begin{itemize}
-        \item 入力の文字数・単語数・行数を出力するコマンドだよ
-    \end{itemize}
-    \begin{lstlisting}[title=wcコマンドの実行例, label=wc_example]
-    <#green#pi@raspberrypi#>:<#blue#~ $#> wc ~/lsfile
-    13 13 93 /home/pi/lsfile
-    \end{lstlisting}
-\end{frame}
-
-\begin{frame}
-    \frametitle{フィルタコマンド}
-    \begin{tabular}{ll}
-        コマンド & 動作                               \\ \hline
-        cat      & 入力をなにもせずに出力する         \\
-        tac      & 行を逆順に出力する                 \\
-        shuf     & 行をランダムに入れ替えて出力する   \\
-        head     & 先頭のいくつかの行を表示する       \\
-        tail     & 末尾のいくつかの行を表示する       \\
-        sort     & 行を順番にならべかえる             \\
-        grep     & 検索パターンに一致する行を出力する \\ \hline
-    \end{tabular}
-\end{frame}
-
-\begin{frame}[fragile]
-    \frametitle{tacコマンド}
-    tac␣表示したいファイルのパス
-    \begin{itemize}
-        \item 行を逆順に出力するコマンドだよ
-    \end{itemize}
-    \begin{lstlisting}[title=tacコマンドの実行例, label=tac_example]
-    <#green#pi@raspberrypi#>:<#blue#~ $#> tac ~/lsfile
-    lsfile
-    Videos
-    Templates
-    Public
-    Pictures
-    Music
-    Downloads
-    Documents
-    Desktop
-    Bookshelf
-    03
-    02
-    01 
-    \end{lstlisting}
-\end{frame}
-
-\begin{frame}[fragile]
-    \frametitle{shufコマンド}
-    shuf␣表示したいファイルのパス
-    \begin{itemize}
-        \item 行をランダムに入れ替えて出力するコマンドだよ
-    \end{itemize}
-    \begin{lstlisting}[title=shufコマンドの実行例, label=shuf_example]
-    <#green#pi@raspberrypi#>:<#blue#~ $#> shuf ~/lsfile
-    03
-    Desktop
-    Documents
-    02
-    Music
-    01
-    Videos
-    Pictures
-    Bookshelf
-    Templates
-    Public
-    lsfile
-    Downloads
-    \end{lstlisting}
-\end{frame}
-
-\begin{frame}[fragile]
-    \frametitle{headコマンド}
-    head␣表示したいファイルのパス␣-n␣行数
-    \begin{itemize}
-        \item 先頭のいくつかの行を表示するコマンドだよ
-        \item 先頭から指定した行数分だけ表示されるよ
-    \end{itemize}
-    \begin{lstlisting}[title=headコマンドの実行例, label=shuf_example]
-    <#green#pi@raspberrypi#>:<#blue#~ $#> head ~/lsfile -n 2
-    01
-    02
-    \end{lstlisting}
-\end{frame}
-
-\begin{frame}[fragile]
-    \frametitle{tailコマンド}
-    tail␣表示したいファイルのパス␣-n␣行数
-    \begin{itemize}
-        \item 末尾のいくつかの行を表示するコマンドだよ
-        \item 末尾から指定した行数分だけ表示されるよ
-    \end{itemize}
-    \begin{lstlisting}[title=tailコマンドの実行例, label=shuf_example]
-    <#green#pi@raspberrypi#>:<#blue#~ $#> tail ~/lsfile -n 2
-    Videos
-    lsfile
-    \end{lstlisting}
-\end{frame}
-
-\begin{frame}[fragile]
-    \frametitle{sortコマンド}
-    sort␣表示したいファイルのパス
-    \begin{itemize}
-        \item 行を順番に並べ替えるコマンドだよ
-        \item ファイルの名前が数字のものが先に表示されるよ
-    \end{itemize}
-    \begin{lstlisting}[title=sortコマンドの実行例, label=sort_example]
-    <#green#pi@raspberrypi#>:<#blue#~ $#> sort ~/lsfile
-    01
-    02
-    03
-    Bookshelf
-    Desktop
-    Documents
-    Downloads
-    lsfile
-    Music
-    Pictures
-    Public
-    Templates
-    Videos
-    \end{lstlisting}
-\end{frame}
-
-\begin{frame}[fragile]
-    \frametitle{grepコマンド}
-    grep␣検索パターン␣表示したいファイルのパス
-    \begin{itemize}
-        \item 検索パターンに一致する行を出力するコマンドだよ
-        \item 一致する文字列は赤字で表示されるよ
-        \item 一致する行がある場合はその行のみが表示されるよ
-    \end{itemize}
-    \begin{lstlisting}[title=grepコマンドの実行例, label=grep_example]
-    <#green#pi@raspberrypi#>:<#blue#~ $#> grep 03 ~/lsfile
-    <#red#03#>
-    \end{lstlisting}
-\end{frame}
-
-\begin{frame}[fragile]
-    \frametitle{パイプラインとフィルタコマンドを組み合わせよう}
-    標準出力を出すコマンド | フィルタコマンド
-    \begin{itemize}
-        \item 標準出力を出すコマンドの結果をフィルタコマンドに渡すよ
-    \end{itemize}
-    \begin{lstlisting}[title=パイプラインを用いたsortコマンドの実行例, label=sort_example]
-    <#green#pi@raspberrypi#>:<#blue#~ $#> ls ~/03 | sort
-    01
-    02
-    03
-    Bookshelf
-    Desktop
-    Documents
-    Downloads
-    lsfile
-    Music
-    Pictures
-    Public
-    Templates
-    Videos
-    \end{lstlisting}
-\end{frame}
-
-\begin{frame}
-    \frametitle{置き換えをするコマンド}
-    \begin{tabular}{ll}
-        コマンド & 動作                                                       \\ \hline
-        tr       & 入力された文字を指定する方法で置き換えて出力する           \\
-        sed      & 入力から指定するパターンを見つけ、それを置き換えて出力する \\ \hline
-    \end{tabular}
-\end{frame}
-
-\begin{frame}[fragile]
-    \frametitle{trコマンドで文字を置き換えよう}
-    tr␣置き換えたい文字␣置き換える文字
-    \begin{itemize}
-        \item 文字列中の特定の文字を別の文字に置き換えるよ
-        \item 1文字ごとの置き換えだよ
-        \item 「-」は置き換えられないよ
-        \item 0-9 や A-Z, a-z のように範囲を指定できるよ
-    \end{itemize}
-    \begin{lstlisting}[title=範囲指定を使った置き換え, label=tr_range]
-    <#green#pi@raspberrypi#>:<#blue#~ $#> echo "HELLO, WORLD!" | tr A-Z a-z
-    hello, world!
-    \end{lstlisting}
-\end{frame}
-
-\begin{frame}[fragile]
-    \frametitle{sedコマンドで文字を置き換えよう}
-    sed␣'s/置き換え対象の文字列/置き換え後の文字列/g'
-    \begin{itemize}
-        \item 文字列中の特定の文字列を別の文字列に置き換えるよ
-        \item 1文字ごとでなく、文字列で置き換えられるよ
-    \end{itemize}
-    \begin{lstlisting}[title=sed sedでの文字の置き換え, label=sed_app]
-    <#green#pi@raspberrypi#>:<#blue#~ $#> echo "Hello, World!" | sed 's/Hello/Hi/g'
-    Hi, World!
-    \end{lstlisting}
-\end{frame}
-
-\begin{frame}[fragile]
-    \frametitle{Bashで計算しよう}
-    復習
-    \begin{itemize}
-        \item echo␣文字 : 文字をそのまま表示する
-    \end{itemize}
-    \&()
-    \begin{itemize}
-        \item コマンドの置き換えを行うよ
-        \item echoコマンドと組み合わせると計算結果を表示できるよ
-    \end{itemize}
-    \begin{lstlisting}[title=echo コマンドでの計算, label=cmdsbs:calc]
-    <#green#pi@raspberrypi#>:<#blue#~ $#> echo $((138 + 395))
-    533
-    \end{lstlisting}
-        
-\end{frame}
-
-\begin{frame}[fragile]
-    \frametitle{コマンドに別名を付けよう}
-    alias␣名前='コマンド'
-    \begin{itemize}
-        \item コマンドの別名として名前を付けられるよ
-    \end{itemize}
-    \begin{itemize}
-        \item ターミナルでコマンドを実行するとターミナルが閉じるまで名前の設定は保存されるよ
-        \item 別名を保存するには.bash\_aliasesというファイルを作ってコマンドを書いて、sourceコマンドを実行する必要があるよ
-    \end{itemize}
-    \begin{lstlisting}[title=\textasciitilde/.bash\_aliasesの書き方, label=bashAliasesGrammar1]
-    alias 名前='コマンド'
-    alias name='command'
-                :
-                :
-    \end{lstlisting}
 \end{frame}
