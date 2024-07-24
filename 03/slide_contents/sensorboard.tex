@@ -1,9 +1,9 @@
 \begin{frame}
-  \frametitle{これからやること}
+  \frametitle{センサーボードを使う}
   \begin{itemize}
-    \item LEDを使ったプログラムの復習
-    \item 新しいセンサーを使ったプログラム
     \item 複数のセンサーを使ったプログラム
+    \item LEDを使ったプログラムの復習
+    \item ボタンとLEDを使ったプログラム
   \end{itemize}
 \end{frame}
 
@@ -34,7 +34,6 @@
   \frametitle{センサーボードを取り付けよう}
   \begin{figure}
     \centering
-
     \includegraphics[width=0.5\textwidth]{../images/chap03/how_to_install_bme280.jpg}
     \caption{外付けのセンサー}
   \end{figure}
@@ -43,6 +42,16 @@
     \item 赤色の線が3V3に来るようにする
   \end{itemize}
 \end{frame}
+
+\begin{frame}
+  \frametitle{センサーボードとラズパイの関係}
+  \begin{figure}
+%    \centering
+%    \includegraphics[height=0.9\textheight]{../images/chap03/rpz-ir-sensor.svg}
+    \includesvg[height=0.9\textheight]{../images/chap03/rpz-ir-sensor.svg}
+\end{figure}
+\end{frame}
+
 
 % \begin{frame}
 %   \frametitle{LEDを光らせてみよう(1)}
@@ -92,16 +101,10 @@
 %   \end{itemize}
 % \end{frame}
 
-\begin{frame}
-  \frametitle{温度、湿度、気圧、明るさを調べてみよう(1)}
-  \begin{itemize}
-    \item ファイル \rightarrow \sim/03/sensors.hspを実行しよう
-  \end{itemize}
-\end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{温度、湿度、気圧、明るさを調べてみよう(2)}
-  \begin{lstlisting}[title=sensors.hsp, label=sensors.hsp]
+  \frametitle{温湿度/気圧/明るさを調べる-1}
+  \begin{lstlisting}[title=\sim/03/sensors.hsp 前半, label=sensors.hsp-1]
    #include "hsp3dish.as"    
    #include "jtalk.as"    
 
@@ -123,8 +126,8 @@
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{温度、湿度、気圧、明るさを調べてみよう(2)(コード続き)}
-  \begin{lstlisting}[title=sensors.hsp, label=sensors.hsp]
+  \frametitle{温湿度/気圧/明るさを調べる-2}
+  \begin{lstlisting}[title=\sim/03/sensors.hsp 後半, label=sensors.hsp-2]
   get_humidity          <#blue#; rpz_humに湿度取得#>
   hum = rpz_hum       
   get_pressure          <#blue#; rpz_pressに気圧取得#>
@@ -142,22 +145,18 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{問題をといてみよう!}
-  \begin{itemize}
-    \item 教科書23ページ 問題3-6(8問)
-  \end{itemize}
+  \begin{exampleblock}{問題をといてみよう！}
+    \begin{itemize}
+      \item \sim/03/sensors.hspを実行しよう
+      \item 教科書23ページ 問題3-6(8問)
+    \end{itemize}
+  \end{exampleblock} 
 \end{frame}
 
-\begin{frame}
-  \frametitle{LEDをチカチカさせよう(1)}
-  \begin{itemize}
-    \item ファイル \rightarrow \sim/03/Ltika.hspを実行しよう
-  \end{itemize}
-\end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{LEDをチカチカさせよう(2)}
-  \begin{lstlisting}[title=\textasciitilde/03/Ltika.hsp,label=Ltika.hsp]
+  \frametitle{LEDをチカチカさせよう}
+  \begin{lstlisting}[title=\sim/03/Ltika.hsp,label=Ltika.hsp]
     #include "hsp3dish.as"		<#blue#;スクリプトの設定を読み込む#>
     #include "rpz-gpio.as"		<#blue#;スクリプトの設定を読み込む#>
       redraw 0		<#blue#;画面更新（仮想画面に描画）#>
@@ -173,22 +172,17 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{問題をといてみよう!}
-  \begin{itemize}
-    \item 教科書25ページ 問題3-7(6問)
-  \end{itemize}
-\end{frame}
-
-\begin{frame}
-  \frametitle{ボタンを使ってLEDをつけてみよう(1)}
-  \begin{itemize}
-    \item ファイル \rightarrow \sim/03/button\_led.hspを実行しよう
-  \end{itemize}
+  \begin{exampleblock}{問題をといてみよう！}
+    \begin{itemize}
+      \item \sim/03/Ltika.hspを実行しよう
+      \item 教科書25ページ 問題3-7(6問)
+    \end{itemize}
+  \end{exampleblock} 
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{ボタンを使ってLEDをつけてみよう(2)}
-  \begin{lstlisting}[title=button\_led.hsp, label=button_led.hsp]
+  \frametitle{ボタンを使ってLEDをつけてみよう}
+  \begin{lstlisting}[title=\sim/03/button\_led.hsp, label=button_led.hsp]
   #include "hsp3dish.as"
   #include "rpz-gpio.as"
   
@@ -227,22 +221,17 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{問題をといてみよう!}
-  \begin{itemize}
-    \item 教科書27ページ 問題3-8(4問)
-  \end{itemize}
-\end{frame}
-
-\begin{frame}
-  \frametitle{ボタンを使ってLEDをつけてみよう(3)}
-  \begin{itemize}
-    \item ファイル \rightarrow \sim/03/button\_led2.hspを実行しよう
-  \end{itemize}
+  \begin{exampleblock}{問題をといてみよう！}
+    \begin{itemize}
+      \item \sim/03/button\_led.hspを実行しよう
+      \item 教科書27ページ 問題3-8(4問)
+    \end{itemize}
+  \end{exampleblock} 
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{ボタンを使ってLEDをつけてみよう(4)}
-  \begin{lstlisting}[title=button\_led2.hsp, label=button_led2.hsp]
+  \frametitle{ボタンを使ってLEDをつけてみよう(2)-1}
+  \begin{lstlisting}[title=\sim/03/button\_led2.hsp 前半, label=button_led2.hsp-1]
   #include "hsp3dish.as"
   #include "rpz-gpio.as"
   
@@ -264,8 +253,8 @@
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{ボタンを使ってLEDをつけてみよう(4) (コード続き)}
-  \begin{lstlisting}[title=button\_led2.hsp, label=button_led2.hsp]
+  \frametitle{ボタンを使ってLEDをつけてみよう(2)-2}
+  \begin{lstlisting}[title=\sim/03/button\_led2.hsp 後半, label=button_led2.hsp-2]
   *hata
           ima_btn = gpioin(5)
           if ima_btn = 0{    <#blue#;今押されているとき#>
@@ -298,22 +287,17 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{問題をといてみよう!}
-  \begin{itemize}
-    \item 教科書30ページ 問題3-9(3問)
-  \end{itemize}
-\end{frame}
-
-\begin{frame}
-  \frametitle{ボタンを使ってLEDをつけてみよう(5)}
-  \begin{itemize}
-    \item ファイル \rightarrow \sim/03/button\_led3.hspを実行しよう
-  \end{itemize}
+  \begin{exampleblock}{問題をといてみよう！}
+    \begin{itemize}
+      \item \sim/03/button\_led2.hspを実行しよう
+      \item 教科書30ページ 問題3-9(3問)
+    \end{itemize}
+  \end{exampleblock} 
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{ボタンを使ってLEDをつけてみよう(6)}
-  \begin{lstlisting}[title=button\_led3.hsp, label=button_led3.hsp]
+  \frametitle{ボタンを使って光るLEDを変えてみよう-1}
+  \begin{lstlisting}[title=\sim/03/button\_led3.hsp 前半, label=button_led3.hsp-1]
   #include "hsp3dish.as"
   #include "rpz-gpio.as"
   
@@ -334,8 +318,8 @@
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{ボタンを使ってLEDをつけてみよう(6) (コード続き)}
-  \begin{lstlisting}[title=button\_led3.hsp, label=button_led3.hsp]
+  \frametitle{ボタンを使って光るLEDを変えてみよう-2}
+  \begin{lstlisting}[title=\sim/03/button\_led3.hsp 中盤, label=button_led3.hsp-2]
   *hata
           ima_btn = gpioin(5)
           if ima_btn = 0{           <#blue#;今押されているとき#>
@@ -357,8 +341,8 @@
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{ボタンを使ってLEDをつけてみよう(6) (コード続き)}
-  \begin{lstlisting}[title=button\_led3.hsp, label=button_led3.hsp]
+  \frametitle{ボタンを使って光るLEDを変えてみよう-3}
+  \begin{lstlisting}[title=button\_led3.hsp 後半, label=button_led3.hsp-3]
            else : if ledidx=3{      <#blue#;3番目の時はGPIO22のLEDを光らせる#>
              gpio 17, 0             <#blue#;(2+1)\4 = 3#>
              gpio 18, 0
@@ -406,8 +390,10 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{問題をといてみよう!}
-  \begin{itemize}
-    \item 教科書32ページ 問題3-10(3問)
-  \end{itemize}
+  \begin{exampleblock}{問題をといてみよう！}
+    \begin{itemize}
+      \item \sim/03/button\_led3.hspを実行しよう
+      \item 教科書32ページ 問題3-10(3問)
+    \end{itemize}
+  \end{exampleblock} 
 \end{frame}
