@@ -43,7 +43,7 @@ digin.hspはデジタル入力用のプログラムです。ボタン、スイ�
 
 \code{gpioin(GPIOピン番号)}でデジタル入力を受け取ることができます。\\
 
-\code{if gpioin(24)=1 : goto *digital\_on}でデジタル入力があったとき\code{*digital\_on}に\ruby{移動}{い|どう}します。\code{*digital\_on}では \code{gpio 17, 1}でLEDを光らせています。デジタル入力がないときは \code{goto *digital\_off}で\code{*digital\_off}に移動します。\code{*digital\_off}では \code{gpio 17, 0}でLEDを消しています。
+\code{if gpioin(24)=1 : goto *digital\_on}でデジタル入力があったとき\code{*digital\_on}に\ruby{移動}{い|どう}します。\code{*digital\_on}では \code{gpio 23, 1}でLEDを光らせています。デジタル入力がないときは \code{goto *digital\_off}で\code{*digital\_off}に移動します。\code{*digital\_off}では \code{gpio 23, 0}でLEDを消しています。
 
 \begin{tcolorbox}[title=\useOmetoi]
 \begin{enumerate}
