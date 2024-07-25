@@ -383,7 +383,7 @@ Videos
         \end{itemize}
     \end{itemize}
     \begin{lstlisting}[title=パイプラインを用いたsortコマンドの実行例, label=ppsort_example]
-<#green#pi@raspberrypi#>:<#blue#~ $#> ls ~/03 | sort
+<#green#pi@raspberrypi#>:<#blue#~ $#> ls  | sort
 01
 02
 03
@@ -510,7 +510,6 @@ ypi#>:<#blue#~/03/rensyu/xargs $#>
             \small
             \item 文字列中の\underline{置き換えたい文字}を\underline{置き換える文字}に置き換えるよ
             \item 1文字ごとの置き換えだよ
-            \item 「-」は置き換えられないよ
             \item 0-9 や A-Z, a-z のように範囲を指定できるよ
         \end{itemize}
     \end{itemize}
@@ -562,7 +561,7 @@ Hi, World!
     \frametitle{Bashで計算しよう}
     \begin{itemize}
         \item echo\textvisiblespace\underline{文字}$\ldots$ : \underline{文字}$\ldots$をそのまま表示する
-        \item \&((\underline{数式}))
+        \item \$((\underline{数式}))
         \begin{itemize}
             \small
             \item \underline{数式}を計算するよ
@@ -733,8 +732,8 @@ bash: cd: AAA: そのようなファイルやディレクトリはありませ�
     \end{exampleblock} 
     \begin{block}{できるところまでやろう}
         \begin{itemize}
-            \item 教科書39ページ 闇夜を照らすLED
-            \item 教科書40ページ GIFアニメーションの作成
+            \item 教科書65ページ 闇夜を照らすLED
+            \item 教科書67ページ GIFアニメーションの作成
         \end{itemize}
     \end{block} 
 \end{frame}
