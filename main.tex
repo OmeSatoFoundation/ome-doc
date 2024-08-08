@@ -1,0 +1,68 @@
+\documentclass[a4paper,dvipdfmx]{jarticle}
+\usepackage{graphicx}
+
+\title{子どもIT未来塾}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\newpage
+
+\IfFileExists{./01/text01.tex}{%
+\graphicspath{{./01}}
+\include{./01/text01.tex}
+}{%
+Chapter 01 skipped.
+\newpage
+}
+\IfFileExists{./02/text02.tex}{%
+\graphicspath{{./02}}
+\include{./02/text02.tex}
+}{%
+Chapter 02 skipped.
+\newpage
+}
+\IfFileExists{./03/text03.tex}{%
+\graphicspath{{./03}}
+\include{./03/text03.tex}
+}{%
+Chapter 03 skipped.
+\newpage
+}
+\IfFileExists{./04/text04.tex}{%
+\graphicspath{{./04}}
+\include{./04/text04.tex}
+}{%
+Chapter 04 skipped.
+\newpage
+}
+\IfFileExists{./05/text05.tex}{%
+\graphicspath{{./05}}
+\include{./05/text05.tex}
+}{%
+Chapter 05 skipped.
+\newpage
+}
+\IfFileExists{./06/text06.tex}{%
+\graphicspath{{./06}}
+\include{./06/text06.tex}
+}{%
+Chapter 06 skipped.
+\newpage
+}
+\IfFileExists{./07/text07.tex}{%
+\graphicspath{{./07}}
+\include{./07/text07.tex}
+}{%
+Chapter 07 skipped.
+\newpage
+}
+\IfFileExists{./08/text08.tex}{%
+\graphicspath{{./08}}
+\include{./08/text08.tex}
+}{%
+Chapter 08 skipped.
+\newpage
+}
+\end{document}
