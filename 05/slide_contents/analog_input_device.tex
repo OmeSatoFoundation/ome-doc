@@ -15,6 +15,7 @@
             \item 0〜1023の間を値をとる
         \end{itemize}
     \end{center}
+    \textpageref{10}
 \end{frame}
 
 \begin{frame}
@@ -27,10 +28,11 @@
             \item 左に回しきったときは変化が小さくて、右に回していくほどに変化が大きくなる（Aカーブ）
         \end{itemize}
     \end{center}
+    \textpageref{10}
 \end{frame}
 
 \begin{frame}
-    \frametitle{距離（きょり）センサ}
+    \frametitle{\makebox[50pt][l]{\ruby{距離}{きょ|り}センサ}}
     \begin{center}
         \includegraphics[width=0.4\textwidth]{images/chap05/text05-img023.jpg}
         \begin{itemize}
@@ -39,10 +41,11 @@
             \item ただし値は0〜1023だから、値を距離に変換しないといけない
         \end{itemize}
     \end{center}
+    \textpageref{11}
 \end{frame}
 
 \begin{frame}
-    \frametitle{照度（しょうど）センサ}
+    \frametitle{\makebox[50pt][l]{\ruby{照度}{しょう|ど}センサ}}
     \begin{center}
         \includegraphics[width=0.4\textwidth]{images/chap05/text05-img024.png}
         \begin{itemize}
@@ -50,6 +53,7 @@
             \item 暗いと値が大きく、明るいと値が小さくなる
         \end{itemize}
     \end{center}
+    \textpageref{11}
 \end{frame}
 
 \begin{frame}
@@ -58,42 +62,42 @@
         \includegraphics[width=0.8\textwidth]{images/chap05/text05-img030.png}
         \begin{itemize}
             \item A0とアナログ入力装置をつなげてみよう
-            \item HSPでanain.hspを動かしてみよう
+            \item HSPで\textasciitilde/05/anain.hspを動かしてみよう
         \end{itemize}
     \end{center}
+    \textpageref{16}
 \end{frame}
 
 \begin{frame}[fragile]
-    \frametitle{アナログ入力を使ったサンプル(anain.hsp)}
-\begin{lstlisting}
-#include "hsp3dish.as"
-#include "rpz-gpio.as"
+    \frametitle{アナログ入力を使った\\プログラム}
+    \begin{lstlisting}[title=\textasciitilde/05/anain.hsp]
+    #include "hsp3dish.as"
+    #include "rpz-gpio.as"
 
-spiopen 0
+    spiopen 0
 
-*main
-	data = spiget(0,0)
-	res = "結果 : "+data+"\n"
+    *main
+	    data = spiget(0,0)
+	    res = "結果 : "+data+"\n"
 
-	redraw 0
-	pos 20,20
-	font "",30
-	mes res
-	redraw 1
+	    redraw 0
+	    pos 20,20
+	    font "",30
+	    mes res
+	    redraw 1
 
-	wait 10
-	goto *main
+	    wait 10
+	    goto *main
 
-spiclose 0
-\end{lstlisting}
+    spiclose 0
+    \end{lstlisting}
+    \textpageref{16}
 \end{frame}
 
 \begin{frame}[fragile]
-    \frametitle{問題を解いてみよう}
+    \begin{exampleblock}{問題を解いてみよう}
     \begin{itemize}
-        \item 教科書17ページ 問題5-7
-        \begin{itemize}
-            \item 4問
-        \end{itemize}
+        \item 教科書17ページ 問題5-7(4問)
     \end{itemize}
+    \end{exampleblock}
 \end{frame}

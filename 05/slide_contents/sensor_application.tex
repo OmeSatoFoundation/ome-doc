@@ -18,46 +18,49 @@
         \end{columns}
         \begin{itemize}
             \item A0とボリュームをつなげてみよう
-            \item HSPでangle.hspを動かしてみよう
+            \item HSPで\textasciitilde/05/angle.hspを動かしてみよう
         \end{itemize}
     \end{center}
+    \textpageref{22}
 \end{frame}
 
 \begin{frame}[fragile]
-    \frametitle{ボリュームを使って画像を動かそう(angle.hsp)}
-\begin{lstlisting}
-#include "hsp3dish.as"
-#include "rpz-gpio.as"
-celload("hyou.png"),2
-p = 50
-spiopen 0
+    \frametitle{ボリュームで画像を動かそう}
+    \begin{lstlisting}[title=\textasciitilde/05/angle.hsp]
+    #include "hsp3dish.as"
+    #include "rpz-gpio.as"
+    celload("hyou.png"),2
+    p = 50
+    spiopen 0
 
-*main
-	data = spiget(0,0)
-	p = rasp_map(data, 0, 1023, 0, 440)
+    *main
+	    data = spiget(0,0)
+	    p = rasp_map(data, 0, 1023, 0, 440)
 
-	redraw 0
-	pos 100,100
-	mes data
-	mes p
-	pos 0,0
-	celput 2
-	redraw 1
+	    redraw 0
+	    pos 100,100
+	    mes data
+	    mes p
+	    pos 0,0
+	    celput 2
+	    redraw 1
 
-	wait 10	
-	goto *main
-spiclose 0
-\end{lstlisting}
+    	wait 10	
+	    goto *main
+    spiclose 0
+    \end{lstlisting}
+    \textpageref{22}
 \end{frame}
 
 \begin{frame}[fragile]
-    \frametitle{入力の値の範囲（はんい）を変える関数}
+    \frametitle{入力の値の範囲を変える関数}
     \begin{center}
         \begin{figure}
-            \includegraphics[width=0.6\textwidth]{images/slide/rasp_map.jpg}
+            \includesvg[width=0.6\textwidth]{images/slide/rasp_map.svg}
         \end{figure}
         {rasp\_map(値,入力された値の最小サイズ,入力された値の最大サイズ,出力する値の最小サイズ,出力する値の最大サイズ)}
     \end{center}
+    \textpageref{22}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -71,10 +74,11 @@ spiclose 0
         なので一番右に画像を置きたいときは、\\
         画面のサイズ-画像のサイズを考えよう}
     \end{center}
+    \textpageref{22}
 \end{frame}
 
 \begin{frame}[fragile]
-    \frametitle{問題を解いてみよう}
+    \begin{exampleblock}{問題を解いてみよう}
     \begin{itemize}
         \item 教科書23ページ 問題5-10
         \begin{itemize}
@@ -85,39 +89,41 @@ spiclose 0
             \item 2問は宿題。時間があれば授業中にやる
         \end{itemize}
     \end{itemize}
+    \end{exampleblock}
 \end{frame}
 
 \begin{frame}[fragile]
-    \frametitle{LEDの明るさを変えよう(pwm.hsp)}
-\begin{lstlisting}
-#include "hsp3dish.as"
-#include "rpz-gpio.as"
+    \frametitle{LEDの明るさを変えよう}
+    \begin{lstlisting}[title=\textasciitilde/05/pwm.hsp]
+    #include "hsp3dish.as"
+    #include "rpz-gpio.as"
 
-redraw 0
-redraw 1
+    redraw 0
+    redraw 1
 
-repeat
-gpio 27,1
+    repeat
+    gpio 27,1
 
-repeat 200
-if cnt < 10 : gpio 17,1 : else : gpio 17,0
-if cnt < 50 : gpio 18,1 : else : gpio 18,0
-if cnt < 100 : gpio 22,1 : else : gpio 22,0
-loop
+    repeat 200
+    if cnt < 10 : gpio 17,1 : else : gpio 17,0
+    if cnt < 50 : gpio 18,1 : else : gpio 18,0
+    if cnt < 100 : gpio 22,1 : else : gpio 22,0
+    loop
 
-await 1
-loop
+    await 1
+    loop
 
-gpio 17,0
-gpio 18,0
-gpio 22,0
-gpio 27,0
-stop
-\end{lstlisting}
+    gpio 17,0
+    gpio 18,0
+    gpio 22,0
+    gpio 27,0
+    stop
+    \end{lstlisting}
+    \textpageref{24}
 \end{frame}
 
 \begin{frame}
-    \frametitle{LEDの明るさに強弱をつけるには}
+    \frametitle{LEDの明るさに強弱をつける}
     \begin{center}
         \begin{figure}
             \includesvg[width=0.8\linewidth]{images/chap05/led_frequency.svg}
@@ -126,4 +132,5 @@ stop
             \item 一定時間のLEDの消灯時間の比率で明るさに強弱をつけることができる
         \end{itemize}
     \end{center}
+    \textpageref{25}
 \end{frame}

@@ -95,6 +95,20 @@
 \setbeamertemplate{navigation symbols}{} % ナビゲーションシンボルを消す
 \setbeamertemplate{footline}[frame number] % フッターはスライド番号のみ
 
+\usepackage{tikz}
+\usepackage[absolute,overlay]{textpos}
+
+\usepackage{pxrubrica} %ルビ
+
+%教科書対応ページのマクロ
+\newcommand{\textpageref}[1]{{
+  \begin{textblock*}{0.4\linewidth}(285pt,5pt)
+    \begin{tikzpicture}
+        \node[rectangle,fill=cyan!10,text width=2.3cm, text centered,rounded corners]{教科書\\{#1}ページ};
+    \end{tikzpicture}
+  \end{textblock*}
+}}
+
 \lstset{
   basicstyle=\fontsize{9}{9}\selectfont\ttfamily
 }
