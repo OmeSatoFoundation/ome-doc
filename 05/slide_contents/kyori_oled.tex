@@ -6,7 +6,7 @@
 \end{frame}
 
 \begin{frame}[fragile]
-    \frametitle{距離センサーをピンにつけてみよう}
+    \frametitle{距離センサーを\\ピンにつけてみよう}
     \begin{columns}
         \begin{column}{0.48\textwidth}
             \includegraphics[width=\textwidth]{images/chap05/text05-img030.png} 
@@ -17,35 +17,37 @@
     \end{columns}
     \begin{itemize}
         \item A0と距離センサーをつなげてみよう
-        \item HSPでkyori.hspを動かしてみよう
+        \item HSPで\textasciitilde/05/kyori.hspを動かしてみよう
     \end{itemize}
+    \textpageref{18}
 \end{frame}
 
 \begin{frame}[fragile]
-    \frametitle{距離センサーを使ったプログラム(kyori.hsp)}
-\begin{lstlisting}
-#include "hsp3dish.as"
-#include "rpz-gpio.as"
+    \frametitle{距離センサーのプログラム}
+    \begin{lstlisting}[title=\textasciitilde/05/kyori.hsp]
+    #include "hsp3dish.as"
+    #include "rpz-gpio.as"
 
-spiopen 0
+    spiopen 0
 
-*main
+    *main
 
-	data = spiget(0,0)
-	kyori = -1*(data*5000/1023)/36+845/9
-	res = "距離 : "+kyori
+	    data = spiget(0,0)
+	    kyori = -1*(data*5000/1023)/36+845/9
+	    res = "距離 : "+kyori
 	
-	redraw 0
-	font "",20
-	pos 30,30
-	mes res
-	redraw 1
+	    redraw 0
+	    font "",20
+	    pos 30,30
+	    mes res
+	    redraw 1
 
-	wait 10
-	goto *main
+	    wait 10
+	    goto *main
 
-spiclose 0
-\end{lstlisting}
+    spiclose 0
+    \end{lstlisting}
+    \textpageref{18}
 \end{frame}
 
 \begin{frame}[plain]
@@ -64,10 +66,11 @@ spiclose 0
             \item ここでは日本語を表示できない
         \end{itemize}
     \end{center}
+    \textpageref{20}
 \end{frame}
 
 \begin{frame}[fragile]
-    \frametitle{有機ELディスプレイをピンにつけてみよう}
+    \frametitle{有機ELディスプレイを\\ピンにつけてみよう}
     \begin{columns}
         \begin{column}{0.48\textwidth}
             \includegraphics[width=\textwidth]{images/chap05/text05-img033.png} 
@@ -78,38 +81,35 @@ spiclose 0
     \end{columns}
     \begin{itemize}
         \item 有機ELディスプレイとI2Cをつなげてみよう
-        \item HSPでoled.hspを動かしてみよう
+        \item HSPで\textasciitilde/05/oled.hspを動かしてみよう
     \end{itemize}
+    \textpageref{20}
 \end{frame}
 
 \begin{frame}[fragile]
-    \frametitle{有機ELディスプレイを使ったプログラム(oled.hsp)}
-\begin{lstlisting}
-#include "hsp3dish.as"
-#include "rpz-gpio.as"
+    \frametitle{有機ELディスプレイを使った\\プログラム}
+    \begin{lstlisting}[title=\textasciitilde/05/oled.hsp]
+    #include "hsp3dish.as"
+    #include "rpz-gpio.as"
 
-redraw 0
-font "",20
-pos 20,20
-mes "有機ELディスプレイを見てね\nカンマ（,）で改行するよ"
-redraw 1
+    redraw 0
+    font "",20
+    pos 20,20
+    mes "有機ELディスプレイを見てね\nカンマ（,）で改行するよ"
+    redraw 1
 
-oled "Good Morning,Good Bye,Good Afternoon"
+    oled "Good Morning,Good Bye,Good Afternoon"
 
-wait 100
-\end{lstlisting}
+    wait 100
+    \end{lstlisting}
+    \textpageref{20}
 \end{frame}
 
 \begin{frame}[fragile]
-    \frametitle{問題を解いてみよう}
+    \begin{exampleblock}{問題を解いてみよう}
     \begin{itemize}
-        \item 教科書19ページ 問題5-8
-        \begin{itemize}
-            \item 1問
-        \end{itemize}
-        \item 教科書21ページ 問題5-9
-        \begin{itemize}
-            \item 2問
-        \end{itemize}
+        \item 教科書19ページ 問題5-8(1問)
+        \item 教科書21ページ 問題5-9(2問)
     \end{itemize}
+    \end{exampleblock}
 \end{frame}
