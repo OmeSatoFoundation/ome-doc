@@ -187,9 +187,9 @@
     \includegraphics[width=\columnwidth]{google_home.png}
     \caption{\scriptsize Google Home}
   \end{minipage}
+  \end{figure}
+  \end{center}
   \textpageref{3}
-\end{figure}
-\end{center}
 \end{frame}
 
 \begin{frame}
@@ -288,7 +288,7 @@
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{声音を変えてみる}
+  \frametitle{声音を変えてみる -1}
   \begin{lstlisting}[title=\textasciitilde/06/voice.hsp,label=voice.hsp]
   #include "hsp3dish.as"
   #include "jtalk.as"
@@ -308,6 +308,7 @@
 \end{frame}
 
 \begin{frame}
+  \frametitle{声音を変えてみる -2}
   \begin{itemize}
     \item プログラムの中で音声ファイルを指定している部分を見てみよう
     \item setvoiceの右にある""の中を他のファイルに書き換えると、声音が変わるよ
@@ -397,7 +398,7 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{読み上げる文字列に変数を使う(4)}
+  \frametitle{読み上げる文字列に変数を使う -4}
   \begin{itemize}
     \item a + b の計算結果を kotae に代入
     \item openjtalk はkotaeに代入された値を読んでいる
@@ -424,7 +425,7 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{Juliusを使ってみる(1)}
+  \frametitle{Juliusを使ってみる -1}
   \begin{itemize}
     \item run-linux-gmm.sh
     \item \<\<please speak\>\>がでるまで待つ
@@ -445,11 +446,11 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{Juliusを使ってみる(2)}
+  \frametitle{Juliusを使ってみる -2}
   \begin{itemize}
     \item 果物の名前を話かけてみよう
     \begin{center}
-      {\small りんご　みかん　ぶどう　もも　あけび　あんず　いちご　いちじく　かき　スイカ　すもも　	なし　メロン}
+      {\small りんご　みかん　ぶどう　もも　あけび　あんず　いちご\\いちじく　かき　スイカ　すもも　	なし　メロン}
     \end{center}
     \item コンピュータは正しく言葉を認識してくれたかな？
     \item 話しかけた単語とターミナルに出てくる単語が同じか友達と話合ってみよう
@@ -472,7 +473,7 @@
   \begin{itemize}
     \item 単語辞書を使ってJuliusをためす
     \begin{itemize}
-      \item julius.sh kudamono.sh
+      \item julius.sh kudamono.dic
       \item 以下の単語が登録されているよ。マイクに話しかけてみよう
     \end{itemize}
   \end{itemize}
@@ -581,7 +582,7 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{HSPでJuliusの認識結果を使う -1}
+  \frametitle{HSPで\\Juliusの認識結果を使おう -1}
   \begin{figure}
     \includesvg[width=\linewidth]{images/chap06/JuliuswithHSP.svg}
   \end{figure}
@@ -589,7 +590,7 @@
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{HSPでJuliusの認識結果を使う -2}
+  \frametitle{HSPで\\Juliusの認識結果を使おう -2}
   \begin{lstlisting}[title=\textasciitilde/06/julius.hsp,label=julius.hsp]
   #include "hsp3dish.as"
   #include "julius.as"
@@ -609,7 +610,7 @@
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{HSPでJuliusの認識結果を使う -3}
+  \frametitle{HSPで\\Juliusの認識結果を使おう -3}
   \begin{lstlisting}[title=\textasciitilde/06/julius.hsp,label=julius.hsp]
   sockopen sockidx, domain, PORT
 
@@ -631,7 +632,7 @@
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{HSPでJuliusの認識結果を使う -4}
+  \frametitle{HSPで\\Juliusの認識結果を使おう -4}
   \begin{lstlisting}[title=\textasciitilde/06/julius.hsp,label=julius.hsp,basicstyle=\scriptsize]
   repeat -1
     if is_recieved(sockidx) = 0 {
@@ -655,10 +656,11 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{問題を解こう}
-  \begin{itemize}
-    \item 教科書20ページ 問題6-10(2問)
-  \end{itemize}
+  \begin{exampleblock}{問題を解いてみよう}
+    \begin{itemize}
+      \item 教科書20ページ 問題6-10(2問)
+    \end{itemize}
+  \end{exampleblock}
   \textpageref{20}
 \end{frame}
 
@@ -725,6 +727,27 @@
 \end{frame}
 
 \begin{frame}
+  \begin{exampleblock}{問題を解いてみよう}
+    \begin{itemize}
+      \item 教科書23ページ 問題6-11(5問)(2問は宿題)
+    \end{itemize}
+  \end{exampleblock}
+  \textpageref{23}
+\end{frame}
+
+\begin{frame}
+  \frametitle{宿題}
+  \begin{itemize}
+    \item 教科書24ページ
+    \begin{itemize}
+      \item 5問の内、1問だけ挑戦しよう
+      \item レベルアップしたい人は、5問全部に挑戦してみよう
+    \end{itemize}
+  \end{itemize}
+  \textpageref{24}
+\end{frame}
+
+\begin{frame}
   \frametitle{数を認識させてみよう（発展）}
   \begin{itemize}
     \item 数を認識できる
@@ -746,29 +769,6 @@
       \item http://julius.osdn.jp/index.php?q=doc/grammar.html
     \end{itemize}
   \end{itemize}
-\end{frame}
-
-\begin{frame}
-  \frametitle{問題を解こう}
-  \begin{itemize}
-    \item 教科書23ページ 問題6-11
-    \begin{itemize}
-      \item 5問(2問は宿題)
-    \end{itemize}
-  \end{itemize}
-  \textpageref{23}
-\end{frame}
-
-\begin{frame}
-  \frametitle{宿題}
-  \begin{itemize}
-    \item 教科書24ページ
-    \begin{itemize}
-      \item 5問の内、1問だけ挑戦しよう
-      \item レベルアップしたい人は、5問全部に挑戦してみよう
-    \end{itemize}
-  \end{itemize}
-  \textpageref{24}
 \end{frame}
 
 \begin{frame}
