@@ -1,5 +1,7 @@
-latex = "platex"
-dvipdf = "dvipdfmx"
 source = "text08.tex"
 
-sequence = ["latex", "dvipdf"] # Skip bibtex and makeindex
+sequence = ["latex"] # Skip bibtex and makeindex
+
+[programs.latex]
+command = "lualatex"
+opts = ["--shell-escape", "--cnf-line='TEXINPUTS=.;../texmf//;'"]

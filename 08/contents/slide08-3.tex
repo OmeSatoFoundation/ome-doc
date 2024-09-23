@@ -1,18 +1,18 @@
-\documentclass[dvipdfmx]{beamer}
+% \documentclass[dvipdfmx]{beamer}
 
-\usepackage{beamerthemesplit}
-\usepackage[]{graphicx}
+% \usepackage{beamerthemesplit}
+% \usepackage[]{graphicx}
 \graphicspath{%
 {./slide08-img/}%
 {./text08-img/}%
 }
 
-\usepackage{listings}
-\usepackage{hyperref}
-\usepackage{pxjahyper}
-\usepackage{nameref} % これが\zexternaldocumentの前までに必要
-\usepackage{zref-xr}
-\usepackage{color}
+% \usepackage{listings}
+% \usepackage{hyperref}
+% \usepackage{pxjahyper}
+% \usepackage{nameref} % これが\zexternaldocumentの前までに必要
+% \usepackage{zref-xr}
+% \usepackage{color}
 
 \zxrsetup{toltxlabel} % 通常のLaTeXスタイルの\refを使う（\zexternaldocumentより前におく）
 \zexternaldocument*[1:]{text08} % \zのついたexternaldocumentを使う
@@ -23,7 +23,6 @@
 
 \def\quiz{1}
 
-\begin{document}
 
 \frame{
    \begin{center}
@@ -65,20 +64,20 @@
 
 \begin{frame}[fragile]
 	\frametitle{\large{スクレイピングで得た情報をつかってみよう:テキスト P.\pageref{1:P:scraping}-}~~~\raisebox{-3mm}{\includegraphics[width=0.1\textwidth]{raspberry}}}
-      \large\textbf{教科書をよみながら、例題をやってみよう}
+      \textbf{教科書をよみながら、例題をやってみよう}
 				\begin{itemize}
 					\item \ref*{1:E:amedas}
 					\item \ref*{1:E:amedasLess}
 					\item \ref*{1:E:amedasSensor}
 				\end{itemize}
       \vfill
-      \large\textbf{速く終わった子は、次の問題をやってみよう}
+      \textbf{速く終わった子は、次の問題をやってみよう}
 				\begin{itemize}
 					\item \ref*{1:Q:amedas1}, \ref*{1:Q:amedas2}, \ref*{1:Q:amedas3}, \ref*{1:Q:amedas4}
 					\item \ref*{1:Q:amedas5}, \ref*{1:Q:amedas6}, \ref*{1:Q:amedas7}, \ref*{1:Q:amedas8}
 				\end{itemize}
       \vfill
-      \large\textbf{わからないことは、放っておかず、すぐに TA に聞きましょう}
+      \textbf{わからないことは、放っておかず、すぐに TA に聞きましょう}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -95,7 +94,7 @@
 
 \begin{frame}[fragile]
 	\frametitle{\large{スクレイピングで得た情報をつかってみよう:テキスト P.\pageref{1:P:scraping}-}~~~\raisebox{-3mm}{\includegraphics[width=0.1\textwidth]{raspberry}}}
-      \large\textbf{教科書をよみながら、例題をやってみよう}
+      \textbf{教科書をよみながら、例題をやってみよう}
 				\begin{itemize}
 					\item \ref*{1:E:TV}
 					\item \ref*{1:E:Weblio}
@@ -104,13 +103,12 @@
 					\item \ref*{1:E:wikipedia}
 				\end{itemize}
       \vfill
-      \large\textbf{速く終わった子は、次の問題をやってみよう}
+      \textbf{速く終わった子は、次の問題をやってみよう}
 				\begin{itemize}
 					\item \ref*{1:Q:TV}, \ref*{1:Q:weblio}, \ref*{1:Q:station}
 					\item \ref*{1:Q:postNum}, \ref*{1:Q:wikipedia}
 				\end{itemize}
       \vfill
-      \large\textbf{わからないことは、放っておかず、すぐに TA に聞きましょう}
+      \textbf{わからないことは、放っておかず、すぐに TA に聞きましょう}
 \end{frame}
 
-\end{document}
