@@ -11,6 +11,7 @@
         echo     & 文字をそのまま出力                    \\ 
         touch    & 空のファイルを作成                    \\\hline
     \end{tabular}
+    \textpageref{33}
 \end{frame}
 
 \begin{frame}
@@ -38,6 +39,7 @@
             \end{itemize}
         \end{itemize}
     \end{itemize}
+    \textpageref{33}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -53,6 +55,7 @@
 <#green#pi@raspberrypi#>:<#blue#~ $#> wc ~/lsfile
 13 13 93 /home/pi/lsfile
     \end{lstlisting}
+    \textpageref{34}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -85,6 +88,7 @@
 hello
 <#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargs $#>
     \end{lstlisting}
+    \textpageref{35}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -102,6 +106,7 @@ hello
 <#green#pi@raspberrypi#>:<#blue#~ $#> ls -l testtouch
 -rw-r--r-- 1 pi pi 0  7月 11 19:40 testtouch <- 7月11日19:40に更新
     \end{lstlisting}
+    \textpageref{35}
 \end{frame}
 
 \begin{frame}
@@ -109,11 +114,13 @@ hello
         \begin{itemize}
             \item 教科書36ページ 問題3-11(5問)
         \end{itemize}
-      \end{exampleblock} 
+    \end{exampleblock} 
+    \textpageref{36}
 \end{frame}
 
 \begin{frame}
     \frametitle{コマンドの入出力}
+    \vspace{2em}
     コマンドを実行すると３つのデータの通り道(チャネル)が準備されるよ
     \begin{itemize}
         \item 標準入力
@@ -124,6 +131,7 @@ hello
         \centering
         \includesvg[width=0.8\columnwidth]{images/chap03/std_in_out_err.svg}
     \end{figure}
+    \textpageref{37}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -147,10 +155,12 @@ sansu         <- 標準出力（ディスプレイ）への出力
 <Ctrl+D>      <- 標準入力からEOFを入力し、入力が終了したことを伝える
 <#green#pi@raspberrypi#>:<#blue#~ $#>
     \end{lstlisting}
+    \textpageref{37}
 \end{frame}
 
 \begin{frame}
     \frametitle{リダイレクトってなんだろう？}
+    \vspace{2em}
     \begin{itemize}
         \item 標準入力、標準出力、標準エラー出力の出力先をファイルに変更することだよ
     \end{itemize}
@@ -158,6 +168,7 @@ sansu         <- 標準出力（ディスプレイ）への出力
         \centering
         \includesvg[width=0.7\linewidth]{images/chap03/redirect.svg}
     \end{figure}
+    \textpageref{38}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -182,10 +193,12 @@ Templates
 Videos
 lsfile
     \end{lstlisting}
+    \textpageref{39}
 \end{frame}
 
 \begin{frame}
     \frametitle{パイプライン}
+    \vspace{2em}
     \begin{itemize}
         \item パイプ（｜）を使って標準出力と標準入力をつなげることができるよ
     \end{itemize}
@@ -193,6 +206,7 @@ lsfile
         \centering
         \includesvg[width=1\linewidth]{images/chap03/pipe.svg}
     \end{figure}
+    \textpageref{39}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -213,6 +227,7 @@ Templates
 Videos
 lsfile
     \end{lstlisting}
+    \textpageref{39-40}
 \end{frame}
 
 \begin{frame}
@@ -221,6 +236,7 @@ lsfile
             \item 教科書40ページ 問題3-12(3問)
         \end{itemize}
     \end{exampleblock} 
+    \textpageref{40}
 \end{frame}
 
 \begin{frame}
@@ -237,6 +253,7 @@ lsfile
         sort     & 行を順番にならべかえる         \\
         grep     & 検索パターンに一致する行を出力 \\ \hline
     \end{tabular}
+    \textpageref{41}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -264,6 +281,7 @@ Bookshelf
 02
 01 
     \end{lstlisting}
+    \textpageref{41}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -291,6 +309,7 @@ Public
 lsfile
 Downloads
     \end{lstlisting}
+    \textpageref{41-42}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -308,6 +327,7 @@ Downloads
 01
 02
     \end{lstlisting}
+    \textpageref{42}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -325,6 +345,7 @@ Downloads
 Videos
 lsfile
     \end{lstlisting}
+    \textpageref{42}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -353,6 +374,7 @@ Public
 Templates
 Videos
     \end{lstlisting}
+    \textpageref{43}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -371,10 +393,12 @@ Videos
 <#red#Do#>cuments
 <#red#Do#>wnloads
     \end{lstlisting}
+    \textpageref{43}
 \end{frame}
 
 \begin{frame}[fragile]
-    \frametitle{パイプとフィルタを組み合わせよう}
+    \frametitle{パイプとフィルタを\\組み合わせよう}
+    \vspace{2em}
     \begin{itemize}
         \item 標準出力を出すコマンド | フィルタコマンド
         \begin{itemize}
@@ -398,6 +422,7 @@ Public
 Templates
 Videos
     \end{lstlisting}
+    \textpageref{43-44}
 \end{frame}
 
 \begin{frame}
@@ -411,10 +436,12 @@ Videos
             \item 教科書46ページ 問題3-14(3問)
         \end{itemize}
     \end{exampleblock} 
+    \textpageref{45-46}
 \end{frame}
 
 \begin{frame}
     \frametitle{xargsコマンドってなんだろう？}
+    \vspace{2em}
     \begin{itemize}
         \item 標準入力を受け取り、実行したいコマンドの引数として使えるよ
         \item xargsコマンドを使うと引数にいろいろなものを指定できるよ
@@ -423,10 +450,11 @@ Videos
         \centering
         \includesvg[width=0.55\linewidth]{images/chap03/xargs_command.svg}
     \end{figure}
+    \textpageref{47}
 \end{frame}
 
 \begin{frame}[fragile]
-    \frametitle{xargsコマンドを使う準備をしよう}
+    \frametitle{xargsコマンドを使う準備}
     xargsコマンドを使うためのディレクトリ\textasciitilde/03/rensyu/xargstestを作ろう
     \begin{lstlisting}
 <#green#pi@raspberrypi#>:<#blue#~ $#> cd 03/rensyu
@@ -437,10 +465,11 @@ Videos
 <#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargstest $#> ls
 <#magenta#lsfile  syousetu.txt#>
     \end{lstlisting}
+    \textpageref{47}
 \end{frame}
 
 \begin{frame}[fragile]
-    \frametitle{xargsコマンドを実際に使ってみよう}
+    \frametitle{xargsコマンドを使ってみよう}
     \begin{lstlisting}[title=xargsコマンドを使ってcatコマンドを使う]
 <#green#pi@raspberrypi#>:<#blue#~/03/rensyu/xargstest $#> ls | xargs cat
 01
@@ -456,7 +485,8 @@ Desktop
                 
 https:／／www.aozora.gr.jp/cards/000121/files/628_14895.html<#green#pi@raspberr
 ypi#>:<#blue#~/03/rensyu/xargs $#>
-\end{lstlisting}
+    \end{lstlisting}
+    \textpageref{48}
 \end{frame}
 
 \begin{frame}
@@ -480,6 +510,7 @@ ypi#>:<#blue#~/03/rensyu/xargs $#>
             \item -iオプションと-Lオプションは一緒に使えないよ
         \end{itemize}
     \end{itemize}
+    \textpageref{48-49}
 \end{frame}
 
 \begin{frame}
@@ -500,10 +531,11 @@ ypi#>:<#blue#~/03/rensyu/xargs $#>
         tr       & 入力された文字を指定する方法で置き換えて出力する           \\
         sed      & 入力から指定するパターンを見つけ、それを置き換えて出力する \\ \hline
     \end{tabular}
+    \textpageref{49}
 \end{frame}
 
 \begin{frame}[fragile]
-    \frametitle{trコマンドで文字を置き換えよう}
+    \frametitle{trコマンドで\\文字を置き換えよう}
     \begin{itemize}
         \item {\bf tr\textvisiblespace\underline{置き換えたい文字}\textvisiblespace\underline{置き換える文字}}
         \begin{itemize}
@@ -517,6 +549,7 @@ ypi#>:<#blue#~/03/rensyu/xargs $#>
 <#green#pi@raspberrypi#>:<#blue#~ $#> echo "HELLO, WORLD!" | tr A-Z a-z
 hello, world!
     \end{lstlisting}
+    \textpageref{50}
 \end{frame}
 
 \begin{frame}
@@ -531,10 +564,11 @@ hello, world!
         \end{tabular}\\
         と置きかえる
     \end{center}
+    \textpageref{50-51}
 \end{frame}
 
 \begin{frame}[fragile]
-    \frametitle{sedコマンドで文字を置き換えよう}
+    \frametitle{sedコマンドで\\文字を置き換えよう}
     \begin{itemize}
         \item sed\textvisiblespace 's/\underline{対象の文字列}/\underline{置き換え文字列}/g'
         \begin{itemize}
@@ -547,6 +581,7 @@ hello, world!
 <#green#pi@raspberrypi#>:<#blue#~ $#> echo "Hello, World!" | sed 's/Hello/Hi/g'
 Hi, World!
     \end{lstlisting}
+    \textpageref{51}
 \end{frame}
 
 \begin{frame}
@@ -555,6 +590,7 @@ Hi, World!
             \item 教科書52ページ 問題3-16(4問)
         \end{itemize}
     \end{exampleblock} 
+    \textpageref{52}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -573,6 +609,7 @@ Hi, World!
 <#green#pi@raspberrypi#>:<#blue#~ $#> echo $((138 + 395))
 533
     \end{lstlisting}
+    \textpageref{53}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -593,6 +630,7 @@ alias name='command'
            :
            :
     \end{lstlisting}
+    \textpageref{54-55}
 \end{frame}
 
 \begin{frame}
@@ -602,6 +640,7 @@ alias name='command'
             \item 教科書55ページ 問題3-18(2問)
         \end{itemize}
     \end{exampleblock} 
+    \textpageref{53,55}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -619,6 +658,7 @@ alias name='command'
 ./03/rensyu/rika.png
 <#green#pi@raspberrypi#>:<#blue#~ $#>
     \end{lstlisting}
+    \textpageref{56}
 \end{frame}
 
 \begin{frame}
@@ -631,6 +671,7 @@ alias name='command'
             \item 01, 02, 03のディレクトリの中に入ったファイルを見れるよ
         \end{itemize}
     \end{itemize}
+    \textpageref{56}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -646,6 +687,7 @@ Pictures:
 Public:
 <#green#pi@raspberrypi#>:<#blue#~ $#>
     \end{lstlisting}
+    \textpageref{56-57}
 \end{frame}
 
 \begin{frame}
@@ -658,6 +700,7 @@ Public:
         \texttt{[!abc]} & 囲まれた文字{\bf 以外}の一文字\\
         \texttt{\{abc, opq, xyz\}} & 中の文字列のうちどれか\\ \hline
     \end{tabular}
+    \textpageref{56-57}
 \end{frame}
 
 \begin{frame}
@@ -666,6 +709,7 @@ Public:
             \item 教科書58ページ 問題3-19(3問)
         \end{itemize}
     \end{exampleblock} 
+    \textpageref{58}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -687,6 +731,7 @@ bash: cd: AAA: そのようなファイルやディレクトリはありませ�
     \begin{itemize}
         \item ファイルやディレクトリのスペルを確かめよう
     \end{itemize}
+    \textpageref{59}
 \end{frame}
 
 \begin{frame}
@@ -706,6 +751,7 @@ bash: cd: AAA: そのようなファイルやディレクトリはありませ�
         \item 直らなかったらresetコマンドを実行しよう
         \item resetコマンドでも直らないときはターミナルを閉じて、再度開こう
     \end{itemize}
+    \textpageref{59}
 \end{frame}
 
 \begin{frame}
@@ -720,6 +766,7 @@ bash: cd: AAA: そのようなファイルやディレクトリはありませ�
             \item ターミナルにman コマンド名と入力すると、英語で詳しい使い方が表示されるよ
         \end{itemize}
     \end{itemize}
+    \textpageref{59-60}
 \end{frame}
 
 \begin{frame}
@@ -736,4 +783,5 @@ bash: cd: AAA: そのようなファイルやディレクトリはありませ�
             \item 教科書67ページ GIFアニメーションの作成
         \end{itemize}
     \end{block} 
+    \textpageref{62-67}
 \end{frame}
