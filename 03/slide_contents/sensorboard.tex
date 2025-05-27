@@ -28,6 +28,7 @@
       \end{figure}
     \end{column}
   \end{columns}
+  \textpageref{19} 
 \end{frame}
 
 \begin{frame}
@@ -41,6 +42,7 @@
     \item 一度シャットダウンしてからセンサーボードを差し込む
     \item 赤色の線が3V3に来るようにする
   \end{itemize}
+  \textpageref{19}
 \end{frame}
 
 \begin{frame}
@@ -49,7 +51,12 @@
 %    \centering
 %    \includegraphics[height=0.9\textheight]{../images/chap03/rpz-ir-sensor.svg}
     \includesvg[height=0.9\textheight]{../images/chap03/rpz-ir-sensor.svg}
-\end{figure}
+  \end{figure}
+  \begin{textblock*}{0.4\linewidth}(295pt,5pt)
+    \begin{tikzpicture}
+        \node[rectangle,fill=cyan!10,text width=2cm, text centered,rounded corners]{教科書\\{20}ページ};
+    \end{tikzpicture}
+  \end{textblock*}
 \end{frame}
 
 
@@ -123,6 +130,7 @@
    pos 60, 60          <#blue#; 表示位置を設定#>
   
   \end{lstlisting}
+  \textpageref{21}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -142,6 +150,7 @@
   wait 100
   goto *main
   \end{lstlisting}
+  \textpageref{21}
 \end{frame}
 
 \begin{frame}
@@ -151,6 +160,7 @@
       \item 教科書23ページ 問題3-6(8問)
     \end{itemize}
   \end{exampleblock} 
+  \textpageref{23}
 \end{frame}
 
 
@@ -169,6 +179,7 @@
       wait 50 		<#blue#;500 ミリ秒待つ#>
       goto *led 		<#blue#;*led にジャンプ（繰り返し）#>
   \end{lstlisting}
+  \textpageref{24}
 \end{frame}
 
 \begin{frame}
@@ -178,10 +189,11 @@
       \item 教科書25ページ 問題3-7(6問)
     \end{itemize}
   \end{exampleblock} 
+  \textpageref{25}
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{ボタンを使ってLEDをつけてみよう}
+  \frametitle{ボタンを使ってLEDをつけよう}
   \begin{lstlisting}[title=\sim/03/button\_led.hsp, label=button_led.hsp]
   #include "hsp3dish.as"
   #include "rpz-gpio.as"
@@ -202,10 +214,11 @@
           wait 10                 <#blue#;0.1秒待つ#>
           goto *led               <#blue#;*ledに戻る#>
   \end{lstlisting}
+  \textpageref{26}
 \end{frame}
 
 \begin{frame}
-  \frametitle{ボタンが押されているか調べる命令}
+  \frametitle{ボタンが押されているか調べる}
   \begin{itemize}
     \item gpioin()
           \begin{itemize}
@@ -218,6 +231,7 @@
             \item 押されたらima\_btn=0、はなされたらima\_btn=1
           \end{itemize}
   \end{itemize}
+  \textpageref{26}
 \end{frame}
 
 \begin{frame}
@@ -227,10 +241,11 @@
       \item 教科書27ページ 問題3-8(4問)
     \end{itemize}
   \end{exampleblock} 
+  \textpageref{27}
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{ボタンを使ってLEDをつけてみよう(2)-1}
+  \frametitle{ボタンを使って\\LEDをつけてみよう(2)-1}
   \begin{lstlisting}[title=\sim/03/button\_led2.hsp 前半, label=button_led2.hsp-1]
   #include "hsp3dish.as"
   #include "rpz-gpio.as"
@@ -250,10 +265,11 @@
           mae_btn = 1   <#blue#;前回はボタンを押しているかどうかの変数#>
           led = 1       <#blue#;LEDを光らせるか決める変数#>
   \end{lstlisting}
+  \textpageref{28}
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{ボタンを使ってLEDをつけてみよう(2)-2}
+  \frametitle{ボタンを使って\\LEDをつけてみよう(2)-2}
   \begin{lstlisting}[title=\sim/03/button\_led2.hsp 後半, label=button_led2.hsp-2]
   *hata
           ima_btn = gpioin(5)
@@ -269,10 +285,11 @@
           wait 10
           goto *hata
   \end{lstlisting}
+  \textpageref{28}
 \end{frame}
 
 \begin{frame}
-  \frametitle{ボタンを押してLEDをon/offするには}
+  \frametitle{ボタンを押して\\LEDをon/offするには?}
   \begin{itemize}
     \item ボタンを押したかどうやってわかるの？
   \end{itemize}
@@ -284,6 +301,7 @@
     \item 赤い部分は押されていない状態から押されている状態に変化($1\rightarrow0$)したことを示す
     \item 変化したことをラズベリーパイが確認し、LEDの状態を変化させる
   \end{itemize}
+  \textpageref{29}
 \end{frame}
 
 \begin{frame}
@@ -293,10 +311,11 @@
       \item 教科書30ページ 問題3-9(3問)
     \end{itemize}
   \end{exampleblock} 
+  \textpageref{30}
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{ボタンを使って光るLEDを変えてみよう-1}
+  \frametitle{ボタンを使って\\光るLEDを変えてみよう-1}
   \begin{lstlisting}[title=\sim/03/button\_led3.hsp 前半, label=button_led3.hsp-1]
   #include "hsp3dish.as"
   #include "rpz-gpio.as"
@@ -315,10 +334,11 @@
           ima_btn = 1 
           ledidx = 0  <#blue#;ledidxを初期化#>
   \end{lstlisting}
+  \textpageref{31}
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{ボタンを使って光るLEDを変えてみよう-2}
+  \frametitle{ボタンを使って\\光るLEDを変えてみよう-2}
   \begin{lstlisting}[title=\sim/03/button\_led3.hsp 中盤, label=button_led3.hsp-2]
   *hata
           ima_btn = gpioin(5)
@@ -338,10 +358,11 @@
              gpio 27, 0
            }
   \end{lstlisting}
+  \textpageref{31}
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{ボタンを使って光るLEDを変えてみよう-3}
+  \frametitle{ボタンを使って\\光るLEDを変えてみよう-3}
   \begin{lstlisting}[title=button\_led3.hsp 後半, label=button_led3.hsp-3]
            else : if ledidx=3{      <#blue#;3番目の時はGPIO22のLEDを光らせる#>
              gpio 17, 0             <#blue#;(2+1)\4 = 3#>
@@ -361,10 +382,11 @@
           wait 10
           goto *hata
   \end{lstlisting}
+  \textpageref{31}
 \end{frame}
 
 \begin{frame}
-  \frametitle{LEDはどうして動いて見えている？}
+  \frametitle{LEDはどうして動いて見える？}
   \begin{itemize}
     \item ima\_btn ボタンを押したかどうか調べる
     \item ledidx ボタンを押した回数を調べる
@@ -387,6 +409,7 @@
       \end{itemize}
     \end{itemize}
   \end{itemize}
+  \textpageref{32}
 \end{frame}
 
 \begin{frame}
@@ -396,4 +419,5 @@
       \item 教科書32ページ 問題3-10(3問)
     \end{itemize}
   \end{exampleblock} 
+  \textpageref{32}
 \end{frame}
