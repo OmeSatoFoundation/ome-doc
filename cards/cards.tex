@@ -12,7 +12,7 @@
 \renewcommand{\baselinestretch}{0.0}
 \pagestyle{empty}
 % Completeは問題数が12以下の時に重ならずに書くことができる
-% シール枠は左から優先して描画される
+% 枠は左から優先して描画される
 % スタンプの数はゼロにできないので、それぞれのシートに適切に個数を分けてほしい。
 % 1: タイトル
 % 2: タイトル左イラストのファイル名
@@ -143,7 +143,7 @@
         }
         \path (0mm,0mm) rectangle (\width mm,\height mm);
 %        \draw [line width=0.97mm] (0.5mm,0.5mm) rectangle (\width mm-0.5mm,\height mm-0.5mm);
-        \node [font=\Huge\gtfamily\bfseries, align=center] (Title) at (.5*\width mm,.5*\height mm) {#1年度\\子どもIT未来塾\\シールラリーカード};
+        \node [font=\Huge\gtfamily\bfseries, align=center] (Title) at (.5*\width mm,.5*\height mm) {#1年度\\子どもIT未来塾\\スタンプラリーカード};
         \fill [red] (0 mm, \height mm)--(\width mm, \height mm)--(\width mm, \height mm - 10 mm) -- (0 mm, \height mm - 10 mm) -- cycle;
         \fill [red] (0 mm, 0 mm)--(\width mm, 0 mm)--(\width mm, 10 mm) -- (0 mm, 10 mm) -- cycle;
         \draw ( 10 mm, \height mm - 10mm) circle (1.5 mm);                
@@ -177,7 +177,7 @@
             \typevmargin = (\width - \typevwidth)/2.0;
         }
         \path (0mm,0mm) rectangle (\width mm,\height mm);
-        \node [font=\huge\gtfamily\bfseries, align=left] (Title) at (2.5 mm + 32mm , \height mm - 7mm - 12mm) {タイピング\\シールラリーカード};
+        \node [font=\huge\gtfamily\bfseries, align=left] (Title) at (2.5 mm + 32mm , \height mm - 7mm - 12mm) {タイピング\\スタンプラリーカード};
         \draw [blue, very thick] (\typevmargin mm, 8 mm) -- (\width mm - \typevmargin mm, 8 mm) -- (\width mm-\typevmargin mm, 8 mm+\typegrid mm) -- (\typevmargin mm, 8 mm+\typegrid mm) -- cycle;
         \foreach \i in {1,...,4} {
             \tikzmath{
@@ -207,7 +207,7 @@
             \typevmargin = (\width - \typevwidth)/2.0;
         }
         \path (0mm,0mm) rectangle (\width mm,\height mm);
-        \node [font=\huge\gtfamily\bfseries, align=left] (Title) at (2.5 mm + 32mm , \height mm - 7mm - 12mm) {タイピング(英語)\\シールラリーカード};
+        \node [font=\huge\gtfamily\bfseries, align=left] (Title) at (2.5 mm + 32mm , \height mm - 7mm - 12mm) {タイピング(英語)\\スタンプラリーカード};
         \draw [blue, very thick] (\typevmargin mm, 8 mm) -- (\width mm - \typevmargin mm, 8 mm) -- (\width mm-\typevmargin mm, 8 mm+\typegrid mm) -- (\typevmargin mm, 8 mm+\typegrid mm) -- cycle;
         \foreach \i in {1,...,4} {
             \tikzmath{
@@ -239,7 +239,7 @@
 
 \newcommand\checkall{
 \begin{tabular}{@{}c@{}c}
-\cover{2024} & \backCover\\
+\cover{2025} & \backCover\\
 \typeJP & \typeEN \\
 \StampCard{第1回例題チェック}{ccimages/hydrangea.png}{ccimages/yellow-umbrella.eps}{1}{1}{18}{false}{1} & \StampCard{第1回例題チェック}{ccimages/hydrangea.png}{ccimages/yellow-umbrella.eps}{1}{19}{28}{true}{2} \\
 \StampCard{第1回問題チェック}{ccimages/hydrangea.png}{ccimages/yellow-umbrella.eps}{1}{1}{18}{false}{1} & \StampCard{第1回問題チェック}{ccimages/hydrangea.png}{ccimages/yellow-umbrella.eps}{1}{19}{30}{true}{2} \\
