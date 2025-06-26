@@ -1,0 +1,566 @@
+%2083
+\newpage
+\section{プログラミングの応用}
+
+\subsection{サンプルフォルダを準備しよう}
+
+上にあるバーのアイコンからファイルマネージャーを開いてみましょう。
+
+\begin{figure}[H]
+    \begin{center}
+      \includegraphics[keepaspectratio,width=5.898cm,height=1.242cm]{text04-img/s_filemanager.png}
+      \caption{ファイルマネージャーを開くアイコン}
+    \end{center}
+    \label{fig:prog_menu}
+\end{figure}
+
+これからHSPで使うことのできるサンプルプログラムをコピーしてもらいます。「/home/ユーザー名」のフォルダに、「sample」フォルダをコピーすることから始めます。
+
+まず、「/usr/local/share/OpenHSP」という場所を開いてみましょう。
+
+この中に、「sample」という名前のフォルダがあります。これから、この「sample」というフォルダを自分の作業フォルダにコピーします。
+
+「sample」という名前のフォルダ上でマウスの右クリックを押して「コピー」を選んでください。
+
+
+\begin{figure}[H]
+    \begin{center}
+      \includegraphics[keepaspectratio,width=11.232cm,height=8.424cm]{text04-img/s_ome04e.png}
+      \caption{sampleフォルダでコピーを選ぶところ}
+    \end{center}
+    \label{fig:prog_menu}
+\end{figure}
+
+この後、コピーしたい場所を選びます。コピー先の場所は、「/home/ユーザー名」のフォルダになります。
+
+コピー先の場所を開いたら、何もない場所でマウスの右クリックを押して「貼り付け」を選んでください。
+
+これで先ほどの「/usr/local/share/OpenHSP/sample」フォルダが、「/home/ユーザー名/sample」にコピーされます。
+
+ファイルには、さまざまなプログラムとデータが入っています。
+
+すべてのファイルを\ruby{紹介}{しょう|かい}できませんが、\ruby{興味}{きょう|み}がある人は時間がある時に読み込んで動かしてみましょう。
+
+%2146
+
+
+%2146
+\newpage
+\subsection{\ruby{立体的}{りっ|たい|てき}な絵を出すには}
+
+いままで\ruby{平面的}{へい|めん|てき}な絵を使ってきました。いわゆる「2D」と呼ばれる\ruby{表現}{ひょう|げん}です。
+
+ゲームやCGでは、立体的な「3D」表現が使われています。実際に、立体的な絵を出すプログラムを動かしてみましょう。
+
+
+先ほどコピーした「/home/ユーザー名/sample」フォルダの中からプログラムを読み込みます。
+
+ファイル→「開く」メニューから「/home/ユーザー名/sample/hgimg4」内の「light\_test3.hsp」を読み込んでください。
+
+
+\begin{figure}[H]
+    \begin{center}
+      \includegraphics[keepaspectratio,width=10.971cm,height=8.229cm]{text04-img/s_lighttest3s.png}
+      \caption{light\_test3s.hspのプログラム}
+    \end{center}
+    \label{fig:prog_menu}
+\end{figure}
+
+[F5]キーで実行すると絵が動きます。
+
+3D表現の画面を出す場合でも、プログラミングの方法は変わりません。ただし、今まで「横」「縦」という2つの\ruby{軸}{じく}があったものが、「横」「縦」「\ruby{奥行}{おく|ゆ}き」という3つの軸に増えて、絵を出す方法も\ruby{複雑}{ふく|ざつ}になります。
+
+\begin{figure}[H]
+    \begin{center}
+      \includegraphics[keepaspectratio,width=10.971cm,height=8.229cm]{text04-img/s_lighttest3.png}
+      \caption{light\_test3.hspの実行画面}
+    \end{center}
+    \label{fig:prog_menu}
+\end{figure}
+
+
+変数や条件判断といった基本的な\ruby{要素}{よう|そ}は変わらないので、まず「2D」のやり方をよく覚えて、さらにそこからステップアップすることをおすすめします。
+
+もう1つ、立体的なキャラクターを出すプログラムを見てみましょう。
+
+
+ファイル→「開く」メニューから「/home/ユーザー名/sample/pronama3d」内の「pronama2.hsp」を読み込んでください。
+
+[F5]キーで実行するとプロ生ちゃんというキャラクターがダンスする画面になります。
+
+
+\begin{figure}[H]
+    \begin{center}
+      \includegraphics[keepaspectratio,width=10.971cm,height=8.229cm]{text04-img/s_pronama2.png}
+      \caption{pronama2.hspの実行画面}
+    \end{center}
+    \label{fig:prog_menu}
+\end{figure}
+
+立体的な絵は、GIMPのような絵を描くツールではなく、3Dグラフィックツールと呼ばれる、形そのものを細かく決めるツールによって作られています。これは、2Dの絵を描くよりもずっと難しい作業です。しかし、仕組みがわかって\ruby{学習}{がく|しゅう}すれば作れるものでもあるのです。
+
+
+皆さんが使っているラズベリーパイは、スマホやPCと同じような3D表示にも\ruby{対応}{たい|おう}した\ruby{高性能}{こう|せい|のう}なコンピュータです。
+
+応用によって\ruby{本格的}{ほん|かく|てき}なゲームも遊べますし、それを作りだすこともできることを覚えておいてください。
+
+
+\begin{figure}[H]
+    \begin{center}
+      \includegraphics[keepaspectratio,width=10.834cm,height=7.514cm]{text04-img/s_pronamabox.png}
+      \caption{背景とキャラクターを同時に出した画面}
+    \end{center}
+    \label{fig:prog_menu}
+\end{figure}
+
+%2250
+%2250
+\newpage
+\subsection{たくさんの絵を\ruby{同時}{どう|じ}に動かす}
+
+\ruby{以前}{い|ぜん}に、変数に横・縦の位置を代入してpos命令で指定することで絵を動かすプログラムを実行しました。変数を使うことで、絵を動かしたり、条件判断ができることはわかりました。
+
+でも、ゲームの中では、同時にたくさんの絵を動かしています。
+
+たくさんの敵が出てきたり、ミサイルが同時に\ruby{発射}{はっ|しゃ}されたりします。これを変数で1つ1つ記憶させるためには、それだけ多くの変数を作る必要があります。
+
+変数x、変数yが横・縦の位置を入れておくものだとして、もう1つまた変数x2、変数y2…など違う名前をつけなければなりません。
+
+もし100個の絵を出すとすると、x100とかすごい数を書く必要があるのでしょうか…?
+
+
+実は、これを簡単にできるような仕組みが用意されています。それが「\ruby{配列変数}{はい|れつ|へん|すう}」と呼ばれるものです。
+
+変数はx,yなどの名前を付けた箱に数字を入れてありました。この箱に番号を付けて\ruby{管理}{かん|り}できるようにしたものが配列変数です。
+
+変数xの1番目、2番目、3番目…といった感じで、変数の名前は同じで、番号ごとに違う内容を記憶させておくことができます。配列変数を使う時には、「(カッコ)」の中に番号を書きます。
+
+
+\begin{description}
+    \item \textgt{\bf \ \ 変数 ( 番号 )}
+\end{description}
+
+たとえば、変数xの1番目は、x(1)のように書きます。x(1)とx(2)は別々な数字を覚えさせることができます。後は、いままでの変数と使い方は変わりません。ですから、
+
+
+
+\begin{description}
+    \item \textgt{\bf \ \ x(1) = 100}
+    \item \textgt{\bf \ \ x(2) = 200}
+    \item \textgt{\bf \ \ x(3) = 400}
+\end{description}
+
+
+のようにいくつも変数xの配列変数に代入することができます。
+
+カッコの中の番号は、0から始まって好きな数まで入れていくことができます。この番号を\ruby{配列要素}{はい|れつ|よう|そ}と呼んでいます。番号は実は、数字だけでなく変数を使うことができます。つまり、
+
+\begin{description}
+    \item \textgt{\bf \ \ a=3}
+    \item \textgt{\bf \ \ x(a) = 500}
+\end{description}
+
+と書いた場合は、x(3)に500という数字が代入されます。
+
+同じ変数に複数の値が入るということで、ちょっと難しいですが、これを使うことで同時に絵を動かすことができるようになります。
+
+ファイル→「開く」メニューから「array.hsp」を読み込んでください。
+
+[F5]キーで実行すると、同時に小さな絵が動きます。
+
+\begin{figure}[H]
+    \begin{center}
+      \includegraphics[keepaspectratio,width=8.811cm,height=6.946cm]{text04-img/s_array.png}
+      \caption{array.hspの実行画面}
+    \end{center}
+    \label{fig:prog_menu}
+\end{figure}
+
+ここでは、10個の絵を同時に動かしています。
+
+最初の絵はx(0)とy(0)、次の絵はx(1)とy(1)…という感じに、変数x,yに番号をつけて複数の絵を管理しています。次のようにrepeat命令とloop命令による繰り返しを使うことで、さらに便利に配列変数を使うことができます。
+
+
+\begin{description}
+    \item \textgt{\bf \ \ repeat 10\ \ \ \ ; 10回繰り返し}
+    \item \textgt{\bf \ \ \ \ pos x(cnt),y(cnt)\ \ ; 表示位置を設定する}
+    \item \textgt{\bf \ \ \ \ celput 1\ \ \ \ ; 画像を描画する}
+    \item \textgt{\bf \ \ loop\ \ \ \ \ \ ; 繰り返し終わり}
+\end{description}
+
+repeat〜loop命令で繰り返している間は、システム変数cntが0,1,2…と順番に変化します。これを使って配列の要素を切り替えながら、それぞれの座標に描画することになります。
+
+自分なりにプログラムを改造しながら、どのように変化するか確認してみましょう。
+
+今は10個の絵を動かしていますが、もっと多くするにはどうすればいいか考えてみましょう。
+
+%2369
+
+%2369
+\newpage
+\subsection{キーボードで絵を動かしてみよう}
+
+スクリプトエディタの、ファイル→「開く」メニューから「move.hsp」を読み込んで実行してみてください。
+
+
+\begin{figure}[H]
+    \begin{center}
+      \includegraphics[keepaspectratio,width=10.61cm,height=11.229cm]{text04-img/s_move.png}
+      \caption{move.hspの実行画面}
+    \end{center}
+    \label{fig:prog_menu}
+\end{figure}
+
+これは背景とりんごを表示するプログラムですが、リンゴを「A」「W」「D」「X」のキーを押して動かすことができます。何だかゲームみたいですね。
+
+りんごをどのように動かしているのでしょうか。
+
+いままでは、「x=x+2」のような行を入れて、１コマずつ動かしていました。
+
+今度は、キーボードのボタンを押している時だけ、動くようにすればいいのです。
+
+そのために、以前にも使った条件判断の仕組みを利用します。
+
+キーボードが押されているかどうかを条件判断するために、新しい命令、getkeyの使い方を覚えておきましょう。
+
+\begin{description}
+    \item \textgt{\bf \ \ getkey 変数 , ‘キーの文字’}
+\end{description}
+
+と書くことで、指定した変数にキーが押されたかどうかが数値として代入されます。
+
+たとえば、
+
+
+\begin{description}
+    \item \textgt{\bf \ \ getkey a, ‘X’}
+\end{description}
+
+
+を実行すると、「X」キーの\ruby{状態}{じょう|たい}で変数aの値が0か1になります。
+
+
+\begin{description}
+    \item \textgt{\bf 「X」のキーが押されていない時は、変数aは0になります。}
+    \item \textgt{\bf 「X」のキーが押されている時は、変数aは1になります。}
+\end{description}
+
+キーの文字は、必ず大文字で’A’のように書く必要があるので注意してください。
+
+文字の代わりにキーコードと呼ばれる数字を\ruby{指定}{し|てい}することで、特殊なキーの状態を知ることもできます。
+
+
+\begin{description}
+    \item \textgt{\bf \ \ キーコード : 実際のキー}
+    \item \textgt{\bf \ {}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-   }
+    \item \textgt{\bf \ \ \ \ \ \ \ \ 1 \ \ \ : マウスの左ボタン}
+    \item \textgt{\bf \ \ \ \ \ \ \ \ 2 \ \ \ : マウスの右ボタン}
+    \item \textgt{\bf \ \ \ \ \ \ \ \ 8 \ \ \ : [BACKSPACE]}
+    \item \textgt{\bf \ \ \ \ \ \ \ \ 9 \ \ \ : [TAB]}
+    \item \textgt{\bf \ \ \ \ \ \ \ 13 \ \ \ : [ENTER]}
+    \item \textgt{\bf \ \ \ \ \ \ \ 16 \ \ \ : [SHIFT]}
+    \item \textgt{\bf \ \ \ \ \ \ \ 17 \ \ \ : [CTRL]}
+    \item \textgt{\bf \ \ \ \ \ \ \ 18 \ \ \ : [ALT]}
+    \item \textgt{\bf \ \ \ \ \ \ \ 32 \ \ \ : スペースキー}
+    \item \textgt{\bf \ \ \ \ \ \ \ 37 \ \ \ : カーソルキー[←]}
+    \item \textgt{\bf \ \ \ \ \ \ \ 38 \ \ \ : カーソルキー[↑]}
+    \item \textgt{\bf \ \ \ \ \ \ \ 39 \ \ \ : カーソルキー[→]}
+    \item \textgt{\bf \ \ \ \ \ \ \ 40 \ \ \ : カーソルキー[↓]}
+    \item \textgt{\bf \ \ \ 48〜57 \ \ \ : [0]〜[9]（メインキーボード）}
+    \item \textgt{\bf \ \ \ 65〜90 \ \ \ : [A]〜[Z]}
+    \item \textgt{\bf \ \ 96〜105 \ \ \ : [0]〜[9]（テンキー）}
+    \item \textgt{\bf \ 112〜121 \ \ \ : ファンクションキー [F1]〜[F10]}
+\end{description}
+
+こうして代入された0か1の値を条件判断によって、やりたい内容を書くことで色々なことに応用ができます。
+
+%2491
+%2491
+
+条件判断の方法をもう一度思い出してください。
+
+if命令の使い方、ルールを覚えていますか?
+
+\begin{description}
+    \item \textgt{\bf \ \ (HSPのルール)}
+    \item \textgt{\bf \ \ if命令により条件を判断することができる}
+    \item \textgt{\bf \ \ ifの後にスペースに続けて\ruby{条件式}{じょう|けん|しき}を指定します}
+    \item \textgt{\bf \ \ その後で「:」に続けて条件が正しい時に実行される命令を書きます}
+\end{description}
+
+\ \ (条件式はいくつか書き方があります)
+
+
+\ \ \ \ 条件式 \ \ \ \ \ \ \ \ \ 意味
+
+\ \ \ \ {}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-
+
+\ \ \ \ 変数名 =
+数値\ \ 変数の内容と数値が同じである
+
+\ \ \ \ 変数名 !
+数値\ \ 変数の内容と数値が同じではない
+
+\ \ \ \ 変数名 {\textless}
+数値\ \ 変数の内容より数値の方が大きい
+
+\ \ \ \ 変数名 {\textgreater}
+数値\ \ 変数の内容より数値の方が小さい
+
+下のプログラムがどのような意味か考えてみましょう。
+
+
+\begin{description}
+    \item \textgt{\bf \ \ getkey a,’A’}
+    \item \textgt{\bf \ \ if a=1 : x=x-4}
+\end{description}
+
+最初は、条件判断の仕組みがわかりにくいかもしれませんが、プログラムの１行目から、コンピューターが実行することを想像しながら、1つ1つ確認することが大切です。
+
+やがて、プログラムを見て、どのように動くのか想像ができるようになります。
+
+最初はちょっと難しく感じるかもしれませんが、慣れれば誰でも理解できるようになります。
+
+あせらず、わからない所はまわりの先生や友達に聞きながら、進んでいきましょう。
+
+\subsection{例題に挑戦しよう}
+
+ゲームが遊べた人は、以下の例題にも挑戦してみよう。
+
+・センサーボードのボタンを使ってみよう
+
+・照度センサーの値をもとに絵を動かそう
+
+・照度センサーを使ったゲームを遊んでみよう
+
+・センサーボードを使った応用例を考えてみよう
+
+
+例題の考え方がわからない時は、近くのTAか先生に聞いてください。
+
+わからない所は、そのままにせず、必ず答えを見つけてから先に進みましょう。
+
+%2586
+%2586
+\newpage
+\subsection{例題4-12　センサーボードの入力を使ってみよう}
+
+
+\begin{description}
+    \item \textgt{\bf 考え方}
+\end{description}
+
+キーボードの代わりにセンサーボードのボタンを使って絵を動かしてみましょう。
+
+move.hspのプログラムを改造して、センサーボードのボタンで絵を動かせるようにしましょう。
+
+\begin{figure}[H]
+    \begin{center}
+      \includegraphics[keepaspectratio,width=10.61cm,height=11.229cm]{text04-img/s_move.png}
+    \end{center}
+    \label{fig:prog_menu}
+\end{figure}
+
+\begin{description}
+    \item \textgt{\bf 例題4-12 答え}
+\end{description}
+
+以前に取り上げた、GPIOの番号とその役割を思い出してみてください。
+
+
+\begin{figure}[H]
+    \begin{center}
+      \includegraphics[keepaspectratio,width=10.372cm,height=6.89cm]{text04-img/s_gpio.png}
+    \end{center}
+    \label{fig:prog_menu}
+\end{figure}
+
+スイッチの状態などを知る場合は、gpioinという関数を使います。
+
+\begin{description}
+    \item \textgt{\bf \ \ 変数 = gpioin(GPIO番号)}
+\end{description}
+
+と書くことで、指定されたGPIO番号のスイッチがONかOFFかを調べることができます。
+
+変数には0か1の数字が代入されるので、条件判断を行うif命令で違う動作をさせることができます。
+
+
+\begin{description}
+    \item \textgt{\bf \ \ a = gpioin(5)}
+    \item \textgt{\bf \ \ if a=0 : x=x-4}
+\end{description}
+
+のように書くことで、変数aが0の時だけ「x=x-4」を実行させることができます。
+
+
+以下のようにプログラムを改造することで、センサーボードのボタンを条件判断で使うことができます。
+
+\begin{figure}[H]
+    \begin{center}
+      \includegraphics[keepaspectratio]{text04-img/s_gpioinif.png}
+    \end{center}
+    \label{fig:prog_menu}
+\end{figure}
+
+改造ができたらTAや周りの友達にも見せてあげましょう。
+
+
+以前に\ruby{乱数}{らん|すう}の使い方を学習したことを思い出してみましょう。
+
+「x=rnd(640)」は、0〜639(640通り)までのバラバラな数字を変数xに代入します。
+
+このような書き方を「\ruby{乱数}{らん|すう}」と呼んでいます。
+
+\begin{figure}[H]
+    \begin{center}
+      \includegraphics[keepaspectratio,width=11.906cm,height=5.662cm]{text04-img/s_rnd.png}
+    \end{center}
+    \label{fig:prog_menu}
+\end{figure}
+
+\begin{description}
+    \item \textgt{\bf \ \ (HSPのルール)}
+    \item \textgt{\bf \ \ 「変数=rnd(乱数の最大値)」でバラバラな数字を得ることができる}
+    \item \textgt{\bf \ \ 関数は、「変数=関数(パラメーター)」という書き方で使うことができる}
+\end{description}
+
+乱数が代入された変数を条件判断することで、でたらめな動きをする絵を作ることもできます。
+
+余裕がある人は、乱数を使った動きにも挑戦してみましょう。
+
+%2720
+%2720
+\newpage
+\subsection{例題4-13　\ruby{照度}{しょう|ど}センサーの値をもとに絵を動かそう}
+
+\begin{description}
+    \item \textgt{\bf 考え方}
+\end{description}
+
+センサーボードのボタンだけでなく、\ruby{照度}{しょう|ど}センサーを使うこともできます。
+
+照度センサーがどのような機能を持っているか、確認しておきましょう。
+
+
+ファイル→「開く」メニューから「luxmove.hsp」を読み込んでください。
+
+[F5]キーで実行すると、照度センサーの値が表示されると同時に小さな絵が動きます。
+
+\begin{figure}[H]
+    \begin{center}
+      \includegraphics[keepaspectratio,width=11.615cm,height=10.94cm]{text04-img/s_luxmovesrc.png}
+    \end{center}
+    \label{fig:prog_menu}
+\end{figure}
+
+左上に表示されている数値が照度センサーの値です。
+
+明るい時ほど大きい数字になるのがわかりますか?
+
+自分の手でセンサーを覆ったり、光を当ててみたりしながら値が変わることを確認してみましょう。
+
+確認ができたら、move.hspのプログラムを改造して、りんごの絵を照度センサーの値によって動かせるようにしてみましょう。
+
+
+\begin{description}
+    \item \textgt{\bf 例題4-13 答え}
+\end{description}
+
+
+「geti2c\_lux\_init」命令を最初に入れて１回だけ\ruby{初期化}{しょ|き|か}(準備)を行います。
+
+その後、一定時間ごとに「geti2c\_lux」命令を実行することで、rpz\_luxという変数にセンサーの値が代入されます。
+
+後は、rpz\_luxという変数の値をもとにプログラムで\ruby{処理}{しょ|り}を行います。
+
+改造ができたらTAや周りの友達にも見せてあげましょう。
+
+%2785
+%2785
+\newpage
+\subsection{例題4-14　照度センサーを使ったゲームを遊んでみよう}
+
+\begin{description}
+    \item \textgt{\bf 考え方}
+\end{description}
+
+
+アイデア\ruby{次第}{し|だい}で、キーボードだけでなく、センサー\ruby{類}{るい}を使ってゲームのようにすることができます。
+
+光センサーを使ったゲームを動かしてみましょう。
+
+
+スクリプトエディタの、ファイル→「開く」メニューから「catch.hsp」を読み込んで実行してみてください。
+
+
+\begin{description}
+    \item \textgt{\bf 例題4-14 答え}
+\end{description}
+
+センサーボードの光センサーから得た値を使って絵を動かしています。光センサーを手で\ruby{覆}{おお}ったり、\ruby{離}{はな}したりしてどうなるか確認してみましょう。
+
+光センサーが暗くなった時には、キャラクターが左に移動します。光センサーが明るくなった時には、キャラクターが右に移動します。
+
+
+\begin{figure}[H]
+    \begin{center}
+      \includegraphics[keepaspectratio,width=11.269cm,height=8.89cm]{text04-img/s_catch.png}
+      \caption{catch.hspの実行画面}
+    \end{center}
+    \label{fig:prog_menu}
+\end{figure}
+
+うまくキャラクターを移動させて、上から落ちてくるリンゴをキャッチしてみましょう。
+
+これは、いままでの応用ですが、センサーと動きのある画面を組み合わせるだけでも、面白いものが作れるはずです。gpio命令で、LEDを光らせたり、スイッチを読み取ったりということと、変数・条件判断を組み合わせれば、さらに\ruby{応用範囲}{おう|よう|はん|い}が広がります。
+
+%2844
+
+%2844
+\newpage
+\subsection{例題4-15　センサーボードを使った応用例を考えてみよう}
+
+
+\begin{description}
+    \item \textgt{\bf 考え方}
+\end{description}
+
+今まで覚えてきたことを組み合わせて、何ができるか考えてみましょう。家に帰ってから、考えてみて答えを書いてきてください。センサーボードで何ができるか、プログラムでどんなことができるか、もう一度思い出してみて、考えてみましょう。
+
+考えがまとまらない人は、いままでに動かしたプログラムを改造してみたいこと、センサーボードでやってみたいことを書いてみましょう。実際にプログラムを作る必要はありません。いっぱい考えついた人は、例題4-16と例題4-17の答えの欄に書いてみましょう。
+
+大切なことは、自分で何でも試してみることです。わからないことがあっても、実際に実行すれば結果がわかります。立ち止まらずに、どうなるか想像しながらプログラムを書いて実行することが、早く\ruby{上達}{じょう|たつ}するコツになります。それでもわからない時は、先生に聞いてみましょう。
+
+\begin{description}
+    \item \textgt{\bf 例題4-15 答え}
+\end{description}
+
+自分で考えた\ruby{応用例}{おう|よう|れい}を下に書いておきましょう。
+
+応用例ができたら、今まで覚えてきた命令でできることか考えてみましょう。
+
+実際に作れる人は、自分でプログラムを作ってみてください。
+
+%2879
+
+%2879
+\newpage
+\subsection{例題4-16　センサーボードの応用例をもっと考えてみよう(1)}
+
+\begin{description}
+    \item \textgt{\bf 例題4-16 答え}
+\end{description}
+
+%2909
+%2909
+\newpage
+\subsection{例題4-17　センサーボードの応用例をもっと考えてみよう(2)}
+
+\begin{description}
+    \item \textgt{\bf 例題4-17 答え}
+\end{description}
+
+
+% Last Part:
+%2942

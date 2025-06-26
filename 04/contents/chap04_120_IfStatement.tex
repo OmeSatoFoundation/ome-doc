@@ -1,3 +1,62 @@
+%264
+\newpage
+\subsection{\ruby{条件判断}{じょう|けん|はん|だん}の使い方}
+
+今回もまず、プログラミングのツールHSP(Hot Soup Processor)を\ruby{起動}{き|どう}して、プログラムを実行するための準備を始めましょう。左上のRaspberry Piメニューの「プログラミング」\ruby{項目}{こう|もく}にある、「HSP Script Editor」(HSPスクリプトエディタ)を起動してください。
+
+
+\begin{figure}[H]
+    \begin{center}
+      \includegraphics[keepaspectratio,width=7.31cm,height=6.562cm]{text04-img/s_hspmenu.png}
+      \caption{プログラミング項目のメニュー}
+    \end{center}
+\end{figure}
+
+
+いつも通りに、HSPスクリプトエディタを起動して作業を始めていきましょう。
+
+\begin{figure}[H]
+    \begin{center}
+      \includegraphics[keepaspectratio,width=7.31cm,height=6.562cm]{text04-img/s_hsed.png}
+      \caption{HSPスクリプトエディタを起動したところ}
+    \end{center}
+    \label{fig:prog_menu}
+\end{figure}
+\clearpage
+
+
+
+まずは、プログラムを動かして試してみましょう。
+
+ファイル→「開く」メニューから /home/ユーザー名/04 フォルダの中にある「swhandan.hsp」を読み込んでください。
+作業は、すべて「/home/ユーザー名/04」フォルダで行ないます。
+
+見つからない場合は、まわりの友達か、近くの先生に聞いてみてください。
+
+
+\begin{figure}[H]
+    \begin{center}
+      \includegraphics[keepaspectratio,width=7.338cm,height=5.493cm]{text04-img/s_loadfile.png}
+      \caption{フォルダから読み込む画面}
+    \end{center}
+    \label{fig:prog_menu}
+\end{figure}
+
+
+「swhandan.hsp」は、センサーボード上のスイッチを押すとメッセージが\ruby{変}{か}わるかんたんなプログラムです。まずは、[F5]キーを押して\ruby{実行}{じっ|こう}してみましょう。
+%330
+
+
+\begin{figure}[H]
+    \begin{center}
+      \includegraphics[keepaspectratio,width=7.673cm,height=6.05cm]{text04-img/s_swhandan.png}
+      \caption{swhandan.hspの実行画面}
+    \end{center}
+    \label{fig:prog_menu}
+\end{figure}
+
+
+%347
 %350
 
 第2回で出てきた条件判断について思い出してみましょう。
@@ -121,13 +180,3 @@
 のように書くことで、変数aが0の時だけ「*hata」の場所から実行させることができます。
 
 (センサーボードのスイッチは押された時に0の値になります。1ではないので注意しましょう。)
-
-
-
-
-
-
-
-
-
-
