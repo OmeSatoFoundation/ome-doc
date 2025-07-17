@@ -58,13 +58,43 @@
 ファイル→「開く」メニューから「/home/ユーザー名/sample/hgimg4」内の「light\_test3.hsp」を読み込んでください。
 
 
-\begin{figure}[H]
-    \begin{center}
-      \includegraphics[keepaspectratio,width=10.971cm,height=8.229cm]{text04-img/s_lighttest3s.png}
-      \caption{light\_test3s.hspのプログラム}
-    \end{center}
-    \label{fig:prog_menu}
-\end{figure}
+\begin{lstlisting}[caption=light\_test3.hspのプログラムの一部]
+#include "hgimg4.as"
+
+title "HGIMG4 Test"
+
+    ;       ポイントライト色変化テスト
+    ;       マウス/タッチドラッグでカメラを動かすことができます
+    ;
+    randomize
+
+    gpreset
+    gpresetlight 1,1                        ; ポイントライトを1個追加する
+
+    setcls CLSMODE_SOLID, $404040           ; 背景色
+
+    setcolor GPOBJ_LIGHT, 0.5,0.5,0.5       ; 標準ライトカラーを設定
+    setdir GPOBJ_LIGHT, 0.2,0.2,0.2         ; 標準アンビエントカラーを設定
+
+    ;       箱をライトとして設定します
+    ;       何もないモデルをライトにする場合はgpnullで生成してください
+    gpbox id_model, 0.5, $ffffff            ; 箱ノードを生成する
+    gplight id_model, GPOBJ_LGTOPT_POINT,10 ; ポイントライトとして設定する
+    setcolor id_model, 1,1,1                        ; ライトカラーを設定
+    gpuselight id_model                             ; ポイントライトを使用する
+
+    ;       モデルをたくさん配置する
+    i=-1
+    mdx=10:mdz=10                           ; X,Z方向の個数
+    px=20.0/mdx:pz=20.0/mdz                 ; 間隔を計算する
+    z=-10.0                                 ; 配置開始Z座標
+    repeat mdz
+    x=-10.0                                 ; 配置開始X座標
+    repeat mdx
+        if i<0 {
+            ;gpload id_base,"res/duck"; モデル読み込み
+
+\end{lstlisting}
 
 [F5]キーで実行すると絵が動きます。
 
@@ -348,12 +378,35 @@ if a=1 : x=x-4
 
 move.hspのプログラムを改造して、センサーボードのボタンで絵を動かせるようにしましょう。
 
-\begin{figure}[H]
-    \begin{center}
-      \includegraphics[keepaspectratio,width=10.61cm,height=11.229cm]{text04-img/s_move.png}
-    \end{center}
-    \label{fig:prog_menu}
-\end{figure}
+\begin{lstlisting}[caption=move.hspのプログラム]
+#include "hsp3dish.as"
+
+    celload "sozai4.jpg",1  ; 背景
+    celload "apple.png",2   ; りんご
+
+    x=300:y=200
+
+*main
+    redraw 0
+    pos 0,0
+    celput 1        ; 背景を表示
+    gmode 2         ; 重ね合わせる
+    pos x,y         ; りんごを表示
+    celput 2
+    redraw 1
+    await 1000/30
+
+    getkey a,'A'
+    if a=1 : x=x-4
+    getkey a,'W'
+    if a=1 : y=y-4
+    getkey a,'D'
+    if a=1 : x=x+4
+    getkey a,'X'
+    if a=1 : y=y+4
+
+    goto *main
+\end{lstlisting}
 
 \begin{description}
     \item \textgt{\bf 例題4-12 答え}
@@ -390,12 +443,16 @@ if a=0 : x=x-4
 
 以下のようにプログラムを改造することで、センサーボードのボタンを条件判断で使うことができます。
 
-\begin{figure}[H]
-    \begin{center}
-      \includegraphics[keepaspectratio]{text04-img/s_gpioinif.png}
-    \end{center}
-    \label{fig:prog_menu}
-\end{figure}
+\begin{lstlisting}[numbers=none,caption=条件判断でセンサーボードのボタンを使う]
+a=gpioin(5)
+if a=0 : x=x-4
+a=gpioin(6)
+if a=0 ; x=x+4
+getkey a, 'W'
+if a=1 : y=y-4
+getkey a, 'X'
+if a=1 : y=y+4
+\end{lstlisting}
 
 改造ができたらTAや周りの友達にも見せてあげましょう。
 
@@ -441,12 +498,33 @@ if a=0 : x=x-4
 
 [F5]キーで実行すると、照度センサーの値が表示されると同時に小さな絵が動きます。
 
-\begin{figure}[H]
-    \begin{center}
-      \includegraphics[keepaspectratio,width=11.615cm,height=10.94cm]{text04-img/s_luxmovesrc.png}
-    \end{center}
-    \label{fig:prog_menu}
-\end{figure}
+\begin{lstlisting}[caption=luxmove.hspのプログラム]
+#include "hsp3dish.as"
+#include "rpz-gpio.as"
+
+        redraw 0
+        mes "Reset..."
+        redraw 1
+
+        celload "tamane_s1.png",1
+        geti2c_lux_init
+
+*main
+        geti2c_lux
+        x=rpz_lux/32
+        y=60
+
+        redraw 0
+        color 255,255,255:boxf
+        color 0,0,0:pos 0,0:mes "="+rpz_lux
+        pos x,y
+        gmode 2
+        celput 1,0,0.5,0.5
+
+        redraw 1
+        await 1000/30
+        goto *main
+\end{lstlisting}
 
 左上に表示されている数値が照度センサーの値です。
 

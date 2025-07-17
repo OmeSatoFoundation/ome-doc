@@ -47,13 +47,46 @@
 すべてのコインを取るとあなたの勝ちです。逆に、\ruby{地面}{じ|めん}に置かれている\ruby{矢}{や}に当たってしまうとゲームオーバーになってしまいます。
 
 
-\begin{figure}[H]
-    \begin{center}
-      \includegraphics[keepaspectratio,width=11.192cm,height=8.393cm]{text04-img/s_jumpsrc.png}
-      \caption{ジャンプアップゲームのプログラム}
-    \end{center}
-    \label{fig:prog_menu}
-\end{figure}
+\begin{lstlisting}[caption=jump.hspのプログラムの一部]
+#include "hsp3dish.as"
+
+sx=40:sy=40     ; セルの大きさ
+mx=16:my=12     ; マップを並べる大きさ
+wx=640:wy=480   ; 画面のサイズ
+
+hitparts=3
+mysizex=64:mysizey=64
+myspd=4
+grav=14
+fps=60
+
+screen 0,wx,wy
+
+;       素材の読み込み
+celload "parts.png",2
+celdiv 2,sx,sy
+celload "tamadot.png",3
+celdiv 3,mysizex,mysizey
+
+;       音のデータを登録
+mmload "se_block2.wav",0
+mmload "se_break3.wav",1
+mmload "se_foot.wav",2
+mmload "se_jump2.wav",3
+mmload "se_puyo.wav",4
+
+*gtitle
+	;       タイトル画面
+	;mmplay 5
+	celload "yama.jpg",1
+
+*gtmain
+	;       タイトル画面のループ
+	redraw 0
+	pos 0,0:gmode 0,wx,wy:gcopy 1,0,0
+	color 255,255,255
+
+\end{lstlisting}
 
 \newpage
 \subsection{例題に挑戦しよう}
@@ -89,12 +122,37 @@
 以下の場所を探して修正します。
 
 
-\begin{figure}[H]
-    \begin{center}
-      \includegraphics[keepaspectratio,width=10.478cm,height=12.07cm]{text04-img/s_jumpmapsrc.png}
-    \end{center}
-    \label{fig:prog_menu}
-\end{figure}
+\begin{lstlisting}[firstnumber=58,caption=jamp.hspのプログラムの一部]
+*start
+	;       マップデータの読み込み
+	sdim mapd,$10000
+	notesel mapd
+	cr="\n"
+	;
+	mapd+="                        "+cr
+	mapd+="                        "+cr
+	mapd+="                        "+cr
+	mapd+="                  *     "+cr
+	mapd+="          *      00     "+cr
+	mapd+="         000            "+cr
+	mapd+="                        "+cr
+	mapd+="      00**    00     00 "+cr
+	mapd+="        00              "+cr
+	mapd+="   ++++   00            "+cr
+	mapd+="   0000         00      "+cr
+	mapd+="         0000           "+cr
+	mapd+="     ***                "+cr
+	mapd+="++  00000     00   00   "+cr
+	mapd+="00          00          "+cr
+	mapd+="          00           *"+cr
+	mapd+="                      00"+cr
+	mapd+="        0000            "+cr
+	mapd+="   ***                  "+cr
+	mapd+="  00000            000  "+cr
+	mapd+="             000        "+cr
+	mapd+="        00            00"+cr
+	mapd+="000000000000000000000000"+cr
+\end{lstlisting}
 
 
 
@@ -142,12 +200,17 @@
 
 
 
-\begin{figure}[H]
-    \begin{center}
-      \includegraphics[keepaspectratio,width=11.853cm,height=8.266cm]{text04-img/s_jumpsrcpart.png}
-    \end{center}
-    \label{fig:prog_menu}
-\end{figure}
+\begin{lstlisting}[firstnumber=3,caption=jump.hspのプログラムの一部]
+	sx=40:sy=40     ; セルの大きさ
+	mx=16:my=12     ; マップを並べる大きさ
+	wx=640:wy=480   ; 画面のサイズ
+
+	hitparts=3
+	mysizex=64:mysizey=64
+	myspd=4
+	grav=14
+	fps=60
+\end{lstlisting}
 
 
 「セルの大きさ」「マップを並べる大きさ」「画面のサイズ」はそのままにしておいてください。
@@ -181,12 +244,13 @@ mypd、gravといった変数の値を変えるとどうなるか、試してみ
 
 画像を書き換えて、自分だけのゲーム画面を作ることもできます。
 
-\begin{figure}[H]
-    \begin{center}
-      \includegraphics[keepaspectratio]{text04-img/s_jumpsrcpart.png}
-    \end{center}
-    \label{fig:prog_menu}
-\end{figure}
+\begin{lstlisting}[firstnumber=15,caption=jump.hspのプログラムの一部]
+	;       素材の読み込み
+	celload "parts.png",2
+	celdiv 2,sx,sy
+	celload "tamadot.png",3
+	celdiv 3,mysizex,mysizey
+\end{lstlisting}
 
 celload命令で読み込まれているファイルが、ゲームに出てくる画像となります。
 
@@ -194,12 +258,15 @@ celload命令で読み込まれているファイルが、ゲームに出てく�
 
 面を構成するパーツは、「parts.png」という画像にまとめられています。
 
-\begin{figure}[H]
-    \begin{center}
-      \includegraphics[keepaspectratio,width=10.689cm,height=3.538cm]{text04-img/s_jumpbackgroundsrc.png}
-    \end{center}
-    \label{fig:prog_menu}
-\end{figure}
+\begin{lstlisting}[firstnumber=50,caption=jump.hspのプログラムの一部]
+*ginit
+    ;       ゲームスタート時の初期化
+    stage=1
+    celload "yama2.jpg",1
+    gsel 1
+    bgmaxx=ginfo_sx:bgmaxy=ginfo_sy
+    gsel 0
+\end{lstlisting}
 
 また、ゲームの背景は、「yama2.jpg」という画像が使われています。
 
@@ -289,12 +356,29 @@ GIMPを使って、ジャンプアップゲームの絵を改造してみまし�
 
 ジャンプアップゲーム(jump.hsp)のプログラムを改造して、タイトル画面を自分だけのものにしてみましょう。
 
-\begin{figure}[H]
-    \begin{center}
-      \includegraphics[keepaspectratio,width=14.42cm,height=9.791cm]{text04-img/s_jumptitlesrc.png}
-    \end{center}
-    \label{fig:prog_menu}
-\end{figure}
+\begin{lstlisting}[firstnumber=28,caption=jump.hspのプログラムの一部]
+*gtitle
+	;       タイトル画面
+	;mmplay 5
+	celload "yama.jpg",1
+
+*gtmain
+	;       タイトル画面のループ
+	redraw 0
+	pos 0,0:gmode 0,wx,wy:gcopy 1,0,0
+	color 255,255,255
+	font msgothic,40,1
+	pos 150,100
+	mes "ジャンプアップ♪"
+	font msgothic,26,1
+	pos 148,260
+	mes "Enterキーを押してスタート"
+	redraw 1
+	await 1000/fps
+	stick key
+	if key&32 : goto *ginit         ; [Enter]が押されたか?
+	goto *gtmain
+\end{lstlisting}
 
 
 \begin{description}

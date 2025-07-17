@@ -71,13 +71,43 @@
 
 
 
-\begin{figure}[H]
-    \begin{center}
-      \includegraphics[keepaspectratio,width=9.657cm,height=11.229cm]{text04-img/s_kicksrc.png}
-      \caption{ミニサッカーゲームのプログラム}
-    \end{center}
-    \label{fig:prog_menu}
-\end{figure}
+\begin{lstlisting}[caption=ミニサッカーゲームのプログラムの一部]
+#include "hsp3dish.as"
+world_x = 640; ウィンドウ全体のＸ座標
+world_y = 480;ウィンドウ全体のＹ座標
+bpx = 0 : bpy = 0       ; ボールの移動量
+gsx = 128 : gsy = 256   ; ゴールのX,Yサイズ
+gx1 = 0 : gy1 = 112     ; ゴール1のＸ座標Ｙ座標
+gx2 = 512 : gy2 = 112   ; ゴール2のＸ座標Ｙ座標
+kickx = 1.8             ; キックでボールが動く強さX
+kicky = 2.0             ; キックでボールが動く強さY
+
+randomize
+*menu
+
+screen 0, world_x, world_y
+
+        title "ミニサッカー"
+        repeat
+
+        redraw 0
+        font msgothic, 80, 1
+        pos 80,140 : mes "ミニサッカー"
+        font msgothic, 32, 0
+        pos 170, 300 : mes "Enterキーでスタート"
+        redraw 1
+
+        await 30
+        getkey a, 13 : if a : break
+
+        loop
+
+        cls 4
+        score1 = 0
+        score2 = 0
+
+*main2
+\end{lstlisting}
 
 
 \newpage
@@ -111,13 +141,26 @@
 \ruby{顔文字}{かお|も|じ}(\^{}\^{}) みたいですね。
 
 
-\begin{figure}[H]
-    \begin{center}
-      \includegraphics[keepaspectratio,width=12.326cm,height=8.123cm]{text04-img/s_kicksrc1.png}
-      \caption{ミニサッカーゲームのプログラム}
-    \end{center}
-    \label{fig:prog_menu}
-\end{figure}
+\begin{lstlisting}[firstnumber=64,caption=ミニサッカーゲームのプログラムの一部]
+;人1を表示するところ-------------------------------------------------------------------------
+
+    color 255,255,255 ;白
+
+    pos x1, y1 + 0 * 16 : mes "　○／"
+    pos x1, y1 + 1 * 16 : mes "／１　"
+    pos x1, y1 + 2 * 16 : mes "　ハ　"
+
+;人2を表示するところ-------------------------------------------------------------------------
+
+    color 0,255,255 ;水色
+
+    pos x2, y2 + 0 * 16 : mes "　○／"
+    pos x2, y2 + 1 * 16 : mes "／２　"
+    pos x2, y2 + 2 * 16 : mes "　ハ　"
+
+    redraw 1
+;表示終わりウェイト--------------------------------------------------------------------------
+\end{lstlisting}
 
 
 
@@ -182,13 +225,24 @@ mes命令は、
 ゲームの中に出てくるサッカーボールもmes命令によって表示されています。
 
 
-\begin{figure}[H]
-    \begin{center}
-      \includegraphics[keepaspectratio,width=14.499cm,height=8.123cm]{text04-img/s_kicksrc2.png}
-      \caption{ミニサッカーゲームのプログラム}
-    \end{center}
-    \label{fig:prog_menu}
-\end{figure}
+\begin{lstlisting}[firstnumber=48,caption=ミニサッカーゲームのプログラムの一部]
+;全画面を消すところ-    -       -       -       -       -       -       -       -
+    redraw 0
+
+    color 0,0,128 : pos 0, 0: boxf ;画面クリア
+    color 0,0,255
+    boxf gx1,gy1,gx1+gsx,gy1+gsy
+    boxf gx2,gy2,gx2+gsx,gy2+gsy
+
+    color 255,255,255
+    pos world_x / 2 - 60, 0 : mes "1P:" + score1 + " .vs. 2P:" + score2
+
+;ボールを表示するところ----------------------------------------------------------------------
+
+    color 0, 255, 0 ;グリーン
+    pos bx, by : mes "●"
+
+\end{lstlisting}
 
 
 このボールも変えることができます。
@@ -258,13 +312,16 @@ boxf命令は、好きな大きさの\ruby{四角形}{し|かく|けい}を画�
 この値を変更することで、ゲームの動きが大きく変わります。
 
 
-\begin{figure}[H]
-    \begin{center}
-      \includegraphics[keepaspectratio,width=13.044cm,height=5.106cm]{text04-img/s_kicksrc4.png}
-      \caption{ミニサッカーゲームのプログラム}
-    \end{center}
-    \label{fig:prog_menu}
-\end{figure}
+\begin{lstlisting}[firstnumber=3,capiton=ミニサッカーゲームのプログラムの一部]
+world_x = 640; ウィンドウ全体のＸ座標
+world_y = 480;ウィンドウ全体のＹ座標
+bpx = 0 : bpy = 0       ; ボールの移動量
+gsx = 128 : gsy = 256   ; ゴールのX,Yサイズ
+gx1 = 0 : gy1 = 112     ; ゴール1のＸ座標Ｙ座標
+gx2 = 512 : gy2 = 112   ; ゴール2のＸ座標Ｙ座標
+kickx = 1.8             ; キックでボールが動く強さX
+kicky = 2.0             ; キックでボールが動く強さY
+\end{lstlisting}
 
 
 でたらめに書き直してもエラーになったり、処理が遅くなったりするので、あまり大きく変えないようにしましよう。

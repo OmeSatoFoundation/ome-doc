@@ -230,12 +230,25 @@ mes命令、font命令、color命令、pos命令も書き換えることで、�
 \end{figure}
 
 
-\begin{figure}[H]
-    \begin{center}
-      \includegraphics[keepaspectratio,width=11.245cm,height=8.07cm]{text04-img/s_applehspsrc.png}
-    \end{center}
-    \label{fig:prog_menu}
-\end{figure}
+\begin{lstlisting}[caption=apple.hspのプログラム]
+#include "hsp3dish.as"
+
+celload "sozai4.jpg",1  ; 背景
+celload "apple.png",2   ; りんご
+
+x=300:y=200
+
+*main
+        redraw 0
+        pos 0,0
+        celput 1        ; 背景を表示
+        gmode 2         ; 重ね合わせる
+        pos x,y         ; りんごを表示
+        celput 2
+        redraw 1
+        await 1000/30
+        goto *main
+\end{lstlisting}
 
 このように複数の番号を登録して、celput命令を使うことで絵を重ねて表示することができます。
 
@@ -341,12 +354,26 @@ celput命令には、実はもっと多くのパラメーターがあります�
 今度はリンゴが動いているのがわかると思います。
 
 
-\begin{figure}[H]
-    \begin{center}
-      \includegraphics[keepaspectratio,width=10.954cm,height=9.213cm]{text04-img/s_fallsrc.png}
-    \end{center}
-    \label{fig:prog_menu}
-\end{figure}
+\begin{lstlisting}[caption=fall.hspのプログラム]
+#include "hsp3dish.as"
+celload "sozai4.jpg",1  ; 背景
+celload "apple.png",2   ; りんご
+
+        x=300:y=0
+*main
+        redraw 0
+        pos 0,0
+        celput 1        ; 背景を表示
+        gmode 2         ; 重ね合わせる
+        pos x,y         ; りんごを表示
+        celput 2
+        redraw 1
+        await 1000/30
+
+        ;       りんごを動かす
+        y=y+2
+        goto *main
+\end{lstlisting}
 
 
 プログラムを見てみましょう。
@@ -410,13 +437,26 @@ celput命令には、実はもっと多くのパラメーターがあります�
 
 りんごを動かすプログラム(apple.hsp)を改造して動きを変えてみましょう。
 
+\begin{lstlisting}[caption=fall.hspのプログラム]
+#include "hsp3dish.as"
+celload "sozai4.jpg",1  ; 背景
+celload "apple.png",2   ; りんご
 
-\begin{figure}[H]
-    \begin{center}
-      \includegraphics[keepaspectratio,width=10.954cm,height=9.213cm]{text04-img/s_fallsrc.png}
-    \end{center}
-    \label{fig:prog_menu}
-\end{figure}
+        x=300:y=0
+*main
+        redraw 0
+        pos 0,0
+        celput 1        ; 背景を表示
+        gmode 2         ; 重ね合わせる
+        pos x,y         ; りんごを表示
+        celput 2
+        redraw 1
+        await 1000/30
+
+        ;       りんごを動かす
+        y=y+2
+        goto *main
+\end{lstlisting}
 
 変数xとyが、横と縦の位置を記憶していることはわかりましたか。
 
