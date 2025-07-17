@@ -144,21 +144,21 @@
 
 
 
-\begin{description}
-    \item \textgt{\bf \ \ x(1) = 100}
-    \item \textgt{\bf \ \ x(2) = 200}
-    \item \textgt{\bf \ \ x(3) = 400}
-\end{description}
+\begin{lstlisting}[numbers=none]
+x(1) = 100
+x(2) = 200
+x(3) = 400
+\end{lstlisting}
 
 
 のようにいくつも変数xの配列変数に代入することができます。
 
 カッコの中の番号は、0から始まって好きな数まで入れていくことができます。この番号を\ruby{配列要素}{はい|れつ|よう|そ}と呼んでいます。番号は実は、数字だけでなく変数を使うことができます。つまり、
 
-\begin{description}
-    \item \textgt{\bf \ \ a=3}
-    \item \textgt{\bf \ \ x(a) = 500}
-\end{description}
+\begin{lstlisting}[numbers=none]
+a=3
+x(a) = 500
+\end{lstlisting}
 
 と書いた場合は、x(3)に500という数字が代入されます。
 
@@ -181,12 +181,12 @@
 最初の絵はx(0)とy(0)、次の絵はx(1)とy(1)…という感じに、変数x,yに番号をつけて複数の絵を管理しています。次のようにrepeat命令とloop命令による繰り返しを使うことで、さらに便利に配列変数を使うことができます。
 
 
-\begin{description}
-    \item \textgt{\bf \ \ repeat 10\ \ \ \ ; 10回繰り返し}
-    \item \textgt{\bf \ \ \ \ pos x(cnt),y(cnt)\ \ ; 表示位置を設定する}
-    \item \textgt{\bf \ \ \ \ celput 1\ \ \ \ ; 画像を描画する}
-    \item \textgt{\bf \ \ loop\ \ \ \ \ \ ; 繰り返し終わり}
-\end{description}
+\begin{lstlisting}[caption=繰り返しの使い方,numbers=none]
+repeat 10               ; 10回繰り返し
+    pos x(cnt),y(cnt)   ; 表示位置を設定する
+    celput 1            ; 画像を描画する
+loop                    ; 繰り返し終わり
+\end{lstlisting}
 
 repeat〜loop命令で繰り返している間は、システム変数cntが0,1,2…と順番に変化します。これを使って配列の要素を切り替えながら、それぞれの座標に描画することになります。
 
@@ -232,9 +232,9 @@ repeat〜loop命令で繰り返している間は、システム変数cntが0,1,
 たとえば、
 
 
-\begin{description}
-    \item \textgt{\bf \ \ getkey a, ‘X’}
-\end{description}
+\begin{lstlisting}[numbers=none]
+getkey a, 'X'
+\end{lstlisting}
 
 
 を実行すると、「X」キーの\ruby{状態}{じょう|たい}で変数aの値が0か1になります。
@@ -304,10 +304,10 @@ if命令の使い方、ルールを覚えていますか?
 下のプログラムがどのような意味か考えてみましょう。
 
 
-\begin{description}
-    \item \textgt{\bf \ \ getkey a,’A’}
-    \item \textgt{\bf \ \ if a=1 : x=x-4}
-\end{description}
+\begin{lstlisting}[caption=プログラム,numbers=none]
+getkey a, 'A'
+if a=1 : x=x-4
+\end{lstlisting}
 
 最初は、条件判断の仕組みがわかりにくいかもしれませんが、プログラムの１行目から、コンピューターが実行することを想像しながら、1つ1つ確認することが大切です。
 
@@ -380,10 +380,10 @@ move.hspのプログラムを改造して、センサーボードのボタンで
 変数には0か1の数字が代入されるので、条件判断を行うif命令で違う動作をさせることができます。
 
 
-\begin{description}
-    \item \textgt{\bf \ \ a = gpioin(5)}
-    \item \textgt{\bf \ \ if a=0 : x=x-4}
-\end{description}
+\begin{lstlisting}[numbers=none]
+a = gpioin(5)
+if a=0 : x=x-4
+\end{lstlisting}
 
 のように書くことで、変数aが0の時だけ「x=x-4」を実行させることができます。
 

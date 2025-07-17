@@ -69,33 +69,33 @@
 
 
 
-\begin{description}
-    \item \textgt{\bf *hata}
-    \item \textgt{\bf \ \ \ \ redraw 0}
-    \item \textgt{\bf \ \ \ \ font {\textquotedbl}{\textquotedbl},60}
-    \item \textgt{\bf \ \ \ \ pos 60,180}
-    \item \textgt{\bf \ \ \ \ color 0,0,255}
-    \item \textgt{\bf \ \ \ \ mes {\textquotedbl}スイッチ押して{\textquotedbl}}
-    \item \textgt{\bf \ \ \ \ redraw 1}
-    \item \textgt{\bf \ \ \ \ await 16}
-    \item \textgt{\bf \ \ \ \ if gpioin(5)=0 : goto *hata2}
-    \item \textgt{\bf \ \ \ \ goto *hata}
-\end{description}
+\begin{lstlisting}[firstnumber=3]
+*hata
+    redraw 0
+    font "",60
+    pos 60,180
+    color 0,0,255
+    mes "スイッチ押して"
+    redraw 1
+    await 16
+    if gpioin(5)=0 : goto *hata2
+    goto *hata
+\end{lstlisting}
 
 ここでセンサーボードのスイッチを押すと流れが変わります。
 
-\begin{description}
-    \item \textgt{\bf *hata2}
-    \item \textgt{\bf \ \ \ \ redraw 0}
-    \item \textgt{\bf \ \ \ \ font {\textquotedbl}{\textquotedbl},60}
-    \item \textgt{\bf \ \ \ \ pos 60,180}
-    \item \textgt{\bf \ \ \ \ color 255,0,0}
-    \item \textgt{\bf \ \ \ \ mes {\textquotedbl}押しましたね!{\textquotedbl}}
-    \item \textgt{\bf \ \ \ \ redraw 1}
-    \item \textgt{\bf \ \ \ \ await 16}
-    \item \textgt{\bf \ \ \ \ if gpioin(6)=0 : goto *hata}
-    \item \textgt{\bf \ \ \ \ goto *hata2}
-\end{description}
+\begin{lstlisting}[firstnumber=14]
+*hata2
+    redraw 0
+    font "",60
+    pos 60,180
+    color 255,0,0
+    mes "押しましたね!"
+    redraw 1
+    await 16
+    if gpioin(6)=0 : goto *hata
+    goto *hata2
+\end{lstlisting}
 
 
 「*hata2」から「goto *hata2」までの間で「押しましたね」という文字を表示しています。
@@ -126,11 +126,9 @@
 
 スイッチが接続されているGPIOの番号を指定することで\ruby{変数}{へん|すう}に値を入れることができます。
 
-\begin{description}
-    \item \textgt{\bf \ \ a = gpioin(5)}
-\end{description}
-
-
+\begin{lstlisting}[numbers=none]
+    a = gpioin(5)
+\end{lstlisting}
 
 と書くことで、スイッチ1がONならば0、OFFならば1が変数に代入されます。
 
@@ -163,10 +161,10 @@
 つまり、
 
 
-\begin{description}
-    \item \textgt{\bf \ \ a = gpioin(5)}
-    \item \textgt{\bf \ \ if a=0 : goto *hata}
-\end{description}
+\begin{lstlisting}[numbers=none]
+    a = gpioin(5)
+    if a=0 : goto *hata
+\end{lstlisting}
 
 
 のように書くことで、変数aが0の時だけ「*hata」の場所から実行させることができます。
