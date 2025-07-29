@@ -261,7 +261,7 @@
 \begin{frame}[fragile]
   \frametitle{文章を読み上げてもらう -1}
   
-  \begin{lstlisting}[title=\textasciitilde/06/openjtalk.hsp,label=openjtalk.hsp]
+  \begin{lstlisting}[title=\textasciitilde/07/openjtalk.hsp,label=openjtalk.hsp]
   #include "hsp3dish.as"
   #include "jtalk.as"
 
@@ -289,7 +289,7 @@
 
 \begin{frame}[fragile]
   \frametitle{声音を変えてみる -1}
-  \begin{lstlisting}[title=\textasciitilde/06/voice.hsp,label=voice.hsp]
+  \begin{lstlisting}[title=\textasciitilde/07/voice.hsp,label=voice.hsp]
   #include "hsp3dish.as"
   #include "jtalk.as"
 
@@ -319,7 +319,7 @@
 
 \begin{frame}[fragile]
   \frametitle{読み上げる文字列に変数を使う -1}
-  \begin{lstlisting}[title=\textasciitilde/06/readdate.hsp,label=readdate.hsp]
+  \begin{lstlisting}[title=\textasciitilde/07/readdate.hsp,label=readdate.hsp]
     #include "hsp3dish.as"
     #include "jtalk.as"
 
@@ -355,7 +355,7 @@
 
 \begin{frame}[fragile]
   \frametitle{読み上げる文字列に変数を使う -3}
-  \begin{lstlisting}[title=\textasciitilde/06/readcalc.hsp,label=readcalc.hsp]
+  \begin{lstlisting}[title=\textasciitilde/07/readcalc.hsp,label=readcalc.hsp]
     #include "hsp3dish.as"
     #include "jtalk.as"
 
@@ -377,7 +377,7 @@
 
 \begin{frame}[fragile]
   \frametitle{読み上げる文字列に変数を使う\\(コード続き)}
-  \begin{lstlisting}[title=\textasciitilde/06/readcalc.hsp,label=readcalc.hsp]
+  \begin{lstlisting}[title=\textasciitilde/07/readcalc.hsp,label=readcalc.hsp]
     <#blue#;答え計算#>
     kotae = a + b
 
@@ -591,7 +591,7 @@
 
 \begin{frame}[fragile]
   \frametitle{HSPで\\Juliusの認識結果を使おう -2}
-  \begin{lstlisting}[title=\textasciitilde/06/julius.hsp,label=julius.hsp]
+  \begin{lstlisting}[title=\textasciitilde/07/julius.hsp,label=julius.hsp]
   #include "hsp3dish.as"
   #include "julius.as"
 
@@ -611,7 +611,7 @@
 
 \begin{frame}[fragile]
   \frametitle{HSPで\\Juliusの認識結果を使おう -3}
-  \begin{lstlisting}[title=\textasciitilde/06/julius.hsp,label=julius.hsp]
+  \begin{lstlisting}[title=\textasciitilde/07/julius.hsp,label=julius.hsp]
   sockopen sockidx, domain, PORT
 
   if stat != 0 { <#blue#;エラー処理#>
@@ -633,7 +633,7 @@
 
 \begin{frame}[fragile]
   \frametitle{HSPで\\Juliusの認識結果を使おう -4}
-  \begin{lstlisting}[title=\textasciitilde/06/julius.hsp,label=julius.hsp,basicstyle=\scriptsize]
+  \begin{lstlisting}[title=\textasciitilde/07/julius.hsp,label=julius.hsp,basicstyle=\scriptsize]
   repeat -1
     if is_recieved(sockidx) = 0 {
       get_word_list words, cm
@@ -666,7 +666,7 @@
 
 \begin{frame}[fragile]
   \frametitle{音声でLEDのON OFFをする -1}
-  \begin{lstlisting}[title=\textasciitilde/06/ledvoice.hsp,label=ledvoice.hsp]
+  \begin{lstlisting}[title=\textasciitilde/07/ledvoice.hsp,label=ledvoice.hsp]
     #include "hsp3dish.as"
     #include "julius.as"
 
@@ -675,7 +675,7 @@
     mes "Loading Julius..."
     redraw 1
 
-    init_julius " \textasciitilde /06/onoff.dic" <#blue#;辞書を読み込む#>
+    init_julius "/07/onoff.dic" <#blue#;辞書を読み込む#>
 
     sockidx = 0
     domain = "127.0.0.1"
@@ -686,7 +686,7 @@
 
 \begin{frame}[fragile]
   \frametitle{音声でLEDのON OFFをする -2}
-  \begin{lstlisting}[title=\textasciitilde/06/ledvoice.hsp,label=ledvoice.hsp]
+  \begin{lstlisting}[title=\textasciitilde/07/ledvoice.hsp,label=ledvoice.hsp]
     if stat != 0 {
       redraw 0
       mes "Error in opening socket"
@@ -703,7 +703,7 @@
 
 \begin{frame}[fragile]
   \frametitle{音声でLEDのON OFFをする -3}
-  \begin{lstlisting}[title=\textasciitilde/06/ledvoice.hsp,label=ledvoice.hsp,basicstyle=\scriptsize]
+  \begin{lstlisting}[title=\textasciitilde/07/ledvoice.hsp,label=ledvoice.hsp,basicstyle=\scriptsize]
     repeat -1
     if is_recieved(sockidx) = 0 {
       get_word_list words, cm
