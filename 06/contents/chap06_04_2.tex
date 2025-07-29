@@ -5,7 +5,7 @@
 
 % TODO: relative or absolute path
 <声音ファイル>には、 \ruby{拡張子}{かく|ちょう|し}が .htsvoice であるようなファイルへのパスを指定します。\\
-みなさんのRaspberry Piにはいくつかの声音ファイルがすでにダウンロードされています。  \textasciitilde /06/htsvoice-tohoku-f01を見てみてください。
+みなさんのRaspberry Piにはいくつかの声音ファイルがすでにダウンロードされています。  \textasciitilde /07/htsvoice-tohoku-f01を見てみてください。
 
 \begin{itemize}
 \item htsvoice-tohoku-f01/tohoku-f01-neutral.htsvoice
@@ -14,7 +14,7 @@
 \item htsvoice-tohoku-f01/tohoku-f01-sad.htsvoice
 \end{itemize}
 
-が利用できます。例を示します。 \textasciitilde /06/voice.hsp をHSPスクリプトエディタで開いてみましょう。\\
+が利用できます。例を示します。 \textasciitilde /07/voice.hsp をHSPスクリプトエディタで開いてみましょう。\\
 
 \begin{lstlisting}[caption=voice.hsp,label=voice.hsp]
 #include "hsp3dish.as"
@@ -33,10 +33,10 @@ stop
 
 8行目までは前と同じです。9行目でsetvoiceが使用されています\\
 \code{setvoice "htsvoice-tohoku-f01/tohoku-f01-sad.htsvoice"}\\
-\code{voice.hsp} は \code{\textasciitilde /06} にあるので、
+\code{voice.hsp} は \code{\textasciitilde /07} にあるので、
 \code{voice.hsp} 内に書かれた \code{htsvoice-tohoku-f01/tohoku-f01-sad.htsvoice}
-は \code{\textasciitilde /06} から\ruby{探}{さが}されます。
-この行\ruby{以降}{い|こう}、jtloadが\ruby{呼}{よ}び出されると \code{\textasciitilde /06/htsvoice-tohoku-f01/tohoku-f01-sad.htsvoice}
+は \code{\textasciitilde /07} から\ruby{探}{さが}されます。
+この行\ruby{以降}{い|こう}、jtloadが\ruby{呼}{よ}び出されると \code{\textasciitilde /07/htsvoice-tohoku-f01/tohoku-f01-sad.htsvoice}
 という声音が使用されます。ダブルクォーテーションで囲われている部分を\ruby{変更}{へん|こう}することで、別の声音にすることができます。\\
 
 \begin{tcolorbox}[title=\useOmetoi]
