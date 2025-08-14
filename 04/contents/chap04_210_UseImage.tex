@@ -255,19 +255,17 @@ x=300:y=200
 そのために、gmodeという新しい命令が使われています。
 
 
-\begin{description}
-    \item \textgt{\bf \ \ (HSPのルール)}
-\end{description}
-
-
-\begin{description}
-    \item \textgt{\bf \ \ 画像を重ねる設定をするにはgmode命令を使います}
-    \item \textgt{\bf \ \ gmodeの後、スペースに続けてコピーモードを示す数字を指定します}
-    \item \textgt{\bf \ \ コピーモードは、以下のような意味があります}
-    \item \textgt{\bf \ \ \ \ 0のとき \ \ \ \ \ \ \ : 画像のまま表示}
-    \item \textgt{\bf \ \ \ \ 1か2のとき \ \ \ : 透明な部分は背景を残して表示}
-    \item \textgt{\bf \ \ \ \ 3のとき \ \ \ \ \ \ \ : 透明度を変えて表示}
-\end{description}
+\begin{itembox}[c]{HSPのルール}
+    画像を重ねる設定をするにはgmode命令を使います。gmodeの後、スペースに続けてコピーモードを示す数字を指定します。コピーモードは、以下のような意味があります。
+    \begin{center}
+        \begin{tabular}{cl} \hline
+            コピーモード & 意味 \\ \hline
+            0のとき & 画像のまま表示 \\
+            1か2のとき & 透明な部分は背景を残して表示 \\
+            3のとき & 透明度を変えて表示 \\ \hline
+        \end{tabular}
+    \end{center}
+\end{itembox}
 
 「gmode 2」を指定することで、リンゴの透明な部分は背景が表示されて、きれいに重なっているように見えています。試しに、「gmode 0」にしてリンゴの絵がどのように表示されるか確認してみましょう。
 
@@ -285,17 +283,19 @@ celput命令には、実はもっと多くのパラメーターがあります�
 
 
 
-\begin{description}
-    \item \textgt{\bf \ \ celput 絵の番号, \ruby{分割画像}{ぶん|かつ|が|ぞう}No. , \ruby{横方向}{よこ|ほう|こう}の\ruby{表示倍率}{ひょう|じ|ばい|りつ}, \ruby{縦方向}{たて|ほう|こう}の\ruby{表示倍率}{ひょう|じ|ばい|りつ}, \ruby{回転角度}{かい|てん|かく|ど}}
-\end{description}
-
-
-
-\begin{description}
-    \item \textgt{\bf \ \ 横方向の表示倍率=0.0〜    : 横方向の表示倍率(\ruby{実数}{じっ|すう})}
-    \item \textgt{\bf \ \ 縦方向の表示倍率=0.0〜    : 縦方向の表示倍率(\ruby{実数}{じっ|すう})}
-    \item \textgt{\bf \ \ 回転角度=0.0〜6.28…(2π) : 回転角度(\ruby{実数}{じっ|すう})}
-\end{description}
+\begin{itembox}[c]{celput命令について}
+    \begin{center}
+        \textgt{celput 絵の番号, \ruby{分割画像}{ぶん|かつ|が|ぞう}No. , \ruby{横方向}{よこ|ほう|こう}の\ruby{表示倍率}{ひょう|じ|ばい|りつ}, \ruby{縦方向}{たて|ほう|こう}の\ruby{表示倍率}{ひょう|じ|ばい|りつ}, \ruby{回転角度}{かい|てん|かく|ど}}
+    \end{center}
+    \begin{center}
+        \begin{tabular}{cc} \hline
+            引数 & 値の取りうる範囲 \\ \hline
+            横方向の表示倍率 & $0.0〜$ \\
+            縦方向の表示倍率 & $0.0〜$ \\
+            回転角度 & $0.0〜6.28(=2\pi)$ \\ \hline
+        \end{tabular}
+    \end{center}
+\end{itembox}
 
 絵を自由な大きさ(\ruby{倍率}{ばい|りつ})、\ruby{角度}{かく|ど}で出すことができるようになっています。
 
@@ -328,12 +328,13 @@ celput命令には、実はもっと多くのパラメーターがあります�
 変数について学んだことを覚えていますか?
 
 
-\begin{description}
-    \item \textgt{\bf \ \ (HSPのルール)}
-    \item \textgt{\bf \ \ 「変数の名前=数値」で変数に値を入れることができる(代入)}
-    \item \textgt{\bf \ \ 変数に数値を入れておくとパラメーターとして使える}
-    \item \textgt{\bf \ \ mes命令の中で「+変数」を書くことで変数の中身を表示できる}
-\end{description}
+\begin{itembox}[c]{HSPのルール}
+    \begin{itemize}
+        \item 「変数の名前=数値」で変数に値を入れることができる(代入)
+        \item 変数に数値を入れておくとパラメーターとして使える
+        \item mes命令の中で「+変数」を書くことで変数の中身を表示できる
+    \end{itemize}
+\end{itembox}
 
 「a=100」と置くと、変数aに100という数字が記憶されます。
 
@@ -384,11 +385,9 @@ celload "apple.png",2   ; りんご
 
 
 
-\begin{description}
-    \item \textgt{\bf \ \ (HSPのルール)}
-    \item \textgt{\bf 「:」の\ruby{記号}{き|ごう}を入れると、行を分けたのと同じように別な命令を書ける}
-    \item \textgt{\bf \ \ 「:」の記号を使って１行にたくさんの命令を書くことができる}
-\end{description}
+\begin{itembox}[c]{HSPのルール}
+    「:」の\ruby{記号}{き|ごう}を入れると、行を分けたのと同じように別な命令を書ける。「:」の記号を使って１行にたくさんの命令を書くことができる。
+\end{itembox}
 
 「pos x,y」がありますので、celputする時の位置を変数x,yで変えられるようになっています。
 
@@ -399,11 +398,9 @@ celload "apple.png",2   ; りんご
 ここを繰り返し実行することで、変数yの値が2ずつ増えていきます。
 
 
-\begin{description}
-    \item \textgt{\bf \ \ (HSPのルール)}
-    \item \textgt{\bf \ \ 「数式とは、数値と変数、またはそれらを計算式でつなげて書くこと}
-    \item \textgt{\bf \ \ 「+」は足し算、「-」は引き算、「*」は掛け算(×)、「/」は割り算(÷) }
-\end{description}
+\begin{itembox}[c]{HSPのルール}
+    「数式とは、数値と変数、またはそれらを計算式でつなげて書くこと。「+」は足し算、「-」は引き算、「*」は掛け算(×)、「/」は割り算(÷)。
+\end{itembox}
 
 
 
@@ -537,4 +534,3 @@ celload “apple.png”,2
 % Jump Action:
 
 %1644
-
