@@ -55,13 +55,13 @@ repeat -1
 loop
 \end{lstlisting}
 
-HSPプログラムから、音声を使ってLEDをつけたり消したりしてみましょう。 \textasciitilde /06にonoff.yomiファイルがあります。これは音声でLEDのON/OFFをするための辞書ファイルです。この辞書ファイルはリスト\ref{onoff.yomi}のように書いてあります。ONとOFFが表示する文字、おんとおふが読み方です。これを\code{convert\_yomi.sh}を使って変換したものがonoff.dicです。onoff.dicを使って、音声からLEDを\ruby{制御}{せい|ぎょ}してみましょう。 \textasciitilde /06/ledbyvoice.hsp を開いてください。\\
+HSPプログラムから、音声を使ってLEDをつけたり消したりしてみましょう。 \textasciitilde /07にonoff.yomiファイルがあります。これは音声でLEDのON/OFFをするための辞書ファイルです。この辞書ファイルはリスト\ref{onoff.yomi}のように書いてあります。ONとOFFが表示する文字、おんとおふが読み方です。これを\code{convert\_yomi.sh}を使って変換したものがonoff.dicです。onoff.dicを使って、音声からLEDを\ruby{制御}{せい|ぎょ}してみましょう。 \textasciitilde /07/ledbyvoice.hsp を開いてください。\\
 
 \code{words}(\code{cnt})に認識された文字が代入されています。認識された文字がONなのかOFFか\code{if}文（条件分岐）を使って、LEDを制御しています。\\
 
 \begin{tcolorbox}[title=\useOmetoi]
 \begin{enumerate}
-\addex{ターミナルを開いて、 \textasciitilde /06/に移動しましょう。}
+\addex{ターミナルを開いて、 \textasciitilde /07/に移動しましょう。}
 \addex{ledbyvoice.hspをHSPスクリプトエディタで実行しましょう。}
 \addex{点灯させるLEDを変\ruby{更}{こう}しましょう。}
 \addex{時間があったらやりましょう。\\点灯させるための言葉を「つける」と「けす」に変更しましょう。}
