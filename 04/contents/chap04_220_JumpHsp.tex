@@ -108,12 +108,10 @@ mmload "se_puyo.wav",4
 %1747
 %1747
 \newpage
-\subsection{例題4-8　オリジナルの面を作ってみよう}
+\subsection{\useOmetoiExample　オリジナルの面を作ってみよう}
 
 
-\begin{description}
-    \item \textgt{\bf  考え方}
-\end{description}
+\exampleinduction
 
 ジャンプアップゲーム(jump.hsp)のプログラムを改造してゲームで使われている\ruby{面}{めん}(マップ)を変えてみましょう。
 
@@ -156,17 +154,15 @@ mmload "se_puyo.wav",4
 
 
 
-\begin{description}
-    \item \textgt{\bf \ \ 「0」はレンガ(壁)になります。}
-    \item \textgt{\bf \ \ 「*」はコイン、「+」は矢になります。}
-    \item \textgt{\bf \ \ マップデータが書かれている場所を探して、自分だけの面を作ってみましょう。}
-\end{description}
+\begin{itembox}[c]{マップデータの意味}
+    「0」はレンガ(壁)になります。「*」はコイン、「+」は矢になります。マップデータが書かれている場所を探して、自分だけの面を作ってみましょう。
+\end{itembox}
 
 でたらめに書き直してもエラーが出るだけです。必ず、
 
-\begin{description}
-    \item \textgt{\bf \ \ mapd+=” \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ “+cr}
-\end{description}
+\begin{lstlisting}[numbers=none]
+	mapd+="                        "+cr
+\end{lstlisting}
 
 という形になるようにしてください。
 
@@ -175,9 +171,7 @@ mmload "se_puyo.wav",4
 面のデータは、縦・横方向に広げることができます。
 
 
-\begin{description}
-    \item \textgt{\bf 例題4-8 答え}
-\end{description}
+\exampleanswer
 
 ゲームを改造することで、難しくなったり、簡単になったりします。
 
@@ -186,11 +180,9 @@ mmload "se_puyo.wav",4
 %1820
 %1820
 \newpage
-\subsection{例題4-9　ゲームの動きを改造してみよう}
+\subsection{\useOmetoiExample　ゲームの動きを改造してみよう}
 
-\begin{description}
-    \item \textgt{\bf  考え方}
-\end{description}
+\exampleinduction
 
 
 
@@ -217,9 +209,7 @@ mmload "se_puyo.wav",4
 
 mypd、gravといった変数の値を変えるとどうなるか、試してみましょう。
 
-\begin{description}
-    \item \textgt{\bf  例題4-9 答え}
-\end{description}
+\exampleanswer
 
 「myspd=4」が歩くスピードを決めています
 
@@ -233,12 +223,10 @@ mypd、gravといった変数の値を変えるとどうなるか、試してみ
 %1881
 %1881
 \newpage
-\subsection{例題4-10　ゲームの背景や絵を改造してみよう}
+\subsection{\useOmetoiExample　ゲームの背景や絵を改造してみよう}
 
 
-\begin{description}
-    \item \textgt{\bf  考え方}
-\end{description}
+\exampleinduction
 
 ジャンプアップゲーム(jump.hsp)のプログラムで使われている画像を確認してみましょう。
 
@@ -274,9 +262,7 @@ celload命令で読み込まれているファイルが、ゲームに出てく�
 
 
 
-\begin{description}
-    \item \textgt{\bf 例題4-10 答え}
-\end{description}
+\exampleanswer
 
 
 
@@ -346,12 +332,10 @@ GIMPを使って、ジャンプアップゲームの絵を改造してみまし�
 %2038
 %2038
 \newpage
-\subsection{例題4-11　ゲームのタイトル画面を改造してみよう}
+\subsection{\useOmetoiExample　ゲームのタイトル画面を改造してみよう}
 
 
-\begin{description}
-    \item \textgt{\bf  考え方}
-\end{description}
+\exampleinduction
 
 
 ジャンプアップゲーム(jump.hsp)のプログラムを改造して、タイトル画面を自分だけのものにしてみましょう。
@@ -381,9 +365,7 @@ GIMPを使って、ジャンプアップゲームの絵を改造してみまし�
 \end{lstlisting}
 
 
-\begin{description}
-    \item \textgt{\bf  例題4-11 答え}
-\end{description}
+\exampleanswer
 
 背景の画像に「yama.jpg」、後は決められたサイズと色で文字を出しています。
 

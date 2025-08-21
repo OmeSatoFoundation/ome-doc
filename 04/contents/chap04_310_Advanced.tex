@@ -266,10 +266,9 @@ getkey a, 'X'
 を実行すると、「X」キーの\ruby{状態}{じょう|たい}で変数aの値が0か1になります。
 
 
-\begin{description}
-    \item \textgt{\bf 「X」のキーが押されていない時は、変数aは0になります。}
-    \item \textgt{\bf 「X」のキーが押されている時は、変数aは1になります。}
-\end{description}
+\begin{itembox}[c]{getkeyの動作}
+    「X」のキーが押されていない時は、変数aは0になります。\\「X」のキーが押されている時は、変数aは1になります。
+\end{itembox}
 
 キーの文字は、必ず大文字で’A’のように書く必要があるので注意してください。
 
@@ -307,12 +306,9 @@ getkey a, 'X'
 
 if命令の使い方、ルールを覚えていますか?
 
-\begin{description}
-    \item \textgt{\bf \ \ (HSPのルール)}
-    \item \textgt{\bf \ \ if命令により条件を判断することができる}
-    \item \textgt{\bf \ \ ifの後にスペースに続けて\ruby{条件式}{じょう|けん|しき}を指定します}
-    \item \textgt{\bf \ \ その後で「:」に続けて条件が正しい時に実行される命令を書きます}
-\end{description}
+\begin{itembox}[c]{HSPのルール}
+    if命令により条件を判断することができます。ifの後にスペースに続けて\ruby{条件式}{じょう|けん|しき}を指定します。その後で「:」に続けて条件が正しい時に実行される命令を書きます。
+\end{itembox}
 
 \begin{center}
     (条件式はいくつか書き方があります)
@@ -363,12 +359,10 @@ if a=1 : x=x-4
 %2586
 %2586
 \newpage
-\subsection{例題4-12　センサーボードの入力を使ってみよう}
+\subsection{\useOmetoiExample　センサーボードの入力を使ってみよう}
 
 
-\begin{description}
-    \item \textgt{\bf 考え方}
-\end{description}
+\exampleinduction
 
 キーボードの代わりにセンサーボードのボタンを使って絵を動かしてみましょう。
 
@@ -404,9 +398,7 @@ move.hspのプログラムを改造して、センサーボードのボタンで
     goto *main
 \end{lstlisting}
 
-\begin{description}
-    \item \textgt{\bf 例題4-12 答え}
-\end{description}
+\exampleanswer
 
 以前に取り上げた、GPIOの番号とその役割を思い出してみてください。
 
@@ -464,11 +456,12 @@ if a=1 : y=y+4
     \label{fig:prog_menu}
 \end{figure}
 
-\begin{description}
-    \item \textgt{\bf \ \ (HSPのルール)}
-    \item \textgt{\bf \ \ 「変数=rnd(乱数の最大値)」でバラバラな数字を得ることができる}
-    \item \textgt{\bf \ \ 関数は、「変数=関数(パラメーター)」という書き方で使うことができる}
-\end{description}
+\begin{itembox}[c]{HSPのルール}
+    \begin{itemize}
+        \item 「変数=rnd(乱数の最大値)」でバラバラな数字を得ることができる
+        \item 関数は、「変数=関数(パラメーター)」という書き方で使うことができる
+    \end{itemize}
+\end{itembox}
 
 乱数が代入された変数を条件判断することで、でたらめな動きをする絵を作ることもできます。
 
@@ -477,11 +470,9 @@ if a=1 : y=y+4
 %2720
 %2720
 \newpage
-\subsection{例題4-13　\ruby{照度}{しょう|ど}センサーの値をもとに絵を動かそう}
+\subsection{\useOmetoiExample　\ruby{照度}{しょう|ど}センサーの値をもとに絵を動かそう}
 
-\begin{description}
-    \item \textgt{\bf 考え方}
-\end{description}
+\exampleinduction
 
 センサーボードのボタンだけでなく、\ruby{照度}{しょう|ど}センサーを使うこともできます。
 
@@ -529,9 +520,7 @@ if a=1 : y=y+4
 確認ができたら、move.hspのプログラムを改造して、りんごの絵を照度センサーの値によって動かせるようにしてみましょう。
 
 
-\begin{description}
-    \item \textgt{\bf 例題4-13 答え}
-\end{description}
+\exampleanswer
 
 
 「geti2c\_lux\_init」命令を最初に入れて１回だけ\ruby{初期化}{しょ|き|か}(準備)を行います。
@@ -545,11 +534,9 @@ if a=1 : y=y+4
 %2785
 %2785
 \newpage
-\subsection{例題4-14　照度センサーを使ったゲームを遊んでみよう}
+\subsection{\useOmetoiExample　照度センサーを使ったゲームを遊んでみよう}
 
-\begin{description}
-    \item \textgt{\bf 考え方}
-\end{description}
+\exampleinduction
 
 
 アイデア\ruby{次第}{し|だい}で、キーボードだけでなく、センサー\ruby{類}{るい}を使ってゲームのようにすることができます。
@@ -560,9 +547,7 @@ if a=1 : y=y+4
 スクリプトエディタの、ファイル→「開く」メニューから「catch.hsp」を読み込んで実行してみてください。
 
 
-\begin{description}
-    \item \textgt{\bf 例題4-14 答え}
-\end{description}
+\exampleanswer
 
 センサーボードの光センサーから得た値を使って絵を動かしています。光センサーを手で\ruby{覆}{おお}ったり、\ruby{離}{はな}したりしてどうなるか確認してみましょう。
 
@@ -585,12 +570,10 @@ if a=1 : y=y+4
 
 %2844
 \newpage
-\subsection{例題4-15　センサーボードを使った応用例を考えてみよう}
+\subsection{\useOmetoiExample　センサーボードを使った応用例を考えてみよう}
 
 
-\begin{description}
-    \item \textgt{\bf 考え方}
-\end{description}
+\exampleinduction
 
 今まで覚えてきたことを組み合わせて、何ができるか考えてみましょう。家に帰ってから、考えてみて答えを書いてきてください。センサーボードで何ができるか、プログラムでどんなことができるか、もう一度思い出してみて、考えてみましょう。
 
@@ -598,9 +581,7 @@ if a=1 : y=y+4
 
 大切なことは、自分で何でも試してみることです。わからないことがあっても、実際に実行すれば結果がわかります。立ち止まらずに、どうなるか想像しながらプログラムを書いて実行することが、早く\ruby{上達}{じょう|たつ}するコツになります。それでもわからない時は、先生に聞いてみましょう。
 
-\begin{description}
-    \item \textgt{\bf 例題4-15 答え}
-\end{description}
+\exampleanswer
 
 自分で考えた\ruby{応用例}{おう|よう|れい}を下に書いておきましょう。
 
@@ -612,20 +593,16 @@ if a=1 : y=y+4
 
 %2879
 \newpage
-\subsection{例題4-16　センサーボードの応用例をもっと考えてみよう(1)}
+\subsection{\useOmetoiExample　センサーボードの応用例をもっと考えてみよう(1)}
 
-\begin{description}
-    \item \textgt{\bf 例題4-16 答え}
-\end{description}
+\exampleanswer
 
 %2909
 %2909
 \newpage
-\subsection{例題4-17　センサーボードの応用例をもっと考えてみよう(2)}
+\subsection{\useOmetoiExample　センサーボードの応用例をもっと考えてみよう(2)}
 
-\begin{description}
-    \item \textgt{\bf 例題4-17 答え}
-\end{description}
+\exampleanswer
 
 
 % Last Part:
