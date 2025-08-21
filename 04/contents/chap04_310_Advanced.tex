@@ -270,10 +270,9 @@ getkey a, 'X'
 を実行すると、「X」キーの\ruby{状態}{じょう|たい}で変数aの値が0か1になります。
 
 
-\begin{description}
-    \item \textgt{\bf 「X」のキーが押されていない時は、変数aは0になります。}
-    \item \textgt{\bf 「X」のキーが押されている時は、変数aは1になります。}
-\end{description}
+\begin{itembox}[c]{getkeyの動作}
+    「X」のキーが押されていない時は、変数aは0になります。\\「X」のキーが押されている時は、変数aは1になります。
+\end{itembox}
 
 キーの文字は、必ず大文字で’A’のように書く必要があるので注意してください。
 
@@ -311,12 +310,9 @@ getkey a, 'X'
 
 if命令の使い方、ルールを覚えていますか?
 
-\begin{description}
-    \item \textgt{\bf \ \ (HSPのルール)}
-    \item \textgt{\bf \ \ if命令により条件を判断することができる}
-    \item \textgt{\bf \ \ ifの後にスペースに続けて\ruby{条件式}{じょう|けん|しき}を指定します}
-    \item \textgt{\bf \ \ その後で「:」に続けて条件が正しい時に実行される命令を書きます}
-\end{description}
+\begin{itembox}[c]{HSPのルール}
+    if命令により条件を判断することができます。ifの後にスペースに続けて\ruby{条件式}{じょう|けん|しき}を指定します。その後で「:」に続けて条件が正しい時に実行される命令を書きます。
+\end{itembox}
 
 \begin{center}
     (条件式はいくつか書き方があります)
@@ -470,11 +466,12 @@ if a=1 : y=y+4
     \label{fig:prog_menu}
 \end{figure}
 
-\begin{description}
-    \item \textgt{\bf \ \ (HSPのルール)}
-    \item \textgt{\bf \ \ 「変数=rnd(乱数の最大値)」でバラバラな数字を得ることができる}
-    \item \textgt{\bf \ \ 関数は、「変数=関数(パラメーター)」という書き方で使うことができる}
-\end{description}
+\begin{itembox}[c]{HSPのルール}
+    \begin{itemize}
+        \item 「変数=rnd(乱数の最大値)」でバラバラな数字を得ることができる
+        \item 関数は、「変数=関数(パラメーター)」という書き方で使うことができる
+    \end{itemize}
+\end{itembox}
 
 乱数が代入された変数を条件判断することで、でたらめな動きをする絵を作ることもできます。
 
