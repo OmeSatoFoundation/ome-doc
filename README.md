@@ -15,7 +15,7 @@ docker build . --output artifacts/
 これは以下と等価である。
 
 ```
-docker build . --output artifacts/ --build-args TARGET=.
+docker build . --output artifacts/ --build-args TARGET="."
 ```
 
 `artifacts/` 以下に PDF や、ビルド時の中間ファイル (`.aux` 等) が出力される。
@@ -25,7 +25,7 @@ docker build . --output artifacts/ --build-args TARGET=.
 
 ```bash
 TARGET=03
-docker build . --output artifacts_${TARGET} --build-arg TARGE=${TARGET}
+docker build . --output "artifacts_${TARGET}" --build-arg TARGE="${TARGET}"
 ```
 
 `artifacts_03` に目的のファイルが生成される。
@@ -34,7 +34,7 @@ docker build . --output artifacts_${TARGET} --build-arg TARGE=${TARGET}
 Linux なら、
 
 ```bash
-for d in 01 02 03 04 05 06 07 08 ; do docker build . --output artifacts_${d} --build-arg TARGET=${d}; done'
+for d in 01 02 03 04 05 06 07 08 ; do docker build . --output artifacts_${d} --build-arg TARGET="${d}"; done'
 ```
 
 ## ビルド手順 (Windows, Linux, Mac)
