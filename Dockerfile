@@ -28,6 +28,7 @@ FROM ubuntu:24.04 AS texlive
 
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     --mount=type=cache,target=/var/lib/apt,sharing=locked \
+    DEBIAN_FRONTEND=noninteractive \
     apt-get update && apt-get --no-install-recommends install -y \
     ca-certificates \
     curl \
@@ -44,6 +45,9 @@ RUN --mount=type=bind,source=prod/texlive.profile,target=./texlive.profile \
         --no-interaction \
         --profile ./texlive.profile \
         --repository https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2023/tlnet-final/
+
+FROM texlive AS texlive_with_pkgs
+ENV PATH=$PATH:/opt/texlive/2023/bin/x86_64-linux
 RUN --mount=type=bind,source=prod/texlive.profile,target=./texlive.profile \
   tlmgr update --self && \
   tlmgr install \
@@ -58,10 +62,12 @@ RUN --mount=type=bind,source=prod/texlive.profile,target=./texlive.profile \
 FROM ubuntu:24.04 AS font
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     --mount=type=cache,target=/var/lib/apt,sharing=locked \
+    DEBIAN_FRONTEND=noninteractive \
     apt-get update && apt-get --no-install-recommends install -y \
     ca-certificates \
     curl \
     tar \
+    unar \
     xz-utils \
     ;
 WORKDIR /root/fonts
@@ -73,9 +79,10 @@ RUN mkdir -p /usr/share/fonts/TTF && \
         https://noto-website-2.storage.googleapis.com/pkgs/NotoSerifCJKjp-hinted.zip \
         && \
     tar -xvf liberation-fonts-ttf-2.1.5.tar.gz -C /usr/share/fonts/TTF && \
-    unzip IPAexfont00401.zip NotoSansCJKjp-hinted.zip NotoSerifCJKjp-hinted.zip -d /usr/share/fonts/TTF
+    ls && \
+    echo "IPAexfont00401.zip" "NotoSansCJKjp-hinted.zip" "NotoSerifCJKjp-hinted.zip" | xargs -n 1 unar -d -f -o /usr/share/fonts/TTF
 WORKDIR /usr/share/fonts/TTF
-RUN curl -L --remote-name-all  \
+RUN curl -L --remote-name-all \
         https://github.com/google/fonts/raw/main/ofl/bizudgothic/BIZUDGothic-Bold.ttf \
         https://github.com/google/fonts/raw/main/ofl/bizudgothic/BIZUDGothic-Regular.ttf \
         https://github.com/google/fonts/raw/main/ofl/bizudmincho/BIZUDMincho-Bold.ttf \
@@ -84,24 +91,26 @@ RUN curl -L --remote-name-all  \
         https://github.com/google/fonts/raw/main/ofl/bizudpgothic/BIZUDPGothic-Regular.ttf \
         https://github.com/google/fonts/raw/main/ofl/bizudpmincho/BIZUDPMincho-Bold.ttf \
         https://github.com/google/fonts/raw/main/ofl/bizudpmincho/BIZUDPMincho-Regular.ttf \
+        ;
 
-RUN echo -e '\
-<?xml version="1.0"?>\n\
-<!DOCTYPE fontconfig SYSTEM "fonts.dtd">\n\
-<fontconfig>\n\
-    <alias>\n\
-        <family>serif</family>\n\
-        <prefer>\n\
-            <family>Noto Serif CJK JP</family>\n\
-        </prefer>\n\
-    </alias>\n\
-    <alias>\n\
-        <family>sans-serif</family>\n\
-        <prefer>\n\
-            <family>Noto Sans CJK JP</family>\n\
-        </prefer>\n\
-    </alias>\n\
-</fontconfig>' >> /etc/fonts/local.conf
+COPY <<EOF /etc/fonts/local.conf
+<?xml version="1.0"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+    <alias>
+        <family>serif</family>
+        <prefer>
+            <family>Noto Serif CJK JP</family>
+        </prefer>
+    </alias>
+    <alias>
+        <family>sans-serif</family>
+        <prefer>
+            <family>Noto Sans CJK JP</family>
+        </prefer>
+    </alias>
+</fontconfig>
+EOF
 
 FROM ubuntu:24.04 AS runtime_dependencies
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
@@ -117,8 +126,9 @@ FROM runtime_dependencies AS build
 # For example: --build-arg TARGET=05/
 # TODO: make a top-level tex source that includes all chapters as one book.
 ARG TARGET=.
+ENV PATH=$PATH:/opt/texlive/2023/bin/x86_64-linux
 # Copy texlive
-COPY --from=texlive /opt/texlive/2023 /opt/texlive/2023
+COPY --from=texlive_with_pkgs /opt/texlive/2023 /opt/texlive/2023
 COPY --from=font /usr/share/fonts/TTF /usr/share/fonts/TTF
 COPY --from=font /etc/fonts/local.conf /etc/fonts/local.conf
 

@@ -5,36 +5,36 @@
 
 [Docker Engine (または Docker Desktop)](https://docs.docker.com/engine/install/) をインストールする。
 
-タイプセットのための Docker Image をビルドする。
-
-```
-# ome-doc を clone したディレクトリに移動する。
-cd /path/to/ome-doc
-# タイプセットのための Docker Image をビルドする。 1GB のストレージ使用と 1 時間程度の時間がかかる。
-docker build . -t ome-doc-latex
-```
-
 ### 全章ビルドして book を作る
-TBD
+TODO: top-level source を作成し、すべての chapter を含める。
+
+```
+docker build . --output artifacts/
+```
+
+これは以下と等価である。
+
+```
+docker build . --output artifacts/ --build-args TARGET=.
+```
+
+`artifacts/` 以下に PDF や、ビルド時の中間ファイル (`.aux` 等) が出力される。
 
 ### チャプター単体をビルドする
-例: 第三回の教科書をタイプセットする
+例: 第 3 回をビルドする
 
-```
-docker run --rm -v $(pwd):/workdir ome-doc-latex sh -c 'cd 03 ; llmk'
-```
-
-中間ファイルを消去する
-
-```
-docker run --rm -v $(pwd):/workdir ome-doc-latex sh -c 'cd 03 ; llmk -c'
+```bash
+TARGET=03
+docker build . --output artifacts_${TARGET} --build-arg TARGE=${TARGET}
 ```
 
-その他 llmk の詳しい使い方: https://ftp.yz.yamagata-u.ac.jp/pub/CTAN/support/light-latex-make/llmk.pdf
+`artifacts_03` に目的のファイルが生成される。
 
 ### 全チャプターをそれぞれ単体で一度にビルドする
-```
-docker run --rm -v $(pwd):/workdir ome-doc-latex /bin/sh -c 'set -e; for d in 01 02 03 04 05 06 07 08 ; do ( cd $d; llmk ; ) ; done'
+Linux なら、
+
+```bash
+for d in 01 02 03 04 05 06 07 08 ; do docker build . --output artifacts_${d} --build-arg TARGET=${d}; done'
 ```
 
 ## ビルド手順 (Windows, Linux, Mac)
