@@ -134,10 +134,14 @@ COPY --from=font /etc/fonts/local.conf /etc/fonts/local.conf
 
 RUN fc-cache -f
 
-WORKDIR /build
+WORKDIR /build/tex
 RUN --mount=type=cache,target=/root/.texlive2023/texmf-var/luatex-cache \
-    --mount=type=bind,target=${TARGET},rw=true \
-    llmk
+    --mount=type=cache,target=/opt/texlive/texmf-local/texmf-var/luatex-cache \
+    --mount=type=bind,source=${TARGET},target=.,rw=true \
+    --mount=type=bind,source=texmf/tex/luatexja/omebook/omebook.sty,target=/build/texmf/tex/luatexja/omebook/omebook.sty \
+    mkdir -p artifacts/ && \
+    llmk && \
+    cp -r artifacts /artifacts
 
 FROM scratch AS final
-COPY --from=build /build/artifacts /
+COPY --from=build /artifacts /
