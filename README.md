@@ -20,22 +20,28 @@ docker build . --output artifacts/ --build-args TARGET="."
 
 `artifacts/` 以下に PDF や、ビルド時の中間ファイル (`.aux` 等) が出力される。
 
+Note that `--output` must be `artifacts` otherwise latex cannot find intermediate files `.aux`, and it slows typeset time.
+
 ### チャプター単体をビルドする
 例: 第 3 回をビルドする
 
 ```bash
 TARGET=03
-docker build . --output "artifacts_${TARGET}" --build-arg TARGE="${TARGET}"
+docker build . --output "${TARGET}/artifacts" --build-arg TARGE="${TARGET}"
 ```
 
 `artifacts_03` に目的のファイルが生成される。
+
+Note that `--output` must be `${TARGET}/artifacts` otherwise latex cannot find intermediate files `.aux`, and it slows typeset time.
 
 ### 全チャプターをそれぞれ単体で一度にビルドする
 Linux なら、
 
 ```bash
-for d in 01 02 03 04 05 06 07 08 ; do docker build . --output artifacts_${d} --build-arg TARGET="${d}"; done'
+for TARGET in 01 02 03 04 05 06 07 08 ; do docker build . --output ${TARGET}/artifacts --build-arg TARGET="${TARGET}"; done'
 ```
+
+Note that `--output` must be `${TARGET}/artifacts` otherwise latex cannot find intermediate files `.aux`, and it slows typeset time.
 
 ## ビルド手順 (Windows, Linux, Mac)
 ### Prerequisites
