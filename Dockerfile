@@ -25,7 +25,9 @@
 # Switch the base image that includes latex runtime.
 # Enter remote name (ghcr.io/.../...:...) to use remote base image (default).
 # If remote name fails, use local name (buildenv).
-ARG BASE_IMAGE=ghcr.io/omesatofoundation/ome-doc/ome-doc:latest
+# Find the remote image name and tags at
+# https://github.com/OmeSatoFoundation/ome-doc/pkgs/container/ome-doc%2Ftypesetenv
+ARG BASE_IMAGE=ghcr.io/omesatofoundation/ome-doc/typesetenv:latest
 
 FROM ubuntu:24.04 AS texlive
 
