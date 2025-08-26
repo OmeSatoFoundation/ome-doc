@@ -137,6 +137,8 @@ RUN fc-cache -f
 WORKDIR /build/tex
 RUN --mount=type=cache,target=/root/.texlive2023/texmf-var/luatex-cache \
     --mount=type=cache,target=/opt/texlive/texmf-local/texmf-var/luatex-cache \
+    --mount=type=cache,target=/opt/texlive/2023/texmf-var/luatex-cache \
+    --mount=type=cache,target=/opt/texlive/2023/texmf-var/luametatex-cache \
     --mount=type=bind,source=${TARGET},target=.,rw=true \
     --mount=type=bind,source=texmf/tex/luatexja/omebook/omebook.sty,target=/build/texmf/tex/luatexja/omebook/omebook.sty \
     mkdir -p artifacts/ && \
