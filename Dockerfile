@@ -22,6 +22,11 @@
 
 # Modified by Yohei Shimmyo in 2022
 
+# Switch the base image that includes latex runtime.
+# Enter remote name (ghcr.io/.../...:...) to use remote base image (default).
+# If remote name fails, use local name (buildenv).
+ARG BASE_IMAGE=ghcr.io/omesatofoundation/ome-doc/ome-doc:latest
+
 FROM ubuntu:24.04 AS texlive
 
 # Install packages being dependent on texlive installation.
@@ -134,7 +139,7 @@ COPY --from=font --link /etc/fonts/local.conf /etc/fonts/local.conf
 
 RUN fc-cache -f
 
-FROM buildenv AS build
+FROM ${BASE_IMAGE} AS build
 WORKDIR /build/tex
 RUN --mount=type=cache,target=/root/.texlive2023/texmf-var/luatex-cache \
     --mount=type=cache,target=/opt/texlive/texmf-local/texmf-var/luatex-cache \
