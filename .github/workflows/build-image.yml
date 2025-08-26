@@ -10,7 +10,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ome-doc
+  IMAGE_NAME: typesetenv
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
@@ -36,6 +36,6 @@ jobs:
       with:
         push: true
         target: "buildenv"
-        tags: ${{ env.REGISTRY }}/${{ env.REPOSITORY_NAME_LC }}/${{ env.IMAGE_NAME }}:${{ github.ref_name }}
+        tags: ${{ env.REGISTRY }}/${{ env.REPOSITORY_NAME_LC }}/${{ env.IMAGE_NAME }}:latest,${{ env.REGISTRY }}/${{ env.REPOSITORY_NAME_LC }}/${{ env.IMAGE_NAME }}:${{ github.ref_name }}
 
 # Inherited by https://qiita.com/Jazuma/items/aca397e081a7825d0dec
