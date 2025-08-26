@@ -1,7 +1,7 @@
 # IT未来塾教科書
 
 ## ビルド手順 (Docker)
-### Prerequisites (Docker)
+### Prerequisites
 
 [Docker Engine (または Docker Desktop)](https://docs.docker.com/engine/install/) をインストールする。
 
@@ -42,6 +42,26 @@ for TARGET in 01 02 03 04 05 06 07 08 ; do docker build . --output ${TARGET}/art
 ```
 
 Note that `--output` must be `${TARGET}/artifacts` otherwise latex cannot find intermediate files `.aux`, and it slows typeset time.
+
+### エラーが出るとき・texlive を自分でビルドしたいとき
+
+何らかの理由でリモートコンテナレジストリからベースイメージを取得するのに失敗して以下のようなメッセージが現れた場合，
+
+```
+ERROR: failed to build: failed to solve: ghcr.io/omesatofoundation/ome-doc/ome-doc:latest: failed to resolve source metadata for ghcr.io/omesatofoundation/ome-doc/typsetenv:latest: ghcr.io/omesatofoundation/ome-doc/ome-doc:latest: not found
+```
+
+または，texlive をローカル環境でビルドしたい場合は，`docker build` コマンドにオプション
+
+```
+--build-arg BASE_IMAGE=buildenv
+```
+
+を追加して実行してください．例:
+
+```bash
+docker build . --output artifacts/ --build-args TARGET="." --build-args BASE_IMAGE=buildenv
+```
 
 ## ビルド手順 (Windows, Linux, Mac)
 ### Prerequisites
