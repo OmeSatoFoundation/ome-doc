@@ -121,19 +121,20 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     inkscape \
     ;
 
-FROM runtime_dependencies AS build
+FROM runtime_dependencies AS buildenv
 # Specify which source to be built. Default is one at project root.
 # For example: --build-arg TARGET=05/
 # TODO: make a top-level tex source that includes all chapters as one book.
 ARG TARGET=.
 ENV PATH=$PATH:/opt/texlive/2023/bin/x86_64-linux
 # Copy texlive
-COPY --from=texlive_with_pkgs /opt/texlive/2023 /opt/texlive/2023
-COPY --from=font /usr/share/fonts/TTF /usr/share/fonts/TTF
-COPY --from=font /etc/fonts/local.conf /etc/fonts/local.conf
+COPY --from=texlive_with_pkgs --link /opt/texlive/2023 /opt/texlive/2023
+COPY --from=font --link /usr/share/fonts/TTF /usr/share/fonts/TTF
+COPY --from=font --link /etc/fonts/local.conf /etc/fonts/local.conf
 
 RUN fc-cache -f
 
+FROM buildenv AS build
 WORKDIR /build/tex
 RUN --mount=type=cache,target=/root/.texlive2023/texmf-var/luatex-cache \
     --mount=type=cache,target=/opt/texlive/texmf-local/texmf-var/luatex-cache \
