@@ -1,3 +1,4 @@
+# syntax=docker/dockerfile:1.4
 # The MIT License (MIT)
 # Copyright (c) 2016 Kaito Udagawa
 # Copyright (c) 2016-2018 3846masa
