@@ -5,4 +5,11 @@ sequence = ["latex"] # Skip bibtex and makeindex
 
 [programs.latex]
 command = "lualatex"
-opts  = ["--shell-escape", "--cnf-line='TEXINPUTS=.;../texmf//;'", '-output-directory="%o"', "-interaction=nonstopmode", "-file-line-error", "-synctex=1"]
+opts  = [
+    "--cnf-line='TEXINPUTS=.;../texmf//;'",
+    "--shell-escape",
+    "-file-line-error",
+    "-interaction=nonstopmode",
+    "-synctex=1",
+    '-output-directory="%o"',
+]
