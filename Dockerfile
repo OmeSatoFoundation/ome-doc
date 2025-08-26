@@ -30,9 +30,7 @@
 ARG BASE_IMAGE=ghcr.io/omesatofoundation/ome-doc/typesetenv:latest
 
 FROM ubuntu:24.04 AS texlive
-
 # Install packages being dependent on texlive installation.
-
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     --mount=type=cache,target=/var/lib/apt,sharing=locked \
     DEBIAN_FRONTEND=noninteractive \
@@ -43,7 +41,6 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     tar \
     xz-utils \
     ;
-
 WORKDIR /install-tl-unx
 RUN --mount=type=bind,source=prod/texlive.profile,target=./texlive.profile \
     curl -LO https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2023/install-tl-unx.tar.gz && \
@@ -52,9 +49,8 @@ RUN --mount=type=bind,source=prod/texlive.profile,target=./texlive.profile \
         --no-interaction \
         --profile ./texlive.profile \
         --repository https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2023/tlnet-final/
-
-FROM texlive AS texlive_with_pkgs
 ENV PATH=$PATH:/opt/texlive/2023/bin/x86_64-linux
+# Install depending texlive packages
 RUN --mount=type=bind,source=prod/texlive.profile,target=./texlive.profile \
   tlmgr update --self && \
   tlmgr install \
@@ -65,6 +61,7 @@ RUN --mount=type=bind,source=prod/texlive.profile,target=./texlive.profile \
   latexmk \
   light-latex-make \
   ;
+
 
 FROM ubuntu:24.04 AS font
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
@@ -119,7 +116,12 @@ COPY <<EOF /etc/fonts/local.conf
 </fontconfig>
 EOF
 
-FROM ubuntu:24.04 AS runtime_dependencies
+FROM ubuntu:24.04 AS buildenv
+# Copy texlive
+COPY --from=texlive --link /opt/texlive/2023 /opt/texlive/2023
+COPY --from=font --link /usr/share/fonts/TTF /usr/share/fonts/TTF
+COPY --from=font --link /etc/fonts/local.conf /etc/fonts/local.conf
+# Install Runtime Dependencies
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     --mount=type=cache,target=/var/lib/apt,sharing=locked \
     apt-get update && apt-get --no-install-recommends install -y \
@@ -127,15 +129,9 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     ghostscript \
     inkscape \
     ;
-
-FROM runtime_dependencies AS buildenv
-ENV PATH=$PATH:/opt/texlive/2023/bin/x86_64-linux
-# Copy texlive
-COPY --from=texlive_with_pkgs --link /opt/texlive/2023 /opt/texlive/2023
-COPY --from=font --link /usr/share/fonts/TTF /usr/share/fonts/TTF
-COPY --from=font --link /etc/fonts/local.conf /etc/fonts/local.conf
-
 RUN fc-cache -f
+ENV PATH=$PATH:/opt/texlive/2023/bin/x86_64-linux
+
 
 FROM ${BASE_IMAGE} AS build
 # Specify which source to be built. Default is one at project root.
@@ -152,6 +148,7 @@ RUN --mount=type=cache,target=/root/.texlive2023/texmf-var/luatex-cache \
     mkdir -p artifacts/ && \
     llmk && \
     cp -r artifacts /artifacts
+
 
 FROM scratch AS final
 COPY --from=build /artifacts /
