@@ -70,3 +70,34 @@
       \label{pplug-volume_mic_context_menu}
     \end{center}
 \end{figure}
+
+もしも押してしまった場合は、以下の手順に従ってください。
+まず、右上のスピーカーアイコンを右クリックし、「デバイスプロファイル…」をクリックしてください (図 \ref{pplug-volume_speaker_context_menu})。
+すると図 \ref{pplug-volume_device_profile_dialog_top} のように、新しいウィンドウが現れます。
+USB PnP Sound Device の下にあるプルダウンメニューをクリックし、一度「アナログステレオ 出力」をクリックします (図 \ref{pplug-volume_device_profile_dialog_only_output})。
+もしはじめから「アナログステレオ 出力」が選択されていた場合は、一度「オフ」をクリックしてからもう一度「アナログステレオ 出力」をクリックしてください。
+そのあと「アナログステレオ 出力 + モノ 入力」を選択してください (図 \ref{pplug-volume_device_profile_dialog_inout})。
+これで OK ボタンを押してデバイスプロファイルウィンドウを閉じれば、マイクが再度使えるようになっているはずです。
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=\linewidth]{images/pplug-volume_speaker_context_menu.png}
+        \caption{USB PnP Sound Device にチェックを入れてしまったら、まずスピーカーアイコンを右クリック。}
+        \label{pplug-volume_speaker_context_menu}
+    \end{center}
+\end{figure}
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=\linewidth]{images/pplug-volume_device_profile_dialog_only_output.png}
+        \caption{一度「アナログステレオ 出力」を選択。}
+        \label{pplug-volume_device_profile_dialog_only_output}
+    \end{center}
+\end{figure}
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=\linewidth]{images/pplug-volume_device_profile_dialog_inout.png}
+        \caption{「アナログステレオ 出力 + モノ 入力」を選択し、「OK」。}
+    \end{center}
+\end{figure}
