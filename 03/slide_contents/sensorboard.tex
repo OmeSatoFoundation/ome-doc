@@ -124,10 +124,6 @@
    }
 
    geti2c_lux_init     <#blue#; 照度センサ tsl2572 を初期化する#>
-
-   *main
-   redraw 0            <#blue#; 仮想画面に描画#>
-   pos 60, 60          <#blue#; 表示位置を設定#>
   
   \end{lstlisting}
   \textpageref{21}
@@ -136,19 +132,24 @@
 \begin{frame}[fragile]
   \frametitle{温湿度/気圧/明るさを調べる-2}
   \begin{lstlisting}[title=\sim/03/sensors.hsp 後半, label=sensors.hsp-2]
-  get_humidity          <#blue#; rpz_humに湿度取得#>
-  hum = rpz_hum       
-  get_pressure          <#blue#; rpz_pressに気圧取得#>
-  press = rpz_press
-  geti2_lux_als         <#blue#; rpz_luxに照度取得#>
-  lux = rpz_lux
-  mes "温度: " + temp + " [℃]" <#blue#; 取得したデータの表示#>
-  mes "湿度: " + hum + " [%]"
-  mes "気圧: " + press + "[hPa]"
-  mes "照度: " + lux + " [lx]"
-  redraw 1              
-  wait 100
-  goto *main
+  *main
+    redraw 0              <#blue#; 仮想画面に描画#>
+    pos 60, 60            <#blue#; 表示位置を設定#>
+    get_temp              <#blue#; rpz_tempに温度取得#>
+    temp = rpz_temp       
+    get_humidity          <#blue#; rpz_humに湿度取得#>
+    hum = rpz_hum       
+    get_pressure          <#blue#; rpz_pressに気圧取得#>
+    press = rpz_press
+    geti2c_lux_als         <#blue#; rpz_luxに照度取得#>
+    lux = rpz_lux
+    mes "温度: " + temp + " [℃]" <#blue#; 取得したデータの表示#>
+    mes "湿度: " + hum + " [%]"
+    mes "気圧: " + press + "[hPa]"
+    mes "照度: " + lux + " [lx]"
+    redraw 1              
+    wait 100
+    goto *main
   \end{lstlisting}
   \textpageref{21}
 \end{frame}
