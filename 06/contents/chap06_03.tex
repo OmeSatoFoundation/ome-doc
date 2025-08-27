@@ -54,3 +54,19 @@
 
 
 教室ではヘッドセットで音を聞き、ヘッドセットのマイクで音声を入力するので、図\ref{使う音声デバイスの選択と設定}のように USB PnP Sound Device を選択し、図\ref{microphone_volume}のようにマイクの入力音量を最大にしておきましょう。
+
+
+% FIXME: Make a macro and share 05/contents/chap05_02_1.tex for DRY principle.
+\begin{itembox}[c]{\Large\textcolor{red}{注意！}}
+マイクのアイコンを右クリックしたときに現れるコンテクストメニューの「\aruby{USB}{ユーエスビー} \aruby{PnP}{プラグ・アンド・プレイ} \aruby{Sound}{サウンド} \aruby{Device}{デバイス}」 (図 \ref{pplug-volume_mic_context_menu}) をクリックしないように注意してください。
+クリックしてしまうと、一時的にマイクが使用できなくなります。
+図 \ref{pplug-volume_mic_context_menu} のように、チェックが外れている状態のときにマイクが使用できます。
+\end{itembox}
+
+\begin{figure}[H]
+    \begin{center}
+      \includegraphics[width=\linewidth]{images/pplug-volume_mic_context_menu.png}
+      \caption{右上の USB PnP Sound Device はクリックしないよう注意！}
+      \label{pplug-volume_mic_context_menu}
+    \end{center}
+\end{figure}
