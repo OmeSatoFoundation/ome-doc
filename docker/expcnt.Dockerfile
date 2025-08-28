@@ -43,7 +43,7 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     xz-utils \
     ;
 WORKDIR /install-tl-unx
-RUN --mount=type=bind,source=prod/texlive.profile,target=./texlive.profile \
+RUN --mount=type=bind,source=docker/expcnt.texlive.profile,target=./texlive.profile \
     curl -LO https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2023/install-tl-unx.tar.gz && \
     tar -xzf ./install-tl-unx.tar.gz --strip-components=1 && \
     ./install-tl \
@@ -52,8 +52,7 @@ RUN --mount=type=bind,source=prod/texlive.profile,target=./texlive.profile \
         --repository https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2023/tlnet-final/
 ENV PATH=$PATH:/opt/texlive/2023/bin/x86_64-linux
 # Install depending texlive packages
-RUN --mount=type=bind,source=prod/texlive.profile,target=./texlive.profile \
-  tlmgr update --self && \
+RUN tlmgr update --self && \
   tlmgr install \
   bbding \
   collection-fontsrecommended \
