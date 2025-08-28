@@ -1,15 +1,7 @@
 source = ["text03.tex", "slide03.tex"]
-output_directory = "artifacts/"
 
 sequence = ["latex"] # Skip bibtex and makeindex
 
 [programs.latex]
 command = "lualatex"
-opts  = [
-    "--cnf-line='TEXINPUTS=.;../texmf//;'",
-    "--shell-escape",
-    "-file-line-error",
-    "-interaction=nonstopmode",
-    "-synctex=1",
-    '-output-directory="%o"',
-]
+opts = ["--shell-escape", "--cnf-line='TEXINPUTS=.;../texmf//;'"]

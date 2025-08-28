@@ -1,2 +1,12 @@
-*
-!docker/texlive.profile
+*.eps
+*.tex
+*.svg
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.dvi
+*.log
+*.ps
+*.tex
+*.aux
