@@ -1,4 +1,3 @@
-# syntax=docker/dockerfile:1.4
 # The MIT License (MIT)
 # Copyright (c) 2016 Kaito Udagawa
 # Copyright (c) 2016-2018 3846masa
@@ -23,72 +22,33 @@
 
 # Modified by Yohei Shimmyo in 2022
 
-# Switch the base image that includes latex runtime.
-# Enter remote name (ghcr.io/.../...:...) to use remote base image (default).
-# If remote name fails, use local name (buildenv).
-# Find the remote image name and tags at
-# https://github.com/OmeSatoFoundation/ome-doc/pkgs/container/ome-doc%2Ftypesetenv
-ARG BASE_IMAGE=ghcr.io/omesatofoundation/ome-doc/typesetenv:latest
+FROM alpine:3.15.0
+ENV PATH /usr/local/bin/texlive:$PATH
+RUN apk add --no-cache \
+  fontconfig \
+  ghostscript \
+  inkscape \
+  perl \
+  tar \
+  wget \
+  xz
 
-FROM ubuntu:24.04 AS texlive
-# Install packages being dependent on texlive installation.
-RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
-    --mount=type=cache,target=/var/lib/apt,sharing=locked \
-    DEBIAN_FRONTEND=noninteractive \
-    apt-get update && apt-get --no-install-recommends install -y \
-    ca-certificates \
-    curl \
-    perl \
-    tar \
-    xz-utils \
-    ;
-WORKDIR /install-tl-unx
-RUN --mount=type=bind,source=prod/texlive.profile,target=./texlive.profile \
-    curl -LO https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2023/install-tl-unx.tar.gz && \
-    tar -xzf ./install-tl-unx.tar.gz --strip-components=1 && \
-    ./install-tl \
-        --no-interaction \
-        --profile ./texlive.profile \
-        --repository https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2023/tlnet-final/
-ENV PATH=$PATH:/opt/texlive/2023/bin/x86_64-linux
-# Install depending texlive packages
-RUN --mount=type=bind,source=prod/texlive.profile,target=./texlive.profile \
-  tlmgr update --self && \
-  tlmgr install \
-  bbding \
-  collection-fontsrecommended \
-  collection-langjapanese \
-  collection-latexextra \
-  latexmk \
-  light-latex-make \
-  ;
-
-
-FROM ubuntu:24.04 AS font
-RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
-    --mount=type=cache,target=/var/lib/apt,sharing=locked \
-    DEBIAN_FRONTEND=noninteractive \
-    apt-get update && apt-get --no-install-recommends install -y \
-    ca-certificates \
-    curl \
-    tar \
-    unar \
-    xz-utils \
-    ;
-WORKDIR /root/fonts
-RUN mkdir -p /usr/share/fonts/TTF && \
-    curl -L --remote-name-all \
-        https://github.com/liberationfonts/liberation-fonts/files/7261482/liberation-fonts-ttf-2.1.5.tar.gz \
-        https://moji.or.jp/wp-content/ipafont/IPAexfont/IPAexfont00401.zip \
-        https://noto-website-2.storage.googleapis.com/pkgs/NotoSansCJKjp-hinted.zip \
-        https://noto-website-2.storage.googleapis.com/pkgs/NotoSerifCJKjp-hinted.zip \
-        && \
-    tar -xvf liberation-fonts-ttf-2.1.5.tar.gz -C /usr/share/fonts/TTF && \
-    ls && \
-    echo "IPAexfont00401.zip" "NotoSansCJKjp-hinted.zip" "NotoSerifCJKjp-hinted.zip" | xargs -n 1 unar -d -f -o /usr/share/fonts/TTF
-WORKDIR /usr/share/fonts/TTF
-RUN curl -L --remote-name-all \
-        https://github.com/google/fonts/raw/main/ofl/bizudgothic/BIZUDGothic-Bold.ttf \
+# Install fonts
+RUN mkdir /usr/share/fonts/TTF \
+    && mkdir ~/fonts
+WORKDIR ~/fonts
+RUN wget https://github.com/liberationfonts/liberation-fonts/files/7261482/liberation-fonts-ttf-2.1.5.tar.gz \
+    && tar -zxvf liberation-fonts-ttf-2.1.5.tar.gz \
+    && mv liberation-fonts-ttf-2.1.5/LiberationMono*.ttf /usr/share/fonts/TTF \
+    && wget https://moji.or.jp/wp-content/ipafont/IPAexfont/IPAexfont00401.zip \
+    && unzip -o IPAexfont00401.zip \
+    && mv IPAexfont00401/*.ttf /usr/share/fonts/TTF \
+    && wget https://noto-website-2.storage.googleapis.com/pkgs/NotoSansCJKjp-hinted.zip \
+    && unzip NotoSansCJKjp-hinted.zip \
+    && wget https://noto-website-2.storage.googleapis.com/pkgs/NotoSerifCJKjp-hinted.zip \
+    && unzip -o NotoSerifCJKjp-hinted.zip \
+    && mv *.otf /usr/share/fonts/TTF \
+    && wget https://github.com/google/fonts/raw/main/ofl/bizudgothic/BIZUDGothic-Bold.ttf \
         https://github.com/google/fonts/raw/main/ofl/bizudgothic/BIZUDGothic-Regular.ttf \
         https://github.com/google/fonts/raw/main/ofl/bizudmincho/BIZUDMincho-Bold.ttf \
         https://github.com/google/fonts/raw/main/ofl/bizudmincho/BIZUDMincho-Regular.ttf \
@@ -96,60 +56,47 @@ RUN curl -L --remote-name-all \
         https://github.com/google/fonts/raw/main/ofl/bizudpgothic/BIZUDPGothic-Regular.ttf \
         https://github.com/google/fonts/raw/main/ofl/bizudpmincho/BIZUDPMincho-Bold.ttf \
         https://github.com/google/fonts/raw/main/ofl/bizudpmincho/BIZUDPMincho-Regular.ttf \
-        ;
+    && mv *.ttf /usr/share/fonts/TTF \
+    && rm -r ~/fonts
 
-COPY <<EOF /etc/fonts/local.conf
-<?xml version="1.0"?>
-<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
-<fontconfig>
-    <alias>
-        <family>serif</family>
-        <prefer>
-            <family>Noto Serif CJK JP</family>
-        </prefer>
-    </alias>
-    <alias>
-        <family>sans-serif</family>
-        <prefer>
-            <family>Noto Sans CJK JP</family>
-        </prefer>
-    </alias>
-</fontconfig>
-EOF
+RUN echo -e '\
+<?xml version="1.0"?>\n\
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">\n\
+<fontconfig>\n\
+    <alias>\n\
+        <family>serif</family>\n\
+        <prefer>\n\
+            <family>Noto Serif CJK JP</family>\n\
+        </prefer>\n\
+    </alias>\n\
+    <alias>\n\
+        <family>sans-serif</family>\n\
+        <prefer>\n\
+            <family>Noto Sans CJK JP</family>\n\
+        </prefer>\n\
+    </alias>\n\
+</fontconfig>\
+' >> /etc/fonts/local.conf
 
-FROM ubuntu:24.04 AS buildenv
-# Copy texlive
-COPY --from=texlive --link /opt/texlive/2023 /opt/texlive/2023
-COPY --from=font --link /usr/share/fonts/TTF /usr/share/fonts/TTF
-COPY --from=font --link /etc/fonts/local.conf /etc/fonts/local.conf
-# Install Runtime Dependencies
-RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
-    --mount=type=cache,target=/var/lib/apt,sharing=locked \
-    apt-get update && apt-get --no-install-recommends install -y \
-    fontconfig \
-    ghostscript \
-    inkscape \
-    ;
-RUN fc-cache -f
-ENV PATH=$PATH:/opt/texlive/2023/bin/x86_64-linux
+RUN cd ~/ \
+    && rm -rf fonts \
+    && fc-cache -f
 
+WORKDIR /install-tl-unx
+COPY ./docker/texlive.profile ./
+RUN wget -nv https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2023/install-tl-unx.tar.gz
+RUN tar -xzf ./install-tl-unx.tar.gz --strip-components=1
+RUN perl ./install-tl --scheme=full --no-doc-install --no-src-install --no-interaction --repository https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2023/tlnet-final/
+RUN ln -sf /usr/local/texlive/*/bin/* /usr/local/bin/texlive
+RUN tlmgr install \
+  collection-fontsrecommended \
+  collection-langjapanese \
+  collection-latexextra \
+  latexmk \
+  light-latex-make
 
-FROM ${BASE_IMAGE} AS build
-# Specify which source to be built. Default is one at project root.
-# For example: --build-arg TARGET=05/
-# TODO: make a top-level tex source that includes all chapters as one book.
-ARG TARGET=.
-WORKDIR /build/tex
-RUN --mount=type=cache,target=/root/.texlive2023/texmf-var/luatex-cache \
-    --mount=type=cache,target=/opt/texlive/texmf-local/texmf-var/luatex-cache \
-    --mount=type=cache,target=/opt/texlive/2023/texmf-var/luatex-cache \
-    --mount=type=cache,target=/opt/texlive/2023/texmf-var/luametatex-cache \
-    --mount=type=bind,source=${TARGET},target=.,rw=true \
-    --mount=type=bind,source=texmf/tex/luatexja/omebook/omebook.sty,target=/build/texmf/tex/luatexja/omebook/omebook.sty \
-    mkdir -p artifacts/ && \
-    llmk && \
-    cp -r artifacts /artifacts
+WORKDIR /workdir
 
-
-FROM scratch AS final
-COPY --from=build /artifacts /
+RUN tlmgr update --self && \
+    tlmgr install bbding
+CMD ["bash"]
