@@ -23,7 +23,7 @@
 # Modified by Yohei Shimmyo in 2022
 
 FROM alpine:3.15.0
-ENV PATH /usr/local/bin/texlive:$PATH
+ENV PATH=/usr/local/bin/texlive:$PATH
 RUN apk add --no-cache \
   fontconfig \
   ghostscript \
@@ -36,7 +36,7 @@ RUN apk add --no-cache \
 # Install fonts
 RUN mkdir /usr/share/fonts/TTF \
     && mkdir ~/fonts
-WORKDIR ~/fonts
+WORKDIR /root/fonts
 RUN wget https://github.com/liberationfonts/liberation-fonts/files/7261482/liberation-fonts-ttf-2.1.5.tar.gz \
     && tar -zxvf liberation-fonts-ttf-2.1.5.tar.gz \
     && mv liberation-fonts-ttf-2.1.5/LiberationMono*.ttf /usr/share/fonts/TTF \
