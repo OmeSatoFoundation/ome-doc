@@ -211,7 +211,7 @@
           redraw 1
   *led
           bnt1 = gpioin(5)        <#blue#;ボタンの状態を調べる#>
-          if btn1=0 : gpio 18, 1  <#blue#;ボタンによってLEDを点灯/消灯#>
+          if btn1=0 : gpio 18, 1 : else : gpio 18, 0 <#blue#;ボタンでLEDを操作#>
           wait 10                 <#blue#;0.1秒待つ#>
           goto *led               <#blue#;*ledに戻る#>
   \end{lstlisting}
@@ -372,7 +372,7 @@
              gpio 27, 0
            }
 
-           else : if ledidx=0 {     <#blue#;4番目の時はGPIO27のLEDを光らせる#>
+           else : if ledidx=0 {     <#blue#;0番目の時はGPIO27のLEDを光らせる#>
              gpio 17, 0             <#blue#;(3+1)\4 = 0#>
              gpio 18, 0
              gpio 22, 0
