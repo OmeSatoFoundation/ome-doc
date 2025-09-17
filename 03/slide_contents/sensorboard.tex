@@ -113,7 +113,7 @@
   \frametitle{温湿度/気圧/明るさを調べる-1}
   \begin{lstlisting}[title=\sim/03/sensors.hsp 前半, label=sensors.hsp-1]
    #include "hsp3dish.as"    
-   #include "jtalk.as"    
+   #include "rpz-gpio.as"    
 
    init_bme               <#blue#; 温湿度気圧センサ#>
    if stat {              <#blue#; 初期化成功チェック#>
