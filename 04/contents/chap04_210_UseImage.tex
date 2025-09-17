@@ -38,9 +38,8 @@
 
 絵を出すためには、2つの命令を使う必要があります。１つ目のcelloadは、必要な絵の素材を知らせるための命令です。これにより、指定された素材を表示する準備をします。
 
-\begin{description}
-    \item \textgt{\bf \ \ celload “画像ファイル名” , 絵の番号\ \ \ \ \texttt{← 絵を出す準備をする}}
-\end{description}
+\deschspsyntax{celload “画像ファイル名”, 絵の番号}
+\begin{center} ↑絵を出す準備をする \end{center}
 
 
 一度、celload命令によって\ruby{登録}{とう|ろく}された絵は、celput命令によって表示させることができます。
@@ -53,9 +52,7 @@ celput命令は、以下のように書くことができます。
 
 
 
-\begin{description}
-    \item \textgt{\bf celput 絵の番号}
-\end{description}
+\deschspsyntax{celput 絵の番号}
 
 
 

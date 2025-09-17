@@ -165,9 +165,7 @@ screen 0, world_x, world_y
 
 mes命令は、
 
-\begin{description}
-    \item \textgt{\bf mes \ “文字”}
-\end{description}
+\deschspsyntax{mes “文字”}
 
 
 のように必ず「”」の記号で文字を囲む必要があるので忘れないでください。
@@ -245,17 +243,15 @@ color命令は、色を決める命令だということを覚えていますか
 
 第2回で覚えたcolor命令の使い方を思い出しながら、ボールの色を変えてみましょう。
 
-
-\begin{description}
-    \item \textgt{\bf \ \ color 赤の明るさ, 緑の明るさ, 青の明るさ}
-\end{description}
-\begin{description}
-    \item \textgt{\bf \ \ \ \ 色を変えるにはcolor命令を使います}
-    \item \textgt{\bf \ \ \ \ colorの後にスペースに続けて3つの数字を指定します}
-    \item \textgt{\bf \ \ \ \ 3つの数字は「,」で区切ること}
-    \item \textgt{\bf \ \ \ \ 0は暗い光、255は明るい光になります}
-\end{description}
-
+\begin{itembox}[c]{color命令の使い方}
+    \deschspsyntax{color 赤の明るさ, 緑の明るさ, 青の明るさ}
+    \begin{itemize}
+        \item 色を変えるにはcolor命令を使います
+        \item colorの後にスペースに続けて3つの数字を指定します
+        \item 3つの数字は「,」で区切ること
+        \item 0は暗い光、255は明るい光になります
+    \end{itemize}
+\end{itembox}
 
 このゲームでは画像を一切使っていません。
 
@@ -318,9 +314,7 @@ kicky = 2.0             ; キックでボールが動く強さY
 どの変数が、どのような働きをしているかをコメントとして書いてあります。
 
 
-\begin{description}
-    \item \textgt{\bf \ \ 変数 = 数字 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ; コメント}
-\end{description}
+\deschspsyntax{変数 = 数字       ; コメント}
 
 となっている時、「; コメント」の部分は、プログラムの実行には関係ないですがメモを残す意味で、文字が書かれています。「;」記号から後ろはコメントとして扱われるルールだということを覚えておきましょう。
 
