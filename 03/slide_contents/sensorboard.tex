@@ -113,7 +113,7 @@
   \frametitle{温湿度/気圧/明るさを調べる-1}
   \begin{lstlisting}[title=\sim/03/sensors.hsp 前半, label=sensors.hsp-1]
    #include "hsp3dish.as"    
-   #include "jtalk.as"    
+   #include "rpz-gpio.as"    
 
    init_bme               <#blue#; 温湿度気圧センサ#>
    if stat {              <#blue#; 初期化成功チェック#>
@@ -124,10 +124,6 @@
    }
 
    geti2c_lux_init     <#blue#; 照度センサ tsl2572 を初期化する#>
-
-   *main
-   redraw 0            <#blue#; 仮想画面に描画#>
-   pos 60, 60          <#blue#; 表示位置を設定#>
   
   \end{lstlisting}
   \textpageref{21}
@@ -136,19 +132,24 @@
 \begin{frame}[fragile]
   \frametitle{温湿度/気圧/明るさを調べる-2}
   \begin{lstlisting}[title=\sim/03/sensors.hsp 後半, label=sensors.hsp-2]
-  get_humidity          <#blue#; rpz_humに湿度取得#>
-  hum = rpz_hum       
-  get_pressure          <#blue#; rpz_pressに気圧取得#>
-  press = rpz_press
-  geti2_lux_als         <#blue#; rpz_luxに照度取得#>
-  lux = rpz_lux
-  mes "温度: " + temp + " [℃]" <#blue#; 取得したデータの表示#>
-  mes "湿度: " + hum + " [%]"
-  mes "気圧: " + press + "[hPa]"
-  mes "照度: " + lux + " [lx]"
-  redraw 1              
-  wait 100
-  goto *main
+  *main
+    redraw 0              <#blue#; 仮想画面に描画#>
+    pos 60, 60            <#blue#; 表示位置を設定#>
+    get_temp              <#blue#; rpz_tempに温度取得#>
+    temp = rpz_temp       
+    get_humidity          <#blue#; rpz_humに湿度取得#>
+    hum = rpz_hum       
+    get_pressure          <#blue#; rpz_pressに気圧取得#>
+    press = rpz_press
+    geti2c_lux_als         <#blue#; rpz_luxに照度取得#>
+    lux = rpz_lux
+    mes "温度: " + temp + " [℃]" <#blue#; 取得したデータの表示#>
+    mes "湿度: " + hum + " [%]"
+    mes "気圧: " + press + "[hPa]"
+    mes "照度: " + lux + " [lx]"
+    redraw 1              
+    wait 100
+    goto *main
   \end{lstlisting}
   \textpageref{21}
 \end{frame}
@@ -210,7 +211,7 @@
           redraw 1
   *led
           bnt1 = gpioin(5)        <#blue#;ボタンの状態を調べる#>
-          if btn1=0 : gpio 18, 1  <#blue#;ボタンによってLEDを点灯/消灯#>
+          if btn1=0 : gpio 18, 1 : else : gpio 18, 0 <#blue#;ボタンでLEDを操作#>
           wait 10                 <#blue#;0.1秒待つ#>
           goto *led               <#blue#;*ledに戻る#>
   \end{lstlisting}
@@ -371,7 +372,7 @@
              gpio 27, 0
            }
 
-           else : if ledidx=0 {     <#blue#;4番目の時はGPIO27のLEDを光らせる#>
+           else : if ledidx=0 {     <#blue#;0番目の時はGPIO27のLEDを光らせる#>
              gpio 17, 0             <#blue#;(3+1)\4 = 0#>
              gpio 18, 0
              gpio 22, 0
