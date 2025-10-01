@@ -161,6 +161,13 @@
 \renewcommand{\figurename}{\textcolor{gray}{▲} 図}
 \renewcommand{\lstlistingname}{\textcolor{gray}{▲}リスト}
 
+% 例題用カウンタ
+\newcounter{ometoiExample} % カウンタの宣言
+\setcounter{ometoiExample}{0} % カウンタの初期化
+% ↓\refstepcounterの利用
+\newcommand{\useOmetoiExample}[1][]{\refstepcounter{ometoiExample}{#1}例題 {\thechapter}-{\theometoiExample}}
+\newcommand{\refOmetoiExample}{例題 {\thechapter}-{\theometoiExample}}
+
 % 問題用カウンタ
 \newcounter{ometoi} % カウンタの宣言
 \setcounter{ometoi}{0} % カウンタの初期化
@@ -177,6 +184,10 @@
 {\bf\ttfamily\small#1}
 }
 
+% 例題マクロ
+\newcommand{\exampleinduction}{\subsection*{考え方}}
+\newcommand{\exampleanswer}{\subsection*{\refOmetoiExample 答え}}
+
 % 問題マクロ
 \newcommand{\addquiz}[1]{%
 \parbox{\linewidth}{%
@@ -190,3 +201,5 @@
 \item #1 \vspace{0.5\zh}\\%
 \fbox{\phantom{白}} $\leftarrow$できたらチェックしましょう。\\
 }
+
+\newcommand{\deschspsyntax}[1]{\begin{center} \Large \texttt{#1} \end{center}}
