@@ -1,12 +1,18 @@
-\refstepcounter{Exercise}
-\clearpage\subsection*{\theExercise　CGIを使ってウェブページからLEDをつける}
-\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:CGI}
+% \refstepcounter{Exercise}
+
+% \subsection*{\theExercise　CGIを使ってウェブページからLEDをつける}
+
+%
+% subsection 6.4.1
+%
+\subsection{CGIを使ってウェブページからLEDをつける}
+% \addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:CGI}
 
 % \clearpage\subsection*{CGIを使ってウェブページからLEDをつける}
 
-考え方
+{\bfseries 考え方}
 
-まずはラズパイにセンサーボードを取り付けましょう。今回はFaBoは使用しません。
+まずはラズベリーパイにセンサーボードを取り付けましょう。今回はFaBoは使用しません。
 
 ウェブサーバはウェブブラウザから要求を受けます。”ファイル名.hsp”ファイルへのアクセスをブラウザから行うとサーバはCGIプログラムをサーバ側で起動します。結果はHTMLとしてブラウザ（クライアント）へ返されます。
 
@@ -14,7 +20,7 @@
 
 ターミナルを開いて
 
-cd {\textasciitilde}/07/www/
+cd {\textasciitilde}/06/www/
 
 ./webserver.py \ \ \ \ で起動できます。
 
@@ -37,29 +43,26 @@ localhost:3000/cgi-bin/led.hsp
 %koyaman
 %September 20, 2019 2:49 AM
 
-
-\centering
-\includegraphics[width=0.7\textwidth]{text07-img/ome7-img051.png}
-\flushleft
+\begin{center}
+  \includegraphics[width=0.7\textwidth]{text07-img/ome7-img051.png}
+\end{center}
 
 にアクセスをしてみましょう。アクセスをすると、プログラムが起動してLEDが点灯します。ブラウザのリロードボタンを押すと消灯します。
 
-\centering
-\includegraphics[width=0.7\textwidth]{text07-img/ome7-img052.png}
-\flushleft
+\begin{center}
+  \includegraphics[width=0.7\textwidth]{text07-img/ome7-img052.png}
+\end{center}
 
-cgi-binディレクトリはCGIプログラムを入れるディレクトリです。{\textasciitilde}/07/wwwの下にあります。このディレクトリ内の
+cgi-binディレクトリはCGIプログラムを入れるディレクトリです。
+{\textasciitilde}/07/wwwの下にあります。このディレクトリ内の
 
 ”ファイル名”.hsp
 
 はCGIプログラムとして\ruby{扱}{あつ}われます。led.hspはCGIプログラムです。
 
-
-\bigskip
-
 \clearpage
-プログラム解説
 
+プログラム解説
 
 \begin{table}[htbp]
     \centering
@@ -110,9 +113,8 @@ mes {\textquotedbl}Content-type: text/html{\textbackslash}n{\textquotedbl}
 
 はCGIプログラムがウェブサーバに結果を返すときに、結果がHTMLであることを伝えるために必要です。{\textbackslash}nは改行を意味します。本来は改行は２つ必要ですが、mes命令は自動で改行を入れてくれるので、{\textbackslash}nは１つで十分です。
 
-
-\bigskip
 \clearpage
+
 4行目\ruby{以降}{いこう}のmes命令で出力するものは、HTMLの一部として扱われます。
 
 \bigskip
@@ -127,9 +129,7 @@ prev\_led = cgpioin(17)
 
 では、GPIO17番の状態を調べています。LEDが点灯していれば１になり、消灯していれば０になります。
 
-
 \bigskip
-
 
 10〜17行目では、\ruby{条件}{じょうけん}判断のif文を使って読み取ったLEDの状態を判断します。消灯状態であれば、9行目で
 
@@ -180,100 +180,123 @@ end
 
 でプログラムの終了をします。
 
-
 \bigskip
-
-
 
 第7回のCGIを使うプログラムでは、第3回の授業とはちがう命令を使います。\\
 第3回の命令でCGIを使おうとすると、上手く動かなくなってしまうからです。\\
-下の表にそれぞれの命令をまとめておきます。\\
+次の表にそれぞれの命令をまとめておきます。\\
 
 \clearpage
 
 
 
+% \begin{table}[htbp]
+%     \centering
+%     % \caption{文字タイプ表}
+%     \begin{tabular}{|l|l|l|}
+%         \hline
+%         第3回に使った命令名 & CGIを使うときの命令名 & 効果
+% 		\\\hline
+
+%         \begin{tabular}{l}
+%             \#include “rpz-gpio.as”
+%         \end{tabular}
+%         &
+%         \begin{tabular}{l}
+%             \#include “rpz-gpio-cl.as”
+%         \end{tabular}
+%         &
+%         \begin{tabular}{l}
+%             プログラムのはじめに書くことでLED\\
+% 		    の点灯や消灯の命令が使えるようにな\\
+%             ります。
+%         \end{tabular}
+%         \\\hline
+
+%         \begin{tabular}{l}
+%             onoff\ = \ gpioin(17)
+%         \end{tabular}
+%         &
+%         \begin{tabular}{l}
+%             onoff\ = \ cgpioin(17)
+%         \end{tabular}
+%         &
+%         \begin{tabular}{l}
+%             17番のGPIOのLEDが点灯していれ\\
+%             ば変数onoffに１が、消灯していれば変\\
+%             数onoffに0が入ります。17をほかの番\\
+%             号に変えることで、ほかのLEDの状態\\
+%             を確認できます。
+%         \end{tabular}
+%         \\\hline
+
+%         \begin{tabular}{l}
+%             gpio \ 18,\ 1
+%         \end{tabular}
+%         &
+%         \begin{tabular}{l}
+%             cgpioin \ 18,\ 1
+%         \end{tabular}
+%         &
+%         \begin{tabular}{l}
+%             18番のGPIOのLEDを点灯します。1\\
+%             を0にすると消灯になります。18をほ\\
+%             かの番号に変えることで、ほかのLED\\
+%             を点灯、消灯できます。
+%         \end{tabular}
+%         \\\hline
+        
+%     \end{tabular}
+%     \end{table}
+
 \begin{table}[htbp]
     \centering
-    % \caption{文字タイプ表}
-    \begin{tabular}{|l|l|l|}
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabular}{|l|l|p{6cm}|}  % 右の列だけ幅指定
         \hline
-        第3回に使った命令名 & CGIを使うときの命令名 & 効果
-		\\\hline
+        第3回に使った命令名 & CGIを使うときの命令名 & 効果 \\
+        \hline
 
-        \begin{tabular}{l}
-            \#include “rpz-gpio.as”
-        \end{tabular}
-        &
-        \begin{tabular}{l}
-            \#include “rpz-gpio-cl.as”
-        \end{tabular}
-        &
-        \begin{tabular}{l}
-            プログラムのはじめに書くことでLED\\
-		    の点灯や消灯の命令が使えるようにな\\
-            ります。
-        \end{tabular}
-        \\\hline
+        \#include “rpz-gpio.as” & \#include “rpz-gpio-cl.as” & プログラムのはじめに書くことで、LEDの点灯や消灯の命令が使えるようになります。 \\
+        \hline
 
-        \begin{tabular}{l}
-            onoff\ = \ gpioin(17)
-        \end{tabular}
-        &
-        \begin{tabular}{l}
-            onoff\ = \ cgpioin(17)
-        \end{tabular}
-        &
-        \begin{tabular}{l}
-            17番のGPIOのLEDが点灯していれ\\
-            ば変数onoffに１が、消灯していれば変\\
-            数onoffに0が入ります。17をほかの番\\
-            号に変えることで、ほかのLEDの状態\\
-            を確認できます。
-        \end{tabular}
-        \\\hline
+        onoff = gpioin(17) & onoff = cgpioin(17) & 17 番の GPIO の LED が点灯していれば変数 onoff に 1 が、消灯していれば 0 が入ります。番号を変えることで他の LED の状態も確認できます。 \\
+        \hline
 
-        \begin{tabular}{l}
-            gpio \ 18,\ 1
-        \end{tabular}
-        &
-        \begin{tabular}{l}
-            cgpioin \ 18,\ 1
-        \end{tabular}
-        &
-        \begin{tabular}{l}
-            18番のGPIOのLEDを点灯します。1\\
-            を0にすると消灯になります。18をほ\\
-            かの番号に変えることで、ほかのLED\\
-            を点灯、消灯できます。
-        \end{tabular}
-        \\\hline
-        
+        gpio 18, 1 & cgpioin 18, 1 & 18 番の GPIO の LED を点灯します。1 を 0 にすると消灯になります。番号を変えることで他の LED にも対応できます。 \\
+        \hline
     \end{tabular}
-    \end{table}
+\end{table}
 
 
 
-\bigskip
+\begin{tcolorbox}[title=\useOmetoi,breakable]\label{Q:dynamicPage}
+  \begin{enumerate}
+    \addex{友達のLEDをCGIで点灯させてみよう。}
+    
+    \addquiz{動的なページを作成する場合に用いるものは何でしょう。}
+    \addex{Faboのセンサ(LED,\ruby{振動子}{しんどうし}などのデジタルセンサ）を接続してCGIから動かせるようにしてみよう。}
+  \end{enumerate}
+\end{tcolorbox}
+
+\clearpage
+
+% \refstepcounter{Question}\theQuestion
+
+% % 問題7-10　　
+% {\bfseries
+% 	友達のLEDをCGIで点灯させてみよう。}
+
+% {\bfseries
+
+% 	点灯、消灯時のウェブページに表示されるメッセージを\ruby{変更}{へんこう}してみよう。}
+
+% {\bfseries
+% 	他の色のLEDも点灯、消灯できるようにしよう。}
+
+% {\bfseries
+% 	Faboのセンサ(LED,
+% 	\ruby{振動子}{しんどうし}などのデジタルセンサ）を接続してCGIから動かせるようにしてみよう。}
 
 
-\bigskip
-\refstepcounter{Question}\theQuestion
-
-% 問題7-10　　
-{\bfseries
-	友達のLEDをCGIで点灯させてみよう。}
-
-{\bfseries
-
-	点灯、消灯時のウェブページに表示されるメッセージを\ruby{変更}{へんこう}してみよう。}
-
-{\bfseries
-	他の色のLEDも点灯、消灯できるようにしよう。}
-
-{\bfseries
-	Faboのセンサ(LED,
-	\ruby{振動子}{しんどうし}などのデジタルセンサ）を接続してCGIから動かせるようにしてみよう。}
-
-
-\bigskip
+% \bigskip

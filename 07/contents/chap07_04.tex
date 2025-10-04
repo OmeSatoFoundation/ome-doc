@@ -1,12 +1,17 @@
-\refstepcounter{PagePtr}\label{P:HP}
-\refstepcounter{Exercise}
-\subsection*{2−2　\theExercise　自分のホームページを公開しよう\label{E:myHP}}
+% \refstepcounter{PagePtr}\label{P:HP}
+% \refstepcounter{Exercise}
+
+%
+% subsection 6.3.2
+%
+\subsection{自分のホームページを公開しよう\label{E:myHP}}
+% \subsection{2−2　\theExercise　自分のホームページを公開しよう\label{E:myHP}}
 % \subsection*{2−2自分のホームページを公開しよう}
-考え方
+{\bfseries 考え方}
 
 
-クライアントとサーバーと呼ばれるコンピュータがあります。クライアントとはサービスを利用するコンピュータです。サーバーとはそれと\ruby{逆}{ぎゃく}にサービスを提供しているコンピュータです。クライアントとサーバーは同じコンピュータにあっても
-OK です。例えば、Googleは検索するためのウェブサイトを提供しています。ウェブサイトを提供するサーバーをウェブサーバーと呼びます。自分のホームページを公開するためには、ウェブサーバーを動かす必要があります。
+クライアントとサーバと呼ばれるコンピュータがあります。クライアントとはサービスを利用するコンピュータです。サーバとはそれと\ruby{逆}{ぎゃく}にサービスを提供しているコンピュータです。クライアントとサーバは同じコンピュータにあっても
+OK です。例えば、Googleは検索するためのウェブサイトを提供しています。ウェブサイトを提供するサーバをウェブサーバと呼びます。自分のホームページを公開するためには、ウェブサーバを動かす必要があります。
 
 注意
 
@@ -15,107 +20,205 @@ OK です。例えば、Googleは検索するためのウェブサイトを提�
 
 \bigskip
 
-1.まず
-{\textasciitilde}/07/wwwのディレクトリに移りましょう。
+\begin{enumerate}
+    \item まず
+    {\textasciitilde}/06/wwwのディレクトリに移りましょう。
 
-\ \ ターミナルを立ち上げて次のコマンドを打ちましょう。
+    ターミナルを立ち上げて次のコマンドを打ちましょう。
 
-\ \ cd {\textasciitilde}/07/www
+    cd {\textasciitilde}/06/www
 
+    \item サーバを動かしてみましょう。
 
-\bigskip
+    次のコマンドを打ちましょう。
 
-2.サーバーを動かしてみましょう。
+    ./webserver.py
 
-\ \ 次のコマンドを打ちましょう。
+    を実行するとウェブサーバが動き始めます。
 
-\ \ 　./webserver.py
+    webserver.pyを起動したディレクトリがドキュメントルートになります。
 
-\ \ を実行するとウェブサーバが動き始めます。
+    これはファイルシステムのルートディレクトリとは別のものでドキュメントルートはウェブ
 
-\ \ webserver.pyを起動したディレクトリがドキュメントルートになります。
+    サーバから見たルートディレクトリのことです。
 
-\ \ これはファイルシステムのルートディレクトリとは別のものでドキュメントルートはウェブ
+    つまりウェブサーバしかそのディレクトリをルートディレクトリとは認識しません。
 
-\ \ サーバから見たルートディレクトリのことです。
+    ディレクトリに関しては第3回の教科書3.3.2 「ディレクトリの関係」を参考にしてください。
 
-\ \ つまりウェブサーバーしかそのディレクトリをルートディレクトリとは認識しません。
+    \begin{center}
+        \includegraphics[width=0.73\textwidth]{text07-img/ome7-img038.png}
+    \end{center}
 
-\ \ ディレクトリに関しては第3回の教科書3.3.2 「ディレクトリの関係」を参考にしてください。
+    \item サーバが動いているかどうかを確認してみましょう。
 
+    別のターミナルを立ち上げ、次のコマンドを打ちましょう。
 
-\centering
-\includegraphics[width=0.73\textwidth]{text07-img/ome7-img038.png}
-\flushleft
+    nmap localhost
 
-3.サーバーが動いているかどうかを確認してみましょう。
+    今回使っているポート番号は:3000です。STATE（状態）がopen（開く）になっています。
 
-\ \ 別のターミナルを立ち上げ、次のコマンドを打ちましょう。
+    これでサーバが動いていることが分かります。
 
-\ \ 　nmap localhost
+    \begin{center}
+        \includegraphics[width=0.75\textwidth]{text07-img/ome7-img039.png}
+    \end{center}
 
-\ \ 今回使っているポート番号は:3000です。STATE（状態）がopen（開く）になっています。
+    \clearpage
 
-\ \ これでサーバーが動いていることが分かります。
+    \item みなさんが作ったウェブページを表示してみましょう。
 
-\centering
-\includegraphics[width=0.75\textwidth]{text07-img/ome7-img039.png}
-\flushleft
+    みなさんが作ったindex.htmlの場所はwebserver.pyを起動したディレクトリと同じでしたね。「2」で説明したドキュメントルートです。
+
+    これはwebserver.pyを起動したディレクトリ
+
+    {\textasciitilde}/06/www/
+
+    を指しています。
+
+    \bigskip
+
+    次にブラウザのアドレスバーに打つURLはどのように書けばいいのでしょうか。
+
+    URLの書き方は次のようになります。
+
+    なので自分のパソコンのサーバを見るには
+
+    \begin{center}
+        \includegraphics[width=13.894cm]{text07-img/ome7-img040.png}
+    \end{center}
+
+    \url{http://localhost:3000/}
+
+    というURLになります。
+
+    サーバ名の後の/（スラッシュ）はドキュメントルートを示しています。
+
+    サーバはファイル名を指定しないとindex.htmlというファイルを開くように\ruby{設定}{せってい}されて\ \ います。
+
+    \url{http://localhost:3000/}
+
+    をブラウザのアドレスバーに打ってみましょう。
+
+    みなさんが作ったウェブページのHTMLが表示されましたね。
+
+    これは
+
+    \url{http://localhost:3000/index.html}
+
+    と入力しているのと同じことです。
+
+    \bigskip
+    \begin{center}
+        \includegraphics[width=9.551cm]{text07-img/ome7-img041.png}
+    \end{center}
+
+\end{enumerate}
 
 \clearpage
 
 
-4.みなさんが作ったウェブページを表示してみましょう。
+% 1.まず
+% {\textasciitilde}/07/wwwのディレクトリに移りましょう。
 
-\ \ みなさんが作ったindex.htmlの場所はwebserver.pyを起動したディレクトリと同じでしたね。「2」で説明したドキュメントルートです。
+% \ \ ターミナルを立ち上げて次のコマンドを打ちましょう。
 
-\ \ これはwebserver.pyを起動したディレクトリ
-
-\ \ 　{\textasciitilde}/07/www/
-
-\ \ を指しています。
+% \ \ cd {\textasciitilde}/07/www
 
 
-\bigskip
+% \bigskip
 
-\ \ 次にブラウザのアドレスバーに打つURLはどのように書けばいいのでしょうか。
+% 2.サーバーを動かしてみましょう。
 
-\ \ URLの書き方は次のようになります。
+% \ \ 次のコマンドを打ちましょう。
 
-\ \ なので自分のパソコンのサーバーを見るには
+% \ \ 　./webserver.py
 
-\centering
-\includegraphics[width=13.894cm]{text07-img/ome7-img040.png}
-\flushleft
+% \ \ を実行するとウェブサーバが動き始めます。
 
-\ \ 　\url{http://localhost:3000/}
+% \ \ webserver.pyを起動したディレクトリがドキュメントルートになります。
 
-\ \ というURLになります。
+% \ \ これはファイルシステムのルートディレクトリとは別のものでドキュメントルートはウェブ
 
-\ \ サーバー名の後の/（スラッシュ）はドキュメントルートを示しています。
+% \ \ サーバから見たルートディレクトリのことです。
 
-\ \ サーバはファイル名を指定しないとindex.htmlというファイルを開くように\ruby{設定}{せってい}されて\ \ います。
+% \ \ つまりウェブサーバーしかそのディレクトリをルートディレクトリとは認識しません。
 
-\ \ 　\url{http://localhost:3000/}
-
-\ \ をブラウザのアドレスバーに打ってみましょう。
-
-\ \ みなさんが作ったウェブページのHTMLが表示されましたね。
-
-\ \ これは
-
-\ \ 　\url{http://localhost:3000/index.html}
-
-\ \ と入力しているのと同じことです。
-
-\bigskip
-
-\centering
-\includegraphics[width=9.551cm]{text07-img/ome7-img041.png}
-\flushleft
+% \ \ ディレクトリに関しては第3回の教科書3.3.2 「ディレクトリの関係」を参考にしてください。
 
 
-\bigskip
+% \centering
+% \includegraphics[width=0.73\textwidth]{text07-img/ome7-img038.png}
+% \flushleft
+
+% 3.サーバーが動いているかどうかを確認してみましょう。
+
+% \ \ 別のターミナルを立ち上げ、次のコマンドを打ちましょう。
+
+% \ \ 　nmap localhost
+
+% \ \ 今回使っているポート番号は:3000です。STATE（状態）がopen（開く）になっています。
+
+% \ \ これでサーバーが動いていることが分かります。
+
+% \centering
+% \includegraphics[width=0.75\textwidth]{text07-img/ome7-img039.png}
+% \flushleft
+
+% \clearpage
 
 
-\bigskip
+% 4.みなさんが作ったウェブページを表示してみましょう。
+
+% \ \ みなさんが作ったindex.htmlの場所はwebserver.pyを起動したディレクトリと同じでしたね。「2」で説明したドキュメントルートです。
+
+% \ \ これはwebserver.pyを起動したディレクトリ
+
+% \ \ 　{\textasciitilde}/07/www/
+
+% \ \ を指しています。
+
+
+% \bigskip
+
+% \ \ 次にブラウザのアドレスバーに打つURLはどのように書けばいいのでしょうか。
+
+% \ \ URLの書き方は次のようになります。
+
+% \ \ なので自分のパソコンのサーバーを見るには
+
+% \centering
+% \includegraphics[width=13.894cm]{text07-img/ome7-img040.png}
+% \flushleft
+
+% \ \ 　\url{http://localhost:3000/}
+
+% \ \ というURLになります。
+
+% \ \ サーバー名の後の/（スラッシュ）はドキュメントルートを示しています。
+
+% \ \ サーバはファイル名を指定しないとindex.htmlというファイルを開くように\ruby{設定}{せってい}されて\ \ います。
+
+% \ \ 　\url{http://localhost:3000/}
+
+% \ \ をブラウザのアドレスバーに打ってみましょう。
+
+% \ \ みなさんが作ったウェブページのHTMLが表示されましたね。
+
+% \ \ これは
+
+% \ \ 　\url{http://localhost:3000/index.html}
+
+% \ \ と入力しているのと同じことです。
+
+% \bigskip
+
+% \centering
+% \includegraphics[width=9.551cm]{text07-img/ome7-img041.png}
+% \flushleft
+
+
+% \bigskip
+
+
+% \bigskip

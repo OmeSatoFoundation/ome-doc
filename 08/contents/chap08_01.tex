@@ -1,49 +1,39 @@
 \chapter{スクレイピングを学ぼう}
 \section{今回の授業}
-\subsection*{目標 : }
+
+\subsection*{目標}
 \subsubsection*{ウェブページから\ruby{欲}{ほ}しい\ruby{情報}{じょうほう}を取り出す（スクレイピング）について学ぼう}
+
 \subsection*{注意点}
 \begin{itemize}
-\item
-授業の合間のきゅうけいでは、遠くのものをながめたりして目を休めましょう
-\item 水分ほきゅうはこまめにしましょう
-\item
-先生が説明中は先生の話を聞きましょう
-\item
-わからないことがあったらTAの先生方にすぐ聞きましょう
+	\item 授業の合間の\ruby{休憩}{きゅうけい}では、遠くのものを\ruby{眺}{なが}めたりして目を休めましょう。
+	\item 水分\ruby{補給}{ほきゅう}をこまめにしましょう。
+	\item 先生が説明中は先生の話を聞きましょう。
+	\item わからないことがあったらTAの先生方にすぐ聞きましょう。
 \end{itemize}
+
 \subsection*{教科書について}
 \begin{itemize}
-\item
-教科書には例題、それに\ruby{似}{に}た問題があります
 
+	\item 教科書では、\ruby{具体的}{ぐたいてき}な操作の手順が説明され、それを\ruby{応用}{おうよう}した問題があります。\\
+		  まずは、説明をよく読みながら試してみましょう。\\
+		  そのあと問題をと解きましょう。
+	\item 問題をクリアしたらシールラリーカードにスタンプを押しましょう。
+
+	\item すべての問題をクリアできたらTAの先生にラリーカードを見せて、\\
+	      Complete(コンプリート)スタンプをもらいましょう。
+	\item 授業中に終わらなかった問題は、できるだけ家でやって終わらせましょう。
+	\item 授業中にわからないところがあったらすぐにTAの先生に聞きましょう。
+
+	\item 家でわからないことがあったら、すぐに\ruby{質問}{しつもん}フォームから\ruby{質問}{しつもん}しましょう。
+\end{itemize}
+
+\subsection*{教材を自分のフォルダに置く}
 \begin{itemize}
-\item
-まずは、例題をよく読みながら試してみましょう
-\item そのあと問題を\ruby{解}{と}きましょう
+	\item /usr/local/share/ome にあるフォルダ 08 をホームディレクトリにコピーしましょう。
+	\item やり方を忘れてしまった人は、「第 1 回 1.4.1 教材を準備しよう」を参考にしてみてください。
+
 \end{itemize}
-\item
-例題、問題をクリアしたらシールラリーカードにシールを\ruby{貼}{は}りましょう
-\item
-授業中にすべての例題、問題をクリアできたらTAの先生にシールラリーカードを見せて、Complete（コンプリート）シールを\ruby{貰}{もら}いましょう
-\item
-授業中に終わらなかった例題、問題は宿題になるので、できるだけ授業中に終わらせましょう
-\item
-授業中にわからないところがあったらすぐにTAの先生に聞きましょう
-\item
-家でわからないことがあったら、すぐに\ruby{質問}{しつもん}フォームから質問しましょう。
-\end{itemize}
-
-\subsection*{教材を自分のフォルダに置こう}
-まずは、今回利用する教材をコピーしましょう。
-これまでと同じように、/usr/local/share/ome という場所にあるフォルダ 08をコピーして、/home/ユーザー名 に貼り付けてください。
-
-やり方を忘れてしまった人は、「第1回 4.1 例題1-18 教材をじぶんのフォルダに置こう」 を参考にしてみてください。
-
-\bigskip
-
-
-\bigskip
 
 \clearpage
 \refstepcounter{PagePtr}\label{P:intro}
@@ -59,7 +49,7 @@
 ※ \ruby{講義}{こうぎ}では友達のIPアドレスやwebページを使っていますが、\ruby{個人}{こじん}で勉強する時は自分の }
 
 {\bfseries\color[rgb]{1.0,0.2,0.2}
-    IPアドレスやwebページを使って例題や問題を行ってください。}
+    IPアドレスやwebページを使って問題を行ってください。}
 
 手順
 \begin{enumerate}
@@ -101,7 +91,8 @@
 
 第１回目の授業でみさなんが作成した自己紹介ページとその画像のファイルを第8回のフォルダにコピーしましょう。
 
-やり方を忘れてしまった人は、「第7回 2-1 例題7-4 HTMLの復習」 を参考にしてみてください。
+やり方を忘れてしまった人は、「第6回 
+6.3.1 HTMLの復習」 を参考にしてみてください。
 
 \textbf{cp \ {\textasciitilde}/01/self\_intro.html \ \ {\textasciitilde}/08/www/index.html}
 
@@ -128,8 +119,7 @@
 \includegraphics[width=\textwidth]{./text08-img/textbook-img003.png}
 
 \end{center}
-ウェブサーバーは3000番ポートで動いています。(ポートについては、「7回目の教科書
-ポートについて」を確認してください)%
+ウェブサーバーは3000番ポートで動いています。(ポートについては、6回目の教科書「6.2.6 ポート番号とは」を確認してください)%
 %７会のリファレンス
 %koyaman
 %September 23, 2019 10:21 PM
@@ -141,7 +131,7 @@
 
 \textbf{hostname -I}
 
-を実行して右となりの人にIPアドレスを教えてください。
+と入力してエンターを押します。出てきた数字（IPアドレス）を右となりの人に教えてください。
 
 \begin{center}
   % Unhandled or unsupported graphics:
@@ -368,11 +358,13 @@ IPアドレスをメモするのに使ってください。
 \bigskip
 
 \refstepcounter{Exercise}
-\clearpage\section{\theExercise　コマンドラインからウェブページをダウンロードする}
-\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:CURL}
-インターネットから情報を取ってくるときに使用するツールは
-curl (カール)と言います。 curl
-はデータを送ったり受け取ったりするときに使います。
+
+\clearpage
+
+\section{コマンドラインからウェブページをダウンロードする}\label{E:CURL}
+% \addtocounter{Exercise}{-1}\refstepcounter{Exercise}
+インターネットから情報を取ってくるときには、「curl（カール）」という道具を使います。
+curlは、データを送ったり受け取ったりするときに使います。たとえば、お友だちのページの文章や画像をコピーできます。
 
 左となりの友達のウェブページを取得してみましょう。
 
@@ -380,7 +372,7 @@ curl (カール)と言います。 curl
 
 例 : koyama.html
 
-例題ではfriend.htmlとして保存しています。
+ここではfriend.htmlとして保存しています。
 
 ターミナルを開いてください。
 
@@ -474,29 +466,47 @@ HTMLファイルをダウンロードしてfriend.htmlとして保存してい�
 ”いわきあおと”のウェブページのHTMLファイルがダウンロードできていることが確認できました。
 
 次はダウンロードしたHTMLファイルから情報を取り出してみよう。
-\refstepcounter{Question}
-\clearpage\subsection*{\theQuestion\label{Q:CURL}}
-\begin{itemize}
-\item curl
-を使って、グループの友達全員のウェブページを保存しよう。
-\end{itemize}
-\ \ \ \ Hint :
-ローマ字を使って”友達の名前.html”にしておこう
+% \refstepcounter{Question}
+\clearpage
 
-\ \ \ \ (例: koyama.html)
+\begin{tcolorbox}[title=\useOmetoi,breakable]\label{Q:port}
+  \begin{enumerate}
+    \addex{curlを使って、グループの友達全員のウェブページを保存しよう。}
+    HINT:ローマ字を使って「友達の名前.html」というファイル名にしましょう。
+    (例: koyama.html)
+  \end{enumerate}
+\end{tcolorbox}
 
-\refstepcounter{Question}
-\subsection*{\theQuestion\label{Q:HTML}}
-\begin{itemize}
-\item
-mousepadを使ってダウンロードしたHTMLファイルを開いて友達の名前を確認してみよう
-\end{itemize}
-\ \ \ \ Hint :
-ダウンロードしたファイルをmousepadで見てみよう
+\begin{tcolorbox}[title=\useOmetoi,breakable]\label{Q:HTML}
+  \begin{enumerate}
+    \addex{mousepadを使ってダウンロードしたHTMLファイルを開いて友達の名前を確認してみよう。}
+    HINT:ダウンロードしたファイルをmousepadで見てみよう
+  \end{enumerate}
+\end{tcolorbox}
 
-\refstepcounter{Exercise}
-\clearpage\section{\theExercise　ダウンロードしたページを調べてみましょう}
-\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:HTML}
+% \subsection*{\theQuestion\label{Q:CURL}}
+% \begin{itemize}
+% \item curlを使って、グループの友達全員のウェブページを保存しよう。
+% \end{itemize}
+% \ \ \ \ Hint :
+% ローマ字を使って「友達の名前.html」というファイル名にしましょう。
+
+% \ \ \ \ (例: koyama.html)
+
+% \refstepcounter{Question}
+% \subsection*{\theQuestion\label{Q:HTML}}
+% \begin{itemize}
+% \item
+% mousepadを使ってダウンロードしたHTMLファイルを開いて友達の名前を確認してみよう
+% \end{itemize}
+% \ \ \ \ Hint :
+% ダウンロードしたファイルをmousepadで見てみよう
+
+% \refstepcounter{Exercise}
+\clearpage
+
+\section{ダウンロードしたページを調べてみましょう}\label{E:HTML}
+% \addtocounter{Exercise}{-1}\refstepcounter{Exercise}
 考え方
 
 
@@ -506,7 +516,7 @@ mousepadを使ってダウンロードしたHTMLファイルを開いて友達�
 
 \textbf{cd \ {\textasciitilde}/08/}
 
-mousepad
+\textbf{mousepad}
 
 
 
@@ -568,7 +578,7 @@ mousepad
 
 {\bfseries
 注意 :
-{\textless}title{\textgreater}は半角文字です。入力モードが半角になっているか確認してください。(\ruby{詳}{くわ}しくは例題1-4を見てください)}
+{\textless}title{\textgreater}は半角文字です。入力モードが半角になっているか確認してください。}
 
 
 
@@ -582,13 +592,15 @@ mousepad
 
 \bigskip
 
-毎回手動で友達のウェブページをダウンロードして、検索して探すのは大変です。次はプログラムから自動で行う方法を学びましょう。
-\refstepcounter{Exercise}
-\clearpage\section{\theExercise　HSPから情報を取り出す}
-\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:SCRAPING}
+いつも自分でお友だちのページをダウンロードして探すのは、とても時間がかかって大変です。次はプログラムから自動で行う方法を学びましょう。
+% \refstepcounter{Exercise}
+\clearpage
+
+\section{HSPから情報を取り出す}\label{E:SCRAPING}
+% \addtocounter{Exercise}{-1}\refstepcounter{Exercise}
 考え方
 
-前の例題でやったように、毎回手動で友達のウェブページをダウンロードして、テキストエディタを使って検索するのは大変です。
+\ref{E:HTML}章でやったように、毎回手動で友達のウェブページをダウンロードして、テキストエディタを使って検索するのは大変です。
 また、ウェブページが\ruby{更新}{こうしん}されたら、同じ手順を\ruby{繰}{く}り返して情報を取り直さないといけません。
 そこで、今回はこの手順をHSPのプログラムで自動で行う方法を学びます。
 
@@ -600,7 +612,7 @@ mousepad
 
 ターミナルを開いて、
 
-hsed　を実行してください
+hsed　を実行してください。
 
 
 
@@ -610,7 +622,7 @@ hsed　を実行してください
 
 \end{center}
 
-\clearpage
+
 
 ファイル→開く　から\\
 \textbf{{\textasciitilde}/08/title.hsp}
@@ -640,7 +652,7 @@ hsed　を実行してください
 \ \ → friend\_ip = “192.168.1.90”
 
 F5を\ruby{押}{お}して実行してみましょう。
-実行結果はhsedを実行したターミナルに表示されます。
+実行すると、結果はターミナルの画面に表示されます。
 
 
 
@@ -763,7 +775,7 @@ F5を\ruby{押}{お}して実行してみましょう。
 
 10行目のurl変数は、ダウンロードするウェブページを表すURLを指定します。
 
-この例題プログラムでは、127.0.0.1:3000/index.htmlのような形になっています。
+このプログラムでは、127.0.0.1:3000/index.htmlのような形になっています。
 
 
 \bigskip
@@ -832,7 +844,7 @@ htmltag html, “title”, tag
 
 表示結果では、{\textless}title{\textgreater}\ruby{趣味}{しゅみ}のページ{\textless}/title{\textgreater}となっています。
 
-実際に欲しい情報は{\textless}title{\textgreater}{\textless}/title{\textgreater}の間にある文字列つまりこの例では、”趣味のページ”です。
+実際に欲しい情報は{\textless}title{\textgreater}{\textless}/title{\textgreater}の間に書いてある言葉（文字列）、つまりこの例では、”趣味のページ”です。
 
 
 
@@ -919,49 +931,85 @@ htmluntag tag, text
 例えば、次の例で試すアメダスとよばれる\ruby{気象情報観測}{きしょうじょうほうかんそく}システムの観測情報（気温、\ruby{降水確率}{こうすいかくりつ}）などの情報を取り出し、LEDなどのセンサーと組み合わせます。
 \ruby{実現}{じつげん}したいアイディアがあったらメモをしておきましょう。
 
-\refstepcounter{Question}
-\clearpage\subsection*{\theQuestion\label{Q:title}}
-\begin{itemize}
-\item
-残りのグループ内の友達のウェブページのタイトルを取り出してみよう
-\end{itemize}
-\ \ HINT:
-firend\_ipでダウンロードしたい友達のIPアドレスを指定する
+% \refstepcounter{Question}
+\clearpage
 
-\ \ \ \ メモした友達のIPアドレスを使おう
+\begin{tcolorbox}[title=\useOmetoi,breakable]\label{Q:title}
+  \begin{enumerate}
+    \addex{残りのグループ内の友達のウェブページのタイトルを取り出してみよう。}
+    HINT:firend\_ipでダウンロードしたい友達のIPアドレスを指定する
+    メモした友達のIPアドレスを使おう
+  \end{enumerate}
+\end{tcolorbox}
 
-\refstepcounter{Question}
-\subsection*{\theQuestion\label{Q:mes}}
-\begin{itemize}
-\item 13行目 curl url, htmlの下の行にmes
-htmlを追加して、実際にダウンロードされたHTMLを確認してみよう
-\end{itemize}
-\ \ HINT : 14行目にmes htmlを書く
+% \subsection{\theQuestion\label{Q:title}}
+% \begin{itemize}
+% \item
+% 残りのグループ内の友達のウェブページのタイトルを取り出してみよう
+% \end{itemize}
+% \ \ HINT:
+% firend\_ipでダウンロードしたい友達のIPアドレスを指定する
 
-\refstepcounter{Question}
-\subsection*{\theQuestion\label{Q:ol}}
-\begin{itemize}
-\item 15行目のhtmltag html, “title”,
-tagの”title”を”ol”に変更してみましょう
-\end{itemize}
-\ \ HINT: htmltag html, “ol”, tag
+% \ \ \ \ メモした友達のIPアドレスを使おう
 
-\ \ htmltag html, “title”,
-tag命令はtag変数の中に、
-”{\textless}title{\textgreater}...{\textless}/title{\textgreater}”
-を探した結果を入れています。
-”title”を”ol”に変えると“
-{\textless}ol{\textgreater}...{\textless}/ol{\textgreater}”
-タグを探して、結果を入れてくれます。
+\begin{tcolorbox}[title=\useOmetoi,breakable]\label{Q:mes}
+  \begin{enumerate}
+    \addex{13行目 curl url, htmlの下の行にmes htmlを追加して、実際にダウンロードされたHTMLを確認してみよう。}
+    HINT:14行目にmes htmlを書く
+  \end{enumerate}
+\end{tcolorbox}
 
+% \refstepcounter{Question}
+% \subsection*{\theQuestion\label{Q:mes}}
+% \begin{itemize}
+% \item 13行目 curl url, htmlの下の行にmes
+% htmlを追加して、実際にダウンロードされたHTMLを確認してみよう
+% \end{itemize}
+% \ \ HINT : 14行目にmes htmlを書く
 
-\refstepcounter{Question}
-\subsection*{\theQuestion\label{Q:tag}}
-\begin{itemize}
-\item 15行目のhtmltag html, “title”,
-tagの”title”を探したいタグへ変更しよう
-\end{itemize}
-\ \ HINT: pタグを探したい場合
+\begin{tcolorbox}[title=\useOmetoi,breakable]\label{Q:ol}
+  \begin{enumerate}
+    \addex{15行目のhtmltag html, “title”, tagの”title”を”ol”に変更してみよう。}
+    HINT:htmltag html, “ol”, tag
 
-\ \ \ \ \ htmltag html, “p”, tag
+    htmltag html, “title”, tag命令はtag変数の中に、”{\textless}title{\textgreater}...{\textless}/title{\textgreater}”を探した結果を入れています。
+    
+    ”title”を”ol”に変えると“{\textless}ol{\textgreater}...{\textless}/ol{\textgreater}”タグを探して、結果を入れてくれます。
+  \end{enumerate}
+\end{tcolorbox}
+
+% \refstepcounter{Question}
+% \subsection*{\theQuestion\label{Q:ol}}
+% \begin{itemize}
+% \item 15行目のhtmltag html, “title”,
+% tagの”title”を”ol”に変更してみましょう
+% \end{itemize}
+% \ \ HINT: htmltag html, “ol”, tag
+
+% \ \ htmltag html, “title”,
+% tag命令はtag変数の中に、
+% ”{\textless}title{\textgreater}...{\textless}/title{\textgreater}”
+% を探した結果を入れています。
+% ”title”を”ol”に変えると“
+% {\textless}ol{\textgreater}...{\textless}/ol{\textgreater}”
+% タグを探して、結果を入れてくれます。
+
+\begin{tcolorbox}[title=\useOmetoi,breakable]\label{Q:tag}
+  \begin{enumerate}
+    \addex{15行目のhtmltag html, “title”, tagの”title”を探したいタグへ変更しよう。}
+    HINT: pタグを探したい場合
+    
+    htmltag html, “p”, tag
+  \end{enumerate}
+\end{tcolorbox}
+
+% \refstepcounter{Question}
+% \subsection*{\theQuestion\label{Q:tag}}
+% \begin{itemize}
+% \item 15行目のhtmltag html, “title”,
+% tagの”title”を探したいタグへ変更しよう
+% \end{itemize}
+% \ \ HINT: pタグを探したい場合
+
+% \ \ \ \ \ htmltag html, “p”, tag
 

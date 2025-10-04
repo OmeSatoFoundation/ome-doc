@@ -1,17 +1,22 @@
-\subsection*{2-1 HTMLについて　　　　　　　　　　　　　　　　　　　　　　　　}
+%
+% section 6.3
+%
+\section{HTMLについて}
 \refstepcounter{PagePtr}\label{P:HTML}
-\refstepcounter{Exercise}
-\subsection*{\theExercise　HTMLの復習\label{E:HTML}}
-% \subsection*{HTMLの復習}
-{\bfseries
-	考え方\newline
+% \refstepcounter{Exercise}
 
-	第１回で作成した\ruby{自己紹介}{じこしょうかい}ページのタグや機能を理解することでHTMLについて自分の思ったとおりに作れるようになりましょう。}
-
+%
+% section 6.3.1
+%
+\subsection{HTMLの復習\label{E:HTML}}
 
 \bigskip
 
-\bigskip
+{\bfseries 考え方}
+
+第１回で作成した\ruby{自己紹介}{じこしょうかい}ページのタグや機能を理解することでHTMLについて自分の思ったとおりに作れるようになりましょう。
+
+
 
 HTMLは、タグという一つの機能をつかい、ウェブページを作り出します。\newline
 タグというのは、{\textless}{\textgreater}{\textless}/{\textgreater}という形です。見覚えのある形ですね。\newline
@@ -20,36 +25,36 @@ HTMLは、タグという一つの機能をつかい、ウェブページを作�
 \ \ {\textless}p{\textgreater}文章をここに書きます。{\textless}/p{\textgreater}
 
 のようなタグをpタグと\ruby{呼}{よ}びます。pタグはタグの間にある文章を表示します。\newline
-まずは、第１回目の授業でみさなんが作成した自己紹介ページとその画像のファイルを第7回のフォルダにコピーし、それをmousepadでhtmlファイルを開いて見ましょう。
+まずは、第1回目の授業でみさなんが作成した自己紹介ページとその画像のファイルを第6回のフォルダにコピーし、それをmousepadでhtmlファイルを開いて見ましょう。
 
-\begin{minipage}[b]{0.5\textwidth}
+\begin{minipage}[b]{0.8\textwidth}
 	\begin{enumerate}
-		\begin{minipage}[b]{1.5\textwidth}
-			\item \ \ cp \ \ {\textasciitilde}/01/self\_intro.html \ \ \ {\textasciitilde}/07/www/index.html\\
-			\ \ cp \ \ {\textasciitilde}/01/face.png \ \ \ {\textasciitilde}/07/www/\\
-			cpコマンドを使って、 自己紹介ページのhtmlと<img src="face.png" などimgタグで指定している画像ファイルを、 第７回のwwwディレクトリにコピーしましょう。"face.png"以外にも使っている画像ファイルがあればコピーしてください。\\
+		% \begin{minipage}[b]{1.5\textwidth}
+			\item \ \ cp \ \ {\textasciitilde}/01/self\_intro.html \ \ \ {\textasciitilde}/06/www/index.html\\
+			\ \ cp \ \ {\textasciitilde}/01/face.png \ \ \ {\textasciitilde}/06/www/\\
+			cpコマンドを使って、 自己紹介ページのhtmlと<img src="face.png" などimgタグで指定している画像ファイルを、 第6回のwwwディレクトリにコピーしましょう。"face.png"以外にも使っている画像ファイルがあればコピーしてください。\\
 			\includegraphics[width=14.73cm]{text07-img/ome7-img033.png}
 			\bigskip
-		\end{minipage}
+		% \end{minipage}
 
 		\bigskip
 		
 		\item
 
-		      \ \ cd \ \ {\textasciitilde}/07/www/\newline
-		      cdコマンドを使って、（cpコマンドとは\ruby{違}{ちが}うよ。) 第７回のwwwディレクトリに\ruby{移動}{いどう}。
+		      \ \ cd \ \ {\textasciitilde}/06/www/\newline
+		      cdコマンドを使って、（cpコマンドとは\ruby{違}{ちが}うよ。) 第6回のwwwディレクトリに\ruby{移動}{いどう}。
 
 
 		\item \ \ mousepad index.html
 
 		      \ \ mousepadでコピーした自己紹介のhtmlを開いてみよう。
+		\begin{center}
+			\includegraphics[width=0.8\textwidth]{text07-img/ome7-img034.png}
+		\end{center}
 
 	\end{enumerate}
 \end{minipage}
 
-\includegraphics[width=0.45\textwidth]{text07-img/ome7-img034.png}
-
-\bigskip
 
 開いたhtmlファイルの中に、実際にはウェブページに出てこない文章がちらほら見えます。
 
@@ -60,6 +65,7 @@ HTMLは、タグという一つの機能をつかい、ウェブページを作�
 self\_intro.html内に使われたタグをまとめました。これを参考に自己紹介ページをより良くしていきましょう。
 
 \clearpage
+
 HTMLまとめ\\
 
 \begin{table}[htbp]
@@ -90,7 +96,7 @@ HTMLまとめ\\
 		\end{tabular}\\
         \hline
 
-		{\textless}br{\textgreater}&改行. pの中でも使うことができる  \\
+		{\textless}br{\textgreater}&改行。pの中でも使うことができる  \\
 		\hline
 
         {\textless}i{\textgreater}{\textless}/i{\textgreater}& イタリック（少し\ruby{傾}{かたむ}いた感じの文字） \\
@@ -138,6 +144,8 @@ HTMLで使いたい色を探すときにはここを使うと便利です。
 上級者向け、色の三原色というものから実際にHTML用のカラーコードに変えるサイトです。
 
 \clearpage
+
+
 また、HTMLにはボタンや文字を書き込む部分も作れます。\newline
 通常見るだけのウェブページだったものがデータの送受信を可能とするなど、可能性を広げられます。
 
@@ -182,153 +190,146 @@ HTMLで使いたい色を探すときにはここを使うと便利です。
 \end{table}
 
 
-
-
-\bigskip
-
-それでは、formを使った例題を説いてみましょう。
+それでは、formを使った例題を解いてみましょう。
 
 例題\newline
 自己紹介ページの一番下から2行上あたりにある{\textless}/body{\textgreater}の上の行から{\textless}form{\textgreater}タグで文字の入力をし、送信ボタンを\ruby{押}{お}せる機能を書きましょう。
 
-考え方\newline
+{\bfseries 考え方}\newline
 はじめに、formタグの間（{\textless}form{\textgreater}
 ＊＊ここ＊＊{\textless}/form{\textgreater})に、inputタグでテキストボックスを作る。そして、同じようにinputタグを使って送信ボタンという名前のボタンを作成する。
 
-１．{\textless}form{\textgreater}{\textless}/form{\textgreater}を書き込めるスペースを作ろう。
-
-
-
-\centering
-\includegraphics[width=\textwidth]{text07-img/ome7-img035.png}
-\flushleft
-
-２．{\textless}form{\textgreater}タグを書き足そう。
-
-
-
-\centering
-\includegraphics[width=\textwidth]{text07-img/ome7-img036.png}
-\flushleft
-
-
-\bigskip
-
-
-\bigskip
-
-３．{\textless}form{\textgreater}タグの間に、行を作り「テキストボックス」という文字が出るようにしよう。\newline
-\ \ {\textless}form{\textgreater}\newline
-% \ \ \ \ \textbf{\textit{{\textless}p{\textgreater}テキストボックス{\textless}/p{\textgreater}}}\newline
-\ \ \ \ \textbf{{\textless}p{\textgreater}テキストボックス{\textless}/p{\textgreater}}\newline
-\ \ {\textless}/form{\textgreater}
-
-\bigskip
-
-\clearpage
-
-４．次の行に{\textless}input{\textgreater}タグを入れよう。その際に、テキストを書き込めるようにしよう。
-
-%\newline
-\ \ 画像のようにするためには、\newline
-\ \ {\textless}form{\textgreater}\newline
-\ \ \ \ {\textless}p{\textgreater}テキストボックス{\textless}/p{\textgreater}\newline
-% \ \ \ \ \textbf{\textit{{\textless}input \ \ type=”text” \ \ size=”10”{\textgreater}}}\newline
-\ \ \ \ \textbf{{\textless}input \ \ type=”text” \ \ size=”10”{\textgreater}}\newline
-\ \ {\textless}/form{\textgreater}
-
-\centering
-\includegraphics[width=16.3cm]{text07-img/ome7-img037.png}
-\flushleft
-
-５．同じようなやり方で、先にかいた{\textless}input{\textgreater}タグから改行して次の行に{\textless}input{\textgreater}タグで送信ボタンを作成しよう。\newline
-% \ \ \ \ \textbf{\textit{{\textless}input type=”submit” value=”送信”{\textgreater}}}
-\ \ \ \ \textbf{{\textless}input type=”submit” value=”送信”{\textgreater}}
-６．作成したHTMLファイルを保存し、実際にブラウザで作成されているか確認してみましょう。\newline
-
-
-このように、formタグ、inputタグには便利な機能があります。\newline
-以下に、inputタグの属性を一部記載しておきますので、\textbf{参考にして}問題を解いていきましょう。
-
-
-\bigskip
-
-
-
-\clearpage
-\refstepcounter{Question}\theQuestion\label{Q:HTML}\newline
-
-% 問題7-7　　
 \begin{enumerate}
-	\item 最初に書いたテキストボックスの属性をパスワード入力ボックスに書き換えてみよう。
-	\item 食べ物の名前を{\textless}p{\textgreater}タグを使って３つ追加してその横にチェックボックスを置きましょう。
-	\item リセットボタンを送信ボタンの次の行に追加してみよう。
+  \item
+    \begin{wrapfigure}{r}{0.9\textwidth}
+      \vspace{-\baselineskip}
+      \includegraphics[width=\linewidth]{text07-img/ome7-img035.png}
+    \end{wrapfigure}%
+    {\textless}form{\textgreater}{\textless}/form{\textgreater}を書き込めるスペースを作ろう。
+
+  \item
+    \begin{wrapfigure}{r}{0.9\textwidth}
+      \vspace{-\baselineskip}
+      \includegraphics[width=\linewidth]{text07-img/ome7-img036.png}
+    \end{wrapfigure}%
+    {\textless}form{\textgreater}タグを書き足そう。
+
+  \item
+    \begin{wrapfigure}{r}{0.9\textwidth}
+      \vspace{-\baselineskip}
+      \includegraphics[width=\linewidth]{text07-img/ome7-img036.png}
+    \end{wrapfigure}%
+    {\textless}form{\textgreater}タグの間に、行を作り「テキストボックス」という文字が出るようにしよう。\\
+    \ \ {\textless}form{\textgreater}\\
+    \ \ \ \ \textbf{{\textless}p{\textgreater}テキストボックス{\textless}/p{\textgreater}}\\
+    \ \ {\textless}/form{\textgreater}
+
+\clearpage
+
+  \item
+    \begin{wrapfigure}{r}{0.9\textwidth}
+      \vspace{-\baselineskip}
+      \includegraphics[width=\linewidth]{text07-img/ome7-img037.png}
+    \end{wrapfigure}%
+    次の行に{\textless}input{\textgreater}タグを入れよう。その際に、テキストを書き込めるようにしよう。\\
+    \ \ 画像のようにするためには、\\
+    \ \ {\textless}form{\textgreater}\\
+    \ \ \ \ {\textless}p{\textgreater}テキストボックス{\textless}/p{\textgreater}\\
+    \ \ \ \ \textbf{{\textless}input\ type="text"\ size="10"{\textgreater}}\\
+    \ \ {\textless}/form{\textgreater}
+
+  \item
+    同じようなやり方で、先に書いた{\textless}input{\textgreater}タグから改行して次の行に{\textless}input{\textgreater}タグで送信ボタンを作成しよう。\\
+    \ \ \ \ \textbf{{\textless}input type="submit" value="送信"{\textgreater}}
+
+  \item
+    作成したHTMLファイルを保存し、実際にブラウザで作成されているか確認してみましょう。\\
+    このように、formタグ、inputタグには便利な機能があります。\\
+    次の表に、inputタグの属性を一部記載しておきますので、\textbf{参考にして}問題を解いていきましょう。
 \end{enumerate}
 
-\samepage
+\clearpage
+
+\begin{tcolorbox}[title=\useOmetoi,breakable]\label{Q:HTML}
+  \begin{enumerate}
+    \addex{最初に書いたテキストボックスの属性をパスワード入力ボックスに書き換えてみましょう。}
+	  \addex{食べ物の名前を{\textless}p{\textgreater}タグを使って３つ追加してその横にチェックボックスを置きましょう。}
+	  \addex{リセットボタンを送信ボタンの次の行に追加してみましょう。}
+  \end{enumerate}
+\end{tcolorbox}
+
+\clearpage
+% \refstepcounter{Question}\theQuestion\label{Q:HTML}\newline
+
+% % 問題7-7　　
+% \begin{enumerate}
+% 	\item 最初に書いたテキストボックスの属性をパスワード入力ボックスに書き換えてみよう。
+% 	\item 食べ物の名前を{\textless}p{\textgreater}タグを使って３つ追加してその横にチェックボックスを置きましょう。
+% 	\item リセットボタンを送信ボタンの次の行に追加してみよう。
+% \end{enumerate}
+
+% \samepage
 
 わからなかったら、先生に質問をすること。その間は\ruby{一覧}{いちらん}を見て考えてみよう。
 
 inputタグの機能になるもの
 
-
 \begin{table}[htbp]
 	% \centering
 	% \caption{文字タイプ表}
-	\begin{tabular}{|c|c|}
+	\begin{tabular}{|c|l|}
 	\hline
-        type=”text” &
-        \begin{tabular}{c}
-        １行のテキストボックスを作ります。\\
-        sizeの属性を指定することで大きさも決定できる。
-        \end{tabular}\\ \hline
+  type=”text” &
+  \begin{tabular}{l}
+    １行のテキストボックスを作ります。\\
+    sizeの属性を指定することで大きさも決定できる。
+  \end{tabular}\\ \hline
 
-        type=”password” &
-        \begin{tabular}{c}
-        パスワード用のテキストボックスを作ります。\\
-		入力されたら＊のマークなどに置き換わります。\\
-        送信する際には\ruby{普通}{ふつう}の文字で送られるのに注意。
-        \end{tabular}\\ \hline
+  type=”password” &
+  \begin{tabular}{l}
+    パスワード用のテキストボックスを作ります。\\
+    入力されたら＊のマークなどに置き換わります。\\
+    送信する際には\ruby{普通}{ふつう}の文字で送られるのに注意。
+  \end{tabular}\\ \hline
 
-        type=”checkbox” &
-        \begin{tabular}{c}
-		チェックボックスを作ります。\\
-		複数\ruby{選択}{せんたく}可能で、checked属性を指定すると\\
-        予めチェックが入ったかどうかを決めれる。
-        \end{tabular}\\ \hline 
+  type=”checkbox” &
+  \begin{tabular}{l}
+    チェックボックスを作ります。\\
+    複数\ruby{選択}{せんたく}可能で、checked属性を指定すると\\
+    予めチェックが入ったかどうかを決めれる。
+  \end{tabular}\\ \hline 
 
-        type=”radio” &
-        \begin{tabular}{c}
-		ラジオボタンを作ります。
-		複数の中から１つしか選択できないのが\ruby{特徴}{とくちょう}。\\
-		こちらもcheckedで\ruby{状態}{じょうたい}を決めれる。
-        \end{tabular}\\ \hline 
+  type=”radio” &
+  \begin{tabular}{l}
+    ラジオボタンを作ります。複数の中から１つしか選択できないのが\ruby{特徴}{とくちょう}。\\
+    こちらもcheckedで\ruby{状態}{じょうたい}を決めれる。
+  \end{tabular}\\ \hline 
 
-		type=”submit” &
-		送信ボタンを作ります。\\\hline
+  type=”submit” &
+  \begin{tabular}{l}
+    送信ボタンを作ります。
+  \end{tabular}\\ \hline 
 
-		type=”button” &
-		普通のボタンを作ります。\\\hline
+  type=”button” &
+  \begin{tabular}{l}
+    普通のボタンを作ります。
+  \end{tabular}\\ \hline 
 
-		type=”image” &
-        \begin{tabular}{c}
-		画像のボタンを作ります。\\
-		使用する画像ファイルは、src属性で指定しましょう。\\
+  type=”image” &
+      \begin{tabular}{l}
+        画像のボタンを作ります。\\
+        使用する画像ファイルは、src属性で指定しましょう。\\
         またalt属性が\ruby{必須}{ひっす}。
-        \end{tabular}\\ \hline 
+      \end{tabular}\\ \hline 
 
-		type=”reset” &
-        \begin{tabular}{c}
-		リセットボタンを作ります。\\
-		このボタンを押すと、書いていたデータがなくなり\\
+  type=”reset” &
+      \begin{tabular}{l}
+        リセットボタンを作ります。\\
+        このボタンを押すと、書いていたデータがなくなり\\
         最初の状態に\ruby{戻}{もど}ります。
-        \end{tabular}\\ \hline 
+      \end{tabular}\\ \hline 
 		
 	\end{tabular}
-  \end{table}
-
-
-
-\bigskip
+\end{table}
 
 \clearpage

@@ -1,10 +1,15 @@
 
-\refstepcounter{Exercise}
-\clearpage\subsection*{\theExercise　CGIを使ってOpenJtalkに読み上げをさせよう}
-\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:Jtalk}
+% \refstepcounter{Exercise}
+% \clearpage\subsection*{\theExercise　CGIを使ってOpenJtalkに読み上げをさせよう}
+
+%
+% subsection 6.4.4
+%
+\subsection{CGIを使ってOpenJtalkに読み上げをさせよう}
+% \addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:Jtalk}
 % \clearpage\subsection*{CGIを使ってOpenJtalkに読み上げをさせよう}
 
-考え方
+{\bfseries 考え方}
 
 ウェブページから読み上げさせたい文章を受け取って、OpenJtalkにCGIから読み上げをさせよう。
 
@@ -21,13 +26,11 @@ localhost:3000/jtalk.html
 %koyaman
 %September 20, 2019 2:50 AM
 
-
-\centering
-\includegraphics[width=0.85\textwidth]{text07-img/ome7-img056.png}
-\flushleft
+\begin{center}
+    \includegraphics[width=0.85\textwidth]{text07-img/ome7-img056.png}
+\end{center}
 
 テキストボックスに読み上げさせたい文章を入れて送信をしてみよう。送信を押すとCGIプログラムへ文章が送られ、OpenJtalkで音声合成をします。
-
 
 \bigskip
 
@@ -39,19 +42,15 @@ localhost:3000/jtalk.html
 %koyaman
 %September 20, 2019 2:50 AM
 
-
-\centering
-\includegraphics[width=0.85\textwidth]{text07-img/ome7-img057.png}
-\flushleft
+\begin{center}
+    \includegraphics[width=0.85\textwidth]{text07-img/ome7-img057.png}
+\end{center}
 
 \clearpage
+
 プログラム解説
 
-{\textasciitilde}/07/www/jtalk.html
-
-
-
-
+{\textasciitilde}/06/www/jtalk.html
 
 \begin{table}[htbp]
     \centering
@@ -76,16 +75,6 @@ localhost:3000/jtalk.html
         \hline
     \end{tabular}
 \end{table}
-
-
-
-
-\bigskip
-
-
-\bigskip
-
-
 
 \bigskip
 
@@ -128,17 +117,12 @@ name=”sentence”
 “こんにちは”とテキストボックスに入力され、送信された場合
 
 \clearpage
-\bigskip
 
 
-
-\centering
-\includegraphics[width=0.85\textwidth]{text07-img/ome7-img057.png}
-
-\centering
-\includegraphics[width=0.85\textwidth]{text07-img/ome7-img056.png}
-\flushleft
-
+\begin{center}
+    \includegraphics[width=0.85\textwidth]{text07-img/ome7-img057.png}
+    \includegraphics[width=0.85\textwidth]{text07-img/ome7-img056.png}
+\end{center}
 
 \bigskip
 
@@ -157,8 +141,7 @@ IPアドレス:3000/cgi-bin/jtalk.hsp?sentence=こんにちは
 
 このことをパーセントエンコーディングといいます。CGIプログラムにクエリストリングが渡される前にウェブサーバは記号、数値に変換された文字列をもとに戻します。よって、プログラム内では入力された文字列と同じものを扱うことができます。
 
-{\textasciitilde}/07/www/cgi-bin/jtalk.hsp
-
+{\textasciitilde}/06/www/cgi-bin/jtalk.hsp
 
 \begin{table}[htbp]
     \centering
@@ -184,11 +167,6 @@ IPアドレス:3000/cgi-bin/jtalk.hsp?sentence=こんにちは
         \hline
     \end{tabular}
 \end{table}
-
-
-
-
-
 
 \bigskip
 
@@ -216,7 +194,7 @@ src=”ファイル名”
 
 では、再生するファイルを指定します。指定するファイルはドキュメントルート以下にないといけません。つまり、ドキュメントルートである{\textasciitilde}/07/wwwの中にある必要があります。
 
-jtsave命令で作った音声ファイルは{\textasciitilde}/07/www/tmpの中にあります。ファイル名はwav\_file変数に入っています。
+jtsave命令で作った音声ファイルは{\textasciitilde}/06/www/tmpの中にあります。ファイル名はwav\_file変数に入っています。
 
 “
 “の中で”を使うには{\textbackslash}”のように書きます。
@@ -232,14 +210,26 @@ controlsをつけると、再生ボタン、ミュートボタンなどが表示
 再生ボタンを押すと音声合成した音声ファイルが再生されます。
 
 \clearpage
-\refstepcounter{Question}\theQuestion\label{Q:Jtalk}
 
-{\bfseries
-	”おはようございます””こんばんは””ありがとうございます”を読ませてみよう。}
+\begin{tcolorbox}[title=\useOmetoi,breakable]\label{Q:Jtalk}
+  \begin{enumerate}
+    \addex{“おはようございます”、“こんばんは”、“ありがとうございます”を読ませてみよう。}
+  \end{enumerate}
+できる人は自分の自己紹介ページに（{\textasciitilde}/06/www/index.html)に作ったフォームを変更して、こちらからCGIプログラムを起動するようにしましょう。
+
+HINT:jtalk.htmlを参考にしてください。
+\end{tcolorbox}
+
+% \refstepcounter{Question}\theQuestion\label{Q:Jtalk}
+
+% {\bfseries
+% 	”おはようございます””こんばんは””ありがとうございます”を読ませてみよう。}
 
 
-\bigskip
+% \bigskip
 
-できる人は自分の自己紹介ページに（{\textasciitilde}/07/www/index.html)に作ったフォームを変更して、こちらからCGIプログラムを起動するようにしましょう。
+% できる人は自分の自己紹介ページに（{\textasciitilde}/07/www/index.html)に作ったフォームを変更して、こちらからCGIプログラムを起動するようにしましょう。
 
-\ HINT: jtalk.htmlを参考にしてください。
+% \ HINT: jtalk.htmlを参考にしてください。
+
+\clearpage

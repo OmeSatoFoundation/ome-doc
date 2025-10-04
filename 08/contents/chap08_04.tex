@@ -2,14 +2,16 @@
 \clearpage\section{スクレイピングで取得した情報を習った技術と組み合わせる}
 これまでの例で、ウェブページをスクレイピングして、必要な情報を取り出す方法を学びました。
 次は、スクレイピングを習った技術と組み合わせることを学びます。
-スクレイピングだけでも、かなりできることは広がりますが、やはりセンサーボードやJulius、OpenJtalkなど習った技術と組み合わせるとさらに便利で楽しいものが作れます。
+スクレイピングだけでも色々できますが、ほかの技術と組み合わせると、もっとおもしろくて便利なことができます。たとえば、センサーボードやJulius、OpenJtalkなど習った技術と組み合わせるとさらに便利で楽しいものが作れます。
 
-\refstepcounter{Exercise}
-\clearpage\section{\theExercise　スクレイピングした情報をもとにセンサーを使う}
-\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:amedasSensor}
+% \refstepcounter{Exercise}
+
+\clearpage
+\section{スクレイピングした情報をもとにセンサーを使う}
+% \addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:amedasSensor}
 スクレイピングで得た情報を習った技術(センサーボードの使い方、OpenJtalk,
 Juliusなど)と組み合わせて便利なことや楽しいことをする練習をしましょう。
-この例では、アメダスのウェブページから取得した気温を使って暑いか\ruby{涼}{すず}しいかを判断してLEDで通知してくれるプログラムを試します。
+この例では、アメダスのウェブページから取得した気温を使って「暑い」か「\ruby{涼}{すず}しい」かを判断してLEDで通知してくれるプログラムを試します。
 その後にこのプログラムを変更して、気温以外の情報を使用してより高度な通知ができるようにしてみましょう。
 
 まずは、実行してみましょう。
@@ -18,7 +20,7 @@ Juliusなど)と組み合わせて便利なことや楽しいことをする練�
 
 hsed
 
-と実行してスクリプトエディタを開きます
+と実行してスクリプトエディタを開きます。
 
 \begin{center}
   % Unhandled or unsupported graphics:
@@ -213,59 +215,99 @@ kionを数値に変換して、28と大小の比較をしています。
 28度より気温が高ければ暑い、それ以外では涼しいと判断します。
 
 
-\bigskip
-
-
-
-\refstepcounter{Question}
-\subsection*{\theQuestion\label{Q:amedas4}}
-\begin{itemize}
-\item
-例題では気温を文字列から数値へ変換しましたが、変数へは値をいれていません。
+\begin{tcolorbox}[title=\useOmetoi,breakable]\label{Q:amedas4}
+  \begin{enumerate}
+    \addex{さきほどのプログラムでは気温を文字列から数値へ変換しましたが、変数へは値をいれていません。
 		気温を数値へ変換して、結果を変数へ入れてみましょう。
-		変数名はtempとしましょう。
-\end{itemize}
-\ \ HINT : temp = int(kion)
+		変数名はtempとしましょう。}
+    HINT:temp = int(kion)
+    
+    気温(kion)を数値へ変換した値をtemp変数へ入れる。
+  \end{enumerate}
+\end{tcolorbox}
 
-\ \ \ \ 気温(kion)を数値へ変換した値をtemp変数へ入れる。
 
-\refstepcounter{Question}
-\subsection*{\theQuestion\label{Q:amedas5}}
-\begin{itemize}
-\item
-現在の風速も表示するようにしてみよう
-\end{itemize}
-\clearpage\refstepcounter{Question}
-\subsection*{\theQuestion\label{Q:amedas6}}
-\begin{itemize}
-\item
-例題では、気温を使って比較をしました。
+% \refstepcounter{Question}
+% \subsection*{\theQuestion\label{Q:amedas4}}
+% \begin{itemize}
+% \item
+% 例題では気温を文字列から数値へ変換しましたが、変数へは値をいれていません。
+% 		気温を数値へ変換して、結果を変数へ入れてみましょう。
+% 		変数名はtempとしましょう。
+% \end{itemize}
+% \ \ HINT : temp = int(kion)
+
+% \ \ \ \ 気温(kion)を数値へ変換した値をtemp変数へ入れる。
+
+\begin{tcolorbox}[title=\useOmetoi,breakable]\label{Q:amedas5}
+  \begin{enumerate}
+    \addex{現在の風速も表示するようにしてみよう}
+  \end{enumerate}
+\end{tcolorbox}
+
+% \refstepcounter{Question}
+% \subsection*{\theQuestion\label{Q:amedas5}}
+% \begin{itemize}
+% \item
+% 現在の風速も表示するようにしてみよう
+% \end{itemize}
+
+\clearpage
+
+\begin{tcolorbox}[title=\useOmetoi,breakable]\label{Q:amedas6}
+  \begin{enumerate}
+    \addex{さきほどのプログラムでは、気温を使って比較をしました。
 		次は風向きを使用して風が強いとき(15m/sより大きい)は”強風に注意しましょう”と表示をしてLEDを光らせましょう。
-		それ以外の場合は”現在の風速”を表示して他の色のLEDを光らせましょう。
-\end{itemize}
-\refstepcounter{Question}
-\subsection*{\theQuestion\label{Q:amedas7}}
-\begin{itemize}
-\item
-LEDだけでなくFaboなどのセンサーを使用して通知するようにしてみよう。
-\end{itemize}
-\ \ \ \ HINT : \ruby{振動子}{しんどうし}など
+		それ以外の場合は”現在の風速”を表示して他の色のLEDを光らせましょう。}
+  \end{enumerate}
+\end{tcolorbox}
+
+% \refstepcounter{Question}
+% \subsection*{\theQuestion\label{Q:amedas6}}
+% \begin{itemize}
+% \item
+% 例題では、気温を使って比較をしました。
+% 		次は風向きを使用して風が強いとき(15m/sより大きい)は”強風に注意しましょう”と表示をしてLEDを光らせましょう。
+% 		それ以外の場合は”現在の風速”を表示して他の色のLEDを光らせましょう。
+% \end{itemize}
+
+\begin{tcolorbox}[title=\useOmetoi,breakable]\label{Q:amedas7}
+  \begin{enumerate}
+    \addex{LEDだけでなくFaboなどのセンサーを使用して通知するようにしてみよう。}
+    HINT:\ruby{振動子}{しんどうし}など
+  \end{enumerate}
+\end{tcolorbox}
+
+% \refstepcounter{Question}
+% \subsection*{\theQuestion\label{Q:amedas7}}
+% \begin{itemize}
+% \item
+% LEDだけでなくFaboなどのセンサーを使用して通知するようにしてみよう。
+% \end{itemize}
+% \ \ \ \ HINT : \ruby{振動子}{しんどうし}など
 
 
-\bigskip
+% \bigskip
 
+\begin{tcolorbox}[title=\useOmetoi,breakable]\label{Q:amedas8}
+  \begin{enumerate}
+    \addex{センサーボードについている4つのLEDを使って、現在の温度を表すバーグラフを作ってみよう。
+		(LEDを左から順に15, 20, 25, 30度のときに光るようにしてみよう。）}
+    HINT:LEDの色は左からLED1(緑)、LED2(黄)、LED3(青)、LED4(白)です。
+  \end{enumerate}
+\end{tcolorbox}
 
-\refstepcounter{Question}
-\subsection*{\theQuestion\label{Q:amedas8}}
-\begin{itemize}
-\item
-センサーボードについている4つのLEDを使って、現在の温度を表すバーグラフを作ってみよう。
-		(LEDを左から順に15,
-20, 25,
-30度のときに光るようにしてみよう。）
-\end{itemize}
-\ \ HINT:
-LEDの色は左からLED1(緑)、LED2(黄)、LED3(青)、LED4(白)です。
+% \refstepcounter{Question}
+% \subsection*{\theQuestion\label{Q:amedas8}}
+% \begin{itemize}
+% \item
+% センサーボードについている4つのLEDを使って、現在の温度を表すバーグラフを作ってみよう。
+% 		(LEDを左から順に15,
+% 20, 25,
+% 30度のときに光るようにしてみよう。）
+% \end{itemize}
+% \ \ HINT:
+% LEDの色は左からLED1(緑)、LED2(黄)、LED3(青)、LED4(白)です。
 
 \begin{center}
   % Unhandled or unsupported graphics:
@@ -277,9 +319,11 @@ LEDの色は左からLED1(緑)、LED2(黄)、LED3(青)、LED4(白)です。
 \bigskip
 
 
-\refstepcounter{Exercise}
-\clearpage\section*{\theExercise　TV番組表のウェブページをスクレイピングする}
-\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:TV}
+% \refstepcounter{Exercise}
+
+\clearpage
+\section{TV番組表のウェブページをスクレイピングする}
+% \addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:TV}
 考え方
 
 まずは、ウェブブラウザでTV番組表のページを見てみよう。
@@ -301,7 +345,7 @@ TV番組表をクリックします。
 
 
 TV番組表のウェブページが開きます。
-このページの\ruby{検索欄}{けんさくらん}に検索したいワードを入れて検索をすると結果がでてきます。
+このページの\ruby{検索欄}{けんさくらん}に検索したい言葉を入力して「検索」を押すと、結果が出ます。
 まずは、\ruby{適当}{てきとう}に検索してみましょう。
 
 
@@ -382,7 +426,7 @@ F5を押して実行してみましょう。
 
 
 ブラウザの表示とプログラムの実行結果を比べてみてください。
-実行結果では日付と番組名だけ表示しています
+実行結果では日付と番組名だけ表示しています。
 
 \begin{center}
   % Unhandled or unsupported graphics:
@@ -390,26 +434,34 @@ F5を押して実行してみましょう。
 
 \end{center}
 
+\begin{tcolorbox}[title=\useOmetoi,breakable]\label{Q:TV}
+  \begin{enumerate}
+    \addex{6行目のword=”サザエさん”で検索する番組を指定しています。自分の検索したい番組名にして実行してみましょう。}
+  \end{enumerate}
+\end{tcolorbox}
 
-\bigskip
+% \subsection*{}
+% \refstepcounter{Question}
+% \subsection*{\theQuestion\label{Q:TV}}
+% \ \ 6行目のword=”サザエさん”で検索する番組を指定しています。
+% 自分の検索したい番組名にして実行してみましょう。
 
+\begin{tcolorbox}[title=\useOmetoi,breakable]\label{Q:TV}
+  \begin{enumerate}
+    \addex{このプログラムでは、日付(date配列)と番組名(ptitle配列)しか表示をしていません。ジャンル(genre配列)とテレビ局(station配列)を表示するようにしてみましょう。}
+  \end{enumerate}
+\end{tcolorbox}
 
-\bigskip
+% \refstepcounter{Question}
+% \subsection*{\theQuestion}
+% \ \ このプログラムでは、日付(date配列)と番組名(ptitle配列)しか表示をしていません。
+% ジャンル(genre配列)とテレビ局(station配列)を表示するようにしてみましょう。
 
-\subsection*{}
-\refstepcounter{Question}
-\subsection*{\theQuestion\label{Q:TV}}
-\ \ 6行目のword=”サザエさん”で検索する番組を指定しています。
-自分の検索したい番組名にして実行してみましょう。
+% \refstepcounter{Exercise}
 
-\refstepcounter{Question}
-\subsection*{\theQuestion}
-\ \ このプログラムでは、日付(date配列)と番組名(ptitle配列)しか表示をしていません。
-ジャンル(genre配列)とテレビ局(station配列)を表示するようにしてみましょう。
-
-\refstepcounter{Exercise}
-\clearpage\subsection*{\theExercise　Weblioのウェブページをスクレイピングする}
-\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:Weblio}
+\clearpage
+\subsection{Weblioのウェブページをスクレイピングする}
+% \addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:Weblio}
 考え方
 
 まずは、ウェブブラウザでWeblioのページを見てみよう。
@@ -428,7 +480,7 @@ Weblioをクリックします。
 
 
 Weblioのウェブページが開きます。
-このページの検索欄に検索したいワードを入れて検索をすると結果がでてきます。
+このページの検索欄に調べたい英単語を入力して「検索」を押すと、意味が出ます。
 まずは、適当に検索してみましょう。
 
 
@@ -449,7 +501,7 @@ Weblioのウェブページが開きます。
 \includegraphics[width=0.8\textwidth]{./text08-img/textbook-img046.png}
 
 \end{center}
-今回取得する情報は、検索ワードに対応する主な意味です。
+今回取得する情報は、検索ワードに対応するその言葉の代表的な意味です。
 
 まずはプログラムを動かしてみましょう。
 
@@ -488,7 +540,7 @@ HSPスクリプトエディタが開くので
 
 F5を押して実行してみましょう。
 
-実行結果はターミナルに表示されます
+実行結果はターミナルに表示されます。
 
 
 
@@ -513,19 +565,29 @@ F5を押して実行してみましょう。
 \includegraphics[width=0.9\textwidth]{./text08-img/textbook-img046.png}
 
 \end{center}
-\refstepcounter{Question}
-\subsection*{\theQuestion\label{Q:weblio}}
-7行目のword=”hello”で検索する英語を指定しています。
-この変数を自分の検索したい英語にして実行してみましょう。
 
-\ \ HINT : word=”raspberry”
+\begin{tcolorbox}[title=\useOmetoi,breakable]\label{Q:weblio}
+  \begin{enumerate}
+    \addex{7行目のword=”hello”で検索する英語を指定しています。この変数を自分の検索したい英語にして実行してみましょう。}
+    HINT:word=”raspberry”
+  \end{enumerate}
+\end{tcolorbox}
+
+% \refstepcounter{Question}
+% \subsection*{\theQuestion\label{Q:weblio}}
+% 7行目のword=”hello”で検索する英語を指定しています。
+% この変数を自分の検索したい英語にして実行してみましょう。
+
+% \ \ HINT : word=”raspberry”
 
 
-\bigskip
+% \bigskip
 
-\refstepcounter{Exercise}
-\clearpage\subsection*{\theExercise　位置情報のから近くの駅をスクレイピング}
-\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:station}
+% \refstepcounter{Exercise}
+
+\clearpage
+\subsection{位置情報のから近くの駅をスクレイピング}
+% \addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:station}
 考え方
 
 まずは、ウェブブラウザで駅検索API情報のページを見てみよう。
@@ -544,7 +606,7 @@ F5を押して実行してみましょう。
 
 
 駅api情報のウェブページが開きます。
-今回使用するのは\ruby{最寄}{もよ}り駅取得　APIです
+今回使用するのは\ruby{最寄}{もよ}り駅取得 APIです
 
 
 
@@ -612,13 +674,25 @@ F5を押して実行してみましょう。実行結果はターミナルに表
 \includegraphics[width=0.8\textwidth]{./text08-img/textbook-img052.png}
 
 \end{center}
-\refstepcounter{Question}
-\clearpage\subsection*{\theQuestion\label{Q:station}}
-\ \ サンプルプログラムでは、青梅市役所の近くの駅名を取得していました。
-次は、自分の好きなもしくは知っている場所を指定してみましょう。
-\ruby{緯度}{いど}\ruby{経度}{けいど}は、授業で使用したウェブページ\textbf{({\textasciitilde}/08/links.html)}を開いて、
 
-緯度経度を調べるをクリックします。
+
+% \refstepcounter{Question}
+
+\clearpage
+
+\begin{tcolorbox}[title=\useOmetoi,breakable]\label{Q:station}
+  \begin{enumerate}
+    \addex{サンプルプログラムでは、青梅市役所の近くの駅名を取得していました。次は、自分の好きなもしくは知っている場所を指定してみましょう。
+    \ruby{緯度}{いど}\ruby{経度}{けいど}は、授業で使用したウェブページ\textbf{({\textasciitilde}/08/links.html)}を開いて、緯度経度を調べるをクリックします。}
+  \end{enumerate}
+\end{tcolorbox}
+
+% \subsection*{\theQuestion\label{Q:station}}
+% \ \ サンプルプログラムでは、青梅市役所の近くの駅名を取得していました。
+% 次は、自分の好きなもしくは知っている場所を指定してみましょう。
+% \ruby{緯度}{いど}\ruby{経度}{けいど}は、授業で使用したウェブページ\textbf{({\textasciitilde}/08/links.html)}を開いて、
+
+% 緯度経度を調べるをクリックします。
 
 
 
@@ -688,9 +762,11 @@ F5を押して実行してみましょう。実行結果はターミナルに表
 
 \bigskip
 
-\refstepcounter{Exercise}
-\clearpage\subsection*{\theExercise　\ruby{郵便}{ゆうびん}番号から住所を調べるウェブページのスクレイピング}
-\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:postNum}
+% \refstepcounter{Exercise}
+
+\clearpage
+\subsection{\ruby{郵便}{ゆうびん}番号から住所を調べるウェブページのスクレイピング}
+% \addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:postNum}
 考え方
 
 まずは、ウェブブラウザで郵便番号から住所を調べるウェブページを見てみよう。
@@ -779,14 +855,22 @@ F5を押して実行してみましょう。実行結果はターミナルに表
 
 \end{center}
 
+\begin{tcolorbox}[title=\useOmetoi,breakable]\label{Q:postNum}
+  \begin{enumerate}
+    \addex{codeの郵便番号を変更してみよう。
 
+    例:198-0082
 
-\refstepcounter{Question}
-\subsection*{\theQuestion\label{Q:postNum}}
-\ \ codeの郵便番号を変更してみよう
+    青梅\ruby{佐藤財団}{さとうざいだん}の郵便番号}
+  \end{enumerate}
+\end{tcolorbox}
 
-\ \ 例: 198-0082
-青梅\ruby{佐藤財団}{さとうざいだん}の郵便番号
+% \refstepcounter{Question}
+% \subsection*{\theQuestion\label{Q:postNum}}
+% \ \ codeの郵便番号を変更してみよう
+
+% \ \ 例: 198-0082
+% 青梅\ruby{佐藤財団}{さとうざいだん}の郵便番号
 
 % \begin{center}
 % \begin{boxedminipage}{10.927cm}
@@ -811,9 +895,11 @@ F5を押して実行してみましょう。実行結果はターミナルに表
 
 
 
-\refstepcounter{Exercise}
-\clearpage\subsection*{\theExercise　Wikipediaのスクレイピング}
-\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:wikipedia}
+% \refstepcounter{Exercise}
+
+\clearpage
+\subsection{Wikipediaのスクレイピング}
+% \addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:wikipedia}
 考え方
 
 まずは、ウェブブラウザでWikipediaを見てみよう。
@@ -896,7 +982,7 @@ HSPスクリプトエディタが開くので
 \bigskip
 
 \clearpage
-F5を押して実行してみましょう。実行結果はターミナルに表示されます
+F5を押して実行してみましょう。実行結果はターミナルに表示されます。
 
 
 
@@ -917,19 +1003,30 @@ Pi)の概要がWikipediaからとれました。
 
 \end{center}
 
-\bigskip
+\begin{tcolorbox}[title=\useOmetoi,breakable]\label{Q:wikipedia}
+  \begin{enumerate}
+    \addex{wordを自分の検索したい単語に変えてみよう。}
+    HINT:まずは、Wikipediaで検索したい単語を検索をしてみて、ページを開きましょう。
 
-\refstepcounter{Question}
-\subsection*{\theQuestion\label{Q:wikipedia}}
-wordを自分の検索したい単語に変えてみよう。
+    URLの
 
-\ \ HINT:まずは、Wikipediaで検索したい単語を検索をしてみて、ページを開きましょう。
+    http://ja.wikipedia.org/wiki/＊＊＊＊＊＊＊
 
-URLの
+    アドレス（URL）の「wiki/」の後にある文字を word に入れます。
+  \end{enumerate}
+\end{tcolorbox}
 
-http://ja.wikipedia.org/wiki/＊＊＊＊＊＊＊
+% \refstepcounter{Question}
+% \subsection*{\theQuestion\label{Q:wikipedia}}
+% wordを自分の検索したい単語に変えてみよう。
 
-wiki/より後にある文字列をwordに入れます。
+% \ \ HINT:まずは、Wikipediaで検索したい単語を検索をしてみて、ページを開きましょう。
+
+% URLの
+
+% http://ja.wikipedia.org/wiki/＊＊＊＊＊＊＊
+
+% アドレス（URL）の「wiki/」の後にある文字を word に入れます。
 
 
 

@@ -1,1673 +1,1355 @@
-\clearpage
-\section{HTML(\ruby{自己}{じこ}\ruby{紹介}{しょうかい}のホームページ)}
-みなさんがブラウザでけんさくしてホームページを\ruby{表示}{ひょうじ}させました。ホームページはHTML(エイチ　ティー　エム　エル)という言語で書かれています。ブラウザがこれ\ruby{理解}{りかい}して\ruby{表示}{ひょうじ}をしてくれています。HTMLはテキストエディタで\ruby{編集}{へんしゅう}します。ホームページはかんたんに作ることができます。この章では、みなさんも作り方を学び、自分の\ruby{自己}{じこ}\ruby{紹介}{しょうかい}のホームページを作ります。
+%
+% section 1.4
+%
+\section{HTMLで自己紹介のホームページをつくろう}
 
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
+みなさんがブラウザを使って見てきたホームページは、HTML(エイチ　ティー　エム　エル)という言語で書かれています。
+ブラウザがHTMLを\ruby{理解}{りかい}して、ホームページとして\ruby{表示}{ひょうじ}してくれています。
+HTMLはテキストエディタで\ruby{編集}{へんしゅう}することができますので、その決まりさえ覚えれば、ホームページはかんたんに作ることができます。
+この章では、作り方を学び、自分の\ruby{自己}{じこ}\ruby{紹介}{しょうかい}のホームページを作ります。
 
 \bigskip
-
-
 
 \begin{figure}[hb]
   \centering
   \begin{minipage}{15.801cm}
     {\upshape
-      \includegraphics[width=15.801cm]{text01-img/textbook-img140.png}
+      \includegraphics[width=\linewidth]{text01-img/textbook-img140.png}
       \caption{ホームページ作成全体図}
     }
   \end{minipage}
 \end{figure}
 \clearpage
 
-\begin{figure}
-\subsection{例題 1-18 教材をじぶんのフォルダに置こう}
-ホームページの作り方を学ぶための教材は、/usr/local/share/omeというフォルダに置いてあります。
+
+%
+% subsection 1.4.1
+%
+\subsection{教材を\ruby{準備}{じゅんび}しよう}
+
+ホームページの作り方を学ぶための教材は、\texttt{/usr/local/share/ome}というフォルダに置いてあります。
 これを、じぶんのフォルダにコピーしましょう。
 
-\textbf{考え方}
+\textbf{手順}
+\vspace{0.5cm}
 
-  \bigskip
+  % \bigskip
 
-  \centering
-  \begin{minipage}{\textwidth}
+  % \centering
+  % \begin{minipage}{\textwidth}
     \begin{minipage}{0.45\linewidth}
       \includegraphics[height=5cm]{text01-img/textbook-img1010.png}\\
-      1 赤い\ruby{枠}{わく}で囲ったところをクリックして、/usr/local/share/omeと入力して、エンターキーを\ruby{押}{お}そう
+      \textcircled{\scriptsize{1}} %
+      赤い\ruby{枠}{わく}で囲ったところをクリックして、\texttt{/usr/local/share/ome}と入力して、
+      エンターキーを\ruby{押}{お}しましょう
     \end{minipage}
     \hfill
     \vspace{20pt}
     \begin{minipage}{0.45\linewidth}
       \includegraphics[height=5cm]{text01-img/textbook-img1011.png}\\
-      2 「01」から「08」までのフォルダが\ruby{表示}{ひょうじ}されていることを\ruby{確認}{かくにん}しよう
+      \textcircled{\scriptsize{2}} %
+      「01」から「08」までのフォルダが\ruby{表示}{ひょうじ}されていることを\ruby{確認}{かくにん}しましょう
     \end{minipage}
     \begin{minipage}{0.45\linewidth}
       \includegraphics[height=5cm]{text01-img/textbook-img1012.png}\\
-      3 「01」フォルダの上で右クリックし、「コピー」しよう
+      \textcircled{\scriptsize{3}} %
+      3 「01」フォルダの上で右クリックし、「コピー」しましょう
     \end{minipage}
     \hfill
     \vspace{20pt}
     \begin{minipage}{0.45\linewidth}
       \includegraphics[height=5cm]{text01-img/textbook-img1013.png}\\
-      4 赤い\ruby{枠}{わく}で囲った「ホームフォルダ」をクリックして、自分のフォルダに\ruby{移動}{いどう}しよう
-    \end{minipage}    \begin{minipage}{0.45\linewidth}
+      \textcircled{\scriptsize{4}} %
+      赤い\ruby{枠}{わく}で囲った「ホームフォルダ」をクリックして、自分のフォルダに\ruby{移動}{いどう}しましょう
+    \end{minipage}
+    \begin{minipage}{0.45\linewidth}
       \includegraphics[height=5cm]{text01-img/textbook-img1014.png}\\
-      5 ホームフォルダに\ruby{移動}{いどう}したら、空いているところをクリックして、さっきコピーしたフォルダを「\ruby{貼}{は}り付け」しよう
+      \textcircled{\scriptsize{5}} %
+      ホームフォルダに\ruby{移動}{いどう}したら、空いているところをクリックして、
+      さっきコピーしたフォルダを「\ruby{貼}{は}り付け」ましょう
     \end{minipage}
     \hfill
     \vspace{20pt}
     \begin{minipage}{0.45\linewidth}
       \includegraphics[height=5cm]{text01-img/textbook-img1015.png}\\
-      6 「01」フォルダがあらわれたら、教材のじゅんび\ruby{完了}{かんりょう}だよ
+      \textcircled{\scriptsize{6}} %
+      「01」フォルダがあらわれたら、教材の\ruby{準備}{じゅんび}は\ruby{完了}{かんりょう}です
     \end{minipage}
 
-  \end{minipage}
-
-  \bigskip
-
-\end{figure}
-
-\bigskip
+  % \end{minipage}
 
 \clearpage
-\subsection{例題 1-19 ホームページの中身を見てみよう}
-\noindent
-\ruby{自己}{じこ}\ruby{紹介}{しょうかい}ページのテンプレートを見てみよう\\
-先ほどコピーした01フォルダにあるself\_intro.htmlをブラウザで開いてみよう\\
 
-\textbf{考え方}
 
-\begin{figure}[hb]
+%
+% subsection 1.4.2
+%
+\subsection{ホームページの中身をのぞいてみよう}
+
+
+さきほどブラウザでけんさくして見たページを\textbf{ホームページ}（またはウェブページ)といいます。
+ホームページを見るにはブラウザを使用しました。
+ウェブページのファイル名には、\texttt{.html}(エイチ ティー エム エル)という\ruby{拡張子}{かくちょうし}がついています。
+ブラウザはこのhtmlファイルの中身を理解して、ホームページとして\ruby{表示}{ひょうじ}してくれます。
+\ruby{自己}{じこ}\ruby{紹介}{しょうかい}ページのテンプレート（先ほどコピーした01フォルダにある
+\texttt{self\_intro.html}）の中身をのぞく前に、このファイルをブラウザで開いてみましょう。
+
+\vspace{0.5cm}
+\textbf{手順}
+\vspace{0.3cm}
+
+まず、ファイルマネージャーで01フォルダを開きます。
+赤わくで囲われたところが、以下のようになっていることを\ruby{確認}{かくにん}してください。\\
+
+\texttt{/home/自分のユーザ名/01}\\
+
+\noindent%
+以下の\ruby{画像}{がぞう}の場合は、ユーザ名が\texttt{pi}なので、\texttt{/home/pi/01}となっています。
+このフォルダ内にある\texttt{self\_intro.html}(黒わくのファイル)をダブルクリックして開きます。
+
+%
+\begin{figure}[htbp]
   \centering
-  \begin{minipage}{16.576cm}
-    さきほどブラウザでけんさくして見たページを\textbf{ホームページ}（\ruby{正確}{せいかく}にはウェブページ)といいます。ホームページを見るにはブラウザを使用しました。ウェブページはファイル名のあとに.html(エイチ
-    ティー エム
-    エル)とついています。ブラウザはこのhtmlファイルを見ることが目的です。ファイルをダブルクリックすると自動的にブラウザがhtmlファイルを開いてくれます。\ruby{表示}{ひょうじ}されたホームページを見てみましょう。ファイルマネージャーで01フォルダを開きます。
-
-    赤わくで囲われたところが
-
-    /home\textbf{/自分のユーザ名/01}
-
-    なっていることを\ruby{確認}{かくにん}しておきましょう（この\ruby{画像}{がぞう}の場合だと、ユーザ名がpiなので、/home/pi/01になるよ）
-
-    その中にあるself\_intro.html(黒わくのファイル)をダブルクリックして開きます。
-
-
-
-
-    \bigskip
-  \end{minipage}
-
   \includegraphics[width=0.8\textwidth]{text01-img/textbook-img141.png}
-
+  \caption{htmlファイルを開く}
+  \label{fig:1.4.2}
 \end{figure}
-
-\bigskip
 
 \clearpage
 
-
-\textbf{答え}
-
-
-
-\begin{figure}[hb]
+\noindent%
+すると、ブラウザが起動して、以下のようにホームページが\ruby{表示}{ひょうじ}されます。
+%
+\begin{figure}[htbp]
   \centering
-  \begin{minipage}{\textwidth}
-    このようにホームページが\ruby{表示}{ひょうじ}されればOKです。
-
-    \centering
-    \includegraphics[width=\textwidth]{text01-img/textbook-img142.png}
-  \end{minipage}
-
+  \includegraphics[width=\textwidth]{text01-img/textbook-img142.png}
+  \caption{ホームページ}
+  \label{fig:1.4.3}
 \end{figure}
-\noindent \textbf{問題 1-17}\\
-01フォルダを開いて、links.htmlをブラウザで開いてみよう
 
 
-\bigskip
-
-\vfill
-
+\begin{tcolorbox}[title=\useOmetoi,breakable]
+  \begin{enumerate}
+    \addex{01フォルダの中にある、\texttt{links.html}をブラウザで開いてみよう。}
+  \end{enumerate}
+\end{tcolorbox}
 \clearpage
 
-\begin{figure}[ht]
-  \subsection{例題 1-20 ホームページの中身をのぞいてみよう}
-  self\_intro.htmlをテキストエディタで開いて図~\ref{fig:36}のタイトルバーの文字を\ruby{変更}{へんこう}してみよう。タイトルバーは~\ref{fig:36}のように赤わくで囲われています。
+%
+% subsection 1.4.3
+%
+\subsection{ホームページの中身を\ruby{編集}{へんしゅう}してみよう}
 
+\indent%
+ここでは、\texttt{self\_intro.html}をテキストエディタで開いて、
+タイトルバーの文字列を\ruby{変更}{へんこう}してみましょう。
+タイトルバーは下の図のように、ブラウザの赤わくの場所に表示されています。
+%
+\begin{figure}[htbp]
   \centering
-  \begin{minipage}{\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{text01-img/textbook-img143.png}
-    \caption{ブラウザタイトルバー}\label{fig:36}
-  \end{minipage}
+  % \includegraphics[width=\textwidth]{text01-img/textbook-img143.png}
+  \includegraphics[width=0.9\linewidth]{text01-img/textbook-img143.png}
+    \caption{ブラウザのタイトル表示}
+    \label{fig:1.4.4}
+\end{figure}
+
 
   
-  \flushleft
-  \textbf{考え方}
+  % \flushleft
+  \textbf{手順}
+  \vspace{0.3cm}
 
-  \begin{minipage}{\textwidth}
-    \flushleft
-    まずは、Text
-    Editorでself\_intro.htmlを開いてみましょう。
+  % \noindent%
+  まずは、Text Editorで\texttt{self\_intro.html}を開いてみましょう。\\
+  \vspace{0.5cm}
+
+  % \begin{minipage}{\textwidth}
+  \noindent%
     \begin{minipage}{0.45\linewidth}
-      \includegraphics[width=\linewidth]{text01-img/textbook-img1040.png}\\
-      1 self\_intro.htmlを右クリックして、「アプリケーションで開く」をクリックします。
+      \includegraphics[width=0.9\linewidth]{text01-img/textbook-img1040.png}\\
+      \textcircled{\scriptsize{1}} %
+      \texttt{self\_intro.html}を右クリックして、「アプリケーションで開く」をクリックします
     \end{minipage}
     \hfill
     \vspace{20pt}
     \begin{minipage}{0.45\linewidth}
-      \includegraphics[width=\linewidth]{text01-img/textbook-img1041.png}\\
-      2 「アプリケーションの\ruby{選択}{せんたく}」ウィンドウがでるので、「アクセサリ」をダブルクリックします。
+      \includegraphics[width=0.9\linewidth]{text01-img/textbook-img1041.png}\\
+      \textcircled{\scriptsize{2}} %
+      「アプリケーションの\ruby{選択}{せんたく}」ウィンドウがでるので、「アクセサリ」をダブルクリックします
     \end{minipage}
     \begin{minipage}{0.45\linewidth}
-      \includegraphics[width=\linewidth]{text01-img/textbook-img1042.png}\\
-      3 「Text Editor」を選んで、OKをクリックします。
+      \includegraphics[width=0.9\linewidth]{text01-img/textbook-img1042.png}\\
+      \textcircled{\scriptsize{3}} %
+      「Text Editor」を選んで、OKをクリックします
     \end{minipage}
-  \end{minipage}
+  % \end{minipage}
 
 
-\end{figure}
-
-\clearpage
-
-
-\textbf{考え方（続き)}
-
-Text Editorで開いたら赤線が引かれた
-{\textless}title{\textgreater}\textbf{\ruby{自己}{じこ}\ruby{紹介}{しょうかい}ページ}{\textless}/title{\textgreater}
-を見てみましょう。\textbf{\ruby{自己}{じこ}\ruby{紹介}{しょうかい}ページ}を\ruby{変更}{へんこう}してみましょう。
-この例では\textbf{青梅太郎の\ruby{自己}{じこ}\ruby{紹介}{しょうかい}ページ}と\ruby{変更}{へんこう}します。青梅太郎は自分の名前に置き\ruby{換}{か}えてください。
-
-
-\centering
-\includegraphics[width=0.9\textwidth]{text01-img/textbook-img146.png}
-
-
-
-\bigskip
-
-\flushleft
-\ruby{変更}{へんこう}した例です。
-
-\centering
-\includegraphics[width=0.9\textwidth]{text01-img/textbook-img148.png}
-
-
-\bigskip
-
-\flushleft
-\ruby{変更}{へんこう}ができたら、ファイルを\ruby{保存}{ほぞん}します。もう一度ファイルの\ruby{保存}{ほぞん}の手順を\ruby{確認}{かくにん}しておきます。
-
-ファイルー＞\ruby{保存}{ほぞん}でファイルを\ruby{保存}{ほぞん}することができます。
-
-
-
-\centering
-\includegraphics[width=0.8\textwidth]{text01-img/textbook-img147.png}
-
-
+% \end{figure}
 
 \clearpage
-\flushleft
-\textbf{考え方（続き)}
 
-
-
-
-ファイルに\ruby{変更}{へんこう}をして\ruby{保存}{ほぞん}をしました。
-\ruby{変更}{へんこう}を見るためには、ブラウザで新しく\ruby{保存}{ほぞん}したファイルを読み直す必要があります。
-ブラウザでページを読み直すことをリロードといいます。
-
-
+Text Editorでファイルを開いたら、
+\texttt{<title>}\textbf{\ruby{自己}{じこ}\ruby{紹介}{しょうかい}ページ}\texttt{</title>}
+を探してください。
+ここで、\textbf{\ruby{自己}{じこ}\ruby{紹介}{しょうかい}ページ}を
+\textbf{青梅太郎の\ruby{自己}{じこ}\ruby{紹介}{しょうかい}ページ}に\ruby{変更}{へんこう}してみましょう。
+青梅太郎は自分の名前に置き\ruby{換}{か}えてください。
 \bigskip
 
-
-\bigskip
-\centering
-%[Warning: Image ignored] % Unhandled or unsupported graphics:
-\includegraphics[width=0.8\textwidth]{text01-img/textbook-img149.png}
-
-\flushleft
-赤わくで囲われたように、円の形をした矢印があります。これをクリックすることでリロードができます。これで、\ruby{変更}{へんこう}結果がブラウザへ\ruby{反映}{はんえい}されます。
-
-\vfill
-\clearpage
+\noindent%
+\begin{lstlisting}[caption=変更前,label=pwdtest,firstnumber=1]
+  <!-- 例題 1-20 ウェブページの中身をのぞいてみよう -->
+    <!-- 自己紹介ページ　から　"自分の名前"の自己紹介ページ に変更してみよう -->
+    <#red#<title>自己紹介ページ</title>#>
+\end{lstlisting}
 
 
-\textbf{答え}
+% \begin{figure}[htbp]
+%   \centering
+%   \includegraphics[width=0.9\textwidth]{text01-img/textbook-img146.png}
+%   \caption{変更前}
+%   \label{fig:1.4.5}
+% \end{figure}
 
+% \bigskip
 
-{\textless}title{\textgreater}\textbf{青梅太郎の\ruby{自己}{じこ}\ruby{紹介}{しょうかい}ページ}{\textless}/title{\textgreater}\\
-と\ruby{変更}{へんこう}をしたのでブラウザのタイトルバー（赤わくで囲われた部分）はこれに\ruby{対応}{たいおう}して\textbf{青梅太郎の\ruby{自己}{じこ}\ruby{紹介}{しょうかい}ページ}と変わっていますね。
-
-\ruby{皆}{みな}さんは、自分の名前が\ruby{表示}{ひょうじ}されていると思います。
-
-\centering
-\includegraphics[width=0.85\textwidth]{text01-img/textbook-img152.png}
-\flushleft
-
-
-二行目に注目してください。
-
-\centering
-\includegraphics[width=0.85\textwidth]{text01-img/textbook-img151.png}
-\flushleft
-
-
-
+\noindent%
+以下が、\ruby{変更}{へんこう}した例です。
 \bigskip
 
-{\textless}!- -コメント -
--{\textgreater}　という行があります。
+\noindent%
+\begin{lstlisting}[caption=変更後,label=pwdtest,firstnumber=1]
+  <!-- 例題 1-20 ウェブページの中身をのぞいてみよう -->
+    <!-- 自己紹介ページ　から　"自分の名前"の自己紹介ページ に変更してみよう -->
+    <#red#<title>青梅太郎の自己紹介ページ</title>#>
+\end{lstlisting}
 
-これをコメントよびます。囲われたものはブラウザには\ruby{表示}{ひょうじ}されません。
-
-コメントはメモとして使えます。はじめの{\textless}!-{}-と終わりの{}-{}-{\textgreater}にはスペースは入れてはいけません。この記号の間であれば改行をしても\ruby{構}{かま}いません。試しにメモを追加してみましょう。
-
-変えた行の上に
-
-\textbf{ここを変えるとタイトルバーも変わる
-}
-
-と追加しましょう。このファイルにはコメントがたくさん書いてあります。\ruby{変更}{へんこう}する前に読んでみてください。コメントはなるべく書いてわかりやすくしておきましょう。
-
-
-\centering
-%[Warning: Image ignored] % Unhandled or unsupported graphics:
-\includegraphics[width=0.85\textwidth]{text01-img/textbook-img150.png}
+% \begin{figure}[htbp]
+%   \centering
+%   \includegraphics[width=0.9\textwidth]{text01-img/textbook-img148.png}
+%   \caption{変更後}
+%   \label{fig:1.4.6}
+% \end{figure}
 
 
-\vfill
-\clearpage
+% \bigskip
 
+\noindent
+\ruby{変更}{へんこう}できたら、ファイルを\ruby{保存}{ほぞん}しましょう。
+ファイルメニューから\ruby{保存}{ほぞん}を選ぶと、ファイルを上書き\ruby{保存}{ほぞん}することができます。
 
-\begin{figure}[ht]
-  \subsection{例題 1-21 見出しを作ってみよう}
-  % \addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:HTML_2}
-
-
+\begin{figure}[htbp]
   \centering
-  \begin{minipage}{\textwidth}
-    \includegraphics[width=0.7\textwidth]{text01-img/textbook-img153.png}
-    \caption{見出しをつくってみよう}
-  \end{minipage}
-
-
-  \bigskip
-  \flushleft
-
-  \textbf{考え方}
-
-
-
-  \begin{minipage}{\textwidth}
-    \flushleft
-
-    HTMLだけでなく見出しを作ることは読みやすい文書を作成するのに重要です。また、改行を\ruby{適切}{てきせつ}に行うことも大切です。
-
-    まずは、見出しを作ってみましょう。\textbf{〇〇〇の\ruby{自己}{じこ}\ruby{紹介}{しょうかい}ページ}を\ruby{変更}{へんこう}してみよう
-
-
-    \bigskip
-
-    \includegraphics[width=0.7\textwidth]{text01-img/textbook-img154.png}
-
-
-    \bigskip
-
-    テキストエディタで\ruby{変更}{へんこう}してみよう。\ruby{変更}{へんこう}したら\ruby{保存}{ほぞん}してブラウザをリロードするのを忘れないようにしよう。
-
-
-    \bigskip
-
-    \includegraphics[width=0.9\textwidth]{text01-img/textbook-img155.png}
-
-
-    \bigskip
-
-
-    見出しとしてはまだ文字が小さく目立たないですね。もっと大きくしてみましょう。
-
-
-
-
-    \bigskip
-  \end{minipage}
-
+  \includegraphics[width=0.7\textwidth]{text01-img/textbook-img147.png}
+  \caption{ファイルの保存}
+  \label{fig:1.4.7}
 \end{figure}
 
 \clearpage
 
+ファイルの内容を\ruby{変更}{へんこう}して、\ruby{保存}{ほぞん}しました。
+\ruby{変更}{へんこう}した内容をブラウザに\ruby{反映}{はんえい}させるためには、
+ブラウザで新しい内容をあらためて読み込む必要があります。
+ブラウザでページを読み込み直すことをリロードといいます。
+ブラウザの上部に、赤わくで囲われたように、円の形をした矢印（リロードボタン）があります。
+これをクリックすることでリロードされ、\ruby{変更}{へんこう}した内容がブラウザに\ruby{反映}{はんえい}されます。
 
-\flushleft
-\textbf{考え方（続き）}
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{text01-img/textbook-img149.png}
+  \caption{リロード}
+  \label{fig:1.4.8}
+\end{figure}
 
+\texttt{<title>}\textbf{青梅太郎の\ruby{自己}{じこ}\ruby{紹介}{しょうかい}ページ}\texttt{</title>}
+と\ruby{変更}{へんこう}した結果、ブラウザのタイトルバー（赤わくで囲われた部分）は、これに\ruby{対応}{たいおう}して
+\textbf{青梅太郎の\ruby{自己}{じこ}\ruby{紹介}{しょうかい}ページ}と変わっていることを\ruby{確認}{かくにん}してください。
+\ruby{皆}{みな}さんの場合は、自分の名前が\ruby{表示}{ひょうじ}されているはずです。
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{text01-img/textbook-img152.png}
+  \caption{タイトルを変更した結果}
+  \label{fig:1.4.9}
+\end{figure}
 
+% 
+% 
+% 
+\subsubsection{コメントを入れよう}
+\hrule\vspace*{5mm}
 
-次の行
+\texttt{self\_intro.html}の二行目に注目してください。
+ここには、
 
-{\textless}p{\textgreater}青梅太郎の\ruby{自己}{じこ}\ruby{紹介}{しょうかい}ページ{\textless}/p{\textgreater}
+\texttt{<!-- } コメント \texttt{ -->}
 
-\bigskip
+\noindent
+と書かれています。
+これをコメントとよびます。コメントは、内容を分かりやすくするためのメモのようなもので、
+ブラウザには\ruby{表示}{ひょうじ}されません。
 
-\includegraphics[width=0.9\textwidth]{text01-img/textbook-img158.png}
+コメントを入れるには、始まりの記号\texttt{<!--}と終わりの記号\texttt{-->}を使います。
+この2つの記号にはさまれた部分がすべてコメントになります。
+この2つの記号の間であれば、文章を何行入れても改行しても構いません。
 
-から
-
-{\textless}h1{\textgreater}青梅太郎の\ruby{自己}{じこ}\ruby{紹介}{しょうかい}ページ{\textless}/h1{\textgreater}
-
-に変えてみましょう。\ruby{保存}{ほぞん}してブラウザをリロードしてみてください。
-
-
-\bigskip
-
-\includegraphics[width=0.9\textwidth]{text01-img/textbook-img157.png}
-
-
-\bigskip
-
-
-\bigskip
-
-\includegraphics[width=0.4\textwidth]{text01-img/textbook-img156.png}
-
-
-今度は見出しらしく太文字で目立つようにになりましたね。
-
-
-
-
-\bigskip
-
-{\textless}p{\textgreater}青梅太郎の\ruby{自己}{じこ}\ruby{紹介}{しょうかい}ページ{\textless}/p{\textgreater}　から
-
-{\textless}h1{\textgreater}青梅太郎の\ruby{自己}{じこ}\ruby{紹介}{しょうかい}ページ{\textless}/h1{\textgreater}　へ\ruby{変更}{へんこう}したら文字が太く大きくなりました。
-
-
-\bigskip
-
-{\textless}p{\textgreater}文字{\textless}/p{\textgreater}や{\textless}h1{\textgreater}文字{\textless}/h1{\textgreater}のようなものをそれぞれpタグ、h1タグといいます。\textbf{タグ}にはそれぞれ\ruby{役割}{やくわり}があります。タグの間に\ruby{挟}{はさ}まれている文字に\ruby{効果}{こうか}があります。
-
-\begin{itemize}
-  \item 文字の前にある{\textless}p{\textgreater}を\textbf{開始タグ}
-  \item 文字の後にある{\textless}/p{\textgreater}を\textbf{\ruby{終了}{しゅうりょう}タグ}
-\end{itemize}
-
-\textbf{タグには半角文字しかつかえません。}
-
-\begin{itemize}
-  \item pタグは、文章として\ruby{表示}{ひょうじ}をします。文章を書くときに使用します。
-
-  \item h1タグは見出しとして\ruby{表示}{ひょうじ}をします。見出しを作るときに使用します。
-\end{itemize}
-
-
-\noindent \textbf{問題 1-18}\\
-h1をh2、h3、h4、h5、h6にそれぞれ変えてみてどうなるか確かめてみましょう。
-
-
-\bigskip
-
+それでは、タイトルバーの文章を変えた行の上に、「\textbf{ここを変えるとタイトルバーも変わる}」
+というコメントを追加してみましょう。
 \clearpage
 
+\noindent%
+\begin{lstlisting}[caption=コメントを追加した例,label=pwdtest,firstnumber=1]
+  <!-- 例題 1-20 ウェブページの中身をのぞいてみよう -->
+    <!-- 自己紹介ページ　から　"自分の名前"の自己紹介ページ に変更してみよう -->
+    <#red#<!-- ここを変えたらタイトルバーも変わる -->#> 
+    <title>青梅太郎の自己紹介ページ</title>
+\end{lstlisting}
+
+\noindent%
+できましたか？
+このファイルを良く見てみてください。
+このファイルには、コメントがたくさん書いてあります。
+そのコメントを読むと、どの場所でどんなことを行っているかが分かると思います。
+みなさんも、自分でホームページを作るときには、たくさんのコメントを書いて、
+分かりやすくすることを心がけましょう。
+\clearpage
+
+
+%
+% subsection 1.4.4
+%
+\subsection{ホームページの見出しを作ってみよう}
+
+% \indent%
+HTMLにかぎらず、見出しを作ることは読みやすい文書を作成するために重要です。
+また、改行を\ruby{適切}{てきせつ}に行うことも大切です。
+
+まずは、見出しを作ってみましょう。
+ここでは、\textbf{〇〇〇の\ruby{自己}{じこ}\ruby{紹介}{しょうかい}ページ}という見出しを、
+自分の名前に\ruby{変更}{へんこう}してみます。
+
+以下の例のように、テキストエディタを使って、〇〇〇を自分の名前に\ruby{変更}{へんこう}します。
+\ruby{変更}{へんこう}したら\ruby{保存}{ほぞん}してブラウザをリロードするのを忘れないようにしましょう。
+\bigskip
+
+\noindent%
+\begin{lstlisting}[caption=見出しを\ruby{変更}{へんこう}した例,label=pwdtest,firstnumber=1]
+  <!-- 例題 1-21 見出しを作ってみよう -->
+		<!-- 見出しの〇〇〇を自分の名前（ニックネームでもよい）に変えてみよう -->
+		<#red#<p>青梅太郎の自己紹介ページ</p>#>
+\end{lstlisting}
+
+\begin{figure}[htbp]
+  \centering
+  % \includegraphics[width=0.9\textwidth]{text01-img/textbook-img155.png}\\
+  % \mbox{ }\\
+  \includegraphics[width=0.7\textwidth]{text01-img/textbook-img153.png}
+\caption{見出しを\ruby{変更}{へんこう}した例}
+  \label{fig:1.4.11}
+\end{figure}
+
+見出しとしてはまだ文字が小さく目立たないですね。
+それでは、もっと大きくしてみましょう。
+% 
+% \noindent%
+文字を大きくして見出しにするには、
+
+\texttt{<p>}青梅太郎の自己紹介ページ\texttt{</p>}
+
+\noindent%
+を以下のように\ruby{変更}{へんこう}します。
+
+\texttt{<h1>}青梅太郎の自己紹介ページ\texttt{</h1>}
+
+\noindent%
+\ruby{変更}{へんこう}できたら、保存してブラウザをリロードしてみてください。
+今度は、見出しらしく太文字で目立つようになりましたね。
+\bigskip
+
+\noindent%
+\begin{lstlisting}[caption=見出しを\ruby{変更}{へんこう}した例2,label=pwdtest,firstnumber=1]
+  <!-- 例題 1-21 見出しを作ってみよう -->
+		<!-- 見出しの〇〇〇を自分の名前（ニックネームでもよい）に変えてみよう -->
+		<#red#<h1>青梅太郎の自己紹介ページ</h1>#>
+\end{lstlisting}
+\clearpage
+
+\begin{figure}[htbp]
+  \centering
+  % \includegraphics[width=0.9\textwidth]{text01-img/textbook-img157.png}\\
+  % \mbox{ }\\
+  \includegraphics[width=0.7\textwidth]{text01-img/textbook-img156.png}
+  \caption{見出しを\ruby{変更}{へんこう}した例2}
+  \label{fig:1.4.12}
+\end{figure}
+
+\texttt{<p>}〇〇〇〇〇\texttt{</p>}や\texttt{<h1>}〇〇〇〇〇\texttt{</h1>}
+のように記述されたものを、それぞれ\texttt{p}タグ、\texttt{h1}タグといいます。
+また、〇〇〇〇〇の前にある\texttt{<p>}や\texttt{<h1>}は\textbf{開始タグ}、
+〇〇〇〇〇の後にある\texttt{</p>}や\texttt{</h1>}は\textbf{\ruby{終了}{しゅうりょう}タグ}とよばれます。
+\textbf{タグ}にはそれぞれ\ruby{役割}{やくわり}があって、
+タグの間に\ruby{挟}{はさ}まれている文字列（〇〇〇〇〇）にその\ruby{効果}{こうか}があらわれます。
+
+\begin{description}
+  \item[pタグ] 文章として\ruby{表示}{ひょうじ}されます。文章を書くときに使用します。
+  \item[h1タグ] 見出しとして\ruby{表示}{ひょうじ}されます。見出しを作るときに使用します。
+\end{description}
+
+\noindent%
+なお、\textbf{タグには半角文字しかつかえません}。
+\vspace{0.5cm}
+
+\begin{tcolorbox}[title=\useOmetoi,breakable]
+  \begin{enumerate}
+    \addex{\texttt{h1}を\texttt{h2}、\texttt{h3}、\texttt{h4}、\texttt{h5}、\texttt{h6}にそれぞれ変えてみて、表示がどう変化するか確かめてみましょう。}
+  \end{enumerate}
+\end{tcolorbox}
+\clearpage
+
+
+
+
+%
+% subsection 1.4.5
+%
 \subsection{\ruby{授業}{じゅぎょう}で使用するタグのいちらん}
+
+ホームページを作るときによく使用するタグを下の表に示します。使い方を例題をつかって学んでいきましょう。
 
 %表作成
 \begin{table}[htbp]
   \centering
   \caption{文字タイプ表}
-  \small
+  \footnotesize
   \begin{tabular}{|p{1.3cm}|p{3.9cm}|p{6.3cm}|p{1.5cm}|}
     \hline
-      タグ名 & 使用例 & \ruby{効果}{こうか} & 例題番号\\
+      タグ名 & 使用例 & \ruby{効果}{こうか} & 章番号\\
       \hline
-      title & {\textless}title{\textgreater}タイトル{\textless}/title{\textgreater} & ブラウザのタイトルバーをタイトルに\ruby{変更}{へんこう}する & 例題 1-20\\
+      \texttt{title} & \texttt{<title>}タイトル\texttt{</title>} & ブラウザのタイトルバーをタイトルに\ruby{変更}{へんこう}する & 1.4.3\\
       \hline
-      p &{\textless}p{\textgreater}文章{\textless}/p{\textgreater} & 文章と\ruby{表示}{ひょうじ}する。改行なし & 例題1-21\\
+      \texttt{p} &\texttt{<p>}文章\texttt{</p>} & 文章と\ruby{表示}{ひょうじ}する。改行なし & 1.4.4\\
       \hline
-      h1 & {\textless}h1{\textgreater}見出し１{\textless}/h1{\textgreater} & 見出し１と\ruby{表示}{ひょうじ}する。\ruby{普通}{ふつう}の文字より大きい & 例題 1-21\\
+      \texttt{h1} & \texttt{<h1>}見出し１\texttt{</h1>} & 見出し１と\ruby{表示}{ひょうじ}する。\ruby{普通}{ふつう}の文字より大きい & 1.4.4\\
       \hline
-      img & {\textless}img src=”img.png”{\textgreater} & src=””で指定された\ruby{画像}{がぞう}ファイルを\ruby{表示}{ひょうじ}する & 例題 1-22\\
+      \texttt{img} & \texttt{<img src=”img.png”>} & \texttt{src=""}で指定された\ruby{画像}{がぞう}ファイルを\ruby{表示}{ひょうじ}する & 1.4.6\\
       \hline
-      br & {\textless}br{\textgreater} & 改行をする & 例題 1-23\\
+      \texttt{br} & \texttt{<br>} & 改行する & 1.4.7\\
       \hline
-      ol &
+      \texttt{ol} &
       \begin{tabular}{l}
-        {\textless}ol{\textgreater}\\
-        \ \ {\textless}li{\textgreater}1位{\textless}/li{\textgreater}\\
-        {\textless}/ol{\textgreater} 
+        \texttt{<ol>}\\
+        \ \ \ \texttt{<li>}1位\texttt{</li>}\\
+        \texttt{</ol>} 
       \end{tabular}
       & 
       \begin{tabular}{l}
-        liタグと合わせて使用する。\\
-        \ruby{順序}{じゅんじょ}付きのリストを作る。\\
-        \ruby{順序}{じゅんじょ}はliタグの順番通りにつく
+        \texttt{li}タグと合わせて使用する\\
+        \ruby{順序}{じゅんじょ}付きのリストを作る\\
+        \ruby{順序}{じゅんじょ}番号は\texttt{li}タグの順番通りにつく
       \end{tabular} 
-      & 例題 1-24\\
+      & 1.4.8\\
       \hline
-      Ul & 
+      \texttt{ul} & 
       \begin{tabular}{l}
-        {\textless}ul{\textgreater}\\
-        \ \ {\textless}li{\textgreater}1位{\textless}/li{\textgreater}\\
-        {\textless}/ul{\textgreater} 
+        \texttt{<ul>}\\
+        \ \ \ \texttt{<li>}\ruby{箇条}{かじょう}書き\texttt{</li>}\\
+        \texttt{</ul>} 
       \end{tabular}
-      & \ruby{順序}{じゅんじょ}なし。${\bullet}で始まるリストを作成。$ & 例題 1-26\\
-      \hline
-      i & {\textless}i{\textgreater}イタリック{\textless}/i{\textgreater} & \ruby{斜}{なな}めの文字を\ruby{表示}{ひょうじ} & 例題 1-25\\
-      \hline
-      u & {\textless}u{\textgreater}アンダーライン{\textless}/u{\textgreater} & 下線つきの文字を\ruby{表示}{ひょうじ} & 例題 1-25\\
-      \hline
-      strong &
+      &
       \begin{tabular}{l}
-        {\textless}strong{\textgreater}\\
-        目立つ文字\\
-        {\textless}/strong{\textgreater}
+        \ruby{順序}{じゅんじょ}なしのリストを作る\\
+        リストは${\bullet}$で始まる 
+      \end{tabular} 
+      & 1.4.12\\
+      \hline
+      \texttt{i} & \texttt{<i>}イタリック\texttt{</i>} & 文字を\ruby{斜体}{しゃたい}で\ruby{表示}{ひょうじ}する & 1.4.9\\
+      \hline
+      \texttt{u} & \texttt{<u>}アンダーライン\texttt{</u>} & 文字に下線を\ruby{表示}{ひょうじ}する & 1.4.9\\
+      \hline
+      \texttt{strong} &
+      \texttt{<strong>}強調\texttt{</strong>}
+      & 文字を目立たせる & 1.4.9\\
+      \hline
+      \texttt{font} &
+      \begin{tabular}{l}
+        \texttt{<font color="\#019a66">}\\
+        \ \ \ 色付き文字\\
+        \texttt{</font>}
       \end{tabular}
-      & 文字を目立たせる & 例題 1-25\\
+      & \texttt{color=""}で指定した色で文字を\ruby{表示}{ひょうじ}する & 1.4.9\\
       \hline
-      font &
+      \texttt{font} &
       \begin{tabular}{l}
-        {\textless}font color=”\#019a66”{\textgreater}\\
-        \ \ 色付き文字\\
-        {\textless}/font{\textgreater}
+        \texttt{<font size="1">}\\
+        文字の大きさを変える\\
+        \texttt{</font>}
       \end{tabular}
-      & color=””で指定した色で文字を\ruby{表示}{ひょうじ}。 & 例題 1-25\\
+      & \texttt{size=""}で指定した文字の大きさで\ruby{表示}{ひょうじ}する & 1.4.9\\
       \hline
-      font &
+      \texttt{table} &
       \begin{tabular}{l}
-        {\textless}font size=”1”{\textgreater}\\
-        大きさを変える\\
-        {\textless}/font{\textgreater}
-      \end{tabular}
-      & size=””で指定した文字の大きさで\ruby{表示}{ひょうじ} & 例題 1-25\\
-      \hline
-      table &
-      \begin{tabular}{l}
-        {\textless}table{\textgreater}\\
+        \texttt{<table>}\\
         ~\\
-        {\textless}/table{\textgreater}
+        \texttt{</table>}
       \end{tabular}
       & 
       \begin{tabular}{l}
-        表を作成するときに使用する。\\
-        caption, tr, th, tdタグといっしょに使用する。
+        \texttt{caption}，\texttt{tr}，\texttt{th}，\texttt{td}タグを\\
+        使って表を作成する
       \end{tabular}
-      & 例題 1-26\\
+      & 1.4.10\\
       \hline
-      caption & {\textless}caption{\textgreater}表題{\textless}/caption{\textgreater} & 表のタイトルを\ruby{表示}{ひょうじ} & 例題 1-26\\
+      \texttt{caption} & \texttt{<caption>}題\texttt{</caption>} & 表のタイトルを\ruby{表示}{ひょうじ}する & 1.4.10\\
       \hline
-      tr & {\textless}tr{\textgreater}{\textless}/tr{\textgreater} &表の行を作る。th,
-      tdタグといっしょに使用する。& 例題 1-26\\
-      \hline
-      th & {\textless}th{\textgreater}列のタイトル{\textless}/th{\textgreater} & 表の列のタイトルを\ruby{表示}{ひょうじ}する & 例題 1-26\\
-      \hline
-      td & {\textless}td{\textgreater}列のデータ{\textless}/td{\textgreater} & 表の列のデータを\ruby{表示}{ひょうじ} & 例題 1-26\\
-      \hline
-      a &
+      \texttt{tr} & 
       \begin{tabular}{l}
-        {\textless}a href=”google.com”{\textgreater}\\
-        \ \ google\\
-        {\textless}/a{\textgreater}
+        \texttt{<tr>}\\
+        ~\\
+        \texttt{</tr>}
       \end{tabular}
-      
+      & \texttt{th},\texttt{td}タグを使って表の行を作成する& 1.4.10\\
+      \hline
+      \texttt{th} & \texttt{<th>}列のタイトル\texttt{</th>} & 表の列のタイトルを\ruby{表示}{ひょうじ}する & 1.4.10\\
+      \hline
+      \texttt{td} & \texttt{<td>}列のデータ\texttt{</td>} & 表の列のデータを\ruby{表示}{ひょうじ}する & 1.4.10\\
+      \hline
+      \texttt{a} &
+      \begin{tabular}{l}
+        \texttt{<a href="google.com">}\\
+        \ \ \ google\\
+        \texttt{</a>}
+      \end{tabular}
       & 
       \begin{tabular}{l}
         クリックすると登録していたホームページに\\
-        \ruby{移動}{いどう}する文字を\ruby{表示}{ひょうじ}
+        \ruby{移動}{いどう}するリンクを作成する
       \end{tabular}
-       & 例題 1-27\\
+       & 1.4.11\\
       \hline
   \end{tabular}
 \end{table}
 
-% {\small
-%   \begin{center}
-%     \tablefirsthead{}
-%     \tablehead{}
-%     \tabletail{}
-%     \tablelasttail{}
-%     \begin{supertabular}{|m{1.6cm}|m{5.1060004cm}|m{7.8930006cm}|m{2.037cm}|}
-%       \hline
-%       タグ名 &
-%       使用例 &
-%       \ruby{効果}{こうか} &
-%       例題番号\\\hline
-%       title &
-%       {\textless}title{\textgreater}タイトル{\textless}/title{\textgreater} &
-%       ブラウザのタイトルバーをタイトルに\ruby{変更}{へんこう}する
-%       &
-%       \ref*{E:HTML_1}\\\hline
-%       p &
-%       {\textless}p{\textgreater}文章{\textless}/p{\textgreater} &
-%       文章と\ruby{表示}{ひょうじ}する。改行なし &
-%       \ref*{E:HTML_2}\\\hline
-%       h1 &
-%       {\textless}h1{\textgreater}見出し１{\textless}/h1{\textgreater} &
-%       見出し１と\ruby{表示}{ひょうじ}する。\ruby{普通}{ふつう}の文字より大きい
-%       &
-%       \ref*{E:HTML_2}\\\hline
-%       img &
-%       {\textless}img src=”img.png”{\textgreater} &
-%       src=””で指定された\ruby{画像}{がぞう}ファイルを\ruby{表示}{ひょうじ}する
-%       &
-%       \ref*{E:HTML_3}\\\hline
-%       br &
-%       {\textless}br{\textgreater} &
-%       改行をする &
-%       \ref*{E:HTML_4}\\\hline
-%       ol &
-%       {\textless}ol{\textgreater}
-
-%       \ \ {\textless}li{\textgreater}1位{\textless}/li{\textgreater}
-
-%       {\textless}/ol{\textgreater} &
-%       liタグと合わせて使用する。\ruby{順序}{じゅんじょ}付きのリストを作る。\ruby{順序}{じゅんじょ}はliタグの順番通りにつく
-%       &
-%       \ref*{E:HTML_5}\\\hline
-%       Ul &
-%       {\textless}ul{\textgreater}
-
-%       \ \ {\textless}li{\textgreater}1位{\textless}/li{\textgreater}
-
-%       {\textless}/ul{\textgreater} &
-%       \ruby{順序}{じゅんじょ}なし。${\bullet}で始まるリストを作成。$
-%       &
-%       \ref*{E:HTML_7}\\\hline
-%       i &
-%       {\textless}i{\textgreater}イタリック{\textless}/i{\textgreater} &
-%       \ruby{斜}{なな}めの文字を\ruby{表示}{ひょうじ} &
-%       \ref*{E:HTML_6}\\\hline
-%       u &
-%       {\textless}u{\textgreater}アンダーライン{\textless}/u{\textgreater} &
-%       下線つきの文字を\ruby{表示}{ひょうじ} &
-%       \ref*{E:HTML_6}\\\hline
-%       strong &
-%       {\textless}strong{\textgreater}
-
-%       目立つ文字
-
-%       {\textless}/strong{\textgreater} &
-%       文字を目立たせる &
-%       \ref*{E:HTML_6}\\\hline
-%       font  &
-%       {\textless}font color=”\#019a66”{\textgreater}
-
-%       \ \ 色付き文字
-
-%       {\textless}/font{\textgreater} &
-%       color=””で指定した色で文字を\ruby{表示}{ひょうじ}。 &
-%       \ref*{E:HTML_6}\\\hline
-%       font &
-%       {\textless}font size=”1”{\textgreater}
-
-%       大きさを変える
-
-%       {\textless}/font{\textgreater} &
-%       size=””で指定した文字の大きさで\ruby{表示}{ひょうじ} &
-%       \ref*{E:HTML_6}\\\hline
-%       table &
-%       {\textless}table{\textgreater}
-
-%       ~
-
-%       {\textless}/table{\textgreater} &
-%       表を作成するときに使用する。caption, tr, th,
-%       tdタグといっしょに使用する。 &
-%       \ref*{E:HTML_7}\\\hline
-%       caption &
-%       {\textless}caption{\textgreater}表題{\textless}/caption{\textgreater} &
-%       表のタイトルを\ruby{表示}{ひょうじ} &
-%       \ref*{E:HTML_7}\\\hline
-%       tr &
-%       {\textless}tr{\textgreater}{\textless}/tr{\textgreater} &
-%       表の行を作る。th,
-%       tdタグといっしょに使用する。 &
-%       \ref*{E:HTML_7}\\\hline
-%       th &
-%       {\textless}th{\textgreater}列のタイトル{\textless}/th{\textgreater} &
-%       表の列のタイトルを\ruby{表示}{ひょうじ}する &
-%       \ref*{E:HTML_7}\\\hline
-%       td &
-%       {\textless}td{\textgreater}列のデータ{\textless}/td{\textgreater} &
-%       表の列のデータを\ruby{表示}{ひょうじ} &
-%       \ref*{E:HTML_7}\\\hline
-%       a &
-%       {\textless}a href=”google.com”{\textgreater}
-
-%       \ \ google
-
-%         {\textless}/a{\textgreater} &
-%       クリックすると登録していたホームページに\ruby{移動}{いどう}する文字を\ruby{表示}{ひょうじ}
-%       &
-%       \ref*{E:HTML_8}\\\hline
-%     \end{supertabular}
-%   \end{center}
-% }
-
-\bigskip
-ホームページを作るときには、これらのタグをたくさん使用します。使い方を例題とともに学んでいきましょう。
-
-
 \clearpage
 
 
-{\centering\bfseries
-  タグは半角文字で入力しなければなりません。
-  \par}
-
-{\centering\bfseries
-  HTMLファイルでタグを入力する\ruby{際}{さい}は
-  \par}
-
-{\centering\bfseries
-  \ruby{常}{つね}に右上のアイコンがキーボードになっていることを\ruby{確認}{かくにん}してください。
-  \par}
-
-\centering
-\includegraphics[width=0.6\textwidth]{text01-img/textbook-img159.png}
 
 
+%
+% subsection 1.4.6
+%
+\subsection{自分の好きな\ruby{画像}{がぞう}をホームページにはってみよう}
 
 
+% %\begin{figure}[ht]
+% \flushleft
+% \subsection{例題 1-22 自分の好きな\ruby{画像}{がぞう}をはってみよう}
 
-\bigskip
-
-\bigskip
-
-\bigskip
-
-\bigskip
-
-
-{\centering\bfseries
-  このアイコンのときは全角入力モードだから
-  \par}
-
-\centering
-\includegraphics[width=0.6\textwidth]{text01-img/textbook-img160.png}
+ホームページには、自分のお気に入りの画像をはりつけて、表示させることができます。
+ここでは、練習として、前章でウェブカメラを使って\ruby{撮影}{さつえい}した
+自分の写真を表示させてみましょう。
 
 
-\bigskip
+\textbf{手順}
+\vspace{0.5cm}
+
+まずは、表示させたい\ruby{画像}{がぞう}を、\texttt{self\_intro.html}があるフォルダと同じ場所にコピーします。
+\vspace{0.5cm}
 
 
-\bigskip
-
-{\centering\bfseries
-  タグを打つときはCtrl +
-  スペースキーを\ruby{押}{お}して半角入力モード
-  \par}
-
-{\centering\bfseries
-  （キーボードのアイコン）にしよう
-  \par}
-
-\clearpage
-%\begin{figure}[ht]
-\flushleft
-\subsection{例題 1-22 自分の好きな\ruby{画像}{がぞう}をはってみよう}
-自分のお気に入りの\ruby{画像}{がぞう}を\ruby{紹介}{しょうかい}してみよう。
-
-\centering
-\begin{figure}[h]
-  \centering
-  \begin{minipage}{6.738cm}
-    {\upshape
-      \centering
-      \includegraphics[width=7.071cm,height=6.048cm]{text01-img/textbook-img161.png}
-      \caption{顔写真}
-    }
-  \end{minipage}
-\end{figure}
-
-\flushleft
-\textbf{考え方}
-
-
-いま、\ruby{髪}{かみ}の長い人の写真が\ruby{表示}{ひょうじ}されているところがあります。このように自分の好きな\ruby{画像}{がぞう}を\ruby{表示}{ひょうじ}させることができます。試しに、ウェブカメラでとった自分の顔に変えてみましょう。
-
-まずは、\ruby{画像}{がぞう}をコピーします。
-
-
-\bigskip
-
+\noindent%
 \begin{minipage}{0.45\linewidth}
-  \includegraphics[width=\linewidth]{text01-img/textbook-img164.png}
-  \newline
-  1 Picturesをダブルクリック
-\end{minipage}
-\hspace{10mm}
-\begin{minipage}{0.45\linewidth}
-  \includegraphics[width=\linewidth]{text01-img/textbook-img162.png}
-  \newline
-  2 使いたい\ruby{画像}{がぞう}を右クリック
-\end{minipage}
-
-\bigskip
-
-\begin{minipage}{0.45\linewidth}
-  \includegraphics[width=\linewidth]{text01-img/textbook-img163.png}
-  \newline
-  3 コピーを\ruby{選択}{せんたく}・\ruby{赤枠}{あかわく}の上矢印をクリック
-\end{minipage}
-\hspace{10mm}
-\begin{minipage}{0.45\linewidth}
-  \includegraphics[width=\linewidth]{text01-img/textbook-img167.png}
-  \newline
-  4 01をダブルクリック
-\end{minipage}
-
-\clearpage
-\flushleft
-
-\textbf{考え方}
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-\centering
-\begin{minipage}{0.45\linewidth}
-  \includegraphics[width=\linewidth]{text01-img/textbook-img168.png}\\
-  5 右クリックして\ruby{貼}{は}り付けを\ruby{選択}{せんたく}します
+  \includegraphics[width=0.9\linewidth]{text01-img/textbook-img164.png}\\
+  \textcircled{\scriptsize{1}} %
+  Picturesをダブルクリックします
 \end{minipage}
 \hfill
 \vspace{20pt}
 \begin{minipage}{0.45\linewidth}
-  \includegraphics[width=\linewidth]{text01-img/textbook-img169.png}\\
-  6 \ruby{貼}{は}り付けたファイルを右クリックして、「ファイル名の\ruby{変更}{へんこう}」をします
+  \includegraphics[width=0.9\linewidth]{text01-img/textbook-img163.png}\\
+  \textcircled{\scriptsize{2}} %
+  使いたい\ruby{画像}{がぞう}の上で右クリックして、コピーを選択したあとで、赤枠の上矢印をクリックします
 \end{minipage}
+%
 \begin{minipage}{0.45\linewidth}
-  \includegraphics[width=\linewidth]{text01-img/textbook-img166.png}\\
-  7 今回は「kao.png」と\ruby{変更}{へんこう}します
+  \includegraphics[width=0.9\linewidth]{text01-img/textbook-img167.png}\\
+  \textcircled{\scriptsize{3}} %
+  01フォルダをダブルクリックします
 \end{minipage}
 \hfill
 \vspace{20pt}
 \begin{minipage}{0.45\linewidth}
-  \includegraphics[width=\linewidth]{text01-img/textbook-img170.png}\\
-  8 これで\ruby{画像}{がぞう}のコピーは\ruby{完了}{かんりょう}です。次はhtmlを\ruby{編集}{へんしゅう}し、\ruby{自己}{じこ}\ruby{紹介}{しょうかい}ページに\ruby{表示}{ひょうじ}しましょう
+  \includegraphics[width=0.9\linewidth]{text01-img/textbook-img168.png}\\
+  \textcircled{\scriptsize{4}} %
+  右クリックして\ruby{貼}{は}り付けを\ruby{選択}{せんたく}します
 \end{minipage}
-
-\clearpage
-
-
-\flushleft
-\textbf{考え方}\ \
-
-
-赤色で線を引いているところで\ruby{画像}{がぞう}を\ruby{表示}{ひょうじ}しています。\\
-\textbf{{\textless}img href=”face.png” width=”320” height=”320”{\textgreater}}
-\textbf{href=””で\ruby{画像}{がぞう}のファイルを指定しています。}\\
-\textbf{“face.png”}からコピーしたファイル\textbf{(“kao.png”)}へ\ruby{変更}{へんこう}してみましょう。
-
-\begin{minipage}{\textwidth}
-  \includegraphics[width=0.6\textwidth]{text01-img/textbook-img171.png}
-  \newline
-  \ruby{変更}{へんこう}して、\ruby{保存}{ほぞん}しリロードするととった写真が\ruby{表示}{ひょうじ}されます。
+%
+\begin{minipage}{0.45\linewidth}
+  \includegraphics[width=0.9\linewidth]{text01-img/textbook-img169.png}\\
+  \textcircled{\scriptsize{5}} %
+  \ruby{貼}{は}り付けたファイルを右クリックして、「ファイル名の\ruby{変更}{へんこう}」を選択します
 \end{minipage}
-
-\flushleft
-\textbf{答え}
-
-\includegraphics[width=0.6\textwidth]{text01-img/textbook-img172.png}
-
-
-
-\noindent \textbf{問題 1-19}\\
-スパゲッティの\ruby{画像}{がぞう}をウェブカメラでとった\ruby{画像}{がぞう}（教室の風景など）に\ruby{変更}{へんこう}しよう
-
-ヒント
-
-%\liststyleLxviii
-\begin{enumerate}
-  \item
-        \ruby{画像}{がぞう}を01フォルダの中にコピーして名前を\ruby{変更}{へんこう}しよう。
-  \item
-        imgタグをコピーした\ruby{画像}{がぞう}を\ruby{表示}{ひょうじ}するように\ruby{変更}{へんこう}しよう
-\end{enumerate}
-
-\noindent \textbf{問題 1-20}\\
-width, heightを\ruby{変更}{へんこう}して\ruby{画像}{がぞう}の大きさを変えてみましょう
-
-ヒント
-
-%\liststyleLxix
-\begin{itemize}
-  \item
-        widthは横\ruby{幅}{はば}、heightはたて\ruby{幅}{はば}です。数字を変えて見ましょう。
-\end{itemize}
-
-
+\hfill
+\vspace{20pt}
+\begin{minipage}{0.45\linewidth}
+  \includegraphics[width=0.9\linewidth]{text01-img/textbook-img166.png}\\
+  \textcircled{\scriptsize{6}} %
+  ここでは\texttt{kao.png}に\ruby{変更}{へんこう}しましょう
+\end{minipage}
 \clearpage
 
-\centering
-\begin{figure}
-  \subsection{例題 1-23 自分のことを\ruby{紹介}{しょうかい}しよう}
+
+\ruby{画像}{がぞう}のコピーができたら、次にhtmlファイルを\ruby{編集}{へんしゅう}して、
+\ruby{自己}{じこ}\ruby{紹介}{しょうかい}ページに\ruby{表示}{ひょうじ}しましょう。
+次のリストの2行目が\ruby{画像}{がぞう}を\ruby{表示}{ひょうじ}するためのタグです。
+\bigskip
+
+
+\noindent%
+\begin{lstlisting}[caption=\ruby{画像}{がぞう}の表示,label=pwdtest,firstnumber=1]
+    <!-- 例題 1-22 自分の好きな画像をはってみよう -->
+    <#red#<img src="face.png" width="320" height="320">#> 
+\end{lstlisting}
+
+\noindent%
+このimgタグで使われているパラメータには、それぞれ以下のような意味があります。
+
+\begin{description}
+  \item[\texttt{href=""}]  表示する画像ファイルを指定する
+  \item[\texttt{width=""}]  画像の幅を指定する
+  \item[\texttt{height=""}]  画像の高さを指定する
+\end{description}
+
+\noindent%
+つまり、このタグは、ファイル\texttt{face.png}の画像を、横幅320ピクセル、高さ320ピクセルの大きさで表示することを表しています。
+それでは、このタグを\ruby{編集}{へんしゅう}して、さきほどコピーしたファイル\texttt{kao.png}の画像を表示させてみましょう。
+\bigskip
+
+
+\begin{lstlisting}[caption=\ruby{画像}{がぞう}の表示（\ruby{編集}{へんしゅう}後）,label=pwdtest,firstnumber=1]
+  <!-- 例題 1-22 自分の好きな画像をはってみよう -->
+  <#red#<img src="kao.png" width="320" height="320">#> 
+\end{lstlisting}
+
+
+\noindent%
+上の例のように変更して、ブラウザをリロードすると、写真が表示されます。
+\bigskip
+
+
+\begin{tcolorbox}[title=\useOmetoi,breakable]
+  \begin{enumerate}
+    \addex{スパゲッティの\ruby{画像}{がぞう}をウェブカメラでとった\ruby{画像}{がぞう}（教室の風景など）に変更してみましょう。}
+    ヒント
+    \begin{enumerate}
+      \item まず、\ruby{画像}{がぞう}を01フォルダの中にコピーして名前を\ruby{変更}{へんこう}しましょう。
+      \item 次に、imgタグの\ruby{画像}{がぞう}ファイル名を、コピーしたファイル名に\ruby{変更}{へんこう}しましょう。
+    \end{enumerate} 
+    \vspace{0.5cm}
+    \addex{この\ruby{画像}{がぞう}が表示される大きさを変更してみましょう。大きさを変えるには、\texttt{width}と\texttt{height}の値を\ruby{変更}{へんこう}します。}
+  \end{enumerate}
+\end{tcolorbox}
+\clearpage
+
+
+
+%
+% subsection 1.4.7
+%
+\subsection{ウェブページで自分のことを\ruby{紹介}{しょうかい}しよう}
+
+ここでは、自分のことを紹介するページを作成します。
+まずは今回\ruby{変更}{へんこう}するページをブラウザで見てみましょう。
+
+\begin{figure}[htbp]
   \centering
-  \begin{minipage}{\textwidth}
-    \includegraphics[width=0.5\textwidth]{text01-img/textbook-img173.png}
-    \caption{自分のことを\ruby{紹介}{しょうかい}しよう}
-  \end{minipage}    
+  \includegraphics[width=0.5\textwidth]{text01-img/textbook-img175.png}
+  \caption{\ruby{紹介}{しょうかい}ページ（\ruby{編集}{へんしゅう}前）}
+  \label{fig:1.4.15}
 \end{figure}
 
+\noindent%
+このままでは、「名前：」と「ニックネーム：」が同じ行に表示されてしまっています。
+まずは、改行の仕方を学びましょう。
+テキストエディタへ\ruby{戻}{もど}ってください。
+文章中で改行するためにはbrタグを使用します。\\
+\texttt{<br>}\\
+ウェブページは、brタグを\ruby{挿入}{そうにゅう}した位置で改行されます。
+なお、このbrタグには\ruby{終了}{しゅうりょう}タグがありませんので気を付けてください。
+次のリストの8行目のように、コメント行の下に\texttt{<br>}タグを\ruby{挿入}{そうにゅう}してみてください。
 \bigskip
 
-\flushleft
-
-\textbf{考え方}
-
-
-\bigskip
-
-まずは今回\ruby{変更}{へんこう}する場所をブラウザで見てみましょう。
-
-\includegraphics[width=0.5\textwidth]{text01-img/textbook-img175.png}
-
-\bigskip
-
-\flushleft
-名前とニックネームが同じ行になっていて、見づらいですね。まずは、改行の仕方を学びましょう。テキストエディタへ\ruby{戻}{もど}ってください。文章中で改行をするには\\
-{\textless}br{\textgreater} \ \ \ \ \ \\
-タグを使います。このタグには\ruby{終了}{しゅうりょう}タグがありません。赤線を引いてある下に{\textless}br{\textgreater}タグをいれて改行できているか確かめてみましょう。
-
-
-\includegraphics[width=0.5\textwidth]{text01-img/textbook-img174.png}
-
-\clearpage
-
-
-\flushleft
-
-\textbf{考え方（続き）}
-
-
-これで見やすくなりましたね。
-
-\bigskip
-
-
-\includegraphics[width=0.5\textwidth]{text01-img/textbook-img176.png}
-
-\bigskip
-
-次は自分のことを\ruby{紹介}{しょうかい}しよう。\\
-名前、\ruby{性別}{せいべつ}、\ruby{誕生日}{たんじょうび}、学校、学年\\
-を追加してみよう。
-
-
-
-\bigskip
-
-\bigskip
-
-
-\textbf{答え}
-
-
-\bigskip
-
-\includegraphics[width=0.5\textwidth]{text01-img/textbook-img177.png}
-
-
-
-\bigskip
-
-\bigskip
-
-
-
-ブラウザの画面
-
-\includegraphics[width=0.5\textwidth]{text01-img/textbook-img173.png}
-
-
-
-\clearpage
-
-\noindent \textbf{問題 1-21}\\
-他にも\ruby{紹介}{しょうかい}\ruby{項目}{こうもく}を追加してみましょう
-
-%\liststyleLxx
-\begin{itemize}
-  \item ヒント : しゅみ、すきなもの
-\end{itemize}
-
-\noindent \textbf{問題 1-22}\\
-顔写真の\ruby{変更}{へんこう}
-
-ヒント
-
-%\liststyleLxxi
-\begin{enumerate}
-  \item
-        01フォルダに\ruby{画像}{がぞう}をコピーしよう。
-  \item とった\ruby{画像}{がぞう}はPicturesフォルダにあるよ。
-  \item \ruby{画像}{がぞう}の名前を変えよう。
-  \item
-        imgタグを変えて、\ruby{表示}{ひょうじ}させたい\ruby{画像}{がぞう}のファイル名にしよう。
-\end{enumerate}
-
-\bigskip
-
-
-\bigskip
-
-\clearpage
-
-\begin{figure}
-  \subsection{例題 1-24 ランキングを作ろう}
-  自分の好きなことを\ruby{紹介}{しょうかい}するためにランキングトップ３を作ってみましょう。見出しの\ruby{変更}{へんこう}とランキングに一つ追加する必要があります。
-
-  \begin{minipage}{\textwidth}
-    {\upshape
-      \includegraphics[width=0.65\textwidth]{text01-img/textbook-img178.png}
-      \newline
-      \caption{好きなたべものランキングトップ３を作ろう}
-    }
-  \end{minipage}  
-\end{figure}
-
-
-\bigskip
-
-\textbf{考え方}
-
-\bigskip
-
-好きなたべものランキングトップ3を作ってみましょう。まずは、ブラウザで\ruby{確認}{かくにん}してみましょう。
-
-
-\bigskip
-
-\includegraphics[width=0.65\textwidth]{text01-img/textbook-img179.png}
-
-\bigskip
-
-まずは、見出しを\ruby{変更}{へんこう}してみましょう。\\
-\textbf{好きなたべものランキングトップ３}\\
-に変えてください。
-
-
-\bigskip
-
-次にランキングの作り方を説明します。\\
-ランキングを作るにはリストを使います。テキストエディタを見てみましょう。
-
-\centering
-\includegraphics[width=0.6\textwidth]{text01-img/textbook-img180.png}
-
-\clearpage
-
-
-\flushleft
-\textbf{考え方（続き）}
-
-
-\bigskip
-
-
-ランキングの\textbf{りんご}は青色で線が引かれている行で\ruby{表示}{ひょうじ}をしています。
-
-
-\bigskip
-
-
-\includegraphics[width=0.65\textwidth]{text01-img/textbook-img182.png}
-
-
-\bigskip
-
-
-%[Warning: Image ignored] % Unhandled or unsupported graphics:
-\includegraphics[width=0.6\textwidth]{text01-img/textbook-img181.png}
-
-
-青色で線が引かれている行の\\
-{\textless}li{\textgreater}りんご{\textless}/li{\textgreater}\\
-りんごを\ruby{表示}{ひょうじ}しています。\\
-順位は赤で線が引かれている\\
-{\textless}ol{\textgreater}\\
-{\textless}/ol{\textgreater}\\
-で\ruby{表示}{ひょうじ}をしています。リストを使ってランキングを作るには、\\
-{\textless}ol{\textgreater}\\
-\ \ {\textless}li{\textgreater}りんご{\textless}/li{\textgreater}\\
-{\textless}/ol{\textgreater}\\
-のように順位をつけるolタグの中でliタグを使い文字を囲みます。\\
-練習として\textbf{ぶどう}をランキングの一番下に追加しましょう。\\
-
-
-\bigskip
-
-
-\includegraphics[width=0.9\textwidth]{text01-img/textbook-img183.png}
-
-
-\bigskip
-
-
-\ruby{保存}{ほぞん}してブラウザをリロードすると\textbf{ぶどう}が一番下に\ruby{表示}{ひょうじ}されました。書いた順番に順位がつきます。
-
-りんご、みかん、ぶどうを\ruby{実際}{じっさい}に好きなたべものに変えてみてください。
-
-
-\bigskip
-\clearpage
-\textbf{答え}
-
-
-\bigskip
-
-
-
-\includegraphics[width=0.9\textwidth]{text01-img/textbook-img184.png}
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-
-\noindent \textbf{問題 1-23}\\
-ランキングを追加してみましょう
-
-ヒント
-
-%\liststyleLxxii
-\begin{itemize}
-  \item
-        好きなお\ruby{菓子}{かし}ランキング、好きなYouTuberランキング
-\end{itemize}
-
-
-\bigskip
-
-\bigskip
-
-\noindent \textbf{問題 1-24}
-
-ヒント
-
-%\liststyleLxxiii
-\begin{itemize}
-  \item
-        {\textless}ol{\textgreater}{\textless}/ol{\textgreater}の代わりに{\textless}ul{\textgreater}{\textless}/ul{\textgreater}を使って、どうなるか\ruby{確認}{かくにん}してみましょう
-\end{itemize}
-
-
-
-\bigskip
-
-\clearpage
-
-
-
-
-\centering
-\begin{figure}
-  \subsection{例題 1-25 日記を書いてみよう}
-  日記を書いてみよう。教室でやっていることを\ruby{紹介}{しょうかい}してみよう。
-
+% \begin{figure}[htbp]
+%   \centering
+%   \includegraphics[width=0.5\textwidth]{text01-img/textbook-img174.png}
+%   \caption{\ruby{紹介}{しょうかい}ページ（\ruby{編集}{へんしゅう}前）}
+%   \label{fig:1.4.16}
+% \end{figure}
+
+\begin{lstlisting}[caption=\ruby{紹介}{しょうかい}ページ（\ruby{編集}{へんしゅう}後）,label=pwdtest,firstnumber=1]
+  <!-- 例題 1-23 自分のことを紹介しよう -->
+		<!-- 見出しの〇〇〇を自分の名前（ニックネームでもよい）に変えてみよう 
+		文章を書くときはpタグを使う 
+		改行は自動でされないよ -->
+		<p>
+			名前: 
+			<#red#<!-- 改行はbrタグを使ってするよ -->#>
+			<#blue#<br>#>
+			ニックネーム: 
+			<br>
+			性別: 
+			<br>
+			誕生日: 
+			<br>
+			学校: 
+			<br>
+			学年: 
+			<br>
+		</p>
+
+\end{lstlisting}
+
+
+\noindent%
+変更したら、ブラウザをリロードして、ページを確認してみましょう。
+これで、見やすくなったと思います。
+% \clearpage
+
+\begin{figure}[htbp]
   \centering
-  \begin{minipage}{6.32cm}
-    {\upshape
-      \includegraphics[width=0.45\textwidth]{text01-img/textbook-img185.png}
-      \newline
-      \caption{日記を書いてみよう}
-    }
-  \end{minipage}    
+  \includegraphics[width=0.5\textwidth]{text01-img/textbook-img176.png}
+  \caption{\ruby{紹介}{しょうかい}ページ（改行した後）}
+  \label{fig:1.4.17}
 \end{figure}
 
-\bigskip
 
-\flushleft
-\textbf{考え方}
+次は自分のことを\ruby{紹介}{しょうかい}する内容に書きかえましょう。
+名前、\ruby{性別}{せいべつ}、\ruby{誕生日}{たんじょうび}、学校、学年を追加してください。
 
-
-
-文章を書くときは{\textless}p{\textgreater}{\textless}/p{\textgreater}を使うと習いました。
-
-文字の太さ、色を変えたり、アンダーライン、ななめ文字にすることもできます。
-
-\centering
-\includegraphics[width=14.284cm]{text01-img/textbook-img186.png}
-
-\bigskip
-
-\flushleft
-
-イタリックはななめの文字です。イタリックという文字が少しななめになっているのを\ruby{確認}{かくにん}してみましょう\\
-{\textless}i{\textgreater}イタリック{\textless}/i{\textgreater}\\
-
-\bigskip
-
-アンダーラインは文字の下に線を引きます。\\
-{\textless}u{\textgreater}アンダーライン{\textless}/u{\textgreater}\\
-
-\bigskip
-
-太文字は文字を太くします\\
-{\textless}strong{\textgreater}\textbf{あいうえお}{\textless}/strong{\textgreater}
-
-
-\bigskip
-色付きの文字は
-\textbf{{\textless}font color=”\#RRGGBB”{\textgreater}色文字{\textless}/font{\textgreater}}
-として光の三原色を用いて色を指定します。\\
-\textbf{RR}は赤の強さ\\
-\textbf{GG}は緑の強さ\\
-\textbf{BB}は青の強さを、
-それぞれ00からFFの16進数で指定します。
-例えば、赤は"\#FF0000"、緑は"\#00FF00"、青は"\#0000FF"、白は"\#FFFFFF"、黒は"\#000000"
-
-\bigskip
-\textbf{16進数は、0から9の次に、A,B,C,D,E,Fを用いて、
-  1\ruby{桁}{けた}を16個の\ruby{数値}{すうち}で表します。}
-
-\bigskip
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.5\textwidth]{text01-img/textbook-img173.png}
+  \caption{\ruby{紹介}{しょうかい}ページの例}
+  \label{fig:1.4.18}
+\end{figure}
 
 
 
+\begin{tcolorbox}[title=\useOmetoi,breakable]
+  \begin{enumerate}
+    \addex{他にも\ruby{紹介}{しょうかい}\ruby{項目}{こうもく}を追加してみましょう（しゅみ、好きなもの、．．．）。}
+  \end{enumerate}
+\end{tcolorbox}
 \clearpage
 
 
-\textbf{考え方（続き）}
+
+
+%
+% subsection 1.4.8
+%
+\subsection{ランキングを作ろう}
+
+自分の好きなことを\ruby{紹介}{しょうかい}するために、ランキングトップ３を作ります。
+まずは、ブラウザで見てみましょう。
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\textwidth]{text01-img/textbook-img178x.png}
+  \caption{好きな食べ物ランキング}
+  \label{fig:1.4.19}
+\end{figure}
+
+
+はじめに、見出しを\ruby{変更}{へんこう}しましょう。\textbf{好きな食べものランキングトップ３}\\に変えてください。
+\bigskip
+
+\noindent%
+\begin{lstlisting}[caption=見出しの変更,label=pwdtest,firstnumber=1]
+  <!-- 例題 1-24 ランキングを作ろう -->
+  <#red#<h2>好きな食べものランキングトップ3</h2>#>
+\end{lstlisting}
+
+ランキング（順序付きリスト）を作るには、順序付きリストタグ\texttt{<ol>}～\texttt{</ol>}と
+リストタグ\texttt{<li>}～\texttt{<li>}を使います。
+使用例を、テキストエディタで見てみましょう。
+\bigskip
+
+\noindent%
+\begin{lstlisting}[caption=順序付きリストの例,label=pwdtest,firstnumber=1]
+  <!-- 例題 1-24 ランキングを作ろう -->
+  <h2>好きな食べものランキングトップ3</h2>
+  <!-- 番号付きのリストを作るときはolタグを使うよ -->
+  <#red#<ol>#>
+    <!-- リストの中身はliタグで作るよ 
+    上から順番に番号がつけられる -->
+    <#blue#<li>#>りんご<#blue#</li>#>
+    <#blue#<li>#>みかん<#blue#</li>#>
+  <#red#</ol>#>
+\end{lstlisting}
+
+このように、順序付きリストタグ\texttt{<ol>}～\texttt{</ol>}の中に、
+リストタグ\texttt{<li>}～\texttt{<li>}で囲まれた文字列（りんごとみかん）が
+入力されています。
+実際に、ブラウザでは次の図のように表示されます。
+このように、\texttt{<ol>}タグの中で、\texttt{<li>}タグを使って指定された文字列が、
+上から順序良く番号付きでリスト表示されていることが分かると思います。
+\clearpage
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\textwidth]{text01-img/textbook-img182x.png}
+  \caption{ランキングの表示}
+  \label{fig:1.4.20}
+\end{figure}
+
+
+3番目に「ぶどう」が表示されるように、「みかん」の下の行にリストを追加してみましょう。
+\bigskip
+
+\noindent%
+\begin{lstlisting}[caption=順序付きリストに「ぶどう」を追加した例,label=pwdtest,firstnumber=1]
+  <!-- 番号付きのリストを作るときはolタグを使うよ -->
+  <ol>
+    <!-- リストの中身はliタグで作るよ 
+    上から順番に番号がつけられる -->
+    <li>りんご</li>
+    <li>みかん</li>
+    <#red#<li>ぶどう</li>#>
+  </ol>
+\end{lstlisting}
+
+\noindent%
+これで3番目に「ぶどう」が表示されます。
+\bigskip
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\textwidth]{text01-img/textbook-img182xx.png}
+  \caption{ぶどうを追加した表示例}
+  \label{fig:1.4.20x}
+\end{figure}
+
+\begin{tcolorbox}[title=\useOmetoi,breakable]
+  \begin{enumerate}
+    \addex{好きな食べ物ランキングを実際に好きな食べものに変えてみましょう。}
+    \addex{新しいランキングを追加してみましょう（好きなおかしランキング、好きなゲームランキング、．．．）}
+  \end{enumerate}
+\end{tcolorbox}
+\clearpage
 
 
 
-\textbf{\ruby{授業}{じゅぎょう}で使用したホームページ\url{links.html}の2番目}を開いて見てください。
-２番を開くと地下鉄で使っている色の見本が出てきます。
-\ruby{銀座線}{ぎんざせん}オレンジは\textbf{\#f39700}となっているので、
-上のcolorの\ruby{値}{あたい}を”\#f39700”とします。
+%
+% subsection 1.4.9
+%
+\subsection{日記を書いてみよう}
+
+この教室で学んだことや、学校で楽しかったことなどを\ruby{紹介}{しょうかい}してみましょう。
+ここでは、より楽しく見える日記にするために、文字の太さや色を変えたり、ななめ文字にしたり、
+アンダーラインを引いたり、文字を\ruby{装飾}{そうしょく}する方法について学びましょう。
+
+復習になりますが、文章を書くときには、pタグを使います。
+より詳しく説明すると、\texttt{<p>}～\texttt{</p>}で囲まれた文章が、1つの段落（ひとかたまりの文章）になります。
+次の例では、日付や日記の本文が段落になっています。
+\bigskip
+
+\noindent%
+\begin{lstlisting}[caption=段落の例,label=pwdtest,firstnumber=1]
+  <!-- 例題 1-18 日記を書いてみよう -->
+  <h2>日記</h2>
+  <!-- 日記の題名 -->
+  <h4>プログラミング教室</h4>
+  <#red#<p>#>2025/06/21<#red#</p>#>
+  <!-- 日記の本文 -->
+  <#red#<p>#>
+    自己紹介ページの作り方をべんきょうしている
+  <#red#</p>#>
+\end{lstlisting}
+
+次に、文字の\ruby{装飾}{そうしょく}について見てみましょう。
+\bigskip
+
+\noindent%
+\begin{lstlisting}[caption=文字の\ruby{装飾}{そうしょく},label=pwdtest,firstnumber=1]
+  <!-- 斜めの文字 -->
+  <#red#<i>#>イタリック<#red#</i>#>
+  <br>
+  <!-- 下線付きの文字 -->
+  <#red#<u>#>アンダーライン<#red#</u>#>
+  <br>
+  <!-- 太文字 -->
+  <#red#<strong>#>あいうえお<#red#</strong>#>
+  <br>
+  <!-- 色付きの文字 -->
+  <#red#<font color="#019a66">#>色文字<#red#</font>#>	
+  <br>
+  <!-- 文字の大きさを変える -->
+  <#red#<font size="1">#>文字の大きさ<#red#</font>#>
+\end{lstlisting}
+
+
+ここで使われているタグについて説明します。
+
+\begin{description}
+  \item[\texttt{<i>}～\texttt{</i>}]\mbox{}\\
+  囲まれた文字列をななめ文字（イタリック体）で表示します
+  \item[\texttt{<ul>}～\texttt{</ul>}] \mbox{}\\
+  囲まれた文字列の下に線（アンダーライン）を引きます
+  \item[\texttt{<strong>}～\texttt{</strong>}] \mbox{}\\
+  囲まれた文字列を太字にします
+\end{description}
+
+\noindent%
+文字のサイズを変えたり，色を付けたりするには、fontタグを使用します。
+色は、color属性を使って指定します。
+\bigskip
+
+\texttt{<font color="\#RRGGBB">}色を付けたい文字\texttt{</font>}\\
+\bigskip
+
+\noindent%
+ここで、色はRR（赤の明るさ）GG（緑の明るさ）BB（青の明るさ）を，それぞれ00からFFの16進数で指定します。
+例えば、赤は\texttt{"\#FF0000"}、青は\texttt{"\#00FF00"}、緑は\texttt{"\#0000FF"}、
+白は\texttt{"\#FFFFFF"}、黒は\texttt"{\#000000"}になります。
+
+\begin{description}
+  \item[16進数]\mbox{}\\
+  0～9、A～Fの16種類の記号を用いて、1\ruby{桁}{けた}を16この記号（数値）で表したものです。
+  例えば、普段使っている数字（10進数）の10は、16進数ではAになります（11はB、12はC、13はD、14はE、15はF、16は10）。
+  16進数のFFは10進数では255になります。
+\end{description}
+
+このままでは分かりにくいかもしれませんので、色の例を見てみましょう。
+\textbf{\ruby{授業}{じゅぎょう}で使用したホームページ\url{links.html}}の2番目にある
+\textbf{色の見本}をクリックして開いて見てください。
+2番を開くと地下鉄で使っている色の見本が出てきます。
+\ruby{銀座線}{ぎんざせん}オレンジは\texttt{\#f39700}となっています。
+この値を使って、上のcolorの\ruby{値}{あたい}を\texttt{"\#f39700"}に変えることもできます。
 このように\ruby{数値}{すうち}によって\ruby{表示}{ひょうじ}する色を選びます。
 
-
-
-\bigskip
-
-\includegraphics[width=\textwidth]{text01-img/textbook-img187.png}
-
-文字の大きさを変えるときは
-
-\textbf{{\textless}font size=”1”{\textgreater}文字の大きさ{\textless}/font{\textgreater}}
-
-\textbf{size=”1”}で文字の大きさを変えられます。1を他の数字に変えてみてください。
-
-このように文字のとくちょうを変えることができます。
-
-
-\bigskip
-
-これらのタグを使って日記を書いてみよう。
-
-下の日記を参考にしてみよう
-
-
-\bigskip
-
-\includegraphics[width=8.779cm]{text01-img/textbook-img185.png}
-
-\clearpage
-
-
-\textbf{答え}
-
-
-
-\includegraphics[width=\textwidth]{text01-img/textbook-img188.png}
-
-\noindent \textbf{問題1-25}\\
-\textbf{{\textless}hr{\textgreater}}タグを使うと横線を引くことができます。日記の一番下に横線を引いてみよう。
-
-ヒント
-
-%\liststyleLxxiv
-\begin{itemize}
-  \item
-        \ruby{終了}{しゅうりょう}タグはhrタグにありません。{\textless}hr{\textgreater}と書いたところに横線が\ruby{表示}{ひょうじ}されます。
-\end{itemize}
-
-\noindent \textbf{問題 1-26}\\
-日記をもう一つ追加してみよう
-
-ヒント
-
-%\liststyleLxxv
-\begin{itemize}
-  \item
-        タイトル、日付、本文を順番に書いてみよう。
-\end{itemize}
-\clearpage
-
-
-
-
-\centering
-\begin{figure}
-  \subsection{例題 1-26 グループのメンバー表を作ろう}
-  グループの友だちのことを表にまとめてみよう。
-  \begin{minipage}{\textwidth}
-    {\upshape
-      \includegraphics[width=0.5\textwidth]{text01-img/textbook-img189.png}
-      \newline
-      \caption{グループメンバーの表}
-    }
-  \end{minipage}    
-\end{figure}
-
-\bigskip
-
-\flushleft
-\textbf{考え方}
-
-
-
-表を作るには
-
-{\textless}table{\textgreater}{\textless}/table{\textgreater}
-
-を使います。
-
-まずは、表に題名をつけます。captionタグを使います。
-
-青色の線を見てください。
-
-\textbf{{\textless}caption{\textgreater}みんなの\ruby{紹介}{しょうかい}{\textless}/caption{\textgreater}}
-
-の行が表の題名として\ruby{表示}{ひょうじ}されています。
-
-
-
-\bigskip
-
-\includegraphics[width=13.462cm]{text01-img/textbook-img190.png}
-
-
-\bigskip
-
-その次に、列の見出しをつけます。緑色で囲われているところを見てください。\\
-表の１行目に名前、学校、学年という\ruby{項目}{こうもく}があります。行は横方向です。\\
-行を作るにはtrタグを使います。\\
-行の見出しはthタグを使います。\\
-
-
-\bigskip
-
-{\textless}tr{\textgreater}\\
-\ \ {\textless}th{\textgreater}名前{\textless}/th{\textgreater}\\
-{\textless}/tr{\textgreater}\\
-
-\bigskip
-
-\clearpage
-\textbf{考え方（続き）}
-
-
-
-\bigskip
-
-\bigskip
-
-
-\centering
-\includegraphics[width=\textwidth]{text01-img/textbook-img191.png}
-
-\flushleft
-
-\bigskip
-
-表の１行目にある見出しの次は\ruby{実際}{じっさい}の\ruby{情報}{じょうほう}がきます。２行目は青色で囲われているところです。
-
-0くんのことが書いてあります。行を作るにはtrタグを使います。
-
-見出しではthタグを使いました。見出しでない行ではtdタグを使って列の\ruby{情報}{じょうほう}を\ruby{表示}{ひょうじ}させます。
-
-{\textless}tr{\textgreater}
-
-\ \ {\textless}td{\textgreater}0くん{\textless}/td{\textgreater}
-
-\ \ {\textless}td{\textgreater}c中学校{\textless}/td{\textgreater}
-
-\ \ {\textless}td{\textgreater}2年生{\textless}/td{\textgreater}
-
-{\textless}/tr{\textgreater}
-
-一個目のtdタグは一個目のthタグに\ruby{対応}{たいおう}しています。つまり、一個目のthタグの\textbf{名前}は一個目のtdタグの０くんに\ruby{対応}{たいおう}しています。
-
-
-\bigskip
-
-
-\bigskip
-
-グループのメンバーの友だちの名前、学校、学年を聞いてtdタグを書き\ruby{換}{か}えてみよう。
-
-
-\bigskip
-
-
-\bigskip
-
-
-
-\bigskip
-
-\clearpage
-\textbf{答え}
-
-
-
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
-\includegraphics[width=\textwidth]{text01-img/textbook-img192.png}
-
-
-
-
-\bigskip
-
-\bigskip
-
-\bigskip
-
-\noindent \textbf{問題 1-27}\\
-表にクラスを追加してみよう。
-
-ヒント
-
-%\liststyleLxxvi
-\begin{enumerate}
-  \item クラスを見出しに追加してみよう
-  \item
-        みんなのクラスを聞いて、追加してみよう
-\end{enumerate}
-
-\noindent \textbf{問題 1-28}\\
-TAのことを追加してみよう
-
-%\liststyleLxxvii
-\begin{itemize}
-  \item
-        TAの先生に名前、学校、学年、クラスを聞いて表に追加してみよう
-\end{itemize}
-
-\bigskip
-
-\clearpage
-
-\centering
-\begin{figure}
-  \subsection{例題 1-27 自分の好きなホームページを\ruby{紹介}{しょうかい}しよう}
-
-  \flushleft
-  自分のお気に入りのサイトを自分のホームページで\ruby{紹介}{しょうかい}しよう。
-  \begin{minipage}{\textwidth}
-    {\upshape
-      \centering
-      \includegraphics[width=0.4\textwidth]{text01-img/textbook-img193.png}%画像無い
-      \caption{自分の好きなホームページを\ruby{紹介}{しょうかい}しよう}
-    }
-  \end{minipage}
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{text01-img/textbook-img187.png}
+  \caption{色の見本}
+  \label{fig:1.4.21}
 \end{figure}
 
 
 
-
+\indent%
+文字の大きさは、fontタグのsize属性を使って指定します。
 \bigskip
 
-\flushleft
-
-\textbf{考え方}
-
-
-
-まずはブラウザを見てみましょう。赤線で線を引いてあるところはリンクといい、クリックすると登録されているホームページへ\ruby{移動}{いどう}します。試しにgoogleをクリックして見てください。
-
-
+\texttt{<font size="1">}大きさをかえたい文字\texttt{</font>}\\
 \bigskip
 
-\centering
-\includegraphics[width=0.22\textwidth]{text01-img/textbook-img194.png}
+\noindent%
+\texttt{size="1"}この数字の1の値を変えると文字のサイズが変化します。
+実際に他の数字に変えて、大きさがどうなるか確認してください。
 
-
-\flushleft
-
+\noindent%
+ここで説明したfontタグのcolor属性とsize属性は、同時に使うこともできますので、
+いろいろと試してみるのも楽しいと思います。
 \bigskip
 
-クリックをするとブラウザで開いているページがリンクされているページへ\ruby{移動}{いどう}します。
-
-赤色で囲われているところがホームページの住所にあたる部分です。この部分をリンクとして登録します。青色で囲われている矢印を\ruby{押}{お}すと前のページへ\ruby{戻}{もど}ります。自分のページへ\ruby{戻}{もど}りましょう。
-
-
-
+\texttt{<font color="\#f39700" size="3">}大きいフォントの銀座線オレンジ\texttt{</font>}
 \bigskip
 
-\centering
-\includegraphics[width=0.22\textwidth]{text01-img/textbook-img195.png}
+最後に、ここで学んだタグを使って、下の例を参考に自分の日記を書いてみましょう。
 
-\bigskip
-
-\flushleft
-次は、タイピングゲームをクリックして見てください。今回はページは\ruby{移動}{いどう}しません。まだタイピングゲームのホームページを登録していないからです。
-
-
-\clearpage
-
-
-\textbf{考え方（続き）}
-
-
-
-試しに少し前に遊んだタイピングゲームを自分のページから\ruby{移動}{いどう}できるようにしておきましょう。まずは、タイピングゲームのページを開いてください。開けたら赤線を引いたホームページの住所にあたる部分をクリックします。その後、右クリックをして\textbf{すべてを\ruby{選択}{せんたく}(A)}をクリックします。
-
-
-\bigskip
-
-\centering
-\includegraphics[width=0.3\textwidth]{text01-img/textbook-img196.png}
-
-\flushleft
-
-その後、赤線を引いてある住所にあたる部分が青くなります。そしたらまた右クリックをして
-
-\textbf{コピー(C)}をクリックします。住所にあたる部分をコピーしました。
-
-\centering
-\includegraphics[width=0.3\textwidth]{text01-img/textbook-img197.png}
-
-\bigskip
-\flushleft
-
-次は、テキストエディタを開きます。
-
-\centering
-\includegraphics[width=\textwidth]{text01-img/textbook-img198.png}
-
-\bigskip
-\flushleft
-
-リンクは赤線を引いてあるように
-
-{\textless}a
-href=”ホームページの住所”{\textgreater}タイピングゲーム{\textless}/a{\textgreater}
-
-と書きます。今の\ruby{状態}{じょうたい}では\textbf{ホームページの住所}はくうらんです。
-
-くうらんになっているところを左クリックしてから右クリックします。そこで\textbf{\ruby{貼}{は}り付け(P)}をします。
-
-
-
-
-
-\centering
-\includegraphics[width=0.25\textwidth]{text01-img/textbook-img199.png}
-
-\clearpage
-
-
-\flushleft
-\textbf{考え方（続き）}
-
-
-\bigskip
-
-\centering
-\includegraphics[width=\textwidth]{text01-img/textbook-img200.png}
-
-\bigskip
-\flushleft
-
-これでタイピングゲームのホームページの住所を登録できました。\ruby{保存}{ほぞん}してブラウザをリロードしてください。タイピングゲームをクリックするとタイピングゲームのホームページへ\ruby{移動}{いどう}するようになりました。
-
-
-\bigskip
-\centering
-\includegraphics[width=0.25\textwidth]{text01-img/textbook-img201.png}
-
-
-\flushleft
-このようにリンクを追加します。自分の好きなホームページをリンクとして\ruby{表示}{ひょうじ}してみてください。
-
-ちなみに、\ruby{先程}{さきほど}のランキングを作るときにはolタグを使って\ruby{順序}{じゅんじょ}をつけました。今回は\ruby{順序}{じゅんじょ}ではなく${\bullet}を使っています。そのため青線で引いたように${\textless}ul{\textgreater}{\textless}/ul{\textgreater}を代わりに使います。
-
-ulタグをolタグに変えれば\ruby{順序}{じゅんじょ}をつけることができます。
-
-
-\bigskip
-
-\textbf{答え}
-
-\centering
-\includegraphics[width=0.9\textwidth]{text01-img/textbook-img202.png}
-
-\flushleft
-\noindent \textbf{問題 1-29}\\
-ホームページのランキングを作ってみよう。
-
-ヒント
-
-%\liststyleLxxviii
-\begin{enumerate}
-  \item リストに\ruby{順序}{じゅんじょ}をつけよう
-  \item リストの\ruby{項目}{こうもく}をaタグにしよう
-\end{enumerate}
-
-\clearpage
-
-\bigskip
-\centering
-\begin{figure}
-  \subsection{例題 1-28 教室の使うものリストを作ろう}
-  教室に使うものリストを作ろう
-  \begin{minipage}{5.937cm}
-    {\upshape
-      \includegraphics[width=5.937cm]{text01-img/textbook-img203.png}
-      \caption{教室で使うものリスト}
-    }
-  \end{minipage}
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{text01-img/textbook-img185.png}
+  \caption{日記の例}
+  \label{fig:1.4.22}
 \end{figure}
 
-
-\bigskip
-\flushleft
-
-\textbf{考え方}
-
-
-
-リストを作るのには
-
-{\textless}ul{\textgreater}
-
-\ \ {\textless}li{\textgreater}リスト\ruby{項目}{こうもく}1{\textless}/li{\textgreater}
-
-{\textless}/ul{\textgreater}
-
-のように書くと習いました。リストの中にリストを入れることもできます。
-
-テキストエディタを見てください
-
-\bigskip
-
-\centering
-\includegraphics[width=0.9\textwidth]{text01-img/textbook-img204.png}
-
-\bigskip
-\flushleft
-
-赤線が引かれているulタグの中に青色で囲われているulタグがありますね。ブラウザで見てみると、
-
-${\bullet}持ち帰るもの$
-
-\ \ ◯ラズベリーパイ
-
-のようになっています。このように、ulタグの中でulタグを使うと、リストの中でリストをかけるようになります。
-
-ラズベリーパイの下に\ruby{項目}{こうもく}を追加してみましょう。
-
-
-\bigskip
-
-
+\begin{tcolorbox}[title=\useOmetoi,breakable]
+  \begin{enumerate}
+    \addex{\texttt{<hr>}タグを使うと、ページに横線を引くことができます。日記の一番下に横線を引いてみましょう。}
+    \addex{日記を追加してみましょう（ヒント：タイトル、日付、本文の順に追加しましょう）。}
+  \end{enumerate}
+\end{tcolorbox}
 \clearpage
 
-\flushleft
-\textbf{答え}
 
 
+%
+% subsection 1.4.10
+%
+\subsection{グループのメンバー表を作ろう}
+
+ここでは、下の図のように、グループの友だちのことを表にまとめてみましょう。
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.5\textwidth]{text01-img/textbook-img189.png}
+  \caption{メンバー表の例}
+  \label{fig:1.4.23}
+\end{figure}
+
+表の作成には、tableタグ\texttt{<table>}～\texttt{</table>}を使います。
+tabelタグの中に、表の行を作成するtr（Table Row）タグ\texttt{<tr>}～\texttt{</tr>}や、
+行の見出しを作成するth（Table Header）タグ\texttt{<th>}～\texttt{</th>}、
+行の内容を作成するtd（Table Data）タグ\texttt{<td>}～\texttt{</td>}を入力することで、
+表を完成させます。
+また、表の見出しの作成にはcaptionタグ\texttt{<caption>}～\texttt{</caption>}を使います。
+次に、リストと実際に表示される例を示します。
 \bigskip
 
-\centering
-\begin{minipage}{0.45\linewidth}
-  \includegraphics[width=\linewidth]{text01-img/textbook-img1043.png}
+%
+\begin{minipage}{0.58\linewidth}
+  \begin{lstlisting}[caption=表の例,label=pwdtest,firstnumber=1]
+    <!-- 例題 1-26 グループのメンバー表を作ろう -->
+    <h2>青梅プログラミング教室</h2>
+    <!-- 表を作るタグ -->
+    <#purple#<table border="1">#>
+      <!-- 表のタイトル -->
+      <#blue#<caption>みんなの紹介</caption>#>
+      <!-- 表の行を作るタグ -->
+      <#green#<tr>#>
+        <!-- 表の列の見出しを作るタグ -->
+        <#green#<th>名前</th>
+        <th>学校</th>
+        <th>学年</th>
+      </tr>#>
+      <#magenta#<tr>#>
+        <!-- 表の列を作るタグ -->
+        <#magenta#<td>0くん</td>
+        <td>c中学校</td>
+        <td>1年生</td>
+      </tr>#>
+        ・
+        ・
+        ・
+    <#purple#</table>#>
+  \end{lstlisting} 
 \end{minipage}
 \hfill
+% 
 \vspace{20pt}
-\begin{minipage}{0.45\linewidth}
-  \includegraphics[width=\linewidth]{text01-img/textbook-img1044.png}
+\begin{minipage}{0.36\linewidth}
+  \centering
+  \includegraphics[width=0.95\linewidth]{text01-img/textbook-img190x.png}
+  \vspace{1cm}
+
+  {\bf 表の作成に使用するタグ}
+  \begin{description}
+    \item[table]表の作成
+    \item[caption]表のタイトル
+    \item[tr]行の作成
+    \item[th]行の見出しの作成
+    \item[td]行の内容の作成
+  \end{description}
 \end{minipage}
 
-\bigskip
-\flushleft
+\clearpage
 
-\noindent \textbf{問題 1-30}\\
-持ち物の\ruby{画像}{がぞう}をとって、\ruby{項目}{こうもく}の下に\ruby{貼}{は}ろう
-
-ヒント
-
-%\liststyleLxxix
-\begin{enumerate}
-  \item
-        ウェブカメラで持ち物の\ruby{画像}{がぞう}をとってみよう
-  \item
-        01フォルダの中に\ruby{画像}{がぞう}をコピーしよう
-  \item \ruby{画像}{がぞう}の名前を\ruby{変更}{へんこう}しよう
-  \item
-        imgタグをliタグの下に追加して、\ruby{画像}{がぞう}を\ruby{表示}{ひょうじ}させよう。
-\end{enumerate}
-
+表を作成するためには、tableタグ\texttt{<table>}～\texttt{</table>}の中に、
+各要素を書いていきます。今回の例では，
 \bigskip
 
+\begin{lstlisting}[caption=表の作成,label=pwdtest,firstnumber=1]
+  <table border="1">
+     ・
+     ・
+  </table>
+\end{lstlisting} 
+
+\noindent%
+のように、border属性が使われています。
+これは、表の枠の太さを決める値です。
+ここでは、太さが1の枠で仕切られた表が表示されることになります。
+
+表にタイトルを付けるためには、captionタグを使用します。
+\bigskip
+\begin{lstlisting}[caption=表のタイトル,label=pwdtest,firstnumber=1]
+    <!-- 表のタイトル -->
+    <caption>みんなの紹介</caption>
+\end{lstlisting} 
+\noindent%
+ここで指定している「みんなの紹介」というタイトルは、表の上部に表示されます。
+
+表は、行ごとに作成します。
+表の行の作成にはtrタグ\texttt{<tr>}～\texttt{</tr>}を使用し、その中に
+表の見出しや内容を書いていきます。
+最初の行には、列の見出しを作成します。
+列の見出しは、thタグ\texttt{<th>}～\texttt{</th>}で書いていきます。
+\bigskip
+
+\begin{lstlisting}[caption=表の行（列の見出し）,label=pwdtest,firstnumber=1]
+  <!-- 表の行を作るタグ -->
+  <tr>
+    <!-- 表の列の見出しを作るタグ -->
+    <th>名前</th>
+    <th>学校</th>
+    <th>学年</th>
+  </tr>
+\end{lstlisting} 
+
+\noindent%
+このように書くと、最初の行に、「名前」、「学校」、「学年」という順序で、列の見出しの行が表示されます。
+
+次の行からは、見出しではなく、実際の内容で表の行を作成していきます。
+表の内容は、tdタグ\texttt{<td>}～\texttt{</td>}を使って記述します。
+\bigskip
+
+\begin{lstlisting}[caption=表の行,label=pwdtest,firstnumber=1]
+  <tr>
+    <!-- 表の列を作るタグ -->
+    <td>0くん</td>
+    <td>c中学校</td>
+    <td>1年生</td>
+  </tr>
+\end{lstlisting} 
+
+\noindent%
+このように書くと、「0くん」、「中学校」、「1年生」という順序で、表の行が表示されます。
+あとは、この例と同じように、行の記述を追加していくだけで、表を作成することができます。
+
+\begin{tcolorbox}[title=\useOmetoi,breakable]
+  \begin{enumerate}
+    \addex{グループのメンバーの名前、学校、学年を聞いて、\texttt{<td>}タグの内容を書き換えてみましょう。}
+    \addex{グループのメンバーのクラス（組）を聞いて、表の列を追加してみましょう。}
+  \end{enumerate}
+\end{tcolorbox}
+\clearpage
+
+
+%
+% subsection 1.4.11
+%
+\subsection{自分の好きなホームページを\ruby{紹介}{しょうかい}しよう}
+
+ホームページには、マウスでクリックするだけで別のホームページに移動する、ハイパーリンクという機能があります。
+ここでは、そのハイパーリンクという機能を使って、自分のお気に入りのサイトを\ruby{紹介}{しょうかい}してみましょう。
+
+まずは、ブラウザで「便利なリンク」を見てください。
+ここで、アンダーラインが引かれた青色の文字が、ハイパーリンクになります。
+これをクリックすると、設定されているホームページに移動します。
+試しに、\ul{google}をクリックしてみてください。
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.4\textwidth]{text01-img/textbook-img193x.png}
+  \caption{便利なリンク}
+  \label{fig:1.4.24}
+\end{figure}
+
+\noindent%
+googleのページに移動しましたか？
+では、前のページに戻りましょう。
+戻るには、ブラウザの左上にある戻るボタンをクリックします。
+次に、\ul{タイピングゲーム}をクリックしてみてください。
+実は、まだハイパーリンクの命令が記述されていませんので、ページは移動しません。
+ここでは、ハイパーリンクが機能するように、命令を書いていきます。
+
+まずは、タイピングページの住所（URL：uniform resource locator と呼ばれます）を調べましょう。
+ブラウザで、タイピングゲームのページを開いてください。
+開いたら、赤線の引いてある住所にあたる部分（URL）をクリックします。
+その後で、右クリックして、メニューの「\textbf{すべてを選択(A)}」をクリックします。
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.45\textwidth]{text01-img/textbook-img196.png}
+  \caption{URLを選択}
+  \label{fig:1.4.25}
+\end{figure}
+
+\noindent%
+すると、住所の情報がすべて選択されて、青く表示されますので、さらにそこで右クリックして、
+メニューの「\textbf{コピー(C)}」をクリックします。
+これで住所にあたる部分（URL）がコピーされました。
+\clearpage
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.4\textwidth]{text01-img/textbook-img197.png}
+  \caption{URLのコピー}
+  \label{fig:1.4.26}
+\end{figure}
+
+次に、テキストエディタで中身を見てみましょう。
+\bigskip
+
+\begin{lstlisting}[caption=ハイパーリンク（編集前）,label=pwdtest,firstnumber=1]
+  <!-- 例題 1-27 自分の好きなウェブサイトを紹介しよう -->
+  <h3>便利なリンク</h3>
+    <!-- 番号なしのリスト(番号の代わりに・から始まる) -->
+    <ul>
+      <!-- リストの中身はliタグで作るよ
+      リストの中身にはaタグを使っている 
+      hrefでウェブサイトの場所を指定するよ -->
+      <li><a href="https://google.com/">google</a></li>
+      <li><a href="https://www.colordic.org/m/">色の見本</a></li>
+      <#red#<li><a href="">タイピングゲーム</a></li>#>
+    </ul>
+\end{lstlisting} 
+
+\noindent%
+赤字で示したタイピングゲームを見てください。
+上の行と違って、\texttt{href=""}の中身が\ruby{空}{から}になっていることが分かります。
+ハイパーリンクを作るためには、aタグ\texttt{<a href="">}～\texttt{</a>}を使用します。
+\vspace{.5cm}
+
+\texttt{<a href="ホームページの住所">表示するリンク名</a>}
+\vspace{.5cm}
+
+\noindent%
+上のようにaタグのhref属性にホームページの住所（URL）を書いて、
+ホームページに表示される文字列「表示するリンク名」を指定すると、
+ハイパーリンクが作成されます。
+
+では、\ul{タイピングゲーム}をハイパーリンクとして機能させるために、
+href属性に、先ほどコピーした住所の情報をペーストしてみましょう。
+\texttt{href=""}のダブルクオーテーションの中をクリックした後で、
+右クリックしてメニューの「\textbf{\ruby{貼}{は}り付け(P)}」をクリックします。
+\vspace{0.5cm}
+
+\begin{lstlisting}[caption=ハイパーリンク（編集後）,label=pwdtest,firstnumber=1]
+      <li><a href="https://google.com/">google</a></li>
+      <li><a href="https://www.colordic.org/m/">色の見本</a></li>
+      <li><a <#red#href="https://www.e-typing.ne.jp/"#>>タイピングゲーム</a></li>
+\end{lstlisting} 
+
+\noindent%
+これで、タイピングゲームのページに移動するためのハイパーリンクが完成しました。
+テキストエディタを保存して、ブラウザをリロードしてみましょう。
+\ul{タイピングゲーム}をクリックして、タイピングゲームのホームページに移動することを
+確認してください。
+
+
+
+\begin{tcolorbox}[title=\useOmetoi,breakable]
+  \begin{enumerate}
+    \addex{自分の好きなホームページのハイパーリンクを2つ追加してみましょう。}
+  \end{enumerate}
+\end{tcolorbox}
+\clearpage
+
+
+
+%
+% subsection 1.4.11
+%
+\subsection{教室の使うものリストを作ろう}
+
+リスト（\ruby{箇条}{かじょう}書き）を作るには、ulタグ（順序なしリストタグ）を使います。
+より詳しく説明すると、\texttt{<ul>}～\texttt{</ul>}の中に、\ruby{箇条}{かじょう}書きにしたい項目を、
+ランキングのときと同じようにliタグ\texttt{<li>}～\texttt{</li>}で指定します。
+\vspace{0.5cm}
+
+%
+\begin{minipage}{0.58\linewidth}
+  \begin{lstlisting}[caption=リストの例,label=pwdtest,firstnumber=1]
+    <ul>
+      <li>リスト項目1</li>
+      <li>リスト項目2</li>
+    </ul>	
+  \end{lstlisting} 
+  \end{minipage}
+% \hfill
+% 
+% \vspace{20pt}
+\begin{minipage}{0.36\linewidth}
+  \centering
+  \includegraphics[width=0.5\linewidth]{text01-img/textfig_1001.png}
+\end{minipage}
+\bigskip
+
+リストの中に、リストを入れることもできます。
+テキストエディタで見てみましょう。
+\vspace{0.5cm}
+
+%
+\begin{minipage}{0.58\linewidth}
+  \begin{lstlisting}[caption=リスト（）,label=pwdtest,firstnumber=1]
+    <!-- 例題 1-28 教室の持ち物リストを作ろう -->
+    <h3>教室で使うものリスト</h3>
+    <#red#<ul>#>
+      <li>持ち帰るもの</li>
+      <#blue#<ul>#>
+        <li>ラズベリーパイ</li>
+      <#blue#</ul>#>	
+      <li>持ち帰らないもの</li>
+      <#blue#<ul>#>
+        <li>ディスプレイ</li>
+      <#blue#</ul>#>
+    <#red#</ul>#>
+  \end{lstlisting} 
+  \end{minipage}
+\hfill
+% 
+% \vspace{20pt}
+\begin{minipage}[t]{0.36\linewidth}
+  \centering
+  \includegraphics[width=0.7\linewidth]{text01-img/textbook-img204x.png}
+\end{minipage}
+\bigskip
+
+\noindent%
+外側のulタグの中に、さらに2つのulタグがあります。
+このように、ulタグの中にulタグを使うと、リストの中でもリストが使えます。
+\vspace{0.5cm}
+
+% \begin{tcolorbox}[title=\useOmetoi,breakable]
+%   \begin{enumerate}
+%     \addex{「ラズベリーパイ」の下に、次の7個の項目をリストとして追加してみましょう（「電源ケーブル」、「HDMIケーブル」、「microSDカード」、「マウス」、「ヘッドセット」、「ウェブカメラ」、「GPIOエクステンダー」）。}
+%   \end{enumerate}
+% \end{tcolorbox}
+
+\begin{minipage}{0.68\linewidth}
+  \begin{tcolorbox}[title=\useOmetoi,breakable]
+    \begin{enumerate}
+      \addex{「ラズベリーパイ」の下に、次の7個の項目をリストとして追加してみましょう（「電源ケーブル」、「HDMIケーブル」、「microSDカード」、「マウス」、「ヘッドセット」、「ウェブカメラ」、「GPIOエクステンダー」）。}
+    \end{enumerate}
+  \end{tcolorbox}
+\end{minipage}
+\hfill
+% 
+\begin{minipage}{0.3\linewidth}
+  \centering
+  \includegraphics[width=0.9\linewidth]{text01-img/textfig_1002.png}
+\end{minipage}
 
 \clearpage
+
+
+% では、練習として、「ラズベリーパイ」の下に、次の7個の項目をリストとして追加してみましょう
+% （「電源ケーブル」、「HDMIケーブル」、「microSDカード」、「マウス」、「ヘッドセット」、
+% 「ウェブカメラ」、「GPIOエクステンダー」）。
+% \vspace{0.5cm}
+
+% %
+% \begin{minipage}{0.58\linewidth}
+%   \begin{lstlisting}[caption=リスト（追加後）,label=pwdtest,firstnumber=1]
+%     <!-- 例題 1-28 教室の持ち物リストを作ろう -->
+%     <h3>教室で使うものリスト</h3>
+%     <ul>
+%       <li>持ち帰るもの</li>
+%       <ul>
+%         <li>ラズベリーパイ</li>
+%         <#red#<li>電源ケーブル</li>
+%         <li>HDMIケーブル</li>
+%         <li>microSDカード</li>
+%         <li>マウス</li>
+%         <li>ヘッドセット</li>
+%         <li>GPIOエクステンダー</li>#>
+%       </ul>	
+%       <li>持ち帰らないもの</li>
+%       <ul>
+%         <li>ディスプレイ</li>
+%       </ul>
+%     </ul>
+%   \end{lstlisting} 
+%   \end{minipage}
+% \hfill
+% % 
+% % \vspace{20pt}
+% \begin{minipage}[t]{0.36\linewidth}
+%   \centering
+%   \includegraphics[width=0.7\linewidth]{text01-img/textfig_1002.png}
+% \end{minipage}
+
+
