@@ -1,13 +1,21 @@
 
-\refstepcounter{Exercise}
-\clearpage\subsection*{\theExercise　URLを使ってCGIに情報を\ruby{渡}{わた}す}
-\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:URL}
+% \refstepcounter{Exercise}
+% \subsection*{\theExercise　URLを使ってCGIに情報を\ruby{渡}{わた}す}
+
+%
+% subsection 6.4.2
+%
+\subsection{URLを使ってCGIに情報を\ruby{渡}{わた}す}
+% \addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:URL}
 
 % \clearpage\subsection*{URLを使ってCGIに情報を\ruby{渡}{わた}す}
-考え方
+\bigskip
 
-CGIのプログラムに情報を渡すことができればより便利なプログラムが作れます。ここでは\ruby{単純}{たんじゅん}なURLを用いた方法を使います。URLに\ruby{埋}{う}め込まれた情報はクエリストリングと呼ばれます。クエリストリングはまずウェブサーバへ送られ、ウェブサーバがCGIプログラムへクエリストリングを渡します。これによりCGIプログラムはURLに埋め込まれた情報を扱うことができます。
+{\bfseries 考え方}
 
+CGIのプログラムに情報を渡すことができればより便利なプログラムが作れます。
+ここでは\ruby{単純}{たんじゅん}なURLを用いた方法を使います。
+URLに\ruby{埋}{う}め込まれた情報はクエリストリングと呼ばれます。クエリストリングはまずウェブサーバへ送られ、ウェブサーバがCGIプログラムへクエリストリングを渡します。これによりCGIプログラムはURLに埋め込まれた情報を扱うことができます。
 
 \bigskip
 
@@ -23,14 +31,11 @@ localhost:3000/cgi-bin/querystring.hsp?msg=helloworld
 %koyaman
 %September 20, 2019 2:49 AM
 
-
 画面にhelloworldと表示されたと思います。
 
-
-
-\centering
-\includegraphics[width=0.8\textwidth]{text07-img/ome7-img053.png}
-\flushleft
+\begin{center}
+  \includegraphics[width=0.8\textwidth]{text07-img/ome7-img053.png}
+\end{center}
 
 localhost:3000/cgi-bin/querystring.hsp?msg=goodbye
 
@@ -42,13 +47,11 @@ localhost:3000/cgi-bin/querystring.hsp?msg=goodbye
 %koyaman
 %September 20, 2019 2:49 AM
 
-
 次はgoodbyeと表示されたと思います。
 
-
-\centering
-\includegraphics[width=0.8\textwidth]{text07-img/ome7-img054.png}
-\flushleft
+\begin{center}
+  \includegraphics[width=0.8\textwidth]{text07-img/ome7-img054.png}
+\end{center}
 
 \clearpage
 
@@ -76,10 +79,6 @@ goodbyeであることを意味します。HSPの変数と同じような感じ�
 
 プログラム解説
 
-
-
-
-
 \begin{table}[htbp]
     \centering
     % \caption{文字タイプ表}
@@ -100,11 +99,7 @@ goodbyeであることを意味します。HSPの変数と同じような感じ�
     \end{tabular}
 \end{table}
 
-
-
-
 \bigskip
-
 
 \bigskip
 
@@ -122,13 +117,20 @@ localhost:3000/cgi-bin/querystring.hsp?msg=helloworld
 
 6行目で表示をしています。
 
-このように\ruby{簡単}{かんたん}にプログラムでクエリストリングを受け取ることができます。クエリストリングが使えると、{\textless}form{\textgreater}{\textless}/form{\textgreater}を使ってCGIに処理を\ruby{依頼}{いらい}できたり、CGIの処理をより高度にすることができます。次の例では、クエリストリングを使ってLEDを点灯消灯します。
+このように\ruby{簡単}{かんたん}にプログラムでクエリストリングを受け取ることができます。
+クエリストリングが使えると、{\textless}form{\textgreater}{\textless}/form{\textgreater}を使ってCGIに処理を\ruby{依頼}{いらい}できたり、CGIの処理をより高度にすることができます。
+次の例では、クエリストリングを使ってLEDを点灯消灯します。
 
 ほとんどのウェブサイトは検索をするさいにURLに検索ワードを埋め込んでいます。
 
+\begin{tcolorbox}[title=\useOmetoi,breakable]\label{Q:dynamicPage}
+  \begin{enumerate}
+    \addex{画面に”ありがとう”と表示させよう。}
+  \end{enumerate}
+\end{tcolorbox}
 
-\bigskip
+\clearpage
 
-\refstepcounter{Question}\theQuestion　画面に”ありがとう”と表示させよう。
-% 問題7-11　　
-% 画面に”ありがとう”と表示させよう。
+% \refstepcounter{Question}\theQuestion　画面に”ありがとう”と表示させよう。
+% % 問題7-11　　
+% % 画面に”ありがとう”と表示させよう。

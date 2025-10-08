@@ -2,9 +2,8 @@
 \clearpage
 \refstepcounter{PagePtr}\label{P:charCode}
 \section{文字コードについて}
-コンピュータは数字の0,
-1しかわからないことを学びました。
-0,1の２種類でなる数字列を2進数（バイナリ）といいます。
+コンピュータは数字の0, 1しかわからないことを学びました。
+0, 1の2種類でなる数字列を2進数（バイナリ）といいます。
 ところで、文字はどのように表示されているのでしょうか？そこで使われるのが文字コードです。
 コンピュータは結局\ruby{数値}{すうち}しかわからないので、数値と文字の\ruby{対応}{たいおう}を用いて、人間のわかる文字を表現します。
 その対応にあたるものが文字コードで、数字列を文字に\ruby{変換}{へんかん}するルールです。
@@ -32,7 +31,7 @@ Char(Character)は文字を意味します。}
 
 \end{center}
 ASCII
-コードでは２進数7\ruby{桁}{けた}で一つの文字を表します。
+コードでは2進数7\ruby{桁}{けた}で一つの文字を表します。
 128個の文字を表すことができます。
 
 
@@ -63,9 +62,10 @@ ASCIIでは0〜127を使用していました。
 \end{itemize}
 
 \bigskip
-\refstepcounter{Exercise}
-\clearpage\section{\theExercise　数字をASCIIを使って、ターミナルに文字を表示する}
-\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:ASCII}
+% \refstepcounter{Exercise}
+\clearpage
+\section{数字をASCIIを使って、ターミナルに文字を表示する}
+% \addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:ASCII}
 考え方
 
 \ \ printfコマンドを使用すると数字をASCIIに\ruby{従}{したが}って文字へ変換できます。
@@ -103,28 +103,52 @@ Char(Character)は文字を意味します。}
 {\bfseries
 [\url{https://simple.wikipedia.org/wiki/ASCII}]}
 
-\refstepcounter{Question}
-\clearpage\subsection*{\theQuestion\label{Q:myName}}
-\begin{itemize}
-\item
-ASCIIを使ってローマ字で自分の名前を表示させてみよう
-\end{itemize}
-\refstepcounter{Question}
-\subsection*{\theQuestion\label{Q:friendName}}
-\begin{itemize}
-\item
-ASCIIを使ってローマ字でとなりの友達の名前を表示させてみよう
-\end{itemize}
-\refstepcounter{Question}
-\subsection*{\theQuestion\label{Q:emoticon}}
-\begin{itemize}
-\item
-ASCIIで顔文字を作って表示させてみよう
-\end{itemize}
-\ \ 例.) (* \^{} *) \ (* \_ *) \ (d\_b)
+% \refstepcounter{Question}
+
+\clearpage
+
+\begin{tcolorbox}[title=\useOmetoi,breakable]\label{Q:myName}
+  \begin{enumerate}
+    \addex{ASCIIを使ってローマ字で自分の名前を表示させてみよう。}
+  \end{enumerate}
+\end{tcolorbox}
+
+% \subsection*{\theQuestion\label{Q:myName}}
+% \begin{itemize}
+% \item
+% ASCIIを使ってローマ字で自分の名前を表示させてみよう
+% \end{itemize}
+% \refstepcounter{Question}
+
+\begin{tcolorbox}[title=\useOmetoi,breakable]\label{Q:friendName}
+  \begin{enumerate}
+    \addex{ASCIIを使ってローマ字でとなりの友達の名前を表示させてみよう。}
+  \end{enumerate}
+\end{tcolorbox}
+
+% \subsection*{\theQuestion\label{Q:friendName}}
+% \begin{itemize}
+% \item
+% ASCIIを使ってローマ字でとなりの友達の名前を表示させてみよう
+% \end{itemize}
+% \refstepcounter{Question}
+
+\begin{tcolorbox}[title=\useOmetoi,breakable]\label{Q:emoticon}
+  \begin{enumerate}
+    \addex{ASCIIで顔文字を作って表示させてみよう。}
+    例.) (* \^{} *) \ (* \_ *) \ (d\_b)
+  \end{enumerate}
+\end{tcolorbox}
+
+% \subsection*{\theQuestion\label{Q:emoticon}}
+% \begin{itemize}
+% \item
+% ASCIIで顔文字を作って表示させてみよう
+% \end{itemize}
+% \ \ 例.) (* \^{} *) \ (* \_ *) \ (d\_b)
 
 
-\bigskip
+% \bigskip
 
 {\bfseries
 表のDecimalは10進数の数値,
@@ -138,9 +162,11 @@ Char(Character)は文字を意味します。}
 \end{center}
 {\bfseries
 [\url{https://simple.wikipedia.org/wiki/ASCII}]}
-\refstepcounter{Exercise}
-\clearpage\section{\theExercise　数字をUTF-8を使って、ターミナルに文字を表示する}
-\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:UTF8}
+% \refstepcounter{Exercise}
+
+\clearpage
+\section{数字をUTF-8を使って、ターミナルに文字を表示する}\label{E:UTF8}
+% \addtocounter{Exercise}{-1}\refstepcounter{Exercise}
 考え方
 
 \ \ printfコマンドを使用すると数字をUTF-8に従って文字に変換できます。
@@ -188,20 +214,33 @@ E3 81 80 + 2 = E3 81 82
 
 {\textbackslash}xはHE\textbf{X}(16進数であることを指定します)
 
-\refstepcounter{Question}
-\subsection*{\theQuestion\label{Q:myNameUTF8}}
-\begin{itemize}
-\item
-UTF-8を使ってひらがなで自分の名前を表示させてみよう
-\end{itemize}
-\refstepcounter{Question}
-\subsection*{\theQuestion\label{Q:friendNameUTF8}}
-\begin{itemize}
-\item
-UTF-8を使ってひらがなでとなりの友達の名前を表示させてみよう
-\end{itemize}
+\begin{tcolorbox}[title=\useOmetoi,breakable]\label{Q:myNameUTF8}
+  \begin{enumerate}
+    \addex{UTF-8を使ってひらがなで自分の名前を表示させてみよう。}
+  \end{enumerate}
+\end{tcolorbox}
 
-\bigskip
+% \refstepcounter{Question}
+% \subsection*{\theQuestion\label{Q:myNameUTF8}}
+% \begin{itemize}
+% \item
+% UTF-8を使ってひらがなで自分の名前を表示させてみよう
+% \end{itemize}
+
+\begin{tcolorbox}[title=\useOmetoi,breakable]\label{Q:friendNameUTF8}
+  \begin{enumerate}
+    \addex{UTF-8を使ってひらがなでとなりの友達の名前を表示させてみよう。}
+  \end{enumerate}
+\end{tcolorbox}
+
+% \refstepcounter{Question}
+% \subsection*{\theQuestion\label{Q:friendNameUTF8}}
+% \begin{itemize}
+% \item
+% UTF-8を使ってひらがなでとなりの友達の名前を表示させてみよう
+% \end{itemize}
+
+% \bigskip
 
 
 
@@ -216,17 +255,19 @@ UTF-8を使ってひらがなでとなりの友達の名前を表示させてみ
 [\url{http://orange-factory.com/sample/utf8/code3/e3.html#Hiragana}]
 \refstepcounter{Exercise}
 % \clearpage\section{\theExercise　ウェブページで使用されている文字コードを変換する}
-\clearpage\section{\theExercise　ウェブページをダウンロードして、表示してみよう}
-\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:iconv1}
+
+\clearpage
+\section{ウェブページをダウンロードして、表示してみよう}
+% \addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:iconv1}
 考え方
 
-ある文字コードで表現された文字列を他の文字コードで\ruby{解釈}{かいしゃく}すると文字化けをする\ruby{可能性}{かのうせい}があります。
+ある文字コードで作られた文章を、ちがう文字コードで読もうとすると、「文字化け」（もじがへんな記号になること）が起こることがあります。
 例えば、UTF-8と\ruby{設定}{せってい}されたターミナルなどのアプリケーションでEUC-JPで書かれたファイルを開くなどすると文字化けをします。
 これは、文字を表現するのに２つの文字コード間で数値が\ruby{違}{ちが}うからです。
 ターミナルなどのアプリケーションから正しく\ruby{扱}{あつ}うためには、ターミナルやアプリケーションが使っている文字コードに変換する必要があります。
 この例では変換の練習をします。
 
-ターミナルが使っている文字コードを確認してみよう
+ターミナルが使っている文字コードを確認してみよう。
 
 echo \$LANG
 
@@ -247,10 +288,10 @@ jp\_ja.UTF-8\\
 LANGは(\ruby{環境}{かんきょう})変数で、アプリケーションやコマンドが使用するロケール（国や\ruby{地域}{ちいき}によって異なる言語や単位、日付などの表記など）の設定をします。
 
 
-LANGに設定されている文字コードと表示したい文字コードが異なっていると、文字化けをします。例えば、UTF-8を使っているシステムで、EUC-JPで表現された文字列を表示した場合など。
+LANGに設定されている文字コードと表示したい文字コードが異なっていると、文字化けをします。例えば、UTF-8を使っているシステムで、EUC-JPで表現された文字列を表示した場合などです。
 
 
-試しにUTF-8以外の文字コードを使用しているウェブサイトをcurlでダウンロードして、UTF-8として設定されているターミナルに表示させてみよう
+試しにUTF-8以外の文字コードを使用しているウェブサイトをcurlでダウンロードして、UTF-8として設定されているターミナルに表示させてみよう。
 
 \textbf{cd {\textasciitilde}/08}
 
@@ -299,10 +340,12 @@ UTF-8を使っているターミナルへEUC-JPで\ruby{記述}{きじゅつ}さ
 
 \refstepcounter{Exercise}
 % \clearpage\section{\theExercise　ウェブページで使用されている文字コードを変換する}
-\clearpage\section{\theExercise　iconvで文字コードを指定してみよう}
-\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:iconv2}
 
-文字化けを解消するために、EUC-JPからUTF-8へ変換してみよう
+\clearpage
+\section{iconvで文字コードを指定してみよう}
+% \addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:iconv2}
+
+文字化けを解消するために、EUC-JPからUTF-8へ変換してみよう。
 
 \textbf{iconv hsp.html -f EUC-JP -t UTF-8 -o hsp\_utf8.html}
 
@@ -371,7 +414,7 @@ UTF-8を使っているターミナルへEUC-JPで\ruby{記述}{きじゅつ}さ
 \includegraphics[width=\textwidth]{./text08-img/textbook-img023.png}
 
 \end{center}
-変換したファイルでは文字化けはしていません。
+変換したファイルは、文字化けせずに正しく読めます。
 文字コードの変換ができました。
 
 \clearpage
@@ -401,8 +444,10 @@ charset=””{\textgreater}を確認して文字コードを\ruby{判断}{は�
 
 \refstepcounter{Exercise}
 % \clearpage\section{\theExercise　ウェブページで使用されている文字コードを変換する}
-\clearpage\section{\theExercise　mousepadから文字コードを指定してみよう}
-\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:iconv3}
+
+\clearpage
+\section{mousepadから文字コードを指定してみよう}
+% \addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:iconv3}
 
 ターミナルで、
 
@@ -467,4 +512,4 @@ charset=”UTF-8”に変更します。
 
 文字化けせずに正しく表示されました。
 HTMLファイルの文字コードを変換するときは、{\textless}meta
-charset=””{\textgreater}を変換後の文字コードに変更するのを\ruby{忘}{わす}れないようにしましょう。
+charset=””{\textgreater}の中の文字コードも、変換したあとの文字コードに直すのを\ruby{忘}{わす}れないようにしましょう。

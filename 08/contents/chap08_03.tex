@@ -2,21 +2,23 @@
 \clearpage
 \refstepcounter{PagePtr}\label{P:scraping}
 \section{スクレイピング}
-クレイピングとは、ウェブページから情報を取り出すことをいいます。
+スクレイピングは、ウェブページからほしい情報だけを見つけて取り出すことです。
 スクレイピングの手順はウェブページをダウンロードして、ウェブページから欲しい情報を探して取り出し、そして、取り出し情報を加工します。
 \ref*{E:CURL},\ref*{E:HTML}
 で手動でウェブページをダウンロードして、そこから情報を取り出しました。
 そのあとの\ref*{E:SCRAPING}では、同じ手順をプログラムで自動で行いました。
 ウェブページから取り出した情報をプログラムから\ruby{有効的}{ゆうこうてき}に使う方法を学びましょう。
 ウェブページから取り出した情報をもとにセンサーを使ったり、情報をウェブページに\ruby{反映}{はんえい}することもできます。
-ウェブページから\ruby{価値}{かち}のある情報を取り出して、今まで習った\ruby{技術}{ぎじゅつ}と組み合わせて役に立つプログラムを作れるように考えながら例題を進めていきましょう。
+ウェブページから\ruby{価値}{かち}のある情報を取り出して、今まで習った\ruby{技術}{ぎじゅつ}と組み合わせて役に立つプログラムを作れるように考えながら\ref{AMDS}章を進めていきましょう。
 
 
 
 \bigskip
 \refstepcounter{Exercise}
-\clearpage\section{\theExercise　アメダスのウェブページをスクレイピングする}
-\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:amedas}
+
+\clearpage
+\section{アメダスのウェブページをスクレイピングする}\label{AMDS}
+% \addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:amedas}
 %\newline
 考え方
 
@@ -134,7 +136,7 @@ F5を押して実行してみましょう。実行結果はターミナルに表
 \includegraphics[width=0.9\textwidth]{./text08-img/textbook-img029-1.png}
 
 \end{center}
-同じ値が表示されています。
+表示された数字が、ブラウザで見たページと同じになっています。
 このようにHSPのプログラムでウェブページからアメダスの情報を取得することができました。
 
 
@@ -142,7 +144,7 @@ F5を押して実行してみましょう。実行結果はターミナルに表
 \clearpage
 プログラム解説
 
-この例題プログラムでは、amedas.pyというコマンドを使って、ウェブページからアメダスの情報を取得しています。
+このプログラムでは、amedas.pyというコマンドを使って、ウェブページからアメダスの情報を取得しています。
 
 % \begin{center}
 % \begin{boxedminipage}{17.126cm}
@@ -323,34 +325,65 @@ split result, {\textquotedbl},{\textquotedbl}, jikan, kion, kousui, kazamuki, fu
 
 mes jikan + {\textquotedbl} \ {\textquotedbl} + kion + {\textquotedbl} \ \ {\textquotedbl} + kousui
 
-\refstepcounter{Question}
-\clearpage\subsection*{\theQuestion\label{Q:amedas1}}
-\begin{itemize}
-\item
-.例題のプログラムでは、日時、気温、降水だけ表示しています。
+% \refstepcounter{Question}
+
+\clearpage
+\begin{tcolorbox}[title=\useOmetoi,breakable]\label{Q:amedas1}
+  \begin{enumerate}
+    \addex{さきほどのプログラムでは、日時、気温、降水だけ表示しています。
 		プログラムでは、風向き、風速、日照も取得してます。
-		これらも表示させてみましょう。
-\end{itemize}
-\ \ HINT : それぞれkazamuki, fusoku,
-nisyouという変数に情報が入っています。
+		これらも表示させてみましょう。}
+    HINT:それぞれkazamuki, fusoku, nisyouという変数に情報が入っています。
+  \end{enumerate}
+\end{tcolorbox}
 
-\refstepcounter{Question}
-\subsection*{\theQuestion\label{Q:amedas2}}
-\begin{itemize}
-\item
-kionが25.0度以上のときに、\ruby{現在}{げんざい}の気温を表示し、センサーボードの赤色LEDをつけてみましょう。
-		それ以外の場合は、画面に現在の気温を表示し、白色LEDをつけましょう。
-\end{itemize}
-\ \ HINT :
-例題プログラムのkionを数値へ変換してみましょう。
+% \subsection*{\theQuestion\label{Q:amedas1}}
+% \begin{itemize}
+% \item
+% .例題のプログラムでは、日時、気温、降水だけ表示しています。
+% 		プログラムでは、風向き、風速、日照も取得してます。
+% 		これらも表示させてみましょう。
+% \end{itemize}
+% \ \ HINT : それぞれkazamuki, fusoku,
+% nisyouという変数に情報が入っています。
 
-\ \ HINT :
-プログラムに応用するには大小の\ruby{比較}{ひかく}とかできると便利です。
-大小比較をするには文字列から数値へ変換が必要です
+\begin{tcolorbox}[title=\useOmetoi,breakable]\label{Q:amedas2}
+  \begin{enumerate}
+    \addex{kionが25.0度以上のときに、\ruby{現在}{げんざい}の気温を表示し、センサーボードの赤色LEDをつけてみましょう。
+		それ以外の場合は、画面に現在の気温を表示し、白色LEDをつけましょう。}
+    HINT:プログラムのkionを数値へ変換してみましょう。
 
-\ \ HSPでは、文字列で表された数値はdouble関数を使って文字列から数値へ変換できます。
+    HSPでは、文字列で表された数値はdouble関数を使って文字列から数値へ変換できます。
 
-\ \ 例えば、
+    例えば、
+    \begin{center}
+      \begin{tabular}{|l|}
+        \hline
+        1. kion = “28.2”\\
+        2. kion = double(kion)\\
+        \hline
+      \end{tabular}
+    \end{center}
+  \end{enumerate}
+\end{tcolorbox}
+
+% \refstepcounter{Question}
+% \subsection*{\theQuestion\label{Q:amedas2}}
+% \begin{itemize}
+% \item
+% kionが25.0度以上のときに、\ruby{現在}{げんざい}の気温を表示し、センサーボードの赤色LEDをつけてみましょう。
+% 		それ以外の場合は、画面に現在の気温を表示し、白色LEDをつけましょう。
+% \end{itemize}
+% \ \ HINT :
+% 例題プログラムのkionを数値へ変換してみましょう。
+
+% \ \ HINT :
+% プログラムに応用するには大小の\ruby{比較}{ひかく}とかできると便利です。
+% 大小比較をするには文字列から数値へ変換が必要です
+
+% \ \ HSPでは、文字列で表された数値はdouble関数を使って文字列から数値へ変換できます。
+
+% \ \ 例えば、
 
 
 
@@ -367,37 +400,46 @@ kionが25.0度以上のときに、\ruby{現在}{げんざい}の気温を表示
 
 
 
-\begin{table}[htbp]
-    \centering
-    % \caption{文字タイプ表}
-    \begin{tabular}{|l|}
-        \hline
+% \begin{table}[htbp]
+%     \centering
+%     % \caption{文字タイプ表}
+%     \begin{tabular}{|l|}
+%         \hline
         
-        1. kion = “28.2”\\
-        2. kion = double(kion)
-        \\\hline
-    \end{tabular}
-\end{table}
+%         1. kion = “28.2”\\
+%         2. kion = double(kion)
+%         \\\hline
+%     \end{tabular}
+% \end{table}
 
 
-\bigskip
+% \bigskip
 
 
-\bigskip
+% \bigskip
 
-\refstepcounter{Question}
-\subsection*{\theQuestion\label{Q:amedas3}}
-\begin{itemize}
-\item
-このアメダスのスクレイピングの例題とすでに習った技術（センサーボードの使い方、ゲーム、Fabo、赤外線など）と組み合わせるとどんなことができるか考えて、１つ上げてみよう。
-\end{itemize}
+\begin{tcolorbox}[title=\useOmetoi,breakable]\label{Q:amedas3}
+  \begin{enumerate}
+    \addex{このアメダスのスクレイピングのプログラムとすでに習った技術（センサーボードの使い方、ゲーム、Fabo、赤外線など）と組み合わせるとどんなことができるか考えて、1つ上げてみよう。}
+  \end{enumerate}
+\end{tcolorbox}
 
-\bigskip
+% \refstepcounter{Question}
+% \subsection*{\theQuestion\label{Q:amedas3}}
+% \begin{itemize}
+% \item
+% このアメダスのスクレイピングの例題とすでに習った技術（センサーボードの使い方、ゲーム、Fabo、赤外線など）と組み合わせるとどんなことができるか考えて、１つ上げてみよう。
+% \end{itemize}
+
+% \bigskip
 
 
-\bigskip
+% \bigskip
 
-\clearpage\section{スクレイピングの仕組み}
+
+\clearpage
+
+\section{スクレイピングの仕組み}
 \ref*{E:SCRAPING}でHSPのプログラムから友達のウェブページのタイトルを取り出したように、スクレイピングでは、HTMLファイルのタグ(\ref*{E:SCRAPING}では{\textless}title{\textgreater}{\textless}/title{\textgreater})を探します。
 しかし、ウェブページの欲しい情報はHTMLファイル内のどのタグで作られているでしょうか？ウェブページをダウンロードして、HTMLファイルを\ruby{眺}{なが}めても探しても良いのですが、かなり大変です。
 ここでは、ウェブページの欲しい情報がどのHTMLファイル内のどのタグで作られているか調べる方法としてブラウザの\ruby{検証}{けんしょう}ツールを使った方法を紹介します。
@@ -452,7 +494,7 @@ kionが25.0度以上のときに、\ruby{現在}{げんざい}の気温を表示
 
 \end{center}
 \clearpage
-検証をクリックすると検証ツールが開きます。
+検証をクリックするとページの中身（HTML）を見られるツール（検証ツール）が開きます。
 
 
 
@@ -471,18 +513,14 @@ kionが25.0度以上のときに、\ruby{現在}{げんざい}の気温を表示
 \includegraphics[width=0.9\textwidth]{./text08-img/textbook-img035-2.png}
 
 \end{center}
-現在、\ruby{選択}{せんたく}しているのは{\textless}td{\textgreater}{\textless}/td{\textgreater}タグです。
-{\textless}td{\textgreater}{\textless}/td{\textgreater}タグ(table
-data,
-表の値)は表の値にあたる部分を書くときに使用します。
+現在、\ruby{選択}{せんたく}しているのは{\textless}td{\textgreater}{\textless}/td{\textgreater}タグ（表の中の1つのマスをあらわすタグ）です。
+{\textless}td{\textgreater}{\textless}/td{\textgreater}タグ(table data, 表の値)は表の値にあたる部分を書くときに使用します。
 
-{\textless}tr{\textgreater}{\textless}/tr{\textgreater}タグ(table row,
-表の行)は表の１行分を書くときに使います。
+{\textless}tr{\textgreater}{\textless}/tr{\textgreater}タグ(table row, 表の行)は表の１行分を書くときに使います。
 {\textless}tr{\textgreater}{\textless}/tr{\textgreater}タグの中に{\textless}td{\textgreater}{\textless}/td{\textgreater}タグを入れて、１行分の表の値を表します。
 
 
-表は{\textless}table{\textgreater}{\textless}/table{\textgreater}タグ(table,
-表)で作りました。
+表は{\textless}table{\textgreater}{\textless}/table{\textgreater}タグ(table, 表)で作ります。
 
 
 アメダスのサイトから情報を取り出す際には、まずは、{\textless}table{\textgreater}{\textless}/table{\textgreater}タグを探して取り出します。
@@ -509,7 +547,7 @@ data,
 のようにタグに情報がついています。
 classはいわば名前のようなもので、このタグについている情報を使ってタグをHTMLファイルから取り出すのが良いです。
 このウェブページには、表が何個もあるので、{\textless}table{\textgreater}{\textless}/table{\textgreater}タグだけでは、すべての表が当てはまります。
-しかし、このように名前などタグについた情報を\ruby{一緒}{いっしょ}に指定することで、取りたいタグをより\ruby{限定的}{げんていてき}にできます。
+しかし、このように名前などタグについた情報を\ruby{一緒}{いっしょ}に指定することで、ほしい部分だけをピンポイントで取れます。
 
 
 \bigskip
@@ -517,8 +555,10 @@ classはいわば名前のようなもので、このタグについている情
 
 \bigskip
 \refstepcounter{Exercise}
-\clearpage\section{\theExercise　amedas.pyをlessで見てみよう}
-\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:amedasLess}
+
+\clearpage
+\section{amedas.pyをlessで見てみよう}
+% \addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:amedasLess}
 「スクレイピングの仕組み」では、アメダスのウェブページからアメダス観測値を取得する流れを解説しました。
 実際にウェブページから値を取り出すのに使用しているコマンド(プログラム)を見てみましょう。
 amedas.pyコマンドはHSPのプログラムから\ruby{呼}{よ}び出しているものです。
@@ -552,8 +592,7 @@ amedas.pyコマンドもHSPのプログラムと同じくテキストファイ�
 
 \end{center}
 {\bfseries
-(lessコマンドの詳しい使い方は3回目の教科書「2.2.12
-ファイルの中身を見てみよう（２）」を見てください)%
+(lessコマンドの詳しい使い方は3回目の教科書「3.6.1 ファイルの中身を見てみよう(2)」を見てください)%
 %来年度、2.2.12を統一された例題番号へ変更する
 %koyaman
 %September 23, 2019 8:47 PM
@@ -599,7 +638,7 @@ amedas.pyコマンドもHSPのプログラムと同じくテキストファイ�
         33. \ \ \ \ with urllib.requset.urlopen(url) as response:\\
         34. \ \ \ \ \ \ \ html=response.read()\\
         35. \ \ \ \ parse\_opts()\\
-        36 \ \ \ \ soup = BeautifulSoup(html, 'html.parser')\\
+        36. \ \ \ \ soup = BeautifulSoup(html, 'html.parser')\\
         
         \hline
     \end{tabular}

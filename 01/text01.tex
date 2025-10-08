@@ -1,14 +1,25 @@
-% This file was converted to LaTeX by Writer2LaTeX ver. 1.6.1
-% see http://writer2latex.sourceforge.net for more info
-\documentclass[a4paper]{ltjsbook}
+%
+% lualatex ver. 
+%
+\documentclass[a4paper,12pt]{ltjsbook} 
 % \usepackage{okumacro}
 \usepackage{luatexja-ruby}
 \usepackage{udline}
 \usepackage{omebook}
 \usepackage{svg}
+\usepackage{indentfirst}
 % \usepackage{supertabular}
 
 % \usepackage{amssymb}
+
+% 〇×マクロ
+\newcommand{\addox}[1]{%
+% \item #1 \vspace{0.5\zh}\\%
+\item #1 \vspace{0.5\zh}%
+% \fbox{\phantom{白}} $\leftarrow$〇または×\\
+\fbox{\phantom{白}}\\
+}
+
 
 \svgsetup{
   inkscapelatex=false
@@ -22,7 +33,7 @@
   \input contents/chap01_04.tex
   \input contents/chap01_05.tex
   \input contents/chap01_06.tex
-  \input contents/chap01_07.tex
+  % \input contents/chap01_07.tex
   \input contents/chap01_08.tex
 \end{document}
 

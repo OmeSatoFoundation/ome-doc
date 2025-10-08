@@ -1,7 +1,12 @@
 
-\refstepcounter{Exercise}
-\clearpage\subsection*{\theExercise　赤外線をウェブページから送信する}
-\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:IR}
+% \refstepcounter{Exercise}
+% \clearpage\subsection*{\theExercise　赤外線をウェブページから送信する}
+
+%
+% subsection 6.4.6
+%
+\subsection{赤外線をウェブページから送信する}
+% \addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:IR}
 
 % \clearpage\subsection*{赤外線をウェブページから送信する}
 CGIを使ってウェブページから赤外線を送信できるようにしましょう。
@@ -21,9 +26,9 @@ localhost:3000/ir.html
 %September 20, 2019 4:01 AM
 
 
-\centering
-\includegraphics[width=10cm]{text07-img/ome7-img061.png}
-\flushleft
+\begin{center}
+    \includegraphics[width=10cm]{text07-img/ome7-img061.png}
+\end{center}
 
 ボタンを押すとCGIで赤外線の送信をするコマンドが実行されます。
 
@@ -35,7 +40,7 @@ irsend SEND\_ONCE fan onoff
 
 リモコンの名前、信号の名前が違う場合は、
 
-{\textasciitilde}/07/www/cgi-bin/ir.hsp
+{\textasciitilde}/06/www/cgi-bin/ir.hsp
 
 を開いて
 
@@ -52,24 +57,21 @@ exec “irsend SEND\_ONCE fan onoff”
 %September 20, 2019 4:05 AM
 
 
-\centering
-\includegraphics[width=10cm]{text07-img/ome7-img062.png}
-\flushleft
+\begin{center}
+    \includegraphics[width=10cm]{text07-img/ome7-img062.png}
+\end{center}
 
 ブラウザのファン\ruby{電源}{でんげん}ボタンを押すと、CGIが起動して
 
 赤外線を送信します。
 
-
-\bigskip
-
 \clearpage
+
 プログラム解説
 
-{\textasciitilde}/07/www/ir.html
+{\textasciitilde}/06/www/ir.html
 
 8行目でフォームの\ruby{内容}{ないよう}を受け取るCGIを設定しています。
-
 
 \begin{table}[htbp]
     \centering
@@ -95,9 +97,7 @@ exec “irsend SEND\_ONCE fan onoff”
     \end{tabular}
 \end{table}
 
-
-
-{\textasciitilde}/07/www/cgi-bin/ir.hsp
+{\textasciitilde}/06/www/cgi-bin/ir.hsp
 
 がCGIとしてに起動します。
 
@@ -109,16 +109,6 @@ name={\textquotedbl}command{\textquotedbl}{\textgreater}
 クエリストリングの名前はcommandで値はpowerとなります。このボタンが押されるとCGIが起動します。
 
 \clearpage
-\bigskip
-
-
-\bigskip
-
-\bigskip
-
-
-
-
 
 \begin{table}[htbp]
     \centering
@@ -150,12 +140,6 @@ name={\textquotedbl}command{\textquotedbl}{\textgreater}
 
 \bigskip
 
-
-\bigskip
-
-
-\bigskip
-
 8行目でクエリストリングから名前がcommandに対応する値を取り出してcmd変数へ入れています。
 
 9〜15行目で受け取ったcmd変数をもとに条件判断をしています。cmdがpowerのときにファンの電源をつける赤外線を送っています。
@@ -163,33 +147,32 @@ name={\textquotedbl}command{\textquotedbl}{\textgreater}
 それ以外の場合は正しいコマンドでないとして、メッセージを表示しています。
 
 
-\bigskip
+\begin{tcolorbox}[title=\useOmetoi,breakable]\label{Q:IR}
+  \begin{enumerate}
+    \addex{ファンの電源をつける以外の赤外線送信機能を追加してみよう。}
+  \end{enumerate}
+    HINT :まずは、ir.htmlにボタンを追加しよう。
 
-\bigskip
-\refstepcounter{Question}\theQuestion\label{Q:IR}
+    そのあと、ir.hspの条件判断を追加しよう。
+
+    ir.htmlのフォームを自己紹介ページの一番下に付け加えよう。
+\end{tcolorbox}
+% \refstepcounter{Question}\theQuestion\label{Q:IR}
 
 % 問題7-15　　
 % ファンの電源をつける以外の赤外線送信機能を追加してみよう。
 
-\ \ HINT :
-まずは、ir.htmlにボタンを追加しよう。
+% \ \ HINT :
+% まずは、ir.htmlにボタンを追加しよう。
 
-\ \ \ \ そのあと、ir.hspの条件判断を追加しよう。
+% \ \ \ \ そのあと、ir.hspの条件判断を追加しよう。
 
-ir.htmlのフォームを自己紹介ページの一番下に付け加えよう。
-
-
-\bigskip
-
-
-\bigskip
-
+% ir.htmlのフォームを自己紹介ページの一番下に付け加えよう。
 
 \clearpage
+
 \label{P:gpio}
 CGIを使うときに便利なHSPの命令一覧
-
-
 
 \begin{table}[htbp]
     \centering
@@ -338,33 +321,9 @@ CGIを使うときに便利なHSPの命令一覧
     \end{table}
 
 
+{\bfseries 付録 ウェブサーバの停止方法}
 
-
-
-
-
-\bigskip
-
-{\bfseries
-	付録　ウェブサーバの停止方法}
-
-電源を切る前、ウェブサーバが起動しているターミナルを\ruby{閉}{と}じる前、ウェブサーバを停止したいときは、ウェブサーバを起動したターミナル（./webserver.pyを実行している画面）を選択して
-
-
-\bigskip
-
-CtrlとCを同時に押します。
-
-
-\bigskip
-
+電源を切る前、ウェブサーバが起動しているターミナルを\ruby{閉}{と}じる前、ウェブサーバを停止したいときは、ウェブサーバを起動したターミナル（./webserver.pyを実行している画面）を選択してCtrlとCを同時に押します。
 それでウェブサーバは終了します。
 
-
-\bigskip
-
-
-\bigskip
-
-
-\bigskip
+\clearpage

@@ -1,6 +1,12 @@
-\refstepcounter{Exercise}
-\clearpage\subsection*{\theExercise　クエリストリングを使ってLEDを操作する}
-\addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:QS}
+% \refstepcounter{Exercise}
+% \clearpage
+% \subsection*{\theExercise　クエリストリングを使ってLEDを操作する}
+
+%
+% subsection 6.4.3
+%
+\subsection{クエリストリングを使ってLEDを操作する}
+% \addtocounter{Exercise}{-1}\refstepcounter{Exercise}\label{E:QS}
 
 % \clearpage\subsection*{クエリストリングを使ってLEDを操作する}
 この例では、クエリストリングを使ってLEDを点灯消灯させてみましょう。
@@ -19,10 +25,9 @@ localhost:3000/cgi-bin/qsled.hsp?led=17\&val=1
 %koyaman
 %September 20, 2019 2:50 AM
 
-
-\centering
-\includegraphics[width=0.8\textwidth]{text07-img/ome7-img055.png}
-\flushleft
+\begin{center}
+    \includegraphics[width=0.8\textwidth]{text07-img/ome7-img055.png}
+\end{center}
 
 実行するとLED17が光ります。val=1をval=0にすると消えます。URLに埋め込まれた情報をもとにCGIプログラムはLEDを操作していることがわかります。URLに埋め込まれた情報はクエリストリングと呼ばれます。
 
@@ -49,19 +54,16 @@ localhost:3000/cgi-bin/qsled.hsp?led=17\&val=1
 
 のようになります。
 
-名前１がled、値1が17となり
+名前1がled、値1が17となり
 
 名前2がval、値2が1となります。
 
 このクエリストリングをプログラムから扱う方法を次に学びましょう。
 
 \clearpage
+
+
 プログラム解説
-
-
-
-
-
 
 \begin{table}[htbp]
     \centering
@@ -100,14 +102,6 @@ localhost:3000/cgi-bin/qsled.hsp?led=17\&val=1
     \end{tabular}
 \end{table}
 
-
-\bigskip
-
-
-
-\bigskip
-
-
 \bigskip
 
 7行目、9行目で使用している
@@ -136,19 +130,20 @@ led\_portには17が入ります。
 
 24行目で実際に点灯、消灯を行います。
 
-cgpio命令は数値でGPIO番号、オンオフ（１，０）を受け付けるので、文字列から変換をしました。
+cgpio命令は数値でGPIO番号、オンオフ（1, 0）を受け付けるので、文字列から変換をしました。
 
 
-\bigskip
+% \bigskip
 
-\refstepcounter{Question}\theQuestion
+% \refstepcounter{Question}\theQuestion
 
-{\bfseries
+% {\bfseries
 
-GPIO17以外のLEDを光らせてみよう。}
+% GPIO17以外のLEDを光らせてみよう。}
+\begin{tcolorbox}[title=\useOmetoi,breakable]
+  \begin{enumerate}
+    \addex{GPIO17以外のLEDを光らせてみよう。}
+  \end{enumerate}
+\end{tcolorbox}
 
-
-\bigskip
-
-
-\bigskip
+\clearpage

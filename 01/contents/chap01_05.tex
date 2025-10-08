@@ -1,63 +1,72 @@
-\clearpage
+%
+% section 1.5
+%
+\section{\ruby{電源}{でんげん}の切り方を覚えよう}
 
-\section{でんげんの切り方を覚えよう}
-ruby{皆}{みな}さんのデータはmicroSDカードに\ruby{保存}{ほぞん}されています。
-でんげんを急に切るとmicroSDカードに書き\ruby{込}{こ}まれる前に本体のでんげんが切れてしまい、
-データが\ruby{壊}{こわ}れたりする\ruby{可能性}{かのうせい}があります。
+\ruby{皆}{みな}さんのデータもそうですが、ラズベリーパイのすべてのデータは、microSDカードに\ruby{保存}{ほぞん}されています。
+そのため、いきなり\ruby{電源}{でんげん}を切ってしまうと、microSDカードに書き\ruby{込}{こ}んでる途中や書き\ruby{込}{こ}まれる前に
+\ruby{電源}{でんげん}が切れてしまい、データが\ruby{壊}{こわ}れてしまう\ruby{可能性}{かのうせい}があります。
 
-そこで、でんげんを切る\ruby{際}{さい}は、決められた手順に\ruby{従}{したが}う必要があります。
-この節ではでんげんの切り方を学びます。
-ラズベリーパイを使い終わったら正しい手順ででんげんが切れるように覚えておきましょう。
+\ruby{電源}{でんげん}を切る\ruby{際}{さい}は、決められた手順に\ruby{従}{したが}う必要があります。
+ラズベリーパイを使い終わったら正しい手順で\ruby{電源}{でんげん}が切れるように覚えておきましょう。
+\bigskip
 
+{\bf \ruby{電源}{でんげん}を切る手順}
 
-
-\centering
-\begin{figure}[H]
-  \begin{minipage}{8cm}
-    {\upshape
-      \centering
-      \includegraphics[height=4.5cm]{text01-img/textbook-img206.png}
-      \caption{「ログアウト」メニュー}\label{fig:48}
-    }
+\noindent%
+  \begin{minipage}[t]{0.44\columnwidth}
+    \textcircled{\scriptsize{1}}\\
+    ラズベリーのアイコンをクリックしてメニューを開きます。一番下の「ログアウト」をクリックしてください。
+  \end{minipage}\hfill
+  %
+  \begin{minipage}[t]{0.55\columnwidth}
+    \centering
+    \vbox to 0pt{\vskip-3mm
+      \includegraphics[keepaspectratio, height=55mm]{text01-img/textbook-img206.png}
+    \vss}
+    \vspace{60mm}
   \end{minipage}
-  \begin{minipage}{7cm}
-    図~\ref{fig:48}のようにラズベリーのアイコンをクリックすると一番下に「ログアウト」があります。
-    これをクリックしてください。
-  \end{minipage}
-\end{figure}
-
-\flushleft
-\textcolor[rgb]{0.13333334,0.13333334,0.13333334}{図~\ref{fig:46}のような画面となったら一番上の「Shutdown」を\ruby{押}{お}してでんげんを切ります。}
-
-\begin{figure}[H]
+%
+\begin{minipage}[t]{0.44\columnwidth}
+  \textcircled{\scriptsize{2}}\\
+  右の図のようなウィンドウが表示されます。
+  一番上の「Shutdown」ボタンをクリックして\ruby{電源}{でんげん}を切りましょう。
+\end{minipage}\hfill
+%
+\begin{minipage}[t]{0.55\columnwidth}
   \centering
-  \begin{minipage}{8cm}
-    {\upshape
-      \includegraphics[height=4.0cm]{text01-img/textbook-img208.jpg}
-      \caption{「Shutdown」画面}\label{fig:46} 
-    }
-  \end{minipage}  
-\end{figure}
-
-\flushleft
-\textcolor[rgb]{0.13333334,0.13333334,0.13333334}{ラズベリーパイ本体の緑色のランプが消灯します。
-  図~\ref{fig:47}。
-  この\ruby{状態}{じょうたい}になったらでんげんアダプターをコンセントから\ruby{抜}{ぬ}きましょう。}
-
-\begin{figure}[h]
+  \vbox to 0pt{\vskip-3mm
+    \includegraphics[keepaspectratio, height=40mm]{text01-img/textbook-img208.jpg}
+  \vss}
+  \vspace{45mm}
+\end{minipage}
+%
+\begin{minipage}[t]{0.44\columnwidth}
+  \textcircled{\scriptsize{3}}\\
+  ラズベリーパイ本体の緑色のランプが\ruby{消灯}{しょうとう}します。
+  この\ruby{状態}{じょうたい}が確認できたら、アダプターをコンセントから抜きましょう。
+\end{minipage}\hfill
+%
+\begin{minipage}[t]{0.55\columnwidth}
   \centering
-  \begin{minipage}{6cm}
-    {\upshape
-      \includegraphics[height=4.5cm]{text01-img/textbook-img207-2023.png}
-      \caption{Raspberry Pi ステータスランプ}\label{fig:47}
-    }
-  \end{minipage}
-\end{figure}
+  \vbox to 0pt{\vskip-3mm
+    \includegraphics[keepaspectratio, height=35mm]{text01-img/textbook-img207x.png}
+  \vss}
+  \vspace{35mm}
+\end{minipage}
 
-\clearpage
 
-\subsection{安全な持ち帰り方}
-ラズベリーパイなどの電子機器はらんぼうに扱うと\ruby{壊}{こわ}れてしまいます。また、静電気にも弱いです。ラズベリーパイを持ち帰るときはラズベリーパイを\ruby{付属}{ふぞく}の箱へ入れて持ち帰りましょう。この箱は静電気を\ruby{防}{ふせ}いでくれます。microSDカードはなくさないようにラズベリーパイに\ruby{挿}{さ}しておきましょう。
+%
+% subsection 1.4.3
+%
+\subsection{安全に持ち帰ろう}
+
+ラズベリーパイなどの電子機器はらんぼうに扱うと、簡単に\ruby{壊}{こわ}れてしまいます。
+また、静電気にも弱いという\ruby{特徴}{とくちょう}があります。
+ラズベリーパイは、必ず\ruby{付属}{ふぞく}の箱に入れて持ち帰りましょう。
+この箱は、外からの\ruby{衝撃}{しょうげき}だけでなく、静電気も\ruby{防}{ふせ}いでくれます。
+また、microSDカードはなくさないようにラズベリーパイに\ruby{挿}{さ}したままにしておきましょう。
+
 
 \clearpage
 
