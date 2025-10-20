@@ -1,3 +1,5 @@
+\documentclass[text03.tex]{subfiles}
+\begin{document}
 \newpage
 \section{出力をつくるいろいろなコマンド}
 この節では、下の表に書かれた出力を作るコマンドを\ruby{紹介}{しょう|かい}します。
@@ -164,7 +166,7 @@ echoコマンドを使うことでhelloと出力できました。
 
 \begin{figure}[h]
     \centering
-    \includesvg[width=0.65\linewidth]{images/chap03/std_in_out_err.svg}
+    \includesvg[width=0.65\linewidth]{../../asset/std_in_out_err.svg}
     \caption{標準入力・標準出力・標準エラー出力の図}
     \label{ch03:stdioerr}
 \end{figure}
@@ -189,7 +191,7 @@ EOFはファイルがここで終ることを示す記号です。End Of File(�
 リダイレクトを使うと、ファイルからデータを読み込んだり、結果をファイルに保存したりすることが\ruby{簡単}{かん|たん}にできるようになります。
 \begin{figure}
     \centering
-    \includesvg[width=0.65\linewidth]{images/chap03/redirect.svg}
+    \includesvg[width=0.65\linewidth]{../../asset/redirect.svg}
     \caption{リダイレクトを表した図}
     \label{ch03:redirect}
 \end{figure}
@@ -249,7 +251,7 @@ testtouch
 つまり、コマンドをつなげていろいろな処理をできるようになります。
 \begin{figure}[h]
     \centering
-    \includesvg[width=0.65\linewidth]{images/chap03/pipe.svg}
+    \includesvg[width=0.65\linewidth]{../../asset/pipe.svg}
     \caption{パイプを表した図}
     \label{ch03:pipe}
 \end{figure}
@@ -492,3 +494,4 @@ lsfileをsortコマンドに渡した\ruby{際}{さい}と同じ結果が表示�
     \end{enumerate}
 \end{tcolorbox}
 
+\end{document}

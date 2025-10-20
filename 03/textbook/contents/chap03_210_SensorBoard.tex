@@ -1,3 +1,5 @@
+\documentclass[text03.tex]{subfiles}
+\begin{document}
 \newpage
 \section{センサーボードを使ってみよう}
 センサーボードとは、ラズベリーパイの上部に\ruby{接続}{せつ|ぞく}することでラズベリーパイで出来ることを\ruby{拡張}{かく|ちょう}するための\ruby{基板}{き|ばん}です。子ども IT \ruby{未来塾}{み|らい|じゅく}では Indoor Corgi Elec. という会社が\ruby{販売}{はん|ばい}している RPZ-IR-Sensor を使います。下記 URL から販売ページを見ることができます。これを使うことで、例えばスイッチを使ったり、温度や\ruby{湿度}{しつ|ど}を\ruby{計測}{けい|そく}したり、赤外線で動く家電を\ruby{操作}{そう|さ}したりすることができるようになります。\\
@@ -5,7 +7,7 @@
 
 % \begin{figure}[H]
 %     \centering
-%     \includegraphics[width=0.6\linewidth]{images/chap03/text03-img030.png}
+%     \includegraphics[width=0.6\linewidth]{../../asset/text03-img030.png}
 %     \caption{センサーボード}
 % \end{figure}
 
@@ -15,7 +17,7 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\linewidth]{images/chap03/how_to_install_bme280.jpg}
+    \includegraphics[width=0.6\linewidth]{../../asset/how_to_install_bme280.jpg}
     \caption{外付けセンサーの取り付け方法}
 \end{figure}
 
@@ -24,7 +26,7 @@
 
 \begin{figure}[H]
     \centering
-    \includesvg[width=\linewidth]{images/chap03/rpz-ir-sensor.svg}
+    \includesvg[width=\linewidth]{../../asset/rpz-ir-sensor.svg}
     \caption{センサーボードとラズベリーパイのかんけい}
     \label{sensors}
 \end{figure}
@@ -56,7 +58,7 @@
 
 % \begin{figure}[H]
 %     \centering
-%     \includegraphics[width=0.5\linewidth]{images/chap03/led_emission_demo.png}
+%     \includegraphics[width=0.5\linewidth]{../../asset/led_emission_demo.png}
 % \end{figure}
 
 % それではプログラムを\ruby{解析}{かい|せき}してみましょう。\code{font} 命令や \code{pos} 命令、 \code{mes} 命令がありますね。これらがどんな命令だったかを前回の教科書を読んで\ruby{復習}{ふく|しゅう}しましょう。gpio 命令も前回勉強しました。17という数字は上の図\ref{sensors}の GPIO17 に\ruby{対応}{たい|おう}していて、1 という数字は ON をあらわすのでしたね。\\
@@ -70,3 +72,4 @@
 % \end{enumerate}
 % \end{tcolorbox}
 
+\end{document}

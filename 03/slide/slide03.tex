@@ -1,6 +1,6 @@
 % LuaLaTeX文書; 文字コードはUTF-8
 \documentclass[14pt]{beamer}% 'unicode'が必要
-
+\usepackage{subfiles}
 \usepackage{luatexja-fontspec}
 \newjfontface{\nonproportional}{BIZ UDMincho}[YokoFeatures={JFM=ujis}]
 \setmainjfont[Ligatures={Common,TeX},
@@ -125,8 +125,8 @@
 \author{奥山祐市}
 
 \begin{document}
-  \input slide_contents/title.tex
-  \input slide_contents/shell_command.tex
-  \input slide_contents/sensorboard.tex
-  \input slide_contents/advanced_command.tex
+  \subfile{contents/title.tex}
+  \subfile{contents/shell_command.tex}
+  \subfile{contents/sensorboard.tex}
+  \subfile{contents/advanced_command.tex}
 \end{document}
