@@ -121,6 +121,7 @@ FROM ubuntu:24.04 AS buildenv
 COPY --from=texlive --link /opt/texlive/2023 /opt/texlive/2023
 COPY --from=font --link /usr/share/fonts/TTF /usr/share/fonts/TTF
 COPY --from=font --link /etc/fonts/local.conf /etc/fonts/local.conf
+ENV PATH=$PATH:/opt/texlive/2023/bin/x86_64-linux
 # Install Runtime Dependencies
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     --mount=type=cache,target=/var/lib/apt,sharing=locked \
@@ -128,9 +129,10 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     fontconfig \
     ghostscript \
     inkscape \
+    ncurses-bin \
     ;
-RUN fc-cache -f
-ENV PATH=$PATH:/opt/texlive/2023/bin/x86_64-linux
+# Generate system font cache & lualatex font names db
+RUN fc-cache -f && luaotfload-tool -fu
 
 
 FROM ${BASE_IMAGE} AS build
@@ -139,15 +141,13 @@ FROM ${BASE_IMAGE} AS build
 # TODO: make a top-level tex source that includes all chapters as one book.
 ARG TARGET=.
 WORKDIR /build/tex
-RUN --mount=type=cache,target=/root/.texlive2023/texmf-var/luatex-cache \
-    --mount=type=cache,target=/opt/texlive/texmf-local/texmf-var/luatex-cache \
-    --mount=type=cache,target=/opt/texlive/2023/texmf-var/luatex-cache \
-    --mount=type=cache,target=/opt/texlive/2023/texmf-var/luametatex-cache \
-    --mount=type=bind,source=${TARGET},target=.,rw=true \
+RUN --mount=type=bind,source=${TARGET},target=.,rw=true \
     --mount=type=bind,source=texmf/tex/luatexja/omebook/omebook.sty,target=/build/texmf/tex/luatexja/omebook/omebook.sty \
-    mkdir -p artifacts/ && \
+    mkdir -p /artifacts && \
     llmk && \
-    cp -r artifacts /artifacts
+    # export intermediate/object files \
+    # file list inherits https://github.com/wtsnjp/llmk/blob/e9949790d4acd007b58aa80d60aa2b4c18953134/llmk.lua#L58 \
+    cp -t /artifacts ${TARGET%.*}.pdf ${TARGET%.*}.aux
 
 
 FROM scratch AS final

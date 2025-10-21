@@ -11,15 +11,17 @@
 docker pull ghcr.io/omesatofoundation/ome-doc/texlive:latest
 ```
 
-このあとの手順に合うように、イメージ名を短いものに変更します。
+latest ではないバージョンを使用する必要があれば，https://github.com/OmeSatoFoundation/ome-doc/pkgs/container/ome-doc%2Ftexlive から必要なバージョンを選択し，tag として latest を置き換えて pull する．
+
+このあとの手順に合うように、イメージ名を短いものに変更する。
 
 ```
-docker tag ghcr.io/omesatofoundation/ome-doc/texlive:buildenv-v2.0-alpha.8:latest  ome-doc-latex
+docker tag ghcr.io/omesatofoundation/ome-doc/texlive:latest  ome-doc-latex
 ```
 
 https://github.com/OmeSatoFoundation/ome-doc/pkgs/container/ome-doc%2Ftexlive
 
-プルができない場合、タイプセットのための Docker Image をローカルコンピュータでビルドすることもできる。。
+プルができない場合、または必要がある場合はタイプセットのための Docker Image をローカルコンピュータでビルドすることもできる。
 
 ```
 # ome-doc を clone したディレクトリに移動する。
@@ -78,7 +80,7 @@ Note that `--output` must be `artifacts` otherwise latex cannot find intermediat
 
 ```bash
 TARGET=03
-docker build . --output "${TARGET}/artifacts" --build-arg TARGE="${TARGET}"
+docker build . --output "${TARGET}/artifacts" --build-arg TARGET="${TARGET}"
 ```
 
 `artifacts_03` に目的のファイルが生成される。
