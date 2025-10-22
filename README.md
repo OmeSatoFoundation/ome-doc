@@ -62,16 +62,16 @@ docker run --rm -v $(pwd):/workdir ome-doc-latex /bin/sh -c 'set -e; for d in 01
 TODO: top-level source を作成し、すべての chapter を含める。
 
 ```
-docker build . --output artifacts/
+docker build . -f docker/expcnt.Dockerfile --output .
 ```
 
 これは以下と等価である。
 
 ```
-docker build . --output artifacts/ --build-args TARGET="."
+docker build . -f docker/expcnt.Dockerfile --output artifacts/ --build-args TARGET="."
 ```
 
-`artifacts/` 以下に PDF や、ビルド時の中間ファイル (`.aux` 等) が出力される。
+プロジェクトルートに PDF や、ビルド時の中間ファイル (`.aux` 等) が出力される。
 
 Note that `--output` must be `artifacts` otherwise latex cannot find intermediate files `.aux`, and it slows typeset time.
 
@@ -79,19 +79,20 @@ Note that `--output` must be `artifacts` otherwise latex cannot find intermediat
 例: 第 3 回をビルドする
 
 ```bash
+cd /path/to/ome-doc
 TARGET=03
-docker build . --output "${TARGET}/artifacts" --build-arg TARGET="${TARGET}"
+docker build . -f docker/expcnt.Dockerfile --output "${TARGET}/" --build-arg TARGET="${TARGET}"
 ```
 
-`artifacts_03` に目的のファイルが生成される。
+`03/` に目的のファイルが生成される。
 
-Note that `--output` must be `${TARGET}/artifacts` otherwise latex cannot find intermediate files `.aux`, and it slows typeset time.
+Note that `--output` must be `${TARGET}` otherwise latex cannot find intermediate files like `.aux`, and it slows typeset time.
 
 ### 全チャプターをそれぞれ単体で一度にビルドする
 Linux なら、
 
 ```bash
-for TARGET in 01 02 03 04 05 06 07 08 ; do docker build . --output ${TARGET}/artifacts --build-arg TARGET="${TARGET}"; done'
+for TARGET in 01 02 03 04 05 06 07 08 ; do docker build . -f docker/expcnt.Dockerfile --output "${TARGET}"--build-arg TARGET="${TARGET}"; done'
 ```
 
 Note that `--output` must be `${TARGET}/artifacts` otherwise latex cannot find intermediate files `.aux`, and it slows typeset time.
@@ -113,7 +114,7 @@ ERROR: failed to build: failed to solve: ghcr.io/omesatofoundation/ome-doc/ome-d
 を追加して実行してください．例:
 
 ```bash
-docker build . --output artifacts/ --build-args TARGET="." --build-args BASE_IMAGE=buildenv
+docker build . --output . --build-args TARGET="." --build-args BASE_IMAGE=buildenv
 ```
 
 ### GitHub Container Registry への push
