@@ -116,11 +116,21 @@ COPY <<EOF /etc/fonts/local.conf
 </fontconfig>
 EOF
 
+# Build a utility to copy artifacts
+FROM golang:1.25-trixie AS copy_llmk_object_build
+WORKDIR /copy_llmk_object
+RUN --mount=type=cache,target=/go/pkg/mod \
+    --mount=type=bind,source=tools/copy_llmk_object/,target=/copy_llmk_object,rw=true \
+    go build -o build/copy_llmk_object cmd/copy_llmk_object.go && \
+    mkdir /artifacts && \
+    cp build/copy_llmk_object /artifacts/copy_llmk_object
+
 FROM ubuntu:24.04 AS buildenv
 # Copy texlive
 COPY --from=texlive --link /opt/texlive/2023 /opt/texlive/2023
 COPY --from=font --link /usr/share/fonts/TTF /usr/share/fonts/TTF
 COPY --from=font --link /etc/fonts/local.conf /etc/fonts/local.conf
+COPY --from=copy_llmk_object_build --link /artifacts/copy_llmk_object /usr/bin/copy_llmk_object
 ENV PATH=$PATH:/opt/texlive/2023/bin/x86_64-linux
 # Install Runtime Dependencies
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
@@ -143,11 +153,11 @@ ARG TARGET=.
 WORKDIR /build/tex
 RUN --mount=type=bind,source=${TARGET},target=.,rw=true \
     --mount=type=bind,source=texmf/tex/luatexja/omebook/omebook.sty,target=/build/texmf/tex/luatexja/omebook/omebook.sty \
-    mkdir -p /artifacts && \
+    mkdir /artifacts && \
     llmk && \
     # export intermediate/object files \
     # file list inherits https://github.com/wtsnjp/llmk/blob/e9949790d4acd007b58aa80d60aa2b4c18953134/llmk.lua#L58 \
-    cp -t /artifacts ${TARGET%.*}.pdf ${TARGET%.*}.aux
+    /usr/bin/copy_llmk_object /artifacts
 
 
 FROM scratch AS final

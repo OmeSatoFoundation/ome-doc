@@ -10,3 +10,5 @@
 !cards/
 !texmf/
 !docker/
+!tools/copy_llmk_object
+tools/copy_llmk_object/build/copy_llmk_object
