@@ -68,7 +68,7 @@ docker build . -f docker/expcnt.Dockerfile --output .
 これは以下と等価である。
 
 ```
-docker build . -f docker/expcnt.Dockerfile --output artifacts/ --build-args TARGET="."
+docker build . -f docker/expcnt.Dockerfile --output artifacts/ --build-arg TARGET="."
 ```
 
 プロジェクトルートに PDF や、ビルド時の中間ファイル (`.aux` 等) が出力される。
@@ -114,7 +114,7 @@ ERROR: failed to build: failed to solve: ghcr.io/omesatofoundation/ome-doc/ome-d
 を追加して実行してください．例:
 
 ```bash
-docker build . --output . --build-args TARGET="." --build-args BASE_IMAGE=buildenv
+docker build . -f docker/expcnt.Dockerfile --output . --build-arg TARGET="." --build-arg BASE_IMAGE=buildenv
 ```
 
 ### GitHub Container Registry への push
