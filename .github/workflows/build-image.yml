@@ -13,7 +13,7 @@ env:
 jobs:
   build-and-push:
     env:
-      IMAGE_NAME: typesetenv
+      IMAGE_NAME: texlive
     runs-on: ubuntu-latest
     permissions:
       contents: read
