@@ -10,9 +10,10 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ome-doc
 jobs:
   build-and-push:
+    env:
+      IMAGE_NAME: texlive
     runs-on: ubuntu-latest
     permissions:
       contents: read
