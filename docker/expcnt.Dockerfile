@@ -151,9 +151,9 @@ FROM ${BASE_IMAGE} AS build
 # TODO: make a top-level tex source that includes all chapters as one book.
 ARG TARGET=.
 WORKDIR /build/tex
-RUN --mount=type=bind,source=${TARGET},target=.,rw=true \
-    --mount=type=bind,source=texmf/tex/luatexja/omebook/omebook.sty,target=/build/texmf/tex/luatexja/omebook/omebook.sty \
+RUN --mount=type=bind,source=.,target=.,rw=true \
     mkdir /artifacts && \
+    cd ${TARGET} && \
     llmk && \
     # export intermediate/object files \
     # file list inherits https://github.com/wtsnjp/llmk/blob/e9949790d4acd007b58aa80d60aa2b4c18953134/llmk.lua#L58 \
