@@ -30,7 +30,7 @@
 # https://github.com/OmeSatoFoundation/ome-doc/pkgs/container/ome-doc%2Ftypesetenv
 ARG BASE_IMAGE=ghcr.io/omesatofoundation/ome-doc/texlive:latest
 
-FROM ubuntu:24.04 AS texlive
+FROM ubuntu:25.10 AS texlive
 # Install packages being dependent on texlive installation.
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     --mount=type=cache,target=/var/lib/apt,sharing=locked \
@@ -63,7 +63,7 @@ RUN tlmgr update --self && \
   ;
 
 
-FROM ubuntu:24.04 AS font
+FROM ubuntu:25.10 AS font
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     --mount=type=cache,target=/var/lib/apt,sharing=locked \
     DEBIAN_FRONTEND=noninteractive \
@@ -125,7 +125,7 @@ RUN --mount=type=cache,target=/go/pkg/mod \
     mkdir /artifacts && \
     cp build/copy_llmk_object /artifacts/copy_llmk_object
 
-FROM ubuntu:24.04 AS buildenv
+FROM ubuntu:25.10 AS buildenv
 # Copy texlive
 COPY --from=texlive --link /opt/texlive/2023 /opt/texlive/2023
 COPY --from=font --link /usr/share/fonts/TTF /usr/share/fonts/TTF
