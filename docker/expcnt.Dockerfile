@@ -61,7 +61,9 @@ RUN tlmgr update --self && \
   latexmk \
   light-latex-make \
   ;
-
+# Install forked llmk to which target source argument is added
+RUN curl -L -o /opt/texlive/2023/bin/x86_64-linux/llmk https://raw.githubusercontent.com/RollMan/llmk/refs/heads/clarg_overwriting_config/llmk.lua && \
+    chmod +x /opt/texlive/2023/bin/x86_64-linux/llmk
 
 FROM ubuntu:25.10 AS font
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
