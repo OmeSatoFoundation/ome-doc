@@ -49,7 +49,7 @@ RUN --mount=type=bind,source=docker/expcnt.texlive.profile,target=./texlive.prof
     ./install-tl \
         --no-interaction \
         --profile ./texlive.profile \
-        --repository https://mirror.ctan.org/systems/texlive/tlnet
+        --repository https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2023/tlnet-final/
 ENV PATH=$PATH:/opt/texlive/2023/bin/x86_64-linux
 # Install depending texlive packages
 RUN tlmgr update --self && \
