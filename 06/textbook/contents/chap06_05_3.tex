@@ -1,3 +1,5 @@
+\documentclass[text06.tex]{subfiles}
+\begin{document}
 \newpage
 \section{HSPからJuliusを使う}
 認識した音声を元に何か\ruby{処理}{しょ|り}を行いたいことは良くあります。例えば、認識した音声に\ruby{応}{おう}じて部屋の電気をつけたり、タイマーをセットしたりすることが考えられます。そんなときには自分のプログラムとJuliusを\ruby{連携}{れん|けい}させましょう。
@@ -5,7 +7,7 @@
 Juliusは図\ref{JuliusとHSPの連携}のように、HSPの外で動きます。別に起動しているJuliusと、書いたHSPプログラムが「ソケット」と呼ばれる通信\ruby{経路}{けい|ろ}を\ruby{介}{かい}して通信することで認識結果やコマンド（Juliusの起動・停止など）のやり取りをすることができます。
 \begin{figure}[H]
 \begin{center}
-    \includesvg[width=\linewidth]{images/chap06/JuliuswithHSP.svg}
+    \includesvg[width=\linewidth]{../../asset/image/JuliuswithHSP.svg}
     \caption{JuliusとHSPの連携}
     \label{JuliusとHSPの連携}
 \end{center}
@@ -83,3 +85,4 @@ ddim cm, 0}\\
 \addex{HSPでjulius.hspを実行しましょう。\\果物の名前を３つ話しかけて、認識されるか確かめてみましょう。}
 \end{enumerate}
 \end{tcolorbox}
+\end{document}
