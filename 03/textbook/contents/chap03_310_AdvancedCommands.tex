@@ -197,8 +197,8 @@ EOFはファイルがここで終ることを示す記号です。End Of File(�
 \end{figure}
 \begin{lstlisting}[caption=lsの出力をリダイレクトする, label=redirectLs]
 <#green#pi@raspberrypi#>:<#blue#~ $#> ls 
-<#blue#01  03         Desktop    Downloads  Pictures  Templates
-02  Bookshelf  Documents  Music      Public    Videos#>
+<#blue#01  03         Desktop    Downloads  Pictures  Templates   rika#>
+<#blue#02  Bookshelf  Documents  Music      Public    Videos#>
 <#green#pi@raspberrypi#>:<#blue#~ $#> ls > lsfile
 <#green#pi@raspberrypi#>:<#blue#~ $#> cat lsfile
 01
@@ -214,7 +214,7 @@ Public
 Templates
 Videos
 lsfile
-testtouch
+rika
 \end{lstlisting}
 
 「>(大なり記号)」の後にファイル名を指定することで、
@@ -238,7 +238,7 @@ Public
 Templates
 Videos
 lsfile
-testtouch
+rika
 \end{lstlisting}
 
 ちなみに、"cat lsfile"と入力しても動作は同じです。
@@ -274,7 +274,7 @@ Public
 Templates
 Videos
 lsfile
-testtouch
+rika
 ~
 ~
 ~
@@ -322,8 +322,9 @@ lessコマンドにlsコマンドの\ruby{標準}{ひょう|じゅん}出力を�
 次に、具体的な例を見てみましょう
 \begin{lstlisting}[caption=tacコマンドの実行例, label=tac_example]
 <#green#pi@raspberrypi#>:<#blue#~ $#> tac ~/lsfile
-testtouch
+rika
 lsfile
+keytest
 Videos
 Templates
 Public
@@ -389,7 +390,7 @@ Downloads
 \begin{lstlisting}[caption=tailコマンドの実行例, label=shuf_example]
 <#green#pi@raspberrypi#>:<#blue#~ $#> tail -n 2 ~/lsfile
 lsfile
-testtouch
+rika
 \end{lstlisting}
 この例では、lsfileの中身の末尾の2行を表示しました。
 
@@ -414,8 +415,9 @@ Pictures
 Public
 Templates
 Videos
+keytest
 lsfile
-testtouch
+rika
 \end{lstlisting}
 この例では、lsfileの中身を順番に並べ替えて表示してみました。
 数字とアルファベットが\ruby{混在}{こん|ざい}している場合、数字が先に表示され、その後にアルファベットが表示されます。
@@ -466,8 +468,9 @@ Pictures
 Public
 Templates
 Videos
+keytest
 lsfile
-testtouch
+rika
 \end{lstlisting}
 
 この例では、lsコマンドでホームディレクトリの中身を表示し、その結果をsortコマンドに渡して並べ替えています。

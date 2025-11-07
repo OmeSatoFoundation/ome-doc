@@ -2,6 +2,7 @@
 % lualatex ver. 
 %
 \documentclass[a4paper,12pt]{ltjsbook} 
+\usepackage{subfiles}
 % \usepackage{okumacro}
 \usepackage{luatexja-ruby}
 \usepackage{udline}
@@ -27,14 +28,7 @@
 \setcounter{chapter}{0}
 \setcounter{secnumdepth}{2}
 \begin{document}
-  \input contents/chap01_01.tex
-  \input contents/chap01_02.tex
-  \input contents/chap01_03.tex
-  \input contents/chap01_04.tex
-  \input contents/chap01_05.tex
-  \input contents/chap01_06.tex
-  % \input contents/chap01_07.tex
-  \input contents/chap01_08.tex
+  \input body.tex
 \end{document}
 
 
