@@ -1,3 +1,5 @@
+\documentclass[text07.tex]{subfiles}
+\begin{document}
 
 % \refstepcounter{Exercise}
 % \clearpage\subsection*{\theExercise　赤外線をウェブページから送信する}
@@ -27,7 +29,7 @@ localhost:3000/ir.html
 
 
 \begin{center}
-    \includegraphics[width=10cm]{text07-img/ome7-img061.png}
+    \includegraphics[width=10cm]{../../asset/image/ome7-img061.png}
 \end{center}
 
 ボタンを押すとCGIで赤外線の送信をするコマンドが実行されます。
@@ -58,7 +60,7 @@ exec “irsend SEND\_ONCE fan onoff”
 
 
 \begin{center}
-    \includegraphics[width=10cm]{text07-img/ome7-img062.png}
+    \includegraphics[width=10cm]{../../asset/image/ome7-img062.png}
 \end{center}
 
 ブラウザのファン\ruby{電源}{でんげん}ボタンを押すと、CGIが起動して
@@ -326,4 +328,4 @@ CGIを使うときに便利なHSPの命令一覧
 電源を切る前、ウェブサーバが起動しているターミナルを\ruby{閉}{と}じる前、ウェブサーバを停止したいときは、ウェブサーバを起動したターミナル（./webserver.pyを実行している画面）を選択してCtrlとCを同時に押します。
 それでウェブサーバは終了します。
 
-\clearpage
+\clearpage\end{document}

@@ -1,10 +1,12 @@
+\documentclass[text07.tex]{subfiles}
+\begin{document}
 %
 % section 6.2
 %
 \section{インターネットのキホン}
 \refstepcounter{PagePtr}\label{P:internet}
 \begin{wrapfigure}{r}[10pt]{0.4\textwidth}
-	\includegraphics[width=0.4\textwidth]{text07-img/ome7-img002.eps}
+	\includegraphics[width=0.4\textwidth]{../../asset/image/ome7-img002.eps}
 \end{wrapfigure}
 
 みんなが使っているパソコンやスマートフォンなどをたくさんつなぎ、おたがいに情報の\ruby{交換}{こうかん}ができるようにしたものを「ネットワーク」とよんでいます。
@@ -45,8 +47,8 @@ IPアドレスの場合はxxx.xxx.xxx.xxxのように四つの数字を使って
 xxxは0～255の数字が入ります。
 
 \begin{center}
-	\includegraphics[width=0.8\textwidth]{text07-img/ome7-img003}
-	\includegraphics[width=0.8\textwidth]{text07-img/ome7-img004.png}
+	\includegraphics[width=0.8\textwidth]{../../asset/image/ome7-img003}
+	\includegraphics[width=0.8\textwidth]{../../asset/image/ome7-img004.png}
 \end{center}
 
 IPアドレスはラズベリーパイのネットワーク上の住所に当たるものです。
@@ -64,8 +66,8 @@ IPアドレスはラズベリーパイのネットワーク上の住所に当た
 IPアドレスはグローバルIPアドレスとローカル（プライベート）IPアドレスという二つに分けられます。
 
 \begin{center}
-	\includegraphics[width=15.0cm]{text07-img/ome7-img005.png}
-	\includegraphics[width=15.0cm]{text07-img/ome7-img006}
+	\includegraphics[width=15.0cm]{../../asset/image/ome7-img005.png}
+	\includegraphics[width=15.0cm]{../../asset/image/ome7-img006}
 \end{center}
 
 \begin{tcolorbox}[title=\useOmetoi,breakable]
@@ -91,15 +93,15 @@ IPアドレスはグローバルIPアドレスとローカル（プライベー�
 {\bfseries 方法}
 
 \begin{center}
-	\includegraphics[width=0.85\textwidth]{text07-img/ome7-img007.png}
-	\includegraphics[width=0.85\textwidth]{text07-img/ome7-img008.png}
+	\includegraphics[width=0.85\textwidth]{../../asset/image/ome7-img007.png}
+	\includegraphics[width=0.85\textwidth]{../../asset/image/ome7-img008.png}
 \end{center}
 
 \clearpage
 
 \begin{center}
-	\includegraphics[width=0.85\textwidth]{text07-img/ome7-img010.png}
-	\includegraphics[width=0.85\textwidth]{text07-img/ome7-img009.png}
+	\includegraphics[width=0.85\textwidth]{../../asset/image/ome7-img010.png}
+	\includegraphics[width=0.85\textwidth]{../../asset/image/ome7-img009.png}
 \end{center}
 
 
@@ -133,7 +135,7 @@ IPアドレスはグローバルIPアドレスとローカル（プライベー�
 教室内では無線通信を利用してインターネットを使用しています。第１回目の授業の最初に\ruby{皆}{みな}さんはインターネット\ruby{接続}{せつぞく}をしました。\ruby{実際}{じっさい}にはどこにつながっているかというと下の図のルータです。
 
 \begin{center}
-	\includegraphics[width=8.186cm]{text07-img/ome7-img011.png}
+	\includegraphics[width=8.186cm]{../../asset/image/ome7-img011.png}
 \end{center}
 
 この機械のおかげで、みんなは教室内でインターネットをすることができています。
@@ -141,20 +143,20 @@ IPアドレスはグローバルIPアドレスとローカル（プライベー�
 みんなのラズベリーパイは直接インターネットにつながってはいません。一度、ルータを経由しています。このルータのおかげで\ruby{複数}{ふくすう}のラズベリーパイやPCを同時にインターネットにアクセスさせることができます。以下の図がイメージ図です。
 
 \begin{center}
-	\includegraphics[width=0.85\textwidth]{text07-img/ome7-img012.png}
+	\includegraphics[width=0.85\textwidth]{../../asset/image/ome7-img012.png}
 \end{center}
 
 ではどのようにして複数台のラズベリーパイをインターネットに接続しているのでしょうか。それはルータに\textbf{グローバルIPアドレス}というものを\ruby{割}{わ}り当てて、ルータが他のラズベリーパイの代表として通信を行っています。どういうことかわかりづらいので、図でみていきましょう。
 
 \begin{center}
-	\includegraphics[width=0.85\textwidth]{text07-img/ome7-img013.png}
+	\includegraphics[width=0.85\textwidth]{../../asset/image/ome7-img013.png}
 \end{center}
 
 
 図ではラズベリーパイ2号機がインターネットにアクセスし、何かしらのwebサイトを観たいと要求したとします。その要求はまずルータのところにいき、ラズベリーパイ２号機の代わりにインターネットに接続します。その接続で、ルータはインターネット先から返事をもらい、そのインターネットからの返事をラズベリーパイに返しています。
 
 \begin{center}
-	\includegraphics[width=0.85\textwidth]{text07-img/ome7-img014.png}
+	\includegraphics[width=0.85\textwidth]{../../asset/image/ome7-img014.png}
 \end{center}
 
 \clearpage
@@ -162,7 +164,7 @@ IPアドレスはグローバルIPアドレスとローカル（プライベー�
 これだけではうまくいかないことがあります。下の図をみてください。
 
 \begin{center}
-	\includegraphics[width=0.85\textwidth]{text07-img/ome7-img015.png}
+	\includegraphics[width=0.85\textwidth]{../../asset/image/ome7-img015.png}
 \end{center}
 
 どれかしらのラズベリーパイからwebサイトへの要求があり、ルータを経由してインターネットに接続します。
@@ -175,7 +177,7 @@ IPアドレスはグローバルIPアドレスとローカル（プライベー�
 ルータは自分を\ruby{含}{ふく}め、ローカルIPアドレスを割り当てています。このローカルIPアドレスでラズベリーパイを見分けています。
 
 \begin{center}
-	\includegraphics[width=\textwidth]{text07-img/ome7-img016.png}
+	\includegraphics[width=\textwidth]{../../asset/image/ome7-img016.png}
 \end{center}
 
 \begin{tcolorbox}[title=\useOmetoi,breakable]
@@ -202,22 +204,22 @@ IPアドレスはグローバルIPアドレスとローカル（プライベー�
 	今回は”inet-ip.info”というサイトからグローバルIPアドレスを調べてターミナルに\ruby{表示}{ひょうじ}させています。
 	webブラウザから”inet-ip.info”にアクセスしてみると右の図のような形でグローバルIPアドレスを確認することもできます。
 \end{minipage}
-\includegraphics[width=0.4\textwidth]{text07-img/ome7-img017.png}
+\includegraphics[width=0.4\textwidth]{../../asset/image/ome7-img017.png}
 
 \bigskip
 
 {\bfseries 方法}
 
 \begin{center}
-	\includegraphics[width=0.85\textwidth]{text07-img/ome7-img007.png}
-	\includegraphics[width=0.85\textwidth]{text07-img/ome7-img008.png}
+	\includegraphics[width=0.85\textwidth]{../../asset/image/ome7-img007.png}
+	\includegraphics[width=0.85\textwidth]{../../asset/image/ome7-img008.png}
 \end{center}
 
 \clearpage
 
 \begin{center}
-	\includegraphics[width=0.85\textwidth]{text07-img/ome7-img018.png}
-	\includegraphics[width=0.85\textwidth]{text07-img/ome7-img019.png}
+	\includegraphics[width=0.85\textwidth]{../../asset/image/ome7-img018.png}
+	\includegraphics[width=0.85\textwidth]{../../asset/image/ome7-img019.png}
 \end{center}
 
 調べたポケットWi-FiのグローバルIPアドレスを書こう
@@ -274,7 +276,7 @@ IPアドレスは通信相手となる別のネットワークのコンピュー
 下の図は小学校を例にしています。
 
 \begin{center}
-	\includegraphics[width=0.85\textwidth]{text07-img/ome7-img020.png}
+	\includegraphics[width=0.85\textwidth]{../../asset/image/ome7-img020.png}
 \end{center}
 
 青梅市立第一小学校の住所がみんなのラズベリーパイのIPアドレスに\ruby{対応}{たいおう}しており、IPアドレスの\ruby{末尾}{まつび}の201（青で囲まれている）が小学校のクラスに対応しています。
@@ -296,20 +298,20 @@ IPアドレスは通信相手となる別のネットワークのコンピュー
 ここでは実際にポートはネットワーク上ではどのように使うのか、下の図を見てみましょう。
 
 \begin{center}
-	\includegraphics[width=0.97\textwidth]{text07-img/ome7-img021.png}
-	\includegraphics[width=0.97\textwidth]{text07-img/ome7-img022.png}
+	\includegraphics[width=0.97\textwidth]{../../asset/image/ome7-img021.png}
+	\includegraphics[width=0.97\textwidth]{../../asset/image/ome7-img022.png}
 \end{center}
 
 \clearpage
 
 \begin{center}
-	\includegraphics[width=0.97\textwidth]{text07-img/ome7-img024.png}
+	\includegraphics[width=0.97\textwidth]{../../asset/image/ome7-img024.png}
 \end{center}
 
 さらにラズベリーパイ側のポートはラズベリーパイが自動で割当ており、そこからデータを受け取っています。
 
 \begin{center}
-	\includegraphics[width=0.97\textwidth]{text07-img/ome7-img025.png}\label{P:slide_p18}
+	\includegraphics[width=0.97\textwidth]{../../asset/image/ome7-img025.png}\label{P:slide_p18}
 \end{center}
 
 コンピュータXのようにネット上にサービスを\ruby{提供}{ていきょう}するコンピュータを\underline{サーバ}と言います。
@@ -341,15 +343,15 @@ localhost”とコマンドを入力し、ポートについて知ろう
 {\bfseries 方法}
 
 \begin{center}
-	\includegraphics[width=0.85\textwidth]{text07-img/ome7-img007.png}
-	\includegraphics[width=0.85\textwidth]{text07-img/ome7-img008.png}
+	\includegraphics[width=0.85\textwidth]{../../asset/image/ome7-img007.png}
+	\includegraphics[width=0.85\textwidth]{../../asset/image/ome7-img008.png}
 \end{center}
 
 \clearpage
 
 \begin{center}
-	\includegraphics[width=0.85\textwidth]{text07-img/ome7-img032.png}
-	\includegraphics[width=0.85\textwidth]{text07-img/ome7-img031.png}
+	\includegraphics[width=0.85\textwidth]{../../asset/image/ome7-img032.png}
+	\includegraphics[width=0.85\textwidth]{../../asset/image/ome7-img031.png}
 \end{center}
 
 \bigskip
@@ -397,20 +399,20 @@ IPアドレスは住所であり、それがわからないとサーバのサー
 ですが以下の図のようなことが起こることがあります。
 
 \begin{center}
-	\includegraphics[width=0.97\textwidth]{text07-img/ome7-img026.png}
+	\includegraphics[width=0.97\textwidth]{../../asset/image/ome7-img026.png}
 \end{center}
 
 そこで、DNSサーバと言うものを作り、一度そこに”amazon.co.jp”のグローバルIPアドレスを教えてもらってサーバに接続しています。
 
 \begin{center}
-	\includegraphics[width=0.97\textwidth]{text07-img/ome7-img027}
+	\includegraphics[width=0.97\textwidth]{../../asset/image/ome7-img027}
 \end{center}
 
 
 \clearpage
 
 \begin{center}
-	\includegraphics[width=0.8\textwidth]{text07-img/ome7-img028_1.png}
+	\includegraphics[width=0.8\textwidth]{../../asset/image/ome7-img028_1.png}
 \end{center}
 
 \begin{tcolorbox}[title=\useOmetoi,breakable]
@@ -435,7 +437,7 @@ IPアドレスは住所であり、それがわからないとサーバのサー
 
 
 \begin{center}
-	\includegraphics[width=0.8\textwidth]{text07-img/ome7-img029}
+	\includegraphics[width=0.8\textwidth]{../../asset/image/ome7-img029}
 \end{center}
 
 \clearpage
@@ -446,11 +448,11 @@ NATを行うルータは、プライベートアドレスとグローバルア�
 
 
 \begin{center}
-	\includegraphics[width=0.8\textwidth]{text07-img/ome7-img030}
+	\includegraphics[width=0.8\textwidth]{../../asset/image/ome7-img030}
 \end{center}
 
 サーバからラズベリーパイへの返事のデータの送信先IPアドレスは「100.1.1.1」、送信元IPアドレス「200.1.1.1」になりますね。
 データがルータへ転送されてくると、ルータはNATテーブルを確認して、送信元IPアドレスを「100.1.1.1」から元の「192.168.1.1」へ変換します。
 これにより返りのデータの通信が可能になるのです。NATによって送信元のローカルIPアドレスをグローバルIPアドレスに変換して通信をおこなっているおかげでみんなはインターネットを利用できています。
 
-\clearpage
+\clearpage\end{document}

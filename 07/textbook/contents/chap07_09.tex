@@ -1,3 +1,5 @@
+\documentclass[text07.tex]{subfiles}
+\begin{document}
 % \refstepcounter{Exercise}
 % \clearpage
 % \subsection*{\theExercise　クエリストリングを使ってLEDを操作する}
@@ -26,7 +28,7 @@ localhost:3000/cgi-bin/qsled.hsp?led=17\&val=1
 %September 20, 2019 2:50 AM
 
 \begin{center}
-    \includegraphics[width=0.8\textwidth]{text07-img/ome7-img055.png}
+    \includegraphics[width=0.8\textwidth]{../../asset/image/ome7-img055.png}
 \end{center}
 
 実行するとLED17が光ります。val=1をval=0にすると消えます。URLに埋め込まれた情報をもとにCGIプログラムはLEDを操作していることがわかります。URLに埋め込まれた情報はクエリストリングと呼ばれます。
@@ -146,4 +148,4 @@ cgpio命令は数値でGPIO番号、オンオフ（1, 0）を受け付けるの�
   \end{enumerate}
 \end{tcolorbox}
 
-\clearpage
+\clearpage\end{document}
