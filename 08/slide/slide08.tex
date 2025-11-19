@@ -1,5 +1,6 @@
 % LuaLaTeX文書; 文字コードはUTF-8
 \documentclass[14pt]{beamer}% 'unicode'が必要
+\usepackage{subfiles}
 \usepackage{luatexja-fontspec}
 \usepackage{beamerthemesplit}
 \usepackage{caption}
@@ -26,8 +27,8 @@
 
 \begin{document}
 
-  \input contents/slide08-1.tex
-  \input contents/slide08-2.tex
-  \input contents/slide08-3.tex
-  \input contents/slide08-4.tex
+  \subfile{contents/slide08-1.tex}
+  \subfile{contents/slide08-2.tex}
+  \subfile{contents/slide08-3.tex}
+  \subfile{contents/slide08-4.tex}
 \end{document}
