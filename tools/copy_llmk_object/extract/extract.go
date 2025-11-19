@@ -4,6 +4,7 @@ import (
 	"github.com/BurntSushi/toml"
 	"os"
 	"path"
+	"log"
 )
 
 type config struct {
@@ -18,5 +19,6 @@ func ExtractSourcesInLLMKToml(cwd string) ([]string, error) {
 	}
 	var conf config
 	_, err = toml.Decode(string(tomlData), &conf)
+	log.Printf("source files found: %v.\n", conf.Source)
 	return conf.Source, nil
 }

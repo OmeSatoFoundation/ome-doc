@@ -6,6 +6,7 @@ import (
 	"io/fs"
 	"os"
 	"path"
+	"log"
 )
 
 func getFileMode(f *os.File) (os.FileMode, error) {
@@ -21,6 +22,7 @@ func Copy(sources []string, destDir string) error {
 		fin, err := os.Open(src)
 		if err != nil {
 			if errors.Is(err, fs.ErrNotExist) {
+				log.Printf("%s not found. Skipping it.\n", src)
 				continue
 			}
 			return err
@@ -37,6 +39,7 @@ func Copy(sources []string, destDir string) error {
 		}
 		defer fout.Close()
 		_, err = io.Copy(fout, fin)
+		log.Printf("Copied %s %s\n", src, dest)
 	}
 	return nil
 }

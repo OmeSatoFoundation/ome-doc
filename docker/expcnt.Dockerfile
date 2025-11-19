@@ -123,7 +123,8 @@ RUN --mount=type=cache,target=/go/pkg/mod \
     --mount=type=bind,source=tools/copy_llmk_object/,target=/copy_llmk_object,rw=true \
     go build -o build/copy_llmk_object cmd/copy_llmk_object.go && \
     mkdir /artifacts && \
-    cp build/copy_llmk_object /artifacts/copy_llmk_object
+    cp build/copy_llmk_object /artifacts/copy_llmk_object && \
+    echo "disabling cache"
 
 FROM ubuntu:25.10 AS buildenv
 # Copy texlive
@@ -157,6 +158,7 @@ RUN --mount=type=bind,source=.,target=.,rw=true \
     llmk && \
     # export intermediate/object files \
     # file list inherits https://github.com/wtsnjp/llmk/blob/e9949790d4acd007b58aa80d60aa2b4c18953134/llmk.lua#L58 \
+    echo "copying artifacts." && \
     /usr/bin/copy_llmk_object /artifacts
 
 
