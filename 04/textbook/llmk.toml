@@ -1,4 +1,4 @@
-source = "text04.tex"
+source = ["text04.tex"]
 
 sequence = ["latex"] # Skip bibtex and makeindex
 

@@ -1,4 +1,4 @@
-source = "slide08.tex"
+source = ["slide08.tex"]
 
 sequence = ["latex"] # Skip bibtex and makeindex
 

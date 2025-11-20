@@ -116,22 +116,12 @@ COPY <<EOF /etc/fonts/local.conf
 </fontconfig>
 EOF
 
-# Build a utility to copy artifacts
-FROM golang:1.25-trixie AS copy_llmk_object_build
-WORKDIR /copy_llmk_object
-RUN --mount=type=cache,target=/go/pkg/mod \
-    --mount=type=bind,source=tools/copy_llmk_object/,target=/copy_llmk_object,rw=true \
-    go build -o build/copy_llmk_object cmd/copy_llmk_object.go && \
-    mkdir /artifacts && \
-    cp build/copy_llmk_object /artifacts/copy_llmk_object && \
-    echo "disabling cache"
 
-FROM ubuntu:25.10 AS buildenv
+FROM ubuntu:25.10 AS buildenv_pre
 # Copy texlive
 COPY --from=texlive --link /opt/texlive/2023 /opt/texlive/2023
 COPY --from=font --link /usr/share/fonts/TTF /usr/share/fonts/TTF
 COPY --from=font --link /etc/fonts/local.conf /etc/fonts/local.conf
-COPY --from=copy_llmk_object_build --link /artifacts/copy_llmk_object /usr/bin/copy_llmk_object
 ENV PATH=$PATH:/opt/texlive/2023/bin/x86_64-linux
 # Install Runtime Dependencies
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
@@ -145,6 +135,17 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
 # Generate system font cache & lualatex font names db
 RUN fc-cache -f && luaotfload-tool -fu
 
+# Build a utility to copy artifacts
+FROM golang:1.25-trixie AS copy_llmk_object_build
+WORKDIR /copy_llmk_object
+RUN --mount=type=cache,target=/go/pkg/mod \
+    --mount=type=bind,source=tools/copy_llmk_object/,target=/copy_llmk_object,rw=true \
+    go build -o build/copy_llmk_object cmd/copy_llmk_object.go && \
+    mkdir /artifacts && \
+    cp build/copy_llmk_object /artifacts/copy_llmk_object
+
+FROM buildenv_pre as buildenv
+COPY --from=copy_llmk_object_build --link /artifacts/copy_llmk_object /usr/bin/copy_llmk_object
 
 FROM ${BASE_IMAGE} AS build
 # Specify which source to be built. Default is one at project root.
@@ -158,7 +159,6 @@ RUN --mount=type=bind,source=.,target=.,rw=true \
     llmk && \
     # export intermediate/object files \
     # file list inherits https://github.com/wtsnjp/llmk/blob/e9949790d4acd007b58aa80d60aa2b4c18953134/llmk.lua#L58 \
-    echo "copying artifacts." && \
     /usr/bin/copy_llmk_object /artifacts
 
 

@@ -19,6 +19,9 @@ func ExtractSourcesInLLMKToml(cwd string) ([]string, error) {
 	}
 	var conf config
 	_, err = toml.Decode(string(tomlData), &conf)
+	if err != nil {
+		return nil, err
+	}
 	log.Printf("source files found: %v.\n", conf.Source)
 	return conf.Source, nil
 }
