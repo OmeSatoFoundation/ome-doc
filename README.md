@@ -1,3 +1,5 @@
+このリポジトリの内容は [ome2023](https://github.com/OmeSatoFoundation/ome2023) に統合されました。今後は読み取り専用 (public archive) とします。
+
 # IT未来塾教科書
 
 ## ビルド手順 (Docker)
@@ -69,3 +71,4 @@ llmk
 
 ## 参考
 - (非公開) wiki のページ 『未来塾2023に向けた教科書執筆』
+
